@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel datamodelDbId="null">
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137476968744900" entityLocationX="207" entityLocationY="268" entityWidth="150" tableName="lc_flat"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137477589329136" entityLocationX="418" entityLocationY="272" entityWidth="150" tableName="lc_chars"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137476913538116" entityLocationX="201" entityLocationY="16" entityWidth="150" tableName="grp_groups"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137476937463676" entityLocationX="419" entityLocationY="18" entityWidth="150" tableName="grp_chars"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137476906702717" entityLocationX="15" entityLocationY="19" entityWidth="150" tableName="grp_type"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137503894934357" entityLocationX="21" entityLocationY="258" entityWidth="150" tableName="grp_lc_group"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137476957359503" entityLocationX="610" entityLocationY="165" entityWidth="150" tableName="char_types"/>
+</datamodel>

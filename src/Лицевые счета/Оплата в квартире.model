@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parFlatID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parNewSum" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parNewDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="137685832783762" entityLocationX="392" entityLocationY="20" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
+  <entity Name="qPaymentsInFlat" Title="Оплаты в квартире" entityHeight="200" entityIconified="false" entityId="137685811346765" entityLocationX="229" entityLocationY="18" entityWidth="150" queryId="qPaymentsInFlat" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137685811346765" rightEntityParameterName="flat_id"/>
+</datamodel>

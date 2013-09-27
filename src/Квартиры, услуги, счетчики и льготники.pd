@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel datamodelDbId="null">
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137478412421876" entityLocationX="234" entityLocationY="243" entityWidth="150" tableName="lc_beneficiaries"/>
+  <fieldsEntity entityHeight="95" entityIconified="false" entityId="137477958971104" entityLocationX="453" entityLocationY="33" entityWidth="150" tableName="lc_counter"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137477932959665" entityLocationX="10" entityLocationY="20" entityWidth="150" tableName="lc_flat"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137477939161554" entityLocationX="233" entityLocationY="23" entityWidth="150" tableName="lc_flat_services"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137478408103951" entityLocationX="10" entityLocationY="277" entityWidth="150" tableName="usl_benefit_type"/>
+</datamodel>

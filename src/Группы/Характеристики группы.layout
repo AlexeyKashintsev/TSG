@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="400px">
+  <widget name="toolBar" parent="Form" prefHeight="33px" prefWidth="400px" rollover="true" type="ToolbarDesignInfo">
+    <constraints height="33px" left="0px" right="0px" top="120px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/apps/geany.png" name="btnRecalc" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Пересчитать характеристики" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget name="label2" parent="Form" prefHeight="16px" prefWidth="48px" text="Адрес:" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="90px" type="MarginConstraintsDesignInfo" width="48px"/>
+  </widget>
+  <widget name="label1" parent="Form" prefHeight="16px" prefWidth="48px" text="Тип:" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="66px" type="MarginConstraintsDesignInfo" width="48px"/>
+  </widget>
+  <widget name="label" parent="Form" prefHeight="16px" prefWidth="108px" text="Наименование:" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="42px" type="MarginConstraintsDesignInfo" width="108px"/>
+  </widget>
+  <widget name="modelCombo" parent="Form" prefHeight="28px" prefWidth="264px" type="DbComboDesignInfo">
+    <displayField entityId="137496171186332" fieldName="char_name"/>
+    <valueField entityId="137496171186332" fieldName="char_types_id"/>
+    <datamodelElement entityId="137496190835709" fieldName="grp_type"/>
+    <constraints height="28px" left="120px" right="16px" top="60px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="modelFormattedField" parent="Form" prefHeight="28px" prefWidth="264px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="137496190835709" fieldName="grp_name"/>
+    <border type="CompoundBorderDesignInfo"/>
+    <constraints height="28px" left="120px" right="16px" top="36px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="modelFormattedField1" parent="Form" prefHeight="28px" prefWidth="264px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="137496190835709" fieldName="grp_address"/>
+    <constraints height="28px" left="120px" right="16px" top="84px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget deletable="false" insertable="false" name="modelGrid" parent="Form" prefHeight="144px" prefWidth="400px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137496168237043" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <column name="colCharType" title="Характеристика">
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <displayField entityId="137496171186332" fieldName="char_name"/>
+        <valueField entityId="137496171186332" fieldName="char_types_id"/>
+      </controlInfo>
+      <datamodelElement entityId="137496168237043" fieldName="grp_char_type"/>
+    </column>
+    <column name="colCharValue" title="Значение">
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137496168237043" fieldName="grp_char_val"/>
+    </column>
+    <column name="colCharAdd2Lc" title="Добавлять автоматически">
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137496168237043" fieldName="add_char_to_lc"/>
+    </column>
+    <column name="colCharCalc" title="Расчитывается">
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137496168237043" fieldName="char_calc_from_lc"/>
+    </column>
+    <constraints bottom="0px" left="0px" right="0px" top="156px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="toolBar1" parent="Form" prefHeight="33px" prefWidth="400px" rollover="true" type="ToolbarDesignInfo">
+    <constraints height="33px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar1" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar1" prefHeight="26px" prefWidth="34px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

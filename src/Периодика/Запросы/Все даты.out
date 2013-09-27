@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><outputFields>
+  <field bindedColumn="per_year" sqlType="12"/>
+  <field bindedColumn="Mon" sqlType="12"/>
+  <field bindedColumn="TextDate" sqlType="12"/>
+</outputFields>

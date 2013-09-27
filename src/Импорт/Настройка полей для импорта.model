@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parImport" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="dsExFields" Title="Импорт из таблицы поля без автоматичеки добавл. параметров" entityHeight="200" entityIconified="false" entityId="136204610759317" entityLocationX="184" entityLocationY="15" entityWidth="209" onAfterChange="dsExFieldsChanged" queryId="a136204588196858" tableName="" tableSchemaName=""/>
+  <entity Name="" Title="Справочник Типы полей импорта" entityHeight="200" entityIconified="false" entityId="135091217935996" entityLocationX="447" entityLocationY="17" entityWidth="231" queryId="Справочник_Типы_полей_Excel" tableName="" tableSchemaName=""/>
+  <entity Name="dsImportVariants" Title="Варианты импортов справочник" entityHeight="200" entityIconified="false" entityId="137727326511139" entityLocationX="399" entityLocationY="252" entityWidth="150" queryId="_32948409985907" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parImport" rightEntityId="136204610759317" rightEntityParameterName="impFileType"/>
+</datamodel>

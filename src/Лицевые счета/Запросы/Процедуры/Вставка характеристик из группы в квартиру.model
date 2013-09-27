@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="FlatID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="GroupID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Характеристики группы" entityHeight="200" entityIconified="false" entityId="137703045758102" entityLocationX="186" entityLocationY="90" entityWidth="150" tableAlias="t1" tableName="grp_chars" tableSchemaName=""/>
+  <entity Title="Характеристики квартиры" entityHeight="200" entityIconified="false" entityId="137703048140505" entityLocationX="405" entityLocationY="12" entityWidth="150" tableAlias="t" tableName="lc_chars" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="GroupID" rightEntityFieldName="grp_group_id" rightEntityId="137703045758102"/>
+  <relation leftEntityFieldName="grp_char_type" leftEntityId="137703045758102" rightEntityFieldName="lc_char_type" rightEntityId="137703048140505"/>
+  <relation leftEntityId="-1" leftEntityParameterName="FlatID" rightEntityFieldName="lc_id" rightEntityId="137703048140505"/>
+</datamodel>

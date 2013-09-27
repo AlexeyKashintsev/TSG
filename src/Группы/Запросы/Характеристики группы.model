@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parGroup" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Характеристики группы" entityHeight="200" entityIconified="false" entityId="137485474213801" entityLocationX="212" entityLocationY="30" entityWidth="150" tableAlias="t1" tableName="grp_chars" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityFieldName="grp_group_id" rightEntityId="137485474213801"/>
+</datamodel>

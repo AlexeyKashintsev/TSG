@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="399px" prefWidth="659px" windowClosing="formWindowClosing" windowOpened="formWindowOpened">
+  <widget name="jPanel3" parent="Form" prefHeight="38px" prefWidth="658px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints bottom="1px" height="38px" left="0px" right="1px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="btnSelectActionPerformed" horizontalTextPosition="4" icon="tick.png" name="btnSelect" parent="jPanel3" prefHeight="25px" prefWidth="115px" text="Выбрать" type="ButtonDesignInfo">
+    <constraints height="25px" right="248px" top="0px" type="MarginConstraintsDesignInfo" width="115px"/>
+    <easFont name="Dialog"/>
+  </widget>
+  <widget actionPerformed="btnSaveActionPerformed" horizontalTextPosition="4" icon="disk-blue.png" name="btnSave" parent="jPanel3" prefHeight="25px" prefWidth="115px" text="Сохранить" type="ButtonDesignInfo">
+    <constraints height="25px" right="128px" top="0px" type="MarginConstraintsDesignInfo" width="115px"/>
+    <easFont name="Dialog"/>
+  </widget>
+  <widget actionPerformed="btnCloseActionPerformed" horizontalTextPosition="4" icon="cross.png" name="btnClose" parent="jPanel3" prefHeight="25px" prefWidth="115px" text="Закрыть" type="ButtonDesignInfo">
+    <constraints height="25px" right="10px" top="0px" type="MarginConstraintsDesignInfo" width="115px"/>
+    <easFont name="Dialog"/>
+  </widget>
+  <widget name="jLabel" parent="Form" prefHeight="14px" prefWidth="98px" text="Наименование" toolTipText="&lt;нулевое значение&gt;" type="LabelDesignInfo">
+    <constraints height="14px" left="10px" top="43px" type="MarginConstraintsDesignInfo" width="98px"/>
+  </widget>
+  <widget floatable="false" name="toolBar" parent="Form" prefHeight="28px" prefWidth="659px" rollover="true" type="ToolbarDesignInfo">
+    <constraints height="28px" left="0px" right="0px" top="3px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="btnRefreshActionPerformed" focusable="false" horizontalTextPosition="0" icon="refresh/refresh.png" name="btnRefresh" parent="toolBar" prefHeight="20px" prefWidth="28px" toolTipText="Обновить данные" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="plus-button.png" name="btnAdd" parent="toolBar" prefHeight="20px" prefWidth="28px" toolTipText="Добавить новое сопоставление полей" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnDublicateActionPerformed" focusable="false" horizontalTextPosition="0" icon="plus-white.png" name="btnDublicate" parent="toolBar" prefHeight="20px" prefWidth="28px" toolTipText="Создать копию текущего сопоставления" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="minus-button.png" name="btnDel" parent="toolBar" prefHeight="20px" prefWidth="28px" toolTipText="Удалить текущее сопоставление" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget name="dbGrid1" parent="Form" prefHeight="262px" prefWidth="659px" type="DbGridDesignInfo">
+    <column name="cellnumber" title="№ ячейки" width="15">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="136204610759317" fieldName="cellnumber"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="impfieldtype" selectFunction="impfieldtypeSelectValue" selectOnly="true" title="Тип поля">
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <displayField entityId="135091217935996" fieldName="fieldtypename"/>
+        <valueField entityId="135091217935996" fieldName="impfieldstypes_id"/>
+      </controlInfo>
+      <datamodelElement entityId="136204610759317" fieldName="impfieldtype"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="impfieldnumber" title="Порядок импорта поля" width="30">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="136204610759317" fieldName="impfieldnumber"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="paramType" readonly="true" title="Тип параметра">
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <displayField entityId="136143810456215" fieldName="name"/>
+        <valueField entityId="136143810456215" fieldName="statparam_id"/>
+      </controlInfo>
+      <datamodelElement entityId="136204610759317" fieldName="statpar"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="isRequired" title="Обязательное" width="10">
+      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="136204610759317" fieldName="isrequired"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="136204610759317" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo>
+      <param2GetChildren/>
+      <paramSourceField/>
+      <unaryLinkField/>
+    </treeDesignInfo>
+    <constraints height="262px" left="0px" right="0px" top="98px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget floatable="false" name="jToolBar" parent="Form" prefHeight="25px" prefWidth="659px" rollover="true" type="ToolbarDesignInfo">
+    <constraints height="25px" left="0px" right="0px" top="72px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="jButtonActionPerformed" focusable="false" horizontalTextPosition="0" icon="plus-button.png" name="jButton" parent="jToolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="jButton1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="minus-button.png" name="jButton1" parent="jToolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget name="modelCombo" parent="Form" prefHeight="28px" prefWidth="540px" type="DbComboDesignInfo">
+    <displayField entityId="137727326511139" fieldName="importname"/>
+    <valueField entityId="137727326511139" fieldName="importnames_id"/>
+    <datamodelElement entityId="-1" fieldName="parImport"/>
+    <constraints height="28px" left="108px" top="36px" type="MarginConstraintsDesignInfo" width="540px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

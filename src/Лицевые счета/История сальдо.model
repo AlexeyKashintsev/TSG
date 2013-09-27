@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parFlatID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="dsSaldo" Title="Сальдо по квартире" entityHeight="278" entityIconified="false" entityId="137588933491844" entityLocationX="240" entityLocationY="30" entityWidth="150" queryId="saldo_by_flat" tableName="" tableSchemaName=""/>
+  <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="137588944927161" entityLocationX="413" entityLocationY="31" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
+</datamodel>

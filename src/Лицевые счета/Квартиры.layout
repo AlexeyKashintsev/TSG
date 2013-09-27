@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="475px" prefWidth="873px" windowOpened="formWindowOpened">
+  <widget dividerLocation="250" leftComponent="splitPane1" name="splitPane" parent="Form" prefHeight="475px" prefWidth="873px" rightComponent="panel" type="SplitDesignInfo">
+    <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget dividerLocation="100" leftComponent="pnlGroups" name="splitPane1" orientation="0" parent="splitPane" prefHeight="471px" prefWidth="248px" rightComponent="pnlFlats" type="SplitDesignInfo"/>
+  <widget name="pnlGroups" parent="splitPane1" prefHeight="98px" prefWidth="244px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+  </widget>
+  <widget name="mgGroups" parent="pnlGroups" prefHeight="98px" prefWidth="244px" type="DbGridDesignInfo">
+    <column name="colGrpName">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="colGrpType">
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137485439194560" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo>
+      <unaryLinkField entityId="137485439194560" fieldName="grp_parent"/>
+    </treeDesignInfo>
+    <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlFlats" parent="splitPane1" prefHeight="364px" prefWidth="244px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+  </widget>
+  <widget name="pnlWorkSpace" parent="pnlFlats" prefHeight="328px" prefWidth="244px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="328px" prefWidth="244px" type="DbGridDesignInfo">
+    <column name="colFlatNumber">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="colFlatRegTo">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137501421039573" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget floatable="false" name="toolBar" parent="pnlFlats" prefHeight="33px" prefWidth="244px" rollover="true" type="ToolbarDesignInfo">
+    <constraints height="33px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget name="panel" parent="splitPane" prefHeight="471px" prefWidth="616px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+  </widget>
+  <widget name="tabbedPane" parent="panel" prefHeight="394px" prefWidth="616px" type="TabsDesignInfo">
+    <constraints bottom="77px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlCurrent" parent="tabbedPane" prefHeight="348px" prefWidth="595px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Начисления" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlFlatChars" parent="tabbedPane" prefHeight="348px" prefWidth="595px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Характеристики" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget dividerLocation="200" leftComponent="pnlServices" name="splitPane2" orientation="0" parent="tabbedPane" prefHeight="348px" prefWidth="595px" rightComponent="pnlCounters" type="SplitDesignInfo" visible="false">
+    <constraints tabTitle="Услуги и счетчики" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlServices" parent="splitPane2" prefHeight="198px" prefWidth="591px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+  </widget>
+  <widget name="pnlCounters" parent="splitPane2" prefHeight="141px" prefWidth="591px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+  </widget>
+  <widget name="pnlSaldoHistory" parent="tabbedPane" prefHeight="348px" prefWidth="595px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="История сальдо" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlOplata" parent="tabbedPane" prefHeight="348px" prefWidth="595px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Оплата" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlSaldoCur" parent="panel" prefHeight="76px" prefWidth="616px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <border borderTitleColor="#000000" title="Сальдо" titleJustification="0" type="TitledBorderDesignInfo">
+      <border type="LineBorderDesignInfo"/>
+    </border>
+    <constraints bottom="0px" height="76px" left="0px" right="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

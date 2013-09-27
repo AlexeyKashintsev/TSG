@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parGroup" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="dsGroups" Title="Группы" entityHeight="200" entityIconified="false" entityId="137496167811778" entityLocationX="132" entityLocationY="273" entityWidth="150" queryId="groups_query" tableName="" tableSchemaName=""/>
+  <entity Name="chars_by_group" Title="Характеристики группы" entityHeight="200" entityIconified="false" entityId="137496168237043" entityLocationX="390" entityLocationY="12" entityWidth="150" queryId="chars_by_group" tableName="" tableSchemaName=""/>
+  <entity Name="characteristics_types" Title="Характеристики типы" entityHeight="200" entityIconified="false" entityId="137496171186332" entityLocationX="567" entityLocationY="11" entityWidth="150" queryId="characteristics_types" tableName="" tableSchemaName=""/>
+  <entity Name="dsGroupByID" Title="Группа по ID" entityHeight="200" entityIconified="false" entityId="137496190835709" entityLocationX="190" entityLocationY="57" entityWidth="150" queryId="group_by_id" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="137496168237043" rightEntityParameterName="parGroup"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="137496190835709" rightEntityParameterName="group_id"/>
+</datamodel>

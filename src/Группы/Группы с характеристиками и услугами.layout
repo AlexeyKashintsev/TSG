@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="369px" prefWidth="728px" windowOpened="formWindowOpened">
+  <widget dividerLocation="250" leftComponent="pnlGroups" name="splitPane" parent="Form" prefHeight="369px" prefWidth="728px" rightComponent="tabbedPane" type="SplitDesignInfo">
+    <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlGroups" parent="splitPane" prefHeight="365px" prefWidth="248px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+  </widget>
+  <widget name="tabbedPane" parent="splitPane" prefHeight="365px" prefWidth="471px" type="TabsDesignInfo"/>
+  <widget name="pnlGroupChars" parent="tabbedPane" prefHeight="319px" prefWidth="450px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Характеристики" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlGroupServ" parent="tabbedPane" prefHeight="319px" prefWidth="450px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Услуги" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

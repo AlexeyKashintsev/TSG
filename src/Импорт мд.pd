@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel datamodelDbId="null">
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137726421970581" entityLocationX="252" entityLocationY="10" entityWidth="150" tableName="importnames"/>
+  <fieldsEntity entityHeight="228" entityIconified="false" entityId="137726421966546" entityLocationX="55" entityLocationY="9" entityWidth="150" tableName="impexceltablefields"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137726421970072" entityLocationX="252" entityLocationY="217" entityWidth="150" tableName="impfieldstypes"/>
+</datamodel>

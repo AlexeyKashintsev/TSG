@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="benefit_type" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="benefit_calc_formula" Title="Способы расчета льгот" entityHeight="200" entityIconified="false" entityId="137517552713857" entityLocationX="446" entityLocationY="23" entityWidth="150" queryId="benefit_calc_formula" tableName="" tableSchemaName=""/>
+  <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137520078984543" entityLocationX="73" entityLocationY="252" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
+  <entity Name="dsServices" Title="Льготы на услуги" entityHeight="200" entityIconified="false" entityId="137517552446249" entityLocationX="247" entityLocationY="15" entityWidth="150" queryId="Льготы_на_услуги" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="benefit_type" rightEntityId="137517552446249" rightEntityParameterName="benefit_type"/>
+</datamodel>

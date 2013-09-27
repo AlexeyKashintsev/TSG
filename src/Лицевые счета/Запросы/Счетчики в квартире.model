@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="flat_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="all_flats" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="16" typeName="BOOLEAN"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Счетчик" entityHeight="200" entityIconified="false" entityId="137495811224076" entityLocationX="433" entityLocationY="7" entityWidth="150" tableAlias="t" tableName="lc_counter" tableSchemaName=""/>
+  <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="137495811088124" entityLocationX="256" entityLocationY="7" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="flat_id" rightEntityFieldName="lc_id" rightEntityId="137495811088124"/>
+  <relation leftEntityFieldName="flat_serv_id" leftEntityId="137495811224076" rightEntityFieldName="lc_flat_services_id" rightEntityId="137495811088124"/>
+</datamodel>

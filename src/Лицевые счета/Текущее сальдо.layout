@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="48px" prefWidth="719px">
+  <widget name="label2" parent="Form" prefHeight="16px" prefWidth="68px" text="Конечное" type="LabelDesignInfo">
+    <constraints height="16px" left="436px" top="6px" type="MarginConstraintsDesignInfo" width="68px"/>
+  </widget>
+  <widget name="label13" parent="Form" prefHeight="16px" prefWidth="72px" text="Оплачено" type="LabelDesignInfo">
+    <constraints height="16px" left="348px" top="6px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget name="label12" parent="Form" prefHeight="16px" prefWidth="84px" text="Перерасчет" type="LabelDesignInfo">
+    <constraints height="16px" left="264px" top="6px" type="MarginConstraintsDesignInfo" width="84px"/>
+  </widget>
+  <widget name="label11" parent="Form" prefHeight="16px" prefWidth="72px" text="Льгота" type="LabelDesignInfo">
+    <constraints height="16px" left="180px" top="6px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget editable="false" name="mfSaldoEnd" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="137683959019508" fieldName="sal_end"/>
+    <constraints height="18px" left="436px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget editable="false" name="mfOplata" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="137683959019508" fieldName="sal_payments"/>
+    <constraints height="18px" left="348px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget editable="false" name="mfRecalc" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="137683959019508" fieldName="sal_recalc"/>
+    <constraints height="18px" left="264px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget editable="false" name="mfBenefit" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="137683959019508" fieldName="sal_benefit"/>
+    <constraints height="18px" left="180px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget editable="false" name="mfSaldoBeg" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="137683959019508" fieldName="sal_begin"/>
+    <constraints height="18px" left="12px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget editable="false" name="mfSaldo100" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="137683959019508" fieldName="sal_calc"/>
+    <constraints height="18px" left="96px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget name="label" parent="Form" prefHeight="16px" prefWidth="96px" text="Начальное" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="6px" type="MarginConstraintsDesignInfo" width="96px"/>
+  </widget>
+  <widget name="label1" parent="Form" prefHeight="16px" prefWidth="72px" text="Начислено" type="LabelDesignInfo">
+    <constraints height="16px" left="96px" top="6px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Временная ось" entityHeight="200" entityIconified="false" entityId="137535118645971" entityLocationX="202" entityLocationY="9" entityWidth="150" tableAlias="t1" tableName="per_date" tableSchemaName=""/>
+</datamodel>
