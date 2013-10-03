@@ -66,3 +66,7 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
         model.save();
     }
 }//GEN-LAST:event_formWindowClosing
+
+function btnSelectActionPerformed(evt) {//GEN-FIRST:event_btnSelectActionPerformed
+    close(dsServices.usl_services_id);
+}//GEN-LAST:event_btnSelectActionPerformed

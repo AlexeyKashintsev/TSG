@@ -48,6 +48,50 @@
 </foreignKey>
 </foreignKeys>
 </table>
+<table description="Состав импортов" name="IMPEXCELTABLEFIELDS">
+<columns>
+<column description="" isPk="true" javaType="java.math.BigDecimal" name="exceltablefields_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="Наименование импорта" isPk="false" javaType="java.math.BigDecimal" name="impfile" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="Тип поля" isPk="false" javaType="java.math.BigDecimal" name="impfieldtype" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="Порядок импорта поля" isPk="false" javaType="java.math.BigDecimal" name="impfieldnumber" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="Услуга" isPk="false" javaType="java.math.BigDecimal" name="serviceid" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="Номер ячейки в excel" isPk="false" javaType="java.math.BigDecimal" name="cellnumber" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.lang.String" name="unionwithprev" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
+<column description="Тип контакта" isPk="false" javaType="java.math.BigDecimal" name="contacttype" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.lang.Boolean" name="isrequired" nullable="true" precision="10" scale="0" signed="true" size="0" type="16" typeName="bool"/>
+<column description="Характеристика" isPk="false" javaType="java.math.BigDecimal" name="charid" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+</columns>
+<indexes>
+<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="exceltablefields_pk" unique="true">
+<indColumn ascending="true" name="exceltablefields_id" position="1"/>
+</index>
+</indexes>
+<primaryKey name="exceltablefields_pk">
+<pkColumn pkField="exceltablefields_id" pkName="exceltablefields_pk" pkSchema="public" pkTable="impexceltablefields"/>
+</primaryKey>
+<foreignKeys>
+<foreignKey name="fk_132948191242193">
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="impfile" fkName="fk_132948191242193" fkSchema="public" fkTable="impexceltablefields" fkUpdateRule="CASCADE" pkField="importnames_id" pkName="importnames_pk" pkSchema="public" pkTable="importnames"/>
+</foreignKey>
+<foreignKey name="fk_132948191504636">
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="impfieldtype" fkName="fk_132948191504636" fkSchema="public" fkTable="impexceltablefields" fkUpdateRule="CASCADE" pkField="impfieldstypes_id" pkName="impfieldstypes_pk" pkSchema="public" pkTable="impfieldstypes"/>
+</foreignKey>
+</foreignKeys>
+</table>
+<table description="Импорт из файлов" name="IMPORTNAMES">
+<columns>
+<column description="" isPk="true" javaType="java.math.BigDecimal" name="importnames_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="Наименование" isPk="false" javaType="java.lang.String" name="importname" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
+</columns>
+<indexes>
+<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="importnames_pk" unique="true">
+<indColumn ascending="true" name="importnames_id" position="1"/>
+</index>
+</indexes>
+<primaryKey name="importnames_pk">
+<pkColumn pkField="importnames_id" pkName="importnames_pk" pkSchema="public" pkTable="importnames"/>
+</primaryKey>
+</table>
 <table description="Счетчик" name="LC_COUNTER">
 <columns>
 <column description="" isPk="true" javaType="java.math.BigDecimal" name="lc_counter_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
@@ -66,6 +110,26 @@
 <foreignKeys>
 <foreignKey name="fk_137477978689421">
 <fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="flat_serv_id" fkName="fk_137477978689421" fkSchema="public" fkTable="lc_counter" fkUpdateRule="CASCADE" pkField="lc_flat_services_id" pkName="lc_flat_services_pk" pkSchema="public" pkTable="lc_flat_services"/>
+</foreignKey>
+</foreignKeys>
+</table>
+<table description="Типы полей для импорта" name="IMPFIELDSTYPES">
+<columns>
+<column description="" isPk="true" javaType="java.math.BigDecimal" name="impfieldstypes_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.lang.String" name="fieldtypename" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="parent" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+</columns>
+<indexes>
+<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="impfieldstypes_pk" unique="true">
+<indColumn ascending="true" name="impfieldstypes_id" position="1"/>
+</index>
+</indexes>
+<primaryKey name="impfieldstypes_pk">
+<pkColumn pkField="impfieldstypes_id" pkName="impfieldstypes_pk" pkSchema="public" pkTable="impfieldstypes"/>
+</primaryKey>
+<foreignKeys>
+<foreignKey name="fk_135090902172593">
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="parent" fkName="fk_135090902172593" fkSchema="public" fkTable="impfieldstypes" fkUpdateRule="CASCADE" pkField="impfieldstypes_id" pkName="impfieldstypes_pk" pkSchema="public" pkTable="impfieldstypes"/>
 </foreignKey>
 </foreignKeys>
 </table>
@@ -207,6 +271,7 @@
 <column description="" isPk="false" javaType="java.math.BigDecimal" name="grp_char_val" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
 <column description="" isPk="false" javaType="java.math.BigDecimal" name="grp_char_type" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
 <column description="" isPk="false" javaType="java.lang.Boolean" name="add_char_to_lc" nullable="true" precision="10" scale="0" signed="true" size="0" type="16" typeName="bool"/>
+<column description="" isPk="false" javaType="java.lang.Boolean" name="char_calc_by_lc" nullable="true" precision="10" scale="0" signed="true" size="0" type="16" typeName="bool"/>
 </columns>
 <indexes>
 <index clustered="false" fKeyName="" hashed="false" isPKey="true" name="grp_chars_pk" unique="true">
@@ -224,22 +289,6 @@
 <fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="grp_char_type" fkName="fk_137476957683827" fkSchema="public" fkTable="grp_chars" fkUpdateRule="CASCADE" pkField="char_types_id" pkName="char_types_pk" pkSchema="public" pkTable="char_types"/>
 </foreignKey>
 </foreignKeys>
-</table>
-<table description="Квартиры (Лицевые счета)" name="LC_FLAT">
-<columns>
-<column description="" isPk="true" javaType="java.math.BigDecimal" name="lc_flat_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
-<column description="ФИО квартиросъемщика" isPk="false" javaType="java.lang.String" name="lc_regto" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
-<column description="Номер квартиры" isPk="false" javaType="java.lang.String" name="lc_flatnumber" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
-<column description="Число зарегистрированных" isPk="false" javaType="java.math.BigDecimal" name="registered_count" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
-</columns>
-<indexes>
-<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="lc_flat_pk" unique="true">
-<indColumn ascending="true" name="lc_flat_id" position="1"/>
-</index>
-</indexes>
-<primaryKey name="lc_flat_pk">
-<pkColumn pkField="lc_flat_id" pkName="lc_flat_pk" pkSchema="public" pkTable="lc_flat"/>
-</primaryKey>
 </table>
 <table description="Квартиры в группах" name="GRP_LC_GROUP">
 <columns>
@@ -263,6 +312,22 @@
 <fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="group_id" fkName="fk_137503901587669" fkSchema="public" fkTable="grp_lc_group" fkUpdateRule="CASCADE" pkField="grp_groups_id" pkName="grp_groups_pk" pkSchema="public" pkTable="grp_groups"/>
 </foreignKey>
 </foreignKeys>
+</table>
+<table description="Квартиры (Лицевые счета)" name="LC_FLAT">
+<columns>
+<column description="" isPk="true" javaType="java.math.BigDecimal" name="lc_flat_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="ФИО квартиросъемщика" isPk="false" javaType="java.lang.String" name="lc_regto" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
+<column description="Номер квартиры" isPk="false" javaType="java.lang.String" name="lc_flatnumber" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
+<column description="Число зарегистрированных" isPk="false" javaType="java.math.BigDecimal" name="registered_count" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
+</columns>
+<indexes>
+<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="lc_flat_pk" unique="true">
+<indColumn ascending="true" name="lc_flat_id" position="1"/>
+</index>
+</indexes>
+<primaryKey name="lc_flat_pk">
+<pkColumn pkField="lc_flat_id" pkName="lc_flat_pk" pkSchema="public" pkTable="lc_flat"/>
+</primaryKey>
 </table>
 <table description="Льготные услуги" name="USL_BENEFIT">
 <columns>
@@ -383,6 +448,20 @@
 </foreignKey>
 </foreignKeys>
 </table>
+<table description="Виды льгот" name="USL_BENEFIT_TYPE">
+<columns>
+<column description="" isPk="true" javaType="java.math.BigDecimal" name="usl_benefit_type_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.lang.String" name="benefit_name" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
+</columns>
+<indexes>
+<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="usl_benefit_type_pk" unique="true">
+<indColumn ascending="true" name="usl_benefit_type_id" position="1"/>
+</index>
+</indexes>
+<primaryKey name="usl_benefit_type_pk">
+<pkColumn pkField="usl_benefit_type_id" pkName="usl_benefit_type_pk" pkSchema="public" pkTable="usl_benefit_type"/>
+</primaryKey>
+</table>
 <table description="Сальдо по квартире" name="PER_SALDO_FLAT">
 <columns>
 <column description="" isPk="true" javaType="java.math.BigDecimal" name="per_saldo_flat_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
@@ -414,20 +493,6 @@
 <fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="date_id" fkName="fk_137477658483817" fkSchema="public" fkTable="per_saldo_flat" fkUpdateRule="CASCADE" pkField="per_date_id" pkName="sal_date_pk" pkSchema="public" pkTable="per_date"/>
 </foreignKey>
 </foreignKeys>
-</table>
-<table description="Виды льгот" name="USL_BENEFIT_TYPE">
-<columns>
-<column description="" isPk="true" javaType="java.math.BigDecimal" name="usl_benefit_type_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
-<column description="" isPk="false" javaType="java.lang.String" name="benefit_name" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
-</columns>
-<indexes>
-<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="usl_benefit_type_pk" unique="true">
-<indColumn ascending="true" name="usl_benefit_type_id" position="1"/>
-</index>
-</indexes>
-<primaryKey name="usl_benefit_type_pk">
-<pkColumn pkField="usl_benefit_type_id" pkName="usl_benefit_type_pk" pkSchema="public" pkTable="usl_benefit_type"/>
-</primaryKey>
 </table>
 <table description="Характеристики типы" name="CHAR_TYPES">
 <columns>

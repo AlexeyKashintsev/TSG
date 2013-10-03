@@ -33,9 +33,11 @@ function colCalcTypeOnSelect(aEditor) {//GEN-FIRST:event_colCalcTypeOnSelect
     var fmSelectCalcType = new Form('fmCalcType');
     var res = null;
     fmSelectCalcType.isSelectForm = true;
-    fmSelectCalcType.showModal(function(aValue){
-        dsServices.calc_id = aValue;
-    });
+    fmSelectCalcType.showModal(
+        function(aValue){
+            dsServices.calc_id = aValue;
+        }
+    );
 }//GEN-LAST:event_colCalcTypeOnSelect
 
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
