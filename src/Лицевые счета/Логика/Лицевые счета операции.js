@@ -5,6 +5,14 @@
  * @public
  */
 
+/*
+ * Добавить новый лицевой счет
+ * @param {type} aLCRegTo
+ * @param {type} aLCNumber
+ * @param {type} aLCPeopleRegCount
+ * @param {type} aGroupID
+ * @returns {@exp;dsFlat@pro;lc_flat_id}
+ */
 function addNewLC(aLCRegTo, aLCNumber, aLCPeopleRegCount, aGroupID){
 //    dsFlat.requery();
     if (!parDateID) {
@@ -18,6 +26,13 @@ function addNewLC(aLCRegTo, aLCNumber, aLCPeopleRegCount, aGroupID){
     return dsFlat.lc_flat_id;
 }
 
+/*
+ * Добавить лицевой счет в квартиру
+ * @param {type} aFlatID
+ * @param {type} aGroupID
+ * @returns {undefined}
+ */
+
 function addFlat2Group(aFlatID, aGroupID){
     parGroupID = aGroupID;
     if (dsLCGrp.find(dsLCGrp.md.lc_id, aFlatID).length == 0){
@@ -29,8 +44,7 @@ function addFlat2Group(aFlatID, aGroupID){
     insertGroupCharsLC.execute();
     insertGroupCharsLC.beforeFirst();
     while (insertGroupCharsLC.next())
-        chars_flat.insert(chars_flat.md.lc_char_type, insertGroupCharsLC.grp_char_type,
-                          chars_flat.md.lc_id, aFlatID);
+        addCharToLC(aFlatID, insertGroupCharsLC.grp_char_type, null);
     
     insertGroupServicesLC.params.FlatID = aFlatID;
     insertGroupServicesLC.params.GroupID = aGroupID;
@@ -40,6 +54,28 @@ function addFlat2Group(aFlatID, aGroupID){
         addServiceToLC(aFlatID, insertGroupServicesLC.services_id,
                        insertGroupServicesLC.calc_by_counter, parDateID);
 }
+
+/*
+ * Добавить характеристику к квартире
+ * @param {type} aLC_ID
+ * @param {type} aCharID
+ * @param {type} aCharValue
+ * @returns {@exp;dsCharsFlat@pro;lc_chars_id}
+ */
+function addCharToLC(aLC_ID, aCharID, aCharValue){
+    dsCharsFlat.insert( dsCharsFlat.md.lc_id, aLC_ID,
+                        dsCharsFlat.md.lc_char_type, aCharID,
+                        dsCharsFlat.md.lc_char_val, aCharValue);
+    return dsCharsFlat.lc_chars_id;
+}
+
+/*
+ * Добавить услугу в квартиру
+ * @param {type} aFlatID
+ * @param {type} aServiceID
+ * @param {type} aCalcByCounter
+ * @param {type} aDateID
+ * @returns {@exp;services_by_flat@pro;lc_flat_services_id} */
 
 function addServiceToLC(aFlatID, aServiceID, aCalcByCounter, aDateID){
     services_by_flat.insert(services_by_flat.md.services_id, aServiceID,
@@ -52,12 +88,29 @@ function addServiceToLC(aFlatID, aServiceID, aCalcByCounter, aDateID){
     return services_by_flat.lc_flat_services_id;
 }
 
+/*
+ * Добавить счетчик в квартиру
+ * @param {type} aFlatService
+ * @returns {@exp;dsCountersByFlat@pro;lc_counter_id} 
+ * 
+ */
 function addCounterToFlat(aFlatService){
     dsCountersByFlat.insert(dsCountersByFlat.md.flat_serv_id, aFlatService,
                             dsCountersByFlat.md.counter_active, true);
     return dsCountersByFlat.lc_counter_id;
 }
 
+/*
+ * Добавить значение счетчика
+ * @param {type} aCounterID
+ * @param {type} aDateID
+ * @param {type} aBegValue
+ * @param {type} aEndValue
+ * @returns {undefined}
+ * to do:
+ * Дописать код поиска текущего значения по квартире и дате и если найдено - 
+ * модифицировать его, иначе создать новую запись
+ */
 function insertCounterValue(aCounterID, aDateID, aBegValue, aEndValue){
     dsCountersValues.insert(dsCountersValues.md.counter_id, aCounterID,
                             dsCountersValues.md.date_id, aDateID,
@@ -65,6 +118,10 @@ function insertCounterValue(aCounterID, aDateID, aBegValue, aEndValue){
                             dsCountersValues.md.end_val, aEndValue);
 }
 
-function returnAny(abc){
-    return abc;
+/*
+ * Удаление лицевого счета
+ * to do: subj
+ */
+function deleteLC(aLC_ID){
+    
 }

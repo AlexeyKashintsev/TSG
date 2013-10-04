@@ -23,20 +23,10 @@ var errorRecAdded = false;
 var errCount = 0;
 
 var lockRowRead = new Lock();
-var lockAddrProcess = new Lock();
-var lockManProcess = new Lock();
-var lockStatuses = new Lock();
 var lockErrorWrite = new Lock();
 var lockReadNextRow = new Lock();
 var threadsCount = 0;
 
-var tmRowRead = 0;
-var tmAddrProcess = 0;
-var tmManProcess = 0;
-var tmStatProcess = 0;
-var tmErrorWrite = 0;
-var tmReadNextRow = 0;
-var tmSaveData = 0;
 var maxThreadCount = 0;
 var multithreads = true;
 var stop = false;
@@ -44,10 +34,6 @@ var stop = false;
 var wb = null;
 var evalutor = null;
 var saveThreads = 0;
-var importModuleAddresses = null;//new Module("131891445431191");
-var importModulePeople = null;//new Module("131969780390382");
-var importModuleStatus = null;//new Module("Статус_ответственного_импорт");
-var errorRecordModule = null;//new Module('Обработка_ошибочных_записей');
 
 
 //*************************************************************Служебыне функции
@@ -93,61 +79,37 @@ function saveAll(aFileName){
         catch (e) {
             addErrorLog("Ошибка сохранения данных "+aFileName+" - "+e);
         }
-        var eT = new Date();
-        tmSaveData = tmSaveData + (eT - sT);
-        saveThreads--;    
+        var eT = new Date(); 
 }
 //*****************************************************************Инициализация  
-/*Структура ImportFields:
- <
- *impType
- *PollPlaceField
- *HousesInField
- *AddressFields: array
- *AddressInOneField
- *FirstName
- *MiddleName
- *SurName
- *FIOInString
- *DateOfBirth
- *YearOfBirth
- *MonthOfBirth
- *DayOfBirth
- *Sex
- *ContactFields: array
- *StatFields: array : CellNumber, StatPar
- *StatAutoAdd: array
- *isResp
- *statGroup
- *status
- *position
- *statContact
- *RespFIO
- *RespStatus
- >
- **/
-function ImportFields(anImportType){
-    parImportType = anImportType;
-    this.impType = dsImportType.importfiletype;
+
+function ImportFields(){
     this.rowLength = dsRowLength.rowLength;
-    //Люди и статистика
-    if (this.impType==2){
-        var FirstName = dsExcelFields.find(dsExcelFields.md.impfieldtype, 402);   // Имя
-
-        this.FirstName = FirstName==''?null:FirstName[0].cellnumber-1;
-        //Статистика      
-        var sIa = dsExcelFields.find(dsExcelFields.md.impfieldtype, 301);//Импортируемый параметр
-        var sAa = dsExcelFields.find(dsExcelFields.md.impfieldtype, 302);//Автоматически добавляемый параметр
-
-        this.StatFields = new Array();
-        this.StatAutoAdd = new Array();
-        for (i=0;i<sIa.length;i++){
-            this.StatFields[i] = new (function(){   this.CellNumber = sIa[i].cellnumber-1;
-                                                    this.StatPar = sIa[i].statpar;
-                                                    this.StatParType = dsStatParam.find(dsStatParam.md.statparam_id, sIa[i].statpar)[0].statparamtype;
-                                                    if (this.StatParType == 133047511510959) isDateAr[sIa[i].cellnumber-1] = true;
+    var LC_FIO = dsExcelFields.find(dsExcelFields.md.impfieldtype, null);
+    this.LC_FIO = LC_FIO==''?null:LC_FIO[0].cellnumber-1;
+    var LC_NUMBER = dsExcelFields.find(dsExcelFields.md.impfieldtype, null);
+    this.LC_NUMBER = LC_NUMBER==''?null:LC_NUMBER[0].cellnumber-1;
+    var LC_REG_NUM = dsExcelFields.find(dsExcelFields.md.impfieldtype, null);
+    this.LC_REG_NUM = LC_REG_NUM==''?null:LC_REG_NUM[0].cellnumber-1;
+    var SALDO_BEG = dsExcelFields.find(dsExcelFields.md.impfieldtype, null);
+    this.SALDO_BEG = SALDO_BEG==''?null:SALDO_BEG[0].cellnumber-1;
+    
+    this.LC_CHARS = new Array();
+    this.COUNTERS = new Array();
+    
+    var LC_CHARS = dsExcelFields.find(dsExcelFields.md.impfieldtype, null);
+    for (i=0;i<LC_CHARS.length;i++){
+            this.StatFields[i] = new (function(){   this.CellNumber = LC_CHARS[i].cellnumber-1;
+                                                    this.CHAR_ID = LC_CHARS[i].???;
                                      });
-        }
+    }
+    
+    var COUNTERS = dsExcelFields.find(dsExcelFields.md.impfieldtype, null);
+    for (i=0;i<COUNTERS.length;i++){
+            this.StatFields[i] = new (function(){   this.CellNumber = COUNTERS[i].cellnumber-1;
+                                                    this.USLUGA_ID = COUNTERS[i].???;
+                                     });
+    }
 }
 
 function initializeImport(anImportType, aParentAddress, aStatInputType, aParentStatus, aFiles, aLogOut, aProgress, aFileCount, aErFileName){
@@ -160,17 +122,19 @@ function initializeImport(anImportType, aParentAddress, aStatInputType, aParentS
         model.requery();
         addLog('Инициализация импорта');
         try{
-            //88888888888888888888888888импорт здесь
+            //инициализация модулей
         }
         catch (e) {alert('!'+e)}
         impFields = new ImportFields(anImportType);
         progressInd = aProgress;
         filesCounter = aFileCount;
         errorRecAdded = false;
-        if (impFields.impType == 2){
+      /* отбаботка ошибочных записей
+       *   if (impFields.impType == 2){
             doWriteErrors = aErFileName!=null?true:false;
             errorRecordModule.addSheet('Ошибки Лист1');
-        }
+        }*/
+        
         
         var path = aFiles.path;
         if (aFiles.isDirectory()){
@@ -212,14 +176,9 @@ function importFromFiles(aFiles){
 }
 
 function importFromSingleFile(aFileName){
-    var newSfCreated = false;
     addLog("\nИмпорт из файла: "+aFileName);  
     try{
         errCount = 0;
-        if (!newSfCreated) {
-            setSourceRecord(aFileName);
-            newSfCreated = true;
-        }
         var fis = new java.io.FileInputStream(aFileName);
         wb = new org.apache.poi.hssf.usermodel.HSSFWorkbook(fis);
         evaluator = wb.getCreationHelper().createFormulaEvaluator();
@@ -266,7 +225,7 @@ function processRow(aSheet, aRowNum, aSourceRecord, aStatEnterType, aSheetNum){
             if (showDebugLog) addLog('\nСторока №'+aRowNum+':');
             if (!stop){
             if (rowAr.isOk){                
-                    /********Импорт здесь**********/
+                    readRow(rowAr);
                 }
             }
             
@@ -278,7 +237,9 @@ function processRow(aSheet, aRowNum, aSourceRecord, aStatEnterType, aSheetNum){
     }).invokeBackground();
 }
 
-function readRow(){}
+function readRow(aRowAr){
+    
+}
 
 //****************************************************************Импорт данных******************************************************
 //****************************************************************Валидация полей

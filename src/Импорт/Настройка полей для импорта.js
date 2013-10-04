@@ -3,14 +3,6 @@
  * @name impFields
  * @author ak
  */
-/*
- * Типы адресных объектов.js
- *
- * Created on 19.10.2011, 11:00:50
- */
-var FORM_SELECT_STAT_PAR = "131909382512836";
-var FORM_FIELD_TYPE = "a135247449310218";
-
 var saveMessage = 'Данные изменены. Сохранить изменения?';
 var requeryMessage = 'Изменения данных будут утеряны, продолжить?'
 var okFieldMessage = 'Поля указаны правильно';
@@ -97,24 +89,6 @@ function btnDublicateActionPerformed(evt) {//GEN-FIRST:event_btnDublicateActionP
 }//GEN-LAST:event_btnDublicateActionPerformed
 
 //выбор параметра статистики на первой закладке
-function impfieldtypeSelectValue(aEditor) {//GEN-FIRST:event_impfieldtypeSelectValue
-    
-    if (parImport!=null&&dsImportVar4Change.importfiletype != 0){
-        if (fmFieldType==null) fmFieldType = new Form(FORM_FIELD_TYPE);
-        fmFieldType.isSelectForm = true;
-        fmFieldType.parImportType = dsImportVar4Change.importfiletype;
-        fmFieldType.showModal(function(aValue){ 
-            if (aValue != null&&aValue != undefined){  
-                if(aValue == 302) return; //не пропускаем автоматически добавляемые параметры                
-                dsExFields.statpar = null;
-                aEditor.value = aValue;
-            }
-        });        
-    }
-    else alert('Не выбран тип импорта!')
-    setSaveBtnEnabled();
-}//GEN-LAST:event_impfieldtypeSelectValue
-
 function jButton1ActionPerformed(evt) {//GEN-FIRST:event_jButton1ActionPerformed
     if (!dsExFields.empty)
         dsExFields.deleteRow();
@@ -122,23 +96,9 @@ function jButton1ActionPerformed(evt) {//GEN-FIRST:event_jButton1ActionPerformed
 }//GEN-LAST:event_jButton1ActionPerformed
 
 function jButtonActionPerformed(evt) {//GEN-FIRST:event_jButtonActionPerformed
-    if (parImport!=null&&dsImportVar4Change.importfiletype != 0){
-        if (fmFieldType==null) fmFieldType = new Form(FORM_FIELD_TYPE);
-        fmFieldType.isSelectForm = true;
-        fmFieldType.parImportType = dsImportVar4Change.importfiletype;
-        fmFieldType.showModal(function(aValue){ 
-            if (aValue != null&&aValue != undefined){
-                if(aValue == 302) return; //не пропускаем автоматически добавляемые параметры
-                dsExFields.insert(dsExFields.md.impfile, parImport, dsExFields.md.impfieldtype, aValue);
-            }
-        });        
-    }
-    else alert('Не выбран тип импорта!')
+    if (parImport!=null)
+        dsExFields.insert(dsExFields.md.impfile, parImport);
     setSaveBtnEnabled();
 }//GEN-LAST:event_jButtonActionPerformed
 
 //выбор параметра старистики на второй закладке
-function dsExFieldsChanged(evt) {//GEN-FIRST:event_dsExFieldsChanged
-	// TODO Добавьте здесь свой код:       
-            setSaveBtnEnabled();               
-}//GEN-LAST:event_dsExFieldsChanged
