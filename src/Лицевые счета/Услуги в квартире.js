@@ -4,13 +4,15 @@
  * @name fmServicesByFlat
  */
 
-var isSelectForm = false;
+var isSelectForm = true;
 var isEditable = true;
 var canSetEdit = false;
 
 function setEdit(){
     modelGrid.editable = btnAdd.enabled = 
             btnDel.enabled = btnSave.enabled = isEditable;    
+tbSetEdit.visible = canSetEdit;
+    tbSetEdit.selected = isEditable;
 }
 
 
@@ -40,8 +42,20 @@ function colCalcTypeOnSelect(aEditor) {//GEN-FIRST:event_colCalcTypeOnSelect
     );
 }//GEN-LAST:event_colCalcTypeOnSelect
 
-function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
-    dsServices.insert();
+function btnAddActionPerformed() {//GEN-FIRST:event_btnAddActionPerformed
+    services_by_flat.insert();
+    var fmSelectServicesId = new Form('fmServices');
+    var res = null;
+    fmSelectServicesId.isSelectForm = true;
+    fmSelectServicesId.showModal(
+        function(aValue){
+           services_by_flat.services_id = aValue;
+             })  
+        
+    
+            
+        ////dsServices.insert(dsServices.md.services_id, *ServIDGet*,
+                //      dsServices.md.lc_id, parFlatID);
 }//GEN-LAST:event_btnAddActionPerformed
 
 function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed

@@ -4,7 +4,7 @@
  * @name fmServices
  */
 
-var isSelectForm = false;
+var isSelectForm = true;
 var isEditable = true;
 var canSetEdit = false;
 
@@ -53,6 +53,17 @@ function colCalcTypeOnSelect(aEditor) {//GEN-FIRST:event_colCalcTypeOnSelect
     });
 }//GEN-LAST:event_colCalcTypeOnSelect
 
+function colServicesOnInsert(aEditor){
+    var fmSelectServicesId = new Form('fmServices');
+    var res = null;
+    fmSelectServicesId.isSelectForm = true;
+    fmSelectServicesId.showModal(
+        function(aValue){
+           services_by_flat.services_id = aValue;           
+        })    
+    
+}
+
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
     dsServices.insert();
 }//GEN-LAST:event_btnAddActionPerformed
@@ -68,5 +79,5 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
 }//GEN-LAST:event_formWindowClosing
 
 function btnSelectActionPerformed(evt) {//GEN-FIRST:event_btnSelectActionPerformed
-    close(dsServices.usl_services_id);
+        close(dsServices.usl_services_id);
 }//GEN-LAST:event_btnSelectActionPerformed

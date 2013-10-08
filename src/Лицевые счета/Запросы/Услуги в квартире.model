@@ -4,6 +4,6 @@
     <parameter description="" name="all_flats" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="16" typeName="BOOLEAN"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="137495792002073" entityLocationX="210" entityLocationY="24" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
+  <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="137495792002073" entityLocationX="210" entityLocationY="23" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="flat_id" rightEntityFieldName="lc_id" rightEntityId="137495792002073"/>
 </datamodel>

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><context>
   <run/>
+<<<<<<< Updated upstream
   <dbSettings name="" password="white321" url="jdbc:postgresql://localhost:5432/TSG" user="Alexey"/>
+=======
+  <dbSettings name="" password="55521855" schema="public" url="jdbc:postgresql://localhost:5432/" user="postgres"/>
+>>>>>>> Stashed changes
 </context>
