@@ -16,20 +16,12 @@
     </rowsColumnsDesignInfo>
     <treeDesignInfo/>
     <column name="colService" title="Услуга">
-<<<<<<< Updated upstream
-      <datamodelElement entityId="137513141035797" fieldName="services_id"/>
-      <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137520096845259" fieldName="usl_name"/>
-        <valueField entityId="137520096845259" fieldName="usl_services_id"/>
-      </controlInfo>
-=======
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137520096845259" fieldName="usl_name"/>
         <valueField entityId="137520096845259" fieldName="usl_services_id"/>
       </controlInfo>
       <columnsDisplayField/>
       <datamodelElement entityId="137513141035797" fieldName="services_id"/>
->>>>>>> Stashed changes
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -47,11 +39,8 @@
         <displayField entityId="137520096845259" fieldName="calc_name"/>
         <valueField entityId="137520096845259" fieldName="usl_services_id"/>
       </controlInfo>
-<<<<<<< Updated upstream
-=======
       <columnsDisplayField/>
       <datamodelElement entityId="137513141035797" fieldName="services_id"/>
->>>>>>> Stashed changes
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -64,11 +53,8 @@
       </headerStyle>
     </column>
     <column name="column" title="Активна" width="15">
-<<<<<<< Updated upstream
-=======
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDisplayField/>
->>>>>>> Stashed changes
       <datamodelElement entityId="137513141035797" fieldName="fs_active"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <cellDesignInfo>

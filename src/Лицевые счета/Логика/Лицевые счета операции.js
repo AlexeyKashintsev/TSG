@@ -62,12 +62,19 @@ function addFlat2Group(aFlatID, aGroupID){
  * @param {type} aCharID
  * @param {type} aCharValue
  * @returns {@exp;dsCharsFlat@pro;lc_chars_id}
+ * todo: переделать под асинхронную модель, добавить поиск характеристики
  */
 function addCharToLC(aLC_ID, aCharID, aCharValue){
-    dsCharsFlat.insert( dsCharsFlat.md.lc_id, aLC_ID,
-                        dsCharsFlat.md.lc_char_type, aCharID,
-                        dsCharsFlat.md.lc_char_val, aCharValue);
-    return dsCharsFlat.lc_chars_id;
+    dsCharsFlat.params.flat_id = aLC_ID;
+    dsCharsFlat.requery(function(){
+        var foundedChars = dsCharsFlat.find(dsCharsFlat.md.lc_char_type, aCharID);
+        if (foundedChars.length = 0){
+            dsCharsFlat.insert( dsCharsFlat.md.lc_id, aLC_ID,
+                                dsCharsFlat.md.lc_char_type, aCharID,
+                                dsCharsFlat.md.lc_char_val, aCharValue);
+            return dsCharsFlat.lc_chars_id;}
+        else return foundedChars[0].lc_chars_id;
+    }
 }
 
 /*
@@ -94,7 +101,6 @@ function addServiceToLC(aFlatID, aServiceID, aCalcByCounter, aDateID){
  * Добавить счетчик в квартиру
  * @param {type} aFlatService
  * @returns {@exp;dsCountersByFlat@pro;lc_counter_id} 
- * 
  */
 function addCounterToFlat(aFlatService){
     dsCountersByFlat.insert(dsCountersByFlat.md.flat_serv_id, aFlatService,
