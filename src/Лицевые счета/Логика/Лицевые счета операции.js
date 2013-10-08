@@ -31,6 +31,7 @@ function addNewLC(aLCRegTo, aLCNumber, aLCPeopleRegCount, aGroupID){
  * @param {type} aFlatID
  * @param {type} aGroupID
  * @returns {undefined}
+ * todo: переделать под асинхронную модель
  */
 
 function addFlat2Group(aFlatID, aGroupID){
@@ -75,7 +76,8 @@ function addCharToLC(aLC_ID, aCharID, aCharValue){
  * @param {type} aServiceID
  * @param {type} aCalcByCounter
  * @param {type} aDateID
- * @returns {@exp;services_by_flat@pro;lc_flat_services_id} */
+ * @returns {@exp;services_by_flat@pro;lc_flat_services_id}
+ * todo: переделать под асинхронную модель, добавить поиск услуги */
 
 function addServiceToLC(aFlatID, aServiceID, aCalcByCounter, aDateID){
     services_by_flat.insert(services_by_flat.md.services_id, aServiceID,
@@ -116,6 +118,7 @@ function insertCounterValue(aCounterID, aDateID, aBegValue, aEndValue){
                             dsCountersValues.md.date_id, aDateID,
                             dsCountersValues.md.beg_val, aBegValue,
                             dsCountersValues.md.end_val, aEndValue);
+    
 }
 
 /*

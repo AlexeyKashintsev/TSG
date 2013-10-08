@@ -3,16 +3,10 @@
  * @author Алексей
  * @name Импорт
  */
-var MAX_ERRORS_PER_LIST = 300;
+var MAX_ERRORS_PER_LIST = 3;
 
-var logOutTextField = null, progressInd = null, filesCounter = null, FileNameOut = null,
-    doCreateNewAddresses = true;
+var logOutTextField = null, progressInd = null, filesCounter = null, FileNameOut = null;
     
-var ParentAddress = null;
-var ParentStatus = null;
-var StatEnterType = null;
-var sourceFile = null;
-var sourceRecord = null;
 var stop = false;
 var pause = false;
 var impFields = null;
@@ -28,13 +22,14 @@ var lockReadNextRow = new Lock();
 var threadsCount = 0;
 
 var maxThreadCount = 0;
-var multithreads = true;
+var multithreads = false;
 var stop = false;
 
 var wb = null;
 var evalutor = null;
 var saveThreads = 0;
 
+var modLC = new moduleLC();
 
 //*************************************************************Служебыне функции
 function addLog(aMsg){
@@ -73,7 +68,7 @@ function saveAll(aFileName){
         var sT = new Date();
         try{
             addLog("Сохранение в БД для файла: "+aFileName);
-            model.save();
+            modLC.model.save();
             addLog("Сохранение в БД для файла: "+aFileName+ " завершено");
         }
         catch (e) {
@@ -82,38 +77,53 @@ function saveAll(aFileName){
         var eT = new Date(); 
 }
 //*****************************************************************Инициализация  
-
+/* LC_FIO, 
+ * LC_NUMBER,
+ * LC_REG_NUM,
+ * SALDO_BEG,
+ * LC_CHARS(array CellNumber, CHAR_ID),
+ * COUNTERS(array CellNumber, SERVICE_ID)
+ * BINEFICIARIES(array CellNumber, BENEFIT_ID)
+ * @returns {ImportFields}
+ */
 function ImportFields(){
     this.rowLength = dsRowLength.rowLength;
-    var LC_FIO = dsExcelFields.find(dsExcelFields.md.impfieldtype, null);
+    var LC_FIO = dsExcelFields.find(dsExcelFields.md.impfieldtype, 1);
     this.LC_FIO = LC_FIO==''?null:LC_FIO[0].cellnumber-1;
-    var LC_NUMBER = dsExcelFields.find(dsExcelFields.md.impfieldtype, null);
+    var LC_NUMBER = dsExcelFields.find(dsExcelFields.md.impfieldtype, 3);
     this.LC_NUMBER = LC_NUMBER==''?null:LC_NUMBER[0].cellnumber-1;
-    var LC_REG_NUM = dsExcelFields.find(dsExcelFields.md.impfieldtype, null);
+    var LC_REG_NUM = dsExcelFields.find(dsExcelFields.md.impfieldtype, 2);
     this.LC_REG_NUM = LC_REG_NUM==''?null:LC_REG_NUM[0].cellnumber-1;
-    var SALDO_BEG = dsExcelFields.find(dsExcelFields.md.impfieldtype, null);
+    var SALDO_BEG = dsExcelFields.find(dsExcelFields.md.impfieldtype, 6);
     this.SALDO_BEG = SALDO_BEG==''?null:SALDO_BEG[0].cellnumber-1;
     
     this.LC_CHARS = new Array();
     this.COUNTERS = new Array();
     
-    var LC_CHARS = dsExcelFields.find(dsExcelFields.md.impfieldtype, null);
-    for (i=0;i<LC_CHARS.length;i++){
-            this.StatFields[i] = new (function(){   this.CellNumber = LC_CHARS[i].cellnumber-1;
-                                                    this.CHAR_ID = LC_CHARS[i].???;
+    var LC_CHARS = dsExcelFields.find(dsExcelFields.md.impfieldtype, 4);
+    for (var i=0;i<LC_CHARS.length;i++){
+            this.LC_CHARS[i] = new (function(){ this.CellNumber = LC_CHARS[i].cellnumber-1;
+                                                this.CHAR_ID = LC_CHARS[i].charid;
                                      });
     }
     
-    var COUNTERS = dsExcelFields.find(dsExcelFields.md.impfieldtype, null);
+    var COUNTERS = dsExcelFields.find(dsExcelFields.md.impfieldtype, 5);
     for (i=0;i<COUNTERS.length;i++){
-            this.StatFields[i] = new (function(){   this.CellNumber = COUNTERS[i].cellnumber-1;
-                                                    this.USLUGA_ID = COUNTERS[i].???;
+            this.COUNTERS[i] = new (function(){   this.CellNumber = COUNTERS[i].cellnumber-1;
+                                                  this.SERVICE_ID = COUNTERS[i].serviceid;
+                                     });
+    }
+    
+    var BINEFICIARIES = dsExcelFields.find(dsExcelFields.md.impfieldtype, 7);
+    for (i=0;i<COUNTERS.length;i++){
+            this.COUNTERS[i] = new (function(){   this.CellNumber = COUNTERS[i].cellnumber-1;
+                                                  this.BENEFIT_ID = COUNTERS[i].benefit_id;
                                      });
     }
 }
 
-function initializeImport(anImportType, aParentAddress, aStatInputType, aParentStatus, aFiles, aLogOut, aProgress, aFileCount, aErFileName){
-    if(anImportType==null||aParentAddress==null||aFiles==null)
+function initializeImport(anImportType, aGroup, aFiles, aLogOut, aProgress, aFileCount, aErFileName){
+    if(anImportType==null||aGroup==null||aFiles==null)
         return "Error null parameter";
     logOutTextField = aLogOut;
     if (logOutTextField!=null)
@@ -125,6 +135,7 @@ function initializeImport(anImportType, aParentAddress, aStatInputType, aParentS
             //инициализация модулей
         }
         catch (e) {alert('!'+e)}
+        parImportType = anImportType;
         impFields = new ImportFields(anImportType);
         progressInd = aProgress;
         filesCounter = aFileCount;
@@ -139,12 +150,12 @@ function initializeImport(anImportType, aParentAddress, aStatInputType, aParentS
         var path = aFiles.path;
         if (aFiles.isDirectory()){
             addLog('\nИмпорт файлов из директории: '+path);
-            importFromFiles(aFiles)
+            importFromFiles(aFiles, aGroup)
         }
         else {
             addLog('\nИмпорт одного файла');
             setProcessedCount( 1, 1, path);
-            importFromSingleFile(path);
+            importFromSingleFile(path, aGroup);
         }
         if (errorRecAdded) {
             addLog("\nСохранение ошибок в файл...");
@@ -162,7 +173,7 @@ function initializeImport(anImportType, aParentAddress, aStatInputType, aParentS
     return "ok";
 }
 
-function importFromFiles(aFiles){
+function importFromFiles(aFiles, aGroup){
     var path = aFiles.path;
     var files = new java.io.File(aFiles).list();
     var filesCount = files.length;
@@ -170,12 +181,12 @@ function importFromFiles(aFiles){
     for (var i=0; i<filesCount&&!stop; i++){
         if (files[i]!='.DC-Store'){
             setProcessedCount(i+1, filesCount, path + "\/" + files[i]);
-            importFromSingleFile(path + "\/" + files[i]);
+            importFromSingleFile(path + "\/" + files[i], aGroup);
         }
     }
 }
 
-function importFromSingleFile(aFileName){
+function importFromSingleFile(aFileName, aGroup){
     addLog("\nИмпорт из файла: "+aFileName);  
     try{
         errCount = 0;
@@ -184,7 +195,7 @@ function importFromSingleFile(aFileName){
         evaluator = wb.getCreationHelper().createFormulaEvaluator();
         var startSheet = 0;
         for (var k = startSheet; k < wb.getNumberOfSheets()&&!stop; k++){
-            processSheet(wb.getSheetAt(k), sourceRecord, StatEnterType, k);
+            processSheet(wb.getSheetAt(k), k, aGroup);
         }
     }
     catch (e){
@@ -203,29 +214,29 @@ function importFromSingleFile(aFileName){
     return '';
 }
            
-function processSheet(aSheet, aSourceRecord, aStatEnterType, aSheetNum){
+function processSheet(aSheet, aSheetNum, aGroup){
     var rows = aSheet.getPhysicalNumberOfRows();
     var robot = new java.awt.Robot();
     var readNext = true;
     (function(){progressInd.maximum = rows-1;}).invokeAndWait();
     for (var rowNum = 0; (rowNum < rows)&&(errCount < MAX_ERRORS_PER_LIST)&&!stop; rowNum++) {
-        processRow(aSheet, rowNum, aSourceRecord, aStatEnterType, aSheetNum);
+        processRow(aSheet, rowNum, aSheetNum, aGroup);
         while (!multithreads&&threadsCount>0) robot.delay(10);
         if (stop) break;
     }
     while (threadsCount>0&&!stop) robot.delay(500);
 }
 
-function processRow(aSheet, aRowNum, aSourceRecord, aStatEnterType, aSheetNum){
+function processRow(aSheet, aRowNum, aSheetNum, aGroup){
     threadsCount++;
     if (threadsCount > maxThreadCount) maxThreadCount=threadsCount;
     if (!stop) (function(){
         try {
-            var rowAr = readSheetRow(aSheet, aRowNum, aSourceRecord, aStatEnterType, aSheetNum);
+            var rowAr = readSheetRow(aSheet, aRowNum, aSheetNum);
             if (showDebugLog) addLog('\nСторока №'+aRowNum+':');
             if (!stop){
             if (rowAr.isOk){                
-                    readRow(rowAr);
+                    readRow(rowAr, aGroup);
                 }
             }
             
@@ -237,18 +248,25 @@ function processRow(aSheet, aRowNum, aSourceRecord, aStatEnterType, aSheetNum){
     }).invokeBackground();
 }
 
-function readRow(aRowAr){
-    
+/* LC_FIO, 
+ * LC_NUMBER,
+ * LC_REG_NUM,
+ * SALDO_BEG,
+ * LC_CHARS(array CellNumber, CHAR_ID),
+ * COUNTERS(array CellNumber, SERVICE_ID)
+ * BINEFICIARIES(array CellNumber, BENEFIT_ID)*/
+
+function readRow(aRowAr, aGroup){
+    var FIO = aRowAr.cells[impFields.LC_FIO];
+    var LC_NUM = aRowAr.cells[impFields.LC_NUMBER];
+    var REG_CNT = aRowAr.cells[impFields.LC_REG_NUM];
+    modLC.addNewLC(FIO, LC_NUM, REG_CNT, aGroup);
 }
 
 //****************************************************************Импорт данных******************************************************
 //****************************************************************Валидация полей
 function checkRow(aRowAr){
-    var res = false;
-
-            res = true;
-    if (res) res = checkRequiredFields(aRowAr);
-    return res;
+    return checkRequiredFields(aRowAr);;
 }
 
 function checkRequiredFields(aRowAr){
@@ -269,7 +287,7 @@ function checkRequiredFields(aRowAr){
 /* Читет и валидирует строку
  * 
  */
-function readSheetRow(aSheet, aRowNum, aSourceRecord, aStatEnterType, aSheetNum){
+function readSheetRow(aSheet, aRowNum, aSheetNum){
     lockRowRead.lock();
     if(stop){
         lockRowRead.unlock();
@@ -282,28 +300,25 @@ function readSheetRow(aSheet, aRowNum, aSourceRecord, aStatEnterType, aSheetNum)
         var impOk = true;
         var db = null;
         for (var i=0; i<impFields.rowLength; i++){
-            rowAr[i] = getCellValueByField(curRow, i, impFields.isDateAr[i]);
+            rowAr[i] = getCellValueByField(curRow, i, false);
         }
-    var res = new function(){
+        var res = new function(){
             aRowNum++
             this.cells = rowAr;
             this.rowLength = impFields.rowLength;
-            this.impType = impFields.impType;
-            this.sourceRecord = aSourceRecord;
-            this.StatEnterType = aStatEnterType;
-            this.dateOfBirth = db;
             this.isOk = impOk;
             this.rowNum = aRowNum;
-            this.address = null;
-            this.pollPlace = null;
-            this.tempManId = null;
             this.sheetNum = aSheetNum;
         }
     }
     catch(e) {
         addErrorLog('\nСтрока '+ aRowAr.rowNum + '. Критическая ошибка чтения 448.\n'+e)
-        impOk = false;
+        res = new function(){
+            this.isOk = false;
+        }
     }
+    lockRowRead.unlock();
+    return res;
 }
 
 function getCellValueByField(row, cellNumber, isDateValue){

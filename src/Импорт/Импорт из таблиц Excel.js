@@ -22,8 +22,7 @@ function setSaveBtnEnabled(){
 }
 
 function checkImportReadiness(){
-    buttonStartImport.enabled = (selectedFile!=null&&parParentAddress!=null&&parImport!=null
-        &&(dsImportVariants4Change.importfiletype==1||parStatInputType!=null));
+    buttonStartImport.enabled = (selectedFile!=null&&parImport!=null&&parGroup!=null)
 }
 
 function selectStatPar(){
@@ -95,9 +94,9 @@ function buttonStartImportActionPerformed(evt) {//GEN-FIRST:event_buttonStartImp
     if (impmod==null) impmod = new Module(IMPORT_MODULE);
     (function (){
         impmod.stop = false;
-        var er = impmod.initializeImport(parImport, parParentAddress,
-                parStatInputType, parStatus, selectedFile, LogOutText,
-                jProgressBar, labelFileCounter, errorFile);
+        var er = impmod.initializeImport(parImport,
+                parGroup, selectedFile, LogOutText,
+                jProgressBar, labelFileCounter);
         if (er!=null)
             alert(er, er=="ok"?"Импорт завершен":"Ошибка импорта")
     }).invokeBackground();
@@ -118,7 +117,6 @@ function button5ActionPerformed(evt) {//GEN-FIRST:event_button5ActionPerformed
         }        
 }//GEN-LAST:event_button5ActionPerformed
 
-function jButtonActionPerformed(evt) {//GEN-FIRST:event_jButtonActionPerformed
-    if (adrfm==null) adrfm = new Form(FORM_ADDRESS_SELECT);
-    checkImportReadiness();
-}//GEN-LAST:event_jButtonActionPerformed
+function dbcImportType1SelectValue(aEditor) {//GEN-FIRST:event_dbcImportType1SelectValue
+	// TODO Добавьте свой код:
+}//GEN-LAST:event_dbcImportType1SelectValue
