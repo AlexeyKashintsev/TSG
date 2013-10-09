@@ -74,7 +74,7 @@ function addCharToLC(aLC_ID, aCharID, aCharValue){
                                 dsCharsFlat.md.lc_char_val, aCharValue);
             return dsCharsFlat.lc_chars_id;}
         else return foundedChars[0].lc_chars_id;
-    }
+    });
 }
 
 /*
