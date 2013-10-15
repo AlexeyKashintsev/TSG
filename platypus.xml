@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><context>
+  <run/>
+  <dbSettings name="" password="55521855" schema="public" url="jdbc:postgresql://localhost:5432/" user="postgres"/>
+</context>
