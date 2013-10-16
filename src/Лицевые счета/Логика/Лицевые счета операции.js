@@ -31,29 +31,34 @@ function addNewLC(aLCRegTo, aLCNumber, aLCPeopleRegCount, aGroupID){
  * @param {type} aFlatID
  * @param {type} aGroupID
  * @returns {undefined}
- * todo: переделать под асинхронную модель
+ * todo_: переделать под асинхронную модель
+ * done: переделал 
  */
 
 function addFlat2Group(aFlatID, aGroupID){
-    parGroupID = aGroupID;
-    if (dsLCGrp.find(dsLCGrp.md.lc_id, aFlatID).length == 0){
-        dsLCGrp.insert( dsLCGrp.md.lc_id, aFlatID,
-                        dsLCGrp.md.group_id, aGroupID);
-    }
-    insertGroupCharsLC.params.FlatID = aFlatID;
-    insertGroupCharsLC.params.GroupID = aGroupID;
-    insertGroupCharsLC.execute();
-    insertGroupCharsLC.beforeFirst();
-    while (insertGroupCharsLC.next())
-        addCharToLC(aFlatID, insertGroupCharsLC.grp_char_type, null);
-    
-    insertGroupServicesLC.params.FlatID = aFlatID;
-    insertGroupServicesLC.params.GroupID = aGroupID;
-    insertGroupServicesLC.execute();
-    insertGroupServicesLC.beforeFirst();
-    while (insertGroupServicesLC.next())
-        addServiceToLC(aFlatID, insertGroupServicesLC.services_id,
-                       insertGroupServicesLC.calc_by_counter, parDateID);
+    var dsTempLCGrp = model.loadEntity('qLCInGroups');
+    dsTempLCGrp.params.Group_ID = aGroupID;
+    dsTempLCGrp.requery(
+        function(){
+            if (dsTempLCGrp.find(dsTempLCGrp.md.lc_id, aFlatID).length == 0){
+                dsTempLCGrp.insert( dsTempLCGrp.md.lc_id, aFlatID,
+                                dsTempLCGrp.md.group_id, aGroupID);
+            }
+            insertGroupCharsLC.params.FlatID = aFlatID;
+            insertGroupCharsLC.params.GroupID = aGroupID;
+            insertGroupCharsLC.execute();
+            insertGroupCharsLC.beforeFirst();
+            while (insertGroupCharsLC.next())
+                addCharToLC(aFlatID, insertGroupCharsLC.grp_char_type, null);
+
+            insertGroupServicesLC.params.FlatID = aFlatID;
+            insertGroupServicesLC.params.GroupID = aGroupID;
+            insertGroupServicesLC.execute();
+            insertGroupServicesLC.beforeFirst();
+            while (insertGroupServicesLC.next())
+                addServiceToLC(aFlatID, insertGroupServicesLC.services_id,
+                               insertGroupServicesLC.calc_by_counter, parDateID);
+        });
 }
 
 /*
@@ -68,7 +73,7 @@ function addCharToLC(aLC_ID, aCharID, aCharValue){
     dsCharsFlat.params.flat_id = aLC_ID;
     dsCharsFlat.requery(function(){
         var foundedChars = dsCharsFlat.find(dsCharsFlat.md.lc_char_type, aCharID);
-        if (foundedChars.length = 0){
+        if (foundedChars.length == 0){
             dsCharsFlat.insert( dsCharsFlat.md.lc_id, aLC_ID,
                                 dsCharsFlat.md.lc_char_type, aCharID,
                                 dsCharsFlat.md.lc_char_val, aCharValue);
