@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="89px" prefWidth="178px" windowOpened="formWindowOpened">
-  <widget name="panel" parent="Form" prefHeight="100px" prefWidth="144px" type="PanelDesignInfo">
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="60px" prefWidth="120px" windowOpened="formWindowOpened">
+  <widget name="panel" parent="Form" prefHeight="60px" prefWidth="120px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
-    <constraints height="100px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="144px"/>
+    <constraints height="60px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="modelCombo" parent="panel" prefHeight="20px" prefWidth="100px" type="DbComboDesignInfo">
+  <widget name="modelCombo" parent="panel" prefHeight="24px" prefWidth="113px" type="DbComboDesignInfo">
     <displayField entityId="137717716626333" fieldName="TextDate"/>
     <valueField entityId="137717716626333" fieldName="per_date_id"/>
     <datamodelElement entityId="-1" fieldName="parDateID"/>
-    <constraints height="20px" left="36px" top="0px" type="MarginConstraintsDesignInfo" width="100px"/>
+    <constraints height="24px" left="4px" right="3px" top="6px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="toolBar" parent="panel" prefHeight="24px" prefWidth="132px" rollover="true" type="ToolbarDesignInfo">
-    <constraints height="24px" left="12px" top="24px" type="MarginConstraintsDesignInfo" width="132px"/>
+  <widget floatable="false" name="toolBar" parent="panel" prefHeight="24px" prefWidth="120px" rollover="true" type="ToolbarDesignInfo">
+    <constraints bottom="3px" left="0px" right="0px" top="33px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="btn_prevActionPerformed" icon="icons/16x16/actions/old-go-previous.png" name="btn_prev" parent="toolBar" prefHeight="22px" prefWidth="23px" type="ButtonDesignInfo"/>
-  <widget actionPerformed="btn_nextActionPerformed" icon="icons/16x16/actions/old-go-next.png" name="btn_next" parent="toolBar" prefHeight="22px" prefWidth="23px" type="ButtonDesignInfo"/>
-  <widget actionPerformed="btn_lastActionPerformed" icon="icons/16x16/actions/old-go-last.png" name="btn_last" parent="toolBar" prefHeight="22px" prefWidth="23px" type="ButtonDesignInfo"/>
-  <widget icon="icons/16x16/actions/insert-object.png" name="btn_new" parent="toolBar" prefHeight="22px" prefWidth="23px" type="ButtonDesignInfo"/>
+  <widget actionPerformed="btn_prevActionPerformed" icon="icons/16x16/actions/old-go-previous.png" name="btn_prev" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo"/>
+  <widget actionPerformed="btn_nextActionPerformed" icon="icons/16x16/actions/old-go-next.png" name="btn_next" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo"/>
+  <widget actionPerformed="btn_lastActionPerformed" icon="icons/16x16/actions/old-go-last.png" name="btn_last" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo"/>
+  <widget icon="icons/16x16/actions/insert-object.png" name="btn_new" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo"/>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>
