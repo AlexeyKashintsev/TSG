@@ -91,12 +91,12 @@ function buttonStartImportActionPerformed(evt) {//GEN-FIRST:event_buttonStartImp
  *
  **/
     jTabbedPane.selectedIndex = 1;
-    if (impmod==null) impmod = new Module(IMPORT_MODULE);
+    if (impmod==null) impmod = new ServerModule(IMPORT_MODULE);
     (function (){
         impmod.stop = false;
-        var er = impmod.initializeImport(parImport,
-                parGroup, selectedFile, LogOutText,
-                jProgressBar, labelFileCounter);
+        var er = impmod.initializeImport(parImport, parGroup,
+                                        parDate, selectedFile, LogOutText,
+                                        jProgressBar, labelFileCounter);
         if (er!=null)
             alert(er, er=="ok"?"Импорт завершен":"Ошибка импорта")
     }).invokeBackground();
@@ -120,3 +120,7 @@ function button5ActionPerformed(evt) {//GEN-FIRST:event_button5ActionPerformed
 function dbcImportType1SelectValue(aEditor) {//GEN-FIRST:event_dbcImportType1SelectValue
 	// TODO Добавьте свой код:
 }//GEN-LAST:event_dbcImportType1SelectValue
+
+function dbcImportType11SelectValue(aEditor) {//GEN-FIRST:event_dbcImportType11SelectValue
+	// TODO Добавьте свой код:
+}//GEN-LAST:event_dbcImportType11SelectValue

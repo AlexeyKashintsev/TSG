@@ -4,16 +4,16 @@
     <constraints bottom="1px" height="38px" left="0px" right="1px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="btnSelectActionPerformed" horizontalTextPosition="4" icon="tick.png" name="btnSelect" parent="jPanel3" prefHeight="25px" prefWidth="115px" text="Выбрать" type="ButtonDesignInfo">
-    <easFont name="Dialog"/>
     <constraints height="25px" right="248px" top="0px" type="MarginConstraintsDesignInfo" width="115px"/>
+    <easFont name="Dialog"/>
   </widget>
   <widget actionPerformed="btnSaveActionPerformed" horizontalTextPosition="4" icon="disk-blue.png" name="btnSave" parent="jPanel3" prefHeight="25px" prefWidth="115px" text="Сохранить" type="ButtonDesignInfo">
-    <easFont name="Dialog"/>
     <constraints height="25px" right="128px" top="0px" type="MarginConstraintsDesignInfo" width="115px"/>
+    <easFont name="Dialog"/>
   </widget>
   <widget actionPerformed="btnCloseActionPerformed" horizontalTextPosition="4" icon="cross.png" name="btnClose" parent="jPanel3" prefHeight="25px" prefWidth="115px" text="Закрыть" type="ButtonDesignInfo">
-    <easFont name="Dialog"/>
     <constraints height="25px" right="10px" top="0px" type="MarginConstraintsDesignInfo" width="115px"/>
+    <easFont name="Dialog"/>
   </widget>
   <widget name="jLabel" parent="Form" prefHeight="14px" prefWidth="98px" text="Наименование" toolTipText="&lt;нулевое значение&gt;" type="LabelDesignInfo">
     <constraints height="14px" left="10px" top="43px" type="MarginConstraintsDesignInfo" width="98px"/>
@@ -27,8 +27,8 @@
   <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="minus-button.png" name="btnDel" parent="toolBar" prefHeight="20px" prefWidth="28px" toolTipText="Удалить текущее сопоставление" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="dbGrid1" parent="Form" prefHeight="262px" prefWidth="659px" type="DbGridDesignInfo">
     <column name="cellnumber" title="№ ячейки" width="15">
-      <datamodelElement entityId="138083128574508" fieldName="cellnumber"/>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138083128574508" fieldName="cellnumber"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -42,11 +42,11 @@
       </headerStyle>
     </column>
     <column name="impfieldtype" selectOnly="true" title="Тип поля">
-      <datamodelElement entityId="138083128574508" fieldName="impfieldtype"/>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="135091217935996" fieldName="fieldtypename"/>
         <valueField entityId="135091217935996" fieldName="impfieldstypes_id"/>
       </controlInfo>
+      <datamodelElement entityId="138083128574508" fieldName="impfieldtype"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -60,11 +60,11 @@
       </headerStyle>
     </column>
     <column name="impChar" title="Характеристика" width="30">
-      <datamodelElement entityId="138083128574508" fieldName="charid"/>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="138083145474798" fieldName="char_name"/>
         <valueField entityId="138083145474798" fieldName="char_types_id"/>
       </controlInfo>
+      <datamodelElement entityId="138083128574508" fieldName="charid"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -78,11 +78,11 @@
       </headerStyle>
     </column>
     <column name="impUsluga" title="Услуга">
-      <datamodelElement entityId="138083128574508" fieldName="serviceid"/>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="138083206226988" fieldName="usl_name"/>
         <valueField entityId="138083206226988" fieldName="usl_services_id"/>
       </controlInfo>
+      <datamodelElement entityId="138083128574508" fieldName="serviceid"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -96,8 +96,8 @@
       </headerStyle>
     </column>
     <column name="isRequired" title="Обязательное" width="10">
-      <datamodelElement entityId="138083128574508" fieldName="isrequired"/>
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138083128574508" fieldName="isrequired"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>

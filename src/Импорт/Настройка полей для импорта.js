@@ -32,7 +32,7 @@ function btnRefreshActionPerformed(evt) {//GEN-FIRST:event_btnRefreshActionPerfo
 }//GEN-LAST:event_btnRefreshActionPerformed
   
 function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
-
+    model.save();
 }//GEN-LAST:event_btnSaveActionPerformed
 
 function btnSelectActionPerformed(evt) {//GEN-FIRST:event_btnSelectActionPerformed

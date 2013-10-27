@@ -14,7 +14,6 @@
         <displayField entityId="137520137252417" fieldName="usl_name"/>
         <valueField entityId="137520137252417" fieldName="usl_services_id"/>
       </controlInfo>
-      <datamodelElement entityId="137516369365204" fieldName="services_id"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -26,13 +25,13 @@
       <headerStyle>
         <nativeFont name="Lucida Grande" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="137516369365204" fieldName="services_id"/>
     </column>
     <column name="colBegValue" selectFunction="colBegValueOnSelect" title="Начало" width="15">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137485849024355" fieldName="calc_name"/>
         <valueField entityId="137485849024355" fieldName="usl_calc_formula_id"/>
       </controlInfo>
-      <datamodelElement entityId="137516369365204" fieldName="beg_val"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -44,10 +43,10 @@
       <headerStyle>
         <nativeFont name="Lucida Grande" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="137516369365204" fieldName="beg_val"/>
     </column>
     <column name="colEndValue" title="Конец" width="15">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="137516369365204" fieldName="end_val"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -59,10 +58,10 @@
       <headerStyle>
         <nativeFont name="Lucida Grande" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="137516369365204" fieldName="end_val"/>
     </column>
     <column name="colCalcValue" title="Расход" width="15">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="137516369365204" fieldName="consumed_values"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -74,6 +73,7 @@
       <headerStyle>
         <nativeFont name="Lucida Grande" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="137516369365204" fieldName="consumed_values"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137516369365204" field="false"/>

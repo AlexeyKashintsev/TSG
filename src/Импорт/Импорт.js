@@ -29,7 +29,8 @@ var wb = null;
 var evalutor = null;
 var saveThreads = 0;
 
-var modLC = new moduleLC();
+var modLC = new ServerModule('moduleLC');
+var modSN = new ServerModule('moduleSaldoAndSums');
 
 //*************************************************************Служебыне функции
 function addLog(aMsg){
@@ -82,7 +83,8 @@ function saveAll(aFileName){
  * LC_REG_NUM,
  * SALDO_BEG,
  * LC_CHARS(array CellNumber, CHAR_ID),
- * COUNTERS(array CellNumber, SERVICE_ID)
+ * COUNTERS_BEG(array CellNumber, SERVICE_ID)
+ * COUNTERS_END(array CellNumber, SERVICE_ID)
  * BINEFICIARIES(array CellNumber, BENEFIT_ID)
  * @returns {ImportFields}
  */
@@ -94,35 +96,56 @@ function ImportFields(){
     this.LC_NUMBER = LC_NUMBER==''?null:LC_NUMBER[0].cellnumber-1;
     var LC_REG_NUM = dsExcelFields.find(dsExcelFields.md.impfieldtype, 2);
     this.LC_REG_NUM = LC_REG_NUM==''?null:LC_REG_NUM[0].cellnumber-1;
-    var SALDO_BEG = dsExcelFields.find(dsExcelFields.md.impfieldtype, 6);
+    var SALDO_BEG = dsExcelFields.find(dsExcelFields.md.impfieldtype, 8);
     this.SALDO_BEG = SALDO_BEG==''?null:SALDO_BEG[0].cellnumber-1;
     
     this.LC_CHARS = new Array();
-    this.COUNTERS = new Array();
+    this.COUNTERS_BEG = new Array();
+    this.COUNTERS_END = new Array();
     
     var LC_CHARS = dsExcelFields.find(dsExcelFields.md.impfieldtype, 4);
-    for (var i=0;i<LC_CHARS.length;i++){
+    for (var i in LC_CHARS){
             this.LC_CHARS[i] = new (function(){ this.CellNumber = LC_CHARS[i].cellnumber-1;
                                                 this.CHAR_ID = LC_CHARS[i].charid;
                                      });
-    }
+    };
     
-    var COUNTERS = dsExcelFields.find(dsExcelFields.md.impfieldtype, 5);
-    for (i=0;i<COUNTERS.length;i++){
-            this.COUNTERS[i] = new (function(){   this.CellNumber = COUNTERS[i].cellnumber-1;
-                                                  this.SERVICE_ID = COUNTERS[i].serviceid;
+    
+    var COUNTERS_BEG = dsExcelFields.find(dsExcelFields.md.impfieldtype, 5);
+    for (i=0;i<COUNTERS_BEG.length;i++){
+            this.COUNTERS_BEG[i] = new (function(){ this.CellNumber = COUNTERS_BEG[i].cellnumber-1;
+                                                    this.SERVICE_ID = COUNTERS_BEG[i].serviceid;
                                      });
     }
+
+    var COUNTERS_END = dsExcelFields.find(dsExcelFields.md.impfieldtype, 6);
+    for (i=0;i<COUNTERS_END.length;i++){
+            this.COUNTERS_END[i] = new (function(){ this.CellNumber = COUNTERS_END[i].cellnumber-1;
+                                                    this.SERVICE_ID = COUNTERS_END[i].serviceid;
+                                     });
+    };
     
     var BINEFICIARIES = dsExcelFields.find(dsExcelFields.md.impfieldtype, 7);
-    for (i=0;i<COUNTERS.length;i++){
-            this.COUNTERS[i] = new (function(){   this.CellNumber = COUNTERS[i].cellnumber-1;
-                                                  this.BENEFIT_ID = COUNTERS[i].benefit_id;
+    for (i=0;i<BINEFICIARIES.length;i++){
+            this.BINEFICIARIES[i] = new (function(){   this.CellNumber = BINEFICIARIES[i].cellnumber-1;
+                                                  this.BENEFIT_ID = BINEFICIARIES[i].benefit_id;
                                      });
     }
 }
-
-function initializeImport(anImportType, aGroup, aFiles, aLogOut, aProgress, aFileCount, aErFileName){
+/*
+ * 
+ * @param {type} anImportType
+ * @param {type} aGroup
+ * @param {type} aDate
+ * @param {type} aFiles
+ * @param {type} aLogOut
+ * @param {type} aProgress
+ * @param {type} aFileCount
+ * @param {type} aErFileName
+ * @returns {String}
+ * to do: убрать aGroup из передачи в другие функции, почистить все. Заменить aGroup на parGroup - где нужно вставлять его
+ */
+function initializeImport(anImportType, aGroup, aDate, aFiles, aLogOut, aProgress, aFileCount, aErFileName){
     if(anImportType==null||aGroup==null||aFiles==null)
         return "Error null parameter";
     logOutTextField = aLogOut;
@@ -136,6 +159,7 @@ function initializeImport(anImportType, aGroup, aFiles, aLogOut, aProgress, aFil
         }
         catch (e) {alert('!'+e)}
         parImportType = anImportType;
+        parDate = aDate;
         impFields = new ImportFields(anImportType);
         progressInd = aProgress;
         filesCounter = aFileCount;
@@ -253,14 +277,47 @@ function processRow(aSheet, aRowNum, aSheetNum, aGroup){
  * LC_REG_NUM,
  * SALDO_BEG,
  * LC_CHARS(array CellNumber, CHAR_ID),
- * COUNTERS(array CellNumber, SERVICE_ID)
- * BINEFICIARIES(array CellNumber, BENEFIT_ID)*/
+ * COUNTERS_BEG(array CellNumber, SERVICE_ID)
+ * COUNTERS_END(array CellNumber, SERVICE_ID)
+ * BINEFICIARIES(array CellNumber, BENEFIT_ID)
+ * to do: дописать код добавления льготников - помечено в комментариях
+ */
 
 function readRow(aRowAr, aGroup){
-    var FIO = aRowAr.cells[impFields.LC_FIO];
+    var FIO = aRowAr.cells[impFields.LC_FIO];// aRowAr.FIO aRowAr.Array[22]
     var LC_NUM = aRowAr.cells[impFields.LC_NUMBER];
     var REG_CNT = aRowAr.cells[impFields.LC_REG_NUM];
-    modLC.addNewLC(FIO, LC_NUM, REG_CNT, aGroup);
+ /**/var LC_ID = modLC.addNewLC(FIO, LC_NUM, REG_CNT, aGroup);
+    var SALDO_BEG = aRowAr.cells[impFields.SALDO_BEG];
+    modSN.initBegSaldo(LC_ID, parDate, SALDO_BEG?SALDO_BEG:null);
+    var counterValues = {};
+    var ServicesAr = {};
+    
+    for (var i in impFields.LC_CHARS){
+        var ch_val = aRowAr.cells[impFields.LC_CHARS[i].CellNumber];
+        if (ch_val) modLC.addCharToLC(LC_ID, impFields.LC_CHARS[i].CHAR_ID, ch_val);
+    }
+    
+    for (i in impFields.COUNTERS_BEG){
+        //ServicesAr[impFields.COUNTERS_BEG[i].SERVICE_ID]/*Как организовать набор данных in? для попадания только уникальных услуг*/
+        counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID] = {};
+        counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID].serv_id = impFields.COUNTERS_BEG[i].SERVICE_ID;
+        counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID].begv = aRowAr.cells[impFields.COUNTERS_BEG[i].CellNumber];
+    }
+    
+    for (i in impFields.COUNTERS_END){
+        counterValues[impFields.COUNTERS_END[i].SERVICE_ID].endv = aRowAr.cells[impFields.COUNTERS_END[i].CellNumber];
+    }
+    
+    for (i in counterValues)
+        modSN.insertCounterValue(counterValues[i].serv_id,
+                                 parDate, counterValues[i].begv, 
+                                          counterValues[i].endv);
+    
+    for (i = 0; i < impFields.BINEFICIARIES; i++){
+        // Дописать код добавления льготников
+    }
+  //  modLC.saveChanges();
 }
 
 //****************************************************************Импорт данных******************************************************
@@ -288,11 +345,11 @@ function checkRequiredFields(aRowAr){
  * 
  */
 function readSheetRow(aSheet, aRowNum, aSheetNum){
-    lockRowRead.lock();
+   /* lockRowRead.lock();
     if(stop){
         lockRowRead.unlock();
         return;
-    }
+    }*/
     var sT = new Date();
     try {
         var curRow = aSheet.getRow(aRowNum);
@@ -317,7 +374,7 @@ function readSheetRow(aSheet, aRowNum, aSheetNum){
             this.isOk = false;
         }
     }
-    lockRowRead.unlock();
+   // lockRowRead.unlock();
     return res;
 }
 

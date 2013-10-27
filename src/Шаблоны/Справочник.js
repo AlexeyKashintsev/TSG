@@ -1,7 +1,7 @@
 /**
  * 
  * @author Алексей
- * @name 137485253625977
+ * @name template
  */
 
 var isSelectForm = true;
