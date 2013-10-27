@@ -5,7 +5,7 @@
  */
 
     guiUtils = new guiModule();
-    
+    var fmDateSelect = new fmDateSelector;
     var fmWorksheet = null;
     var fmGroups = null;
     var mf = this;
@@ -59,6 +59,7 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     all_dates.last();
     parDateID = all_dates.per_date_id;
+    fmDateSelect.showOnPanel(pnlDateSelector);
 }//GEN-LAST:event_formWindowOpened
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
@@ -66,9 +67,5 @@ function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
 }//GEN-LAST:event_paramsOnChanged
 
 function setDates(){
-   // if (fmWorksheet) fmWorksheet.setDate(parDateID);
-    for (var i in formDesktop.forms)
-        try {
-            formDesktop.forms[i].setDate = aNewDate;
-        } catch (e) {}
+    if (fmWorksheet) fmWorksheet.setDate(parDateID);
 }

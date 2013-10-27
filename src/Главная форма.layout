@@ -7,22 +7,16 @@
     <constraints height="60px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="67px"/>
   </widget>
   <widget actionPerformed="buttonActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/48x48/actions/new-go-home.png" name="button" parent="toolBar" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget floatable="false" name="toolBar1" parent="Form" prefHeight="60px" prefWidth="340px" rollover="true" type="ToolbarDesignInfo">
-    <constraints height="60px" left="180px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  <widget floatable="false" name="toolBar1" parent="Form" prefHeight="60px" prefWidth="333px" rollover="true" type="ToolbarDesignInfo">
+    <constraints height="60px" left="187px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="button1ActionPerformed" focusable="false" horizontalTextPosition="4" icon="icons/48x48/apps/codeblocks.png" name="button1" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/alacarte.png" name="button2" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/actions/mail-message-new.png" name="button4" parent="toolBar1" prefHeight="52px" prefWidth="60px" toolTipText="&lt;нулевое значение&gt;" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/accessories-calculator.png" name="button3" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget name="panel" parent="Form" prefHeight="60px" prefWidth="113px" type="PanelDesignInfo">
+  <widget name="pnlDateSelector" parent="Form" prefHeight="60px" prefWidth="120px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
-    <constraints height="60px" left="67px" top="0px" type="MarginConstraintsDesignInfo" width="113px"/>
-  </widget>
-  <widget name="modelCombo" parent="panel" prefHeight="28px" prefWidth="113px" type="DbComboDesignInfo">
-    <displayField entityId="137717729723310" fieldName="TextDate"/>
-    <valueField entityId="137717729723310" fieldName="per_date_id"/>
-    <datamodelElement entityId="-1" fieldName="parDateID"/>
-    <constraints height="28px" left="0px" right="0px" top="3px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="60px" left="67px" top="0px" type="MarginConstraintsDesignInfo" width="120px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>
