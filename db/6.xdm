@@ -56,8 +56,6 @@
 <column description="Порядок импорта поля" isPk="false" javaType="java.math.BigDecimal" name="impfieldnumber" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 <column description="Услуга" isPk="false" javaType="java.math.BigDecimal" name="serviceid" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 <column description="Номер ячейки в excel" isPk="false" javaType="java.math.BigDecimal" name="cellnumber" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
-<column description="" isPk="false" javaType="java.lang.String" name="unionwithprev" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
-<column description="Тип контакта" isPk="false" javaType="java.math.BigDecimal" name="contacttype" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 <column description="" isPk="false" javaType="java.lang.Boolean" name="isrequired" nullable="true" precision="10" scale="0" signed="true" size="0" type="16" typeName="bool"/>
 <column description="Характеристика" isPk="false" javaType="java.math.BigDecimal" name="charid" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 </columns>
