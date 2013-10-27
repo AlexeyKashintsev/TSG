@@ -65,13 +65,10 @@ function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
     setDates();
 }//GEN-LAST:event_paramsOnChanged
 
-function button5ActionPerformed(evt) {//GEN-FIRST:event_button5ActionPerformed
+function setDates(){
+   // if (fmWorksheet) fmWorksheet.setDate(parDateID);
     for (var i in formDesktop.forms)
         try {
-            formDesktop.forms[i].setDate = aNewDate
+            formDesktop.forms[i].setDate = aNewDate;
         } catch (e) {}
-}//GEN-LAST:event_button5ActionPerformed
-
-function setDates(){
-    if (fmWorksheet) fmWorksheet.setDate(parDateID);
 }

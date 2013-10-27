@@ -301,7 +301,7 @@ function readRow(aRowAr, aGroup){
     for (i in impFields.COUNTERS_BEG){
         //ServicesAr[impFields.COUNTERS_BEG[i].SERVICE_ID]/*Как организовать набор данных in? для попадания только уникальных услуг*/
         counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID] = {};
-        counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID].serv_id = impFields.COUNTERS_BEG[i].SERVICE_ID;
+       // counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID].serv_id = impFields.COUNTERS_BEG[i].SERVICE_ID;
         counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID].begv = aRowAr.cells[impFields.COUNTERS_BEG[i].CellNumber];
     }
     

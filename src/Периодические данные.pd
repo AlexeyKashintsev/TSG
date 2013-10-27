@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel datamodelDbId="null">
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288033307466" entityLocationX="107" entityLocationY="486" entityWidth="150" tableName="lc_counter"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288021562922" entityLocationX="10" entityLocationY="20" entityWidth="150" tableName="per_date"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288023051590" entityLocationX="415" entityLocationY="48" entityWidth="150" tableName="per_saldo_flat"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288022654644" entityLocationX="55" entityLocationY="241" entityWidth="150" tableName="per_counter_values"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288025250450" entityLocationX="593" entityLocationY="15" entityWidth="150" tableName="usl_tarif"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288032298701" entityLocationX="336" entityLocationY="435" entityWidth="150" tableName="lc_flat_services"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288023642746" entityLocationX="245" entityLocationY="195" entityWidth="150" tableName="per_sums"/>
+</datamodel>

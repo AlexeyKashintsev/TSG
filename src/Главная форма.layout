@@ -14,7 +14,6 @@
   <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/alacarte.png" name="button2" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/actions/mail-message-new.png" name="button4" parent="toolBar1" prefHeight="52px" prefWidth="60px" toolTipText="&lt;нулевое значение&gt;" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/accessories-calculator.png" name="button3" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="button5ActionPerformed" focusable="false" horizontalTextPosition="0" name="button5" parent="toolBar1" prefHeight="18px" prefWidth="55px" text="button5" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="panel" parent="Form" prefHeight="60px" prefWidth="113px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints height="60px" left="67px" top="0px" type="MarginConstraintsDesignInfo" width="113px"/>
