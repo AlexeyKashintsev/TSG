@@ -6,6 +6,7 @@
  */
 
 var filterCounterValues = null;
+var modLC = null;
 
 function saveChanges(){
     model.save();
@@ -40,9 +41,9 @@ function initBegSaldo(aLC_ID, aDate, aValue){
  * @param {type} aEndValue
  * @returns {undefined}
  */
-function insertCounterValue(aServiceID, aDateID, aBegValue, aEndValue){
+function insertCounterValue(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue){
     params.beginUpdate();
-        parDateID = aDate;
+        parDateID = aDateID;
         parFlatID = aLC_ID;
     params.endUpdate();
     
@@ -52,13 +53,16 @@ function insertCounterValue(aServiceID, aDateID, aBegValue, aEndValue){
     
     filterCounterValues.apply(aServiceID, aDateID);
     
-    if (dsCountersValues.length = 0)
-        dsCountersValues.insert(dsCountersValues.md.counter_id, aCounterID,
+    if (dsCountersValues.length == 0){
+        if (!modLC) modLC = new moduleLC();
+        var counterID = modLC.getCouterInFlat(aLC_ID, aServiceID);
+        dsCountersValues.insert(dsCountersValues.md.counter_id, counterID,
                                 dsCountersValues.md.date_id, aDateID,
                                 dsCountersValues.md.beg_val, aBegValue,
                                 dsCountersValues.md.end_val, aEndValue);
-    else {
+    } else {
         dsCountersValues.beg_val = aBegValue;
         dsCountersValues.end_val = aEndValue;
     }
+    model.save();
 }

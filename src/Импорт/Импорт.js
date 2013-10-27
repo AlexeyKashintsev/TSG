@@ -310,9 +310,9 @@ function readRow(aRowAr, aGroup){
     }
     
     for (i in counterValues)
-        modSN.insertCounterValue(counterValues[i].serv_id,
-                                 parDate, counterValues[i].begv, 
-                                          counterValues[i].endv);
+        modSN.insertCounterValue(LC_ID,i , parDate, 
+                                             counterValues[i].begv, 
+                                             counterValues[i].endv);
     
     for (i = 0; i < impFields.BINEFICIARIES; i++){
         // Дописать код добавления льготников

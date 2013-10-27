@@ -1,7 +1,7 @@
 /**
  * 
  * @author Алексей
- * @name 137485253625977137517387852470
+ * @name fmBenefitTypes
  */
 
 var isSelectForm = true;

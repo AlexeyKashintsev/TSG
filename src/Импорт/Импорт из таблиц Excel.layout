@@ -10,9 +10,9 @@
     <constraints height="14px" left="12px" top="156px" type="MarginConstraintsDesignInfo" width="230px"/>
   </widget>
   <widget backgroundColor="#f0f0f0" foregroundColor="#000000" name="dbcImportType11" parent="panel" prefHeight="20px" prefWidth="422px" selectFunction="dbcImportType11SelectValue" type="DbComboDesignInfo">
-    <displayField entityId="138101042761421" fieldName="grp_name"/>
-    <valueField entityId="138101042761421" fieldName="grp_groups_id"/>
-    <datamodelElement entityId="-1" fieldName="parGroup"/>
+    <displayField entityId="138288658968203" fieldName="TextDate"/>
+    <valueField entityId="138288658968203" fieldName="per_date_id"/>
+    <datamodelElement entityId="-1" fieldName="parDate"/>
     <constraints height="20px" left="12px" top="180px" type="MarginConstraintsDesignInfo" width="422px"/>
     <easFont name="Tahoma" size="11" style="1"/>
   </widget>

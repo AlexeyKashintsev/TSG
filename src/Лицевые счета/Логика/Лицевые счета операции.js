@@ -6,6 +6,7 @@
  */
 
 var modSalSum = new ServerModule('moduleSaldoAndSums');
+    modSalSum.modLC = this;
 
 function saveChanges(){
     model.save();
@@ -128,6 +129,17 @@ function addCounterToFlat(aFlatService){
     dsCountersByFlat.insert(dsCountersByFlat.md.flat_serv_id, aFlatService,
                             dsCountersByFlat.md.counter_active, true);
     return dsCountersByFlat.lc_counter_id;
+}
+
+
+function getCouterInFlat(aFlatID, aServiceID){
+    dsCountersByFlat.params.flat_id = aFlatID;
+    dsCountersByFlat.execute();
+    try{
+        return dsCountersByFlat.find(dsCountersByFlat.md.services_id, aServiceID)[0].lc_counter_id
+    } catch (e) {
+        return null;
+    };
 }
 
 /*
