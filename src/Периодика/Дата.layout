@@ -1,6 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="75px" prefWidth="195px">
-  <widget name="button" parent="Form" prefHeight="29px" prefWidth="86px" text="button" type="ButtonDesignInfo">
-    <constraints height="29px" left="108px" top="36px" type="MarginConstraintsDesignInfo" width="86px"/>
-  </widget>
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="400px">
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

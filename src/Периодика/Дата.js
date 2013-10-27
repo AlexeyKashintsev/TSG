@@ -1,5 +1,5 @@
 /**
  * 
  * @author Alexey
- * @name fmDateSelector
+ * @name Дата
  */

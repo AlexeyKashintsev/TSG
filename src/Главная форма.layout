@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><layout backgroundColor="#464f5c" defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="520px" windowOpened="formWindowOpened">
-  <widget backgroundColor="#464f5c" foregroundColor="#000000" name="formDesktop" parent="Form" prefHeight="239px" prefWidth="520px" type="DesktopDesignInfo">
-    <constraints bottom="0px" left="0px" right="0px" top="61px" type="MarginConstraintsDesignInfo"/>
+  <widget backgroundColor="#464f5c" foregroundColor="#000000" name="formDesktop" parent="Form" prefHeight="239px" prefWidth="521px" type="DesktopDesignInfo">
+    <constraints bottom="0px" left="0px" right="-1px" top="61px" type="MarginConstraintsDesignInfo"/>
     <easFont name="Tahoma" size="11"/>
   </widget>
   <widget floatable="false" name="toolBar" parent="Form" prefHeight="60px" prefWidth="67px" rollover="true" type="ToolbarDesignInfo">
@@ -10,11 +10,10 @@
   <widget floatable="false" name="toolBar1" parent="Form" prefHeight="60px" prefWidth="340px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="60px" left="180px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="button1ActionPerformed" focusable="false" horizontalTextPosition="4" icon="icons/48x48/apps/codeblocks.png" name="button1" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo"/>
+  <widget actionPerformed="button1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/codeblocks.png" name="button1" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/alacarte.png" name="button2" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/actions/mail-message-new.png" name="button4" parent="toolBar1" prefHeight="52px" prefWidth="60px" toolTipText="&lt;нулевое значение&gt;" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/accessories-calculator.png" name="button3" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="button5ActionPerformed" focusable="false" horizontalTextPosition="0" name="button5" parent="toolBar1" prefHeight="18px" prefWidth="55px" text="button5" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="panel" parent="Form" prefHeight="60px" prefWidth="113px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints height="60px" left="67px" top="0px" type="MarginConstraintsDesignInfo" width="113px"/>

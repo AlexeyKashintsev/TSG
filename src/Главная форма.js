@@ -1,7 +1,7 @@
 /**
  * 
  * @author Alexey
- * @name main_form
+ * @name Главная_форма
  */
 
     guiUtils = new guiModule();
@@ -64,13 +64,6 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
     setDates();
 }//GEN-LAST:event_paramsOnChanged
-
-function button5ActionPerformed(evt) {//GEN-FIRST:event_button5ActionPerformed
-    for (var i in formDesktop.forms)
-        try {
-            formDesktop.forms[i].setDate = aNewDate
-        } catch (e) {}
-}//GEN-LAST:event_button5ActionPerformed
 
 function setDates(){
     if (fmWorksheet) fmWorksheet.setDate(parDateID);

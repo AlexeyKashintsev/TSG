@@ -2,7 +2,6 @@
   <parameters>
     <parameter description="" name="parImport" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="parGroup" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
-    <parameter description="" name="parDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150" onAfterChange="rowChanged"/>
   <entity Name="dsImportVarians" Title="Варианты импортов справочник" entityHeight="200" entityIconified="false" entityId="137727381929816" entityLocationX="176" entityLocationY="13" entityWidth="150" queryId="_32948409985907" tableName="" tableSchemaName=""/>
