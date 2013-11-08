@@ -2,6 +2,7 @@
  * 
  * @author Alexey
  * @name main_form
+ * @public
  */
 
     guiUtils = new guiModule();
@@ -55,15 +56,21 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         setDates();
     }
 }//GEN-LAST:event_button1ActionPerformed
-
+/** 
+ * @param {type} evt
+ * @returns {undefined}
+ */
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     all_dates.last();
     parDateID = all_dates.per_date_id;
     fmDateSelect.showOnPanel(pnlDateSelector);
 }//GEN-LAST:event_formWindowOpened
 
+var aLock = new Lock();
+
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-    setDates();
+    
+    setDates().invokeBackground();
 }//GEN-LAST:event_paramsOnChanged
 
 function setDates(){

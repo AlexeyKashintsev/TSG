@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><layout backgroundColor="#464f5c" defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="520px" windowOpened="formWindowOpened">
-  <widget backgroundColor="#464f5c" foregroundColor="#000000" name="formDesktop" parent="Form" prefHeight="239px" prefWidth="520px" type="DesktopDesignInfo">
+<?xml version="1.0" encoding="UTF-8"?><layout backgroundColor="#464f5c" defaultCloseOperation="2" name="Form" prefHeight="394px" prefWidth="643px" windowOpened="formWindowOpened">
+  <widget backgroundColor="#464f5c" foregroundColor="#000000" name="formDesktop" parent="Form" prefHeight="333px" prefWidth="643px" type="DesktopDesignInfo">
     <constraints bottom="0px" left="0px" right="0px" top="61px" type="MarginConstraintsDesignInfo"/>
     <easFont name="Tahoma" size="11"/>
   </widget>
@@ -7,7 +7,7 @@
     <constraints height="60px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="67px"/>
   </widget>
   <widget actionPerformed="buttonActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/48x48/actions/new-go-home.png" name="button" parent="toolBar" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget floatable="false" name="toolBar1" parent="Form" prefHeight="60px" prefWidth="333px" rollover="true" type="ToolbarDesignInfo">
+  <widget floatable="false" name="toolBar1" parent="Form" prefHeight="60px" prefWidth="456px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="60px" left="187px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="button1ActionPerformed" focusable="false" horizontalTextPosition="4" icon="icons/48x48/apps/codeblocks.png" name="button1" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo"/>
