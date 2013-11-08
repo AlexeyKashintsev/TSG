@@ -2,6 +2,7 @@
  * 
  * @author Алексей
  * @name Импорт_из_фалов_1
+ * @public
  */
 
 var IMPORT_MODULE = "Импорт";

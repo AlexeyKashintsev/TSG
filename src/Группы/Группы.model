@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="dsGroups" Title="Группы" entityHeight="200" entityIconified="false" entityId="137485439194560" entityLocationX="227" entityLocationY="14" entityWidth="150" onBeforeScroll="dsGroupsWillScroll" queryId="groups_query" tableName="" tableSchemaName=""/>
   <entity Name="group_type" Title="Тип группы" entityHeight="200" entityIconified="false" entityId="137485439101653" entityLocationX="397" entityLocationY="14" entityWidth="150" queryId="group_type" tableName="" tableSchemaName=""/>
+  <entity Name="dsGroups" Title="Группы" entityHeight="200" entityIconified="false" entityId="137485439194560" entityLocationX="227" entityLocationY="14" entityWidth="150" onBeforeScroll="dsGroupsWillScroll" queryId="groups_query" tableName="" tableSchemaName=""/>
   <entity Name="dsChars" Title="Характеристики группы" entityHeight="200" entityIconified="false" entityId="137496168237043" entityLocationX="222" entityLocationY="223" entityWidth="150" queryId="chars_by_group" tableName="" tableSchemaName=""/>
-  <entity Name="characteristics_types" Title="Характеристики типы" entityHeight="200" entityIconified="false" entityId="137496171186332" entityLocationX="559" entityLocationY="11" entityWidth="150" queryId="characteristics_types" tableName="" tableSchemaName=""/>
   <entity Name="dsServices" Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="137496294091245" entityLocationX="396" entityLocationY="222" entityWidth="150" queryId="services_by_group" tableName="" tableSchemaName=""/>
+  <entity Name="characteristics_types" Title="Характеристики типы" entityHeight="200" entityIconified="false" entityId="137496171186332" entityLocationX="559" entityLocationY="11" entityWidth="150" queryId="characteristics_types" tableName="" tableSchemaName=""/>
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137520081638120" entityLocationX="555" entityLocationY="221" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
-  <relation leftEntityFieldName="grp_groups_id" leftEntityId="137485439194560" rightEntityId="137496294091245" rightEntityParameterName="parGroup"/>
   <relation leftEntityFieldName="grp_groups_id" leftEntityId="137485439194560" rightEntityId="137496168237043" rightEntityParameterName="parGroup"/>
+  <relation leftEntityFieldName="grp_groups_id" leftEntityId="137485439194560" rightEntityId="137496294091245" rightEntityParameterName="parGroup"/>
 </datamodel>

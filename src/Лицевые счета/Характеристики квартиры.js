@@ -2,6 +2,7 @@
  * 
  * @author Alexey
  * @name charsFlat
+ * @public
  */
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed

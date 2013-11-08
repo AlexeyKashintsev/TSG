@@ -2,7 +2,7 @@
  * 
  * @author Alexey
  * @name formGroupCharacteristics
- * 
+ * @public
  */
 
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed

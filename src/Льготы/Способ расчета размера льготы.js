@@ -1,7 +1,8 @@
 /**
  * 
  * @author Алексей
- * @name fmCalcType137517522128657
+ * @name fmBenefitCalcType
+ * @public
  */
 
 var isSelectForm = false;

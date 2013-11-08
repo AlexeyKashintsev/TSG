@@ -2,8 +2,8 @@
   <widget floatable="false" name="toolBar" parent="Form" prefHeight="33px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="pnlWorkSpace" parent="Form" prefHeight="312px" prefWidth="372px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
@@ -14,6 +14,8 @@
         <displayField entityId="137520137252417" fieldName="usl_name"/>
         <valueField entityId="137520137252417" fieldName="usl_services_id"/>
       </controlInfo>
+      <columnsDisplayField/>
+      <datamodelElement entityId="137516369365204" fieldName="services_id"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -21,17 +23,17 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="11"/>
+        <nativeFont name="Dialog" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="137516369365204" fieldName="services_id"/>
     </column>
     <column name="colBegValue" selectFunction="colBegValueOnSelect" title="Начало" width="15">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137485849024355" fieldName="calc_name"/>
         <valueField entityId="137485849024355" fieldName="usl_calc_formula_id"/>
       </controlInfo>
+      <columnsDisplayField/>
+      <datamodelElement entityId="137516369365204" fieldName="beg_val"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -39,14 +41,14 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="11"/>
+        <nativeFont name="Dialog" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="137516369365204" fieldName="beg_val"/>
     </column>
     <column name="colEndValue" title="Конец" width="15">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="137516369365204" fieldName="end_val"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -54,14 +56,14 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="11"/>
+        <nativeFont name="Dialog" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="137516369365204" fieldName="end_val"/>
     </column>
     <column name="colCalcValue" title="Расход" width="15">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="137516369365204" fieldName="consumed_values"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -69,16 +71,14 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="11"/>
+        <nativeFont name="Dialog" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="137516369365204" fieldName="consumed_values"/>
     </column>
+    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137516369365204" field="false"/>
     </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

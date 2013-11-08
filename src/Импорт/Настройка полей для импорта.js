@@ -2,6 +2,7 @@
  *
  * @name impFields
  * @author ak
+ * @public
  */
 var saveMessage = 'Данные изменены. Сохранить изменения?';
 var requeryMessage = 'Изменения данных будут утеряны, продолжить?'
@@ -32,7 +33,7 @@ function btnRefreshActionPerformed(evt) {//GEN-FIRST:event_btnRefreshActionPerfo
 }//GEN-LAST:event_btnRefreshActionPerformed
   
 function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
-    model.save();
+
 }//GEN-LAST:event_btnSaveActionPerformed
 
 function btnSelectActionPerformed(evt) {//GEN-FIRST:event_btnSelectActionPerformed

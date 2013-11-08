@@ -2,6 +2,7 @@
  * 
  * @author Алексей
  * @name formServicesInGroup
+ * @public
  */
 
 var isSelectForm = false;

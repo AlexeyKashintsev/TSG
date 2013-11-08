@@ -2,17 +2,21 @@
   <widget dividerLocation="250" leftComponent="pnlGroups" name="splitPane" parent="Form" prefHeight="369px" prefWidth="728px" rightComponent="tabbedPane" type="SplitDesignInfo">
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlGroups" parent="splitPane" prefHeight="365px" prefWidth="248px" type="PanelDesignInfo">
+  <widget name="pnlGroups" parent="splitPane" prefHeight="367px" prefWidth="249px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
-  <widget name="tabbedPane" parent="splitPane" prefHeight="365px" prefWidth="471px" type="TabsDesignInfo"/>
-  <widget name="pnlGroupChars" parent="tabbedPane" prefHeight="319px" prefWidth="450px" type="PanelDesignInfo">
+  <widget name="tabbedPane" parent="splitPane" prefHeight="367px" prefWidth="472px" type="TabsDesignInfo"/>
+  <widget name="pnlGroupChars" parent="tabbedPane" prefHeight="339px" prefWidth="467px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Характеристики" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlGroupServ" parent="tabbedPane" prefHeight="319px" prefWidth="450px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlGroupServ" parent="tabbedPane" prefHeight="339px" prefWidth="467px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Услуги" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlGroupTarifs" parent="tabbedPane" prefHeight="339px" prefWidth="467px" toolTipText="Тарифы" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="tab2" type="TabsConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

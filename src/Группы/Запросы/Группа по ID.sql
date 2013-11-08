@@ -1,5 +1,6 @@
 /**
  *
+ * @public 
  * @author Alexey
  * @name group_by_id
  */ 

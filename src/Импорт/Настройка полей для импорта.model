@@ -9,8 +9,4 @@
   <entity Name="" Title="Справочник Типы полей импорта" entityHeight="87" entityIconified="false" entityId="135091217935996" entityLocationX="393" entityLocationY="89" entityWidth="231" queryId="Справочник_Типы_полей_Excel" tableName="" tableSchemaName=""/>
   <entity Name="dsExFields" Title="Импорт из таблицы все поля" entityHeight="200" entityIconified="false" entityId="138083128574508" entityLocationX="210" entityLocationY="20" entityWidth="150" queryId="importFields" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parImport" rightEntityId="138083128574508" rightEntityParameterName="impFileType"/>
-  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="138083206226988" rightEntityFieldName="usl_calc_formula_id" rightEntityId="138083206226988"/>
-  <referenceRelation leftEntityFieldName="impfile" leftEntityId="138083128574508" rightEntityFieldName="importnames_id" rightEntityId="137727326511139"/>
-  <referenceRelation leftEntityFieldName="impfieldtype" leftEntityId="138083128574508" rightEntityFieldName="impfieldstypes_id" rightEntityId="135091217935996"/>
-  <referenceRelation leftEntityFieldName="parent" leftEntityId="135091217935996" rightEntityFieldName="impfieldstypes_id" rightEntityId="135091217935996"/>
 </datamodel>

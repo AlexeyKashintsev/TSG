@@ -2,6 +2,7 @@
  * 
  * @author Alexey
  * @name main_form
+ * @public
  */
 
     guiUtils = new guiModule();
@@ -43,7 +44,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
         fmWorksheet = new mainWorkSheet();
         fmWorksheet.mainForm = mf;
         showFormAsInternal(fmWorksheet);
-        setDates();
+        setDate();
     }
 }//GEN-LAST:event_buttonActionPerformed
 
@@ -52,20 +53,25 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         fmGroups = new formAllGroups();
         fmGroups.mainForm = mf;
         showFormAsInternal(fmGroups);
-        setDates();
+        setDate();
     }
 }//GEN-LAST:event_button1ActionPerformed
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     all_dates.last();
     parDateID = all_dates.per_date_id;
+    fmDateSelect.parentForm = mf;
     fmDateSelect.showOnPanel(pnlDateSelector);
 }//GEN-LAST:event_formWindowOpened
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-    setDates();
+    //setDate(parDateID);
 }//GEN-LAST:event_paramsOnChanged
 
-function setDates(){
-    if (fmWorksheet) fmWorksheet.setDate(parDateID);
+function setDate(aNewDateID){
+    var ok = true;
+    if (!aNewDateID) aNewDateID = parDateID;
+    if (fmWorksheet) ok = fmWorksheet.setDate(aNewDateID);
+    if (ok) parDateID = aNewDateID;
+    return ok;
 }

@@ -2,6 +2,7 @@
  * 
  * @author Алексей
  * @name formGroups
+ * @public
  */
 
 var parentForm = null;

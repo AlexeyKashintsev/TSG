@@ -1,7 +1,8 @@
 /**
  * 
  * @author Алексей
- * @name fmServices137517536514863
+ * @name fmBenefitServises
+ * @public
  */
 
 var isSelectForm = false;

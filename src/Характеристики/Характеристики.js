@@ -2,6 +2,7 @@
  * 
  * @author Алексей
  * @name characteristics_type
+ * @public
  */
 
 var isSelectForm = true;

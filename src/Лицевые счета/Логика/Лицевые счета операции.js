@@ -49,9 +49,6 @@ function addFlat2Group(aFlatID, aGroupID){
    // dsTempLCGrp.params.Group_ID = aGroupID;
    // dsTempLCGrp.requery(
    //     function(){
-            dsLCGrp.params.Group_ID = aGroupID;
-            dsLCGrp.requery();
-            
             if (dsLCGrp.find(dsLCGrp.md.lc_id, aFlatID).length == 0){
                 dsLCGrp.insert( dsLCGrp.md.lc_id, aFlatID,
                                 dsLCGrp.md.group_id, aGroupID);
@@ -90,13 +87,10 @@ function addCharToLC(aLC_ID, aCharID, aCharValue){
                                 dsCharsFlat.md.lc_char_type, aCharID,
                                 dsCharsFlat.md.lc_char_val, aCharValue);
             return dsCharsFlat.lc_chars_id;}
-        else{
-            dsCharsFlat.scrollTo(dsCharsFlat.findById(foundedChars[0].lc_chars_id))
-            if (aCharValue) dsCharsFlat.lc_char_val = aCharValue;
             return foundedChars[0].lc_chars_id;
         }
     //});
-}
+
 
 /*
  * Добавить услугу в квартиру
@@ -136,10 +130,29 @@ function getCouterInFlat(aFlatID, aServiceID){
     dsCountersByFlat.params.flat_id = aFlatID;
     dsCountersByFlat.execute();
     try{
-        return dsCountersByFlat.find(dsCountersByFlat.md.services_id, aServiceID)[0].lc_counter_id
+        return dsCountersByFlat.find(dsCountersByFlat.md.services_id, aServiceID)[0].lc_counter_id;
     } catch (e) {
         return null;
     };
+}
+
+/*
+ * Добавить значение счетчика
+ * @param {type} aCounterID
+ * @param {type} aDateID
+ * @param {type} aBegValue
+ * @param {type} aEndValue
+ * @returns {undefined}
+ * to do:
+ * Дописать код поиска текущего значения по квартире и дате и если найдено - 
+ * модифицировать его, иначе создать новую запись
+ */
+function insertCounterValue(aCounterID, aDateID, aBegValue, aEndValue){
+    dsCountersValues.insert(dsCountersValues.md.counter_id, aCounterID,
+                            dsCountersValues.md.date_id, aDateID,
+                            dsCountersValues.md.beg_val, aBegValue,
+                            dsCountersValues.md.end_val, aEndValue);
+    
 }
 
 /*

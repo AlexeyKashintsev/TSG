@@ -4,7 +4,8 @@
     <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137520137252417" entityLocationX="468" entityLocationY="24" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
-  <entity Name="dsCounterValues" Title="Показания счетчиков в квартире на дату" entityHeight="200" entityIconified="false" entityId="137516369365204" entityLocationX="263" entityLocationY="25" entityWidth="174" queryId="counters_values_by_flat" tableName="" tableSchemaName=""/>
-  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="137520137252417" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137520137252417"/>
+  <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137520137252417" entityLocationX="526" entityLocationY="64" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
+  <entity Name="counters_values_per_flat_on_date" Title="Показания счетчиков в квартире на дату" entityHeight="200" entityIconified="false" entityId="137516369365204" entityLocationX="263" entityLocationY="25" entityWidth="150" queryId="counters_values_per_flat_on_date" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="137516369365204" rightEntityParameterName="date_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137516369365204" rightEntityParameterName="flat_id"/>
 </datamodel>

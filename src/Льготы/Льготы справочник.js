@@ -2,6 +2,7 @@
  * 
  * @author Алексей
  * @name fmBenefitTypes
+ * @public
  */
 
 var isSelectForm = true;

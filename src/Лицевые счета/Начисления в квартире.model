@@ -6,6 +6,6 @@
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="13" entityWidth="150"/>
   <entity Name="sums_perFlat" Title="Начисления по квартире" entityHeight="264" entityIconified="false" entityId="137684219497981" entityLocationX="263" entityLocationY="13" entityWidth="150" queryId="sums_perFlat" tableName="" tableSchemaName=""/>
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137684230384165" entityLocationX="516" entityLocationY="33" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137684219497981" rightEntityParameterName="flat_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="137684219497981" rightEntityParameterName="date_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137684219497981" rightEntityParameterName="flat_id"/>
 </datamodel>

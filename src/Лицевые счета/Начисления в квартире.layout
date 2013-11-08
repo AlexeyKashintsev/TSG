@@ -8,6 +8,7 @@
         <displayField entityId="137684230384165" fieldName="usl_name"/>
         <valueField entityId="137684230384165" fieldName="usl_services_id"/>
       </controlInfo>
+      <columnsDisplayField/>
       <datamodelElement entityId="137684219497981" fieldName="services_id"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -16,13 +17,13 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colVal" readonly="true" title="Объем">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -30,13 +31,13 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colCost" title="Стоимость">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137684219497981" fieldName="rate"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -45,13 +46,13 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="col100" readonly="true" title="Начислено">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137684219497981" fieldName="calc"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -60,13 +61,13 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colBenefit" readonly="true" title="Льгота">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137684219497981" fieldName="benefit"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -75,13 +76,13 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colRecalc" title="Перерасчет">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137684219497981" fieldName="recalc"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -90,13 +91,13 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colCalc" readonly="true" title="Итого">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137684219497981" fieldName="full_calc"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -105,15 +106,14 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
+    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137684219497981" field="false"/>
     </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

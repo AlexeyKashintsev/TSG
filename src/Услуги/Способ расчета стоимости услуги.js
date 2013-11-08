@@ -2,6 +2,7 @@
  * 
  * @author Алексей
  * @name fmCalcType
+ * @public
  */
 
 var isSelectForm = false;
