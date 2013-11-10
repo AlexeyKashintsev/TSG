@@ -1,5 +1,6 @@
 /**
  *
+ * @public 
  * @author Алексей
  * @name characteristics_types
  */ 

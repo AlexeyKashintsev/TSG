@@ -2,11 +2,11 @@
   <widget floatable="false" name="toolBar" parent="Form" prefHeight="33px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo" visible="false">
     <constraints height="33px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/human-folder-new.png" name="btnAddParent" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Добавить вложенный элемент" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/human-folder-new.png" name="btnAddParent" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Добавить вложенный элемент" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="pnlSelLock" parent="Form" prefHeight="48px" prefWidth="372px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints bottom="0px" height="48px" left="0px" right="0px" type="MarginConstraintsDesignInfo"/>
@@ -24,53 +24,53 @@
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="264px" prefWidth="372px" type="DbGridDesignInfo">
     <column name="colUslName" title="Счетчик">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="137720545814454" fieldName="services_id"/>
-      <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
+      <datamodelElement entityId="137720545814454" fieldName="services_id"/>
       <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
         <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colNum" title="Номер">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="137720545814454" fieldName="counter_number"/>
-      <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
+      <datamodelElement entityId="137720545814454" fieldName="counter_number"/>
       <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
         <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column fixed="true" name="colActive" title="Активен" width="30">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="137720545814454" fieldName="counter_active"/>
-      <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
+      <datamodelElement entityId="137720545814454" fieldName="counter_active"/>
       <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
         <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
+    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137720545814454" field="false"/>
     </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

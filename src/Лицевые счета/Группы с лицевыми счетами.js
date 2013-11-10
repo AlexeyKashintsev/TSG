@@ -2,6 +2,7 @@
  * 
  * @author Alexey
  * @name mainWorkSheet
+ * @public
  */
 
 var fmGroups = new formGroups();

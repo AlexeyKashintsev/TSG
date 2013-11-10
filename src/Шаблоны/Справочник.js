@@ -2,6 +2,7 @@
  * 
  * @author Алексей
  * @name template
+ * @public
  */
 
 var isSelectForm = true;

@@ -2,6 +2,7 @@
  * 
  * @author Alexey
  * @name formAllGroups
+ * @public
  */
 
 function check4Modifications(){

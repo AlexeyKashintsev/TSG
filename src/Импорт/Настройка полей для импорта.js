@@ -2,6 +2,7 @@
  *
  * @name impFields
  * @author ak
+ * @public
  */
 var saveMessage = 'Данные изменены. Сохранить изменения?';
 var requeryMessage = 'Изменения данных будут утеряны, продолжить?'

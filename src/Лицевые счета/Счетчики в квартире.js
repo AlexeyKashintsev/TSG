@@ -2,6 +2,7 @@
  * 
  * @author Алексей
  * @name counters_in_flat
+ * @public
  */
 
 var isSelectForm = true;

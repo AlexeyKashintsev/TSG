@@ -2,128 +2,128 @@
   <widget name="modelGrid" parent="Form" prefHeight="300px" prefWidth="507px" type="DbGridDesignInfo">
     <column name="colDate" title="Дата">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
       <datamodelElement entityId="137588933491844" fieldName="date_id"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="colSalBeg" title="Начальное">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
       <datamodelElement entityId="137588933491844" fieldName="sal_begin"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="colSal100" title="Начислено">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
       <datamodelElement entityId="137588933491844" fieldName="sal_calc"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="colSalBenefit" title="Льгота">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
       <datamodelElement entityId="137588933491844" fieldName="sal_benefit"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="colSalRecalc" title="Перерасчет">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
       <datamodelElement entityId="137588933491844" fieldName="sal_recalc"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="colSalOpl" title="Оплачено">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
       <datamodelElement entityId="137588933491844" fieldName="sal_payments"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="colSalPeni" title="Пени">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
       <datamodelElement entityId="137588933491844" fieldName="sal_penalties_cur"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="colSalEnd" title="Конечное">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
       <datamodelElement entityId="137588933491844" fieldName="sal_end"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
+    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource/>
     </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

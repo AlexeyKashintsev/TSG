@@ -1,5 +1,6 @@
 /**
  *
+ * @public 
  * @author Alexey
  * @name Льготы_на_услуги
  */ 

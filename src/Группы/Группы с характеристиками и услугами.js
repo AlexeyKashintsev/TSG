@@ -2,6 +2,7 @@
  * 
  * @author Alexey
  * @name Группы_с_характеристиками_и_услугами
+ * @public
  */
 
 var fmGroups = new formGroups();

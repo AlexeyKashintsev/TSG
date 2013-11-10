@@ -2,6 +2,7 @@
  * 
  * @author Alexey
  * @name formPaymentsInFlat
+ * @public
  */
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed

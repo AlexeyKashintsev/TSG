@@ -2,6 +2,7 @@
  * 
  * @author Алексей
  * @name fmServices
+ * @public
  */
 
 var isSelectForm = true;

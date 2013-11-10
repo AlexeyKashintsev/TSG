@@ -2,51 +2,51 @@
   <widget floatable="false" name="toolBar" parent="Form" prefHeight="33px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="button11ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="button11" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="button1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/human-folder-new.png" name="button1" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Добавить вложенный элемент" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="buttonActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="button" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="button3ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="button3" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="button2ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="button2" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="button11ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="button11" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="button1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/human-folder-new.png" name="button1" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Добавить вложенный элемент" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="buttonActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="button" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="button3ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="button3" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="button2ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="button2" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="modelGrid" parent="Form" prefHeight="312px" prefWidth="372px" type="DbGridDesignInfo">
-    <column name="column" title="Группа" width="70">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
-      <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
-    </column>
-    <column name="column1" title="Тип" width="40">
-      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137485439101653" fieldName="grp_type_name"/>
-        <valueField entityId="137485439101653" fieldName="grp_type_id"/>
-      </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
-      <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
-    </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137485439194560" field="false"/>
     </rowsColumnsDesignInfo>
     <treeDesignInfo>
       <unaryLinkField entityId="137485439194560" fieldName="grp_parent"/>
     </treeDesignInfo>
+    <column name="column" title="Группа" width="70">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDisplayField/>
+    </column>
+    <column name="column1" title="Тип" width="40">
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <displayField entityId="137485439101653" fieldName="grp_type_name"/>
+        <valueField entityId="137485439101653" fieldName="grp_type_id"/>
+      </controlInfo>
+      <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDisplayField/>
+    </column>
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

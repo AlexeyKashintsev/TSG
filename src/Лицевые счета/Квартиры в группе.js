@@ -2,6 +2,7 @@
  * 
  * @author Алексей
  * @name lc_in_group
+ * @public
  */
 
 var isSelectForm = true;

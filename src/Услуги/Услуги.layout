@@ -21,9 +21,9 @@
     <constraints bottom="48px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="264px" prefWidth="372px" type="DbGridDesignInfo">
-    <treeDesignInfo/>
     <column name="colService" title="Услуга">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137684100940550" fieldName="usl_name"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -35,13 +35,13 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
     <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Предпочитаемый способ расчета">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137684101269880" fieldName="calc_name"/>
         <valueField entityId="137684101269880" fieldName="usl_calc_formula_id"/>
       </controlInfo>
+      <columnsDisplayField/>
       <datamodelElement entityId="137684100940550" fieldName="calc_id"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -53,8 +53,8 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
+    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137684100940550" field="false"/>
     </rowsColumnsDesignInfo>

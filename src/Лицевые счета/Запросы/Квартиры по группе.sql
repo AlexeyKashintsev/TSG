@@ -1,5 +1,6 @@
 /**
  *
+ * @public 
  * @author Alexey
  * @name flats_by_group
  * @writable lc_flat

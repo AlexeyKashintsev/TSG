@@ -1,5 +1,6 @@
 /**
  * @name importFields
+ * @public 
 */ 
 Select * 
 From impexceltablefields t

@@ -2,6 +2,7 @@
  * 
  * @author Алексей
  * @name fmCounterValuesByFlat
+ * @public
  */
 
 var isSelectForm = false;

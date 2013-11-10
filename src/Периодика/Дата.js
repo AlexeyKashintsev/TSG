@@ -2,6 +2,7 @@
  * 
  * @author Alexey
  * @name fmDateSelector
+ * @public
  */
 
 var scrolled = false;

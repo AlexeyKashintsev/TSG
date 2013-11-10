@@ -2,6 +2,7 @@
  * 
  * @author Alexey
  * @name test
+ * @public
  */
 
 function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
