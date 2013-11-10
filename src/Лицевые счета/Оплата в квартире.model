@@ -9,4 +9,5 @@
   <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="137685832783762" entityLocationX="392" entityLocationY="20" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
   <entity Name="qPaymentsInFlat" Title="Оплаты в квартире" entityHeight="200" entityIconified="false" entityId="137685811346765" entityLocationX="229" entityLocationY="18" entityWidth="150" queryId="qPaymentsInFlat" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137685811346765" rightEntityParameterName="flat_id"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="137685811346765" rightEntityFieldName="per_date_id" rightEntityId="137685832783762"/>
 </datamodel>

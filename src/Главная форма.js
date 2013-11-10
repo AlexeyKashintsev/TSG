@@ -10,7 +10,6 @@
     var fmWorksheet = null;
     var fmGroups = null;
     var mf = this;
-    var parentForm = null;
     
 function showFormAsModal(formId)
 {
@@ -61,18 +60,17 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     all_dates.last();
     parDateID = all_dates.per_date_id;
-    fmDateSelect.parentForm = this;
+    fmDateSelect.parentForm = mf;
     fmDateSelect.showOnPanel(pnlDateSelector);
 }//GEN-LAST:event_formWindowOpened
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-    setDates();
+    //setDate(parDateID);
 }//GEN-LAST:event_paramsOnChanged
 
-function textFieldActionPerformed(evt) {//GEN-FIRST:event_textFieldActionPerformed
-    textField.text = parDateID;	// TODO Добавьте свой код:
-}//GEN-LAST:event_textFieldActionPerformed
-
 function setDate(aNewDateID){
-    if (fmWorksheet) fmWorksheet.setDate(parDateID);
+    var ok = true;
+    if (fmWorksheet) ok = fmWorksheet.setDate(aNewDateID);
+    if (ok) parDateID = aNewDateID;
+    return ok;
 }
