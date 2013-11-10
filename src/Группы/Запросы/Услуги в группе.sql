@@ -2,7 +2,7 @@
  *
  * @public 
  * @author Алексей
- * @name services_by_group
+ * @name dsServicesByGroup
  */ 
 Select * 
 From grp_services t1
