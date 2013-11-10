@@ -6,14 +6,9 @@
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
   <widget name="mgGroups" parent="pnlGroups" prefHeight="331px" prefWidth="249px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="137485439194560" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo>
-      <unaryLinkField entityId="137485439194560" fieldName="grp_parent"/>
-    </treeDesignInfo>
     <column name="colGrpName" title="Группа">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -25,13 +20,13 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
     <column name="colGrpType" title="Тип">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137485439101653" fieldName="grp_type_name"/>
         <valueField entityId="137485439101653" fieldName="grp_type_id"/>
       </controlInfo>
+      <columnsDisplayField/>
       <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -43,8 +38,13 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
+    <treeDesignInfo>
+      <unaryLinkField entityId="137485439194560" fieldName="grp_parent"/>
+    </treeDesignInfo>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137485439194560" field="false"/>
+    </rowsColumnsDesignInfo>
     <constraints bottom="2px" left="-2px" right="2px" top="34px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget floatable="false" name="toolBar" parent="pnlGroups" prefHeight="33px" prefWidth="249px" rollover="true" type="ToolbarDesignInfo">
@@ -61,15 +61,12 @@
     <constraints tabTitle="Характеристики" type="TabsConstraintsDesignInfo"/>
   </widget>
   <widget deletable="false" insertable="false" name="mgChars" parent="pnlGroupChars" prefHeight="205px" prefWidth="467px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="137496168237043" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="colCharType" title="Характеристика">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137496171186332" fieldName="char_name"/>
         <valueField entityId="137496171186332" fieldName="char_types_id"/>
       </controlInfo>
+      <columnsDisplayField/>
       <datamodelElement entityId="137496168237043" fieldName="grp_char_type"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -81,10 +78,10 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
     <column name="colCharValue" title="Значение">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137496168237043" fieldName="grp_char_val"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -96,10 +93,10 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
     <column name="colCharAdd2Lc" title="Добавлять к квартирам">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137496168237043" fieldName="add_char_to_lc"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -111,10 +108,10 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
     <column name="colCharCalc" title="Рассчитывать автоматически">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137496168237043" fieldName="char_calc_by_lc"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -126,8 +123,11 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
+    <treeDesignInfo/>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137496168237043" field="false"/>
+    </rowsColumnsDesignInfo>
     <constraints bottom="2px" left="-2px" right="2px" top="132px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelFormattedField1" parent="pnlGroupChars" prefHeight="22px" prefWidth="314px" type="DbLabelDesignInfo">
@@ -170,15 +170,12 @@
     <constraints bottom="2px" left="-2px" right="2px" top="34px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget deletable="false" insertable="false" name="modelGrid1" parent="pnlWorkSpace" prefHeight="303px" prefWidth="467px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="137496294091245" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="colService" title="Услуга">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137520081638120" fieldName="usl_name"/>
         <valueField entityId="137520081638120" fieldName="usl_services_id"/>
       </controlInfo>
+      <columnsDisplayField/>
       <datamodelElement entityId="137496294091245" fieldName="services_id"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -190,13 +187,13 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
     <column name="colCalcType" readonly="true" selectFunction="colCalcTypeOnSelect" title="Способ расчета">
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137520081638120" fieldName="usl_name"/>
         <valueField entityId="137520081638120" fieldName="usl_services_id"/>
       </controlInfo>
+      <columnsDisplayField/>
       <datamodelElement entityId="137496294091245" fieldName="services_id"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -208,8 +205,11 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
+    <treeDesignInfo/>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137496294091245" field="false"/>
+    </rowsColumnsDesignInfo>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget floatable="false" name="toolBar1" parent="pnlGroupServ" prefHeight="33px" prefWidth="467px" rollover="true" type="ToolbarDesignInfo">
@@ -218,5 +218,9 @@
   <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar1" prefHeight="29px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar1" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar1" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget name="pnlTarifs" parent="tabbedPane" prefHeight="339px" prefWidth="467px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Тарифы" type="TabsConstraintsDesignInfo"/>
+  </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

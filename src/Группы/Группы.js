@@ -5,6 +5,8 @@
  * @public
  */
 
+var fmTarif = new fmTarifs();
+
 function check4Modifications(){
     if ((!dsChars.modified&&!dsServices.modified)
             ||askAndSave()){
@@ -22,7 +24,8 @@ function askAndSave(){
 }
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
-
+    fmTarif.modelCombo.visible = false;
+    fmTarif.showOnPanel(pnlTarifs);
 }//GEN-LAST:event_formWindowOpened
 
 function button11ActionPerformed(evt) {//GEN-FIRST:event_button11ActionPerformed
@@ -102,5 +105,5 @@ function dsGroupsWillScroll(evt) {//GEN-FIRST:event_dsGroupsWillScroll
 }//GEN-LAST:event_dsGroupsWillScroll
 
 function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
-    mainForm.fmGroups = null;
+    mainForm.fmGroups = null
 }//GEN-LAST:event_formWindowClosed

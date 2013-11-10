@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parGroupID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Тарифы" entityHeight="200" entityIconified="false" entityId="138412307078469" entityLocationX="170" entityLocationY="120" entityWidth="150" tableAlias="d" tableName="usl_tarif" tableSchemaName=""/>
+  <entity Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="138412314244017" entityLocationX="417" entityLocationY="162" entityWidth="150" tableAlias="m" tableName="grp_services" tableSchemaName=""/>
+</datamodel>
