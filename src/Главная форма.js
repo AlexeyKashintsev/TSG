@@ -69,8 +69,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 var aLock = new Lock();
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-    
-    setDates().invokeBackground();
+    setDates();//.invokeBackground();
 }//GEN-LAST:event_paramsOnChanged
 
 function setDates(){
