@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Тарифы" entityHeight="200" entityIconified="false" entityId="138409406094357" entityLocationX="168" entityLocationY="21" entityWidth="150" tableAlias="d" tableName="usl_tarif" tableSchemaName=""/>
+  <entity Title="Услуги" entityHeight="200" entityIconified="false" entityId="138409406094358" entityLocationX="334" entityLocationY="128" entityWidth="150" tableAlias="m" tableName="usl_services" tableSchemaName=""/>
+</datamodel>
