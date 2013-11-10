@@ -39,13 +39,18 @@ function setFlat(aNewFlatID){
 }
 
 function setDate(aNewDate){
-    parDateID = aNewDate;
-    fmFlatCounters.parDateID =
-    fmNachisleniya.parDateID =
-    fmSaldoCur.parDateID =
-    fmNachisleniya.parDateID =
-    fmOplata.parDateID = 
-    fmFlats.parDateID = parDateID;
+    if (check4Modifications()){
+        parDateID = aNewDate;
+        fmFlatCounters.parDateID =
+        fmNachisleniya.parDateID =
+        fmSaldoCur.parDateID =
+        fmNachisleniya.parDateID =
+        fmOplata.parDateID = 
+        fmFlats.parDateID = parDateID;
+        return true;
+    }
+    else
+        return false;
 }
 
 function askAndSave(){

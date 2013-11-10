@@ -130,7 +130,7 @@ function getCouterInFlat(aFlatID, aServiceID){
     dsCountersByFlat.params.flat_id = aFlatID;
     dsCountersByFlat.execute();
     try{
-        return dsCountersByFlat.find(dsCountersByFlat.md.services_id, aServiceID)[0].lc_counter_id
+        return dsCountersByFlat.find(dsCountersByFlat.md.services_id, aServiceID)[0].lc_counter_id;
     } catch (e) {
         return null;
     };
