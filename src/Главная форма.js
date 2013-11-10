@@ -56,22 +56,21 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         setDates();
     }
 }//GEN-LAST:event_button1ActionPerformed
-/** 
- * @param {type} evt
- * @returns {undefined}
- */
+
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     all_dates.last();
     parDateID = all_dates.per_date_id;
     fmDateSelect.showOnPanel(pnlDateSelector);
 }//GEN-LAST:event_formWindowOpened
 
-var aLock = new Lock();
-
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-    setDates();//.invokeBackground();
+    setDates();
 }//GEN-LAST:event_paramsOnChanged
 
-function setDates(){
+function textFieldActionPerformed(evt) {//GEN-FIRST:event_textFieldActionPerformed
+    textField.text = parDateID;	// TODO Добавьте свой код:
+}//GEN-LAST:event_textFieldActionPerformed
+
+function setDate(aNewDateID){
     if (fmWorksheet) fmWorksheet.setDate(parDateID);
 }

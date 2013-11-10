@@ -20,5 +20,5 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
 }//GEN-LAST:event_btnAddActionPerformed
 
 function textFieldActionPerformed(evt) {//GEN-FIRST:event_textFieldActionPerformed
-        textField.text += parDateID ;	// TODO Добавьте свой код:
+        textField.text = parDateID ;	// TODO Добавьте свой код:
 }//GEN-LAST:event_textFieldActionPerformed
