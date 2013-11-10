@@ -34,8 +34,8 @@ function setElShown(){
     setEdit();
     if (!isSelectForm){
         pnlSelLock.visible = false;
-        pnlWorkSpace.height += pnlSelLock.height;
-        modelGrid.bottom = 0;
+        pnlWorkSpace.height += 48;
+        modelGrid.bottom += 48;
     }
 }
 

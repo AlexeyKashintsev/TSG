@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="flat_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="date_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Счетчик значения" entityHeight="200" entityIconified="false" entityId="137516345102585" entityLocationX="415" entityLocationY="22" entityWidth="150" tableAlias="t1" tableName="per_counter_values" tableSchemaName=""/>
+  <entity Title="Счетчики в квартире" entityHeight="200" entityIconified="false" entityId="137516345895969" entityLocationX="248" entityLocationY="21" entityWidth="150" queryId="counters_by_flat" tableAlias="q" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="flat_id" rightEntityId="137516345895969" rightEntityParameterName="flat_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="137516345102585"/>
+  <relation leftEntityFieldName="counter_id" leftEntityId="137516345102585" rightEntityFieldName="lc_counter_id" rightEntityId="137516345895969"/>
+</datamodel>

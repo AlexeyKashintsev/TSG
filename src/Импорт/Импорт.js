@@ -277,7 +277,6 @@ function processRow(aSheet, aRowNum, aSheetNum, aGroup){
  * LC_REG_NUM,
  * SALDO_BEG,
  * LC_CHARS(array CellNumber, CHAR_ID),
- * COUNTERS_BEG(array CellNumber, SERVICE_ID)
  * COUNTERS_END(array CellNumber, SERVICE_ID)
  * BINEFICIARIES(array CellNumber, BENEFIT_ID)
  * to do: дописать код добавления льготников - помечено в комментариях

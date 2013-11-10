@@ -6,6 +6,6 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="dsflats_by_group" Title="Квартиры по группе" entityHeight="200" entityIconified="false" entityId="137501421039573" entityLocationX="201" entityLocationY="12" entityWidth="150" onAfterScroll="dsflats_by_groupOnScrolled" onBeforeScroll="dsflats_by_groupWillScroll" queryId="flats_by_group" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAllFlats" rightEntityId="137501421039573" rightEntityParameterName="all_flats"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="137501421039573" rightEntityParameterName="group_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAllFlats" rightEntityId="137501421039573" rightEntityParameterName="all_flats"/>
 </datamodel>
