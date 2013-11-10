@@ -66,6 +66,10 @@ function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
     setDates();
 }//GEN-LAST:event_paramsOnChanged
 
-function setDates(){
-    if (fmWorksheet) fmWorksheet.setDate(parDateID);
+function textFieldActionPerformed(evt) {//GEN-FIRST:event_textFieldActionPerformed
+    textField.text += parDateID;	// TODO Добавьте свой код:
+}//GEN-LAST:event_textFieldActionPerformed
+
+function setDate(aNewDateID){
+    parentForm.setDate(aNewDateID);
 }
