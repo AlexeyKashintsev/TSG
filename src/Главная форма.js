@@ -10,6 +10,7 @@
     var fmWorksheet = null;
     var fmGroups = null;
     var mf = this;
+    var parentForm = null;
     
 function showFormAsModal(formId)
 {
@@ -60,6 +61,7 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     all_dates.last();
     parDateID = all_dates.per_date_id;
+    fmDateSelect.parentForm = this;
     fmDateSelect.showOnPanel(pnlDateSelector);
 }//GEN-LAST:event_formWindowOpened
 

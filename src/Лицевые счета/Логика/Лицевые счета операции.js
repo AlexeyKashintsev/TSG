@@ -90,7 +90,7 @@ function addCharToLC(aLC_ID, aCharID, aCharValue){
             return foundedChars[0].lc_chars_id;
         }
     //});
-}
+
 
 /*
  * Добавить услугу в квартиру
