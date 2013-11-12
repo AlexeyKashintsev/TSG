@@ -64,6 +64,6 @@ function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
 }//GEN-LAST:event_btn_newActionPerformed
 
 function setDate(aNewDateID){
-    if (parentForm) return parentForm.setDate(aNewDateID)
+    if (parentForm) return parentForm.setDate(aNewDateID);
     else return true;
 }

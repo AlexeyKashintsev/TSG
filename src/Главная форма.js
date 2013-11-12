@@ -69,8 +69,8 @@ function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
 }//GEN-LAST:event_paramsOnChanged
 
 function setDate(aNewDateID){
-    if (!aNewDateID) aNewDateID = parDateID;
     var ok = true;
+    if (!aNewDateID) aNewDateID = parDateID;
     if (fmWorksheet) ok = fmWorksheet.setDate(aNewDateID);
     if (ok) parDateID = aNewDateID;
     return ok;

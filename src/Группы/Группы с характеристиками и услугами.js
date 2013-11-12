@@ -8,7 +8,7 @@
 var fmGroups = new formGroups();
 var fmGChars = new formGroupCharacteristics();
 var fmGServs = new formServicesInGroup();
-
+var fmGTarif = new formTarifs();
 function check4Modifications(){
     if ((!fmGChars.model.modified&&!fmGServs.model.modified||askAndSave)||
         confirm('Не сохраненные изменения будут утеряны. Продолжить?')){
