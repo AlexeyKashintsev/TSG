@@ -2,7 +2,7 @@
  *
  * @public 
  * @author Алексей
- * @name characteristics_types_1
+ * @name characteristics_types
  */ 
 Select * 
 From char_types t1
