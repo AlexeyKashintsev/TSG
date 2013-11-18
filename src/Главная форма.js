@@ -65,7 +65,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 }//GEN-LAST:event_formWindowOpened
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-    //setDate(parDateID);
+    setDate();
 }//GEN-LAST:event_paramsOnChanged
 
 function setDate(aNewDateID){

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="lc_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="groupid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Характеристики квартиры" entityHeight="95" entityIconified="false" entityId="138475428041364" entityLocationX="366" entityLocationY="138" entityWidth="150" tableAlias="t1" tableName="lc_chars" tableSchemaName=""/>
+  <entity Title="Характеристики группы" entityHeight="128" entityIconified="false" entityId="138475424968549" entityLocationX="366" entityLocationY="4" entityWidth="150" tableAlias="t" tableName="grp_chars" tableSchemaName=""/>
+  <entity Title="Объект расчета" entityHeight="180" entityIconified="false" entityId="138475421562190" entityLocationX="183" entityLocationY="8" entityWidth="150" queryId="Calc_object" tableAlias="q1" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityId="138475421562190" rightEntityParameterName="groupid"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="138475421562190" rightEntityFieldName="grp_group_id" rightEntityId="138475424968549"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="138475421562190" rightEntityFieldName="lc_id" rightEntityId="138475428041364"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lc_id" rightEntityId="138475421562190" rightEntityParameterName="lc_id"/>
+</datamodel>
