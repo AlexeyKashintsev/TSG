@@ -66,3 +66,10 @@ function insertCounterValue(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue){
     }
     model.save();
 }
+
+function initSums(aGroupID, aLcID, aDateID){
+    prcSumsCreate.params.groupid = aGroupID;
+    prcSumsCreate.params.lcid = aLcID;
+    prcSumsCreate.params.dateid = aDateID;
+    prcSumsCreate.executeUpdate();
+}
