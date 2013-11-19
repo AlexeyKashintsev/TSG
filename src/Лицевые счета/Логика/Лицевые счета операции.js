@@ -5,13 +5,13 @@
  * @public
  */
 
-var modSalSum = new ServerModule('moduleSaldoAndSums');
-    modSalSum.modLC = this;
+var modSN = null;
+   // modSalSum.modLC = this;
 
 function saveChanges(){
     model.save();
-    if (modSalSum.model.modified)
-        modSalSum.saveChanges();
+    if (modSN&&modSN.model.modified)
+        modSN.saveChanges();
 }
 
 /*
@@ -31,7 +31,7 @@ function addNewLC(aLCRegTo, aLCNumber, aLCPeopleRegCount, aGroupID){
                   dsFlat.md.lc_regto, aLCRegTo,
                   dsFlat.md.registered_count, aLCPeopleRegCount);
     if (aGroupID) addFlat2Group(dsFlat.lc_flat_id, aGroupID);
-    model.save();
+    saveChanges();
     return dsFlat.lc_flat_id;
 }
 
@@ -49,6 +49,9 @@ function addFlat2Group(aFlatID, aGroupID){
    // dsTempLCGrp.params.Group_ID = aGroupID;
    // dsTempLCGrp.requery(
    //     function(){
+            dsLCGrp.params.Group_ID = aGroupID;
+            dsLCGrp.requery();
+            
             if (dsLCGrp.find(dsLCGrp.md.lc_id, aFlatID).length == 0){
                 dsLCGrp.insert( dsLCGrp.md.lc_id, aFlatID,
                                 dsLCGrp.md.group_id, aGroupID);
@@ -87,8 +90,13 @@ function addCharToLC(aLC_ID, aCharID, aCharValue){
                                 dsCharsFlat.md.lc_char_type, aCharID,
                                 dsCharsFlat.md.lc_char_val, aCharValue);
             return dsCharsFlat.lc_chars_id;}
-            return foundedChars[0].lc_chars_id;
+        else {
+            if (foundedChars[0].lc_char_val!=aCharValue)
+                dsCharsFlat.scrollTo(foundedChars[0]);
+                dsCharsFlat.lc_char_val = aCharValue;
         }
+            return foundedChars[0].lc_chars_id;
+}
     //});
 
 
