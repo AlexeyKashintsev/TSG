@@ -31,6 +31,8 @@ var saveThreads = 0;
 
 var modLC = new ServerModule('moduleLC');
 var modSN = new ServerModule('moduleSaldoAndSums');
+    modSN.modLC= modLC;
+    modLC.modSN = modSN;
 
 //*************************************************************Служебыне функции
 function addLog(aMsg){
