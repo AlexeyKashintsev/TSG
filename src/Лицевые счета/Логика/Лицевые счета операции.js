@@ -49,6 +49,9 @@ function addFlat2Group(aFlatID, aGroupID){
    // dsTempLCGrp.params.Group_ID = aGroupID;
    // dsTempLCGrp.requery(
    //     function(){
+            dsLCGrp.params.Group_ID = aGroupID;
+            dsLCGrp.requery();
+            
             if (dsLCGrp.find(dsLCGrp.md.lc_id, aFlatID).length == 0){
                 dsLCGrp.insert( dsLCGrp.md.lc_id, aFlatID,
                                 dsLCGrp.md.group_id, aGroupID);
