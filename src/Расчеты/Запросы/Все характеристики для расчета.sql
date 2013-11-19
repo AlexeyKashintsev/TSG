@@ -5,6 +5,12 @@
  * @manual 
  */ 
 Select * 
-From Calc_object q1
- Inner Join grp_chars t on q1.group_id = t.grp_group_id
- Inner Join lc_chars t1 on q1.lc_id = t1.lc_id
+From per_sums t1
+, Calc_object q
+ Inner Join lc_flat_services t on q.lc_id = t.lc_id
+ and t.lc_flat_services_id = t1.flat_service_id
+ Left Join grp_services t2 on t2.services_id = t.services_id
+ and t2.group_id = q.group_id
+ Left Join grp_chars t3 on t3.grp_group_id = t2.group_id
+ Left Join lc_chars t4 on t4.lc_id = t.lc_id
+ Where :dateid = t1.date_id
