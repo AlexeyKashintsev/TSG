@@ -6,18 +6,17 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="Характеристики группы" entityHeight="129" entityIconified="false" entityId="138487874152968" entityLocationX="559" entityLocationY="288" entityWidth="150" tableAlias="t3" tableName="grp_chars" tableSchemaName=""/>
-  <entity Title="Характеристики квартиры" entityHeight="95" entityIconified="false" entityId="138487877056975" entityLocationX="375" entityLocationY="238" entityWidth="150" tableAlias="t4" tableName="lc_chars" tableSchemaName=""/>
+  <entity Title="Характеристики типы" entityHeight="76" entityIconified="false" entityId="138493805492760" entityLocationX="183" entityLocationY="289" entityWidth="150" tableAlias="t1" tableName="char_types" tableSchemaName=""/>
   <entity Title="Услуги в квартире" entityHeight="93" entityIconified="false" entityId="138487865726641" entityLocationX="368" entityLocationY="127" entityWidth="150" tableAlias="t" tableName="lc_flat_services" tableSchemaName=""/>
+  <entity Title="Характеристики квартиры" entityHeight="95" entityIconified="false" entityId="138487877056975" entityLocationX="375" entityLocationY="238" entityWidth="150" tableAlias="t4" tableName="lc_chars" tableSchemaName=""/>
   <entity Title="Услуги в группе" entityHeight="79" entityIconified="false" entityId="138487869586171" entityLocationX="555" entityLocationY="202" entityWidth="150" tableAlias="t2" tableName="grp_services" tableSchemaName=""/>
-  <entity Title="Начисления" entityHeight="161" entityIconified="false" entityId="138487861751735" entityLocationX="184" entityLocationY="80" entityWidth="150" tableAlias="t1" tableName="per_sums" tableSchemaName=""/>
   <entity Title="Объект расчета" entityHeight="182" entityIconified="false" entityId="138487862354714" entityLocationX="552" entityLocationY="7" entityWidth="150" queryId="Calc_object" tableAlias="q" tableName="" tableSchemaName=""/>
   <relation leftEntityFieldName="grp_group_id" leftEntityId="138487874152968" rightEntityFieldName="group_id" rightEntityId="138487869586171"/>
-  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138487861751735"/>
   <relation leftEntityFieldName="group_id" leftEntityId="138487869586171" rightEntityFieldName="group_id" rightEntityId="138487862354714"/>
-  <relation leftEntityId="-1" leftEntityParameterName="lc_id" rightEntityId="138487862354714" rightEntityParameterName="lc_id"/>
-  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="138487865726641" rightEntityFieldName="flat_service_id" rightEntityId="138487861751735"/>
-  <relation leftEntityFieldName="services_id" leftEntityId="138487869586171" rightEntityFieldName="services_id" rightEntityId="138487865726641"/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="138487877056975" rightEntityFieldName="lc_id" rightEntityId="138487865726641"/>
   <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityId="138487862354714" rightEntityParameterName="groupid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lc_id" rightEntityId="138487862354714" rightEntityParameterName="lc_id"/>
+  <relation leftEntityFieldName="services_id" leftEntityId="138487869586171" rightEntityFieldName="services_id" rightEntityId="138487865726641"/>
+  <relation leftEntityFieldName="lc_char_type" leftEntityId="138487877056975" rightEntityFieldName="char_types_id" rightEntityId="138493805492760"/>
   <relation leftEntityFieldName="lc_id" leftEntityId="138487862354714" rightEntityFieldName="lc_id" rightEntityId="138487865726641"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="138487877056975" rightEntityFieldName="lc_id" rightEntityId="138487865726641"/>
 </datamodel>
