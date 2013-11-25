@@ -32,16 +32,15 @@ function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     setElShown();
-    parGroupID = dsGroupsAndAll.GroupID;
-    dsTarifsInGroup.group_id = parGroupID;
 }//GEN-LAST:event_formWindowOpened
+
+function tbSetEditActionPerformed(evt) {//GEN-FIRST:event_tbSetEditActionPerformed
+    isEditable = tbSetEdit.selected;
+    setEdit();
+}//GEN-LAST:event_tbSetEditActionPerformed
 
 function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
     if (model.modified&&confirm('Сохранить изменения?')){
         model.save();
     }
 }//GEN-LAST:event_formWindowClosing
-
-function modelComboOnSelect(aEditor) {//GEN-FIRST:event_modelComboOnSelect
-    parGroupID = dsGroupsAndAll.GroupID;
-}//GEN-LAST:event_modelComboOnSelect

@@ -65,12 +65,12 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 }//GEN-LAST:event_formWindowOpened
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-    setDate();
+    //setDate(parDateID);
 }//GEN-LAST:event_paramsOnChanged
 
 function setDate(aNewDateID){
-    var ok = true;
     if (!aNewDateID) aNewDateID = parDateID;
+    var ok = true;
     if (fmWorksheet) ok = fmWorksheet.setDate(aNewDateID);
     if (ok) parDateID = aNewDateID;
     return ok;

@@ -14,9 +14,5 @@
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Услуги" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlGroupTarifs" parent="tabbedPane" prefHeight="339px" prefWidth="467px" toolTipText="Тарифы" type="PanelDesignInfo" visible="false">
-    <layout type="MarginLayoutDesignInfo"/>
-    <constraints tabTitle="tab2" type="TabsConstraintsDesignInfo"/>
-  </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

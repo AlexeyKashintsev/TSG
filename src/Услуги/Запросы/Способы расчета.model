@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="Способ расчета стоимости услуги" entityHeight="200" entityIconified="false" entityId="137485515688459" entityLocationX="236" entityLocationY="24" entityWidth="150" tableAlias="t1" tableName="usl_calc_formula" tableSchemaName=""/>
+  <entity Title="Способ расчета стоимости услуги" entityHeight="200" entityIconified="false" entityId="137485515688459" entityLocationX="184" entityLocationY="10" entityWidth="150" tableAlias="t1" tableName="usl_calc_formula" tableSchemaName=""/>
 </datamodel>

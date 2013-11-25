@@ -1,6 +1,5 @@
 /**
  *
- * @public 
  * @author Alexey
  * @name counters_values_by_flat
  * @writable per_counter_values

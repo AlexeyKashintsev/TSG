@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><datamodel>
-  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="dummytable" entityHeight="200" entityIconified="false" entityId="138409014353256" entityLocationX="370" entityLocationY="18" entityWidth="150" tableAlias="" tableName="dummytable" tableSchemaName=""/>
-  <entity Title="Группы квартир" entityHeight="200" entityIconified="false" entityId="137484902354976" entityLocationX="183" entityLocationY="7" entityWidth="150" tableAlias="t1" tableName="grp_groups" tableSchemaName=""/>
-</datamodel>
