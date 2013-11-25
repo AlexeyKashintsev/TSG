@@ -29,10 +29,14 @@ var wb = null;
 var evalutor = null;
 var saveThreads = 0;
 
-var modLC = new ServerModule('moduleLC');
-var modSN = new ServerModule('moduleSaldoAndSums');
-    modSN.modLC= modLC;
+var modLC = new ServerModule('LCModule');
+var modSN = new ServerModule('SaldoAndSumsModule');
+var modCN = new ServerModule('CountersModule');
+    modSN.modLC = modLC;
+    modSN.modCN = modCN;
     modLC.modSN = modSN;
+    modLC.modCN = modCN;
+    
 
 //*************************************************************Служебыне функции
 function addLog(aMsg){

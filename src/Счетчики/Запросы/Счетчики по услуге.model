@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="group_service" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="flat_service" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="cnt_con2services" entityHeight="200" entityIconified="false" entityId="138537953582828" entityLocationX="191" entityLocationY="12" entityWidth="150" tableAlias="t1" tableName="cnt_con2services" tableSchemaName=""/>
+  <entity Title="cnt_counters" entityHeight="200" entityIconified="false" entityId="138537955557175" entityLocationX="373" entityLocationY="13" entityWidth="150" tableAlias="t" tableName="cnt_counters" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="flat_service" rightEntityFieldName="flat_service" rightEntityId="138537953582828"/>
+  <relation leftEntityId="-1" leftEntityParameterName="group_service" rightEntityFieldName="group_service" rightEntityId="138537953582828"/>
+  <relation leftEntityFieldName="cnt_counters_id" leftEntityId="138537955557175" rightEntityFieldName="counter_id" rightEntityId="138537953582828"/>
+</datamodel>

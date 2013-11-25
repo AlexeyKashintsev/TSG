@@ -8,8 +8,8 @@
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137684230384165" entityLocationX="516" entityLocationY="33" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="137684219497981" rightEntityParameterName="date_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137684219497981" rightEntityParameterName="flat_id"/>
-  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137684230384165" rightEntityFieldName="usl_services_id" rightEntityId="137684230384165"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="137684219497981" rightEntityFieldName="usl_services_id" rightEntityId="137684230384165"/>
   <referenceRelation leftEntityFieldName="calc_id" leftEntityId="137684230384165" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137684230384165"/>
+  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137684230384165" rightEntityFieldName="usl_services_id" rightEntityId="137684230384165"/>
   <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="137684219497981" rightEntityFieldName="lc_flat_services_id" rightEntityId="137684219497981"/>
 </datamodel>

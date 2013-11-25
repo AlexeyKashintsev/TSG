@@ -6,9 +6,11 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="Счетчики в квартире" entityHeight="200" entityIconified="false" entityId="137683953109651" entityLocationX="214" entityLocationY="17" entityWidth="150" queryId="counters_by_flat" tableAlias="q1" tableName="" tableSchemaName=""/>
+  <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="138538130590342" entityLocationX="212" entityLocationY="225" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
   <entity Title="Счетчик значения" entityHeight="200" entityIconified="false" entityId="137495823260070" entityLocationX="414" entityLocationY="24" entityWidth="150" tableAlias="t" tableName="per_counter_values" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="all_flats" rightEntityId="137683953109651" rightEntityParameterName="all_flats"/>
   <relation leftEntityId="-1" leftEntityParameterName="flat_id" rightEntityId="137683953109651" rightEntityParameterName="flat_id"/>
-  <relation leftEntityFieldName="lc_counter_id" leftEntityId="137683953109651" rightEntityFieldName="counter_id" rightEntityId="137495823260070"/>
   <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="137495823260070"/>
+  <relation leftEntityFieldName="flat_service" leftEntityId="137683953109651" rightEntityFieldName="lc_flat_services_id" rightEntityId="138538130590342"/>
+  <relation leftEntityId="-1" leftEntityParameterName="all_flats" rightEntityId="137683953109651" rightEntityParameterName="all_flats"/>
+  <relation leftEntityFieldName="counter_id" leftEntityId="137683953109651" rightEntityFieldName="counter_id" rightEntityId="137495823260070"/>
 </datamodel>

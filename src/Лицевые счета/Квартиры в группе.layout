@@ -23,7 +23,6 @@
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="318px" prefWidth="372px" type="DbGridDesignInfo">
     <column name="colFlatNumber" title="№" width="15">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="137501421039573" fieldName="lc_flatnumber"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -32,13 +31,13 @@
       <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <datamodelElement entityId="137501421039573" fieldName="lc_flatnumber"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colFlatRegTo" title="ФИО">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="137501421039573" fieldName="lc_regto"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -47,6 +46,7 @@
       <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <datamodelElement entityId="137501421039573" fieldName="lc_regto"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>

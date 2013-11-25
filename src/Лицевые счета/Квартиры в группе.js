@@ -9,7 +9,7 @@ var isSelectForm = true;
 var isEditable = false;
 var canSetEdit = true;
 var parentForm = null;
-var flatModule = new moduleLC();
+var flatModule = new LCModule();
 
 function setCurrentGroup(aNewGroupID){
     parGroupID = aNewGroupID;
