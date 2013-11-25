@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="LC_ID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="ServiceID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="138539471012960" entityLocationX="199" entityLocationY="15" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="LC_ID" rightEntityFieldName="lc_id" rightEntityId="138539471012960"/>
+  <relation leftEntityId="-1" leftEntityParameterName="ServiceID" rightEntityFieldName="services_id" rightEntityId="138539471012960"/>
+</datamodel>

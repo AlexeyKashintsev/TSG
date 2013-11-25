@@ -8,7 +8,7 @@ var modSums = null;
 
 function initSums(){
     if (!modSums)
-        modSums = new moduleSaldoAndSums();
+        modSums = new SaldoAndSumsModule();
 }
 
 function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed

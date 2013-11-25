@@ -6,7 +6,7 @@
  */
 
 function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
-    var tst = new ServerModule('moduleLC');
+    var tst = new ServerModule('LCModule');
    /* tst.doSomethingMine = function(){
         var e = model.createEntity("Select count(*) as cnt FROM per_date");
         e.execute();
