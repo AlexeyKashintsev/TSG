@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="counterID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="14" entityLocationY="13" entityWidth="150"/>
+  <entity Title="cnt_counters" entityHeight="200" entityIconified="false" entityId="138538253310849" entityLocationX="202" entityLocationY="18" entityWidth="150" tableAlias="t1" tableName="cnt_counters" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="counterID" rightEntityFieldName="cnt_counters_id" rightEntityId="138538253310849"/>
+</datamodel>

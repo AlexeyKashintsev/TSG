@@ -1,6 +1,5 @@
 /**
  *
- * @public 
  * @author Alexey
  * @name qPaymentsInFlat
  */ 

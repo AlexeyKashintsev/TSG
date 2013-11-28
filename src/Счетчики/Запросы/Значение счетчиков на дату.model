@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="dateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="CounterID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Счетчик значения" entityHeight="200" entityIconified="false" entityId="138537931815874" entityLocationX="192" entityLocationY="12" entityWidth="150" tableAlias="t1" tableName="per_counter_values" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateID" rightEntityFieldName="date_id" rightEntityId="138537931815874"/>
+  <relation leftEntityId="-1" leftEntityParameterName="CounterID" rightEntityFieldName="counter_id" rightEntityId="138537931815874"/>
+</datamodel>

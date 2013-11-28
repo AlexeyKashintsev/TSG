@@ -3,6 +3,6 @@
     <parameter description="" name="parGroup" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="137485491447488" entityLocationX="170" entityLocationY="5" entityWidth="150" tableAlias="t1" tableName="grp_services" tableSchemaName=""/>
+  <entity Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="137485491447488" entityLocationX="190" entityLocationY="22" entityWidth="150" tableAlias="t1" tableName="grp_services" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityFieldName="group_id" rightEntityId="137485491447488"/>
 </datamodel>

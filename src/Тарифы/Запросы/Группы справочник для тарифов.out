@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><outputFields>
-  <field bindedColumn="GroupID" sqlType="2"/>
-  <field bindedColumn="Name" sqlType="1"/>
-</outputFields>

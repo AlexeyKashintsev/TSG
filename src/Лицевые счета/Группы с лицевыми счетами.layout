@@ -2,50 +2,50 @@
   <widget dividerLocation="250" leftComponent="splitPane1" name="splitPane" parent="Form" prefHeight="475px" prefWidth="873px" rightComponent="panel" type="SplitDesignInfo">
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget dividerLocation="100" leftComponent="pnlGroups" name="splitPane1" orientation="0" parent="splitPane" prefHeight="473px" prefWidth="249px" rightComponent="pnlFlats" type="SplitDesignInfo"/>
-  <widget name="pnlGroups" parent="splitPane1" prefHeight="99px" prefWidth="247px" type="PanelDesignInfo">
+  <widget dividerLocation="100" leftComponent="pnlGroups" name="splitPane1" orientation="0" parent="splitPane" prefHeight="471px" prefWidth="248px" rightComponent="pnlFlats" type="SplitDesignInfo"/>
+  <widget name="pnlGroups" parent="splitPane1" prefHeight="98px" prefWidth="244px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
-  <widget name="pnlFlats" parent="splitPane1" prefHeight="367px" prefWidth="247px" type="PanelDesignInfo">
+  <widget name="pnlFlats" parent="splitPane1" prefHeight="364px" prefWidth="244px" type="PanelDesignInfo">
+    <layout type="BorderLayoutDesignInfo"/>
+  </widget>
+  <widget name="panel" parent="splitPane" prefHeight="471px" prefWidth="616px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
-  <widget name="panel" parent="splitPane" prefHeight="473px" prefWidth="617px" type="PanelDesignInfo">
-    <layout type="MarginLayoutDesignInfo"/>
-  </widget>
-  <widget name="tabbedPane" parent="panel" prefHeight="396px" prefWidth="617px" type="TabsDesignInfo">
+  <widget name="tabbedPane" parent="panel" prefHeight="394px" prefWidth="616px" type="TabsDesignInfo">
     <constraints bottom="77px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlCurrent" parent="tabbedPane" prefHeight="368px" prefWidth="612px" type="PanelDesignInfo">
+  <widget name="pnlCurrent" parent="tabbedPane" prefHeight="348px" prefWidth="595px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Начисления" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlFlatChars" parent="tabbedPane" prefHeight="368px" prefWidth="612px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlFlatChars" parent="tabbedPane" prefHeight="348px" prefWidth="595px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Характеристики" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget dividerLocation="200" leftComponent="pnlServices" name="splitPane2" orientation="0" parent="tabbedPane" prefHeight="368px" prefWidth="612px" rightComponent="pnlCounters" type="SplitDesignInfo" visible="false">
+  <widget dividerLocation="200" leftComponent="pnlServices" name="splitPane2" orientation="0" parent="tabbedPane" prefHeight="348px" prefWidth="595px" rightComponent="pnlCounters" type="SplitDesignInfo" visible="false">
     <constraints tabTitle="Услуги и счетчики" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlServices" parent="splitPane2" prefHeight="199px" prefWidth="610px" type="PanelDesignInfo">
+  <widget name="pnlServices" parent="splitPane2" prefHeight="198px" prefWidth="591px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
-  <widget name="pnlCounters" parent="splitPane2" prefHeight="162px" prefWidth="610px" type="PanelDesignInfo">
+  <widget name="pnlCounters" parent="splitPane2" prefHeight="141px" prefWidth="591px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
-  <widget name="pnlSaldoHistory" parent="tabbedPane" prefHeight="368px" prefWidth="612px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlSaldoHistory" parent="tabbedPane" prefHeight="348px" prefWidth="595px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="История сальдо" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlOplata" parent="tabbedPane" prefHeight="368px" prefWidth="612px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlOplata" parent="tabbedPane" prefHeight="348px" prefWidth="595px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Оплата" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlSaldoCur" parent="panel" prefHeight="76px" prefWidth="617px" type="PanelDesignInfo">
+  <widget name="pnlSaldoCur" parent="panel" prefHeight="76px" prefWidth="616px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
+    <constraints bottom="0px" height="76px" left="0px" right="0px" type="MarginConstraintsDesignInfo"/>
     <border borderTitleColor="#000000" title="Сальдо" titleJustification="0" type="TitledBorderDesignInfo">
       <border type="LineBorderDesignInfo"/>
     </border>
-    <constraints bottom="0px" height="76px" left="0px" right="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

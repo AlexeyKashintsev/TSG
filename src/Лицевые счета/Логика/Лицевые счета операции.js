@@ -1,17 +1,18 @@
 /**
  * 
  * @author Alexey
- * @name moduleLC
+ * @name LCModule
  * @public
  */
 
-var modSalSum = new ServerModule('moduleSaldoAndSums');
-    modSalSum.modLC = this;
+var modSN = null;
+var modCN = null;
+   // modSalSum.modLC = this;
 
 function saveChanges(){
     model.save();
-    if (modSalSum.model.modified)
-        modSalSum.saveChanges();
+    if (modSN&&modSN.model.modified)
+        modSN.saveChanges();
 }
 
 /*
@@ -31,7 +32,7 @@ function addNewLC(aLCRegTo, aLCNumber, aLCPeopleRegCount, aGroupID){
                   dsFlat.md.lc_regto, aLCRegTo,
                   dsFlat.md.registered_count, aLCPeopleRegCount);
     if (aGroupID) addFlat2Group(dsFlat.lc_flat_id, aGroupID);
-    model.save();
+    saveChanges();
     return dsFlat.lc_flat_id;
 }
 
@@ -49,6 +50,9 @@ function addFlat2Group(aFlatID, aGroupID){
    // dsTempLCGrp.params.Group_ID = aGroupID;
    // dsTempLCGrp.requery(
    //     function(){
+            dsLCGrp.params.Group_ID = aGroupID;
+            dsLCGrp.requery();
+            
             if (dsLCGrp.find(dsLCGrp.md.lc_id, aFlatID).length == 0){
                 dsLCGrp.insert( dsLCGrp.md.lc_id, aFlatID,
                                 dsLCGrp.md.group_id, aGroupID);
@@ -87,8 +91,13 @@ function addCharToLC(aLC_ID, aCharID, aCharValue){
                                 dsCharsFlat.md.lc_char_type, aCharID,
                                 dsCharsFlat.md.lc_char_val, aCharValue);
             return dsCharsFlat.lc_chars_id;}
-            return foundedChars[0].lc_chars_id;
+        else {
+            if (foundedChars[0].lc_char_val!=aCharValue)
+                dsCharsFlat.scrollTo(foundedChars[0]);
+                dsCharsFlat.lc_char_val = aCharValue;
         }
+            return foundedChars[0].lc_chars_id;
+}
     //});
 
 
@@ -100,7 +109,7 @@ function addCharToLC(aLC_ID, aCharID, aCharValue){
  * @param {type} aDateID
  * @returns {@exp;services_by_flat@pro;lc_flat_services_id}
  * todo: добавить поиск услуги, добавить добавление значений(sums_perFlat)
- *       в модуле moduleSaldoAndSums
+ *       в модуле SaldoAndSumsModule
  *       и отслеживать эти дополнения, чтобы сохранять их тоже */
 
 function addServiceToLC(aFlatID, aServiceID, aCalcByCounter, aDateID){
@@ -120,40 +129,10 @@ function addServiceToLC(aFlatID, aServiceID, aCalcByCounter, aDateID){
  * @returns {@exp;dsCountersByFlat@pro;lc_counter_id} 
  */
 function addCounterToFlat(aFlatService){
-    dsCountersByFlat.insert(dsCountersByFlat.md.flat_serv_id, aFlatService,
-                            dsCountersByFlat.md.counter_active, true);
-    return dsCountersByFlat.lc_counter_id;
+    if (!modCN) modCN = new CountersModule();
+    return modCN.addNewCounter();
 }
 
-
-function getCouterInFlat(aFlatID, aServiceID){
-    dsCountersByFlat.params.flat_id = aFlatID;
-    dsCountersByFlat.execute();
-    try{
-        return dsCountersByFlat.find(dsCountersByFlat.md.services_id, aServiceID)[0].lc_counter_id
-    } catch (e) {
-        return null;
-    };
-}
-
-/*
- * Добавить значение счетчика
- * @param {type} aCounterID
- * @param {type} aDateID
- * @param {type} aBegValue
- * @param {type} aEndValue
- * @returns {undefined}
- * to do:
- * Дописать код поиска текущего значения по квартире и дате и если найдено - 
- * модифицировать его, иначе создать новую запись
- */
-function insertCounterValue(aCounterID, aDateID, aBegValue, aEndValue){
-    dsCountersValues.insert(dsCountersValues.md.counter_id, aCounterID,
-                            dsCountersValues.md.date_id, aDateID,
-                            dsCountersValues.md.beg_val, aBegValue,
-                            dsCountersValues.md.end_val, aEndValue);
-    
-}
 
 /*
  * Удаление лицевого счета

@@ -9,7 +9,7 @@ var isSelectForm = true;
 var isEditable = false;
 var canSetEdit = true;
 var parentForm = null;
-var flatModule = new moduleLC();
+var flatModule = new LCModule();
 
 function setCurrentGroup(aNewGroupID){
     parGroupID = aNewGroupID;
@@ -35,8 +35,6 @@ function setElShown(){
     setEdit();
     if (!isSelectForm){
         pnlSelLock.visible = false;
-        pnlWorkSpace.height += 48;
-        modelGrid.bottom += 48;
     }
 }
 
@@ -82,5 +80,5 @@ function dsflats_by_groupWillScroll(evt) {//GEN-FIRST:event_dsflats_by_groupWill
 }//GEN-LAST:event_dsflats_by_groupWillScroll
 
 function dsflats_by_groupOnScrolled(evt) {//GEN-FIRST:event_dsflats_by_groupOnScrolled
-    setCurrentFlat(dsflats_by_group.lc_id);
+    setCurrentFlat(dsflats_by_group.lc_flat_id);
 }//GEN-LAST:event_dsflats_by_groupOnScrolled

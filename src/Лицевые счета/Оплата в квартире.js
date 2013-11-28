@@ -19,7 +19,3 @@ function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
 	// TODO Добавьте свой код:
 }//GEN-LAST:event_btnAddActionPerformed
-
-function textFieldActionPerformed(evt) {//GEN-FIRST:event_textFieldActionPerformed
-        textField.text = parDateID ;	// TODO Добавьте свой код:
-}//GEN-LAST:event_textFieldActionPerformed
