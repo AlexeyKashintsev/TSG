@@ -12,7 +12,7 @@
  * @returns {@exp;services_by_group}
  */
 function addNewTarifs()
-{   for (i=0;i<services_by_group.length;i++)
+{   for (i=0;i<services_by_group.params. length;i++)
         {for (j=0;j<tarifsInGroup.length;j++)
             {  s=0;
              if(services_by_group.grp_services_id === tarifsInGroup.services_id)

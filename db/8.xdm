@@ -24,30 +24,6 @@
 </foreignKey>
 </foreignKeys>
 </table>
-<table description="Характеристики квартиры" name="LC_CHARS">
-<columns>
-<column description="" isPk="true" javaType="java.math.BigDecimal" name="lc_chars_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
-<column description="" isPk="false" javaType="java.math.BigDecimal" name="lc_id" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
-<column description="" isPk="false" javaType="java.math.BigDecimal" name="lc_char_val" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
-<column description="" isPk="false" javaType="java.math.BigDecimal" name="lc_char_type" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
-</columns>
-<indexes>
-<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="lc_chars_pk" unique="true">
-<indColumn ascending="true" name="lc_chars_id" position="1"/>
-</index>
-</indexes>
-<primaryKey name="lc_chars_pk">
-<pkColumn pkField="lc_chars_id" pkName="lc_chars_pk" pkSchema="public" pkTable="lc_chars"/>
-</primaryKey>
-<foreignKeys>
-<foreignKey name="fk_137477595646251">
-<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="lc_id" fkName="fk_137477595646251" fkSchema="public" fkTable="lc_chars" fkUpdateRule="CASCADE" pkField="lc_flat_id" pkName="lc_flat_pk" pkSchema="public" pkTable="lc_flat"/>
-</foreignKey>
-<foreignKey name="fk_137477597151519">
-<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="lc_char_type" fkName="fk_137477597151519" fkSchema="public" fkTable="lc_chars" fkUpdateRule="CASCADE" pkField="char_types_id" pkName="char_types_pk" pkSchema="public" pkTable="char_types"/>
-</foreignKey>
-</foreignKeys>
-</table>
 <table description="Состав импортов" name="IMPEXCELTABLEFIELDS">
 <columns>
 <column description="" isPk="true" javaType="java.math.BigDecimal" name="exceltablefields_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
@@ -76,6 +52,30 @@
 </foreignKey>
 </foreignKeys>
 </table>
+<table description="Характеристики квартиры" name="LC_CHARS">
+<columns>
+<column description="" isPk="true" javaType="java.math.BigDecimal" name="lc_chars_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="lc_id" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="lc_char_val" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="lc_char_type" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
+</columns>
+<indexes>
+<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="lc_chars_pk" unique="true">
+<indColumn ascending="true" name="lc_chars_id" position="1"/>
+</index>
+</indexes>
+<primaryKey name="lc_chars_pk">
+<pkColumn pkField="lc_chars_id" pkName="lc_chars_pk" pkSchema="public" pkTable="lc_chars"/>
+</primaryKey>
+<foreignKeys>
+<foreignKey name="fk_137477595646251">
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="lc_id" fkName="fk_137477595646251" fkSchema="public" fkTable="lc_chars" fkUpdateRule="CASCADE" pkField="lc_flat_id" pkName="lc_flat_pk" pkSchema="public" pkTable="lc_flat"/>
+</foreignKey>
+<foreignKey name="fk_137477597151519">
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="lc_char_type" fkName="fk_137477597151519" fkSchema="public" fkTable="lc_chars" fkUpdateRule="CASCADE" pkField="char_types_id" pkName="char_types_pk" pkSchema="public" pkTable="char_types"/>
+</foreignKey>
+</foreignKeys>
+</table>
 <table description="Импорт из файлов" name="IMPORTNAMES">
 <columns>
 <column description="" isPk="true" javaType="java.math.BigDecimal" name="importnames_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
@@ -90,26 +90,23 @@
 <pkColumn pkField="importnames_id" pkName="importnames_pk" pkSchema="public" pkTable="importnames"/>
 </primaryKey>
 </table>
-<table description="Счетчик" name="LC_COUNTER">
+<table description="" name="CNT_TYPES">
 <columns>
-<column description="" isPk="true" javaType="java.math.BigDecimal" name="lc_counter_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
-<column description="" isPk="false" javaType="java.math.BigDecimal" name="flat_serv_id" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
-<column description="" isPk="false" javaType="java.lang.String" name="counter_number" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
-<column description="" isPk="false" javaType="java.lang.Boolean" name="counter_active" nullable="true" precision="10" scale="0" signed="true" size="0" type="16" typeName="bool"/>
+<column description="" isPk="true" javaType="java.math.BigDecimal" name="cnt_types_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.lang.String" name="type_name" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
+<column description="" isPk="false" javaType="java.lang.String" name="formula_name" nullable="false" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
 </columns>
 <indexes>
-<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="lc_counter_pk" unique="true">
-<indColumn ascending="true" name="lc_counter_id" position="1"/>
+<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="cnt_types_pk" unique="true">
+<indColumn ascending="true" name="cnt_types_id" position="1"/>
+</index>
+<index clustered="false" fKeyName="" hashed="false" isPKey="false" name="cnt_formula_name" unique="true">
+<indColumn ascending="true" name="formula_name" position="1"/>
 </index>
 </indexes>
-<primaryKey name="lc_counter_pk">
-<pkColumn pkField="lc_counter_id" pkName="lc_counter_pk" pkSchema="public" pkTable="lc_counter"/>
+<primaryKey name="cnt_types_pk">
+<pkColumn pkField="cnt_types_id" pkName="cnt_types_pk" pkSchema="public" pkTable="cnt_types"/>
 </primaryKey>
-<foreignKeys>
-<foreignKey name="fk_137477978689421">
-<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="flat_serv_id" fkName="fk_137477978689421" fkSchema="public" fkTable="lc_counter" fkUpdateRule="CASCADE" pkField="lc_flat_services_id" pkName="lc_flat_services_pk" pkSchema="public" pkTable="lc_flat_services"/>
-</foreignKey>
-</foreignKeys>
 </table>
 <table description="Типы полей для импорта" name="IMPFIELDSTYPES">
 <columns>
@@ -134,7 +131,7 @@
 <table description="Счетчик значения" name="PER_COUNTER_VALUES">
 <columns>
 <column description="" isPk="true" javaType="java.math.BigDecimal" name="per_counter_values_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
-<column description="Счетчик" isPk="false" javaType="java.math.BigDecimal" name="counter_id" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
+<column description="Счетчик" isPk="false" javaType="java.math.BigDecimal" name="counter_id" nullable="false" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
 <column description="Дата" isPk="false" javaType="java.math.BigDecimal" name="date_id" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
 <column description="Начальное значение" isPk="false" javaType="java.math.BigDecimal" name="beg_val" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
 <column description="Конечное значение" isPk="false" javaType="java.math.BigDecimal" name="end_val" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
@@ -151,8 +148,8 @@
 <foreignKey name="fk_137477989302391">
 <fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="date_id" fkName="fk_137477989302391" fkSchema="public" fkTable="per_counter_values" fkUpdateRule="CASCADE" pkField="per_date_id" pkName="sal_date_pk" pkSchema="public" pkTable="per_date"/>
 </foreignKey>
-<foreignKey name="fk_137477989739509">
-<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="counter_id" fkName="fk_137477989739509" fkSchema="public" fkTable="per_counter_values" fkUpdateRule="CASCADE" pkField="lc_counter_id" pkName="lc_counter_pk" pkSchema="public" pkTable="lc_counter"/>
+<foreignKey name="fk_138537841949862">
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="counter_id" fkName="fk_138537841949862" fkSchema="public" fkTable="per_counter_values" fkUpdateRule="CASCADE" pkField="cnt_counters_id" pkName="cnt_counters_pk" pkSchema="public" pkTable="cnt_counters"/>
 </foreignKey>
 </foreignKeys>
 </table>
@@ -183,6 +180,7 @@
 <column description="Наименования способа рассчета стоимости" isPk="false" javaType="java.lang.String" name="calc_name" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
 <column description="Формула рассчета" isPk="false" javaType="java.lang.String" name="calc_formula" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
 <column description="Рассчет по счетчику" isPk="false" javaType="java.lang.Boolean" name="calc_by_counter" nullable="true" precision="10" scale="0" signed="true" size="0" type="16" typeName="bool"/>
+<column description="" isPk="false" javaType="java.lang.String" name="calc_value_formula" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
 </columns>
 <indexes>
 <index clustered="false" fKeyName="" hashed="false" isPKey="true" name="usl_calc_formula_pk" unique="true">
@@ -430,7 +428,7 @@
 <column description="" isPk="true" javaType="java.math.BigDecimal" name="usl_services_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 <column description="Наименование услуги" isPk="false" javaType="java.lang.String" name="usl_name" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
 <column description="" isPk="false" javaType="java.math.BigDecimal" name="calc_id" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
-<column description="Специализированная формула рассчета" isPk="false" javaType="java.lang.String" name="special_formula" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="connected_service" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 </columns>
 <indexes>
 <index clustered="false" fKeyName="" hashed="false" isPKey="true" name="usl_services_pk" unique="true">
@@ -441,6 +439,9 @@
 <pkColumn pkField="usl_services_id" pkName="usl_services_pk" pkSchema="public" pkTable="usl_services"/>
 </primaryKey>
 <foreignKeys>
+<foreignKey name="fk_138409969860736">
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="connected_service" fkName="fk_138409969860736" fkSchema="public" fkTable="usl_services" fkUpdateRule="CASCADE" pkField="usl_services_id" pkName="usl_services_pk" pkSchema="public" pkTable="usl_services"/>
+</foreignKey>
 <foreignKey name="fk_137477786336960">
 <fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="calc_id" fkName="fk_137477786336960" fkSchema="public" fkTable="usl_services" fkUpdateRule="CASCADE" pkField="usl_calc_formula_id" pkName="usl_calc_formula_pk" pkSchema="public" pkTable="usl_calc_formula"/>
 </foreignKey>
@@ -506,6 +507,33 @@
 <primaryKey name="char_types_pk">
 <pkColumn pkField="char_types_id" pkName="char_types_pk" pkSchema="public" pkTable="char_types"/>
 </primaryKey>
+</table>
+<table description="" name="CNT_CON2SERVICES">
+<columns>
+<column description="" isPk="true" javaType="java.math.BigDecimal" name="cnt_con2services_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="counter_id" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="group_service" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="flat_service" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+</columns>
+<indexes>
+<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="cnt_con2services_pk" unique="true">
+<indColumn ascending="true" name="cnt_con2services_id" position="1"/>
+</index>
+</indexes>
+<primaryKey name="cnt_con2services_pk">
+<pkColumn pkField="cnt_con2services_id" pkName="cnt_con2services_pk" pkSchema="public" pkTable="cnt_con2services"/>
+</primaryKey>
+<foreignKeys>
+<foreignKey name="fk_138537863950176">
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="counter_id" fkName="fk_138537863950176" fkSchema="public" fkTable="cnt_con2services" fkUpdateRule="CASCADE" pkField="cnt_counters_id" pkName="cnt_counters_pk" pkSchema="public" pkTable="cnt_counters"/>
+</foreignKey>
+<foreignKey name="fk_138537868517895">
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="flat_service" fkName="fk_138537868517895" fkSchema="public" fkTable="cnt_con2services" fkUpdateRule="CASCADE" pkField="lc_flat_services_id" pkName="lc_flat_services_pk" pkSchema="public" pkTable="lc_flat_services"/>
+</foreignKey>
+<foreignKey name="fk_138537866996390">
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="group_service" fkName="fk_138537866996390" fkSchema="public" fkTable="cnt_con2services" fkUpdateRule="CASCADE" pkField="grp_services_id" pkName="grp_services_pk" pkSchema="public" pkTable="grp_services"/>
+</foreignKey>
+</foreignKeys>
 </table>
 <table description="" name="OPL_PAYMENTS">
 <columns>
@@ -619,6 +647,22 @@
 <fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="mdent_parent_id" fkName="mtd_entities_fk61240574157171" fkSchema="public" fkTable="mtd_entities" fkUpdateRule="NOACTION" pkField="mdent_id" pkName="mtd_entities_pk" pkSchema="public" pkTable="mtd_entities"/>
 </foreignKey>
 </foreignKeys>
+</table>
+<table description="" name="CNT_COUNTERS">
+<columns>
+<column description="" isPk="true" javaType="java.math.BigDecimal" name="cnt_counters_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.lang.String" name="cnt_number" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
+<column description="" isPk="false" javaType="java.lang.String" name="cnt_type" nullable="true" precision="10" scale="0" signed="true" size="200" type="12" typeName="varchar"/>
+<column description="" isPk="false" javaType="java.lang.Boolean" name="cnt_active" nullable="true" precision="10" scale="0" signed="true" size="0" type="16" typeName="bool"/>
+</columns>
+<indexes>
+<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="cnt_counters_pk" unique="true">
+<indColumn ascending="true" name="cnt_counters_id" position="1"/>
+</index>
+</indexes>
+<primaryKey name="cnt_counters_pk">
+<pkColumn pkField="cnt_counters_id" pkName="cnt_counters_pk" pkSchema="public" pkTable="cnt_counters"/>
+</primaryKey>
 </table>
 <table description="Услуги в группе" name="GRP_SERVICES">
 <columns>
