@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="lc_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="groupid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="dateid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Счетчик значения" entityHeight="111" entityIconified="false" entityId="138540345354427" entityLocationX="719" entityLocationY="21" entityWidth="150" tableAlias="t3" tableName="per_counter_values" tableSchemaName=""/>
+  <entity Title="Услуги в квартире" entityHeight="94" entityIconified="false" entityId="138548253128660" entityLocationX="363" entityLocationY="92" entityWidth="150" tableAlias="t4" tableName="lc_flat_services" tableSchemaName=""/>
+  <entity Title="cnt_con2services" entityHeight="103" entityIconified="false" entityId="138540336003879" entityLocationX="539" entityLocationY="14" entityWidth="150" tableAlias="t" tableName="cnt_con2services" tableSchemaName=""/>
+  <entity Title="Услуги в группе" entityHeight="79" entityIconified="false" entityId="138487869586171" entityLocationX="362" entityLocationY="7" entityWidth="150" tableAlias="t2" tableName="grp_services" tableSchemaName=""/>
+  <entity Title="Объект расчета" entityHeight="182" entityIconified="false" entityId="138487862354714" entityLocationX="200" entityLocationY="7" entityWidth="150" queryId="Calc_object" tableAlias="q" tableName="" tableSchemaName=""/>
+  <entity Title="cnt_counters" entityHeight="95" entityIconified="false" entityId="138540341756140" entityLocationX="541" entityLocationY="131" entityWidth="150" tableAlias="t1" tableName="cnt_counters" tableSchemaName=""/>
+  <relation leftEntityFieldName="cnt_counters_id" leftEntityId="138540341756140" rightEntityFieldName="counter_id" rightEntityId="138540336003879"/>
+  <relation leftEntityFieldName="services_id" leftEntityId="138548253128660" rightEntityFieldName="services_id" rightEntityId="138487869586171"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="138487862354714" rightEntityFieldName="lc_id" rightEntityId="138548253128660"/>
+  <relation leftEntityFieldName="grp_services_id" leftEntityId="138487869586171" rightEntityFieldName="group_service" rightEntityId="138540336003879"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lc_id" rightEntityId="138487862354714" rightEntityParameterName="lc_id"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="138487869586171" rightEntityFieldName="group_id" rightEntityId="138487862354714"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityId="138487862354714" rightEntityParameterName="groupid"/>
+  <relation leftEntityFieldName="counter_id" leftEntityId="138540336003879" rightEntityFieldName="counter_id" rightEntityId="138540345354427"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138540345354427"/>
+</datamodel>

@@ -1,0 +1,3 @@
+select do_cross_cursor('GRP_END_||cnt_type', 'from cnt_counters', 'lc_id', 'From all_counters q', 'fm_val')
+ do_cross_cursor;
+ FETCH ALL FROM result;

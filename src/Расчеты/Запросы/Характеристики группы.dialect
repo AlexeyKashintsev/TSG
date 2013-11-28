@@ -1,0 +1,6 @@
+select do_cross_cursor('''GRP_''||char_formula_name', 'from char_types',
+ 'group_id', 'From Calc_object q
+ Inner Join grp_chars t1 on q.group_id = t1.grp_group_id
+ Join char_types t3 on t1.grp_char_type = t3.char_types_id', 'grp_char_val');
+ do_cross_cursor;
+ FETCH ALL FROM result;
