@@ -6,13 +6,17 @@
  */
 var modSums = null;
 
-function initSums(){
+function initModuleSums(){
     if (!modSums)
         modSums = new SaldoAndSumsModule();
 }
 
 function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed
-    initSums();
+    initModuleSums();
     modSums.initSums(null, parFlatID, parDateID);
     model.requery();
 }//GEN-LAST:event_button2ActionPerformed
+
+function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
+	// TODO Добавьте свой код:
+}//GEN-LAST:event_buttonActionPerformed

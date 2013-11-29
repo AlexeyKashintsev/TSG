@@ -1,28 +1,72 @@
-<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="348px" prefWidth="372px" windowClosing="formWindowClosing" windowOpened="formWindowOpened">
-  <widget name="pnlSelLock" parent="Form" prefHeight="48px" prefWidth="372px" type="PanelDesignInfo">
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="345px" prefWidth="372px" windowClosing="formWindowClosing" windowOpened="formWindowOpened">
+  <widget name="pnlWorkSpace" parent="Form" prefHeight="309px" prefWidth="372px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
-    <constraints bottom="0px" height="48px" left="0px" right="0px" type="MarginConstraintsDesignInfo"/>
-  </widget>
-  <widget icon="icons/22x22/actions/dialog-apply.png" name="btnSelect" parent="pnlSelLock" prefHeight="35px" prefWidth="125px" text="Выбрать" type="ButtonDesignInfo">
-    <constraints bottom="7px" height="35px" right="7px" type="MarginConstraintsDesignInfo" width="125px"/>
-  </widget>
-  <widget actionPerformed="tbSetEditActionPerformed" icon="icons/32x32/stock/stock_lock.png" name="tbSetEdit" parent="pnlSelLock" prefHeight="35px" prefWidth="35px" selectedIcon="icons/32x32/stock/stock_lock-open.png" toolTipText="Открыть форму для редактирования" type="ToggleButtonDesignInfo">
-    <constraints bottom="7px" height="35px" left="7px" type="MarginConstraintsDesignInfo" width="35px"/>
-  </widget>
-  <widget name="pnlWorkSpace" parent="Form" prefHeight="264px" prefWidth="372px" type="PanelDesignInfo">
-    <layout type="MarginLayoutDesignInfo"/>
-    <constraints bottom="48px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
-  </widget>
-  <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="228px" prefWidth="372px" type="DbGridDesignInfo">
-    <treeDesignInfo/>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource/>
-    </rowsColumnsDesignInfo>
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="toolBar" parent="pnlWorkSpace" prefHeight="33px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
+  <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="264px" prefWidth="372px" type="DbGridDesignInfo">
+    <column name="Services" title="Услуга">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="138410359511283" fieldName="services_id"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="Tarifs" title="Тариф">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="138410359511283" fieldName="rate"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="Norma" title="Норма">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="138410359511283" fieldName="norm"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <treeDesignInfo/>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="138410359511283" field="false"/>
+    </rowsColumnsDesignInfo>
+    <constraints bottom="45px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="button1" parent="pnlWorkSpace" prefHeight="48px" prefWidth="107px" text="Применить тарифы группы" type="ButtonDesignInfo">
+    <constraints bottom="-3px" height="48px" right="13px" type="MarginConstraintsDesignInfo" width="107px"/>
+  </widget>
+  <widget name="toolBar" parent="Form" prefHeight="33px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="372px"/>
   </widget>
+  <widget name="modelCombo" parent="toolBar" prefHeight="20px" prefWidth="100px" selectFunction="modelComboOnSelect" type="DbComboDesignInfo">
+    <displayField entityId="138409145724087" fieldName="Name"/>
+    <valueField entityId="138409145724087" fieldName="GroupID"/>
+    <datamodelElement entityId="-1" fieldName="parGroupID"/>
+  </widget>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <nonvisual name="button" prefHeight="23px" prefWidth="65px" text="button" type="ButtonDesignInfo"/>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>
