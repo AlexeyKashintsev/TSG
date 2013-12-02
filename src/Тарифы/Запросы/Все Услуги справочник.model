@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Способ расчета стоимости услуги" entityHeight="200" entityIconified="false" entityId="137520104721059" entityLocationX="465" entityLocationY="17" entityWidth="150" tableAlias="t" tableName="usl_calc_formula" tableSchemaName=""/>
+  <entity Title="Услуги" entityHeight="200" entityIconified="false" entityId="137485512826912" entityLocationX="203" entityLocationY="21" entityWidth="150" tableAlias="t1" tableName="usl_services" tableSchemaName=""/>
+  <relation leftEntityFieldName="calc_id" leftEntityId="137485512826912" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137520104721059"/>
+</datamodel>
