@@ -8,6 +8,7 @@
 var fmGroups = new formGroups();
 var fmGChars = new formGroupCharacteristics();
 var fmGServs = new formServicesInGroup();
+var fmGTarifs = new formTarifs();
 
 function check4Modifications(){
     if ((!fmGChars.model.modified&&!fmGServs.model.modified||askAndSave)||
@@ -36,4 +37,5 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmGroups.showOnPanel(pnlGroups);
     fmGChars.showOnPanel(pnlGroupChars);
     fmGServs.showOnPanel(pnlGroupServ);
+    fmGTarifs.showOnPanel(pnlGroupTarifs);   
 }//GEN-LAST:event_formWindowOpened

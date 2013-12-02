@@ -41,16 +41,25 @@ function btn_lastActionPerformed(evt) {//GEN-FIRST:event_btn_lastActionPerformed
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
     if (!scrolled){
+        changed =  true; 
         all_dates.scrollTo(all_dates.findById(parDateID));
-        changed =  true;}
-    else {
+           }
+        else 
         scrolled = false;
-    }    
+        
+    if (all_dates.rowIndex == 1)
+        btn_prev.enabled = false;
+    else btn_prev.enabled = true;
+    
+    if (all_dates.rowIndex == all_dates.length )
+        btn_last.enabled = btn_next.enabled = false;
+    else btn_last.enabled = btn_next.enabled = true;
+    
+    setDate(parDateID);         
 }//GEN-LAST:event_paramsOnChanged
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
-    all_dates.last();
-    all_datesOnScrolled(evt);
+    all_dates.last();    
 }//GEN-LAST:event_formWindowOpened
 
 function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
