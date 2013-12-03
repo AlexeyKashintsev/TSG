@@ -107,3 +107,17 @@ function dsGroupsWillScroll(evt) {//GEN-FIRST:event_dsGroupsWillScroll
 function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
     mainForm.fmGroups = null
 }//GEN-LAST:event_formWindowClosed
+
+function button4ActionPerformed(evt) {//GEN-FIRST:event_button4ActionPerformed
+   var modCalc = new Calculations();
+   var lc = new modCalc.Groups(dsGroups.grp_groups_id, null, 137535124728956);
+   var r = new aaa();
+    alert(r.b.c);
+}//GEN-LAST:event_button4ActionPerformed
+
+function aaa(){
+    this['b'] = new bbb();
+    function bbb(){
+        this.c = 10;
+    }
+}
