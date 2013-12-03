@@ -8,6 +8,7 @@
 var isSelectForm = true;
 var isEditable = false;
 var canSetEdit = true;
+var TarifsModule = new ModuleTarifs();
 
 function setEdit(){
     modelGrid.editable = btnAdd.enabled = 
@@ -44,3 +45,9 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
         model.save();
     }
 }//GEN-LAST:event_formWindowClosing
+
+function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
+    TarifsModule.parGroup = parGroupID;
+    TarifsModule.addNewTarifs(parDateID,parGroupID);
+    dstarifs.requery()
+}//GEN-LAST:event_button1ActionPerformed

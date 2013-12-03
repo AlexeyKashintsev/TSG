@@ -4,6 +4,10 @@
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="264px" prefWidth="372px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="138410359511283" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <column name="Services" title="Услуга">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDisplayField/>
@@ -49,13 +53,9 @@
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
     </column>
-    <treeDesignInfo/>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="138410359511283" field="false"/>
-    </rowsColumnsDesignInfo>
     <constraints bottom="45px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="button1" parent="pnlWorkSpace" prefHeight="48px" prefWidth="107px" text="Применить тарифы группы" type="ButtonDesignInfo">
+  <widget actionPerformed="button1ActionPerformed" name="button1" parent="pnlWorkSpace" prefHeight="48px" prefWidth="107px" text="Применить тарифы группы" type="ButtonDesignInfo">
     <constraints bottom="-3px" height="48px" right="13px" type="MarginConstraintsDesignInfo" width="107px"/>
   </widget>
   <widget name="toolBar" parent="Form" prefHeight="33px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
@@ -67,6 +67,6 @@
     <datamodelElement entityId="-1" fieldName="parGroupID"/>
   </widget>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <nonvisual name="button" prefHeight="23px" prefWidth="65px" text="button" type="ButtonDesignInfo"/>
+  <nonvisual name="button" prefHeight="0px" prefWidth="0px" text="button" type="ButtonDesignInfo"/>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>
