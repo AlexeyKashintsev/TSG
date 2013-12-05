@@ -1,7 +1,7 @@
 /**
  * @public
  * @author Андрей
- * @name Предыдущая_дата
+ * @name DateModule
  */
 
 /*
@@ -11,6 +11,7 @@
  * TODO Доделать добавление,запутался куда добавлять;
  */
 function prevDate(aDateID){  
-    all_dates.per_date_id = parDateID;      
-    prevDateID = all_dates.per_date_id.prev;
+    all_dates.scrollTo(all_dates.findById(aDateID));
+    all_dates.prev();
+    return all_dates.per_date_id;
 }

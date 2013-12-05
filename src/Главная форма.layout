@@ -6,14 +6,14 @@
   <widget floatable="false" name="toolBar" parent="Form" prefHeight="60px" prefWidth="67px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="60px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="67px"/>
   </widget>
-  <widget actionPerformed="buttonActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/48x48/actions/new-go-home.png" name="button" parent="toolBar" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="buttonActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/48x48/actions/new-go-home.png" name="button" parent="toolBar" prefHeight="55px" prefWidth="55px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget floatable="false" name="toolBar1" parent="Form" prefHeight="60px" prefWidth="333px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="60px" left="187px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="button1ActionPerformed" focusable="false" horizontalTextPosition="4" icon="icons/48x48/apps/codeblocks.png" name="button1" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo"/>
-  <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/alacarte.png" name="button2" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/actions/mail-message-new.png" name="button4" parent="toolBar1" prefHeight="52px" prefWidth="60px" toolTipText="&lt;нулевое значение&gt;" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/accessories-calculator.png" name="button3" parent="toolBar1" prefHeight="52px" prefWidth="60px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="button1ActionPerformed" focusable="false" horizontalTextPosition="4" icon="icons/48x48/apps/codeblocks.png" name="button1" parent="toolBar1" prefHeight="55px" prefWidth="55px" type="ButtonDesignInfo"/>
+  <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/alacarte.png" name="button2" parent="toolBar1" prefHeight="55px" prefWidth="55px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/actions/mail-message-new.png" name="button4" parent="toolBar1" prefHeight="55px" prefWidth="55px" toolTipText="&lt;нулевое значение&gt;" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/accessories-calculator.png" name="button3" parent="toolBar1" prefHeight="55px" prefWidth="55px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="pnlDateSelector" parent="Form" prefHeight="60px" prefWidth="120px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints height="60px" left="67px" top="0px" type="MarginConstraintsDesignInfo" width="120px"/>

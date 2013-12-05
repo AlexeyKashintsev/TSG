@@ -1,7 +1,7 @@
 /**
  * 
  * @author Андрей
- * @name ModuleTarifs
+ * @name TarifsModule
  * @public
  */
 
@@ -13,15 +13,17 @@
  * TODO Доделать добавление,запутался куда добавлять;
  */
 function addNewTarifs(aDateID,aGroupID){  
-    insertServicesIsAbsent.params.parDate = aDateID;
-    insertServicesIsAbsent.params.parGroup = aGroupID;
-    insertServicesIsAbsent.execute();
-    insertServicesIsAbsent.beforeFirst();
-         while (insertServicesIsAbsent.next()){
-            dstarifsInGroup.insert(dstarifsInGroup.md.services_id,dsservicesIsAbsent.services_id, 
-                             dstarifsInGroup.md.date_id, parDate,
-                             dstarifsInGroup.md.group_id,parGroup);}
-            }
+    servicesIsAbsent.params.parDateID = aDateID;
+    servicesIsAbsent.params.parGroupID = aGroupID;
+    servicesIsAbsent.execute();
+    servicesIsAbsent.beforeFirst();
+         while (servicesIsAbsent.next()){
+            tarifsInGroup.insert(tarifsInGroup.md.services_id,servicesIsAbsent.services_id, 
+                                 tarifsInGroup.md.date_id, parDate,
+                                 tarifsInGroup.md.group_id,parGroup);
+                                        }
+
+}
             
 
 
