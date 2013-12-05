@@ -52,7 +52,7 @@ this.calculateValues = function(){
                 try {
                     dsSums4calc.calc = formulEval.calculate(dsSums4calc.calc_formula,
                                                             sums.GetSum(dsSums4calc.per_sums_id),
-                                                            'CALC');
+                                                            'SCALC');
                 } catch (e) {
                     Logger.warning('Ошибка расчета начисления по услуге 888 в квартире 888');
                 }
@@ -71,7 +71,7 @@ this.calculateValues = function(){
                     Logger.warning('Ошибка расчета суммы перерасчета по услуге 888 в квартире 888');
                 }
                 try {
-                    dsSums4calc.full_calc = formulEval.calculate('CALC-BENEFIT+RECALC',
+                    dsSums4calc.full_calc = formulEval.calculate('SCALC-BENEFIT+RECALC',
                                                             sums.GetSum(dsSums4calc.per_sums_id),
                                                             'FULL_CALC');
                 } catch (e) {
@@ -222,7 +222,7 @@ function Sums(){
  * .BEG_ - начальное показание счетчика = [SERVICEID].BEG_
  * .END_ - конечное показание счетчика = [SERVICEID].END_
  * CNAME - наименование характеристики = CNAME
- //* VALUE, COST, CALC, RECALC, BENEFIT, FULL_CALC
+ //* VALUE, COST, SCALC, RECALC, BENEFIT, FULL_CALC
  * Подстановка: 
  * flats[lcid].CNAME, flats[lcid][SERVICEID].CNAME
  * groups[groupid].CNAME, groups[groupid][SERVICEID].CNAME
@@ -241,7 +241,7 @@ function FormulaEvaluator(){
         aFormula = aFormula.replace(/GRP_/g, 'groups[A.groupid].').replace(/LC_/g, 'flats[A.lcid].');
         aFormula = aFormula.replace(/.BEG_/g, '[A.serviceid].BEG_').replace(/.END_/g, '[A.serviceid].END_');
         aFormula = aFormula.replace(/VALUE/g, 'A.VALUE').replace(/COST/g, 'A.COST').replace(/RECALC/g, 'A.RECALC');
-        aFormula = aFormula.replace(/BENEFIT/g, 'A.BENEFIT').replace(/FULL_CALC/g, 'A.FULL_CALC').replace(/CALC/g,'A.CALC');
+        aFormula = aFormula.replace(/BENEFIT/g, 'A.BENEFIT').replace(/FULL_CALC/g, 'A.FULL_CALC').replace(/SCALC/g,'A.SCALC');
         return aFormula;
     }
 
