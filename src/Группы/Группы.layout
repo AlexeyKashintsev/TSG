@@ -161,7 +161,6 @@
   <widget actionPerformed="btnDel1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel1" parent="toolBar2" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/apps/geany.png" name="btnRecalc" parent="toolBar2" prefHeight="26px" prefWidth="34px" toolTipText="Пересчитать характеристики" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnReq1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq1" parent="toolBar2" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="button4ActionPerformed" focusable="false" horizontalTextPosition="0" name="button4" parent="toolBar2" prefHeight="18px" prefWidth="55px" text="button4" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="pnlGroupServ" parent="tabbedPane" prefHeight="319px" prefWidth="450px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Услуги" type="TabsConstraintsDesignInfo"/>

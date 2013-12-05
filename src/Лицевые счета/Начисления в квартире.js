@@ -5,6 +5,7 @@
  * @public
  */
 var modSums = null;
+var modCalc = new Calculations();
 
 function initModuleSums(){
     if (!modSums)
@@ -18,5 +19,6 @@ function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed
 }//GEN-LAST:event_button2ActionPerformed
 
 function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
-	// TODO Добавьте свой код:
+    modCalc.prepareCalcModule(null, parFlatID, parDateID);
+    modCalc.calculateValues();
 }//GEN-LAST:event_buttonActionPerformed
