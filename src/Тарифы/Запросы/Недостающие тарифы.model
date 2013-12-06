@@ -4,9 +4,9 @@
     <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="138623697880562" entityLocationX="330" entityLocationY="230" entityWidth="150" tableAlias="m" tableName="grp_services" tableSchemaName=""/>
-  <entity Title="Тарифы" entityHeight="200" entityIconified="false" entityId="138623697880374" entityLocationX="170" entityLocationY="120" entityWidth="150" tableAlias="d" tableName="usl_tarif" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityFieldName="date_id" rightEntityId="138623697880374"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityFieldName="group_id" rightEntityId="138623697880374"/>
+  <entity Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="138623697880562" entityLocationX="377" entityLocationY="24" entityWidth="150" tableAlias="m" tableName="grp_services" tableSchemaName=""/>
+  <entity Title="Тарифы" entityHeight="200" entityIconified="false" entityId="138623697880374" entityLocationX="191" entityLocationY="64" entityWidth="150" tableAlias="d" tableName="usl_tarif" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityFieldName="group_id" rightEntityId="138623697880562"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityFieldName="group_id" rightEntityId="138623697880374"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityFieldName="date_id" rightEntityId="138623697880374"/>
 </datamodel>

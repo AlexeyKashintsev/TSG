@@ -4,7 +4,7 @@
  * @name ServicesIsAbsent
  * @manual
  */
-Select grp_services_id as services_id
+Select grp_services_id,services_id
 From grp_services m
 Where m.services_id not in (Select services_id
 From usl_tarif d

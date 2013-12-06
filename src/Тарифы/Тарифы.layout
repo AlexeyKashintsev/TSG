@@ -7,7 +7,7 @@
     <column name="Services" title="Услуга">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDisplayField/>
-      <datamodelElement entityId="138410359511283" fieldName="services_id"/>
+      <datamodelElement entityId="138410360147288" fieldName="usl_name"/>
       <columnsDatasource/>
       <cellsDatasource/>
       <cellDesignInfo>
@@ -49,10 +49,10 @@
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
     </column>
-    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138410359511283" field="false"/>
     </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="45px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="button1ActionPerformed" name="button1" parent="pnlWorkSpace" prefHeight="48px" prefWidth="107px" text="Применить тарифы группы" type="ButtonDesignInfo">

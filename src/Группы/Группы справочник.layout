@@ -8,22 +8,16 @@
   <widget actionPerformed="button3ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="button3" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="button2ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="button2" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="modelGrid" parent="Form" prefHeight="312px" prefWidth="372px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="137485439194560" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo>
-      <unaryLinkField entityId="137485439194560" fieldName="grp_parent"/>
-    </treeDesignInfo>
     <column name="column" title="Группа" width="70">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
@@ -31,22 +25,28 @@
     </column>
     <column name="column1" title="Тип" width="40">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137485439101653" fieldName="grp_type_name"/>
         <valueField entityId="137485439101653" fieldName="grp_type_id"/>
+        <displayField entityId="137485439101653" fieldName="grp_type_name"/>
       </controlInfo>
       <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
       <columnsDisplayField/>
     </column>
+    <treeDesignInfo>
+      <unaryLinkField entityId="137485439194560" fieldName="grp_parent"/>
+    </treeDesignInfo>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137485439194560" field="false"/>
+    </rowsColumnsDesignInfo>
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

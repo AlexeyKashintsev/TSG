@@ -6,7 +6,7 @@
  */
 
 var isSelectForm = true;
-var isEditable = false;
+var isEditable = true;
 var canSetEdit = true;
 var tarifsModule = new TarifsModule();
 

@@ -72,8 +72,6 @@ function setDate(aNewDateID){
     if (!aNewDateID) aNewDateID = parDateID;
     var ok = true;
     if (fmWorksheet) ok = fmWorksheet.setDate(aNewDateID);
-    if (ok) parDateID = aNewDateID;
-    return ok;
     if (fmGroups) ok = fmGroups.setDate(aNewDateID);
     if (ok) parDateID = aNewDateID;
     return ok;

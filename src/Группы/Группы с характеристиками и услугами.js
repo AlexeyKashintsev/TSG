@@ -52,3 +52,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmGServs.showOnPanel(pnlGroupServ);
     fmGTarifs.showOnPanel(pnlGroupTarifs);   
 }//GEN-LAST:event_formWindowOpened
+
+function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
+    mainForm.fmGroups = null;
+}//GEN-LAST:event_formWindowClosed

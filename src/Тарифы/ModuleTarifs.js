@@ -17,12 +17,13 @@ function addNewTarifs(aDateID,aGroupID){
     servicesIsAbsent.params.parGroupID = aGroupID;
     servicesIsAbsent.execute();
     servicesIsAbsent.beforeFirst();
-         while (servicesIsAbsent.next()){
-            tarifsInGroup.insert(tarifsInGroup.md.services_id,servicesIsAbsent.services_id, 
-                                 tarifsInGroup.md.date_id, parDate,
-                                 tarifsInGroup.md.group_id,parGroup);
+         while (servicesIsAbsent.next()){       
+          tarifsInGroup.insert(//tarifsInGroup.md.usl_tarif_id,servicesIsAbsent.grp_services_id,
+                                 tarifsInGroup.md.services_id,servicesIsAbsent.services_id,
+                                 tarifsInGroup.md.date_id, aDateID,
+                                 tarifsInGroup.md.group_id,aGroupID);
                                         }
-
+model.save();
 }
             
 
