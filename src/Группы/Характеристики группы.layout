@@ -15,8 +15,8 @@
     <constraints height="16px" left="12px" top="42px" type="MarginConstraintsDesignInfo" width="108px"/>
   </widget>
   <widget name="modelCombo" parent="Form" prefHeight="28px" prefWidth="264px" type="DbComboDesignInfo">
-    <displayField entityId="137496171186332" fieldName="char_name"/>
     <valueField entityId="137496171186332" fieldName="char_types_id"/>
+    <displayField entityId="137496171186332" fieldName="char_name"/>
     <datamodelElement entityId="137496190835709" fieldName="grp_type"/>
     <constraints height="28px" left="120px" right="16px" top="60px" type="MarginConstraintsDesignInfo"/>
   </widget>
@@ -30,73 +30,73 @@
     <constraints height="28px" left="120px" right="16px" top="84px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget deletable="false" insertable="false" name="modelGrid" parent="Form" prefHeight="144px" prefWidth="400px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="137496168237043" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="colCharType" title="Характеристика">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137496171186332" fieldName="char_name"/>
         <valueField entityId="137496171186332" fieldName="char_types_id"/>
+        <displayField entityId="137496171186332" fieldName="char_name"/>
       </controlInfo>
+      <columnsDisplayField/>
       <datamodelElement entityId="137496168237043" fieldName="grp_char_type"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
     <column name="colCharValue" title="Значение">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137496168237043" fieldName="grp_char_val"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
     <column name="colCharAdd2Lc" title="Добавлять автоматически">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137496168237043" fieldName="add_char_to_lc"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
     <column name="colCharCalc" title="Расчитывается">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
       <datamodelElement entityId="137496168237043" fieldName="char_calc_from_lc"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <columnsDisplayField/>
     </column>
+    <treeDesignInfo/>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137496168237043" field="false"/>
+    </rowsColumnsDesignInfo>
     <constraints bottom="0px" left="0px" right="0px" top="156px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="toolBar1" parent="Form" prefHeight="33px" prefWidth="400px" rollover="true" type="ToolbarDesignInfo">

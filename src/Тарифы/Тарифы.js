@@ -6,15 +6,15 @@
  */
 
 var isSelectForm = true;
-var isEditable = false;
+var isEditable = true;
 var canSetEdit = true;
+var tarifsModule = new TarifsModule();
 
 function setEdit(){
-    modelGrid.editable = btnAdd.enabled = 
-            btnDel.enabled = btnSave.enabled = isEditable;    
-    btnAddParent.enabled = isEditable;
-    tbSetEdit.visible = canSetEdit;
-    tbSetEdit.selected = isEditable;
+    modelGrid.editable = btnSave.enabled = isEditable;    
+   // btnAddParent.enabled = isEditable;
+    //tbSetEdit.visible = canSetEdit;
+    //tbSetEdit.selected = isEditable;
 }
 
 function setElShown(){
@@ -44,3 +44,8 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
         model.save();
     }
 }//GEN-LAST:event_formWindowClosing
+
+function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
+    tarifsModule.addNewTarifs(parDateID,parGroupID);
+    tarifsInGroup.requery()
+}//GEN-LAST:event_button1ActionPerformed

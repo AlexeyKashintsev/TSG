@@ -1,7 +1,7 @@
 /**
  * 
  * @author Андрей
- * @name ModuleTarifs
+ * @name TarifsModule
  * @public
  */
 
@@ -13,19 +13,19 @@
  * TODO Доделать добавление,запутался куда добавлять;
  */
 function addNewTarifs(aDateID,aGroupID){  
-    insertServicesIsAbsent.params.Date = aFlatID;
-    insertServicesIsAbsent.params.Group = aGroupID;
-    insertServicesIsAbsent.execute();
-    insertServicesIsAbsent.beforeFirst();
-         while (insertServicesIsAbsent.next()){
-            dstarifsInGroup.insert(dstarifsInGroup.md.services_id,dsservices_by_group.grp_services_id, 
-                             dstarifsInGroup.md.date_id, parDate,
-                             dstarifsInGroup.md.group_id,parGroup,
-                             dstarifsInGroup.md.rate,dstarifsInGroup.rate.last,
-                             dstarifsInGroup.md.norm,dsdstarifsInGroup.norm.last);}
-            }
+    servicesIsAbsent.params.parDateID = aDateID;
+    servicesIsAbsent.params.parGroupID = aGroupID;
+    servicesIsAbsent.execute();
+    servicesIsAbsent.beforeFirst();
+         while (servicesIsAbsent.next()){       
+          tarifsInGroup.insert(//tarifsInGroup.md.usl_tarif_id,servicesIsAbsent.grp_services_id,
+                                 tarifsInGroup.md.services_id,servicesIsAbsent.services_id,
+                                 tarifsInGroup.md.date_id, aDateID,
+                                 tarifsInGroup.md.group_id,aGroupID);
+                                        }
+model.save();
+}
             
-       
-    model.save();    
+
 
 

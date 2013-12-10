@@ -13,7 +13,7 @@ var canSetEdit = false;
 
 function processVisible(){
     toolBar.visible = toolBarVisible;
-    !toolBarVisible&&(modelGrid.top=0);
+   // !toolBarVisible&&(modelGrid.top=0);
 }
 
 function button11ActionPerformed(evt) {//GEN-FIRST:event_button11ActionPerformed

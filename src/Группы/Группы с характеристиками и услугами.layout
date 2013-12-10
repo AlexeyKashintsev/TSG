@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="369px" prefWidth="728px" windowOpened="formWindowOpened">
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="369px" prefWidth="728px" windowClosed="formWindowClosed" windowOpened="formWindowOpened">
   <widget dividerLocation="250" leftComponent="pnlGroups" name="splitPane" parent="Form" prefHeight="369px" prefWidth="728px" rightComponent="tabbedPane" type="SplitDesignInfo">
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>

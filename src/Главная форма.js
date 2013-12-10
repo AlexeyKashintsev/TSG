@@ -50,7 +50,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
     if (!fmGroups) {
-        fmGroups = new formAllGroups();
+        fmGroups = new formAllGroups2();
         fmGroups.mainForm = mf;
         showFormAsInternal(fmGroups);
         setDate();
@@ -72,6 +72,7 @@ function setDate(aNewDateID){
     if (!aNewDateID) aNewDateID = parDateID;
     var ok = true;
     if (fmWorksheet) ok = fmWorksheet.setDate(aNewDateID);
+    if (fmGroups) ok = fmGroups.setDate(aNewDateID);
     if (ok) parDateID = aNewDateID;
     return ok;
 }

@@ -12,14 +12,14 @@ var canSetEdit = false;
 function setEdit(){
     modelGrid.editable = btnAdd.enabled = 
             btnDel.enabled = btnSave.enabled = isEditable;    
-    tbSetEdit.visible = canSetEdit;
-    tbSetEdit.selected = isEditable;
+    //tbSetEdit.visible = canSetEdit;
+    //tbSetEdit.selected = isEditable;
 }
 
 function setElShown(){
     setEdit();
     if (!isSelectForm){
-        pnlSelLock.visible = false;
+        //pnlSelLock.visible = false;
         pnlWorkSpace.height += 48;
         modelGrid.bottom += 48;
     }
