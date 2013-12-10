@@ -248,4 +248,4 @@ function FormulaEvaluator(){
     function calcFormula(evalFormula, A){
         return eval(evalFormula);
     }
-}
+}5
