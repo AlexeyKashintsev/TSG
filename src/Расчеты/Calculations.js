@@ -19,20 +19,18 @@ var prepared = false;
 this.prepareCalcModule = function(aGroupID, aFlatID, aDateID){
     prepared = false;
     try {
-        dsCalcObject.params.groupid = aGroupID;
-        dsCalcObject.params.lc_id = aFlatID;
+        parDateID = aDateID;
+        parFlatID = aFlatID;
+        parGroupID = aGroupID;
         dsCalcObject.execute();
         groups = new Groups(aDateID);
         flats = new Flats(aDateID);
-
-        dsSums4calc.params.lc_id = aFlatID;
-        dsSums4calc.params.groupid = aGroupID;
-        dsSums4calc.params.date_id = aDateID;
         dsSums4calc.execute();
         
         prepared = true;
         return true;
     } catch (e){
+        Logger.warning(e);
         return false;
     }
 };
@@ -80,10 +78,30 @@ this.calculateValues = function(){
                 
             }                                              
             model.save();
+            calculateFlatSaldo();
+            model.save();
             return true;
         } else return false;
-    } catch (e) {return false;}
+    } catch (e) {
+        Logger.warning(e);
+        return false;
+    }
 };
+
+this.calculateFlatSaldo = function(){
+    //prSaldo4calcFromSums.executeUpdate();
+    dsSaldo4calc.requery();
+    dsSumOfSums.requery();
+    dsSaldo4calc.beforeFirst();
+    while (dsSaldo4calc.next()){
+        dsSumOfSums.scrollTo(dsSumOfSums.find(dsSumOfSums.md.lc_id, dsSaldo4calc.lc_id)[0]);
+        dsSaldo4calc.sal_calc = dsSumOfSums.sal_calc;
+        dsSaldo4calc.sal_benefit = dsSumOfSums.sal_benefit;
+        dsSaldo4calc.sal_recalc = dsSumOfSums.sal_recalc;
+        dsSaldo4calc.sal_full_calc = dsSumOfSums.sal_full_calc;
+    }
+};
+
 /**
  * 
  * @param {type} aDateID
@@ -248,4 +266,4 @@ function FormulaEvaluator(){
     function calcFormula(evalFormula, A){
         return eval(evalFormula);
     }
-}5
+};
