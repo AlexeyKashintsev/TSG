@@ -11,21 +11,21 @@ function counters_in_flat() {
 var self = this;
 
 
-var isSelectForm = true;
-var isEditable = false;
-var canSetEdit = true;
+self.isSelectForm = true;
+self.isEditable = false;
+self.canSetEdit = true;
 
 function setEdit(){
     self.modelGrid.editable = self.btnAdd.enabled = 
-            self.btnDel.enabled = self.btnSave.enabled = isEditable;    
-    self.btnAddParent.enabled = isEditable;
-    self.tbSetEdit.visible = canSetEdit;
-    self.tbSetEdit.selected = isEditable;
+            self.btnDel.enabled = self.btnSave.enabled = self.isEditable;    
+    self.btnAddParent.enabled = self.isEditable;
+    self.tbSetEdit.visible = self.canSetEdit;
+    self.tbSetEdit.selected = self.isEditable;
 }
 
 function setElShown(){
     setEdit();
-    if (!isSelectForm){
+    if (!self.isSelectForm){
         self.pnlSelLock.visible = false;
         self.pnlWorkSpace.height += 48;
         self.modelGrid.bottom += 48;
@@ -54,7 +54,7 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
 }//GEN-LAST:event_formWindowClosing
 
 function tbSetEditActionPerformed(evt) {//GEN-FIRST:event_tbSetEditActionPerformed
-    isEditable = self.tbSetEdit.selected;
+    self.isEditable = self.tbSetEdit.selected;
     setEdit();
 }//GEN-LAST:event_tbSetEditActionPerformed
 

@@ -11,14 +11,11 @@ function formGroups() {
 var self = this;
 
 
-var parentForm = null;
-var toolBarVisible = true;
-var isSelectForm = false;
-var isEditable = true;
-var canSetEdit = false;
+self.parentForm = null;
+self.toolBarVisible = true;
 
 function processVisible(){
-    self.toolBar.visible = toolBarVisible;
+    self.toolBar.visible = self.toolBarVisible;
    // !toolBarVisible&&(self.modelGrid.top=0);
 }
 
@@ -55,7 +52,7 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
 }//GEN-LAST:event_formWindowClosing
 
 function dsGroupsWillScroll(evt) {//GEN-FIRST:event_dsGroupsWillScroll
-    if (!parentForm||(parentForm.check4Modifications()))
+    if (!self.parentForm||(self.parentForm.check4Modifications()))
         return true;
     else return false;
 }//GEN-LAST:event_dsGroupsWillScroll
@@ -65,8 +62,8 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 }//GEN-LAST:event_formWindowOpened
 
 function dsGroupsOnScrolled(evt) {//GEN-FIRST:event_dsGroupsOnScrolled
-    if (parentForm)
-        parentForm.setGroup(self.dsGroups.grp_groups_id);
+    if (self.parentForm)
+        self.parentForm.setGroup(self.dsGroups.grp_groups_id);
 }//GEN-LAST:event_dsGroupsOnScrolled
 
 }

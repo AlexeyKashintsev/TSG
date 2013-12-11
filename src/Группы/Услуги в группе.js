@@ -11,20 +11,20 @@ function formServicesInGroup() {
 var self = this;
 
 
-var isSelectForm = false;
-var isEditable = true;
+self.isSelectForm = false;
+self.isEditable = true;
 var canSetEdit = false;
 
 function setEdit(){
     self.modelGrid.editable = self.btnAdd.enabled = 
-            self.btnDel.enabled = self.btnSave.enabled = isEditable;    
+            self.btnDel.enabled = self.btnSave.enabled = self.isEditable;    
     //tbSetEdit.visible = canSetEdit;
     //tbSetEdit.selected = isEditable;
 }
 
 function setElShown(){
     setEdit();
-    if (!isSelectForm){
+    if (!self.isSelectForm){
         //pnlSelLock.visible = false;
         self.pnlWorkSpace.height += 48;
         self.modelGrid.bottom += 48;

@@ -11,15 +11,15 @@ function fmServicesByFlat() {
 var self = this;
 
 
-var isSelectForm = true;
-var isEditable = true;
-var canSetEdit = false;
+self.isSelectForm = true;
+self.isEditable = true;
+self.canSetEdit = false;
 
 function setEdit(){
     self.modelGrid.editable = self.btnAdd.enabled = 
-            self.btnDel.enabled = self.btnSave.enabled = isEditable;    
-tbSetEdit.visible = canSetEdit;
-    tbSetEdit.selected = isEditable;
+            self.btnDel.enabled = self.btnSave.enabled = self.isEditable;    
+tbSetEdit.visible = self.canSetEdit;
+    tbSetEdit.selected = self.isEditable;
 }
 
 

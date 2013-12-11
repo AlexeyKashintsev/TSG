@@ -13,7 +13,7 @@ var self = this;
 
 var scrolled = false;
 var changed = false;
-var parentForm = null;
+self.parentForm = null;
 
 
 function btn_prevActionPerformed(evt) {//GEN-FIRST:event_btn_prevActionPerformed
@@ -79,7 +79,7 @@ function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
 }//GEN-LAST:event_btn_newActionPerformed
 
 function setDate(aNewDateID){
-    if (parentForm) return parentForm.setDate(aNewDateID)
+    if (self.parentForm) return self.parentForm.setDate(aNewDateID)
     else return true;
 }
 }

@@ -50,7 +50,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
         fmWorksheet = new mainWorkSheet();
         fmWorksheet.mainForm = mf;
         showFormAsInternal(fmWorksheet);
-        setDate();
+        self.setDate();
     }
 }//GEN-LAST:event_buttonActionPerformed
 
@@ -59,7 +59,7 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         fmGroups = new formAllGroups2();
         fmGroups.mainForm = mf;
         showFormAsInternal(fmGroups);
-        setDate();
+        self.setDate();
     }
 }//GEN-LAST:event_button1ActionPerformed
 
@@ -74,7 +74,7 @@ function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
     //setDate(self.parDateID);
 }//GEN-LAST:event_paramsOnChanged
 
-function setDate(aNewDateID){
+self.setDate = function(aNewDateID){
     if (!aNewDateID) aNewDateID = self.parDateID;
     var ok = true;
     if (fmWorksheet) ok = fmWorksheet.setDate(aNewDateID);

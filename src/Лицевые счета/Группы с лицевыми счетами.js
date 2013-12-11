@@ -20,9 +20,9 @@ var fmSaldoCur = new fmSaldoCurrnet();
 var fmSaldoHistory = new formSaldoHistory();
 var fmNachisleniya = new form_sums_per_flat();
 var fmOplata = new formPaymentsInFlat();
-var clcModule = new ServerModule('Calculations');
+var modCalc = new ServerModule('Calculations');
 
-function check4Modifications(){
+self.check4Modifications = function(){
     if  ((!fmFlats.model.modified
         &&!fmFlatChars.model.modified
         &&!fmFlatServices.model.modified
@@ -32,22 +32,22 @@ function check4Modifications(){
         return true;
     else
         return false;
-}
+};
 
-function setGroup(aNewGroupID){
-    parGroup = aNewGroupID;
-    self.parFlatID = fmFlats.setCurrentGroup(parGroup);
-    setFlat(self.parFlatID);
-}
+self.setGroup = function(aNewGroupID){
+    self.parGroupID = aNewGroupID;
+    self.parFlatID = fmFlats.setCurrentGroup(self.parGroupID);
+    self.setFlat(self.parFlatID);
+};
 
-function setFlat(aNewFlatID){
-    fmFlatCounters.parFlatID = fmFlatServices.parFlatID = fmNachisleniya.parFlatID = 
+self.setFlat = function(aNewFlatID){
+    self.parFlatID = fmFlatCounters.parFlatID = fmFlatServices.parFlatID = fmNachisleniya.parFlatID = 
             fmOplata.parFlatID = fmSaldoHistory.parFlatID = fmSaldoCur.parFlatID =
             fmFlatChars.parFlatID = aNewFlatID;
-}
+};
 
-function setDate(aNewDate){
-    if (check4Modifications()){
+self.setDate = function(aNewDate){
+    if (self.check4Modifications()){
         self.parDateID = aNewDate;
         fmFlatCounters.parDateID =
         fmNachisleniya.parDateID =
@@ -59,7 +59,7 @@ function setDate(aNewDate){
     }
     else
         return false;
-}
+};
 
 function askAndSave(){
     if (confirm('Сохранить изменения')){
@@ -70,11 +70,11 @@ function askAndSave(){
 }
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
-    fmGroups.parentForm = this;
+    fmGroups.parentForm = self;
     fmGroups.toolBarVisible = false;
     fmGroups.showOnPanel(self.pnlGroups);
     
-    fmFlats.parentForm = this;
+    fmFlats.parentForm = self;
     fmFlats.isEditable = true;
     fmFlats.isSelectForm = false;
     fmFlats.showOnPanel(self.pnlFlats);
@@ -93,8 +93,16 @@ function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
 }//GEN-LAST:event_formWindowClosed
 
 function btnCalcAllGroupActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllGroupActionPerformed
-    clcModule
+    modCalc.calculateValues(self.parGroupID, null, self.parDateID);
+    fmNachisleniya.model.requery();
+    fmSaldoCur.model.requery();
 }//GEN-LAST:event_btnCalcAllGroupActionPerformed
+
+function btnCalcAllFlatActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllFlatActionPerformed
+    modCalc.calculateValues(null, self.parFlatID, self.parDateID);
+    fmNachisleniya.model.requery();
+    fmSaldoCur.model.requery();
+}//GEN-LAST:event_btnCalcAllFlatActionPerformed
 
 
 }

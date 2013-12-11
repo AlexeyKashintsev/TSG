@@ -8,36 +8,36 @@
   <widget name="mgGroups" parent="pnlGroups" prefHeight="329px" prefWidth="248px" type="DbGridDesignInfo">
     <column name="colGrpName" title="Группа">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
     </column>
     <column name="colGrpType" title="Тип">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137485439101653" fieldName="grp_type_name"/>
         <valueField entityId="137485439101653" fieldName="grp_type_id"/>
+        <displayField entityId="137485439101653" fieldName="grp_type_name"/>
       </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137485439194560" field="false"/>
@@ -63,66 +63,66 @@
   <widget deletable="false" insertable="false" name="mgChars" parent="pnlGroupChars" prefHeight="185px" prefWidth="450px" type="DbGridDesignInfo">
     <column name="colCharType" title="Характеристика">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137496171186332" fieldName="char_name"/>
         <valueField entityId="137496171186332" fieldName="char_types_id"/>
+        <displayField entityId="137496171186332" fieldName="char_name"/>
       </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <datamodelElement entityId="137496168237043" fieldName="grp_char_type"/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="137496168237043" fieldName="grp_char_type"/>
     </column>
     <column name="colCharValue" title="Значение">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <datamodelElement entityId="137496168237043" fieldName="grp_char_val"/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="137496168237043" fieldName="grp_char_val"/>
     </column>
     <column name="colCharAdd2Lc" title="Добавлять к квартирам">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <datamodelElement entityId="137496168237043" fieldName="add_char_to_lc"/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="137496168237043" fieldName="add_char_to_lc"/>
     </column>
     <column name="colCharCalc" title="Рассчитывать автоматически">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <datamodelElement entityId="137496168237043" fieldName="char_calc_by_lc"/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="137496168237043" fieldName="char_calc_by_lc"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137496168237043" field="false"/>
@@ -136,12 +136,12 @@
   </widget>
   <widget name="modelFormattedField" parent="pnlGroupChars" prefHeight="22px" prefWidth="314px" type="DbLabelDesignInfo">
     <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
-    <constraints height="22px" left="118px" right="18px" top="10px" type="MarginConstraintsDesignInfo"/>
     <border type="CompoundBorderDesignInfo"/>
+    <constraints height="22px" left="118px" right="18px" top="10px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelCombo" parent="pnlGroupChars" prefHeight="22px" prefWidth="314px" type="DbComboDesignInfo">
-    <displayField entityId="137485439101653" fieldName="grp_type_name"/>
     <valueField entityId="137485439101653" fieldName="grp_type_id"/>
+    <displayField entityId="137485439101653" fieldName="grp_type_name"/>
     <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
     <constraints height="22px" left="118px" right="18px" top="39px" type="MarginConstraintsDesignInfo"/>
   </widget>
@@ -172,39 +172,39 @@
   <widget deletable="false" insertable="false" name="modelGrid1" parent="pnlWorkSpace" prefHeight="283px" prefWidth="450px" type="DbGridDesignInfo">
     <column name="colService" title="Услуга">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137520081638120" fieldName="usl_name"/>
         <valueField entityId="137520081638120" fieldName="usl_services_id"/>
+        <displayField entityId="137520081638120" fieldName="usl_name"/>
       </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <datamodelElement entityId="137496294091245" fieldName="services_id"/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="137496294091245" fieldName="services_id"/>
     </column>
     <column name="colCalcType" readonly="true" selectFunction="colCalcTypeOnSelect" title="Способ расчета">
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137520081638120" fieldName="usl_name"/>
         <valueField entityId="137520081638120" fieldName="usl_services_id"/>
+        <displayField entityId="137520081638120" fieldName="usl_name"/>
       </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <datamodelElement entityId="137496294091245" fieldName="services_id"/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="137496294091245" fieldName="services_id"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137496294091245" field="false"/>

@@ -16,7 +16,7 @@ var fmGChars = new formGroupCharacteristics();
 var fmGServs = new formServicesInGroup();
 var fmGTarifs = new fmTarifs();
 
-function check4Modifications(){
+self.check4Modifications = function(){
     if ((!fmGChars.model.modified
        &&!fmGServs.model.modified
        &&!fmGTarifs.model.modified
@@ -25,22 +25,22 @@ function check4Modifications(){
        return true;        
     else 
        return false;
-}
+};
 
-function setGroup(aNewGroupID){
+self.setGroup = function(aNewGroupID){
     fmGChars.parGroup = fmGServs.parGroup = fmGTarifs.parGroupID =
             aNewGroupID;
-}
+};
 
-function setDate(aNewDateID){
-    if (check4Modifications()){
+self.setDate = function(aNewDateID){
+    if (self.check4Modifications()){
         self.parDateID = aNewDateID;
         fmGTarifs.parDateID = self.parDateID;
         return true;
     }
     else
         return false;
-}
+};
 
 function askAndSave(){
     if (confirm('Сохранить изменения')){
@@ -60,7 +60,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 }//GEN-LAST:event_formWindowOpened
 
 function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
-    mainForm.fmGroups = null;
+    self.mainForm.fmGroups = null;
 }//GEN-LAST:event_formWindowClosed
 
 }

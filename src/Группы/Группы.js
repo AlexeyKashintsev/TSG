@@ -9,6 +9,7 @@ function formAllGroups() {
 
 
 var self = this;
+self.parentForm = null;
 
 
 var fmTarif = new fmTarifs();

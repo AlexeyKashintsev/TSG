@@ -6,45 +6,45 @@
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="264px" prefWidth="372px" type="DbGridDesignInfo">
     <column name="Services" title="Услуга">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
       <datamodelElement entityId="138410360147288" fieldName="usl_name"/>
-      <columnsDatasource/>
-      <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
         <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
     </column>
     <column name="Tarifs" title="Тариф">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
       <datamodelElement entityId="138410359511283" fieldName="rate"/>
-      <columnsDatasource/>
-      <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
         <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
     </column>
     <column name="Norma" title="Норма">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
       <datamodelElement entityId="138410359511283" fieldName="norm"/>
-      <columnsDatasource/>
-      <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
         <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
@@ -61,12 +61,12 @@
   <widget name="toolBar" parent="Form" prefHeight="33px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="372px"/>
   </widget>
-  <widget name="modelCombo" parent="toolBar" prefHeight="20px" prefWidth="100px" selectFunction="modelComboOnSelect" type="DbComboDesignInfo">
-    <valueField entityId="138409145724087" fieldName="GroupID"/>
+  <widget name="modelCombo" parent="toolBar" prefHeight="28px" prefWidth="100px" selectFunction="modelComboOnSelect" type="DbComboDesignInfo">
     <displayField entityId="138409145724087" fieldName="Name"/>
+    <valueField entityId="138409145724087" fieldName="GroupID"/>
     <datamodelElement entityId="-1" fieldName="parGroupID"/>
   </widget>
-  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <nonvisual name="button" prefHeight="0px" prefWidth="0px" text="button" type="ButtonDesignInfo"/>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

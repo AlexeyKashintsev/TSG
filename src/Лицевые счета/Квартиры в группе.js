@@ -11,35 +11,35 @@ function lc_in_group() {
 var self = this;
 
 
-var isSelectForm = true;
-var isEditable = false;
-var canSetEdit = true;
-var parentForm = null;
+self.isSelectForm = true;
+self.isEditable = false;
+self.canSetEdit = true;
+self.parentForm = null;
 var flatModule = new LCModule();
 
-function setCurrentGroup(aNewGroupID){
+self.setCurrentGroup = function(aNewGroupID){
     self.parGroupID = aNewGroupID;
     return self.dsflats_by_group.lc_flat_id;
-}
+};
 
-function checkIfPossibleToChangeFlat(){
-    return parentForm.check4Modifications();
-}
+self.checkIfPossibleToChangeFlat = function(){
+    return self.parentForm.check4Modifications();
+};
 
-function setCurrentFlat(aNewFlatID){
-    parentForm.setFlat(aNewFlatID);
-}
+self.setCurrentFlat = function(aNewFlatID){
+    self.parentForm.setFlat(aNewFlatID);
+};
 
 function setEdit(){
     self.modelGrid.editable = self.btnAdd.enabled = 
-            self.btnDel.enabled = self.btnSave.enabled = isEditable;    
-    self.tbSetEdit.visible = canSetEdit;
-    self.tbSetEdit.selected = isEditable;
+            self.btnDel.enabled = self.btnSave.enabled = self.isEditable;    
+    self.tbSetEdit.visible = self.canSetEdit;
+    self.tbSetEdit.selected = self.isEditable;
 }
 
 function setElShown(){
     setEdit();
-    if (!isSelectForm){
+    if (!self.isSelectForm){
         self.pnlSelLock.visible = false;
     }
 }
@@ -60,7 +60,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 }//GEN-LAST:event_formWindowOpened
 
 function tbSetEditActionPerformed(evt) {//GEN-FIRST:event_tbSetEditActionPerformed
-    isEditable = self.tbSetEdit.selected;
+    self.isEditable = self.tbSetEdit.selected;
     setEdit();
 }//GEN-LAST:event_tbSetEditActionPerformed
 
@@ -82,11 +82,11 @@ function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
 }//GEN-LAST:event_btnDelActionPerformed
 
 function dsflats_by_groupWillScroll(evt) {//GEN-FIRST:event_dsflats_by_groupWillScroll
-    checkIfPossibleToChangeFlat();
+    self.checkIfPossibleToChangeFlat();
 }//GEN-LAST:event_dsflats_by_groupWillScroll
 
 function dsflats_by_groupOnScrolled(evt) {//GEN-FIRST:event_dsflats_by_groupOnScrolled
-    setCurrentFlat(self.dsflats_by_group.lc_flat_id);
+    self.setCurrentFlat(self.dsflats_by_group.lc_flat_id);
 }//GEN-LAST:event_dsflats_by_groupOnScrolled
 
 }

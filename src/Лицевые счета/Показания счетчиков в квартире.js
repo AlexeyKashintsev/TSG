@@ -11,11 +11,11 @@ function fmCounterValuesByFlat() {
 var self = this;
 
 
-var isSelectForm = false;
-var isEditable = true;
+self.isSelectForm = false;
+self.isEditable = true;
 
 function setEdit(){
-    self.modelGrid.editable = self.btnSave.enabled = isEditable;    
+    self.modelGrid.editable = self.btnSave.enabled = self.isEditable;    
 }
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed

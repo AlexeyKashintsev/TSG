@@ -9,6 +9,6 @@
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138538099972866" rightEntityParameterName="flat_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138538099972866" rightEntityParameterName="date_id"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="138538099972866" rightEntityFieldName="usl_services_id" rightEntityId="137520137252417"/>
-  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="137520137252417" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137520137252417"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137520137252417" rightEntityFieldName="usl_services_id" rightEntityId="137520137252417"/>
+  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="137520137252417" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137520137252417"/>
 </datamodel>

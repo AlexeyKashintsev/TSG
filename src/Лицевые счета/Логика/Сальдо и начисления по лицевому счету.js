@@ -14,9 +14,9 @@ var self = this;
 var modLC = null;
 //var modCN = null;
 
-function saveChanges(){
+self.saveChanges = function(){
     self.model.save();
-}
+};
 
 /*
  * 
@@ -25,7 +25,7 @@ function saveChanges(){
  * @param {type} aValue
  * @returns {@exp;dsSaldo@pro;per_saldo_flat_id}
  */
-function initBegSaldo(aLC_ID, aDate, aValue){
+self.initBegSaldo = function(aLC_ID, aDate, aValue){
     self.params.beginUpdate();
         self.parDateID = aDate;
         self.parFlatID = aLC_ID;
@@ -37,7 +37,7 @@ function initBegSaldo(aLC_ID, aDate, aValue){
     else
         self.dsSaldo.sal_begin = aValue;
     return self.dsSaldo.per_saldo_flat_id;
-}
+};
 
 /*
  * Добавить значение счетчика
@@ -47,15 +47,15 @@ function initBegSaldo(aLC_ID, aDate, aValue){
  * @param {type} aEndValue
  * @returns {undefined}
  */
-function insertCounterValue(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue){
+self.insertCounterValue = function(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue){
     if (!modCN) modCN = new CountersModule();
     modCN.setCounterValueByLCAndService(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue);
-}
+};
 
-function initSums(aGroupID, aLcID, aDateID){
+slef.initSums = function(aGroupID, aLcID, aDateID){
     self.prcSumsCreate.params.groupid = aGroupID;
     self.prcSumsCreate.params.lcid = aLcID;
     self.prcSumsCreate.params.dateid = aDateID;
     self.prcSumsCreate.executeUpdate();
-}
+};
 }

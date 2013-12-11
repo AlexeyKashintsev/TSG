@@ -22,7 +22,7 @@ var prepared = false;
  * @param {type} aDateID
  * @returns {Boolean}
  */
-self.prepareCalcModule = function(aGroupID, aFlatID, aDateID){
+function prepareCalcModule(aGroupID, aFlatID, aDateID){
     prepared = false;
     try {
         self.parDateID = aDateID;
@@ -41,7 +41,8 @@ self.prepareCalcModule = function(aGroupID, aFlatID, aDateID){
     }
 };
 
-self.calculateValues = function(){
+self.calculateValues = function(aGroupID, aFlatID, aDateID){
+    prepareCalcModule(aGroupID, aFlatID, aDateID);
     try {
         if (prepared){
             self.dsSums4calc.beforeFirst();
@@ -84,8 +85,9 @@ self.calculateValues = function(){
                 
             }                                              
             self.model.save();
-            calculateFlatSaldo();
-            self.model.save();
+            //self.dsCalcObject.beforeFirst();
+           // while (self.dsCalcObject.next()) 
+                calculateFlatSaldo()//self.dsCalcObject.lc_id);
             return true;
         } else return false;
     } catch (e) {
@@ -94,18 +96,21 @@ self.calculateValues = function(){
     }
 };
 
-self.calculateFlatSaldo = function(){
+function calculateFlatSaldo(aFlatID){
     //self.prSaldo4calcFromSums.executeUpdate();
+  //  self.dsSaldo4calc.params.flatid = aFlatID;
+    
     self.dsSaldo4calc.requery();
     self.dsSumOfSums.requery();
     self.dsSaldo4calc.beforeFirst();
     while (self.dsSaldo4calc.next()){
-        self.dsSumOfSums.scrollTo(self.dsSumOfSums.find(self.dsSumOfSums.md.lc_id, self.dsSaldo4calc.lc_id)[0]);
-        self.dsSaldo4calc.sal_calc = self.dsSumOfSums.sal_calc;
-        self.dsSaldo4calc.sal_benefit = self.dsSumOfSums.sal_benefit;
-        self.dsSaldo4calc.sal_recalc = self.dsSumOfSums.sal_recalc;
-        self.dsSaldo4calc.sal_full_calc = self.dsSumOfSums.sal_full_calc;
+        var sc = self.dsSumOfSums.find(self.dsSumOfSums.md.lc_id, self.dsSaldo4calc.lc_id)[0];
+        self.dsSaldo4calc.sal_calc = sc.sal_calc;
+        self.dsSaldo4calc.sal_benefit = sc.sal_benefit;
+        self.dsSaldo4calc.sal_recalc = sc.sal_recalc;
+        self.dsSaldo4calc.sal_full_calc = sc.sal_full_calc;
     }
+    self.model.save();
 };
 
 /**

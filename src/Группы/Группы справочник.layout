@@ -10,36 +10,36 @@
   <widget name="modelGrid" parent="Form" prefHeight="318px" prefWidth="372px" type="DbGridDesignInfo">
     <column name="column" title="Группа" width="70">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
     </column>
     <column name="column1" title="Тип" width="40">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137485439101653" fieldName="grp_type_name"/>
         <valueField entityId="137485439101653" fieldName="grp_type_id"/>
+        <displayField entityId="137485439101653" fieldName="grp_type_name"/>
       </controlInfo>
-      <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137485439194560" field="false"/>

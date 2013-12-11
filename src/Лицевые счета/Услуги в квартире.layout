@@ -11,23 +11,19 @@
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget deletable="false" insertable="false" name="modelGrid" parent="pnlWorkSpace" prefHeight="312px" prefWidth="372px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="137513141035797" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="colService" title="Услуга">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137520096845259" fieldName="usl_name"/>
         <valueField entityId="137520096845259" fieldName="usl_services_id"/>
+        <displayField entityId="137520096845259" fieldName="usl_name"/>
       </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
@@ -35,17 +31,17 @@
     </column>
     <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Cпособ расчета">
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137520096845259" fieldName="calc_name"/>
         <valueField entityId="137520096845259" fieldName="usl_services_id"/>
+        <displayField entityId="137520096845259" fieldName="calc_name"/>
       </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
@@ -53,19 +49,23 @@
     </column>
     <column fixed="true" name="column" title="Активна">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
       <datamodelElement entityId="137513141035797" fieldName="fs_active"/>
     </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137513141035797" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

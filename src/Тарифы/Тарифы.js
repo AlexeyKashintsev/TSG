@@ -11,13 +11,13 @@ function fmTarifs() {
 var self = this;
 
 
-var isSelectForm = true;
-var isEditable = true;
-var canSetEdit = true;
+self.isSelectForm = true;
+self.isEditable = true;
+self.canSetEdit = true;
 var tarifsModule = new TarifsModule();
 
 function setEdit(){
-    self.modelGrid.editable = self.btnSave.enabled = isEditable;    
+    self.modelGrid.editable = self.btnSave.enabled = self.isEditable;    
    // btnAddParent.enabled = isEditable;
     //tbSetEdit.visible = canSetEdit;
     //tbSetEdit.selected = isEditable;
@@ -25,7 +25,7 @@ function setEdit(){
 
 function setElShown(){
     setEdit();
-    if (!isSelectForm){
+    if (!self.isSelectForm){
         pnlSelLock.visible = false;
         self.pnlWorkSpace.height += 48;
         self.modelGrid.bottom += 48;
@@ -41,7 +41,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 }//GEN-LAST:event_formWindowOpened
 
 function tbSetEditActionPerformed(evt) {//GEN-FIRST:event_tbSetEditActionPerformed
-    isEditable = tbSetEdit.selected;
+    self.isEditable = tbSetEdit.selected;
     setEdit();
 }//GEN-LAST:event_tbSetEditActionPerformed
 
@@ -52,8 +52,9 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
 }//GEN-LAST:event_formWindowClosing
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
-    tarifsModule.addNewTarifs(self.parDateID,self.parGroupID);
-    self.tarifsInGroup.requery()
+    tarifsModule.addMissingTarifs(self.parDateID, self.parGroupID);
+    tarifsModule.applyTarifs(self.parDateID, self.parGroupID);
+    self.tarifsInGroup.requery();
 }//GEN-LAST:event_button1ActionPerformed
 
 }

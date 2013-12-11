@@ -23,33 +23,33 @@
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="318px" prefWidth="372px" type="DbGridDesignInfo">
     <column name="colFlatNumber" title="№" width="15">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <datamodelElement entityId="137501421039573" fieldName="lc_flatnumber"/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="137501421039573" fieldName="lc_flatnumber"/>
     </column>
     <column name="colFlatRegTo" title="ФИО">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <datamodelElement entityId="137501421039573" fieldName="lc_regto"/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="137501421039573" fieldName="lc_regto"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137501421039573" field="false"/>
