@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="lc_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Характеристики типы" entityHeight="77" entityIconified="false" entityId="138548309310946" entityLocationX="545" entityLocationY="21" entityWidth="150" tableAlias="t1" tableName="char_types" tableSchemaName=""/>
+  <entity Title="Характеристики квартиры" entityHeight="94" entityIconified="false" entityId="138548309310998" entityLocationX="327" entityLocationY="54" entityWidth="150" tableAlias="t" tableName="lc_chars" tableSchemaName=""/>
+  <relation leftEntityFieldName="lc_char_type" leftEntityId="138548309310998" rightEntityFieldName="char_types_id" rightEntityId="138548309310946"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lc_id" rightEntityFieldName="lc_id" rightEntityId="138548309310998"/>
+</datamodel>

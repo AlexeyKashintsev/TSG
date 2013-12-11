@@ -1,0 +1,12 @@
+update per_saldo_flat
+set sal_calc = (qt.calc), sal_benefit = (qt.benefit), sal_recalc = (qt.recalc)
+, sal_full_calc = (qt.full_calc)
+From (
+select t1.lc_id, sum(t.calc) AS calc, sum(t.benefit) AS benefit, sum(t.recalc) AS recalc
+, sum(t.full_calc) AS full_calc 
+from per_sums t
+ Inner Join lc_flat_services t1 on t1.lc_flat_services_id = t.flat_service_id
+ Inner Join Calc_object q on q.lc_id = t1.lc_id
+ Where :dateid = t.date_id
+ Group by t1.lc_id) qt
+where per_saldo_flat.lc_id = qt.lc_id and :dateid = per_saldo_flat.date_id

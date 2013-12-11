@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="dateid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="groupid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="lcid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Объекты расчета" entityHeight="200" entityIconified="false" entityId="138669436758384" entityLocationX="206" entityLocationY="24" entityWidth="150" queryId="Calc_object" tableAlias="q" tableName="" tableSchemaName=""/>
+  <entity Title="Услуги в квартире" entityHeight="99" entityIconified="false" entityId="138669434696788" entityLocationX="540" entityLocationY="23" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
+  <entity Title="Начисления" entityHeight="200" entityIconified="false" entityId="138669434696789" entityLocationX="370" entityLocationY="23" entityWidth="150" tableAlias="t" tableName="per_sums" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityId="138669436758384" rightEntityParameterName="groupid"/>
+  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="138669434696788" rightEntityFieldName="flat_service_id" rightEntityId="138669434696789"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="138669436758384" rightEntityFieldName="lc_id" rightEntityId="138669434696788"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138669434696789"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lcid" rightEntityId="138669436758384" rightEntityParameterName="lc_id"/>
+</datamodel>
