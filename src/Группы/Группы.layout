@@ -2,14 +2,12 @@
   <widget dividerLocation="250" leftComponent="pnlGroups" name="splitPane" parent="Form" prefHeight="369px" prefWidth="728px" rightComponent="tabbedPane" type="SplitDesignInfo">
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlGroups" parent="splitPane" prefHeight="367px" prefWidth="249px" type="PanelDesignInfo">
+  <widget name="pnlGroups" parent="splitPane" prefHeight="365px" prefWidth="248px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
-  <widget name="mgGroups" parent="pnlGroups" prefHeight="331px" prefWidth="249px" type="DbGridDesignInfo">
+  <widget name="mgGroups" parent="pnlGroups" prefHeight="329px" prefWidth="248px" type="DbGridDesignInfo">
     <column name="colGrpName" title="Группа">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
-      <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -17,6 +15,8 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
@@ -26,8 +26,6 @@
         <displayField entityId="137485439101653" fieldName="grp_type_name"/>
         <valueField entityId="137485439101653" fieldName="grp_type_id"/>
       </controlInfo>
-      <columnsDisplayField/>
-      <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -35,39 +33,39 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
-    <treeDesignInfo>
-      <unaryLinkField entityId="137485439194560" fieldName="grp_parent"/>
-    </treeDesignInfo>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137485439194560" field="false"/>
     </rowsColumnsDesignInfo>
+    <treeDesignInfo>
+      <unaryLinkField entityId="137485439194560" fieldName="grp_parent"/>
+    </treeDesignInfo>
     <constraints bottom="2px" left="-2px" right="2px" top="34px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget floatable="false" name="toolBar" parent="pnlGroups" prefHeight="33px" prefWidth="249px" rollover="true" type="ToolbarDesignInfo">
+  <widget floatable="false" name="toolBar" parent="pnlGroups" prefHeight="33px" prefWidth="248px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="-2px" right="2px" top="-2px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="button11ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="button11" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="button1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/human-folder-new.png" name="button1" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Добавить вложенный элемент" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="buttonActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="button" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="button3ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="button3" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="button2ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="button2" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget name="tabbedPane" parent="splitPane" prefHeight="367px" prefWidth="472px" type="TabsDesignInfo"/>
-  <widget name="pnlGroupChars" parent="tabbedPane" prefHeight="339px" prefWidth="467px" type="PanelDesignInfo">
+  <widget actionPerformed="button11ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="button11" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="button1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/human-folder-new.png" name="button1" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Добавить вложенный элемент" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="buttonActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="button" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="button3ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="button3" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="button2ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="button2" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget name="tabbedPane" parent="splitPane" prefHeight="365px" prefWidth="471px" type="TabsDesignInfo"/>
+  <widget name="pnlGroupChars" parent="tabbedPane" prefHeight="319px" prefWidth="450px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Характеристики" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget deletable="false" insertable="false" name="mgChars" parent="pnlGroupChars" prefHeight="205px" prefWidth="467px" type="DbGridDesignInfo">
+  <widget deletable="false" insertable="false" name="mgChars" parent="pnlGroupChars" prefHeight="185px" prefWidth="450px" type="DbGridDesignInfo">
     <column name="colCharType" title="Характеристика">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137496171186332" fieldName="char_name"/>
         <valueField entityId="137496171186332" fieldName="char_types_id"/>
       </controlInfo>
-      <columnsDisplayField/>
-      <datamodelElement entityId="137496168237043" fieldName="grp_char_type"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -75,14 +73,14 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="137496168237043" fieldName="grp_char_type"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colCharValue" title="Значение">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
-      <datamodelElement entityId="137496168237043" fieldName="grp_char_val"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -90,14 +88,14 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="137496168237043" fieldName="grp_char_val"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colCharAdd2Lc" title="Добавлять к квартирам">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
-      <datamodelElement entityId="137496168237043" fieldName="add_char_to_lc"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -105,14 +103,14 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="137496168237043" fieldName="add_char_to_lc"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colCharCalc" title="Рассчитывать автоматически">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
-      <datamodelElement entityId="137496168237043" fieldName="char_calc_by_lc"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -120,30 +118,32 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="137496168237043" fieldName="char_calc_by_lc"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
-    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137496168237043" field="false"/>
     </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="2px" left="-2px" right="2px" top="132px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelFormattedField1" parent="pnlGroupChars" prefHeight="22px" prefWidth="314px" type="DbLabelDesignInfo">
     <datamodelElement entityId="137485439194560" fieldName="grp_address"/>
     <constraints height="22px" left="118px" top="67px" type="MarginConstraintsDesignInfo" width="314px"/>
   </widget>
-  <widget name="modelFormattedField" parent="pnlGroupChars" prefHeight="22px" prefWidth="331px" type="DbLabelDesignInfo">
+  <widget name="modelFormattedField" parent="pnlGroupChars" prefHeight="22px" prefWidth="314px" type="DbLabelDesignInfo">
     <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
-    <border type="CompoundBorderDesignInfo"/>
     <constraints height="22px" left="118px" right="18px" top="10px" type="MarginConstraintsDesignInfo"/>
+    <border type="CompoundBorderDesignInfo"/>
   </widget>
   <widget name="modelCombo" parent="pnlGroupChars" prefHeight="22px" prefWidth="314px" type="DbComboDesignInfo">
     <displayField entityId="137485439101653" fieldName="grp_type_name"/>
     <valueField entityId="137485439101653" fieldName="grp_type_id"/>
     <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
-    <constraints height="22px" left="118px" top="39px" type="MarginConstraintsDesignInfo" width="314px"/>
+    <constraints height="22px" left="118px" right="18px" top="39px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget horizontalAlignment="4" name="label" parent="pnlGroupChars" prefHeight="16px" prefWidth="106px" text="Наименование:" type="LabelDesignInfo">
     <constraints height="16px" left="0px" top="13px" type="MarginConstraintsDesignInfo" width="106px"/>
@@ -154,29 +154,27 @@
   <widget horizontalAlignment="4" name="label2" parent="pnlGroupChars" prefHeight="16px" prefWidth="46px" text="Адрес:" type="LabelDesignInfo">
     <constraints height="16px" left="60px" top="70px" type="MarginConstraintsDesignInfo" width="46px"/>
   </widget>
-  <widget floatable="false" name="toolBar2" parent="pnlGroupChars" prefHeight="33px" prefWidth="467px" rollover="true" type="ToolbarDesignInfo">
+  <widget floatable="false" name="toolBar2" parent="pnlGroupChars" prefHeight="33px" prefWidth="450px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="-2px" right="2px" top="94px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="btnAdd1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd1" parent="toolBar2" prefHeight="29px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnDel1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel1" parent="toolBar2" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/apps/geany.png" name="btnRecalc" parent="toolBar2" prefHeight="29px" prefWidth="29px" toolTipText="Пересчитать характеристики" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnReq1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq1" parent="toolBar2" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget name="pnlGroupServ" parent="tabbedPane" prefHeight="339px" prefWidth="467px" type="PanelDesignInfo" visible="false">
+  <widget actionPerformed="btnAdd1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd1" parent="toolBar2" prefHeight="26px" prefWidth="34px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnDel1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel1" parent="toolBar2" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/apps/geany.png" name="btnRecalc" parent="toolBar2" prefHeight="26px" prefWidth="34px" toolTipText="Пересчитать характеристики" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnReq1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq1" parent="toolBar2" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget name="pnlGroupServ" parent="tabbedPane" prefHeight="319px" prefWidth="450px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Услуги" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlWorkSpace" parent="pnlGroupServ" prefHeight="303px" prefWidth="467px" type="PanelDesignInfo">
+  <widget name="pnlWorkSpace" parent="pnlGroupServ" prefHeight="283px" prefWidth="450px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints bottom="2px" left="-2px" right="2px" top="34px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget deletable="false" insertable="false" name="modelGrid1" parent="pnlWorkSpace" prefHeight="303px" prefWidth="467px" type="DbGridDesignInfo">
+  <widget deletable="false" insertable="false" name="modelGrid1" parent="pnlWorkSpace" prefHeight="283px" prefWidth="450px" type="DbGridDesignInfo">
     <column name="colService" title="Услуга">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137520081638120" fieldName="usl_name"/>
         <valueField entityId="137520081638120" fieldName="usl_services_id"/>
       </controlInfo>
-      <columnsDisplayField/>
-      <datamodelElement entityId="137496294091245" fieldName="services_id"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -184,6 +182,8 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="137496294091245" fieldName="services_id"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
@@ -193,8 +193,6 @@
         <displayField entityId="137520081638120" fieldName="usl_name"/>
         <valueField entityId="137520081638120" fieldName="usl_services_id"/>
       </controlInfo>
-      <columnsDisplayField/>
-      <datamodelElement entityId="137496294091245" fieldName="services_id"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -202,23 +200,25 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
+      <columnsDisplayField/>
+      <datamodelElement entityId="137496294091245" fieldName="services_id"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
-    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137496294091245" field="false"/>
     </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget floatable="false" name="toolBar1" parent="pnlGroupServ" prefHeight="33px" prefWidth="467px" rollover="true" type="ToolbarDesignInfo">
+  <widget floatable="false" name="toolBar1" parent="pnlGroupServ" prefHeight="33px" prefWidth="450px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="-2px" right="2px" top="-2px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar1" prefHeight="29px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar1" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar1" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget name="pnlTarifs" parent="tabbedPane" prefHeight="339px" prefWidth="467px" type="PanelDesignInfo" visible="false">
+  <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar1" prefHeight="26px" prefWidth="34px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar1" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar1" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget name="pnlTarifs" parent="tabbedPane" prefHeight="319px" prefWidth="450px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Тарифы" type="TabsConstraintsDesignInfo"/>
   </widget>

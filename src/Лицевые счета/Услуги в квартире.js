@@ -5,27 +5,33 @@
  * @public
  */
 
+function fmServicesByFlat() {
+
+
+var self = this;
+
+
 var isSelectForm = true;
 var isEditable = true;
 var canSetEdit = false;
 
 function setEdit(){
-    modelGrid.editable = btnAdd.enabled = 
-            btnDel.enabled = btnSave.enabled = isEditable;    
+    self.modelGrid.editable = self.btnAdd.enabled = 
+            self.btnDel.enabled = self.btnSave.enabled = isEditable;    
 tbSetEdit.visible = canSetEdit;
     tbSetEdit.selected = isEditable;
 }
 
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
-    if (model.modified&&confirm('Сохранить изменения?')){
-        model.save();
+    if (self.model.modified&&confirm('Сохранить изменения?')){
+        self.model.save();
     }
-    model.requery();
+    self.model.requery();
 }//GEN-LAST:event_btnReqActionPerformed
 
 function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
-    model.save();
+    self.model.save();
 }//GEN-LAST:event_btnSaveActionPerformed
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
@@ -38,7 +44,7 @@ function colCalcTypeOnSelect(aEditor) {//GEN-FIRST:event_colCalcTypeOnSelect
     fmSelectCalcType.isSelectForm = true;
     fmSelectCalcType.showModal(
         function(aValue){
-            dsServices.calc_id = aValue;
+            self.dsServices.calc_id = aValue;
         }
     );
 }//GEN-LAST:event_colCalcTypeOnSelect
@@ -51,22 +57,24 @@ function btnAddActionPerformed() {//GEN-FIRST:event_btnAddActionPerformed
         function(aValue){
            //services_by_flat.insert();
            //services_by_flat.services_id = aValue;
-           services_by_flat.insert(   dsServices.md.services_id, aValue,
-                                dsServices.md.lc_id, parFlatID);
+           services_by_flat.insert(   self.dsServices.md.services_id, aValue,
+                                self.dsServices.md.lc_id, self.parFlatID);
         });  
         
     
             
-        ////dsServices.insert(dsServices.md.services_id, *ServIDGet*,
-                //      dsServices.md.lc_id, parFlatID);
+        ////self.dsServices.insert(self.dsServices.md.services_id, *ServIDGet*,
+                //      self.dsServices.md.lc_id, self.parFlatID);
 }//GEN-LAST:event_btnAddActionPerformed
 
 function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
-    dsServices.delete();
+    self.dsServices.delete();
 }//GEN-LAST:event_btnDelActionPerformed
 
 function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
-    if (model.modified&&confirm('Сохранить изменения?')){
-        model.save();
+    if (self.model.modified&&confirm('Сохранить изменения?')){
+        self.model.save();
     }
 }//GEN-LAST:event_formWindowClosing
+
+}

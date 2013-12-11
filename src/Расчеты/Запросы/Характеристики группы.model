@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="groupid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Характеристики группы" entityHeight="127" entityIconified="false" entityId="138540131040179" entityLocationX="189" entityLocationY="8" entityWidth="150" tableAlias="t1" tableName="grp_chars" tableSchemaName=""/>
+  <entity Title="Характеристики типы" entityHeight="76" entityIconified="false" entityId="138540133538763" entityLocationX="367" entityLocationY="7" entityWidth="150" tableAlias="t3" tableName="char_types" tableSchemaName=""/>
+  <relation leftEntityFieldName="grp_char_type" leftEntityId="138540131040179" rightEntityFieldName="char_types_id" rightEntityId="138540133538763"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="grp_group_id" rightEntityId="138540131040179"/>
+</datamodel>

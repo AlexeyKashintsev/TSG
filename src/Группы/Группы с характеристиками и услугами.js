@@ -5,6 +5,12 @@
  * @public
  */
 
+function formAllGroups2() {
+
+
+var self = this;
+
+
 var fmGroups = new formGroups();
 var fmGChars = new formGroupCharacteristics();
 var fmGServs = new formServicesInGroup();
@@ -28,8 +34,8 @@ function setGroup(aNewGroupID){
 
 function setDate(aNewDateID){
     if (check4Modifications()){
-        parDateID = aNewDateID;
-        fmGTarifs.parDateID = parDateID;
+        self.parDateID = aNewDateID;
+        fmGTarifs.parDateID = self.parDateID;
         return true;
     }
     else
@@ -47,12 +53,14 @@ function askAndSave(){
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmGroups.parentForm = this;
     fmGTarifs.modelCombo.visible = false;
-    fmGroups.showOnPanel(pnlGroups);
-    fmGChars.showOnPanel(pnlGroupChars);
-    fmGServs.showOnPanel(pnlGroupServ);
-    fmGTarifs.showOnPanel(pnlGroupTarifs);   
+    fmGroups.showOnPanel(self.pnlGroups);
+    fmGChars.showOnPanel(self.pnlGroupChars);
+    fmGServs.showOnPanel(self.pnlGroupServ);
+    fmGTarifs.showOnPanel(self.pnlGroupTarifs);   
 }//GEN-LAST:event_formWindowOpened
 
 function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
     mainForm.fmGroups = null;
 }//GEN-LAST:event_formWindowClosed
+
+}

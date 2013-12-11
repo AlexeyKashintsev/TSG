@@ -1,8 +1,13 @@
 /**
  * 
  * @author Алексей
- * @name Импорт
  */
+
+function modImport() {
+
+
+var self = this;
+
 var MAX_ERRORS_PER_LIST = 3;
 
 var logOutTextField = null, progressInd = null, filesCounter = null, FileNameOut = null;
@@ -95,21 +100,21 @@ function saveAll(aFileName){
  * @returns {ImportFields}
  */
 function ImportFields(){
-    this.rowLength = dsRowLength.rowLength;
-    var LC_FIO = dsExcelFields.find(dsExcelFields.md.impfieldtype, 1);
+    this.rowLength = self.dsRowLength.rowLength;
+    var LC_FIO = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 1);
     this.LC_FIO = LC_FIO==''?null:LC_FIO[0].cellnumber-1;
-    var LC_NUMBER = dsExcelFields.find(dsExcelFields.md.impfieldtype, 3);
+    var LC_NUMBER = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 3);
     this.LC_NUMBER = LC_NUMBER==''?null:LC_NUMBER[0].cellnumber-1;
-    var LC_REG_NUM = dsExcelFields.find(dsExcelFields.md.impfieldtype, 2);
+    var LC_REG_NUM = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 2);
     this.LC_REG_NUM = LC_REG_NUM==''?null:LC_REG_NUM[0].cellnumber-1;
-    var SALDO_BEG = dsExcelFields.find(dsExcelFields.md.impfieldtype, 8);
+    var SALDO_BEG = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 8);
     this.SALDO_BEG = SALDO_BEG==''?null:SALDO_BEG[0].cellnumber-1;
     
     this.LC_CHARS = new Array();
     this.COUNTERS_BEG = new Array();
     this.COUNTERS_END = new Array();
     
-    var LC_CHARS = dsExcelFields.find(dsExcelFields.md.impfieldtype, 4);
+    var LC_CHARS = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 4);
     for (var i in LC_CHARS){
             this.LC_CHARS[i] = new (function(){ this.CellNumber = LC_CHARS[i].cellnumber-1;
                                                 this.CHAR_ID = LC_CHARS[i].charid;
@@ -117,21 +122,21 @@ function ImportFields(){
     };
     
     
-    var COUNTERS_BEG = dsExcelFields.find(dsExcelFields.md.impfieldtype, 5);
+    var COUNTERS_BEG = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 5);
     for (i=0;i<COUNTERS_BEG.length;i++){
             this.COUNTERS_BEG[i] = new (function(){ this.CellNumber = COUNTERS_BEG[i].cellnumber-1;
                                                     this.SERVICE_ID = COUNTERS_BEG[i].serviceid;
                                      });
     }
 
-    var COUNTERS_END = dsExcelFields.find(dsExcelFields.md.impfieldtype, 6);
+    var COUNTERS_END = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 6);
     for (i=0;i<COUNTERS_END.length;i++){
             this.COUNTERS_END[i] = new (function(){ this.CellNumber = COUNTERS_END[i].cellnumber-1;
                                                     this.SERVICE_ID = COUNTERS_END[i].serviceid;
                                      });
     };
     
-    var BINEFICIARIES = dsExcelFields.find(dsExcelFields.md.impfieldtype, 7);
+    var BINEFICIARIES = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 7);
     for (i=0;i<BINEFICIARIES.length;i++){
             this.BINEFICIARIES[i] = new (function(){   this.CellNumber = BINEFICIARIES[i].cellnumber-1;
                                                   this.BENEFIT_ID = BINEFICIARIES[i].benefit_id;
@@ -151,20 +156,20 @@ function ImportFields(){
  * @returns {String}
  * to do: убрать aGroup из передачи в другие функции, почистить все. Заменить aGroup на parGroup - где нужно вставлять его
  */
-function initializeImport(anImportType, aGroup, aDate, aFiles, aLogOut, aProgress, aFileCount, aErFileName){
+self.initializeImport = function(anImportType, aGroup, aDate, aFiles, aLogOut, aProgress, aFileCount, aErFileName){
     if(anImportType==null||aGroup==null||aFiles==null)
         return "Error null parameter";
     logOutTextField = aLogOut;
     if (logOutTextField!=null)
     var startTime = new Date();
     try{
-        model.requery();
+        self.model.requery();
         addLog('Инициализация импорта');
         try{
             //инициализация модулей
         }
         catch (e) {alert('!'+e)}
-        parImportType = anImportType;
+        self.parImportType = anImportType;
         parDate = aDate;
         impFields = new ImportFields(anImportType);
         progressInd = aProgress;
@@ -333,14 +338,14 @@ function checkRow(aRowAr){
 
 function checkRequiredFields(aRowAr){
     var res = true;
-    dsExcelFields.beforeFirst();
-    while (dsExcelFields.next()&&res)
+    self.dsExcelFields.beforeFirst();
+    while (self.dsExcelFields.next()&&res)
         try {
-            if (dsExcelFields.isrequired&&aRowAr[dsExcelFields.cellnumber-1]==null)
+            if (self.dsExcelFields.isrequired&&aRowAr[self.dsExcelFields.cellnumber-1]==null)
                 res = false;
         } catch(e) {
             res = false;
-            addErrorLog('\n '+': Ошибка чтения ячейки '+dsExcelFields.cellnumber+': '+e);
+            addErrorLog('\n '+': Ошибка чтения ячейки '+self.dsExcelFields.cellnumber+': '+e);
         }
     return res;
 }
@@ -458,4 +463,5 @@ function getCellValue(cell) {
             break;
     }
     return value == null ? null : new String(value);
+}
 }

@@ -1,11 +1,16 @@
 /**
  * 
  * @author Алексей
- * @name Импорт_из_фалов_1
  * @public
  */
 
-var IMPORT_MODULE = "Импорт";
+function ImportFromFiles() {
+
+
+var self = this;
+
+
+var IMPORT_MODULE = "modImport";
 var FORM_IMP_FIELDS_CUST = "impFields";
 var FILE_CHOOSER = javax.swing.JFileChooser,
     selectionMode = javax.swing.JFileChooser.FILES_AND_DIRECTORIES;
@@ -19,11 +24,11 @@ var selectedFile = null;
 var errorFile = null;
 
 function setSaveBtnEnabled(){
-    btnSave1.enabled = btnSave11.enabled = model.modified;
+    btnSave1.enabled = btnSave11.enabled = self.model.modified;
 }
 
 function checkImportReadiness(){
-    buttonStartImport.enabled = (selectedFile!=null&&parImport!=null&&parGroup!=null)
+    self.buttonStartImport.enabled = (selectedFile!=null&&self.parImport!=null&&self.parGroup!=null)
 }
 
 function selectStatPar(){
@@ -43,19 +48,19 @@ function statparSelectValue(aEditor) {//GEN-FIRST:event_statparSelectValue
 function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed
     if (fmImpFC==null) fmImpFC = new Form(FORM_IMP_FIELDS_CUST);
     fmImpFC.isSelectForm = true;
-    fmImpFC.parImport = parImport;
+    fmImpFC.parImport = self.parImport;
     fmImpFC.showModal(function(aValue){
         dsImportVariants4select.requery();
         dsImportVariants4Change.requery();
         if (aValue != null)
-            parImport = aValue;
+            self.parImport = aValue;
     });
 }//GEN-LAST:event_button2ActionPerformed
 
 function dbcImportTypeSelectValue(aEditor) {//GEN-FIRST:event_dbcImportTypeSelectValue
     if (fmImpFC==null) fmImpFC = new Form(FORM_IMP_FIELDS_CUST);
     fmImpFC.isSelectForm = true;
-    fmImpFC.parImport = parImport;
+    fmImpFC.parImport = self.parImport;
     fmImpFC.showModal(function(aValue){
         dsImportVariants4select.requery();
         dsImportVariants4Change.requery();
@@ -74,12 +79,12 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
     var result = chooser.showOpenDialog(null);
     if (result == FILE_CHOOSER.APPROVE_OPTION) {
         selectedFile = chooser.getSelectedFile();
-        textFieldFilePath.text = selectedFile.path;
+        self.textFieldFilePath.text = selectedFile.path;
         var files = new java.io.File(selectedFile).list();
         if (selectedFile.isDirectory()){         
-            lblFileAmount.text = files.length;
+            self.lblFileAmount.text = files.length;
         }else{
-            lblFileAmount.text = '1';
+            self.lblFileAmount.text = '1';
         }
     }
     checkImportReadiness();
@@ -88,16 +93,16 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
 function buttonStartImportActionPerformed(evt) {//GEN-FIRST:event_buttonStartImportActionPerformed
 /*
  *Параметры для Импорта
- *<parImport, parParentAddress, parStatInputType, selectedFile>
+ *<self.parImport, parParentAddress, parStatInputType, selectedFile>
  *
  **/
-    jTabbedPane.selectedIndex = 1;
+    self.jTabbedPane.selectedIndex = 1;
     if (impmod==null) impmod = new ServerModule(IMPORT_MODULE);
     (function (){
         impmod.stop = false;
-        var er = impmod.initializeImport(parImport, parGroup,
-                                        parDate, selectedFile, LogOutText,
-                                        jProgressBar, labelFileCounter);
+        var er = impmod.initializeImport(self.parImport, self.parGroup,
+                                        self.parDate, selectedFile, self.LogOutText,
+                                        self.jProgressBar, self.labelFileCounter);
         if (er!=null)
             alert(er, er=="ok"?"Импорт завершен":"Ошибка импорта")
     }).invokeBackground();
@@ -125,3 +130,5 @@ function dbcImportType1SelectValue(aEditor) {//GEN-FIRST:event_dbcImportType1Sel
 function dbcImportType11SelectValue(aEditor) {//GEN-FIRST:event_dbcImportType11SelectValue
 	// TODO Добавьте свой код:
 }//GEN-LAST:event_dbcImportType11SelectValue
+
+}
