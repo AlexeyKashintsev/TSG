@@ -4,6 +4,12 @@
  * Script may be used as library, form or report module, server module and etc.
  */
 
+function _32134448146809() {
+
+
+var self = this;
+
+
 /**
  * Общие административные функции.js
  *
@@ -21,12 +27,12 @@
 
 function loggedInEmployee()
 {
-    parUserName = model.client.loginPrincipal.name;
-    if(!dsEployees.isEmpty())
-        return dsEployees.TR_STAFF_ID;
+    self.parUserName = self.model.client.loginPrincipal.name;
+    if(!self.dsEployees.isEmpty())
+        return self.dsEployees.TR_STAFF_ID;
     else
     {
-        Logger.severe("No employee for logged in user: "+parUserName);
+        Logger.severe("No employee for logged in user: "+self.parUserName);
         return null;
     }
 }
@@ -37,12 +43,12 @@ function loggedInEmployee()
  */
 function loggedInAgent()
 {
-    parUserName = model.client.loginPrincipal.name;
-    if(!dsEployees.isEmpty())
-        return dsEployees.AGENT;
+    self.parUserName = self.model.client.loginPrincipal.name;
+    if(!self.dsEployees.isEmpty())
+        return self.dsEployees.AGENT;
     else
     {
-        Logger.severe("No employee for logged in user: "+parUserName);
+        Logger.severe("No employee for logged in user: "+self.parUserName);
         return null;
     }
 }
@@ -55,3 +61,5 @@ function canSwapFrames(formId){
     return false;
 }
 
+
+}

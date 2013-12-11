@@ -5,6 +5,12 @@
  * @public
  */
 
+function mainWorkSheet() {
+
+
+var self = this;
+
+
 var fmGroups = new formGroups();
 var fmFlats = new lc_in_group();
 var fmFlatChars = new charsFlat();
@@ -14,6 +20,7 @@ var fmSaldoCur = new fmSaldoCurrnet();
 var fmSaldoHistory = new formSaldoHistory();
 var fmNachisleniya = new form_sums_per_flat();
 var fmOplata = new formPaymentsInFlat();
+var clcModule = new ServerModule('Calculations');
 
 function check4Modifications(){
     if  ((!fmFlats.model.modified
@@ -29,8 +36,8 @@ function check4Modifications(){
 
 function setGroup(aNewGroupID){
     parGroup = aNewGroupID;
-    parFlatID = fmFlats.setCurrentGroup(parGroup);
-    setFlat(parFlatID);
+    self.parFlatID = fmFlats.setCurrentGroup(parGroup);
+    setFlat(self.parFlatID);
 }
 
 function setFlat(aNewFlatID){
@@ -41,13 +48,13 @@ function setFlat(aNewFlatID){
 
 function setDate(aNewDate){
     if (check4Modifications()){
-        parDateID = aNewDate;
+        self.parDateID = aNewDate;
         fmFlatCounters.parDateID =
         fmNachisleniya.parDateID =
         fmSaldoCur.parDateID =
         fmNachisleniya.parDateID =
         fmOplata.parDateID = 
-        fmFlats.parDateID = parDateID;
+        fmFlats.parDateID = self.parDateID;
         return true;
     }
     else
@@ -65,23 +72,29 @@ function askAndSave(){
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmGroups.parentForm = this;
     fmGroups.toolBarVisible = false;
-    fmGroups.showOnPanel(pnlGroups);
+    fmGroups.showOnPanel(self.pnlGroups);
     
     fmFlats.parentForm = this;
     fmFlats.isEditable = true;
     fmFlats.isSelectForm = false;
-    fmFlats.showOnPanel(pnlFlats);
+    fmFlats.showOnPanel(self.pnlFlats);
     
-    fmFlatChars.showOnPanel(pnlFlatChars);
-    fmFlatServices.showOnPanel(pnlServices);
-    fmFlatCounters.showOnPanel(pnlCounters);
-    fmSaldoCur.showOnPanel(pnlSaldoCur);
-    fmSaldoHistory.showOnPanel(pnlSaldoHistory);
-    fmNachisleniya.showOnPanel(pnlCurrent);
-    fmOplata.showOnPanel(pnlOplata);
+    fmFlatChars.showOnPanel(self.pnlFlatChars);
+    fmFlatServices.showOnPanel(self.pnlServices);
+    fmFlatCounters.showOnPanel(self.pnlCounters);
+    fmSaldoCur.showOnPanel(self.pnlSaldoCur);
+    fmSaldoHistory.showOnPanel(self.pnlSaldoHistory);
+    fmNachisleniya.showOnPanel(self.pnlCurrent);
+    fmOplata.showOnPanel(self.pnlOplata);
 }//GEN-LAST:event_formWindowOpened
 
 function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
     mainForm.fmWorksheet = null;
 }//GEN-LAST:event_formWindowClosed
 
+function btnCalcAllGroupActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllGroupActionPerformed
+    clcModule
+}//GEN-LAST:event_btnCalcAllGroupActionPerformed
+
+
+}

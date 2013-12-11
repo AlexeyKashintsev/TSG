@@ -6,14 +6,20 @@
  * методом <code>end()</code>.
  * @param aView - Контейнер, в который нужно установить курсор ожидания.
  */
-function beginLengthyOperation(aView)
+
+function guiModule() {
+
+
+var self = this;
+
+self.beginLengthyOperation = function(aView)
 {
     var oldCursor = aView.cursor;
     aView.cursor = java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.WAIT_CURSOR);
     return new Cookie(aView, oldCursor);
 }
 
-function endLengthyOperation()
+self.endLengthyOperation = function()
 {
     this.form.cursor = this.cursor;
 }
@@ -22,18 +28,18 @@ function Cookie(form, cursor)
 {
     this.form = form;
     this.cursor = cursor;
-    this.end = endLengthyOperation;
+    this.end = self.endLengthyOperation;
 }
 
 var FORM_ID_PROPERTY_NAME = "userFormProperty";
 
-function putUserFormProperty(aFrame, aFormId)
+self.putUserFormProperty = function(aFrame, aFormId)
 {
     if(aFrame != null && aFrame != undefined)
         aFrame.rootPane.putClientProperty(FORM_ID_PROPERTY_NAME, aFormId);
 }
 
-function showOpenedForm(aFormId, aDesktop)
+self.showOpenedForm = function(aFormId, aDesktop)
 {
     var frames = null
     if(aDesktop != null)
@@ -66,8 +72,9 @@ function showOpenedForm(aFormId, aDesktop)
     return false;
 }
 
-function setFormSizeAsMin(aForm)
+self.setFormSizeAsMin = function(aForm)
 {
     var minSize = aForm.window.getSize();
     aForm.window.setMinimumSize(minSize);	
+}
 }

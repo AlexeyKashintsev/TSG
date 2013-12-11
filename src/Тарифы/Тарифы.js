@@ -5,13 +5,19 @@
  * @public
  */
 
+function fmTarifs() {
+
+
+var self = this;
+
+
 var isSelectForm = true;
 var isEditable = true;
 var canSetEdit = true;
 var tarifsModule = new TarifsModule();
 
 function setEdit(){
-    modelGrid.editable = btnSave.enabled = isEditable;    
+    self.modelGrid.editable = self.btnSave.enabled = isEditable;    
    // btnAddParent.enabled = isEditable;
     //tbSetEdit.visible = canSetEdit;
     //tbSetEdit.selected = isEditable;
@@ -21,13 +27,13 @@ function setElShown(){
     setEdit();
     if (!isSelectForm){
         pnlSelLock.visible = false;
-        pnlWorkSpace.height += 48;
-        modelGrid.bottom += 48;
+        self.pnlWorkSpace.height += 48;
+        self.modelGrid.bottom += 48;
     }
 }
 
 function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
-    model.save();
+    self.model.save();
 }//GEN-LAST:event_btnSaveActionPerformed
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
@@ -40,12 +46,14 @@ function tbSetEditActionPerformed(evt) {//GEN-FIRST:event_tbSetEditActionPerform
 }//GEN-LAST:event_tbSetEditActionPerformed
 
 function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
-    if (model.modified&&confirm('Сохранить изменения?')){
-        model.save();
+    if (self.model.modified&&confirm('Сохранить изменения?')){
+        self.model.save();
     }
 }//GEN-LAST:event_formWindowClosing
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
-    tarifsModule.addNewTarifs(parDateID,parGroupID);
-    tarifsInGroup.requery()
+    tarifsModule.addNewTarifs(self.parDateID,self.parGroupID);
+    self.tarifsInGroup.requery()
 }//GEN-LAST:event_button1ActionPerformed
+
+}

@@ -4,6 +4,12 @@
  * @name Calculations
  */
 
+function Calculations() {
+
+
+var self = this;
+
+
 var flats = null;
 var groups = null;
 var sums = new Sums();
@@ -16,16 +22,16 @@ var prepared = false;
  * @param {type} aDateID
  * @returns {Boolean}
  */
-this.prepareCalcModule = function(aGroupID, aFlatID, aDateID){
+self.prepareCalcModule = function(aGroupID, aFlatID, aDateID){
     prepared = false;
     try {
-        parDateID = aDateID;
-        parFlatID = aFlatID;
-        parGroupID = aGroupID;
-        dsCalcObject.execute();
+        self.parDateID = aDateID;
+        self.parFlatID = aFlatID;
+        self.parGroupID = aGroupID;
+        self.dsCalcObject.execute();
         groups = new Groups(aDateID);
         flats = new Flats(aDateID);
-        dsSums4calc.execute();
+        self.dsSums4calc.execute();
         
         prepared = true;
         return true;
@@ -35,51 +41,51 @@ this.prepareCalcModule = function(aGroupID, aFlatID, aDateID){
     }
 };
 
-this.calculateValues = function(){
+self.calculateValues = function(){
     try {
         if (prepared){
-            dsSums4calc.beforeFirst();
-            while (dsSums4calc.next()){
+            self.dsSums4calc.beforeFirst();
+            while (self.dsSums4calc.next()){
                 try {
-                    dsSums4calc.calc_value = formulEval.calculate(dsSums4calc.calc_value_formula,
-                                                                  sums.GetSum(dsSums4calc.per_sums_id),
+                    self.dsSums4calc.calc_value = formulEval.calculate(self.dsSums4calc.calc_value_formula,
+                                                                  sums.GetSum(self.dsSums4calc.per_sums_id),
                                                                   'VALUE');
                 } catch (e) {
                     Logger.warning('Ошибка расчета объема по услуге 888 в квартире 888');
                 }
                 try {
-                    dsSums4calc.calc = formulEval.calculate(dsSums4calc.calc_formula,
-                                                            sums.GetSum(dsSums4calc.per_sums_id),
+                    self.dsSums4calc.calc = formulEval.calculate(self.dsSums4calc.calc_formula,
+                                                            sums.GetSum(self.dsSums4calc.per_sums_id),
                                                             'SCALC');
                 } catch (e) {
                     Logger.warning('Ошибка расчета начисления по услуге 888 в квартире 888');
                 }
                 try {
-                    dsSums4calc.benefit = formulEval.calculate('0',
-                                                            sums.GetSum(dsSums4calc.per_sums_id),
+                    self.dsSums4calc.benefit = formulEval.calculate('0',
+                                                            sums.GetSum(self.dsSums4calc.per_sums_id),
                                                             'BENEFIT');
                 } catch (e) {
                     Logger.warning('Ошибка расчета льготы по услуге 888 в квартире 888');
                 }
                 try {
-                    dsSums4calc.recalc = formulEval.calculate('0',
-                                                            sums.GetSum(dsSums4calc.per_sums_id),
+                    self.dsSums4calc.recalc = formulEval.calculate('0',
+                                                            sums.GetSum(self.dsSums4calc.per_sums_id),
                                                             'RECALC');
                 } catch (e) {
                     Logger.warning('Ошибка расчета суммы перерасчета по услуге 888 в квартире 888');
                 }
                 try {
-                    dsSums4calc.full_calc = formulEval.calculate('SCALC-BENEFIT+RECALC',
-                                                            sums.GetSum(dsSums4calc.per_sums_id),
+                    self.dsSums4calc.full_calc = formulEval.calculate('SCALC-BENEFIT+RECALC',
+                                                            sums.GetSum(self.dsSums4calc.per_sums_id),
                                                             'FULL_CALC');
                 } catch (e) {
                     Logger.warning('Ошибка расчета полного значения по услуге 888 в квартире 888');
                 }
                 
             }                                              
-            model.save();
+            self.model.save();
             calculateFlatSaldo();
-            model.save();
+            self.model.save();
             return true;
         } else return false;
     } catch (e) {
@@ -88,17 +94,17 @@ this.calculateValues = function(){
     }
 };
 
-this.calculateFlatSaldo = function(){
-    //prSaldo4calcFromSums.executeUpdate();
-    dsSaldo4calc.requery();
-    dsSumOfSums.requery();
-    dsSaldo4calc.beforeFirst();
-    while (dsSaldo4calc.next()){
-        dsSumOfSums.scrollTo(dsSumOfSums.find(dsSumOfSums.md.lc_id, dsSaldo4calc.lc_id)[0]);
-        dsSaldo4calc.sal_calc = dsSumOfSums.sal_calc;
-        dsSaldo4calc.sal_benefit = dsSumOfSums.sal_benefit;
-        dsSaldo4calc.sal_recalc = dsSumOfSums.sal_recalc;
-        dsSaldo4calc.sal_full_calc = dsSumOfSums.sal_full_calc;
+self.calculateFlatSaldo = function(){
+    //self.prSaldo4calcFromSums.executeUpdate();
+    self.dsSaldo4calc.requery();
+    self.dsSumOfSums.requery();
+    self.dsSaldo4calc.beforeFirst();
+    while (self.dsSaldo4calc.next()){
+        self.dsSumOfSums.scrollTo(self.dsSumOfSums.find(self.dsSumOfSums.md.lc_id, self.dsSaldo4calc.lc_id)[0]);
+        self.dsSaldo4calc.sal_calc = self.dsSumOfSums.sal_calc;
+        self.dsSaldo4calc.sal_benefit = self.dsSumOfSums.sal_benefit;
+        self.dsSaldo4calc.sal_recalc = self.dsSumOfSums.sal_recalc;
+        self.dsSaldo4calc.sal_full_calc = self.dsSumOfSums.sal_full_calc;
     }
 };
 
@@ -110,10 +116,10 @@ this.calculateFlatSaldo = function(){
  *                       groupID.ServiceName.CounterName = value;
  */
 function Groups(aDateID){
-    dsCalcObject.beforeFirst();
-    while (dsCalcObject.next())
-        if (!this[dsCalcObject.group_id])
-            this[dsCalcObject.group_id] = new GroupConstructor(dsCalcObject.group_id, aDateID);
+    self.dsCalcObject.beforeFirst();
+    while (self.dsCalcObject.next())
+        if (!this[self.dsCalcObject.group_id])
+            this[self.dsCalcObject.group_id] = new GroupConstructor(self.dsCalcObject.group_id, aDateID);
 
     function GroupConstructor(aGroupID, aDateID){
         var grpChars = getGroupChars(aGroupID);
@@ -126,35 +132,35 @@ function Groups(aDateID){
     
     function getGroupChars(aGroupID){
         var resChars = {};
-        dsGroupChars.params.groupid = aGroupID;
-        dsGroupChars.execute();
-        dsGroupChars.beforeFirst();
-        while (dsGroupChars.next())
-            resChars[dsGroupChars.fm_name] = dsGroupChars.fm_value;
+        self.dsGroupChars.params.groupid = aGroupID;
+        self.dsGroupChars.execute();
+        self.dsGroupChars.beforeFirst();
+        while (self.dsGroupChars.next())
+            resChars[self.dsGroupChars.fm_name] = self.dsGroupChars.fm_value;
         return resChars;
     }
     
     function getGroupServicesAndCounters(aGroupID, aDateID){
         var resCnt = {};
         
-        dsGroupCntBeg.params.groupid = aGroupID;
-        dsGroupCntBeg.params.dateid = aDateID;
-        dsGroupCntBeg.execute();
-        dsGroupCntBeg.beforeFirst();
-        while (dsGroupCntBeg.next()){
-            if (!resCnt[dsGroupCntBeg.services_id]) 
-                        resCnt[dsGroupCntBeg.services_id] = {};
-            resCnt[dsGroupCntBeg.services_id][dsGroupCntBeg.fm_name] = dsGroupCntBeg.fm_value;
+        self.dsGroupCntBeg.params.groupid = aGroupID;
+        self.dsGroupCntBeg.params.dateid = aDateID;
+        self.dsGroupCntBeg.execute();
+        self.dsGroupCntBeg.beforeFirst();
+        while (self.dsGroupCntBeg.next()){
+            if (!resCnt[self.dsGroupCntBeg.services_id]) 
+                        resCnt[self.dsGroupCntBeg.services_id] = {};
+            resCnt[self.dsGroupCntBeg.services_id][self.dsGroupCntBeg.fm_name] = self.dsGroupCntBeg.fm_value;
         }
 
-        dsGroupCntEnd.params.groupid = aGroupID;
-        dsGroupCntEnd.params.dateid = aDateID;
-        dsGroupCntEnd.execute();
-        dsGroupCntEnd.beforeFirst();
-        while (dsGroupCntEnd.next()){
-            if (!resCnt[dsGroupCntEnd.services_id]) 
-                        resCnt[dsGroupCntEnd.services_id] = {};
-            resCnt[dsGroupCntEnd.services_id][dsGroupCntEnd.fm_name] = dsGroupCntEnd.fm_value;}
+        self.dsGroupCntEnd.params.groupid = aGroupID;
+        self.dsGroupCntEnd.params.dateid = aDateID;
+        self.dsGroupCntEnd.execute();
+        self.dsGroupCntEnd.beforeFirst();
+        while (self.dsGroupCntEnd.next()){
+            if (!resCnt[self.dsGroupCntEnd.services_id]) 
+                        resCnt[self.dsGroupCntEnd.services_id] = {};
+            resCnt[self.dsGroupCntEnd.services_id][self.dsGroupCntEnd.fm_name] = self.dsGroupCntEnd.fm_value;}
         
         return resCnt;
     }
@@ -169,10 +175,10 @@ function Groups(aDateID){
  */
 function Flats(aDateID){
     //this.groups = [];
-    dsCalcObject.beforeFirst();
-    while (dsCalcObject.next())
-        if (!this[dsCalcObject.lc_id])
-            this[dsCalcObject.lc_id] = new FlatConstructor(dsCalcObject.lc_id, aDateID);
+    self.dsCalcObject.beforeFirst();
+    while (self.dsCalcObject.next())
+        if (!this[self.dsCalcObject.lc_id])
+            this[self.dsCalcObject.lc_id] = new FlatConstructor(self.dsCalcObject.lc_id, aDateID);
 
     function FlatConstructor(aLCID, aDateID){
         var fltChars = getLCChars(aLCID);
@@ -185,35 +191,35 @@ function Flats(aDateID){
     
     function getLCChars(aLCID){
         var resChars = {};
-        dsLCChars.params.lc_id = aLCID;
-        dsLCChars.execute();
-        dsLCChars.beforeFirst();
-        while (dsLCChars.next())
-            resChars[dsLCChars.fm_name] = dsLCChars.fm_value;
+        self.dsLCChars.params.lc_id = aLCID;
+        self.dsLCChars.execute();
+        self.dsLCChars.beforeFirst();
+        while (self.dsLCChars.next())
+            resChars[self.dsLCChars.fm_name] = self.dsLCChars.fm_value;
         return resChars;
     }
     
     function getLCServicesAndCounters(aLCID, aDateID){
         var resCnt = {};
         
-        dsLCCntBeg.params.lc_id = aLCID;
-        dsLCCntBeg.params.dateid = aDateID;
-        dsLCCntBeg.execute();
-        dsLCCntBeg.beforeFirst();
-        while (dsLCCntBeg.next()){
-            if (!resCnt[dsLCCntBeg.services_id]) 
-                        resCnt[dsLCCntBeg.services_id] = {};
-            resCnt[dsLCCntBeg.services_id][dsLCCntBeg.fm_name] = dsLCCntBeg.fm_value;
+        self.dsLCCntBeg.params.lc_id = aLCID;
+        self.dsLCCntBeg.params.dateid = aDateID;
+        self.dsLCCntBeg.execute();
+        self.dsLCCntBeg.beforeFirst();
+        while (self.dsLCCntBeg.next()){
+            if (!resCnt[self.dsLCCntBeg.services_id]) 
+                        resCnt[self.dsLCCntBeg.services_id] = {};
+            resCnt[self.dsLCCntBeg.services_id][self.dsLCCntBeg.fm_name] = self.dsLCCntBeg.fm_value;
         }
 
-        dsLCCntEnd.params.lc_id = aLCID;
-        dsLCCntEnd.params.dateid = aDateID;
-        dsLCCntEnd.execute();
-        dsLCCntEnd.beforeFirst();
-        while (dsLCCntEnd.next()){
-            if (!resCnt[dsLCCntEnd.services_id]) 
-                        resCnt[dsLCCntEnd.services_id] = {};
-            resCnt[dsLCCntEnd.services_id][dsLCCntEnd.fm_name] = dsLCCntEnd.fm_value;}
+        self.dsLCCntEnd.params.lc_id = aLCID;
+        self.dsLCCntEnd.params.dateid = aDateID;
+        self.dsLCCntEnd.execute();
+        self.dsLCCntEnd.beforeFirst();
+        while (self.dsLCCntEnd.next()){
+            if (!resCnt[self.dsLCCntEnd.services_id]) 
+                        resCnt[self.dsLCCntEnd.services_id] = {};
+            resCnt[self.dsLCCntEnd.services_id][self.dsLCCntEnd.fm_name] = self.dsLCCntEnd.fm_value;}
         return resCnt;
     }  
 };
@@ -226,7 +232,7 @@ function Sums(){
     };
     
     function Sum(aSumID){
-        var sum = dsSums4calc.findById(aSumID);
+        var sum = self.dsSums4calc.findById(aSumID);
         this.sumid = aSumID;
         this.groupid = sum.group_id;
         this.lcid = sum.lc_id;
@@ -267,3 +273,4 @@ function FormulaEvaluator(){
         return eval(evalFormula);
     }
 };
+}

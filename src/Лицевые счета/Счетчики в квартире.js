@@ -5,36 +5,42 @@
  * @public
  */
 
+function counters_in_flat() {
+
+
+var self = this;
+
+
 var isSelectForm = true;
 var isEditable = false;
 var canSetEdit = true;
 
 function setEdit(){
-    modelGrid.editable = btnAdd.enabled = 
-            btnDel.enabled = btnSave.enabled = isEditable;    
-    btnAddParent.enabled = isEditable;
-    tbSetEdit.visible = canSetEdit;
-    tbSetEdit.selected = isEditable;
+    self.modelGrid.editable = self.btnAdd.enabled = 
+            self.btnDel.enabled = self.btnSave.enabled = isEditable;    
+    self.btnAddParent.enabled = isEditable;
+    self.tbSetEdit.visible = canSetEdit;
+    self.tbSetEdit.selected = isEditable;
 }
 
 function setElShown(){
     setEdit();
     if (!isSelectForm){
-        pnlSelLock.visible = false;
-        pnlWorkSpace.height += 48;
-        modelGrid.bottom += 48;
+        self.pnlSelLock.visible = false;
+        self.pnlWorkSpace.height += 48;
+        self.modelGrid.bottom += 48;
     }
 }
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
-    if (model.modified&&confirm('Сохранить изменения?')){
-        model.save();
+    if (self.model.modified&&confirm('Сохранить изменения?')){
+        self.model.save();
     }
-    model.requery();
+    self.model.requery();
 }//GEN-LAST:event_btnReqActionPerformed
 
 function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
-    model.save();
+    self.model.save();
 }//GEN-LAST:event_btnSaveActionPerformed
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
@@ -42,12 +48,14 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 }//GEN-LAST:event_formWindowOpened
 
 function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
-    if (model.modified&&confirm('Сохранить изменения?')){
-        model.save();
+    if (self.model.modified&&confirm('Сохранить изменения?')){
+        self.model.save();
     }
 }//GEN-LAST:event_formWindowClosing
 
 function tbSetEditActionPerformed(evt) {//GEN-FIRST:event_tbSetEditActionPerformed
-    isEditable = tbSetEdit.selected;
+    isEditable = self.tbSetEdit.selected;
     setEdit();
 }//GEN-LAST:event_tbSetEditActionPerformed
+
+}

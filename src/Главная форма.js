@@ -5,6 +5,12 @@
  * @public
  */
 
+function main_form() {
+
+
+var self = this;
+
+
     guiUtils = new guiModule();
     var fmDateSelect = new fmDateSelector;
     var fmWorksheet = null;
@@ -20,17 +26,17 @@ function showFormAsModal(formId)
 function showFormAsInternal(aForm)
 {
    // if (!swapFrames(formId)){
-      //  if(!guiUtils.showOpenedForm(aForm, formDesktop)){
+      //  if(!guiUtils.showOpenedForm(aForm, self.formDesktop)){
             var frameRunner = aForm;
             var lenCookie = guiUtils.beginLengthyOperation(this);
             try{
-                frameRunner.desktop = formDesktop;
-                frameRunner.showInternalFrame(formDesktop);
-                var internalFrame = frameRunner.getInternalFrame(formDesktop);
+                frameRunner.desktop = self.formDesktop;
+                frameRunner.showInternalFrame(self.formDesktop);
+               /* var internalFrame = frameRunner.getInternalFrame(self.formDesktop);
                 internalFrame.resizable = true;
                 internalFrame.maximizable = true;
                 internalFrame.closable = true;
-                internalFrame.iconifiable = true;
+                internalFrame.iconifiable = true;*/
               //  guiUtils.putUserFormProperty(internalFrame, formId);
             }finally{
                 lenCookie.end();
@@ -58,21 +64,22 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
 }//GEN-LAST:event_button1ActionPerformed
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
-    all_dates.last();
-    parDateID = all_dates.per_date_id;
+    self.all_dates.last();
+    self.parDateID = self.all_dates.per_date_id;
     fmDateSelect.parentForm = mf;
-    fmDateSelect.showOnPanel(pnlDateSelector);
+    fmDateSelect.showOnPanel(self.pnlDateSelector);
 }//GEN-LAST:event_formWindowOpened
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-    //setDate(parDateID);
+    //setDate(self.parDateID);
 }//GEN-LAST:event_paramsOnChanged
 
 function setDate(aNewDateID){
-    if (!aNewDateID) aNewDateID = parDateID;
+    if (!aNewDateID) aNewDateID = self.parDateID;
     var ok = true;
     if (fmWorksheet) ok = fmWorksheet.setDate(aNewDateID);
     if (fmGroups) ok = fmGroups.setDate(aNewDateID);
-    if (ok) parDateID = aNewDateID;
+    if (ok) self.parDateID = aNewDateID;
     return ok;
+}
 }

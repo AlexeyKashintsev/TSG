@@ -5,11 +5,17 @@
  * @public
  */
 
+function SaldoAndSumsModule() {
+
+
+var self = this;
+
+
 var modLC = null;
 //var modCN = null;
 
 function saveChanges(){
-    model.save();
+    self.model.save();
 }
 
 /*
@@ -20,17 +26,17 @@ function saveChanges(){
  * @returns {@exp;dsSaldo@pro;per_saldo_flat_id}
  */
 function initBegSaldo(aLC_ID, aDate, aValue){
-    params.beginUpdate();
-        parDateID = aDate;
-        parFlatID = aLC_ID;
-    params.endUpdate();
-    if (dsSaldo.length == 0)
-        dsSaldo.insert( dsSaldo.md.date_id, aDate,
-                        dsSaldo.md.lc_id, aLC_ID,
-                        dsSaldo.md.sal_begin, aValue);
+    self.params.beginUpdate();
+        self.parDateID = aDate;
+        self.parFlatID = aLC_ID;
+    self.params.endUpdate();
+    if (self.dsSaldo.length == 0)
+        self.dsSaldo.insert( self.dsSaldo.md.date_id, aDate,
+                        self.dsSaldo.md.lc_id, aLC_ID,
+                        self.dsSaldo.md.sal_begin, aValue);
     else
-        dsSaldo.sal_begin = aValue;
-    return dsSaldo.per_saldo_flat_id;
+        self.dsSaldo.sal_begin = aValue;
+    return self.dsSaldo.per_saldo_flat_id;
 }
 
 /*
@@ -47,8 +53,9 @@ function insertCounterValue(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue){
 }
 
 function initSums(aGroupID, aLcID, aDateID){
-    prcSumsCreate.params.groupid = aGroupID;
-    prcSumsCreate.params.lcid = aLcID;
-    prcSumsCreate.params.dateid = aDateID;
-    prcSumsCreate.executeUpdate();
+    self.prcSumsCreate.params.groupid = aGroupID;
+    self.prcSumsCreate.params.lcid = aLcID;
+    self.prcSumsCreate.params.dateid = aDateID;
+    self.prcSumsCreate.executeUpdate();
+}
 }
