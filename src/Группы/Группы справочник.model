@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="group_type" Title="Тип группы" entityHeight="200" entityIconified="false" entityId="137485439101653" entityLocationX="476" entityLocationY="126" entityWidth="150" queryId="group_type" tableName="" tableSchemaName=""/>
   <entity Name="dsGroups" Title="Группы" entityHeight="200" entityIconified="false" entityId="137485439194560" entityLocationX="267" entityLocationY="64" entityWidth="150" onAfterScroll="dsGroupsOnScrolled" onBeforeScroll="dsGroupsWillScroll" queryId="groups_query" tableName="" tableSchemaName=""/>
+  <entity Name="group_type" Title="Тип группы" entityHeight="200" entityIconified="false" entityId="137485439101653" entityLocationX="476" entityLocationY="126" entityWidth="150" queryId="group_type" tableName="" tableSchemaName=""/>
 </datamodel>
