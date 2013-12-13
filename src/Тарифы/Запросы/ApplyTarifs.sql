@@ -4,7 +4,7 @@
  * @name ApplyTarifs
  * @public
  */
-Select t.services_id, t.lc_flat_services_id, t3.rate, t3.norm
+Select t.services_id, t.lc_flat_services_id, t3.rate as tRate, t3.norm as tNorm
 From grp_lc_group t1
  Inner Join lc_flat_services t on t1.lc_id = t.lc_id
  Inner Join grp_services t2 on t.services_id = t2.services_id

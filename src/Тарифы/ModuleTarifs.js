@@ -37,19 +37,17 @@ function TarifsModule() {
      * @param {integer} aDateID
      * @returns {none}
      */
-    self.applyTarifs = function(aGroupID, aDateID){
-        self.ApplyTarifs.params.groupid = aGroupID;
-        self.ApplyTarifs.params.dateid = aDateID;
-        self.UpdatePer_sums.params.groupid = aGroupID;
-        self.UpdatePer_sums.params.dateid = aDateID;
-        self.UpdatePer_sums.execute();
-        self.UpdatePer_sums.beforeFirst();
-        while (self.UpdatePer_sums.next()) {
-            self.per_sums.md.update(
-                    self.per_sums.md.rate = self.UpdatePer_sums.rate
-                    );
-            self.UpdatePer_sums.next();
+    self.applyTarifs = function(aDateID, aGroupID){
+       // self.ApplyTarifs.params.groupid = aGroupID;
+//        self.ApplyTarifs.params.dateid = aDateID;
+        self.dsUpdatePer_sums.params.groupid = aGroupID;
+        self.dsUpdatePer_sums.params.dateid = aDateID;
+        self.dsUpdatePer_sums.requery();
+        self.dsUpdatePer_sums.beforeFirst();
+        while (self.dsUpdatePer_sums.next()) {
+            self.dsUpdatePer_sums.rate = self.dsUpdatePer_sums.tRate
         }
+        self.model.save();
     };
 
 }

@@ -4,12 +4,10 @@
     <parameter description="" name="parGroup" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="servicesIsAbsent" Title="Недостающие тарифы" entityHeight="200" entityIconified="false" entityId="138625186999529" entityLocationX="503" entityLocationY="33" entityWidth="150" queryId="ServicesIsAbsent" tableName="" tableSchemaName=""/>
-  <entity Name="updatePer_sums" Title="UpdatePer_sums" entityHeight="200" entityIconified="false" entityId="138696378763222" entityLocationX="115" entityLocationY="270" entityWidth="150" queryId="UpdatePer_sums" tableName="" tableSchemaName=""/>
-  <entity Name="applyTarifs" Title="ApplyTarifs" entityHeight="200" entityIconified="false" entityId="138696478170318" entityLocationX="349" entityLocationY="234" entityWidth="150" queryId="ApplyTarifs" tableName="" tableSchemaName=""/>
+  <entity Name="dsUpdatePer_sums" Title="UpdatePer_sums" entityHeight="200" entityIconified="false" entityId="138696363376775" entityLocationX="85" entityLocationY="225" entityWidth="150" queryId="UpdatePer_sums" tableName="" tableSchemaName=""/>
+  <entity Name="servicesIsAbsent" Title="Недостающие тарифы" entityHeight="200" entityIconified="false" entityId="138625186999529" entityLocationX="460" entityLocationY="56" entityWidth="150" queryId="ServicesIsAbsent" tableName="" tableSchemaName=""/>
   <entity Name="tarifsInGroup" Title="Тарифы по группе" entityHeight="200" entityIconified="false" entityId="138601884396193" entityLocationX="230" entityLocationY="22" entityWidth="150" queryId="TarifsInGroup" tableName="" tableSchemaName=""/>
-  <entity Name="prApplyTarifs" Title="prApplyTarifs" entityHeight="200" entityIconified="false" entityId="138678099731507" entityLocationX="689" entityLocationY="60" entityWidth="150" queryId="prApplyTarifs" tableName="" tableSchemaName=""/>
-  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="138696378763222" rightEntityFieldName="lc_flat_services_id" rightEntityId="138696478170318"/>
-  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="138696378763222" rightEntityFieldName="lc_flat_services_id" rightEntityId="138678099731507"/>
-  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="138696378763222" rightEntityFieldName="lc_flat_services_id" rightEntityId="138696378763222"/>
+  <entity Name="prApplyTarifs" Title="prApplyTarifs" entityHeight="200" entityIconified="false" entityId="138678099731507" entityLocationX="689" entityLocationY="57" entityWidth="150" queryId="prApplyTarifs" tableName="" tableSchemaName=""/>
+  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="138696363376775" rightEntityFieldName="lc_flat_services_id" rightEntityId="138696363376775"/>
+  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="138696363376775" rightEntityFieldName="lc_flat_services_id" rightEntityId="138678099731507"/>
 </datamodel>
