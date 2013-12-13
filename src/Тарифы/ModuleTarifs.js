@@ -33,8 +33,9 @@ function TarifsModule() {
     };
     /**
      * Применяет тарифы к начислениям в квартирах
-     * @param {type} aGroupID
-     * @returns {undefined}
+     * @param {integer} aGroupID
+     * @param {integer} aDateID
+     * @returns {none}
      */
     self.applyTarifs = function(aGroupID, aDateID){
         self.ApplyTarifs.params.groupid = aGroupID;

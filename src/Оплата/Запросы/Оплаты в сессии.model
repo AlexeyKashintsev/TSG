@@ -4,5 +4,7 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="opl_payments" entityHeight="200" entityIconified="false" entityId="138686028867600" entityLocationX="177" entityLocationY="8" entityWidth="150" tableAlias="t1" tableName="opl_payments" tableSchemaName=""/>
+  <entity Title="Квартиры (Лицевые счета)" entityHeight="96" entityIconified="false" entityId="138695662486147" entityLocationX="366" entityLocationY="11" entityWidth="150" tableAlias="t" tableName="lc_flat" tableSchemaName=""/>
+  <relation leftEntityFieldName="flat_id" leftEntityId="138686028867600" rightEntityFieldName="lc_flat_id" rightEntityId="138695662486147"/>
   <relation leftEntityId="-1" leftEntityParameterName="sessionid" rightEntityFieldName="session_id" rightEntityId="138686028867600"/>
 </datamodel>

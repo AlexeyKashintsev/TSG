@@ -3,11 +3,4 @@
     <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="dsPaymentsInSession" Title="Оплаты в сессии" entityHeight="200" entityIconified="false" entityId="138686254492152" entityLocationX="511" entityLocationY="11" entityWidth="150" queryId="dsPaymentsInSession" tableName="" tableSchemaName=""/>
-  <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="138686230933281" entityLocationX="332" entityLocationY="17" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
-  <entity Name="dsOplSessions" Title="Сессии оплаты" entityHeight="200" entityIconified="false" entityId="138686186536549" entityLocationX="174" entityLocationY="16" entityWidth="150" queryId="dsOplSessions" tableName="" tableSchemaName=""/>
-  <relation leftEntityFieldName="opl_sessions_id" leftEntityId="138686186536549" rightEntityId="138686254492152" rightEntityParameterName="sessionid"/>
-  <referenceRelation leftEntityFieldName="date_id" leftEntityId="138686186536549" rightEntityFieldName="per_date_id" rightEntityId="138686230933281"/>
-  <referenceRelation leftEntityFieldName="session_id" leftEntityId="138686254492152" rightEntityFieldName="opl_sessions_id" rightEntityId="138686186536549"/>
-  <referenceRelation leftEntityFieldName="date_id" leftEntityId="138686254492152" rightEntityFieldName="per_date_id" rightEntityId="138686230933281"/>
 </datamodel>
