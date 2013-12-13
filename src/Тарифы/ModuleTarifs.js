@@ -43,12 +43,12 @@ function TarifsModule() {
         self.UpdatePer_sums.params.groupid = aGroupID;
         self.UpdatePer_sums.params.dateid = aDateID;
         self.UpdatePer_sums.execute();
-        self.per_sums.md.beforeFirst();
-        while (self.per_sums.md.next()) {
+        self.UpdatePer_sums.beforeFirst();
+        while (self.UpdatePer_sums.next()) {
             self.per_sums.md.update(
                     self.per_sums.md.rate = self.UpdatePer_sums.rate
                     );
-            self.per_sums.md.next();
+            self.UpdatePer_sums.next();
         }
     };
 
