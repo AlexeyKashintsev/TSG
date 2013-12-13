@@ -40,6 +40,8 @@ function TarifsModule() {
     self.applyTarifs = function(aGroupID, aDateID){
         self.ApplyTarifs.params.groupid = aGroupID;
         self.ApplyTarifs.params.dateid = aDateID;
+        self.UpdatePer_sums.params.groupid = aGroupID;
+        self.UpdatePer_sums.params.dateid = aDateID;
         self.UpdatePer_sums.execute();
         self.per_sums.md.beforeFirst();
         while (self.per_sums.md.next()) {
