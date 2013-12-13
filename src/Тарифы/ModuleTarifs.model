@@ -5,6 +5,12 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="servicesIsAbsent" Title="Недостающие тарифы" entityHeight="200" entityIconified="false" entityId="138625186999529" entityLocationX="460" entityLocationY="56" entityWidth="150" queryId="ServicesIsAbsent" tableName="" tableSchemaName=""/>
+  <entity Name="updatePer_sums" Title="UpdatePer_sums" entityHeight="200" entityIconified="false" entityId="138696110270316" entityLocationX="98" entityLocationY="226" entityWidth="150" queryId="UpdatePer_sums" tableName="" tableSchemaName=""/>
+  <entity Name="per_sums" Title="Начисления" entityHeight="200" entityIconified="false" entityId="138696163695650" entityLocationX="320" entityLocationY="299" entityWidth="150" tableName="per_sums" tableSchemaName=""/>
   <entity Name="tarifsInGroup" Title="Тарифы по группе" entityHeight="200" entityIconified="false" entityId="138601884396193" entityLocationX="230" entityLocationY="22" entityWidth="150" queryId="TarifsInGroup" tableName="" tableSchemaName=""/>
   <entity Name="prApplyTarifs" Title="prApplyTarifs" entityHeight="200" entityIconified="false" entityId="138678099731507" entityLocationX="689" entityLocationY="57" entityWidth="150" queryId="prApplyTarifs" tableName="" tableSchemaName=""/>
+  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="138696110270316" rightEntityFieldName="lc_flat_services_id" rightEntityId="138678099731507"/>
+  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="138696163695650" rightEntityFieldName="lc_flat_services_id" rightEntityId="138696110270316"/>
+  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="138696163695650" rightEntityFieldName="lc_flat_services_id" rightEntityId="138678099731507"/>
+  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="138696110270316" rightEntityFieldName="lc_flat_services_id" rightEntityId="138696110270316"/>
 </datamodel>

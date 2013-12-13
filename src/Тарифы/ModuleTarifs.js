@@ -37,9 +37,16 @@ function TarifsModule() {
      * @returns {undefined}
      */
     self.applyTarifs = function(aGroupID, aDateID){
-        self.prApplyTarifs.params.groupid = aGroupID;
-        self.prApplyTarifs.params.dateid = aDateID;
-        self.prApplyTarifs.executeUpdate();
+        self.ApplyTarifs.params.groupid = aGroupID;
+        self.ApplyTarifs.params.dateid = aDateID;
+        self.UpdatePer_sums.execute();
+        self.per_sums.md.beforeFirst();
+        while (self.per_sums.md.next()) {
+            self.per_sums.md.update(
+                    self.per_sums.md.rate = self.UpdatePer_sums.rate
+                    );
+            self.per_sums.md.next();
+        }
     };
 
 }
