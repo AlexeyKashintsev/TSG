@@ -1,11 +1,11 @@
 /**
  * 
  * @author Алексей
- * @name template
+ * @name oplInSession
  * @public
  */
 
-function template_1() {
+function oplInSession() {
 
 
 var self = this;
@@ -14,6 +14,9 @@ var self = this;
 var isSelectForm = true;
 var isEditable = false;
 var canSetEdit = true;
+var fmNewOplata = new opl_get();
+self.parentForm = null;
+self.mainForm = null;
 
 function setEdit(){
     self.modelGrid.editable = 
@@ -22,6 +25,17 @@ function setEdit(){
     self.tbSetEdit.visible = canSetEdit;
     self.tbSetEdit.selected = isEditable;
 }
+
+self.updateSession = function(){
+    self.model.requery();
+    self.parentForm.updateSession();
+};
+
+self.init = function (aSessionID, aDateID){
+    self.parDateID = aDateID;
+    self.parSessionID = aSessionID;
+};
+
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
     if (self.model.modified&&confirm('Сохранить изменения?')){
@@ -43,5 +57,15 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
         self.model.save();
     }
 }//GEN-LAST:event_formWindowClosing
+
+function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
+    fmNewOplata.parDateID = self.parDateID;
+    fmNewOplata.parSessionID = self.parSessionID;
+    fmNewOplata.parentForm = self;
+    if (self.mainForm)
+        self.mainForm.showFormAsInternal(fmNewOplata);
+    else
+        fmNewOplata.show();
+}//GEN-LAST:event_btnAddActionPerformed
 
 }

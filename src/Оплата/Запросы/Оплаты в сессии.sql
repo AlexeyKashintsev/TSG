@@ -3,7 +3,7 @@
  * @author Alexey
  * @name dsPaymentsInSession
  * @writable opl_payments
- * @manual 
+ * @public
  */ 
 Select * 
 From opl_payments t1

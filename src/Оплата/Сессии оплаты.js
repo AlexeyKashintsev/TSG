@@ -12,8 +12,35 @@ var self = this;
 
 
 var isSelectForm = true;
-var isEditable = false;
+var isEditable = true;
 var canSetEdit = true;
+var fmSession = null;
+
+self.mainForm = null;
+
+
+self.updateSession = function(){
+    self.model.requery();
+};
+
+self.setDate = function(aNewDate){
+    self.parDateID = aNewDate;
+    return true;
+};
+
+function openCurrentSession(){
+    if (!fmSession) {
+        fmSession = new oplInSession();
+        fmSession.mainForm = self.mainForm;
+        fmSession.parentForm = self;
+    }
+
+    fmSession.init(self.dsOplSessions.opl_sessions_id, self.parDateID);
+    if (self.mainForm)
+        self.mainForm.showFormAsInternal(fmSession);
+    else
+        fmSession.show();
+}
 
 function setEdit(){
     self.modelGrid.editable = self.btnAdd.enabled = 
@@ -54,6 +81,7 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
                                   self.tfSesComment.text!='Комментарий к новой сессии'?
                                   self.tfSesComment.text:'',
                                   self.dsOplSessions.md.opl_date,  new Date());
+        openCurrentSession();
         self.model.save();
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -63,7 +91,11 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
 
     function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
         if (confirm('Удаление текущей сессии приведет к удалению всех оплат,\n содержащихся в ней. Продолжить?')){
-            
+            self.dsOplSessions.deleteRow();
         }
     }//GEN-LAST:event_btnDelActionPerformed
+
+function btnOpenActionPerformed(evt) {//GEN-FIRST:event_btnOpenActionPerformed
+    openCurrentSession();
+}//GEN-LAST:event_btnOpenActionPerformed
 }

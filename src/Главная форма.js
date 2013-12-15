@@ -15,6 +15,7 @@ var self = this;
     var fmDateSelect = new fmDateSelector;
     var fmWorksheet = null;
     var fmGroups = null;
+    var fmOplSessions = null;
     var mf = this;
     
 function showFormAsModal(formId)
@@ -23,7 +24,7 @@ function showFormAsModal(formId)
     modalForm.showModal();
 }
 
-function showFormAsInternal(aForm)
+self.showFormAsInternal = function(aForm)
 {
    // if (!swapFrames(formId)){
       //  if(!guiUtils.showOpenedForm(aForm, self.formDesktop)){
@@ -49,7 +50,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
     if (!fmWorksheet) {
         fmWorksheet = new mainWorkSheet();
         fmWorksheet.mainForm = mf;
-        showFormAsInternal(fmWorksheet);
+        self.showFormAsInternal(fmWorksheet);
         self.setDate();
     }
 }//GEN-LAST:event_buttonActionPerformed
@@ -58,7 +59,7 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
     if (!fmGroups) {
         fmGroups = new formAllGroups2();
         fmGroups.mainForm = mf;
-        showFormAsInternal(fmGroups);
+        self.showFormAsInternal(fmGroups);
         self.setDate();
     }
 }//GEN-LAST:event_button1ActionPerformed
@@ -74,12 +75,22 @@ function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
     //setDate(self.parDateID);
 }//GEN-LAST:event_paramsOnChanged
 
+function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed
+    if (!fmOplSessions) {
+        fmOplSessions = new opl_session_view();
+        fmOplSessions.mainForm = mf;
+        self.showFormAsInternal(fmOplSessions);
+        self.setDate();
+    }
+}//GEN-LAST:event_button2ActionPerformed
+
 self.setDate = function(aNewDateID){
     if (!aNewDateID) aNewDateID = self.parDateID;
     var ok = true;
-    if (fmWorksheet) ok = fmWorksheet.setDate(aNewDateID);
-    if (fmGroups) ok = fmGroups.setDate(aNewDateID);
+    if (ok&&fmWorksheet) ok = fmWorksheet.setDate(aNewDateID);
+    if (ok&&fmGroups) ok = fmGroups.setDate(aNewDateID);
+    if (ok&&fmOplSessions) ok = fmOplSessions.setDate(aNewDateID);
     if (ok) self.parDateID = aNewDateID;
     return ok;
-}
+};
 }

@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="sessionid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="opl_sessions" entityHeight="200" entityIconified="false" entityId="138686025512801" entityLocationX="167" entityLocationY="13" entityWidth="150" tableAlias="t1" tableName="opl_sessions" tableSchemaName=""/>
+  <entity Title="Количество и сумма оплат в сессии" entityHeight="200" entityIconified="false" entityId="138705593683443" entityLocationX="354" entityLocationY="20" entityWidth="150" queryId="dsSessionColAndSum" tableAlias="q" tableName="" tableSchemaName=""/>
+  <relation leftEntityFieldName="opl_sessions_id" leftEntityId="138686025512801" rightEntityFieldName="session_id" rightEntityId="138705593683443"/>
+  <relation leftEntityId="-1" leftEntityParameterName="sessionid" rightEntityFieldName="opl_sessions_id" rightEntityId="138686025512801"/>
+  <relation leftEntityId="-1" leftEntityParameterName="sessionid" rightEntityId="138705593683443" rightEntityParameterName="sessionid"/>
 </datamodel>

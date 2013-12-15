@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="348px" prefWidth="372px" windowClosing="formWindowClosing" windowOpened="formWindowOpened">
-  <widget name="toolBar" parent="Form" prefHeight="32px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
+  <widget name="toolBar" parent="Form" prefHeight="30px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
     <constraints place="First" type="BorderLayoutConstraintsDesignInfo"/>
   </widget>
+  <widget actionPerformed="btnOpenActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-edit.png" name="btnOpen" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Открыть сессию" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget name="tfSesComment" parent="toolBar" prefHeight="28px" prefWidth="220px" text="Комментарий к новой сессии" type="TextFieldDesignInfo"/>
-  <widget name="pnlWorkSpace" parent="Form" prefHeight="316px" prefWidth="372px" type="PanelDesignInfo">
+  <widget name="tfSesComment" parent="toolBar" prefHeight="26px" prefWidth="186px" text="Комментарий к новой сессии" type="TextFieldDesignInfo"/>
+  <widget name="pnlWorkSpace" parent="Form" prefHeight="318px" prefWidth="372px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints place="Center" type="BorderLayoutConstraintsDesignInfo"/>
   </widget>
-  <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="316px" prefWidth="372px" type="DbGridDesignInfo">
+  <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="318px" prefWidth="372px" type="DbGridDesignInfo">
     <column name="colDate_id" readonly="true" title="Расчетный месяц">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="138686324127452" fieldName="TextDate"/>
@@ -30,7 +31,7 @@
         <nativeFont name="Lucida Grande" size="13"/>
       </headerStyle>
     </column>
-    <column name="colOpl_date" readonly="true" title="Дата">
+    <column name="colSes_date" readonly="true" title="Дата">
       <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy HH:mm:ss" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138686322493762" fieldName="opl_date"/>
       <cellDesignInfo>
@@ -45,9 +46,39 @@
         <nativeFont name="Lucida Grande" size="13"/>
       </headerStyle>
     </column>
-    <column name="colOpl_comment" title="Комментарий">
+    <column name="colSes_comment" title="Комментарий">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138686322493762" fieldName="opl_comment"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="colOpl_Count" readonly="true" title="Количество">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138686322493762" fieldName="cnt"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="colOpl_sum" readonly="true" title="Сумма">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138686322493762" fieldName="ses_sum"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>

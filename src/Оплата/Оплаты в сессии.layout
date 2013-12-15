@@ -2,6 +2,7 @@
   <widget name="toolBar" parent="Form" prefHeight="30px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="30px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
+  <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
@@ -10,7 +11,7 @@
     <constraints bottom="31px" left="0px" right="0px" top="30px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="287px" prefWidth="372px" type="DbGridDesignInfo">
-    <column name="colFlat_id" selectOnly="true" title="ФИО">
+    <column name="colFlat_id" readonly="true" selectOnly="true" title="ФИО">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138695513474136" fieldName="lc_regto"/>
       <cellDesignInfo>
@@ -81,7 +82,7 @@
     <constraints bottom="0px" height="30px" left="0px" right="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelFormattedField1" parent="panel" prefHeight="28px" prefWidth="84px" type="DbLabelDesignInfo">
-    <datamodelElement entityId="-1" fieldName="parSum"/>
+    <datamodelElement entityId="138702685442407" fieldName="ses_sum"/>
     <constraints height="28px" left="264px" top="0px" type="MarginConstraintsDesignInfo" width="84px"/>
   </widget>
   <widget name="label" parent="panel" prefHeight="16px" prefWidth="96px" text="Итого оплат: " type="LabelDesignInfo">
@@ -91,7 +92,7 @@
     <constraints height="16px" left="192px" top="6px" type="MarginConstraintsDesignInfo" width="72px"/>
   </widget>
   <widget name="modelFormattedField" parent="panel" prefHeight="28px" prefWidth="84px" type="DbLabelDesignInfo">
-    <datamodelElement entityId="-1" fieldName="parCol"/>
+    <datamodelElement entityId="138702685442407" fieldName="cnt"/>
     <constraints height="28px" left="96px" top="0px" type="MarginConstraintsDesignInfo" width="84px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

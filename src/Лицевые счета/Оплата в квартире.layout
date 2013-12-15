@@ -9,7 +9,6 @@
   <widget name="modelGrid" parent="Form" prefHeight="267px" prefWidth="400px" type="DbGridDesignInfo">
     <column name="colSum" readonly="true" title="Сумма">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
       <datamodelElement entityId="137685811346765" fieldName="payment_sum"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -24,8 +23,10 @@
       </headerStyle>
     </column>
     <column name="colPeriod" readonly="true" title="Месяц">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <displayField entityId="137685832783762" fieldName="TextDate"/>
+        <valueField entityId="137685832783762" fieldName="per_date_id"/>
+      </controlInfo>
       <datamodelElement entityId="137685811346765" fieldName="date_id"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -40,9 +41,8 @@
       </headerStyle>
     </column>
     <column name="colDate" readonly="true" title="Дата платежа">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
-      <datamodelElement entityId="137685811346765" fieldName="date_id"/>
+      <controlInfo classHint="DbDateDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137685811346765" fieldName="payment_date"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -50,13 +50,13 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
+      <columnsDisplayField/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colComment" title="Комментарий">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
       <datamodelElement entityId="137685811346765" fieldName="payment_comment"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -65,14 +65,15 @@
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
+      <columnsDisplayField/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
-    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
-      <rowsDatasource/>
+      <rowsDatasource entityId="137685811346765" field="false"/>
     </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="33px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

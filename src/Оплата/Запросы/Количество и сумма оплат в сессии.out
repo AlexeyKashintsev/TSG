@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><outputFields>
+  <field bindedColumn="cnt" sqlType="2"/>
+  <field bindedColumn="ses_sum" sqlType="2"/>
+</outputFields>
