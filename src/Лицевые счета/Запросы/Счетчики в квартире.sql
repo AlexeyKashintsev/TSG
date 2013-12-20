@@ -7,7 +7,7 @@
  */ 
 Select t.cnt_con2services_id, t.counter_id, t.group_service
 , t.flat_service, t2.cnt_counters_id, t2.cnt_number, t2.cnt_type
-, t2.cnt_active, t1.services_id
+, t2.cnt_active, t1.services_id, t.main_service
 
 From lc_flat_services t1
  Inner Join cnt_con2services t on t1.lc_flat_services_id = t.flat_service

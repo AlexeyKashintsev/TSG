@@ -102,13 +102,19 @@ function calculateFlatSaldo(aFlatID){
     
     self.dsSaldo4calc.requery();
     self.dsSumOfSums.requery();
+    self.dsSumOfPayments.requery();
     self.dsSaldo4calc.beforeFirst();
     while (self.dsSaldo4calc.next()){
         var sc = self.dsSumOfSums.find(self.dsSumOfSums.md.lc_id, self.dsSaldo4calc.lc_id)[0];
+        var sp = self.dsSumOfPayments.find(self.dsSumOfPayments.md.flat_id, self.dsSaldo4calc.lc_id);
+        if (sp.length==1) sp = sp[0];
+        else sp.pay_sum = 0;
         self.dsSaldo4calc.sal_calc = sc.sal_calc;
         self.dsSaldo4calc.sal_benefit = sc.sal_benefit;
         self.dsSaldo4calc.sal_recalc = sc.sal_recalc;
         self.dsSaldo4calc.sal_full_calc = sc.sal_full_calc;
+        self.dsSaldo4calc.sal_payments = sp.pay_sum;
+        self.dsSaldo4calc.sal_end = self.dsSaldo4calc.sal_begin + sc.sal_full_calc - sp.pay_sum;
     }
     self.model.save();
 };

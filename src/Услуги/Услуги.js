@@ -1,14 +1,15 @@
 /**
  * 
  * @author Алексей
- * @name fmServices
+ * @name ServicesForm
  * @public
  */
 
-function fmServices() {
+function ServicesForm() {
 
 
 var self = this;
+self.mainForm = null;
 
 
 var isSelectForm = true;

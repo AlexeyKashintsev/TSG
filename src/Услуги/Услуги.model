@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="dsCalcType" Title="Способы расчета" entityHeight="200" entityIconified="false" entityId="137684101269880" entityLocationX="461" entityLocationY="21" entityWidth="150" queryId="Способы_расчета" tableName="" tableSchemaName=""/>
   <entity Name="dsServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137684100940550" entityLocationX="206" entityLocationY="11" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
+  <entity Name="dsCalcType" Title="Способы расчета" entityHeight="200" entityIconified="false" entityId="137684101269880" entityLocationX="461" entityLocationY="21" entityWidth="150" queryId="Способы_расчета" tableName="" tableSchemaName=""/>
+  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="137684100940550" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137684101269880"/>
+  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137684100940550" rightEntityFieldName="usl_services_id" rightEntityId="137684100940550"/>
+  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="137684100940550" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137684100940550"/>
 </datamodel>

@@ -16,6 +16,7 @@ var self = this;
     var fmWorksheet = null;
     var fmGroups = null;
     var fmOplSessions = null;
+    var fmServices = null;
     var mf = this;
     
 function showFormAsModal(formId)
@@ -42,6 +43,7 @@ self.showFormAsInternal = function(aForm)
             }finally{
                 lenCookie.end();
             }
+            frameRunner.toFront();
      //   }
      //   return frameRunner;
 }
@@ -52,7 +54,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
         fmWorksheet.mainForm = mf;
         self.showFormAsInternal(fmWorksheet);
         self.setDate();
-    }
+    } else self.showFormAsInternal(fmWorksheet);
 }//GEN-LAST:event_buttonActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
@@ -61,7 +63,7 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         fmGroups.mainForm = mf;
         self.showFormAsInternal(fmGroups);
         self.setDate();
-    }
+    } else self.showFormAsInternal(fmGroups);
 }//GEN-LAST:event_button1ActionPerformed
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
@@ -81,8 +83,17 @@ function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed
         fmOplSessions.mainForm = mf;
         self.showFormAsInternal(fmOplSessions);
         self.setDate();
-    }
+    } else self.showFormAsInternal(fmOplSessions);
 }//GEN-LAST:event_button2ActionPerformed
+
+function button3ActionPerformed(evt) {//GEN-FIRST:event_button3ActionPerformed
+    if (!fmServices) {
+        fmServices = new ServicesForm();
+        fmServices.mainForm = mf;
+        self.showFormAsInternal(fmServices);
+       // self.setDate();
+    }	else self.showFormAsInternal(fmServices);
+}//GEN-LAST:event_button3ActionPerformed
 
 self.setDate = function(aNewDateID){
     if (!aNewDateID) aNewDateID = self.parDateID;

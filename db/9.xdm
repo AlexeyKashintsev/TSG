@@ -113,6 +113,7 @@
 <column description="" isPk="true" javaType="java.math.BigDecimal" name="impfieldstypes_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 <column description="" isPk="false" javaType="java.lang.String" name="fieldtypename" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
 <column description="" isPk="false" javaType="java.math.BigDecimal" name="parent" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.lang.String" name="fieldprogramname" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
 </columns>
 <indexes>
 <index clustered="false" fKeyName="" hashed="false" isPKey="true" name="impfieldstypes_pk" unique="true">
@@ -230,6 +231,7 @@
 <column description="Перерассчет" isPk="false" javaType="java.math.BigDecimal" name="recalc" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
 <column description="Начислено" isPk="false" javaType="java.math.BigDecimal" name="full_calc" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
 <column description="Стоимость" isPk="false" javaType="java.math.BigDecimal" name="rate" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
+<column description="Объем" isPk="false" javaType="java.math.BigDecimal" name="calc_value" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 </columns>
 <indexes>
 <index clustered="false" fKeyName="" hashed="false" isPKey="true" name="per_sums_pk" unique="true">
@@ -514,6 +516,7 @@
 <column description="" isPk="false" javaType="java.math.BigDecimal" name="counter_id" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 <column description="" isPk="false" javaType="java.math.BigDecimal" name="group_service" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 <column description="" isPk="false" javaType="java.math.BigDecimal" name="flat_service" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.lang.Boolean" name="main_service" nullable="true" precision="10" scale="0" signed="true" size="0" type="16" typeName="bool"/>
 </columns>
 <indexes>
 <index clustered="false" fKeyName="" hashed="false" isPKey="true" name="cnt_con2services_pk" unique="true">
@@ -604,7 +607,7 @@
 </foreignKey>
 </foreignKeys>
 </table>
-<table description="Способ рассчета льготы" name="USL_CALC_BENEFIT_FORMULA">
+<table description="Способ расчета льготы" name="USL_CALC_BENEFIT_FORMULA">
 <columns>
 <column description="" isPk="true" javaType="java.math.BigDecimal" name="usl_calc_benefit_formula_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 <column description="Наименование способа рассчета льготы" isPk="false" javaType="java.lang.String" name="calc_name" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>

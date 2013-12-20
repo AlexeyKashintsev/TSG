@@ -50,14 +50,14 @@ function colCalcTypeOnSelect(aEditor) {//GEN-FIRST:event_colCalcTypeOnSelect
 }//GEN-LAST:event_colCalcTypeOnSelect
 
 function btnAddActionPerformed() {//GEN-FIRST:event_btnAddActionPerformed
-    var fmSelectServicesId = new Form('fmServices');
+    var fmSelectServicesId = new ServicesForm();
     var res = null;
     fmSelectServicesId.isSelectForm = true;
     fmSelectServicesId.showModal(
         function(aValue){
            //services_by_flat.insert();
            //services_by_flat.services_id = aValue;
-           services_by_flat.insert(   self.dsServices.md.services_id, aValue,
+           self.dsServices.insert(   self.dsServices.md.services_id, aValue,
                                 self.dsServices.md.lc_id, self.parFlatID);
         });  
         

@@ -7,7 +7,7 @@
   <entity Title="cnt_con2services" entityHeight="200" entityIconified="false" entityId="138538024496847" entityLocationX="347" entityLocationY="5" entityWidth="150" tableAlias="t" tableName="cnt_con2services" tableSchemaName=""/>
   <entity Title="cnt_counters" entityHeight="200" entityIconified="false" entityId="138538197310470" entityLocationX="529" entityLocationY="3" entityWidth="150" tableAlias="t2" tableName="cnt_counters" tableSchemaName=""/>
   <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="137495811088124" entityLocationX="174" entityLocationY="7" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
-  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="137495811088124" rightEntityFieldName="flat_service" rightEntityId="138538024496847"/>
-  <relation leftEntityFieldName="counter_id" leftEntityId="138538024496847" rightEntityFieldName="cnt_counters_id" rightEntityId="138538197310470"/>
   <relation leftEntityId="-1" leftEntityParameterName="flat_id" rightEntityFieldName="lc_id" rightEntityId="137495811088124"/>
+  <relation leftEntityFieldName="counter_id" leftEntityId="138538024496847" rightEntityFieldName="cnt_counters_id" rightEntityId="138538197310470"/>
+  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="137495811088124" rightEntityFieldName="flat_service" rightEntityId="138538024496847"/>
 </datamodel>
