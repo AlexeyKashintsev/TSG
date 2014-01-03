@@ -6,14 +6,17 @@
   <entity Name="dsGroups" Title="Группы" entityHeight="200" entityIconified="false" entityId="137496167811778" entityLocationX="132" entityLocationY="273" entityWidth="150" queryId="groups_query" tableName="" tableSchemaName=""/>
   <entity Name="chars_by_group" Title="Характеристики группы" entityHeight="200" entityIconified="false" entityId="137496168237043" entityLocationX="390" entityLocationY="12" entityWidth="150" queryId="chars_by_group" tableName="" tableSchemaName=""/>
   <entity Name="characteristics_types" Title="Характеристики типы" entityHeight="200" entityIconified="false" entityId="137496171186332" entityLocationX="567" entityLocationY="11" entityWidth="150" queryId="characteristics_types" tableName="" tableSchemaName=""/>
+  <entity Name="bank_queries" Title="Все реквизиты" entityHeight="200" entityIconified="false" entityId="138840958146843" entityLocationX="382" entityLocationY="233" entityWidth="150" queryId="bank_queries" tableName="" tableSchemaName=""/>
   <entity Name="dsGroupByID" Title="Группа по ID" entityHeight="200" entityIconified="false" entityId="137496190835709" entityLocationX="190" entityLocationY="57" entityWidth="150" queryId="group_by_id" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="137496168237043" rightEntityParameterName="parGroup"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="137496190835709" rightEntityParameterName="group_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="137496168237043" rightEntityParameterName="parGroup"/>
+  <referenceRelation leftEntityFieldName="grp_group_id" leftEntityId="137496168237043" rightEntityFieldName="grp_groups_id" rightEntityId="137496190835709"/>
+  <referenceRelation leftEntityFieldName="bank" leftEntityId="137496190835709" rightEntityFieldName="grp_bank_id" rightEntityId="138840958146843"/>
+  <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="137496167811778" rightEntityFieldName="grp_groups_id" rightEntityId="137496190835709"/>
+  <referenceRelation leftEntityFieldName="bank" leftEntityId="137496167811778" rightEntityFieldName="grp_bank_id" rightEntityId="138840958146843"/>
   <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="137496190835709" rightEntityFieldName="grp_groups_id" rightEntityId="137496190835709"/>
   <referenceRelation leftEntityFieldName="grp_group_id" leftEntityId="137496168237043" rightEntityFieldName="grp_groups_id" rightEntityId="137496167811778"/>
   <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="137496167811778" rightEntityFieldName="grp_groups_id" rightEntityId="137496167811778"/>
-  <referenceRelation leftEntityFieldName="grp_char_type" leftEntityId="137496168237043" rightEntityFieldName="char_types_id" rightEntityId="137496171186332"/>
-  <referenceRelation leftEntityFieldName="grp_group_id" leftEntityId="137496168237043" rightEntityFieldName="grp_groups_id" rightEntityId="137496190835709"/>
   <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="137496190835709" rightEntityFieldName="grp_groups_id" rightEntityId="137496167811778"/>
-  <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="137496167811778" rightEntityFieldName="grp_groups_id" rightEntityId="137496190835709"/>
+  <referenceRelation leftEntityFieldName="grp_char_type" leftEntityId="137496168237043" rightEntityFieldName="char_types_id" rightEntityId="137496171186332"/>
 </datamodel>
