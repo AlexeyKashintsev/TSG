@@ -317,6 +317,7 @@
 <column description="ФИО квартиросъемщика" isPk="false" javaType="java.lang.String" name="lc_regto" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
 <column description="Номер квартиры" isPk="false" javaType="java.lang.String" name="lc_flatnumber" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
 <column description="Число зарегистрированных" isPk="false" javaType="java.math.BigDecimal" name="registered_count" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
+<column description="Номер лицевого счета" isPk="false" javaType="java.math.BigDecimal" name="lc_num" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 </columns>
 <indexes>
 <index clustered="false" fKeyName="" hashed="false" isPKey="true" name="lc_flat_pk" unique="true">
@@ -431,6 +432,7 @@
 <column description="Наименование услуги" isPk="false" javaType="java.lang.String" name="usl_name" nullable="true" precision="10" scale="0" signed="true" size="100" type="12" typeName="varchar"/>
 <column description="" isPk="false" javaType="java.math.BigDecimal" name="calc_id" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
 <column description="" isPk="false" javaType="java.math.BigDecimal" name="connected_service" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="parent_service" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 </columns>
 <indexes>
 <index clustered="false" fKeyName="" hashed="false" isPKey="true" name="usl_services_pk" unique="true">
@@ -443,6 +445,9 @@
 <foreignKeys>
 <foreignKey name="fk_138409969860736">
 <fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="connected_service" fkName="fk_138409969860736" fkSchema="public" fkTable="usl_services" fkUpdateRule="CASCADE" pkField="usl_services_id" pkName="usl_services_pk" pkSchema="public" pkTable="usl_services"/>
+</foreignKey>
+<foreignKey name="fk_138917436463531">
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="parent_service" fkName="fk_138917436463531" fkSchema="public" fkTable="usl_services" fkUpdateRule="CASCADE" pkField="usl_services_id" pkName="usl_services_pk" pkSchema="public" pkTable="usl_services"/>
 </foreignKey>
 <foreignKey name="fk_137477786336960">
 <fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="calc_id" fkName="fk_137477786336960" fkSchema="public" fkTable="usl_services" fkUpdateRule="CASCADE" pkField="usl_calc_formula_id" pkName="usl_calc_formula_pk" pkSchema="public" pkTable="usl_calc_formula"/>
@@ -510,6 +515,24 @@
 <pkColumn pkField="char_types_id" pkName="char_types_pk" pkSchema="public" pkTable="char_types"/>
 </primaryKey>
 </table>
+<table description="" name="GRP_BANK">
+<columns>
+<column description="" isPk="true" javaType="java.math.BigDecimal" name="grp_bank_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.lang.String" name="grp_fname" nullable="true" precision="10" scale="0" signed="true" size="300" type="12" typeName="varchar"/>
+<column description="" isPk="false" javaType="java.lang.String" name="bank_name" nullable="true" precision="10" scale="0" signed="true" size="200" type="12" typeName="varchar"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="bank_account" nullable="true" precision="10" scale="0" signed="true" size="30" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="bank_bik" nullable="true" precision="10" scale="0" signed="true" size="50" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="bank_correction" nullable="true" precision="10" scale="0" signed="true" size="50" type="2" typeName="numeric"/>
+</columns>
+<indexes>
+<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="grp_bank_pk" unique="true">
+<indColumn ascending="true" name="grp_bank_id" position="1"/>
+</index>
+</indexes>
+<primaryKey name="grp_bank_pk">
+<pkColumn pkField="grp_bank_id" pkName="grp_bank_pk" pkSchema="public" pkTable="grp_bank"/>
+</primaryKey>
+</table>
 <table description="" name="CNT_CON2SERVICES">
 <columns>
 <column description="" isPk="true" javaType="java.math.BigDecimal" name="cnt_con2services_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
@@ -537,6 +560,20 @@
 <fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="group_service" fkName="fk_138537866996390" fkSchema="public" fkTable="cnt_con2services" fkUpdateRule="CASCADE" pkField="grp_services_id" pkName="grp_services_pk" pkSchema="public" pkTable="grp_services"/>
 </foreignKey>
 </foreignKeys>
+</table>
+<table description="Временная ось" name="PER_DATE">
+<columns>
+<column description="" isPk="true" javaType="java.math.BigDecimal" name="per_date_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.util.Date" name="per_date" nullable="true" precision="10" scale="0" signed="true" size="0" type="91" typeName="date"/>
+</columns>
+<indexes>
+<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="sal_date_pk" unique="true">
+<indColumn ascending="true" name="per_date_id" position="1"/>
+</index>
+</indexes>
+<primaryKey name="sal_date_pk">
+<pkColumn pkField="per_date_id" pkName="sal_date_pk" pkSchema="public" pkTable="per_date"/>
+</primaryKey>
 </table>
 <table description="" name="OPL_PAYMENTS">
 <columns>
@@ -568,20 +605,6 @@
 </foreignKey>
 </foreignKeys>
 </table>
-<table description="Временная ось" name="PER_DATE">
-<columns>
-<column description="" isPk="true" javaType="java.math.BigDecimal" name="per_date_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
-<column description="" isPk="false" javaType="java.util.Date" name="per_date" nullable="true" precision="10" scale="0" signed="true" size="0" type="91" typeName="date"/>
-</columns>
-<indexes>
-<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="sal_date_pk" unique="true">
-<indColumn ascending="true" name="per_date_id" position="1"/>
-</index>
-</indexes>
-<primaryKey name="sal_date_pk">
-<pkColumn pkField="per_date_id" pkName="sal_date_pk" pkSchema="public" pkTable="per_date"/>
-</primaryKey>
-</table>
 <table description="Группы квартир" name="GRP_GROUPS">
 <columns>
 <column description="" isPk="true" javaType="java.math.BigDecimal" name="grp_groups_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
@@ -589,6 +612,7 @@
 <column description="Родительская группа" isPk="false" javaType="java.math.BigDecimal" name="grp_parent" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
 <column description="Идентификатор типа группы" isPk="false" javaType="java.math.BigDecimal" name="grp_type" nullable="true" precision="10" scale="0" signed="true" size="100" type="2" typeName="numeric"/>
 <column description="Адрес" isPk="false" javaType="java.lang.String" name="grp_address" nullable="true" precision="10" scale="0" signed="true" size="400" type="12" typeName="varchar"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="bank" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 </columns>
 <indexes>
 <index clustered="false" fKeyName="" hashed="false" isPKey="true" name="grp_groups_pk" unique="true">
@@ -601,6 +625,9 @@
 <foreignKeys>
 <foreignKey name="fk_137476924271858">
 <fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="grp_type" fkName="fk_137476924271858" fkSchema="public" fkTable="grp_groups" fkUpdateRule="CASCADE" pkField="grp_type_id" pkName="grp_type_pk" pkSchema="public" pkTable="grp_type"/>
+</foreignKey>
+<foreignKey name="fk_138840866957758">
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="bank" fkName="fk_138840866957758" fkSchema="public" fkTable="grp_groups" fkUpdateRule="CASCADE" pkField="grp_bank_id" pkName="grp_bank_pk" pkSchema="public" pkTable="grp_bank"/>
 </foreignKey>
 <foreignKey name="fk_137476921071036">
 <fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="grp_parent" fkName="fk_137476921071036" fkSchema="public" fkTable="grp_groups" fkUpdateRule="CASCADE" pkField="grp_groups_id" pkName="grp_groups_pk" pkSchema="public" pkTable="grp_groups"/>

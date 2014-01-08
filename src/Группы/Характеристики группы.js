@@ -30,4 +30,12 @@ function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
     self.model.save();
 }//GEN-LAST:event_btnSaveActionPerformed
 
+
+    function mcBankOnSelect(aEditor) {//GEN-FIRST:event_mcBankOnSelect
+        var fmBankSel = new formBankParams();
+        fmBankSel.isSelectForm = true;
+        fmBankSel.showModal(function(aValue){
+            self.dsGroupByID.bank = aValue;
+        });
+    }//GEN-LAST:event_mcBankOnSelect
 }

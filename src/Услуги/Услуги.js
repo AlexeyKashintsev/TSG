@@ -73,7 +73,7 @@ function colServicesOnInsert(aEditor){
 }
 
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
-    self.dsServices.insert();
+    self.dsServices.insert(self.dsServices.md.parent_service, self.dsServices.parent_service);
 }//GEN-LAST:event_btnAddActionPerformed
 
 function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed

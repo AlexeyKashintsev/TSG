@@ -104,4 +104,9 @@ self.setDate = function(aNewDateID){
     if (ok) self.parDateID = aNewDateID;
     return ok;
 };
+
+    function button4ActionPerformed(evt) {//GEN-FIRST:event_button4ActionPerformed
+        var repBill = new report_Bill();
+        repBill.show();
+    }//GEN-LAST:event_button4ActionPerformed
 }

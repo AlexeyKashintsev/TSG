@@ -5,7 +5,7 @@
  * @public
  */
 
-function template_1() {
+function formBankParams() {
 
 
 var self = this;

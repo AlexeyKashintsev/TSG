@@ -21,43 +21,45 @@
     <constraints bottom="48px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="264px" prefWidth="372px" type="DbGridDesignInfo">
-    <column name="colService" title="Услуга">
-      <datamodelElement entityId="137684100940550" fieldName="usl_name"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-    </column>
-    <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Предпочитаемый способ расчета">
-      <datamodelElement entityId="137684100940550" fieldName="calc_id"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
-      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137684101269880" fieldName="calc_name"/>
-        <valueField entityId="137684101269880" fieldName="usl_calc_formula_id"/>
-      </controlInfo>
-    </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137684100940550" field="false"/>
     </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
+    <treeDesignInfo>
+      <unaryLinkField entityId="137684100940550" fieldName="parent_service"/>
+    </treeDesignInfo>
+    <column name="colService" title="Услуга">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <datamodelElement entityId="137684100940550" fieldName="usl_name"/>
+    </column>
+    <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Предпочитаемый способ расчета">
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <valueField entityId="137684101269880" fieldName="usl_calc_formula_id"/>
+        <displayField entityId="137684101269880" fieldName="calc_name"/>
+      </controlInfo>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <datamodelElement entityId="137684100940550" fieldName="calc_id"/>
+    </column>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
