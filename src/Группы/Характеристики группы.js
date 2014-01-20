@@ -12,11 +12,11 @@ var self = this;
 
 
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
-    dsCalcMethod.insert(dsCalcMethod.md.calc_name, 'Новый метод расчета');
+    self.chars_by_group.insert(self.chars_by_group.md.grp_group_id, self.parGroup);
 }//GEN-LAST:event_btnAddActionPerformed
 
 function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
-    confirm('Удалить данный метод расчета стоимости?')&&dsCalcMethod.delete();
+    confirm('Удалить характеристику?')&&self.chars_by_group.delete();
 }//GEN-LAST:event_btnDelActionPerformed
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
