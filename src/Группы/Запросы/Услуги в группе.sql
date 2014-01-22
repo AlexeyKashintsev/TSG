@@ -7,3 +7,4 @@
 Select * 
 From grp_services t1
  Where :parGroup = t1.group_id
+Order by grp_services_id

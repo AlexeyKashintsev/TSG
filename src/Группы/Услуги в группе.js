@@ -69,4 +69,37 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
     }
 }//GEN-LAST:event_formWindowClosing
 
+function btnUpActionPerformed(evt) {//GEN-FIRST:event_btnUpActionPerformed
+    if (self.dsServices.rowIndex != 1){
+        var services_id = self.dsServices.grp_services_id;
+        self.dsServices.grp_services_id = 0;
+        self.dsServices.prev();
+        var prev_services_id = self.dsServices.grp_services_id;
+        self.dsServices.grp_services_id = services_id;
+        self.dsServices.next();
+        self.dsServices.grp_services_id = prev_services_id;
+        self.model.save();
+        self.dsServices.requery(function(){
+            self.dsServices.scrollTo(self.dsServices.findById(prev_services_id));
+        });
+    }
+}//GEN-LAST:event_btnUpActionPerformed
+
+function btnDownActionPerformed(evt) {//GEN-FIRST:event_btnDownActionPerformed
+if (self.dsServices.rowIndex != self.dsServices.length)
+    {
+    var services_id = self.dsServices.grp_services_id;
+    self.dsServices.grp_services_id = 0;
+    self.dsServices.next();
+    var next_services_id = self.dsServices.grp_services_id;
+    self.dsServices.grp_services_id = services_id;
+    self.dsServices.prev();
+    self.dsServices.grp_services_id = next_services_id;
+    self.model.save();
+    self.dsServices.requery(function(){
+            self.dsServices.scrollTo(self.dsServices.findById(next_services_id));
+        });
+    }
+}//GEN-LAST:event_btnDownActionPerformed
+
 }
