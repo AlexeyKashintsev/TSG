@@ -11,34 +11,34 @@ var self = this;
 
 var filterCounterValues = null;
 
-function checkModified(){
+self.checkModified = function(){
     if (self.model.modified)
         self.model.save();
-}
+};
 
-function addNewCounter(aCntActive, aCntNumber, aCntType){
+self.addNewCounter = function(aCntActive, aCntNumber, aCntType){
     self.dsCounterByID.insert(   self.dsCounterByID.md.cnt_type, aCntType?aCntType:"FC",
                             self.dsCounterByID.md.cnt_active, aCntActive?aCntActive:true,
                             self.dsCounterByID.md.cnt_number, aCntNumber?aCntNumber:null);
     self.model.save();
     return self.dsCounterByID.cnt_counters_id;
-}
+};
 
-function addCounter2Service(aCounter, aFlatService, aGroupService){
+self.addCounter2Service = function(aCounter, aFlatService, aGroupService){
     self.dsCountersByFlat.insert(self.dsCountersByFlat.md.counter_id, aCounter,
                             self.dsCountersByFlat.md.flat_service, aFlatService,
                             self.dsCountersByFlat.md.group_service, aGroupService);
     return self.dsCountersByFlat.cnt_con2services_id;
-}
+};
 
-function getFlatService(aFlatID, aServiceID){
+self.getFlatService = function(aFlatID, aServiceID){
     self.dsFlatServiceByServiceAndFlatID.params.LC_ID = aFlatID;
     self.dsFlatServiceByServiceAndFlatID.params.ServiceID = aServiceID;
     self.dsFlatServiceByServiceAndFlatID.execute();
     return self.dsFlatServiceByServiceAndFlatID.lc_flat_services_id;
-}
+};
 
-function getCouterInFlat(aFlatID, aServiceID){
+self.getCouterInFlat = function(aFlatID, aServiceID){
     checkModified();
     self.dsCountersByFlat.params.flat_id = aFlatID;
     self.dsCountersByFlat.execute();
@@ -50,14 +50,14 @@ function getCouterInFlat(aFlatID, aServiceID){
         addCounter2Service(cnt, fs, null);
         return cnt;
     };
-}
+};
 
-function setCounterValueByLCAndService(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue){
+self.setCounterValueByLCAndService = function(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue){
     var counter = getCouterInFlat(aLC_ID, aServiceID);
     setCounterValueByCounterValueID(counter, aDateID, aBegValue, aEndValue);
-}
+};
 
-function setCounterValueByCounterValueID(aCounterID, aDateID, aBegValue, aEndValue){
+self.setCounterValueByCounterValueID = function(aCounterID, aDateID, aBegValue, aEndValue){
     self.dsCountersValues.params.counterID = aCounterID;
     self.dsCountersValues.params.dateID = aDateID;
     self.dsCountersValues.execute();
@@ -72,5 +72,13 @@ function setCounterValueByCounterValueID(aCounterID, aDateID, aBegValue, aEndVal
     }
     self.model.save();
     return true;
-}
+};
+
+var checkModified = self.checkModified;
+var addNewCounter = self.addNewCounter;
+var addCounter2Service = self.addCounter2Service;
+var getCouterInFlat = self.getCouterInFlat;
+var getFlatService = self.getFlatService;
+var setCounterValueByLCAndService = self.setCounterValueByLCAndService;
+var setCounterValueByCounterValueID = self.setCounterValueByCounterValueID;
 }

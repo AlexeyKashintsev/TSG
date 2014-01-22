@@ -12,7 +12,12 @@ function SaldoAndSumsModule() {
 
 
     var modLC = null;
-//var modCN = null;
+    var modCN = null;
+    
+    self.setServModules = function(aModSN, aModCN){
+        modSN = aModSN;
+        modCN = aModCN;
+    };
 
     self.saveChanges = function() {
         self.model.save();
