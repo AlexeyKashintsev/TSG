@@ -19,6 +19,7 @@ function report_Bill() {
      */
     function onBeforeRender(evt){//GEN-FIRST:event_onBeforeRender
         var i = 0;
+        self.model.params.parFlatID = 139028933629407;
         self.dsGroupAndBank.params.groupID = self.dsFlatByIDorByGroup.cursor.group_id;
         self.dsGroupAndBank.requery();
         self.Group = {
@@ -69,7 +70,7 @@ function report_Bill() {
                 saldo:          lc_saldo
             };
             
-            lc_data.saldo.begin;
+           // lc_data.saldo.begin;
             self.Flats.ar.push(lc_data);
             i++;
         });
