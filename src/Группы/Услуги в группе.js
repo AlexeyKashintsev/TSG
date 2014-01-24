@@ -16,7 +16,7 @@ self.isEditable = true;
 var canSetEdit = false;
 
 function setEdit(){
-    self.modelGrid.editable = self.btnAdd.enabled = 
+    self.mgUslugi.editable = self.btnAdd.enabled = 
             self.btnDel.enabled = self.btnSave.enabled = self.isEditable;    
     //tbSetEdit.visible = canSetEdit;
     //tbSetEdit.selected = isEditable;
@@ -27,7 +27,7 @@ function setElShown(){
     if (!self.isSelectForm){
         //pnlSelLock.visible = false;
         self.pnlWorkSpace.height += 48;
-        self.modelGrid.bottom += 48;
+        self.mgUslugi.bottom += 48;
     }
 }
 
@@ -81,7 +81,7 @@ function btnUpActionPerformed(evt) {//GEN-FIRST:event_btnUpActionPerformed
         self.model.save();
         self.dsServices.requery(function(){
             self.dsServices.scrollTo(self.dsServices.findById(prev_services_id));
-            self.dsServices.setselected = true;
+            self.mgUslugi.makeVisible(self.dsServices.cursor);
         });
     }
 }//GEN-LAST:event_btnUpActionPerformed
@@ -99,7 +99,7 @@ if (self.dsServices.rowIndex != self.dsServices.length)
     self.model.save();
     self.dsServices.requery(function(){
             self.dsServices.scrollTo(self.dsServices.findById(next_services_id));
-            self.dsServices.selected = true;
+            self.mgUslugi.makeVisible(self.dsServices.cursor);
         });
     }
 }//GEN-LAST:event_btnDownActionPerformed
