@@ -37,10 +37,9 @@ var saveThreads = 0;
 var modLC = new ServerModule('LCModule');
 var modSN = new ServerModule('SaldoAndSumsModule');
 var modCN = new ServerModule('CountersModule');
-    modSN.modLC = modLC;
-    modSN.modCN = modCN;
-    modLC.modSN = modSN;
-    modLC.modCN = modCN;
+    
+    modSN.setServModules(modSN, modCN);
+    modLC.setServModules(modSN, modCN);
     
 
 //*************************************************************Служебыне функции
@@ -319,10 +318,12 @@ function readRow(aRowAr, aGroup){
         counterValues[impFields.COUNTERS_END[i].SERVICE_ID].endv = aRowAr.cells[impFields.COUNTERS_END[i].CellNumber];
     }
     
-    for (i in counterValues)
+    for (i in counterValues) {
+        if (counterValues[i].begv)
         modSN.insertCounterValue(LC_ID,i , parDate, 
                                              counterValues[i].begv, 
                                              counterValues[i].endv);
+    }
     
     for (i = 0; i < impFields.BINEFICIARIES; i++){
         // Дописать код добавления льготников
@@ -392,10 +393,10 @@ function getCellValueByField(row, cellNumber, isDateValue){
     var cell = null;
     if (cellNumber!=null){
             cell = row.getCell(cellNumber);
-            cell = cell!=null&&cell!=undefined?
+            cell = (cell!=null&&cell!=undefined?
                 (isDateValue?getDateValue(cell)
-                            :getCellValue(cell))
-                :null;
+                            :cell)
+                :null);
         }
     return cell!=''?cell:null;
 }

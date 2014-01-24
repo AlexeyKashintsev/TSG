@@ -4,9 +4,9 @@
   <entity Name="dsCounterByID" Title="Счетчик по ID" entityHeight="200" entityIconified="false" entityId="138538333276687" entityLocationX="221" entityLocationY="14" entityWidth="150" queryId="counter_by_id" tableName="" tableSchemaName=""/>
   <entity Name="dsCountersValues" Title="Значения счетчика по ID и дате" entityHeight="200" entityIconified="false" entityId="138539306440731" entityLocationX="590" entityLocationY="19" entityWidth="150" queryId="counter_values_by_ID_and_date" tableName="" tableSchemaName=""/>
   <entity Name="dsFlatServiceByServiceAndFlatID" Title="Услуга в квартире по ID услуги и квартиры" entityHeight="200" entityIconified="false" entityId="138539474906483" entityLocationX="223" entityLocationY="231" entityWidth="150" queryId="FlatServiceByServiceAndFlatID" tableName="" tableSchemaName=""/>
-  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138538399211575" rightEntityFieldName="cnt_counters_id" rightEntityId="138538333276687"/>
-  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138538399211575" rightEntityFieldName="cnt_counters_id" rightEntityId="138538399211575"/>
   <referenceRelation leftEntityFieldName="flat_service" leftEntityId="138538399211575" rightEntityFieldName="lc_flat_services_id" rightEntityId="138539474906483"/>
-  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138539306440731" rightEntityFieldName="cnt_counters_id" rightEntityId="138538399211575"/>
+  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138538399211575" rightEntityFieldName="cnt_counters_id" rightEntityId="138538399211575"/>
   <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138539306440731" rightEntityFieldName="cnt_counters_id" rightEntityId="138538333276687"/>
+  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138539306440731" rightEntityFieldName="cnt_counters_id" rightEntityId="138538399211575"/>
+  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138538399211575" rightEntityFieldName="cnt_counters_id" rightEntityId="138538333276687"/>
 </datamodel>

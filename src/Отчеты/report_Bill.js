@@ -40,6 +40,8 @@ function report_Bill() {
             self.saldo_by_flat.requery();
             self.sums_perFlatWithUslNames.requery();
             
+            self.model.dsLC_byid.cursor.lc_flatnumber
+            
             Logger.severe(Flat.lc_id);
             var lc_sums = [];
             var lc_saldo = {

@@ -3,6 +3,7 @@
  * @author Alexey
  * @name LCModule
  * @public
+ * @module
  */
 
 function LCModule() {
@@ -10,16 +11,19 @@ function LCModule() {
 
 var self = this;
 
-
 var modSN = null;
 var modCN = null;
    // modSalSum.modLC = this;
+self.setServModules = function(aModSN, aModCN){
+    modSN = aModSN;
+    modCN = aModCN;
+};
 
-function saveChanges(){
+self.saveChanges = function(){
     self.model.save();
     if (modSN&&modSN.model.modified)
         modSN.saveChanges();
-}
+};
 
 /*
  * Добавить новый лицевой счет
@@ -29,7 +33,7 @@ function saveChanges(){
  * @param {type} aGroupID
  * @returns {@exp;dsFlat@pro;lc_flat_id}
  */
-function addNewLC(aLCRegTo, aLCNumber, aLCPeopleRegCount, aGroupID){
+self.addNewLC = function(aLCRegTo, aLCNumber, aLCPeopleRegCount, aGroupID){
 //    self.dsFlat.requery();
     if (!self.parDateID) {
         self.all_dates.last();
@@ -40,7 +44,7 @@ function addNewLC(aLCRegTo, aLCNumber, aLCPeopleRegCount, aGroupID){
     if (aGroupID) addFlat2Group(self.dsFlat.lc_flat_id, aGroupID);
     saveChanges();
     return self.dsFlat.lc_flat_id;
-}
+};
 
 /*
  * Добавить лицевой счет в квартиру
@@ -50,14 +54,13 @@ function addNewLC(aLCRegTo, aLCNumber, aLCPeopleRegCount, aGroupID){
  * todo_: переделать под асинхронную модель
  * done: переделал 
  */
-
-function addFlat2Group(aFlatID, aGroupID){
+self.addFlat2Group = function(aFlatID, aGroupID){
    // var dsTempLCGrp = self.model.loadEntity('qLCInGroups');
    // dsTempLCGrp.params.Group_ID = aGroupID;
    // dsTempLCGrp.requery(
    //     function(){
             self.dsLCGrp.params.Group_ID = aGroupID;
-            self.dsLCGrp.requery();
+            self.dsLCGrp.execute();
             
             if (self.dsLCGrp.find(self.dsLCGrp.md.lc_id, aFlatID).length == 0){
                 self.dsLCGrp.insert( self.dsLCGrp.md.lc_id, aFlatID,
@@ -78,7 +81,7 @@ function addFlat2Group(aFlatID, aGroupID){
                 addServiceToLC(aFlatID, self.insertGroupServicesLC.services_id,
                                self.insertGroupServicesLC.calc_by_counter, self.parDateID);
         //});
-}
+};
 
 /*
  * Добавить характеристику к квартире
@@ -88,7 +91,7 @@ function addFlat2Group(aFlatID, aGroupID){
  * @returns {@exp;dsCharsFlat@pro;lc_chars_id}
  * todo: переделать под асинхронную модель, добавить поиск характеристики
  */
-function addCharToLC(aLC_ID, aCharID, aCharValue){
+self.addCharToLC = function(aLC_ID, aCharID, aCharValue){
     self.dsCharsFlat.params.flat_id = aLC_ID;
     self.dsCharsFlat.requery();//function(){
         var foundedChars = self.dsCharsFlat.find(self.dsCharsFlat.md.lc_char_type, aCharID);
@@ -98,12 +101,12 @@ function addCharToLC(aLC_ID, aCharID, aCharValue){
                                 self.dsCharsFlat.md.lc_char_val, aCharValue);
             return self.dsCharsFlat.lc_chars_id;}
         else {
-            if (foundedChars[0].lc_char_val!=aCharValue)
+            if (foundedChars[0].lc_char_val != aCharValue)
                 self.dsCharsFlat.scrollTo(foundedChars[0]);
                 self.dsCharsFlat.lc_char_val = aCharValue;
         }
             return foundedChars[0].lc_chars_id;
-}
+};
     //});
 
 
@@ -117,8 +120,7 @@ function addCharToLC(aLC_ID, aCharID, aCharValue){
  * todo: добавить поиск услуги, добавить добавление значений(self.sums_perFlat)
  *       в модуле SaldoAndSumsModule
  *       и отслеживать эти дополнения, чтобы сохранять их тоже */
-
-function addServiceToLC(aFlatID, aServiceID, aCalcByCounter, aDateID){
+self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID){
     self.services_by_flat.insert(self.services_by_flat.md.services_id, aServiceID,
                             self.services_by_flat.md.lc_id, aFlatID,
                             self.services_by_flat.md.fs_active, true);
@@ -127,17 +129,17 @@ function addServiceToLC(aFlatID, aServiceID, aCalcByCounter, aDateID){
                                      self.sums_perFlat.md.date_id, newDate);
     if (aCalcByCounter) addCounterToFlat(self.services_by_flat.lc_flat_services_id);
     return self.services_by_flat.lc_flat_services_id;
-}
+};
 
 /*
  * Добавить счетчик в квартиру
  * @param {type} aFlatService
  * @returns {@exp;dsCountersByFlat@pro;lc_counter_id} 
  */
-function addCounterToFlat(aFlatService){
+self.addCounterToFlat = function(aFlatService){
     if (!modCN) modCN = new CountersModule();
     return modCN.addNewCounter();
-}
+};
 
 
 /*
@@ -147,4 +149,11 @@ function addCounterToFlat(aFlatService){
 function deleteLC(aLC_ID){
     
 }
+
+var saveChanges = self.saveChanges;
+var addFlat2Group = self.addFlat2Group;
+var addNewLC = self.addNewLC;
+var addCharToLC  = self.addCharToLC;
+var addServiceToLC = self.addServiceToLC;
+var addCounterToFlat = self.addCounterToFlat;
 }
