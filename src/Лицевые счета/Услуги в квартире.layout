@@ -4,8 +4,6 @@
   </widget>
   <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnUpActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/mail-reply-sender.png" name="btnUp" parent="toolBar" prefHeight="29px" prefWidth="29px" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnDownActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/mail-send-receive.png" name="btnDown" parent="toolBar" prefHeight="29px" prefWidth="29px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="pnlWorkSpace" parent="Form" prefHeight="312px" prefWidth="372px" type="PanelDesignInfo">
@@ -64,10 +62,10 @@
       </headerStyle>
       <columnsDisplayField/>
     </column>
-    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137513141035797" field="false"/>
     </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

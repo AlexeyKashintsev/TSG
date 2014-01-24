@@ -81,6 +81,7 @@ function btnUpActionPerformed(evt) {//GEN-FIRST:event_btnUpActionPerformed
         self.model.save();
         self.dsServices.requery(function(){
             self.dsServices.scrollTo(self.dsServices.findById(prev_services_id));
+            self.dsServices.setselected = true;
         });
     }
 }//GEN-LAST:event_btnUpActionPerformed
@@ -98,6 +99,7 @@ if (self.dsServices.rowIndex != self.dsServices.length)
     self.model.save();
     self.dsServices.requery(function(){
             self.dsServices.scrollTo(self.dsServices.findById(next_services_id));
+            self.dsServices.selected = true;
         });
     }
 }//GEN-LAST:event_btnDownActionPerformed

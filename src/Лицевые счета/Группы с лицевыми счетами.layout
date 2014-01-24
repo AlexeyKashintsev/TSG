@@ -42,10 +42,10 @@
   </widget>
   <widget name="pnlSaldoCur" parent="panel" prefHeight="76px" prefWidth="577px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
+    <constraints bottom="0px" height="76px" left="0px" right="40px" type="MarginConstraintsDesignInfo"/>
     <border borderTitleColor="#000000" title="Сальдо" titleJustification="0" type="TitledBorderDesignInfo">
       <border type="LineBorderDesignInfo"/>
     </border>
-    <constraints bottom="0px" height="76px" left="0px" right="40px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget floatable="false" name="toolBar" orientation="1" parent="panel" prefHeight="70px" prefWidth="35px" rollover="true" type="ToolbarDesignInfo">
     <constraints bottom="0px" height="70px" right="0px" type="MarginConstraintsDesignInfo" width="35px"/>

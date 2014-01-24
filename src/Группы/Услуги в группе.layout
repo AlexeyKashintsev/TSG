@@ -49,10 +49,10 @@
       </headerStyle>
       <columnsDisplayField/>
     </column>
-    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137496294091245" field="false"/>
     </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

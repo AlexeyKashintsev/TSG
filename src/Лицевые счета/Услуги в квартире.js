@@ -77,34 +77,4 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
     }
 }//GEN-LAST:event_formWindowClosing
 
-function btnUpActionPerformed(evt) {//GEN-FIRST:event_btnUpActionPerformed
-if (self.dsServices.rowIndex != 1)
-    {
-    self.a = self.dsServices.lc_flat_services_id;
-    self.dsServices.lc_flat_services_id = 0;
-    self.dsServices.prev();
-    self.b = self.dsServices.lc_flat_services_id;
-    self.dsServices.lc_flat_services_id = self.a;
-    self.dsServices.next();
-    self.dsServices.lc_flat_services_id = self.b;
-    self.model.save();
-    self.model.requery();
-    }	
-}//GEN-LAST:event_btnUpActionPerformed
-
-function btnDownActionPerformed(evt) {//GEN-FIRST:event_btnDownActionPerformed
-if (self.dsServices.rowIndex != self.dsServices.length)
-    {
-    self.a = self.dsServices.lc_flat_services_id;
-    self.dsServices.lc_flat_services_id = 0;
-    self.dsServices.next();
-    self.b = self.dsServices.lc_flat_services_id;
-    self.dsServices.lc_flat_services_id = self.a;
-    self.dsServices.prev();
-    self.dsServices.lc_flat_services_id = self.b;
-    self.model.save();
-    self.model.requery();
-    }
-}//GEN-LAST:event_btnDownActionPerformed
-
 }

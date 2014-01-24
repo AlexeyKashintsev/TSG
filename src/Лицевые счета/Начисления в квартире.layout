@@ -2,111 +2,111 @@
   <widget name="modelGrid" parent="Form" prefHeight="372px" prefWidth="507px" type="DbGridDesignInfo">
     <column fixed="true" name="colUsl" readonly="true" title="Услуга" width="150">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137684230384165" fieldName="usl_name"/>
         <valueField entityId="137684230384165" fieldName="usl_services_id"/>
+        <displayField entityId="137684230384165" fieldName="usl_name"/>
       </controlInfo>
       <datamodelElement entityId="137684219497981" fieldName="services_id"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <columnsDisplayField/>
     </column>
     <column name="colVal" readonly="true" title="Объем">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="137684219497981" fieldName="calc_value"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <columnsDisplayField/>
     </column>
     <column name="colCost" title="Стоимость">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="137684219497981" fieldName="rate"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <columnsDisplayField/>
     </column>
     <column name="col100" readonly="true" title="Начислено">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="137684219497981" fieldName="calc"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <columnsDisplayField/>
     </column>
     <column name="colBenefit" readonly="true" title="Льгота">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="137684219497981" fieldName="benefit"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <columnsDisplayField/>
     </column>
     <column name="colRecalc" title="Перерасчет">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="137684219497981" fieldName="recalc"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <columnsDisplayField/>
     </column>
     <column name="colCalc" readonly="true" title="Итого">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="137684219497981" fieldName="full_calc"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
       <columnsDatasource/>
-      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <columnsDisplayField/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137684219497981" field="false"/>

@@ -35,7 +35,7 @@ self.check4Modifications = function(){
 };
 
 self.setGroup = function(aNewGroupID){
-    self.parGroupID = fmFlatServices.parGroupID = aNewGroupID;
+    self.parGroupID = fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = aNewGroupID;
     self.parFlatID = fmFlats.setCurrentGroup(self.parGroupID);
     self.setFlat(self.parFlatID);
 };
