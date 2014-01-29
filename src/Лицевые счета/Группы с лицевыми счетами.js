@@ -54,7 +54,8 @@ self.setDate = function(aNewDate){
         fmSaldoCur.parDateID =
         fmNachisleniya.parDateID =
         fmOplata.parDateID = 
-        fmFlats.parDateID = self.parDateID;
+        fmFlats.parDateID = 
+        fmFlatServices.parDateID = self.parDateID;
         return true;
     }
     else

@@ -87,7 +87,7 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
 }//GEN-LAST:event_formWindowClosing
 
 function btnSelectActionPerformed(evt) {//GEN-FIRST:event_btnSelectActionPerformed
-        self.close(self.dsServices.usl_services_id);
+        self.close({service: self.dsServices.usl_services_id, byCounter: self.dsServices.calc_by_counter});
 }//GEN-LAST:event_btnSelectActionPerformed
 
 }
