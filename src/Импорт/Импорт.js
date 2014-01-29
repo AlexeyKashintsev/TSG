@@ -393,9 +393,9 @@ function getCellValueByField(row, cellNumber, isDateValue){
     var cell = null;
     if (cellNumber!=null){
             cell = row.getCell(cellNumber);
-            cell = (cell!=null&&cell!=undefined?
+            cell = ((cell!=null&&cell!=undefined)?
                 (isDateValue?getDateValue(cell)
-                            :cell)
+                            :(cell.toString()))
                 :null);
         }
     return cell!=''?cell:null;

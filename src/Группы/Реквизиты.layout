@@ -1,98 +1,113 @@
-<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="348px" prefWidth="372px" windowClosing="formWindowClosing" windowOpened="formWindowOpened">
-  <widget name="toolBar" parent="Form" prefHeight="31px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="348px" prefWidth="494px" windowClosing="formWindowClosing" windowOpened="formWindowOpened">
+  <widget name="toolBar" parent="Form" prefHeight="31px" prefWidth="494px" rollover="true" type="ToolbarDesignInfo">
     <constraints place="North" type="BorderLayoutConstraintsDesignInfo"/>
   </widget>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget name="pnlWorkSpace" parent="Form" prefHeight="317px" prefWidth="372px" type="PanelDesignInfo">
+  <widget name="pnlWorkSpace" parent="Form" prefHeight="317px" prefWidth="494px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints place="Center" type="BorderLayoutConstraintsDesignInfo"/>
   </widget>
-  <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="317px" prefWidth="372px" type="DbGridDesignInfo">
+  <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="317px" prefWidth="494px" type="DbGridDesignInfo">
+    <column name="colGrp_fname" title="Наименование организации">
+      <datamodelElement entityId="138840916883800" fieldName="grp_fname"/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="Grp_short_name" title="Короткое название">
+      <datamodelElement entityId="138840916883800" fieldName="grp_short_name"/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="colBank_name" title="Наименование банка">
+      <datamodelElement entityId="138840916883800" fieldName="bank_name"/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="colBank_account" title="Р/сч">
+      <datamodelElement entityId="138840916883800" fieldName="bank_account"/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="colBank_bik" title="БИК">
+      <datamodelElement entityId="138840916883800" fieldName="bank_bik"/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="colBank_correction" title="Кор/сч">
+      <datamodelElement entityId="138840916883800" fieldName="bank_correction"/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+    </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138840916883800" field="false"/>
     </rowsColumnsDesignInfo>
     <treeDesignInfo/>
-    <column name="colGrp_fname" title="Наименование организации">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-      <datamodelElement entityId="138840916883800" fieldName="grp_fname"/>
-    </column>
-    <column name="colBank_name" title="Наименование банка">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-      <datamodelElement entityId="138840916883800" fieldName="bank_name"/>
-    </column>
-    <column name="colBank_account" title="Р/сч">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-      <datamodelElement entityId="138840916883800" fieldName="bank_account"/>
-    </column>
-    <column name="colBank_bik" title="БИК">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-      <datamodelElement entityId="138840916883800" fieldName="bank_bik"/>
-    </column>
-    <column name="colBank_correction" title="Кор/сч">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-      <datamodelElement entityId="138840916883800" fieldName="bank_correction"/>
-    </column>
-    <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="317px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="494px"/>
   </widget>
-  <widget name="pnlSelLock" parent="Form" prefHeight="0px" prefWidth="372px" type="PanelDesignInfo">
+  <widget name="pnlSelLock" parent="Form" prefHeight="0px" prefWidth="494px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints place="South" type="BorderLayoutConstraintsDesignInfo"/>
   </widget>

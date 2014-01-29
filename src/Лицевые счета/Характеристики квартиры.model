@@ -3,12 +3,16 @@
     <parameter description="" name="parFlatID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="benefits_query" Title="Льготы справочник" entityHeight="60" entityIconified="false" entityId="137502332320012" entityLocationX="654" entityLocationY="59" entityWidth="150" queryId="benefits_query" tableName="" tableSchemaName=""/>
   <entity Name="lc_by_ID" Title="Квартира по ID" entityHeight="200" entityIconified="false" entityId="137502141014045" entityLocationX="291" entityLocationY="67" entityWidth="150" queryId="lc_by_ID" tableName="" tableSchemaName=""/>
+  <entity Name="benefits_query" Title="Льготы справочник" entityHeight="60" entityIconified="false" entityId="137502332320012" entityLocationX="654" entityLocationY="59" entityWidth="150" queryId="benefits_query" tableName="" tableSchemaName=""/>
   <entity Name="chars_flat" Title="Характеристики квартиры" entityHeight="200" entityIconified="false" entityId="137502129515062" entityLocationX="466" entityLocationY="12" entityWidth="150" queryId="chars_flat" tableName="" tableSchemaName=""/>
   <entity Name="benefits_by_flat" Title="Льготы в квартире" entityHeight="200" entityIconified="false" entityId="137502392421203" entityLocationX="652" entityLocationY="160" entityWidth="150" queryId="benefits_by_flat" tableName="" tableSchemaName=""/>
-  <entity Name="characteristics_types" Title="Характеристики типы" entityHeight="200" entityIconified="false" entityId="137502394729821" entityLocationX="472" entityLocationY="224" entityWidth="150" queryId="characteristics_types" tableName="" tableSchemaName=""/>
+  <entity Name="characteristics_types" Title="Характеристики типы" entityHeight="200" entityIconified="false" entityId="137502394729821" entityLocationX="452" entityLocationY="299" entityWidth="150" queryId="characteristics_types" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137502392421203" rightEntityParameterName="flat_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137502141014045" rightEntityParameterName="lc_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137502129515062" rightEntityParameterName="flat_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137502141014045" rightEntityParameterName="lc_id"/>
+  <referenceRelation leftEntityFieldName="lc_char_type" leftEntityId="137502129515062" rightEntityFieldName="char_types_id" rightEntityId="137502394729821"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="137502392421203" rightEntityFieldName="lc_flat_id" rightEntityId="137502141014045"/>
+  <referenceRelation leftEntityFieldName="benefit_type" leftEntityId="137502392421203" rightEntityFieldName="usl_benefit_type_id" rightEntityId="137502332320012"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="137502129515062" rightEntityFieldName="lc_flat_id" rightEntityId="137502141014045"/>
 </datamodel>

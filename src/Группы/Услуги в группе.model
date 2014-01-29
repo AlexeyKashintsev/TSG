@@ -3,11 +3,11 @@
     <parameter description="" name="parGroup" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="dsServices" Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="137496294091245" entityLocationX="202" entityLocationY="11" entityWidth="150" queryId="services_by_group" tableName="" tableSchemaName=""/>
+  <entity Name="dsServices" Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="137496294091245" entityLocationX="223" entityLocationY="28" entityWidth="150" queryId="services_by_group" tableName="" tableSchemaName=""/>
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137520081638120" entityLocationX="468" entityLocationY="30" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="137496294091245" rightEntityParameterName="parGroup"/>
   <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137520081638120" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
+  <referenceRelation leftEntityFieldName="services_id" leftEntityId="137496294091245" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137520081638120" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
   <referenceRelation leftEntityFieldName="calc_id" leftEntityId="137520081638120" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137520081638120"/>
-  <referenceRelation leftEntityFieldName="services_id" leftEntityId="137496294091245" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
 </datamodel>
