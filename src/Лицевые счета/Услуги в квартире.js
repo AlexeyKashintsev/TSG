@@ -52,13 +52,17 @@ function colCalcTypeOnSelect(aEditor) {//GEN-FIRST:event_colCalcTypeOnSelect
 function btnAddActionPerformed() {//GEN-FIRST:event_btnAddActionPerformed
     var fmSelectServicesId = new ServicesForm();
     var res = null;
+    var lc_mod = new LCModule();
     fmSelectServicesId.isSelectForm = true;
     fmSelectServicesId.showModal(
         function(aValue){
+            lc_mod.addServiceToLC(self.parFlatID, aValue.service, aValue.byCounter, self.parDateID);
+            lc_mod.saveChanges();
+            self.model.requery();
            //services_by_flat.insert();
            //services_by_flat.services_id = aValue;
-           self.dsServices.insert(   self.dsServices.md.services_id, aValue,
-                                self.dsServices.md.lc_id, self.parFlatID);
+           //self.dsServices.insert(   self.dsServices.md.services_id, aValue,
+           //                     self.dsServices.md.lc_id, self.parFlatID);
         });  
         
     
