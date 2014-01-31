@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="101px" prefWidth="410px">
+  <widget actionPerformed="buttonActionPerformed" name="button" parent="Form" prefHeight="29px" prefWidth="86px" text="Generate" type="ButtonDesignInfo">
+    <constraints height="29px" right="14px" top="40px" type="MarginConstraintsDesignInfo" width="86px"/>
+  </widget>
+  <widget name="textField" parent="Form" prefHeight="28px" prefWidth="382px" text="textField" type="TextFieldDesignInfo">
+    <constraints height="28px" left="12px" right="16px" top="12px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label" parent="Form" prefHeight="48px" prefWidth="276px" text="1" type="LabelDesignInfo">
+    <constraints height="48px" left="24px" top="48px" type="MarginConstraintsDesignInfo" width="276px"/>
+    <easFont name="Code 128" size="36"/>
+  </widget>
+  <widget actionPerformed="button1ActionPerformed" name="button1" parent="Form" prefHeight="29px" prefWidth="94px" text="button1" type="ButtonDesignInfo">
+    <constraints bottom="0px" height="29px" right="4px" type="MarginConstraintsDesignInfo" width="94px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>
