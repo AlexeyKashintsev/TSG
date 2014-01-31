@@ -18,6 +18,51 @@ function report_Bill() {
      * Report's before render event handler.
      * @param evt Event object.
      */
+    
+    
+    function getBarcode(rawData) {
+        var offset = 32;
+        var highAscii = 18;
+        var newCodeString = new Array(rawData.length + 3);
+        newCodeString[0] = offset + highAscii + 104;
+        var total = 104;
+        for (var stringCounter = 0;
+                stringCounter < rawData.length; stringCounter++) {
+            var
+                    character =
+                    rawData.substr(stringCounter, 1);
+            var ASCIIValue =
+                    character.charCodeAt(0);
+            var checkDigit = ((ASCIIValue - offset) *
+                    (stringCounter + 1));
+            total += checkDigit;
+            newCodeString[stringCounter
+                    + 1] = ASCIIValue;
+        }
+        var check = total % 103;
+        var holder = 0;
+        if (check
+                + offset >= 127) {
+            holder = check + offset + highAscii;
+        } else {
+            holder = check + offset;
+        }
+        newCodeString[newCodeString.length - 2] =
+                holder;
+        holder = 106 + offset + highAscii;
+        newCodeString[newCodeString.length - 1] = holder;
+        for (var rCounter = 0
+                ; rCounter < newCodeString.length; rCounter++) {
+            if (newCodeString[rCounter] == 32) {
+                newCodeString[rCounter] = 128;
+            }
+        }
+        return newCodeString;
+    }
+
+
+
+
     function onBeforeRender(evt){//GEN-FIRST:event_onBeforeRender
         var i = 0;
         self.model.params.parFlatID = 139106197774139;
@@ -95,6 +140,43 @@ function report_Bill() {
                     chr_str += (chr_str===''?'':', ') + self.characteristics_types.findById(flat_char.lc_char_type).char_name
                             + ':' + flat_char.lc_char_val;
                 });
+                
+                var dates = '';
+
+                    date = self.all_dates.findById(self.model.params.parDateID).per_date;
+                   // alert(date.toLocaleDateString());
+                    var monthNames = [ "январь", "Февраль", "март", "апрель", "май", "июнь",
+                           "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь" ];
+                    dates = (monthNames[date.getMonth()]+" "+date.getFullYear());
+                
+                var shtrih = '';
+                stroka = self.dsGroupAndBank.grp_number;
+                for (i=0;i<4-self.dsLC_byid.lc_flatnumber.length;i++)
+                stroka = stroka+"0";
+                stroka = stroka+self.lc_flatnumber.lc_flatnumber; 
+                cod = "1134";
+                for (i=0;i<8-stroka.length;i++){
+                    cod = cod+"0";
+                }
+                cod = cod+stroka;
+                a=self.model.saldo_by_flat.cursor.sal_end*100;
+                a.toString();
+                for (i=0;i<10-a.length;i++){
+                    bar = bar+"0";
+                }
+                bar = bar+cod;
+                shtrih = getBarcode(bar);
+                
+                var days = '';
+                self.all_dates.forEach(function(day){
+                    day = self.all_dates.findById(self.saldo_by_flat.date_id).per_date;
+                   // alert(date.toLocaleDateString());
+                    var monthNames = [ "января", "Февраля", "марта", "апреля", "мая", "июня",
+                           "июля", "августа", "сентября", "октября", "ноября", "декабря" ];
+                    prev_date = new Date(day.getFullYear(),day.getMonth()+1,day.getDate());
+                    prev_date.setDate(0);
+                    days = (prev_date.getDate()+" "+monthNames[prev_date.getMonth()]+" "+prev_date.getFullYear());
+                });
 
 
                 var lc_data = { 
@@ -106,7 +188,10 @@ function report_Bill() {
                     saldo:          lc_saldo,
                     chars_str:      chr_str,
                     sums:           sum,
-                    counter:       counters
+                    counter:       counters,
+                    date:           dates,
+                    day:            days,
+                    barcode:        shtrih
                 };
 
                // lc_data.saldo.begin;
