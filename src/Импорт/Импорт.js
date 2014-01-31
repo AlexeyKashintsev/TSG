@@ -293,17 +293,17 @@ function processRow(aSheet, aRowNum, aSheetNum, aGroup){
  */
 
 function readRow(aRowAr, aGroup){
-    var FIO = aRowAr.cells[impFields.LC_FIO];// aRowAr.FIO aRowAr.Array[22]
-    var LC_NUM = aRowAr.cells[impFields.LC_NUMBER];
-    var REG_CNT = aRowAr.cells[impFields.LC_REG_NUM];
+    var FIO = getCellValue(aRowAr.cells[impFields.LC_FIO]);// aRowAr.FIO aRowAr.Array[22]
+    var LC_NUM = getCellValue(aRowAr.cells[impFields.LC_NUMBER]);
+    var REG_CNT = getCellValue(aRowAr.cells[impFields.LC_REG_NUM]);
  /**/var LC_ID = modLC.addNewLC(FIO, LC_NUM, REG_CNT, aGroup);
-    var SALDO_BEG = aRowAr.cells[impFields.SALDO_BEG];
+    var SALDO_BEG = getCellValue(aRowAr.cells[impFields.SALDO_BEG]);
     modSN.initBegSaldo(LC_ID, parDate, SALDO_BEG?SALDO_BEG:null);
     var counterValues = {};
     var ServicesAr = {};
     
     for (var i in impFields.LC_CHARS){
-        var ch_val = aRowAr.cells[impFields.LC_CHARS[i].CellNumber];
+        var ch_val = getCellValue(aRowAr.cells[impFields.LC_CHARS[i].CellNumber]);
         if (ch_val) modLC.addCharToLC(LC_ID, impFields.LC_CHARS[i].CHAR_ID, ch_val);
     }
     
@@ -311,11 +311,11 @@ function readRow(aRowAr, aGroup){
         //ServicesAr[impFields.COUNTERS_BEG[i].SERVICE_ID]/*Как организовать набор данных in? для попадания только уникальных услуг*/
         counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID] = {};
        // counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID].serv_id = impFields.COUNTERS_BEG[i].SERVICE_ID;
-        counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID].begv = aRowAr.cells[impFields.COUNTERS_BEG[i].CellNumber];
+        counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID].begv = getCellValue(aRowAr.cells[impFields.COUNTERS_BEG[i].CellNumber]);
     }
     
     for (i in impFields.COUNTERS_END){
-        counterValues[impFields.COUNTERS_END[i].SERVICE_ID].endv = aRowAr.cells[impFields.COUNTERS_END[i].CellNumber];
+        counterValues[impFields.COUNTERS_END[i].SERVICE_ID].endv = getCellValue(aRowAr.cells[impFields.COUNTERS_END[i].CellNumber]);
     }
     
     for (i in counterValues) {
@@ -368,7 +368,7 @@ function readSheetRow(aSheet, aRowNum, aSheetNum){
         var impOk = true;
         var db = null;
         for (var i=0; i<impFields.rowLength; i++){
-            rowAr[i] = getCellValueByField(curRow, i, false);
+            rowAr[i] = curRow.getCell(i)//getCellValueByField(curRow, i, false);
         }
         var res = new function(){
             aRowNum++
@@ -391,13 +391,10 @@ function readSheetRow(aSheet, aRowNum, aSheetNum){
 
 function getCellValueByField(row, cellNumber, isDateValue){
     var cell = null;
-    if (cellNumber!=null){
+   /* if (cellNumber!=null){
             cell = row.getCell(cellNumber);
-            cell = ((cell!=null&&cell!=undefined)?
-                (isDateValue?getDateValue(cell)
-                            :(cell.toString()))
-                :null);
-        }
+        }*/
+    cell = isDateValue?getDateValue(cell):getCellValue(cell);    
     return cell!=''?cell:null;
 }
 
@@ -407,8 +404,8 @@ function checkDateCell(aCell){
 }
 
 function getDateValue(aCell){
+    var DateValue = null;
     if (aCell!=null){
-        var DateValue = null;
         try{DateValue = dF.parse(getCellValue(aCell));}
         catch (e) {}
         if (DateValue==null){
@@ -426,22 +423,28 @@ function getDateValue(aCell){
 }
 
 var evaluatedCellType = -1;
+var CELL_TYPE_NUMERIC = org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_NUMERIC;
+var CELL_TYPE_BLANK = org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_BLANK;
+var CELL_TYPE_STRING = org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_STRING;
+var CELL_TYPE_FORMULA = org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_FORMULA;
+var CELL_TYPE_BOOLEAN = org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_BOOLEAN;
+var CELL_TYPE_ERROR = org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_ERROR;
 function getCellValue(cell) {
     var value = null;
     if (cell == null) {
         return null;
     }
     switch(cell.getCellType()){
-        case cell.CELL_TYPE_BLANK:
+        case CELL_TYPE_BLANK:
             //addLog('CELL_TYPE_BLANK обнаружено');
             break;
-        case cell.CELL_TYPE_STRING:
+        case CELL_TYPE_STRING:
             value = cell.getStringCellValue();
             break;
-        case cell.CELL_TYPE_NUMERIC:
+        case CELL_TYPE_NUMERIC:
             value = cell.getNumericCellValue();
             break;
-        case cell.CELL_TYPE_FORMULA:
+        case CELL_TYPE_FORMULA:
             evaluatedCellType = evaluator.evaluateFormulaCell(cell);
             switch(evaluatedCellType) {
                 case cell.CELL_TYPE_NUMERIC:
@@ -456,10 +459,10 @@ function getCellValue(cell) {
                 break;
             }
             break;
-        case cell.CELL_TYPE_BOOLEAN:
+        case CELL_TYPE_BOOLEAN:
             value = cell.getBooleanCellValue();
             break;
-        case cell.CELL_TYPE_ERROR:
+        case CELL_TYPE_ERROR:
             addLog('CELL_TYPE_ERROR обнаружено');
             break;
     }
