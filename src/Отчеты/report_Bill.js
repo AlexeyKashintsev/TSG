@@ -20,8 +20,9 @@ function report_Bill() {
      */
     function onBeforeRender(evt){//GEN-FIRST:event_onBeforeRender
         var i = 0;
-        self.model.params.parFlatID = 139028933629407;
+        self.model.params.parFlatID = 139106197579945;
         self.model.params.parDateID = 138408451934673;
+        self.model.params.parGroupID = 138925376591464;
         self.dsGroupAndBank.params.groupID = self.dsFlatByIDorByGroup.cursor.group_id;
         self.dsGroupAndBank.requery();
         self.Group = {
@@ -81,7 +82,7 @@ function report_Bill() {
             var counters = [];
             self.counters_values_by_flat.forEach(function(flat_cout){
                 counters[counters.length] = {
-                    usl_name:self.sums_perFlatWithUslNames.findById(flat_cout.lc_id).usl_name,
+                    usl_name:self.sums_perFlatWithUslNames.findById(flat_cout.services_id).usl_name,
                     end_val: flat_cout.end_val,
                     beg_val: flat_cout.beg_val,
                     cons_val: flat_cout.cons_val
