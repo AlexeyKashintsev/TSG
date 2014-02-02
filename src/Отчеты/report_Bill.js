@@ -158,11 +158,10 @@ function report_Bill() {
                     dates = (monthNames[date.getMonth()]+" "+date.getFullYear());
                 
                 var saltoStr = (self.model.saldo_by_flat.cursor.sal_end*100).toString();
-                var str = strConcat(self.dsGroupAndBank.grp_number, self.dsLC_byid.lc_flatnumber, 4);
-                str = strConcat('1134',str,8);
-                str = strConcat(str,saltoStr,10);
-                   
-                var barCodeStr = getBarcode(str).join();
+                var lc_num = strConcat(self.dsGroupAndBank.grp_number, self.dsLC_byid.lc_flatnumber, 4);
+                var barCodeStr = strConcat('1134', lc_num, 8);
+                barCodeStr = strConcat(barCodeStr, saltoStr, 10);
+                barCodeStr = getBarcode(barCodeStr).join();
                 
                 var days = '';
                 self.all_dates.forEach(function(day){
@@ -181,7 +180,7 @@ function report_Bill() {
                     lc_regto:       dsLC_byid.cursor.lc_regto,
                     lc_flatnumber:  dsLC_byid.cursor.lc_flatnumber,
                     reg_count:      dsLC_byid.cursor.registered_count,
-                    lc_num:         dsLC_byid.cursor.lc_num,
+                    lc_num:         lc_num,
                     saldo:          lc_saldo,
                     chars_str:      chr_str,
                     sums:           sum,
