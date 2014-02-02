@@ -59,15 +59,19 @@ function report_Bill() {
         }
         return newCodeString;
     }
-
-
-
+    
+    function strConcat(aBegStr, aEndStr, aResStrLength, aSymbol){
+        var str_res = aBegStr;
+        for (i=0; i < aResStrLength - aEndStr.length; i++)
+            str_res += aSymbol?aSymbol:'0';
+        return str_res + aEndStr;
+    }
 
     function onBeforeRender(evt){//GEN-FIRST:event_onBeforeRender
         var i = 0;
-        self.model.params.parFlatID = 139106197774139;
+       // self.model.params.parFlatID = 139106197774139;
         self.model.params.parDateID = 138408451934673;
-        self.model.params.parGroupID = 138925376591464;
+        self.model.params.parGroupID = 139134401032283;
         self.dsGroupAndBank.params.groupID = self.dsFlatByIDorByGroup.cursor.group_id;
         self.dsGroupAndBank.requery();
         self.Group = {
@@ -87,7 +91,8 @@ function report_Bill() {
                 self.saldo_by_flat.params.flat_id = Flat.lc_id;
                 self.sums_perFlatWithUslNames.params.flat_id = Flat.lc_id;
                 self.chars_flat.params.flat_id = Flat.lc_id;
-                self.counters_values_by_flat.flat_id = Flat.lc_id;
+                self.counters_values_by_flat.params.flat_id = Flat.lc_id;
+                
 
                 self.dsLC_byid.requery();
                 self.saldo_by_flat.requery();
@@ -113,14 +118,17 @@ function report_Bill() {
 
 
                 var sum = [];
+                var cnt = 0;
                 self.sums_perFlatWithUslNames.forEach(function(summ){
+                    cnt++;
                     sum[sum.length] = {
                         usl_name:       summ.usl_name,
                         rate:           summ.rate,
                         calc:           summ.calc,
                         benefit:        summ.benefit,
                         recalc:         summ.recalc,
-                        full_calc:      summ.full_calc
+                        full_calc:      summ.full_calc,
+                        count:          cnt
                     };
                 });
 
@@ -128,7 +136,7 @@ function report_Bill() {
                 var counters = [];
                 self.counters_values_by_flat.forEach(function(flat_cout){
                     counters[counters.length] = {
-                        usl_name:self.sums_perFlatWithUslNames.findById(flat_cout.services_id).usl_name,
+                        usl_name:self.allServices.findById(flat_cout.services_id).usl_name,
                         end_val: flat_cout.end_val,
                         beg_val: flat_cout.beg_val,
                         cons_val: flat_cout.cons_val
@@ -149,23 +157,12 @@ function report_Bill() {
                            "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь" ];
                     dates = (monthNames[date.getMonth()]+" "+date.getFullYear());
                 
-                var shtrih = '';
-                stroka = self.dsGroupAndBank.grp_number;
-                for (i=0;i<4-self.dsLC_byid.lc_flatnumber.length;i++)
-                stroka = stroka+"0";
-                stroka = stroka+self.lc_flatnumber.lc_flatnumber; 
-                cod = "1134";
-                for (i=0;i<8-stroka.length;i++){
-                    cod = cod+"0";
-                }
-                cod = cod+stroka;
-                a=self.model.saldo_by_flat.cursor.sal_end*100;
-                a.toString();
-                for (i=0;i<10-a.length;i++){
-                    bar = bar+"0";
-                }
-                bar = bar+cod;
-                shtrih = getBarcode(bar);
+                var saltoStr = (self.model.saldo_by_flat.cursor.sal_end*100).toString();
+                var str = strConcat(self.dsGroupAndBank.grp_number, self.dsLC_byid.lc_flatnumber, 4);
+                str = strConcat('1134',str,8);
+                str = strConcat(str,saltoStr,10);
+                   
+                var barCodeStr = getBarcode(str).join();
                 
                 var days = '';
                 self.all_dates.forEach(function(day){
@@ -191,7 +188,7 @@ function report_Bill() {
                     counter:       counters,
                     date:           dates,
                     day:            days,
-                    barcode:        shtrih
+                    barcode:        barCodeStr
                 };
 
                // lc_data.saldo.begin;

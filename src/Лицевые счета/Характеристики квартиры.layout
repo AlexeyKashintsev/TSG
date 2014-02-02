@@ -45,31 +45,26 @@
   <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="modelGrid" parent="panel" prefHeight="102px" prefWidth="385px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="137502129515062" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="colChar" title="Характеристика">
       <datamodelElement entityId="137502129515062" fieldName="lc_char_type"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="11"/>
+      </headerStyle>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137502394729821" fieldName="char_name"/>
         <valueField entityId="137502394729821" fieldName="char_types_id"/>
       </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="11"/>
-      </headerStyle>
     </column>
     <column name="colValue" title="Значение" width="20">
       <datamodelElement entityId="137502129515062" fieldName="lc_char_val"/>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -81,7 +76,12 @@
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
     </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137502129515062" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="2px" left="3px" right="3px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="panel1" parent="tabbedPane" prefHeight="140px" prefWidth="391px" type="PanelDesignInfo" visible="false">
@@ -89,31 +89,26 @@
     <constraints tabTitle="Льготы" type="TabsConstraintsDesignInfo"/>
   </widget>
   <widget name="modelGrid1" parent="panel1" prefHeight="102px" prefWidth="385px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="137502392421203" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="colBenefit" title="Тип льготы">
       <datamodelElement entityId="137502392421203" fieldName="benefit_type"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="11"/>
+      </headerStyle>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137502332320012" fieldName="benefit_name"/>
         <valueField entityId="137502332320012" fieldName="usl_benefit_type_id"/>
       </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="11"/>
-      </headerStyle>
     </column>
     <column name="colBenValue" title="Количество" width="20">
       <datamodelElement entityId="137502392421203" fieldName="ben_count"/>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -125,7 +120,12 @@
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
     </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137502392421203" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="2px" left="3px" right="3px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget floatable="false" name="toolBar2" parent="panel1" prefHeight="33px" prefWidth="391px" rollover="true" type="ToolbarDesignInfo">

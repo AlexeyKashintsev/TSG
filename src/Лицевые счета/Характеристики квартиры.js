@@ -12,7 +12,7 @@ var self = this;
 
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
-    if (self.model.modified()&&confirm('Сохранить изменения?')){
+    if (self.model.modified&&confirm('Сохранить изменения?')){
         self.model.save();
     }
     self.model.requery();

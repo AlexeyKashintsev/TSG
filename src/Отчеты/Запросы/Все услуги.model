@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Услуги" entityHeight="200" entityIconified="false" entityId="139134229823482" entityLocationX="203" entityLocationY="21" entityWidth="150" tableAlias="" tableName="usl_services" tableSchemaName=""/>
+</datamodel>
