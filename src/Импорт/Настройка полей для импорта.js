@@ -75,18 +75,17 @@ function btnAdd1ActionPerformed(evt) {//GEN-FIRST:event_btnAdd1ActionPerformed
 function btnDublicateActionPerformed(evt) {//GEN-FIRST:event_btnDublicateActionPerformed
     if((self.model.modified && confirm(saveMessage, self.title))||!self.model.modified){
         self.model.save();
-        dsImportVars4Select.insert( dsImportVars4Select.md.importname, 'Копия '+dsImportVar4Change.importname,
-                                    dsImportVars4Select.md.importfiletype, dsImportVar4Change.importfiletype);
-        var pImp = dsImportVars4Select.importnames_id;
+        self.dsImportVariants.insert(self.dsImportVariants.md.importname, 'Копия ' + self.dsImportVariants.importname);
+        var pImp = self.dsImportVariants.importnames_id;
         self.dsExFields.first();
         while (!self.dsExFields.eof()){
-            dsExF.insert(   dsExF.md.cellnumber, self.dsExFields.cellnumber,
-                            dsExF.md.impfieldtype, self.dsExFields.impfieldtype,
-                            dsExF.md.impfieldnumber, self.dsExFields.impfieldnumber,
-                            dsExF.md.impfile, pImp,
-                            dsExF.md.statpar, self.dsExFields.statpar
-                           // dsExF.md.unionwithprev, null
-                        )
+            self.dsEX.insert(   self.dsEX.md.cellnumber, self.dsExFields.cellnumber,
+                                self.dsEX.md.impfieldtype, self.dsExFields.impfieldtype,
+                                self.dsEX.md.impfieldnumber, self.dsExFields.impfieldnumber,
+                                self.dsEX.md.impfile, pImp,
+                                self.dsEX.md.charid, self.dsExFields.charid,
+                                self.dsEX.md.serviceid, self.dsExFields.serviceid,
+                                self.dsEX.md.statpar, self.dsExFields.statpar);
             self.dsExFields.next();
         }
         self.model.save();

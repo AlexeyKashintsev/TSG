@@ -423,12 +423,12 @@ function getDateValue(aCell){
 }
 
 var evaluatedCellType = -1;
-var CELL_TYPE_NUMERIC = org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_NUMERIC;
-var CELL_TYPE_BLANK = org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_BLANK;
-var CELL_TYPE_STRING = org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_STRING;
-var CELL_TYPE_FORMULA = org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_FORMULA;
-var CELL_TYPE_BOOLEAN = org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_BOOLEAN;
-var CELL_TYPE_ERROR = org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_ERROR;
+var CELL_TYPE_NUMERIC = 0;//org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_NUMERIC;
+var CELL_TYPE_BLANK = 3;//org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_BLANK;
+var CELL_TYPE_STRING = 1;//org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_STRING;
+var CELL_TYPE_FORMULA = 2;//org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_FORMULA;
+var CELL_TYPE_BOOLEAN = 4;//org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_BOOLEAN;
+var CELL_TYPE_ERROR = 5;//org.apache.poi.xssf.usermodel.XSSFCell.CELL_TYPE_ERROR;
 function getCellValue(cell) {
     var value = null;
     if (cell == null) {
