@@ -4,14 +4,14 @@
     <parameter description="" name="dateid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="138678046229572" entityLocationX="407" entityLocationY="19" entityWidth="150" tableAlias="t" tableName="lc_flat_services" tableSchemaName=""/>
-  <entity Title="Тарифы" entityHeight="200" entityIconified="false" entityId="138678058759137" entityLocationX="746" entityLocationY="17" entityWidth="150" tableAlias="t3" tableName="usl_tarif" tableSchemaName=""/>
-  <entity Title="Квартиры в группах" entityHeight="200" entityIconified="false" entityId="138678044745407" entityLocationX="248" entityLocationY="16" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
-  <entity Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="138678055685516" entityLocationX="577" entityLocationY="19" entityWidth="150" tableAlias="t2" tableName="grp_services" tableSchemaName=""/>
-  <relation leftEntityFieldName="services_id" leftEntityId="138678055685516" rightEntityFieldName="services_id" rightEntityId="138678058759137"/>
-  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="group_id" rightEntityId="138678044745407"/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="138678044745407" rightEntityFieldName="lc_id" rightEntityId="138678046229572"/>
-  <relation leftEntityFieldName="group_id" leftEntityId="138678055685516" rightEntityFieldName="group_id" rightEntityId="138678058759137"/>
+  <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="138678046229572" entityLocationX="339" entityLocationY="7" entityWidth="150" tableAlias="t" tableName="lc_flat_services" tableSchemaName=""/>
+  <entity Title="Тарифы" entityHeight="200" entityIconified="false" entityId="138678058759137" entityLocationX="666" entityLocationY="5" entityWidth="150" tableAlias="t3" tableName="usl_tarif" tableSchemaName=""/>
+  <entity Title="Квартиры в группах" entityHeight="200" entityIconified="false" entityId="138678044745407" entityLocationX="181" entityLocationY="8" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="138678055685516" entityLocationX="499" entityLocationY="7" entityWidth="150" tableAlias="t2" tableName="grp_services" tableSchemaName=""/>
   <relation leftEntityFieldName="services_id" leftEntityId="138678046229572" rightEntityFieldName="services_id" rightEntityId="138678055685516"/>
+  <relation leftEntityFieldName="services_id" leftEntityId="138678055685516" rightEntityFieldName="services_id" rightEntityId="138678058759137"/>
   <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138678058759137"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="138678055685516" rightEntityFieldName="group_id" rightEntityId="138678058759137"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="138678044745407" rightEntityFieldName="lc_id" rightEntityId="138678046229572"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="group_id" rightEntityId="138678044745407"/>
 </datamodel>

@@ -20,14 +20,13 @@ self.addNewCounter = function(aCntActive, aCntNumber, aCntType){
     self.dsCounterByID.insert(   self.dsCounterByID.md.cnt_type, aCntType?aCntType:"FC",
                             self.dsCounterByID.md.cnt_active, aCntActive?aCntActive:true,
                             self.dsCounterByID.md.cnt_number, aCntNumber?aCntNumber:null);
-    self.model.save();
     return self.dsCounterByID.cnt_counters_id;
 };
 
 self.addCounter2Service = function(aCounter, aFlatService, aGroupService){
     self.dsCountersByFlat.insert(self.dsCountersByFlat.md.counter_id, aCounter,
-                            self.dsCountersByFlat.md.flat_service, aFlatService,
-                            self.dsCountersByFlat.md.group_service, aGroupService);
+                            self.dsCountersByFlat.md.flat_service, aFlatService?aFlatService:null,
+                            self.dsCountersByFlat.md.group_service, aGroupService?aGroupService:null);
     return self.dsCountersByFlat.cnt_con2services_id;
 };
 

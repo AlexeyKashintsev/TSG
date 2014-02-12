@@ -33,15 +33,16 @@ self.saveChanges = function(){
  * @param {type} aGroupID
  * @returns {@exp;dsFlat@pro;lc_flat_id}
  */
-self.addNewLC = function(aLCRegTo, aLCNumber, aLCPeopleRegCount, aGroupID){
+self.addNewLC = function(aLCRegTo, aLCFlatNumber, aLCPeopleRegCount, aLCNumber){//, aGroupID, aGroupModifiers){
 //    self.dsFlat.requery();
     if (!self.parDateID) {
         self.all_dates.last();
         self.parDateID = self.all_dates.per_date_id;}
-    self.dsFlat.insert(self.dsFlat.md.lc_flatnumber, aLCNumber, 
+    self.dsFlat.insert(self.dsFlat.md.lc_flatnumber, aLCFlatNumber, 
                   self.dsFlat.md.lc_regto, aLCRegTo,
-                  self.dsFlat.md.registered_count, aLCPeopleRegCount);
-    if (aGroupID) addFlat2Group(self.dsFlat.lc_flat_id, aGroupID);
+                  self.dsFlat.md.registered_count, aLCPeopleRegCount,
+                  self.dsFlat.md.lc_num, aLCNumber);
+    //if (aGroupID) addFlat2Group(self.dsFlat.lc_flat_id, aGroupID);
     saveChanges();
     return self.dsFlat.lc_flat_id;
 };
@@ -54,7 +55,7 @@ self.addNewLC = function(aLCRegTo, aLCNumber, aLCPeopleRegCount, aGroupID){
  * todo_: переделать под асинхронную модель
  * done: переделал 
  */
-self.addFlat2Group = function(aFlatID, aGroupID){
+self.addFlat2Group = function(aFlatID, aGroupID, aGroupModifiers){
    // var dsTempLCGrp = self.model.loadEntity('qLCInGroups');
    // dsTempLCGrp.params.Group_ID = aGroupID;
    // dsTempLCGrp.requery(
@@ -66,6 +67,7 @@ self.addFlat2Group = function(aFlatID, aGroupID){
                 self.dsLCGrp.insert( self.dsLCGrp.md.lc_id, aFlatID,
                                 self.dsLCGrp.md.group_id, aGroupID);
             }
+
             self.insertGroupCharsLC.params.FlatID = aFlatID;
             self.insertGroupCharsLC.params.GroupID = aGroupID;
             self.insertGroupCharsLC.execute();
@@ -81,8 +83,40 @@ self.addFlat2Group = function(aFlatID, aGroupID){
                 addServiceToLC(aFlatID, self.insertGroupServicesLC.services_id,
                                self.insertGroupServicesLC.calc_by_counter, self.parDateID);
         //});
+            saveChanges();
 };
 
+self.addFlat2ModifyingGroup = function(aFlatID, aGroupID, aModServices){    
+    self.services_by_group.params.parGroup = aGroupID;
+    self.services_by_group.requery();
+    self.services_by_group.forEach(function(modServ){
+        if (modServ.modified_service_id){
+            aModServices[modServ.modified_service_id] = modServ.services_id;
+            self.set_service_in_flat.params.flatid = aFlatID;
+            self.set_service_in_flat.params.service_id = modServ.modified_service_id;
+            self.set_service_in_flat.params.new_Service = modServ.services_id;
+            self.set_service_in_flat.executeUpdate();
+        }
+        else
+            addServiceToLC(aFlatID, modServ.services_id, modServ.calc_by_counter, self.parDateID);
+
+    });
+    self.dsLCGrp.insert(self.dsLCGrp.md.lc_id, aFlatID,
+                        self.dsLCGrp.md.group_id, aGroupID);
+    return aModServices;
+};
+
+self.addFlat2Modifyers = function(aFlatID, aGroupModifiers){
+    var modServices = [];
+    if (aGroupModifiers) {
+        for (var i in aGroupModifiers){
+            modServices = self.addFlat2ModifyingGroup(aFlatID, aGroupModifiers[i], modServices);
+        }    
+    }
+    saveChanges();
+    return modServices;
+};
+    
 /*
  * Добавить характеристику к квартире
  * @param {type} aLC_ID
@@ -127,7 +161,8 @@ self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID){
     var newDate = aDateID?aDateID:(self.parDateID?self.parDateID:false);
     if (newDate) self.sums_perFlat.insert(self.sums_perFlat.md.flat_service_id, self.services_by_flat.lc_flat_services_id,
                                      self.sums_perFlat.md.date_id, newDate);
-    if (aCalcByCounter) addCounterToFlat(self.services_by_flat.lc_flat_services_id);
+    if (aCalcByCounter) 
+        addCounterToFlat(self.services_by_flat.lc_flat_services_id);
     return self.services_by_flat.lc_flat_services_id;
 };
 
@@ -138,7 +173,9 @@ self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID){
  */
 self.addCounterToFlat = function(aFlatService){
     if (!modCN) modCN = new CountersModule();
-    return modCN.addNewCounter();
+    var cnt = modCN.addNewCounter();
+    modCN.addCounter2Service(cnt, aFlatService, null);
+    return cnt;
 };
 
 

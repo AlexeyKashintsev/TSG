@@ -4,13 +4,16 @@
     <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="dsGroupsAndAll" Title="Группы справочник для тарифов" entityHeight="200" entityIconified="false" entityId="138409145724087" entityLocationX="296" entityLocationY="13" entityWidth="150" queryId="dsGroupsAndAll" tableName="" tableSchemaName=""/>
-  <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="138410360147288" entityLocationX="457" entityLocationY="199" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
-  <entity Name="tarifsInGroup" Title="Тарифы по группе" entityHeight="200" entityIconified="false" entityId="138410359511283" entityLocationX="70" entityLocationY="231" entityWidth="150" queryId="TarifsInGroup" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138410359511283" rightEntityParameterName="parDate"/>
+  <entity Name="dsGroupsAndAll" Title="Группы справочник для тарифов" entityHeight="200" entityIconified="false" entityId="138409145724087" entityLocationX="670" entityLocationY="23" entityWidth="150" queryId="dsGroupsAndAll" tableName="" tableSchemaName=""/>
+  <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="138410360147288" entityLocationX="409" entityLocationY="7" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
+  <entity Name="tarifsInGroup" Title="Тарифы по группе" entityHeight="200" entityIconified="false" entityId="138410359511283" entityLocationX="224" entityLocationY="12" entityWidth="150" queryId="TarifsInGroup" tableName="" tableSchemaName=""/>
   <relation leftEntityFieldName="services_id" leftEntityId="138410359511283" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138410359511283" rightEntityParameterName="parGroup"/>
-  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="138410360147288" rightEntityFieldName="usl_calc_formula_id" rightEntityId="138410360147288"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138410359511283" rightEntityParameterName="parDate"/>
+  <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="138410359511283" rightEntityFieldName="grp_groups_id" rightEntityId="138410359511283"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="138410360147288" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="138410360147288" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
+  <referenceRelation leftEntityFieldName="group_id" leftEntityId="138410359511283" rightEntityFieldName="grp_groups_id" rightEntityId="138410359511283"/>
+  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="138410360147288" rightEntityFieldName="usl_calc_formula_id" rightEntityId="138410360147288"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="138410359511283" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
 </datamodel>

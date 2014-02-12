@@ -15,6 +15,7 @@ var isSelectForm = true;
 var isEditable = false;
 var canSetEdit = true;
 var fmNewOplata = new opl_get();
+var fmEditOplata = new opl_view();
 self.parentForm = null;
 self.mainForm = null;
 
@@ -68,4 +69,17 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
         fmNewOplata.show();
 }//GEN-LAST:event_btnAddActionPerformed
 
+
+    function modelGridMouseClicked(evt) {//GEN-FIRST:event_modelGridMouseClicked
+        if (evt.clickCount > 1){
+            fmEditOplata.model.params.parDateID = self.parDateID;
+            fmEditOplata.model.params.parPaymentID = self.dsPaymentsInSession.opl_payments_id;
+            fmEditOplata.parentForm = self;
+            fmEditOplata.requery();
+            if (self.mainForm)
+                self.mainForm.showFormAsInternal(fmEditOplata);
+            else
+                fmEditOplata.show();
+        }
+    }//GEN-LAST:event_modelGridMouseClicked
 }

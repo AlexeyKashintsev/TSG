@@ -15,6 +15,11 @@ self.isSelectForm = false;
 self.isEditable = true;
 var canSetEdit = false;
 
+self.setModifying = function(aModifying){
+    self.mgUslugi.colModService.visible = aModifying;
+    self.mgUslugi.colCalcType.visible = !aModifying;
+};
+
 function setEdit(){
     self.mgUslugi.editable = self.btnAdd.enabled = 
             self.btnDel.enabled = self.btnSave.enabled = self.isEditable;    
@@ -104,4 +109,17 @@ if (self.dsServices.rowIndex != self.dsServices.length)
     }
 }//GEN-LAST:event_btnDownActionPerformed
 
+
+    function colModServiceOnSelect(aEditor) {//GEN-FIRST:event_colModServiceOnSelect
+        var fmSelectCalcType = new Form('fmCalcType');
+        var res = null;
+        fmSelectCalcType.isSelectForm = true;
+        fmSelectCalcType.showModal(function(aValue){
+            self.dsServices.calc_id = aValue;
+        });
+    }//GEN-LAST:event_colModServiceOnSelect
+
+    function mgUslugiOnRender(evt) {//GEN-FIRST:event_mgUslugiOnRender
+
+    }//GEN-LAST:event_mgUslugiOnRender
 }

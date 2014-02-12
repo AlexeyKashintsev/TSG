@@ -65,7 +65,7 @@ function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
 }//GEN-LAST:event_paramsOnChanged
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
-    self.all_dates.last();    
+    self.all_dates.last(all_datesOnScrolled(evt));    
 }//GEN-LAST:event_formWindowOpened
 
 function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed

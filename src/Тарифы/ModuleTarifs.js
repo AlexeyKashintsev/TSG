@@ -42,12 +42,12 @@ function TarifsModule() {
 //        self.ApplyTarifs.params.dateid = aDateID;
         self.dsUpdatePer_sums.params.groupid = aGroupID;
         self.dsUpdatePer_sums.params.dateid = aDateID;
-        self.dsUpdatePer_sums.requery();
-        self.dsUpdatePer_sums.beforeFirst();
+        self.dsUpdatePer_sums.executeUpdate();
+      /*  self.dsUpdatePer_sums.beforeFirst();
         while (self.dsUpdatePer_sums.next()) {
-            self.dsUpdatePer_sums.rate = self.dsUpdatePer_sums.tRate
+            self.dsUpdatePer_sums.rate = self.dsUpdatePer_sums.tRate;
         }
-        self.model.save();
+        self.model.save();*/
     };
 
 }

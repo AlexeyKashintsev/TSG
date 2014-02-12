@@ -89,8 +89,8 @@ function saveAll(aFileName){
 }
 //*****************************************************************Инициализация  
 /* LC_FIO, 
- * LC_NUMBER,
- * LC_REG_NUM,
+ * LC_FLAT_NUMBER,
+ * LC_REG_CNT,
  * SALDO_BEG,
  * LC_CHARS(array CellNumber, CHAR_ID),
  * COUNTERS_BEG(array CellNumber, SERVICE_ID)
@@ -102,44 +102,53 @@ function ImportFields(){
     this.rowLength = self.dsRowLength.rowLength;
     var LC_FIO = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 1);
     this.LC_FIO = LC_FIO==''?null:LC_FIO[0].cellnumber-1;
-    var LC_NUMBER = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 3);
+    var LC_FLAT_NUMBER = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 3);
+    this.LC_FLAT_NUMBER = LC_FLAT_NUMBER==''?null:LC_FLAT_NUMBER[0].cellnumber-1;
+    var LC_NUMBER = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 9);
     this.LC_NUMBER = LC_NUMBER==''?null:LC_NUMBER[0].cellnumber-1;
-    var LC_REG_NUM = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 2);
-    this.LC_REG_NUM = LC_REG_NUM==''?null:LC_REG_NUM[0].cellnumber-1;
+    var LC_REG_CNT = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 2);
+    this.LC_REG_CNT = LC_REG_CNT==''?null:LC_REG_CNT[0].cellnumber-1;
     var SALDO_BEG = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 8);
     this.SALDO_BEG = SALDO_BEG==''?null:SALDO_BEG[0].cellnumber-1;
+    var PAYMENT_DATE = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 11);
+    this.PAYMENT_DATE = PAYMENT_DATE==''?null:PAYMENT_DATE[0].cellnumber-1;
+    var PAYMENT_SUM = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 12);
+    this.PAYMENT_SUM = PAYMENT_SUM==''?null:PAYMENT_SUM[0].cellnumber-1;
     
-    this.LC_CHARS = new Array();
-    this.COUNTERS_BEG = new Array();
-    this.COUNTERS_END = new Array();
+    this.GROUP_MODIFIER = [];
+    this.LC_CHARS = [];
+    this.COUNTERS_BEG = [];
+    this.COUNTERS_END = [];
+    
+    var GROUP_MODIFIER = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 10);
+    for (var i in GROUP_MODIFIER){
+            this.GROUP_MODIFIER[i] = {CellNumber : GROUP_MODIFIER[i].cellnumber-1,
+                                      GroupID : GROUP_MODIFIER[i].groupid};
+    };
     
     var LC_CHARS = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 4);
     for (var i in LC_CHARS){
-            this.LC_CHARS[i] = new (function(){ this.CellNumber = LC_CHARS[i].cellnumber-1;
-                                                this.CHAR_ID = LC_CHARS[i].charid;
-                                     });
+            this.LC_CHARS[i] = {CellNumber : LC_CHARS[i].cellnumber-1,
+                                CHAR_ID : LC_CHARS[i].charid};
     };
     
     
     var COUNTERS_BEG = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 5);
     for (i=0;i<COUNTERS_BEG.length;i++){
-            this.COUNTERS_BEG[i] = new (function(){ this.CellNumber = COUNTERS_BEG[i].cellnumber-1;
-                                                    this.SERVICE_ID = COUNTERS_BEG[i].serviceid;
-                                     });
+            this.COUNTERS_BEG[i] = {CellNumber : COUNTERS_BEG[i].cellnumber-1,
+                                    SERVICE_ID : COUNTERS_BEG[i].serviceid};
     }
 
     var COUNTERS_END = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 6);
     for (i=0;i<COUNTERS_END.length;i++){
-            this.COUNTERS_END[i] = new (function(){ this.CellNumber = COUNTERS_END[i].cellnumber-1;
-                                                    this.SERVICE_ID = COUNTERS_END[i].serviceid;
-                                     });
+            this.COUNTERS_END[i] = {CellNumber : COUNTERS_END[i].cellnumber-1,
+                                    SERVICE_ID : COUNTERS_END[i].serviceid};
     };
     
     var BINEFICIARIES = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 7);
     for (i=0;i<BINEFICIARIES.length;i++){
-            this.BINEFICIARIES[i] = new (function(){   this.CellNumber = BINEFICIARIES[i].cellnumber-1;
-                                                  this.BENEFIT_ID = BINEFICIARIES[i].benefit_id;
-                                     });
+            this.BINEFICIARIES[i] = {CellNumber : BINEFICIARIES[i].cellnumber-1,
+                                     BENEFIT_ID : BINEFICIARIES[i].benefit_id};
     }
 }
 /*
@@ -155,7 +164,7 @@ function ImportFields(){
  * @returns {String}
  * to do: убрать aGroup из передачи в другие функции, почистить все. Заменить aGroup на parGroup - где нужно вставлять его
  */
-self.initializeImport = function(anImportType, aGroup, aDate, aFiles, aLogOut, aProgress, aFileCount, aErFileName){
+self.initializeImport = function(anImportType, aGroup, aDate, aPaySession, aFiles, aLogOut, aProgress, aFileCount, aErFileName){
     if(anImportType==null||aGroup==null||aFiles==null)
         return "Error null parameter";
     logOutTextField = aLogOut;
@@ -170,6 +179,7 @@ self.initializeImport = function(anImportType, aGroup, aDate, aFiles, aLogOut, a
         catch (e) {alert('!'+e)}
         self.parImportType = anImportType;
         parDate = aDate;
+        parOplSession = aPaySession;
         impFields = new ImportFields(anImportType);
         progressInd = aProgress;
         filesCounter = aFileCount;
@@ -283,34 +293,51 @@ function processRow(aSheet, aRowNum, aSheetNum, aGroup){
 }
 
 /* LC_FIO, 
+ * LC_FLAT_NUMBER,
  * LC_NUMBER,
- * LC_REG_NUM,
+ * LC_REG_CNT,
  * SALDO_BEG,
  * LC_CHARS(array CellNumber, CHAR_ID),
  * COUNTERS_END(array CellNumber, SERVICE_ID)
  * BINEFICIARIES(array CellNumber, BENEFIT_ID)
  * to do: дописать код добавления льготников - помечено в комментариях
+ * GROUP_MODIFIER [CellNumber, GroupID] - модификатор группы
+ * PAYMENT_DATE, PAYMENT_SUM
  */
 
 function readRow(aRowAr, aGroup){
-    var FIO = getCellValue(aRowAr.cells[impFields.LC_FIO]);// aRowAr.FIO aRowAr.Array[22]
+    //var GROUP = getCellValue(aRowAr.cells[impFields.LC_FIO]);
+    var FIO = getCellValue(aRowAr.cells[impFields.LC_FIO]);
+    var LC_FLAT_NUM = getCellValue(aRowAr.cells[impFields.LC_FLAT_NUMBER]);
     var LC_NUM = getCellValue(aRowAr.cells[impFields.LC_NUMBER]);
-    var REG_CNT = getCellValue(aRowAr.cells[impFields.LC_REG_NUM]);
- /**/var LC_ID = modLC.addNewLC(FIO, LC_NUM, REG_CNT, aGroup);
+    var REG_CNT = getCellValue(aRowAr.cells[impFields.LC_REG_CNT]);
+ /**/var LC_ID = modLC.addNewLC(FIO, LC_FLAT_NUM, REG_CNT, LC_NUM);//, aGroup, group_modifiers);
+    modLC.addFlat2Group(LC_ID, aGroup);
+    
+    var group_modifiers = [];
+    for (var i in impFields.GROUP_MODIFIER){
+        if (getCellValue(aRowAr.cells[impFields.GROUP_MODIFIER[i].CellNumber]))
+            group_modifiers[group_modifiers.length] = impFields.GROUP_MODIFIER[i].GroupID;
+    }
+    var servModifiers = modLC.addFlat2Modifyers(LC_ID, group_modifiers);
+    
     var SALDO_BEG = getCellValue(aRowAr.cells[impFields.SALDO_BEG]);
     modSN.initBegSaldo(LC_ID, parDate, SALDO_BEG?SALDO_BEG:null);
-    var counterValues = {};
-    var ServicesAr = {};
     
-    for (var i in impFields.LC_CHARS){
+    var OPL_DATE = getCellValue(aRowAr.cells[impFields.PAYMENT_DATE]);
+    var OPL_SUM = getCellValue(aRowAr.cells[impFields.PAYMENT_SUM]);
+    if (OPL_SUM)
+        modSN.addOplata(LC_ID, parOplSession, parDate, OPL_SUM, OPL_DATE?OPL_DATE:new Date(), 'Импорт');
+    
+    var counterValues = {};
+    
+    for (i in impFields.LC_CHARS){
         var ch_val = getCellValue(aRowAr.cells[impFields.LC_CHARS[i].CellNumber]);
         if (ch_val) modLC.addCharToLC(LC_ID, impFields.LC_CHARS[i].CHAR_ID, ch_val);
     }
     
     for (i in impFields.COUNTERS_BEG){
-        //ServicesAr[impFields.COUNTERS_BEG[i].SERVICE_ID]/*Как организовать набор данных in? для попадания только уникальных услуг*/
         counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID] = {};
-       // counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID].serv_id = impFields.COUNTERS_BEG[i].SERVICE_ID;
         counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID].begv = getCellValue(aRowAr.cells[impFields.COUNTERS_BEG[i].CellNumber]);
     }
     
@@ -318,11 +345,11 @@ function readRow(aRowAr, aGroup){
         counterValues[impFields.COUNTERS_END[i].SERVICE_ID].endv = getCellValue(aRowAr.cells[impFields.COUNTERS_END[i].CellNumber]);
     }
     
-    for (i in counterValues) {
-        if (counterValues[i].begv)
-        modSN.insertCounterValue(LC_ID,i , parDate, 
-                                             counterValues[i].begv, 
-                                             counterValues[i].endv);
+    for (var service in counterValues) {
+        if (counterValues[service].begv)
+        modSN.insertCounterValue(LC_ID, servModifiers[service]?servModifiers[service]:service, parDate, 
+                                    counterValues[service].begv, 
+                                    counterValues[service].endv);
     }
     
     for (i = 0; i < impFields.BINEFICIARIES; i++){

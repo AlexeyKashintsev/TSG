@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="400px">
   <widget name="mcBank" parent="Form" prefHeight="28px" prefWidth="264px" selectFunction="mcBankOnSelect" type="DbComboDesignInfo">
-    <valueField entityId="138840958146843" fieldName="grp_bank_id"/>
     <displayField entityId="138840958146843" fieldName="fname"/>
+    <valueField entityId="138840958146843" fieldName="grp_bank_id"/>
     <datamodelElement entityId="137496190835709" fieldName="bank"/>
-    <constraints height="28px" left="120px" right="16px" top="112px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="28px" left="120px" top="124px" type="MarginConstraintsDesignInfo" width="264px"/>
   </widget>
   <widget name="toolBar" parent="Form" prefHeight="33px" prefWidth="400px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="0px" top="156px" type="MarginConstraintsDesignInfo" width="400px"/>
@@ -12,92 +12,92 @@
   <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/apps/geany.png" name="btnRecalc" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Пересчитать характеристики" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="label2" parent="Form" prefHeight="16px" prefWidth="48px" text="Адрес:" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="90px" type="MarginConstraintsDesignInfo" width="48px"/>
+    <constraints height="16px" left="12px" top="102px" type="MarginConstraintsDesignInfo" width="48px"/>
   </widget>
   <widget name="label1" parent="Form" prefHeight="16px" prefWidth="48px" text="Тип:" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="66px" type="MarginConstraintsDesignInfo" width="48px"/>
+    <constraints height="16px" left="12px" top="78px" type="MarginConstraintsDesignInfo" width="48px"/>
   </widget>
   <widget name="label" parent="Form" prefHeight="16px" prefWidth="108px" text="Наименование:" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="42px" type="MarginConstraintsDesignInfo" width="108px"/>
+    <constraints height="16px" left="12px" top="54px" type="MarginConstraintsDesignInfo" width="108px"/>
   </widget>
-  <widget name="modelCombo" parent="Form" prefHeight="28px" prefWidth="264px" type="DbComboDesignInfo">
-    <valueField entityId="137496171186332" fieldName="char_types_id"/>
-    <displayField entityId="137496171186332" fieldName="char_name"/>
+  <widget name="modelCombo" parent="Form" prefHeight="28px" prefWidth="132px" type="DbComboDesignInfo">
+    <displayField entityId="139177655388336" fieldName="grp_type_name"/>
+    <valueField entityId="139177655388336" fieldName="grp_type_id"/>
     <datamodelElement entityId="137496190835709" fieldName="grp_type"/>
-    <constraints height="28px" left="120px" right="16px" top="60px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="28px" left="120px" top="72px" type="MarginConstraintsDesignInfo" width="132px"/>
   </widget>
   <widget name="modelFormattedField" parent="Form" prefHeight="28px" prefWidth="264px" type="DbLabelDesignInfo">
     <datamodelElement entityId="137496190835709" fieldName="grp_name"/>
+    <constraints height="28px" left="120px" top="48px" type="MarginConstraintsDesignInfo" width="264px"/>
     <border type="CompoundBorderDesignInfo"/>
-    <constraints height="28px" left="120px" right="16px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelFormattedField1" parent="Form" prefHeight="28px" prefWidth="264px" type="DbLabelDesignInfo">
     <datamodelElement entityId="137496190835709" fieldName="grp_address"/>
-    <constraints height="28px" left="120px" right="16px" top="84px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="28px" left="120px" top="96px" type="MarginConstraintsDesignInfo" width="264px"/>
   </widget>
   <widget deletable="false" insertable="false" name="modelGrid" parent="Form" prefHeight="108px" prefWidth="400px" type="DbGridDesignInfo">
     <column name="colCharType" title="Характеристика">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <valueField entityId="137496171186332" fieldName="char_types_id"/>
         <displayField entityId="137496171186332" fieldName="char_name"/>
+        <valueField entityId="137496171186332" fieldName="char_types_id"/>
       </controlInfo>
+      <datamodelElement entityId="137496168237043" fieldName="grp_char_type"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="137496168237043" fieldName="grp_char_type"/>
     </column>
     <column name="colCharValue" title="Значение">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137496168237043" fieldName="grp_char_val"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="137496168237043" fieldName="grp_char_val"/>
     </column>
     <column name="colCharAdd2Lc" title="Добавлять автоматически">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137496168237043" fieldName="add_char_to_lc"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="137496168237043" fieldName="add_char_to_lc"/>
     </column>
     <column name="colCharCalc" title="Расчитывается">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137496168237043" fieldName="char_calc_by_lc"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="137496168237043" fieldName="char_calc_by_lc"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137496168237043" field="false"/>
@@ -111,7 +111,14 @@
   <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar1" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar1" prefHeight="26px" prefWidth="34px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="label3" parent="Form" prefHeight="16px" prefWidth="84px" text="Реквизиты:" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="120px" type="MarginConstraintsDesignInfo" width="84px"/>
+    <constraints height="16px" left="12px" top="130px" type="MarginConstraintsDesignInfo" width="84px"/>
+  </widget>
+  <widget name="label4" parent="Form" prefHeight="16px" prefWidth="24px" text="ID" type="LabelDesignInfo">
+    <constraints height="16px" left="252px" top="78px" type="MarginConstraintsDesignInfo" width="24px"/>
+  </widget>
+  <widget format="#,##0" name="modelFormattedField2" parent="Form" prefHeight="28px" prefWidth="108px" type="DbLabelDesignInfo" valueType="0">
+    <datamodelElement entityId="137496190835709" fieldName="grpid"/>
+    <constraints height="28px" right="16px" top="72px" type="MarginConstraintsDesignInfo" width="108px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

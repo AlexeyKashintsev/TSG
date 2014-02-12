@@ -56,8 +56,15 @@ function btnAddActionPerformed() {//GEN-FIRST:event_btnAddActionPerformed
     fmSelectServicesId.isSelectForm = true;
     fmSelectServicesId.showModal(
         function(aValue){
-            lc_mod.addServiceToLC(self.parFlatID, aValue.service, aValue.byCounter, self.parDateID);
+            var fs = lc_mod.addServiceToLC(self.parFlatID, aValue.service, aValue.byCounter, self.parDateID);
             lc_mod.saveChanges();
+            if (aValue.byCounter) {
+                var cnt_mod = new CountersModule();
+                var counter = cnt_mod.addNewCounter();
+                cnt_mod.addCounter2Service(counter, fs);
+                cnt_mod.setCounterValueByCounterValueID(counter, self.parDateID, 0, 0);
+                cnt_mod.checkModified();
+            }
             self.model.requery();
            //services_by_flat.insert();
            //services_by_flat.services_id = aValue;

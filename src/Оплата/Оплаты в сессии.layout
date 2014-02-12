@@ -10,7 +10,7 @@
     <layout type="MarginLayoutDesignInfo"/>
     <constraints bottom="31px" left="0px" right="0px" top="30px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="287px" prefWidth="372px" type="DbGridDesignInfo">
+  <widget deletable="false" editable="false" insertable="false" mouseClicked="modelGridMouseClicked" name="modelGrid" parent="pnlWorkSpace" prefHeight="287px" prefWidth="372px" type="DbGridDesignInfo">
     <column name="colFlat_id" readonly="true" selectOnly="true" title="ФИО">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138695513474136" fieldName="lc_regto"/>

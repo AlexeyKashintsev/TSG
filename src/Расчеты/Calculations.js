@@ -25,13 +25,14 @@ var prepared = false;
 function prepareCalcModule(aGroupID, aFlatID, aDateID){
     prepared = false;
     try {
+        sums = new Sums();
         self.parDateID = aDateID;
         self.parFlatID = aFlatID;
         self.parGroupID = aGroupID;
-        self.dsCalcObject.execute();
+        self.dsCalcObject.requery();
         groups = new Groups(aDateID);
         flats = new Flats(aDateID);
-        self.dsSums4calc.execute();
+        self.dsSums4calc.requery();
         
         prepared = true;
         return true;
@@ -48,11 +49,12 @@ self.calculateValues = function(aGroupID, aFlatID, aDateID){
             self.dsSums4calc.beforeFirst();
             while (self.dsSums4calc.next()){
                 try {
-                    self.dsSums4calc.calc_value = formulEval.calculate(self.dsSums4calc.calc_value_formula,
-                                                                  sums.GetSum(self.dsSums4calc.per_sums_id),
-                                                                  'VALUE');
+                    if (self.dsSums4calc.calc_value_formula)
+                        self.dsSums4calc.calc_value = formulEval.calculate(self.dsSums4calc.calc_value_formula,
+                                                                      sums.GetSum(self.dsSums4calc.per_sums_id),
+                                                                      'VALUE');
                 } catch (e) {
-                    Logger.warning('Ошибка расчета объема по услуге 888 в квартире 888');
+                    Logger.warning('Ошибка расчета объема PerSumsID: '+ self.dsSums4calc.per_sums_id);
                 }
                 try {
                     self.dsSums4calc.calc = formulEval.calculate(self.dsSums4calc.calc_formula,
@@ -87,7 +89,7 @@ self.calculateValues = function(aGroupID, aFlatID, aDateID){
             self.model.save();
             //self.dsCalcObject.beforeFirst();
            // while (self.dsCalcObject.next()) 
-                calculateFlatSaldo()//self.dsCalcObject.lc_id);
+                calculateFlatSaldo();//self.dsCalcObject.lc_id);
             return true;
         } else return false;
     } catch (e) {
@@ -240,6 +242,7 @@ function Sums(){
     this.GetSum = function(aSumID){
         if (!sums[aSumID]) sums[aSumID] = new Sum(aSumID);
         return sums[aSumID];
+        //return new Sum(aSumID);
     };
     
     function Sum(aSumID){

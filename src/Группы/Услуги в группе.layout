@@ -18,7 +18,6 @@
         <displayField entityId="137520081638120" fieldName="usl_name"/>
         <valueField entityId="137520081638120" fieldName="usl_services_id"/>
       </controlInfo>
-      <datamodelElement entityId="137496294091245" fieldName="services_id"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -30,13 +29,13 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="137496294091245" fieldName="services_id"/>
     </column>
     <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Cпособ расчета">
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137520081638120" fieldName="calc_name"/>
         <valueField entityId="137520081638120" fieldName="usl_services_id"/>
       </controlInfo>
-      <datamodelElement entityId="137496294091245" fieldName="services_id"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -48,8 +47,57 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="137496294091245" fieldName="services_id"/>
     </column>
-    <rowsColumnsDesignInfo>
+    <column name="colModService" selectFunction="colModServiceOnSelect" title="Модифицируемая услуга">
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <displayField entityId="137520081638120" fieldName="usl_name"/>
+        <valueField entityId="137520081638120" fieldName="usl_services_id"/>
+      </controlInfo>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <datamodelElement entityId="137496294091245" fieldName="modified_service_id"/>
+    </column>
+    <column name="colAskValue" title="Спаршивать в квитанции">
+      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <datamodelElement entityId="137496294091245" fieldName="askforvalue"/>
+    </column>
+    <column name="column" readonly="true" title="Дочерний">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <datamodelElement entityId="137496294091245" fieldName="childService"/>
+    </column>
+    <rowsColumnsDesignInfo generalRowFunction="mgUslugiOnRender">
       <rowsDatasource entityId="137496294091245" field="false"/>
     </rowsColumnsDesignInfo>
     <treeDesignInfo/>

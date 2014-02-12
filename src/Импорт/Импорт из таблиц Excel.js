@@ -93,7 +93,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
 function buttonStartImportActionPerformed(evt) {//GEN-FIRST:event_buttonStartImportActionPerformed
 /*
  *Параметры для Импорта
- *<self.parImport, parParentAddress, parStatInputType, selectedFile>
+ *<self.parImport, parParentAddress, parStatInputType, selectedFile, parPaymentSession>
  *
  **/
     self.jTabbedPane.selectedIndex = 1;
@@ -101,10 +101,10 @@ function buttonStartImportActionPerformed(evt) {//GEN-FIRST:event_buttonStartImp
     (function (){
         impmod.stop = false;
         var er = impmod.initializeImport(self.parImport, self.parGroup,
-                                        self.parDate, selectedFile, self.LogOutText,
+                                        self.parDate, self.parSession, selectedFile, self.LogOutText,
                                         self.jProgressBar, self.labelFileCounter);
         if (er!=null)
-            alert(er, er=="ok"?"Импорт завершен":"Ошибка импорта")
+            alert(er, er=="ok"?"Импорт завершен":"Ошибка импорта");
     }).invokeBackground();
 }//GEN-LAST:event_buttonStartImportActionPerformed
 
@@ -124,11 +124,15 @@ function button5ActionPerformed(evt) {//GEN-FIRST:event_button5ActionPerformed
 }//GEN-LAST:event_button5ActionPerformed
 
 function dbcImportType1SelectValue(aEditor) {//GEN-FIRST:event_dbcImportType1SelectValue
-	// TODO Добавьте свой код:
+	
 }//GEN-LAST:event_dbcImportType1SelectValue
 
 function dbcImportType11SelectValue(aEditor) {//GEN-FIRST:event_dbcImportType11SelectValue
-	// TODO Добавьте свой код:
+	
 }//GEN-LAST:event_dbcImportType11SelectValue
 
+
+    function dbcImportType111SelectValue(aEditor) {//GEN-FIRST:event_dbcImportType111SelectValue
+        // TODO Добавьте свой код:
+    }//GEN-LAST:event_dbcImportType111SelectValue
 }

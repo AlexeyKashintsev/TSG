@@ -13,9 +13,11 @@ var self = this;
 
 self.parentForm = null;
 self.toolBarVisible = true;
+self.selector = false;
 
 function processVisible(){
     self.toolBar.visible = self.toolBarVisible;
+    self.pnlSelect.visible = self.selector;
    // !toolBarVisible&&(self.modelGrid.top=0);
 }
 
@@ -66,4 +68,8 @@ function dsGroupsOnScrolled(evt) {//GEN-FIRST:event_dsGroupsOnScrolled
         self.parentForm.setGroup(self.dsGroups.grp_groups_id);
 }//GEN-LAST:event_dsGroupsOnScrolled
 
+
+    function btnSelectActionPerformed(evt) {//GEN-FIRST:event_btnSelectActionPerformed
+        self.close(self.dsGroups.grp_groups_id);
+    }//GEN-LAST:event_btnSelectActionPerformed
 }

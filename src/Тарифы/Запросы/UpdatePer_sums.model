@@ -4,10 +4,5 @@
     <parameter description="" name="dateid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="Начисления" entityHeight="200" entityIconified="false" entityId="138696004234256" entityLocationX="396" entityLocationY="17" entityWidth="150" tableAlias="t" tableName="per_sums" tableSchemaName=""/>
-  <entity Title="ApplyTarifs" entityHeight="200" entityIconified="false" entityId="138696218409445" entityLocationX="182" entityLocationY="17" entityWidth="150" queryId="ApplyTarifs" tableAlias="q" tableName="" tableSchemaName=""/>
-  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="138696218409445" rightEntityFieldName="flat_service_id" rightEntityId="138696004234256"/>
-  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138696004234256"/>
-  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityId="138696218409445" rightEntityParameterName="dateid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityId="138696218409445" rightEntityParameterName="groupid"/>
+  <entity Title="Начисления" entityHeight="200" entityIconified="false" entityId="139215172179965" entityLocationX="416" entityLocationY="8" entityWidth="150" tableAlias="" tableName="per_sums" tableSchemaName=""/>
 </datamodel>

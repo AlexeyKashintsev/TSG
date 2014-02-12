@@ -7,6 +7,8 @@
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="Объекты расчета" entityHeight="200" entityIconified="false" entityId="138735294959664" entityLocationX="188" entityLocationY="9" entityWidth="150" queryId="Calc_object" tableAlias="q" tableName="" tableSchemaName=""/>
   <entity Title="Сальдо по квартире" entityHeight="200" entityIconified="false" entityId="138669452521725" entityLocationX="397" entityLocationY="0" entityWidth="150" tableAlias="" tableName="per_saldo_flat" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138669452521725"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityId="138735294959664" rightEntityParameterName="groupid"/>
   <relation leftEntityFieldName="lc_id" leftEntityId="138735294959664" rightEntityFieldName="lc_id" rightEntityId="138669452521725"/>
+  <relation leftEntityId="-1" leftEntityParameterName="flatid" rightEntityId="138735294959664" rightEntityParameterName="lc_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138669452521725"/>
 </datamodel>

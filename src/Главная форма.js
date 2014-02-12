@@ -17,6 +17,7 @@ var self = this;
     var fmGroups = null;
     var fmOplSessions = null;
     var fmServices = null;
+    var fmGroupSelector = null;
     var mf = this;
     
 function showFormAsModal(formId)
@@ -106,7 +107,24 @@ self.setDate = function(aNewDateID){
 };
 
     function button4ActionPerformed(evt) {//GEN-FIRST:event_button4ActionPerformed
-        var repBill = new report_Bill();
-        repBill.show();
+        if(!fmGroupSelector){
+            fmGroupSelector = new formGroups();
+            fmGroupSelector.selector = true;
+        }
+        fmGroupSelector.showModal(function(aGroup){
+        self.flats_by_group.params.group_id = aGroup;
+        self.flats_by_group.requery(function(){
+                self.flats_by_group.next();
+            });
+        });
     }//GEN-LAST:event_button4ActionPerformed
+
+    function flats_by_groupOnScrolled(evt) {//GEN-FIRST:event_flats_by_groupOnScrolled
+       // if (self.flats_by_group.next()){
+            var repBill = new aaa_1();
+            repBill.model.params.parDateID = self.parDateID;
+            repBill.model.params.parFlatID = self.flats_by_group.lc_flat_id;//aGroup;
+            repBill.show();
+       // }
+    }//GEN-LAST:event_flats_by_groupOnScrolled
 }

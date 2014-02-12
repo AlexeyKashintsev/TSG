@@ -7,39 +7,39 @@
   <widget actionPerformed="buttonActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="button" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="button3ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="button3" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="button2ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="button2" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget name="modelGrid" parent="Form" prefHeight="318px" prefWidth="372px" type="DbGridDesignInfo">
+  <widget name="modelGrid" parent="Form" prefHeight="268px" prefWidth="372px" type="DbGridDesignInfo">
     <column name="column" title="Группа" width="70">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="137485439194560" fieldName="grp_name"/>
     </column>
     <column name="column1" title="Тип" width="40">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <valueField entityId="137485439101653" fieldName="grp_type_id"/>
         <displayField entityId="137485439101653" fieldName="grp_type_name"/>
+        <valueField entityId="137485439101653" fieldName="grp_type_id"/>
       </controlInfo>
+      <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="137485439194560" fieldName="grp_type"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137485439194560" field="false"/>
@@ -48,6 +48,13 @@
       <unaryLinkField entityId="137485439194560" fieldName="grp_parent"/>
     </treeDesignInfo>
     <constraints place="Center" type="BorderLayoutConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlSelect" parent="Form" prefHeight="50px" prefWidth="372px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints place="Last" type="BorderLayoutConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="btnSelectActionPerformed" icon="icons/22x22/actions/dialog-apply.png" name="btnSelect" parent="pnlSelect" prefHeight="29px" prefWidth="94px" text="Выбрать" type="ButtonDesignInfo">
+    <constraints height="29px" right="14px" top="12px" type="MarginConstraintsDesignInfo" width="94px"/>
   </widget>
   <layout type="BorderLayoutDesignInfo"/>
 </layout>

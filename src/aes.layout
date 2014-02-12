@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="400px">
+  <widget name="button" parent="Form" prefHeight="168px" prefWidth="180px" text="&lt;html&gt; &lt;p style=&quot;text-align: center&quot;&gt;&lt;i class=&quot;flaticon-satellite8&quot;&gt;&lt;br&gt;&lt;br&gt;some other text&lt;/p&gt;" type="ButtonDesignInfo">
+    <constraints height="168px" left="24px" top="60px" type="MarginConstraintsDesignInfo" width="180px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

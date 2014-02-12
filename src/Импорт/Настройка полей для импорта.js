@@ -39,7 +39,7 @@ function btnRefreshActionPerformed(evt) {//GEN-FIRST:event_btnRefreshActionPerfo
 }//GEN-LAST:event_btnRefreshActionPerformed
   
 function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
-
+    self.model.save();
 }//GEN-LAST:event_btnSaveActionPerformed
 
 function btnSelectActionPerformed(evt) {//GEN-FIRST:event_btnSelectActionPerformed
@@ -73,9 +73,10 @@ function btnAdd1ActionPerformed(evt) {//GEN-FIRST:event_btnAdd1ActionPerformed
 }//GEN-LAST:event_btnAdd1ActionPerformed
 
 function btnDublicateActionPerformed(evt) {//GEN-FIRST:event_btnDublicateActionPerformed
-    if((self.model.modified && confirm(saveMessage, self.title))||!self.model.modified){
-        self.model.save();
-        self.dsImportVariants.insert(self.dsImportVariants.md.importname, 'Копия ' + self.dsImportVariants.importname);
+    if(!self.model.modified){
+        //self.model.save();
+        self.dsImportVariants.insert(self.dsImportVariants.md.importname,
+            'Копия ' + self.dsImportVariants.findById(self.parImport).importname);
         var pImp = self.dsImportVariants.importnames_id;
         self.dsExFields.first();
         while (!self.dsExFields.eof()){
@@ -91,7 +92,7 @@ function btnDublicateActionPerformed(evt) {//GEN-FIRST:event_btnDublicateActionP
         self.model.save();
         self.model.requery();
         self.parImport = pImp;
-    }            
+    } else alert('Save first!');            
 }//GEN-LAST:event_btnDublicateActionPerformed
 
 //выбор параметра статистики на первой закладке
@@ -108,4 +109,11 @@ function jButtonActionPerformed(evt) {//GEN-FIRST:event_jButtonActionPerformed
 }//GEN-LAST:event_jButtonActionPerformed
 
 //выбор параметра старистики на второй закладке
+
+    function colGroupOnSelect(aEditor) {//GEN-FIRST:event_colGroupOnSelect
+        var grp = new formGroups();
+        grp.showModal(function(aResult){
+            return aResult;
+        });
+    }//GEN-LAST:event_colGroupOnSelect
 }

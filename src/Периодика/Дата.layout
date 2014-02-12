@@ -12,9 +12,9 @@
   <widget floatable="false" name="toolBar" parent="panel" prefHeight="24px" prefWidth="120px" rollover="true" type="ToolbarDesignInfo">
     <constraints bottom="3px" left="0px" right="0px" top="33px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="btn_prevActionPerformed" icon="icons/16x16/actions/old-go-previous.png" name="btn_prev" parent="toolBar" prefHeight="22px" prefWidth="23px" type="ButtonDesignInfo"/>
-  <widget actionPerformed="btn_nextActionPerformed" icon="icons/16x16/actions/old-go-next.png" name="btn_next" parent="toolBar" prefHeight="22px" prefWidth="23px" type="ButtonDesignInfo"/>
-  <widget actionPerformed="btn_lastActionPerformed" icon="icons/16x16/actions/old-go-last.png" name="btn_last" parent="toolBar" prefHeight="22px" prefWidth="23px" type="ButtonDesignInfo"/>
-  <widget actionPerformed="btn_newActionPerformed" icon="icons/16x16/actions/insert-object.png" name="btn_new" parent="toolBar" prefHeight="22px" prefWidth="23px" type="ButtonDesignInfo"/>
+  <widget actionPerformed="btn_prevActionPerformed" icon="icons/16x16/actions/old-go-previous.png" name="btn_prev" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo"/>
+  <widget actionPerformed="btn_nextActionPerformed" icon="icons/16x16/actions/old-go-next.png" name="btn_next" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo"/>
+  <widget actionPerformed="btn_lastActionPerformed" icon="icons/16x16/actions/old-go-last.png" name="btn_last" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo"/>
+  <widget actionPerformed="btn_newActionPerformed" icon="icons/16x16/actions/insert-object.png" name="btn_new" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo"/>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>
