@@ -1,3 +1,6 @@
+/**
+ * @name Saldo4calcFromSums
+ */
 update per_saldo_flat
 set sal_calc = (qt.calc), sal_benefit = (qt.benefit), sal_recalc = (qt.recalc)
 , sal_full_calc = (qt.full_calc)

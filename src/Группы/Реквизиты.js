@@ -12,7 +12,7 @@ var self = this;
 
 
 var isSelectForm = true;
-var isEditable = false;
+var isEditable = true;
 var canSetEdit = true;
 
 function setEdit(){

@@ -11,101 +11,101 @@
     <constraints place="Center" type="BorderLayoutConstraintsDesignInfo"/>
   </widget>
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="317px" prefWidth="494px" type="DbGridDesignInfo">
-    <column name="colGrp_fname" title="Наименование организации">
-      <datamodelElement entityId="138840916883800" fieldName="grp_fname"/>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="Grp_short_name" title="Короткое название">
-      <datamodelElement entityId="138840916883800" fieldName="grp_short_name"/>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
-    </column>
-    <column name="colBank_name" title="Наименование банка">
-      <datamodelElement entityId="138840916883800" fieldName="bank_name"/>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colBank_account" title="Р/сч">
-      <datamodelElement entityId="138840916883800" fieldName="bank_account"/>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colBank_bik" title="БИК">
-      <datamodelElement entityId="138840916883800" fieldName="bank_bik"/>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colBank_correction" title="Кор/сч">
-      <datamodelElement entityId="138840916883800" fieldName="bank_correction"/>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138840916883800" field="false"/>
     </rowsColumnsDesignInfo>
     <treeDesignInfo/>
-    <constraints height="317px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="494px"/>
+    <column name="colGrp_fname" title="Наименование организации">
+      <datamodelElement entityId="138840916883800" fieldName="grp_fname"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
+    </column>
+    <column name="Grp_short_name" title="Короткое название">
+      <datamodelElement entityId="138840916883800" fieldName="grp_short_name"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
+    </column>
+    <column name="colBank_name" title="Наименование банка">
+      <datamodelElement entityId="138840916883800" fieldName="bank_name"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
+    </column>
+    <column name="colBank_account" title="Р/сч">
+      <datamodelElement entityId="138840916883800" fieldName="bank_account"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
+    </column>
+    <column name="colBank_bik" title="БИК">
+      <datamodelElement entityId="138840916883800" fieldName="bank_bik"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
+    </column>
+    <column name="colBank_correction" title="Кор/сч">
+      <datamodelElement entityId="138840916883800" fieldName="bank_correction"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDisplayField/>
+    </column>
+    <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="pnlSelLock" parent="Form" prefHeight="0px" prefWidth="494px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>

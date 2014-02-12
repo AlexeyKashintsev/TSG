@@ -14,6 +14,7 @@ var self = this;
 self.isSelectForm = false;
 self.isEditable = true;
 var canSetEdit = false;
+var grpMod = new ServerModule('groups_module');
 
 self.setModifying = function(aModifying){
     self.mgUslugi.colModService.visible = aModifying;
@@ -61,7 +62,12 @@ function colCalcTypeOnSelect(aEditor) {//GEN-FIRST:event_colCalcTypeOnSelect
 }//GEN-LAST:event_colCalcTypeOnSelect
 
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
-    self.dsServices.insert(self.dsServices.md.group_id, self.parGroup);
+    var fmServSelector = new ServicesForm();
+    fmServSelector.showModal(function(aService){
+        self.dsServices.insert({group_id: self.parGroup,
+                                services_id: aService.service});
+        grpMod.addService2Flats(self.parGroup, aService.service, null);
+    });
 }//GEN-LAST:event_btnAddActionPerformed
 
 function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed

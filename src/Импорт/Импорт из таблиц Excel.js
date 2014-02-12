@@ -1,5 +1,6 @@
 /**
  * 
+ * @name ImportFromFiles
  * @author Алексей
  * @public
  */

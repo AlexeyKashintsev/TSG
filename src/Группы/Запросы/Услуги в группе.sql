@@ -13,5 +13,6 @@ From grp_services t1
  Inner Join usl_calc_formula t on t2.calc_id = t.usl_calc_formula_id
  and t2.calc_id = t.usl_calc_formula_id
  Inner Join grp_groups t3 on t3.grp_groups_id = t1.group_id
- Where :parGroup = t3.grp_groups_id
+ Where :parGroup = t3.grp_parent
+ or :parGroup = t3.grp_groups_id
  Order by grp_services_id

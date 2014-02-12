@@ -1,5 +1,6 @@
 /**
  * 
+ * @name modImport
  * @author Алексей
  */
 

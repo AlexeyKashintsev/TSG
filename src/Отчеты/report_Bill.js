@@ -1,5 +1,6 @@
 /**
  * 
+ * @name report_Bill
  * @author Alexey
  */
 function report_Bill() {
