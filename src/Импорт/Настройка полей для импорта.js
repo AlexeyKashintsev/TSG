@@ -111,7 +111,7 @@ function jButtonActionPerformed(evt) {//GEN-FIRST:event_jButtonActionPerformed
 //выбор параметра старистики на второй закладке
 
     function colGroupOnSelect(aEditor) {//GEN-FIRST:event_colGroupOnSelect
-        var grp = new formGroups();
+        var grp = new Form('formGroups');
         grp.showModal(function(aResult){
             return aResult;
         });

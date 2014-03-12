@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="groupID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="dateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Начисления" entityHeight="200" entityIconified="false" entityId="139307404437230" entityLocationX="546" entityLocationY="19" entityWidth="150" tableAlias="t" tableName="per_sums" tableSchemaName=""/>
+  <entity Title="Квартиры в группах" entityHeight="200" entityIconified="false" entityId="139307394537079" entityLocationX="201" entityLocationY="17" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="139307399875506" entityLocationX="370" entityLocationY="17" entityWidth="150" tableAlias="t2" tableName="lc_flat_services" tableSchemaName=""/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="139307394537079" rightEntityFieldName="lc_id" rightEntityId="139307399875506"/>
+  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="139307399875506" rightEntityFieldName="flat_service_id" rightEntityId="139307404437230"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupID" rightEntityFieldName="group_id" rightEntityId="139307394537079"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateID" rightEntityFieldName="date_id" rightEntityId="139307404437230"/>
+</datamodel>

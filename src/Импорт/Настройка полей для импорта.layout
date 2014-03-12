@@ -28,7 +28,6 @@
   <widget name="dbGrid1" parent="Form" prefHeight="262px" prefWidth="659px" type="DbGridDesignInfo">
     <column name="cellnumber" title="№ ячейки" width="15">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="138083128574508" fieldName="cellnumber"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -40,13 +39,13 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="138083128574508" fieldName="cellnumber"/>
     </column>
     <column name="impfieldtype" selectOnly="true" title="Тип поля">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="135091217935996" fieldName="fieldtypename"/>
         <valueField entityId="135091217935996" fieldName="impfieldstypes_id"/>
       </controlInfo>
-      <datamodelElement entityId="138083128574508" fieldName="impfieldtype"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -58,13 +57,13 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="138083128574508" fieldName="impfieldtype"/>
     </column>
     <column name="impChar" title="Характеристика" width="30">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="138083145474798" fieldName="char_name"/>
         <valueField entityId="138083145474798" fieldName="char_types_id"/>
       </controlInfo>
-      <datamodelElement entityId="138083128574508" fieldName="charid"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -76,13 +75,13 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="138083128574508" fieldName="charid"/>
     </column>
     <column name="impUsluga" title="Услуга">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="138083206226988" fieldName="usl_name"/>
         <valueField entityId="138083206226988" fieldName="usl_services_id"/>
       </controlInfo>
-      <datamodelElement entityId="138083128574508" fieldName="serviceid"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -94,13 +93,13 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="138083128574508" fieldName="serviceid"/>
     </column>
     <column name="colGroup" selectFunction="colGroupOnSelect" title="Группа  bbb">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="139185437144235" fieldName="grp_name"/>
         <valueField entityId="139185437144235" fieldName="grp_groups_id"/>
       </controlInfo>
-      <datamodelElement entityId="138083128574508" fieldName="groupid"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -112,10 +111,10 @@
       <headerStyle>
         <nativeFont name="Lucida Grande" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="138083128574508" fieldName="groupid"/>
     </column>
     <column name="isRequired" title="Обязательное" width="10">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="138083128574508" fieldName="isrequired"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -127,6 +126,7 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <datamodelElement entityId="138083128574508" fieldName="isrequired"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138083128574508" field="false"/>

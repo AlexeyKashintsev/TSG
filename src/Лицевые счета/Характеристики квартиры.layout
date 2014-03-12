@@ -50,6 +50,7 @@
         <displayField entityId="137502394729821" fieldName="char_name"/>
         <valueField entityId="137502394729821" fieldName="char_types_id"/>
       </controlInfo>
+      <datamodelElement entityId="137502129515062" fieldName="lc_char_type"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -61,10 +62,10 @@
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="137502129515062" fieldName="lc_char_type"/>
     </column>
     <column name="colValue" title="Значение" width="20">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137502129515062" fieldName="lc_char_val"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -76,7 +77,6 @@
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="137502129515062" fieldName="lc_char_val"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137502129515062" field="false"/>
@@ -94,6 +94,7 @@
         <displayField entityId="137502332320012" fieldName="benefit_name"/>
         <valueField entityId="137502332320012" fieldName="usl_benefit_type_id"/>
       </controlInfo>
+      <datamodelElement entityId="137502392421203" fieldName="benefit_type"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -105,10 +106,10 @@
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="137502392421203" fieldName="benefit_type"/>
     </column>
     <column name="colBenValue" title="Количество" width="20">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137502392421203" fieldName="ben_count"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -120,7 +121,6 @@
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="137502392421203" fieldName="ben_count"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137502392421203" field="false"/>

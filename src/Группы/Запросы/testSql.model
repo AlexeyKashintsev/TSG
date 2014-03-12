@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="group_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139445775515120" entityLocationX="686" entityLocationY="13" entityWidth="150" tableAlias="t" tableName="per_sums" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139445821167189" entityLocationX="359" entityLocationY="219" entityWidth="150" tableAlias="t4" tableName="lc_flat" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139445772916485" entityLocationX="522" entityLocationY="11" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139445780532817" entityLocationX="351" entityLocationY="13" entityWidth="150" tableAlias="t3" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139445796905411" entityLocationX="181" entityLocationY="16" entityWidth="150" tableAlias="t2" tableName="grp_groups" tableSchemaName=""/>
+  <relation leftEntityFieldName="grp_groups_id" leftEntityId="139445796905411" rightEntityFieldName="group_id" rightEntityId="139445780532817"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="139445772916485" rightEntityFieldName="lc_flat_id" rightEntityId="139445821167189"/>
+  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="139445772916485" rightEntityFieldName="flat_service_id" rightEntityId="139445775515120"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="139445780532817" rightEntityFieldName="lc_id" rightEntityId="139445772916485"/>
+</datamodel>

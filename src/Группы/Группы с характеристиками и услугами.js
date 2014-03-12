@@ -15,6 +15,7 @@ var fmGroups = new formGroups();
 var fmGChars = new formGroupCharacteristics();
 var fmGServs = new formServicesInGroup();
 var fmGTarifs = new fmTarifs();
+var fmGStats = new saldogroupView();
 
 self.check4Modifications = function(){
     if ((!fmGChars.model.modified
@@ -29,13 +30,13 @@ self.check4Modifications = function(){
 
 self.setGroup = function(aNewGroupID){
     fmGChars.parGroup = fmGServs.parGroup = fmGTarifs.parGroupID =
-            aNewGroupID;
+            fmGStats.parGroup = aNewGroupID;
 };
 
 self.setDate = function(aNewDateID){
     if (self.check4Modifications()){
         self.parDateID = aNewDateID;
-        fmGTarifs.parDateID = self.parDateID;
+        fmGTarifs.parDateID = fmGStats.parDate = self.parDateID;
         return true;
     }
     else
@@ -57,6 +58,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmGChars.showOnPanel(self.pnlGroupChars);
     fmGServs.showOnPanel(self.pnlGroupServ);
     fmGTarifs.showOnPanel(self.pnlGroupTarifs);   
+    fmGStats.showOnPanel(self.pnlGroupData);
 }//GEN-LAST:event_formWindowOpened
 
 function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed

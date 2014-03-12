@@ -61,28 +61,28 @@ self.calculateValues = function(aGroupID, aFlatID, aDateID){
                                                             sums.GetSum(self.dsSums4calc.per_sums_id),
                                                             'SCALC');
                 } catch (e) {
-                    Logger.warning('Ошибка расчета начисления по услуге 888 в квартире 888');
+                    Logger.warning('Ошибка расчета начисления по услуге 888 в квартире  ' + aFlatID);
                 }
                 try {
                     self.dsSums4calc.benefit = formulEval.calculate('0',
                                                             sums.GetSum(self.dsSums4calc.per_sums_id),
                                                             'BENEFIT');
                 } catch (e) {
-                    Logger.warning('Ошибка расчета льготы по услуге 888 в квартире 888');
+                    Logger.warning('Ошибка расчета льготы по услуге 888 в квартире ' + aFlatID);
                 }
                 try {
-                    self.dsSums4calc.recalc = formulEval.calculate('0',
+                    self.dsSums4calc.recalc = formulEval.calculate(self.dsSums4calc.recalc?'RECALC':'0',
                                                             sums.GetSum(self.dsSums4calc.per_sums_id),
                                                             'RECALC');
                 } catch (e) {
-                    Logger.warning('Ошибка расчета суммы перерасчета по услуге 888 в квартире 888');
-                }
+                    Logger.warning('Ошибка расчета суммы перерасчета по услуге 888 в квартире  ' + aFlatID);
+                };
                 try {
-                    self.dsSums4calc.full_calc = formulEval.calculate('SCALC-BENEFIT+RECALC',
+                    self.dsSums4calc.full_calc = formulEval.calculate('SCALC-BENEFIT-RECALC',
                                                             sums.GetSum(self.dsSums4calc.per_sums_id),
                                                             'FULL_CALC');
                 } catch (e) {
-                    Logger.warning('Ошибка расчета полного значения по услуге 888 в квартире 888');
+                    Logger.warning('Ошибка расчета полного значения по услуге 888 в квартире  ' + aFlatID);
                 }
                 
             }                                              
@@ -252,6 +252,7 @@ function Sums(){
         this.lcid = sum.lc_id;
         this.serviceid = sum.services_id;
         this.COST = sum.rate;
+        this.RECALC = sum.recalc;
     }
 }
 /**

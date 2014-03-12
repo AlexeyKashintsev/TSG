@@ -7,8 +7,8 @@
   <entity Title="Услуги в группе" entityHeight="121" entityIconified="false" entityId="139186120327747" entityLocationX="404" entityLocationY="130" entityWidth="150" tableAlias="t2" tableName="grp_services" tableSchemaName=""/>
   <entity Title="Квартиры в группах" entityHeight="103" entityIconified="false" entityId="139186117167453" entityLocationX="404" entityLocationY="22" entityWidth="150" tableAlias="t" tableName="grp_lc_group" tableSchemaName=""/>
   <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="137495792002073" entityLocationX="210" entityLocationY="23" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
-  <relation leftEntityFieldName="services_id" leftEntityId="139186120327747" rightEntityFieldName="services_id" rightEntityId="137495792002073"/>
-  <relation leftEntityFieldName="group_id" leftEntityId="139186117167453" rightEntityFieldName="group_id" rightEntityId="139186120327747"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="137495792002073" polyline="366;72 389;72 389;88 398;88" rightEntityFieldName="lc_id" rightEntityId="139186117167453"/>
   <relation leftEntityId="-1" leftEntityParameterName="flat_id" rightEntityFieldName="lc_id" rightEntityId="137495792002073"/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="137495792002073" rightEntityFieldName="lc_id" rightEntityId="139186117167453"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="139186117167453" rightEntityFieldName="group_id" rightEntityId="139186120327747"/>
+  <relation leftEntityFieldName="services_id" leftEntityId="139186120327747" rightEntityFieldName="services_id" rightEntityId="137495792002073"/>
 </datamodel>

@@ -10,9 +10,9 @@
   <relation leftEntityId="-1" leftEntityParameterName="ParGroupID" rightEntityId="137684219497981" rightEntityParameterName="ParGroup"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="137684219497981" rightEntityParameterName="date_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137684219497981" rightEntityParameterName="flat_id"/>
-  <referenceRelation leftEntityFieldName="services_id" leftEntityId="137684219497981" rightEntityFieldName="usl_services_id" rightEntityId="137684230384165"/>
-  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137684230384165" rightEntityFieldName="usl_services_id" rightEntityId="137684230384165"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137684230384165" rightEntityFieldName="usl_services_id" rightEntityId="137684230384165"/>
-  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="137684230384165" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137684230384165"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137684230384165" rightEntityFieldName="usl_services_id" rightEntityId="137684230384165"/>
   <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="137684219497981" rightEntityFieldName="lc_flat_services_id" rightEntityId="137684219497981"/>
+  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="137684230384165" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137684230384165"/>
+  <referenceRelation leftEntityFieldName="services_id" leftEntityId="137684219497981" rightEntityFieldName="usl_services_id" rightEntityId="137684230384165"/>
 </datamodel>

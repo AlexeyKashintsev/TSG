@@ -23,11 +23,12 @@ self.addNewCounter = function(aCntActive, aCntNumber, aCntType){
     return self.dsCounterByID.cnt_counters_id;
 };
 
-self.addCounter2Service = function(aCounter, aFlatService, aGroupService){
-    self.dsCountersByFlat.insert(self.dsCountersByFlat.md.counter_id, aCounter,
-                            self.dsCountersByFlat.md.flat_service, aFlatService?aFlatService:null,
-                            self.dsCountersByFlat.md.group_service, aGroupService?aGroupService:null);
-    return self.dsCountersByFlat.cnt_con2services_id;
+self.addCounter2Service = function(aCounter, aFlatService, aGroupService, aDepended){
+    self.model.dsCountersByFlat.insert(  self.model.dsCountersByFlat.schema.counter_id, aCounter,
+                                        self.model.dsCountersByFlat.md.flat_service, aFlatService?aFlatService:null,
+                                        self.model.dsCountersByFlat.md.group_service, aGroupService?aGroupService:null,
+                                        self.model.dsCountersByFlat.md.main_service, aDepended?false:true);
+    return self.model.dsCountersByFlat.cnt_con2services_id;
 };
 
 self.getFlatService = function(aFlatID, aServiceID){
@@ -37,7 +38,7 @@ self.getFlatService = function(aFlatID, aServiceID){
     return self.dsFlatServiceByServiceAndFlatID.lc_flat_services_id;
 };
 
-self.getCouterInFlat = function(aFlatID, aServiceID){
+self.getCounterInFlat = function(aFlatID, aServiceID){
     checkModified();
     self.dsCountersByFlat.params.flat_id = aFlatID;
     self.dsCountersByFlat.execute();
@@ -52,7 +53,7 @@ self.getCouterInFlat = function(aFlatID, aServiceID){
 };
 
 self.setCounterValueByLCAndService = function(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue){
-    var counter = getCouterInFlat(aLC_ID, aServiceID);
+    var counter = getCounterInFlat(aLC_ID, aServiceID);
     setCounterValueByCounterValueID(counter, aDateID, aBegValue, aEndValue);
 };
 
@@ -76,7 +77,7 @@ self.setCounterValueByCounterValueID = function(aCounterID, aDateID, aBegValue, 
 var checkModified = self.checkModified;
 var addNewCounter = self.addNewCounter;
 var addCounter2Service = self.addCounter2Service;
-var getCouterInFlat = self.getCouterInFlat;
+var getCounterInFlat = self.getCounterInFlat;
 var getFlatService = self.getFlatService;
 var setCounterValueByLCAndService = self.setCounterValueByLCAndService;
 var setCounterValueByCounterValueID = self.setCounterValueByCounterValueID;

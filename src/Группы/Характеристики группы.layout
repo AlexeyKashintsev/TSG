@@ -10,7 +10,7 @@
   </widget>
   <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/apps/geany.png" name="btnRecalc" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Пересчитать характеристики" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnRecalcActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/apps/geany.png" name="btnRecalc" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Пересчитать характеристики" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="label2" parent="Form" prefHeight="16px" prefWidth="48px" text="Адрес:" type="LabelDesignInfo">
     <constraints height="16px" left="12px" top="102px" type="MarginConstraintsDesignInfo" width="48px"/>
   </widget>

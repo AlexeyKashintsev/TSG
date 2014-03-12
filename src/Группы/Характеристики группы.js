@@ -8,7 +8,7 @@
 function formGroupCharacteristics() {
 
 
-var self = this;
+var self = this, model = self.model;
 
 
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -38,4 +38,10 @@ function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
             self.dsGroupByID.bank = aValue;
         });
     }//GEN-LAST:event_mcBankOnSelect
+
+    function btnRecalcActionPerformed(evt) {//GEN-FIRST:event_btnRecalcActionPerformed
+        model.updateChars.params.group_id = model.params.parGroup;
+        model.updateChars.executeUpdate();
+        model.chars_by_group.requery();
+    }//GEN-LAST:event_btnRecalcActionPerformed
 }

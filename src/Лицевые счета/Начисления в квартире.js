@@ -20,4 +20,8 @@ function initModuleSums(){
     function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
         self.model.save();
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    function btnRequeryActionPerformed(evt) {//GEN-FIRST:event_btnRequeryActionPerformed
+        self.model.requery();
+    }//GEN-LAST:event_btnRequeryActionPerformed
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><outputFields>
+  <field bindedColumn="calc" sqlType="2"/>
+  <field bindedColumn="benefit" sqlType="2"/>
+  <field bindedColumn="recalc" sqlType="2"/>
+  <field bindedColumn="full_calc" sqlType="2"/>
+  <field bindedColumn="calc_value" sqlType="2"/>
+</outputFields>

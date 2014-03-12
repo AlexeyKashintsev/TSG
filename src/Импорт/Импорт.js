@@ -115,6 +115,8 @@ function ImportFields(){
     this.PAYMENT_DATE = PAYMENT_DATE==''?null:PAYMENT_DATE[0].cellnumber-1;
     var PAYMENT_SUM = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 12);
     this.PAYMENT_SUM = PAYMENT_SUM==''?null:PAYMENT_SUM[0].cellnumber-1;
+    var PENALTIES_CUR = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 13);
+    this.PENALTIES_CUR = PENALTIES_CUR==''?null:PENALTIES_CUR[0].cellnumber-1;
     
     this.GROUP_MODIFIER = [];
     this.LC_CHARS = [];
@@ -324,6 +326,9 @@ function readRow(aRowAr, aGroup){
     
     var SALDO_BEG = getCellValue(aRowAr.cells[impFields.SALDO_BEG]);
     modSN.initBegSaldo(LC_ID, parDate, SALDO_BEG?SALDO_BEG:null);
+    
+    var PENALTIES_CUR = getCellValue(aRowAr.cells[impFields.PENALTIES_CUR]);
+    modSN.addPenalties(LC_ID, parDate, PENALTIES_CUR, null);
     
     var OPL_DATE = getCellValue(aRowAr.cells[impFields.PAYMENT_DATE]);
     var OPL_SUM = getCellValue(aRowAr.cells[impFields.PAYMENT_SUM]);

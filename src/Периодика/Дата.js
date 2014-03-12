@@ -69,7 +69,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 }//GEN-LAST:event_formWindowOpened
 
 function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
-    self.all_dates.last();
+    /*self.all_dates.last();
     var lastDate = self.all_dates.per_date;
     self.all_dates.insert(self.all_dates.md.per_date, lastDate.setMonth(lastDate.getMonth()+1));
     //self.all_dates.scrollTo(self.all_dates.findById(self.all_dates.per_date_id));
@@ -77,7 +77,13 @@ function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
     self.parDateID = self.all_dates.per_date_id;
     self.model.save();
     self.model.requery();
-    self.all_dates.last();
+    self.all_dates.last();*/
+    var newDateProcessor = new DateModule();
+    newDateProcessor.newDate(function(){
+        self.model.requery(function(){
+            self.all_dates.last();
+        });
+    });
 }//GEN-LAST:event_btn_newActionPerformed
 
 function setDate(aNewDateID){

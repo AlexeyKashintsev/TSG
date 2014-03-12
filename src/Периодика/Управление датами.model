@@ -3,5 +3,8 @@
     <parameter description="" name="prevDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="sums_4create" Title="" entityHeight="200" entityIconified="false" entityId="139462818750995" entityLocationX="630" entityLocationY="22" entityWidth="150" queryId="sums_4create" tableName="" tableSchemaName=""/>
   <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="138625169231753" entityLocationX="233" entityLocationY="26" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
+  <entity Name="dsGroups" Title="" entityHeight="200" entityIconified="false" entityId="139444495996046" entityLocationX="444" entityLocationY="28" entityWidth="150" queryId="groups_query" tableName="" tableSchemaName=""/>
+  <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="139444495996046" rightEntityFieldName="grp_groups_id" rightEntityId="139444495996046"/>
 </datamodel>

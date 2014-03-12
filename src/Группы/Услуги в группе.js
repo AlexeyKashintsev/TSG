@@ -64,8 +64,8 @@ function colCalcTypeOnSelect(aEditor) {//GEN-FIRST:event_colCalcTypeOnSelect
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
     var fmServSelector = new ServicesForm();
     fmServSelector.showModal(function(aService){
-        self.dsServices.insert({group_id: self.parGroup,
-                                services_id: aService.service});
+        self.model.dsServices.insert(self.model.dsServices.md.group_id, self.parGroup,
+                                     self.model.dsServices.md.services_id, aService.service);
         grpMod.addService2Flats(self.parGroup, aService.service, null);
     });
 }//GEN-LAST:event_btnAddActionPerformed

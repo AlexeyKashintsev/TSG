@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="date_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="group_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139443947679915" entityLocationX="216" entityLocationY="25" entityWidth="150" tableAlias="t2" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139443957641446" entityLocationX="387" entityLocationY="20" entityWidth="150" tableAlias="t1" tableName="per_saldo_flat" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="139443957641446"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="139443947679915" rightEntityFieldName="lc_id" rightEntityId="139443957641446"/>
+  <relation leftEntityId="-1" leftEntityParameterName="group_id" rightEntityFieldName="group_id" rightEntityId="139443947679915"/>
+</datamodel>

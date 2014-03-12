@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="729px">
+  <widget name="label21" parent="Form" prefHeight="16px" prefWidth="68px" text="Пени" type="LabelDesignInfo">
+    <constraints height="16px" left="432px" top="28px" type="MarginConstraintsDesignInfo" width="68px"/>
+  </widget>
+  <widget editable="false" format="#0.00" name="mfPenaltie" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+    <datamodelElement entityId="139307310802373" fieldName="sal_penalties_cur"/>
+    <constraints height="18px" left="432px" top="46px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget name="label1" parent="Form" prefHeight="16px" prefWidth="72px" text="Начислено" type="LabelDesignInfo">
+    <constraints height="16px" left="94px" top="28px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget name="label" parent="Form" prefHeight="16px" prefWidth="96px" text="Начальное" type="LabelDesignInfo">
+    <constraints height="16px" left="10px" top="28px" type="MarginConstraintsDesignInfo" width="96px"/>
+  </widget>
+  <widget editable="false" format="#0.00" name="mfSaldo100" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+    <datamodelElement entityId="139307310802373" fieldName="sal_full_calc"/>
+    <constraints height="18px" left="94px" top="46px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget editable="false" format="#0.00" name="mfSaldoBeg" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+    <datamodelElement entityId="139307310802373" fieldName="sal_begin"/>
+    <constraints height="18px" left="10px" top="46px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget editable="false" format="#0.00" name="mfBenefit" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+    <datamodelElement entityId="139307310802373" fieldName="sal_benefit"/>
+    <constraints height="18px" left="178px" top="46px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget editable="false" format="#0.00" name="mfRecalc" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+    <datamodelElement entityId="139307310802373" fieldName="sal_recalc"/>
+    <constraints height="18px" left="262px" top="46px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget editable="false" format="#0.00" name="mfOplata" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+    <datamodelElement entityId="139307310802373" fieldName="sal_payments"/>
+    <constraints height="18px" left="346px" top="46px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget editable="false" format="#0.00" name="mfSaldoEnd" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+    <datamodelElement entityId="139307310802373" fieldName="sal_end"/>
+    <constraints height="18px" left="518px" top="46px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget name="label11" parent="Form" prefHeight="16px" prefWidth="72px" text="Льгота" type="LabelDesignInfo">
+    <constraints height="16px" left="178px" top="28px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget name="label12" parent="Form" prefHeight="16px" prefWidth="84px" text="Перерасчет" type="LabelDesignInfo">
+    <constraints height="16px" left="262px" top="28px" type="MarginConstraintsDesignInfo" width="84px"/>
+  </widget>
+  <widget name="label13" parent="Form" prefHeight="16px" prefWidth="72px" text="Оплачено" type="LabelDesignInfo">
+    <constraints height="16px" left="346px" top="28px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget name="label2" parent="Form" prefHeight="16px" prefWidth="68px" text="Конечное" type="LabelDesignInfo">
+    <constraints height="16px" left="518px" top="28px" type="MarginConstraintsDesignInfo" width="68px"/>
+  </widget>
+  <widget name="label3" parent="Form" prefHeight="16px" prefWidth="132px" text="Сальдо по группе:" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="12px" type="MarginConstraintsDesignInfo" width="132px"/>
+  </widget>
+  <widget name="label4" parent="Form" prefHeight="16px" prefWidth="180px" text="Начисления по группе:" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="72px" type="MarginConstraintsDesignInfo" width="180px"/>
+  </widget>
+  <widget name="modelGrid" parent="Form" prefHeight="192px" prefWidth="704px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="139307419109152" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <column name="colServices_id" title="Услуга">
+      <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
+        <displayField entityId="139307429591837" fieldName="usl_name"/>
+        <valueField entityId="139307429591837" fieldName="usl_services_id"/>
+      </controlInfo>
+      <datamodelElement entityId="139307419109152" fieldName="services_id"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="colCalc_value" title="Объем">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="139307419109152" fieldName="calc_value"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="colCalc" title="Рассчитано">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="139307419109152" fieldName="calc"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="colBenefit" title="Льгота">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="139307419109152" fieldName="benefit"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="colRecalc" title="Перерасчет">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="139307419109152" fieldName="recalc"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="colFull_calc" title="Начислено">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="139307419109152" fieldName="full_calc"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <constraints bottom="12px" left="12px" right="13px" top="96px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

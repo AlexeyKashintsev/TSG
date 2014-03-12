@@ -12,6 +12,7 @@ From grp_lc_group t1
  and t1.group_id = t3.group_id
  Inner Join grp_groups t2 on t2.grp_groups_id = t1.group_id
  Where :dateid = t3.date_id
+ and t3.rate is not null
  and (:groupid = t2.grp_groups_id
  or :groupid = t2.grp_parent)
  and t.lc_flat_services_id = flat_service_id)
@@ -22,6 +23,7 @@ From grp_lc_group t1
  and t1.group_id = t3.group_id
  Inner Join grp_groups t2 on t2.grp_groups_id = t1.group_id
  Where :dateid = t3.date_id
+ and t3.rate is not null
  and (:groupid = t2.grp_groups_id
  or :groupid = t2.grp_parent)
  and t.lc_flat_services_id = flat_service_id)

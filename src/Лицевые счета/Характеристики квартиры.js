@@ -8,7 +8,7 @@
 function charsFlat() {
 
 
-var self = this;
+var self = this, model = self.model;
 
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
@@ -23,7 +23,7 @@ function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
 }//GEN-LAST:event_btnSaveActionPerformed
 
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
-    dsCalcMethod.insert(dsCalcMethod.md.calc_name, 'Новый метод расчета');
+    model.chars_flat.insert(model.chars_flat.schema.lc_id, model.params.parFlatID);
 }//GEN-LAST:event_btnAddActionPerformed
 
 function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed

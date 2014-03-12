@@ -6,7 +6,7 @@
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="Квартиры (Лицевые счета)" entityHeight="105" entityIconified="false" entityId="138575234867738" entityLocationX="180" entityLocationY="53" entityWidth="150" tableAlias="t1" tableName="lc_flat" tableSchemaName=""/>
   <entity Title="Квартиры в группах" entityHeight="200" entityIconified="false" entityId="138575234867878" entityLocationX="347" entityLocationY="17" entityWidth="150" tableAlias="t" tableName="grp_lc_group" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="group_id" rightEntityId="138575234867878"/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="138575234867878" rightEntityFieldName="lc_flat_id" rightEntityId="138575234867738"/>
   <relation leftEntityId="-1" leftEntityParameterName="lc_id" rightEntityFieldName="lc_flat_id" rightEntityId="138575234867738"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="138575234867878" rightEntityFieldName="lc_flat_id" rightEntityId="138575234867738"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="group_id" rightEntityId="138575234867878"/>
 </datamodel>

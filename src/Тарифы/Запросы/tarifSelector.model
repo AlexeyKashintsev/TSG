@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="dateid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="groupid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139444772195275" entityLocationX="186" entityLocationY="11" entityWidth="150" tableAlias="t3" tableName="usl_tarif" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139444772195277" entityLocationX="536" entityLocationY="25" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139444772195276" entityLocationX="710" entityLocationY="8" entityWidth="150" tableAlias="t2" tableName="grp_groups" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139444772195278" entityLocationX="362" entityLocationY="42" entityWidth="150" tableAlias="t" tableName="lc_flat_services" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="139444772195275"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="grp_parent" rightEntityId="139444772195276"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="139444772195277" rightEntityFieldName="group_id" rightEntityId="139444772195275"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="139444772195277" rightEntityFieldName="lc_id" rightEntityId="139444772195278"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="grp_groups_id" rightEntityId="139444772195276"/>
+  <relation leftEntityFieldName="grp_groups_id" leftEntityId="139444772195276" rightEntityFieldName="group_id" rightEntityId="139444772195277"/>
+  <relation leftEntityFieldName="services_id" leftEntityId="139444772195278" rightEntityFieldName="services_id" rightEntityId="139444772195275"/>
+</datamodel>

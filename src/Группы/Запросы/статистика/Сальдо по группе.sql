@@ -9,4 +9,5 @@ Select t2.date_id, sum(t2.sal_begin) AS sal_begin, sum(t2.sal_benefit) AS sal_be
 From grp_lc_group t1
  Inner Join per_saldo_flat t2 on t1.lc_id = t2.lc_id
  Where :parGroupID = t1.group_id
+ and (:parDateID = t2.date_id or :parDateID is null)
  Group by t2.date_id

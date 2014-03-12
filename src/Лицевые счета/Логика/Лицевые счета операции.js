@@ -23,6 +23,8 @@ self.saveChanges = function(){
     self.model.save();
     if (modSN&&modSN.model.modified)
         modSN.saveChanges();
+    if (modCN&&modCN.model.modified)
+        modCN.checkModified();
 };
 
 /*
@@ -155,13 +157,15 @@ self.addCharToLC = function(aLC_ID, aCharID, aCharValue){
  *       в модуле SaldoAndSumsModule
  *       и отслеживать эти дополнения, чтобы сохранять их тоже */
 self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID){
-    self.services_by_flat.insert(self.services_by_flat.md.services_id, aServiceID,
-                            self.services_by_flat.md.lc_id, aFlatID,
-                            self.services_by_flat.md.fs_active, true);
+    self.services_by_flat.insert(   self.services_by_flat.md.services_id, aServiceID,
+                                    self.services_by_flat.md.lc_id, aFlatID,
+                                    self.services_by_flat.md.fs_active, true);
+    var fs = self.services_by_flat.lc_flat_services_id;
+    
     var newDate = aDateID?aDateID:(self.parDateID?self.parDateID:false);
     if (newDate) self.sums_perFlat.insert(self.sums_perFlat.md.flat_service_id, self.services_by_flat.lc_flat_services_id,
                                      self.sums_perFlat.md.date_id, newDate);
-    if (aCalcByCounter) 
+    if (!processIfConnectedService(fs, aServiceID, aFlatID)&&aCalcByCounter) 
         addCounterToFlat(self.services_by_flat.lc_flat_services_id);
     return self.services_by_flat.lc_flat_services_id;
 };
@@ -178,6 +182,16 @@ self.addCounterToFlat = function(aFlatService){
     return cnt;
 };
 
+self.processIfConnectedService = function(aFlatService, aService, aFlatID){
+    var conServ = self.model.qServices.findById(aService).connected_service;
+    if (conServ) {
+        if (!modCN) modCN = new CountersModule();
+        var cnt = modCN.getCounterInFlat(aFlatID, conServ);
+        modCN.addCounter2Service(cnt, aFlatService, null, true);
+    }
+    self.saveChanges();
+    return conServ;
+};
 
 /*
  * Удаление лицевого счета
@@ -193,4 +207,5 @@ var addNewLC = self.addNewLC;
 var addCharToLC  = self.addCharToLC;
 var addServiceToLC = self.addServiceToLC;
 var addCounterToFlat = self.addCounterToFlat;
+var processIfConnectedService = self.processIfConnectedService;
 }

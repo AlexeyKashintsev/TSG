@@ -11,7 +11,10 @@ function groups_module() {
     
     self.addService2Flats = function(aGroupID, aServiceID, aDateID){
         var modLC = new ServerModule('LCModule');
-        var calcByCnt = model.qServices.findById(aServiceID).calc_by_counter;
+        var calcByCnt = false;
+        try {
+            calcByCnt = model.qServices.findById(aServiceID).calc_by_counter;
+        } catch (e) {}
         if (!aDateID){
             model.all_dates.last();
             aDateID = model.all_dates.per_date_id;
@@ -23,5 +26,9 @@ function groups_module() {
             });
             modLC.saveChanges();
         });
+    };
+    
+    self.deleteServiceFromFlats = function(aGroupID, aServiceID, doDeleteSums, aDateID){
+        
     };
 }

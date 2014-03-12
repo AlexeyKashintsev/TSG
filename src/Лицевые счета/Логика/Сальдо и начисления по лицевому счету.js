@@ -43,6 +43,31 @@ function SaldoAndSumsModule() {
             self.dsSaldo.sal_begin = aValue;
         return self.dsSaldo.per_saldo_flat_id;
     };
+    
+    /*
+     * Добавить пени в квартиру
+     * @param {type} aLC_ID
+     * @param {type} aDate
+     * @param {type} aCurrentValue
+     * @param {type} aPreviousValue
+     * @returns {undefined}
+     */
+    self.addPenalties = function(aLC_ID, aDate, aCurrentValue, aPreviousValue){
+        self.params.beginUpdate();
+        self.parDateID = aDate;
+        self.parFlatID = aLC_ID;
+        self.params.endUpdate();
+        if (self.dsSaldo.length == 0)
+            self.dsSaldo.insert(self.dsSaldo.md.date_id, aDate,
+                    self.dsSaldo.md.lc_id, aLC_ID,
+                    self.dsSaldo.md.sal_penalties_cur, aCurrentValue,
+                    self.dsSaldo.md.sal_penalties_old, aPreviousValue);
+        else {
+            self.dsSaldo.sal_penalties_cur = aCurrentValue;
+            self.dsSaldo.md.sal_penalties_old = aPreviousValue;
+        }
+        return self.dsSaldo.per_saldo_flat_id;        
+    };
 
     /*
      * Добавить значение счетчика

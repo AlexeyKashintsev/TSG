@@ -8,8 +8,8 @@
   <entity Name="prcSumsCreate" Title="Создание начислений" entityHeight="78" entityIconified="false" entityId="138488631016470" entityLocationX="611" entityLocationY="18" entityWidth="150" queryId="sums_4create" tableName="" tableSchemaName=""/>
   <entity Name="dsOplById" Title="Оплата по ID" entityHeight="200" entityIconified="false" entityId="138705480359130" entityLocationX="611" entityLocationY="106" entityWidth="150" queryId="dsOplById" tableName="" tableSchemaName=""/>
   <entity Name="dsSaldo" Title="Сальдо по квартире" entityHeight="200" entityIconified="false" entityId="138219364939274" entityLocationX="208" entityLocationY="12" entityWidth="150" queryId="saldo_by_flat" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138219810221602" rightEntityParameterName="flat_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138219364939274" rightEntityParameterName="flat_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138219810221602" rightEntityParameterName="date_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138219810221602" rightEntityParameterName="flat_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138219364939274" rightEntityParameterName="date_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138219810221602" rightEntityParameterName="date_id"/>
 </datamodel>
