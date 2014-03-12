@@ -126,7 +126,7 @@ function aaa_1() {
                            "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь" ];
                     dates = (monthNames[date.getMonth()]+" "+date.getFullYear());
 
-                    var saltoStr = (lc_saldo.full_end*100).toString();
+                    var saltoStr = (Math.round(lc_saldo.full_end*100)).toString();
                     var lc_num = strConcat(self.dsGroupAndBank.grpid, self.dsLC_byid.lc_num, 5);
                     var barCodeStr = strConcat('1134', lc_num, 12);
                     barCodeStr = strConcat(barCodeStr, saltoStr, 22);
