@@ -5,13 +5,13 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="139307429591837" entityLocationX="551" entityLocationY="16" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
-  <entity Name="сальдо_по_группе" Title="Сальдо по группе" entityHeight="200" entityIconified="false" entityId="139307310802373" entityLocationX="208" entityLocationY="11" entityWidth="150" queryId="Сальдо_по_группе" tableName="" tableSchemaName=""/>
+  <entity Name="сальдо_по_группе" Title="Сальдо по группе" entityHeight="200" entityIconified="false" entityId="139307310802373" entityLocationX="208" entityLocationY="10" entityWidth="150" queryId="Сальдо_по_группе" tableName="" tableSchemaName=""/>
   <entity Name="начисления_по_группе" Title="Начисления по группе" entityHeight="200" entityIconified="false" entityId="139307419109152" entityLocationX="383" entityLocationY="15" entityWidth="150" queryId="Начисления_по_группе" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDate" rightEntityId="139307419109152" rightEntityParameterName="dateID"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="139307419109152" rightEntityParameterName="groupID"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="139307310802373" rightEntityParameterName="parGroupID"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDate" rightEntityId="139307310802373" rightEntityParameterName="parDateID"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="139307310802373" rightEntityParameterName="parGroupID"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDate" rightEntityId="139307419109152" rightEntityParameterName="dateID"/>
+  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="139307429591837" rightEntityFieldName="usl_services_id" rightEntityId="139307429591837"/>
   <referenceRelation leftEntityFieldName="parent_service" leftEntityId="139307429591837" rightEntityFieldName="usl_services_id" rightEntityId="139307429591837"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="139307419109152" rightEntityFieldName="usl_services_id" rightEntityId="139307429591837"/>
-  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="139307429591837" rightEntityFieldName="usl_services_id" rightEntityId="139307429591837"/>
 </datamodel>

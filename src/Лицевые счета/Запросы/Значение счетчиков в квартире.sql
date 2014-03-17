@@ -14,4 +14,5 @@ From counters_by_flat q1
  Inner Join grp_services t2 on t2.services_id = t1.services_id
  Inner Join grp_lc_group t3 on t1.lc_id = t3.lc_id
  and t3.group_id = t2.group_id
- Where :date_id = t.date_id
+ Where :date_id = t.date_id and t2.askforvalue = true
+order by t2.grp_services_id
