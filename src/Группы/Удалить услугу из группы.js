@@ -1,5 +1,6 @@
 /**
  * 
+ * @name fmServiceDeleteAsk
  * @author Alexey
  */
 function fmServiceDeleteAsk() {

@@ -1,5 +1,6 @@
 /**
  * 
+ * @name testPeni
  * @author Alexey
  */
 function testPeni() {

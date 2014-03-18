@@ -1,5 +1,6 @@
 /**
  * 
+ * @name SaldoGroupView
  * @author Alexey
  */
 function SaldoGroupView() {

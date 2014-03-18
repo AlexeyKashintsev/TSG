@@ -1,5 +1,6 @@
 /**
  * 
+ * @name NewMonthInitializer4Group
  * @author Alexey
  * @module
  */ 

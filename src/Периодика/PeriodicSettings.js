@@ -1,5 +1,6 @@
 /**
  * 
+ * @name PeriodicSettings
  * @author Alexey
  */
 function PeriodicSettings() {

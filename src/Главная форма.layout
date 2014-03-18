@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><layout backgroundColor="#464f5c" defaultCloseOperation="2" name="Form" prefHeight="514px" prefWidth="809px" windowOpened="formWindowOpened">
   <widget backgroundColor="#464f5c" foregroundColor="#000000" name="formDesktop" parent="Form" prefHeight="453px" prefWidth="809px" type="DesktopDesignInfo">
-    <easFont name="Tahoma" size="11"/>
     <constraints bottom="0px" left="0px" right="0px" top="61px" type="MarginConstraintsDesignInfo"/>
+    <easFont name="Tahoma" size="11"/>
   </widget>
   <widget floatable="false" name="toolBar" parent="Form" prefHeight="60px" prefWidth="67px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="60px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="67px"/>

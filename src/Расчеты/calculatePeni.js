@@ -1,5 +1,6 @@
 /**
  * 
+ * @name calculatePeni
  * @author Alexey
  * @module
  * @public
