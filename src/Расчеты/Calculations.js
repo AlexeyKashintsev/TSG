@@ -7,7 +7,7 @@
 function Calculations() {
 
 
-var self = this;
+var self = this, model = self.model;
 
 
 var flats = null;
@@ -29,11 +29,12 @@ function prepareCalcModule(aGroupID, aFlatID, aDateID){
         self.parDateID = aDateID;
         self.parFlatID = aFlatID;
         self.parGroupID = aGroupID;
+        model.updateNullCounterValues.params.dateID = aDateID;
+        model.updateNullCounterValues.executeUpdate();
         self.dsCalcObject.requery();
         groups = new Groups(aDateID);
         flats = new Flats(aDateID);
-        self.dsSums4calc.requery();
-        
+        self.dsSums4calc.requery();    
         prepared = true;
         return true;
     } catch (e){
@@ -85,11 +86,9 @@ self.calculateValues = function(aGroupID, aFlatID, aDateID){
                     Logger.warning('Ошибка расчета полного значения по услуге 888 в квартире  ' + aFlatID);
                 }
                 
-            }                                              
+            }
             self.model.save();
-            //self.dsCalcObject.beforeFirst();
-           // while (self.dsCalcObject.next()) 
-                calculateFlatSaldo();//self.dsCalcObject.lc_id);
+            calculateFlatSaldo();
             return true;
         } else return false;
     } catch (e) {
@@ -98,25 +97,81 @@ self.calculateValues = function(aGroupID, aFlatID, aDateID){
     }
 };
 
-function calculateFlatSaldo(aFlatID){
-    //self.prSaldo4calcFromSums.executeUpdate();
-  //  self.dsSaldo4calc.params.flatid = aFlatID;
-    
+function calculateCurrentPeni(aFlatID, aBegSaldo) {
+        var sumOfDebt = aBegSaldo;
+        var curPeni = 0;
+        var lastDate = model.dsDateByID.per_pay_day;
+        var SRF = model.dsDateByID.per_srf / 300 / 100;
+        var filter = model.dsPayments.createFilter(model.dsPayments.schema.flat_id);
+        filter.apply(aFlatID);
+        model.dsPayments.beforeFirst();
+        while (model.dsPayments.next()) {
+            var diff = daysBetween(lastDate, model.dsPayments.payment_date);
+            lastDate = model.dsPayments.payment_date;
+            if (diff <= 0){
+                sumOfDebt -= model.dsPayments.payment_sum;
+            } else {
+                if (sumOfDebt > 0) curPeni += sumOfDebt * diff * SRF;
+                sumOfDebt -= model.dsPayments.payment_sum;
+            };
+        }
+        if (sumOfDebt > 0) {
+            diff = daysBetween(lastDate, model.dsDateByID.per_calc_day);
+            curPeni += sumOfDebt * diff * SRF;
+        }
+        filter.cancel();
+        return curPeni;
+        
+        function daysBetween(startDate, endDate) {
+            var millisecondsPerDay = 24 * 60 * 60 * 1000;
+            return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
+
+            function treatAsUTC(date) {
+                var result = new Date(date);
+                result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
+                return result;
+            }
+        }
+}
+
+function calculateFlatSaldo(){
     self.dsSaldo4calc.requery();
     self.dsSumOfSums.requery();
     self.dsSumOfPayments.requery();
+    self.dsPayments.requery();
+    
     self.dsSaldo4calc.beforeFirst();
     while (self.dsSaldo4calc.next()){
         var sc = self.dsSumOfSums.find(self.dsSumOfSums.md.lc_id, self.dsSaldo4calc.lc_id)[0];
         var sp = self.dsSumOfPayments.find(self.dsSumOfPayments.md.flat_id, self.dsSaldo4calc.lc_id);
-        if (sp.length==1) sp = sp[0];
-        else sp.pay_sum = 0;
+        var peniOld = self.dsSaldo4calc.sal_penalties_old;
+        var peni = calculateCurrentPeni(self.dsSaldo4calc.lc_id, self.dsSaldo4calc.sal_begin,
+                                    self.dsSaldo4calc.sal_penalties_old);
+        if (sp.length==1) 
+            sp = sp[0];
+        else 
+            sp.pay_sum = 0;
         self.dsSaldo4calc.sal_calc = sc.sal_calc;
         self.dsSaldo4calc.sal_benefit = sc.sal_benefit;
         self.dsSaldo4calc.sal_recalc = sc.sal_recalc;
         self.dsSaldo4calc.sal_full_calc = sc.sal_full_calc;
         self.dsSaldo4calc.sal_payments = sp.pay_sum;
-        self.dsSaldo4calc.sal_end = self.dsSaldo4calc.sal_begin + sc.sal_full_calc - sp.pay_sum;
+        var endSum = self.dsSaldo4calc.sal_begin  - sp.pay_sum;
+        if (endSum < 0 && peniOld > 0) {
+            var extra = -endSum;
+            if (extra >= peniOld) {
+                extra -= peniOld;
+                peniOld = 0;
+            } else {
+                peniOld -= extra;
+                extra = 0;
+            }
+            peni += peniOld;
+            endSum = -extra
+        }
+        endSum += sc.sal_full_calc;
+        self.dsSaldo4calc.sal_end = endSum;
+        self.dsSaldo4calc.sal_penalties_cur = peni;
     }
     self.model.save();
 };
@@ -242,7 +297,6 @@ function Sums(){
     this.GetSum = function(aSumID){
         if (!sums[aSumID]) sums[aSumID] = new Sum(aSumID);
         return sums[aSumID];
-        //return new Sum(aSumID);
     };
     
     function Sum(aSumID){

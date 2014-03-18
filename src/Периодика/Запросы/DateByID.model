@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="dateId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="17" entityLocationY="10" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139508632756947" entityLocationX="206" entityLocationY="12" entityWidth="150" tableAlias="t1" tableName="per_date" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityFieldName="per_date_id" rightEntityId="139508632756947"/>
+</datamodel>

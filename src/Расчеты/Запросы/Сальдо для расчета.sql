@@ -4,6 +4,7 @@
  * @name Saldo4calc
  * @writable per_saldo_flat
  * @manual 
+ * @public
  */ 
 Select * 
 From per_saldo_flat

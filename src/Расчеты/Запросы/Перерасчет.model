@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="groupid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="flatid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="serviceid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="dateid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="cost" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="countersDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139514417399273" entityLocationX="555" entityLocationY="14" entityWidth="150" tableAlias="t" tableName="per_sums" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139514418576831" entityLocationX="363" entityLocationY="15" entityWidth="150" tableAlias="t2" tableName="lc_flat_services" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139514436145275" entityLocationX="365" entityLocationY="221" entityWidth="150" tableAlias="t4" tableName="cnt_con2services" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139514412181213" entityLocationX="188" entityLocationY="9" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139514428349271" entityLocationX="194" entityLocationY="217" entityWidth="150" tableAlias="t3" tableName="per_counter_values" tableSchemaName=""/>
+  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="139514418576831" rightEntityFieldName="flat_service_id" rightEntityId="139514417399273"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="139514417399273"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="139514412181213" rightEntityFieldName="lc_id" rightEntityId="139514418576831"/>
+  <relation leftEntityId="-1" leftEntityParameterName="countersDate" rightEntityFieldName="date_id" rightEntityId="139514428349271"/>
+  <relation leftEntityId="-1" leftEntityParameterName="flatid" rightEntityFieldName="lc_id" rightEntityId="139514412181213"/>
+  <relation leftEntityFieldName="counter_id" leftEntityId="139514436145275" rightEntityFieldName="counter_id" rightEntityId="139514428349271"/>
+  <relation leftEntityId="-1" leftEntityParameterName="serviceid" rightEntityFieldName="services_id" rightEntityId="139514418576831"/>
+  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="139514418576831" rightEntityFieldName="flat_service" rightEntityId="139514436145275"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="group_id" rightEntityId="139514412181213"/>
+</datamodel>

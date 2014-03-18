@@ -5,57 +5,74 @@
     <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="dsGroupCntBeg" Title="Начальные показания счетчиков группы" entityHeight="145" entityIconified="false" entityId="138602013180933" entityLocationX="552" entityLocationY="7" entityWidth="150" queryId="group_counter_beg_values_4calc" tableName="" tableSchemaName=""/>
   <entity Name="dsLCCntBeg" Title="Начальные показания счетчиков в квартирах" entityHeight="147" entityIconified="false" entityId="138602656778274" entityLocationX="390" entityLocationY="6" entityWidth="150" queryId="lc_beg_counter_values_4calc" tableName="" tableSchemaName=""/>
-  <entity Name="dsGroupChars" Title="Характеристики группы" entityHeight="79" entityIconified="false" entityId="138602080324733" entityLocationX="553" entityLocationY="313" entityWidth="150" queryId="group_chars_4calc" tableName="" tableSchemaName=""/>
+  <entity Name="dsGroupCntBeg" Title="Начальные показания счетчиков группы" entityHeight="145" entityIconified="false" entityId="138602013180933" entityLocationX="552" entityLocationY="7" entityWidth="150" queryId="group_counter_beg_values_4calc" tableName="" tableSchemaName=""/>
   <entity Name="dsSums4calc" Title="Начисления для расчета" entityHeight="200" entityIconified="false" entityId="138607658059431" entityLocationX="192" entityLocationY="219" entityWidth="150" queryId="sums_4calc" tableName="" tableSchemaName=""/>
-  <entity Name="dsSumOfSums" Title="Начисления агрегированные" entityHeight="200" entityIconified="false" entityId="138670091004361" entityLocationX="713" entityLocationY="293" entityWidth="150" queryId="SumOfSums" tableName="" tableSchemaName=""/>
   <entity Name="dsLCCntEnd" Title="Конечные показания счетчиков в квартирах" entityHeight="146" entityIconified="false" entityId="138602659604494" entityLocationX="389" entityLocationY="155" entityWidth="150" queryId="lc_end_counter_values_4calc" tableName="" tableSchemaName=""/>
-  <entity Name="dsSaldo4calc" Title="Сальдо для расчета" entityHeight="280" entityIconified="false" entityId="138669478569087" entityLocationX="713" entityLocationY="9" entityWidth="150" queryId="Saldo4calc" tableName="" tableSchemaName=""/>
-  <entity Name="dsLCChars" Title="Характеристики квартиры" entityHeight="82" entityIconified="false" entityId="138602641828551" entityLocationX="389" entityLocationY="304" entityWidth="150" queryId="lc_chars_4calc" tableName="" tableSchemaName=""/>
+  <entity Name="dsSumOfSums" Title="Начисления агрегированные" entityHeight="200" entityIconified="false" entityId="138670091004361" entityLocationX="713" entityLocationY="293" entityWidth="150" queryId="SumOfSums" tableName="" tableSchemaName=""/>
   <entity Name="dsGroupCntEnd" Title="Конечные показания счетчиков группы" entityHeight="148" entityIconified="false" entityId="138602012675324" entityLocationX="553" entityLocationY="154" entityWidth="150" queryId="group_counter_end_values_4calc" tableName="" tableSchemaName=""/>
   <entity Name="dsCalcObject" Title="Объекты расчета" entityHeight="200" entityIconified="false" entityId="138601888596240" entityLocationX="192" entityLocationY="13" entityWidth="150" queryId="Calc_object" tableName="" tableSchemaName=""/>
-  <entity Name="prSaldo4calcFromSums" Title="Сальдо получить данные из начислений" entityHeight="78" entityIconified="false" entityId="138669808461206" entityLocationX="11" entityLocationY="305" entityWidth="150" queryId="Saldo4calcFromSums" tableName="" tableSchemaName=""/>
   <entity Name="dsSumOfPayments" Title="Оплаты в квартирах агрегированные" entityHeight="116" entityIconified="false" entityId="138729757682009" entityLocationX="885" entityLocationY="12" entityWidth="150" queryId="SumOfPayments" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138669808461206" rightEntityParameterName="dateid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138601888596240" rightEntityParameterName="lc_id"/>
+  <entity Name="updateNullCounterValues" Title="" entityHeight="104" entityIconified="false" entityId="139509114773441" entityLocationX="193" entityLocationY="432" entityWidth="150" queryId="updateNullCounterValues" tableName="" tableSchemaName=""/>
+  <entity Name="dsGroupChars" Title="Характеристики группы" entityHeight="79" entityIconified="false" entityId="138602080324733" entityLocationX="553" entityLocationY="313" entityWidth="150" queryId="group_chars_4calc" tableName="" tableSchemaName=""/>
+  <entity Name="dsLCChars" Title="Характеристики квартиры" entityHeight="82" entityIconified="false" entityId="138602641828551" entityLocationX="389" entityLocationY="304" entityWidth="150" queryId="lc_chars_4calc" tableName="" tableSchemaName=""/>
+  <entity Name="dsSaldo4calc" Title="Сальдо для расчета" entityHeight="280" entityIconified="false" entityId="138669478569087" entityLocationX="718" entityLocationY="9" entityWidth="150" queryId="Saldo4calc" tableName="" tableSchemaName=""/>
+  <entity Name="dsDateByID" Title="" entityHeight="200" entityIconified="false" entityId="139508666982059" entityLocationX="9" entityLocationY="396" entityWidth="150" queryId="DateByID" tableName="" tableSchemaName=""/>
+  <entity Name="dsPayments" Title="" entityHeight="200" entityIconified="false" entityId="139508325148810" entityLocationX="390" entityLocationY="390" entityWidth="150" queryId="Оплаты_за_период" tableName="" tableSchemaName=""/>
+  <entity Name="prSaldo4calcFromSums" Title="Сальдо получить данные из начислений" entityHeight="78" entityIconified="false" entityId="138669808461206" entityLocationX="11" entityLocationY="305" entityWidth="150" queryId="Saldo4calcFromSums" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138729757682009" rightEntityParameterName="groupid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138729757682009" rightEntityParameterName="dateid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138669478569087" rightEntityParameterName="flatid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138607658059431" rightEntityParameterName="lc_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138729757682009" rightEntityParameterName="lcid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138607658059431" rightEntityParameterName="date_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138669478569087" rightEntityParameterName="dateid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138601888596240" rightEntityParameterName="groupid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138607658059431" rightEntityParameterName="groupid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138670091004361" rightEntityParameterName="groupid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138669478569087" rightEntityParameterName="groupid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138670091004361" rightEntityParameterName="dateid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="139509114773441" rightEntityParameterName="dateID"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138670091004361" rightEntityParameterName="lcid"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138670091004361" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138607658059431" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138602659604494" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138607658059431" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
-  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="138729757682009" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138669808461206" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138601888596240" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138669808461206" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
-  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="138607658059431" rightEntityFieldName="lc_flat_services_id" rightEntityId="138602656778274"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138670091004361" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138670091004361" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138601888596240" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138607658059431" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138669478569087" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
-  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="138729757682009" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138729757682009" rightEntityParameterName="dateid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138670091004361" rightEntityParameterName="dateid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="139508325148810" rightEntityParameterName="groupid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138729757682009" rightEntityParameterName="lcid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138669478569087" rightEntityParameterName="groupid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138670091004361" rightEntityParameterName="groupid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138669478569087" rightEntityParameterName="flatid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="139508325148810" rightEntityParameterName="flatId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="139508666982059" rightEntityParameterName="dateId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="139508325148810" rightEntityParameterName="dateId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138607658059431" rightEntityParameterName="groupid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138601888596240" rightEntityParameterName="lc_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138607658059431" rightEntityParameterName="date_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138669808461206" rightEntityParameterName="dateid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138601888596240" rightEntityParameterName="groupid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138607658059431" rightEntityParameterName="lc_id"/>
   <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138602659604494" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138602656778274" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138601888596240" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138602656778274" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138669808461206" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138602656778274" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138669478569087" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
   <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138669478569087" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138607658059431" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
   <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="138607658059431" rightEntityFieldName="lc_flat_services_id" rightEntityId="138602659604494"/>
-  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="138729757682009" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138669808461206" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138669808461206" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="138607658059431" rightEntityFieldName="per_date_id" rightEntityId="139508666982059"/>
+  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="138607658059431" rightEntityFieldName="lc_flat_services_id" rightEntityId="138602656778274"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138670091004361" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
+  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="139508325148810" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138607658059431" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138601888596240" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
+  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="138729757682009" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
+  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="139508325148810" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138602656778274" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
   <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138602659604494" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138607658059431" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138669478569087" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138602659604494" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="139508325148810" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138602656778274" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="139508325148810" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="139508325148810" rightEntityFieldName="per_date_id" rightEntityId="139508666982059"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="139508325148810" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138602656778274" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138601888596240" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138670091004361" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138670091004361" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
+  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="138729757682009" rightEntityFieldName="lc_flat_id" rightEntityId="138669478569087"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="138669478569087" rightEntityFieldName="per_date_id" rightEntityId="139508666982059"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138669478569087" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138601888596240" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
+  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="138729757682009" rightEntityFieldName="lc_flat_id" rightEntityId="138601888596240"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="138669808461206" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
+  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="139508325148810" rightEntityFieldName="lc_flat_id" rightEntityId="138669808461206"/>
 </datamodel>

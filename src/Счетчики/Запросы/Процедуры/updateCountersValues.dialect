@@ -1,0 +1,3 @@
+update per_counter_values
+set end_val = beg_val
+ Where :dateID = t1.date_id and (end_val < beg_val or end_val is null)

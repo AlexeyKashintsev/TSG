@@ -15,8 +15,7 @@ var fmGroups = new formGroups();
 var fmGChars = new formGroupCharacteristics();
 var fmGServs = new formServicesInGroup();
 var fmGTarifs = new fmTarifs();
-//var fmGStats = new saldogroupView();
-var fmGStats = {};
+var fmGStats = new SaldoGroupView();
 
 self.check4Modifications = function(){
     if ((!fmGChars.model.modified

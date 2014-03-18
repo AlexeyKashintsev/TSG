@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parameters>
-    <parameter description="" name="dateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="12" typeName="VARCHAR"/>
-    <parameter description="" name="groupID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="12" typeName="VARCHAR"/>
+    <parameter description="" name="dateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="groupID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="139470271674696" entityLocationX="170" entityLocationY="120" entityWidth="150" tableAlias="t2" tableName="lc_flat_services" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="139470271674697" entityLocationX="330" entityLocationY="230" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="139470271674698" entityLocationX="490" entityLocationY="340" entityWidth="150" tableAlias="t" tableName="per_sums" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="dateID" rightEntityFieldName="date_id" rightEntityId="139470271674698"/>
+  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="139470271674696" rightEntityFieldName="flat_service_id" rightEntityId="139470271674698"/>
   <relation leftEntityId="-1" leftEntityParameterName="groupID" rightEntityFieldName="group_id" rightEntityId="139470271674697"/>
   <relation leftEntityFieldName="lc_id" leftEntityId="139470271674697" rightEntityFieldName="lc_id" rightEntityId="139470271674696"/>
-  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="139470271674696" rightEntityFieldName="flat_service_id" rightEntityId="139470271674698"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateID" rightEntityFieldName="date_id" rightEntityId="139470271674698"/>
 </datamodel>

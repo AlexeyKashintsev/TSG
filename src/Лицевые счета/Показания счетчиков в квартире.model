@@ -6,9 +6,8 @@
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137520137252417" entityLocationX="526" entityLocationY="64" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
   <entity Name="counters_values_by_flat" Title="Значение счетчиков в квартире" entityHeight="244" entityIconified="false" entityId="138538099972866" entityLocationX="246" entityLocationY="12" entityWidth="150" queryId="counters_values_by_flat" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138538099972866" rightEntityParameterName="flat_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138538099972866" rightEntityParameterName="date_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138538099972866" rightEntityParameterName="flat_id"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="138538099972866" rightEntityFieldName="usl_services_id" rightEntityId="137520137252417"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137520137252417" rightEntityFieldName="usl_services_id" rightEntityId="137520137252417"/>
-  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="137520137252417" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137520137252417"/>
 </datamodel>

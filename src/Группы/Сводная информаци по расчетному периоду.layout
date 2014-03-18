@@ -56,97 +56,97 @@
   </widget>
   <widget name="modelGrid" parent="Form" prefHeight="192px" prefWidth="704px" type="DbGridDesignInfo">
     <column name="colServices_id" title="Услуга">
-      <datamodelElement entityId="139307419109152" fieldName="services_id"/>
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="139307429591837" fieldName="usl_name"/>
         <valueField entityId="139307429591837" fieldName="usl_services_id"/>
       </controlInfo>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
       <cellDesignInfo>
+        <rowsKeyField/>
         <cellValueField/>
         <columnsKeyField/>
-        <rowsKeyField/>
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
+      <datamodelElement entityId="139307419109152" fieldName="services_id"/>
     </column>
     <column name="colCalc_value" title="Объем">
-      <datamodelElement entityId="139307419109152" fieldName="calc_value"/>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
       <cellDesignInfo>
+        <rowsKeyField/>
         <cellValueField/>
         <columnsKeyField/>
-        <rowsKeyField/>
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
+      <datamodelElement entityId="139307419109152" fieldName="calc_value"/>
     </column>
     <column name="colCalc" title="Рассчитано">
-      <datamodelElement entityId="139307419109152" fieldName="calc"/>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
       <cellDesignInfo>
+        <rowsKeyField/>
         <cellValueField/>
         <columnsKeyField/>
-        <rowsKeyField/>
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
+      <datamodelElement entityId="139307419109152" fieldName="calc"/>
     </column>
     <column name="colBenefit" title="Льгота">
-      <datamodelElement entityId="139307419109152" fieldName="benefit"/>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
       <cellDesignInfo>
+        <rowsKeyField/>
         <cellValueField/>
         <columnsKeyField/>
-        <rowsKeyField/>
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
+      <datamodelElement entityId="139307419109152" fieldName="benefit"/>
     </column>
     <column name="colRecalc" title="Перерасчет">
-      <datamodelElement entityId="139307419109152" fieldName="recalc"/>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
       <cellDesignInfo>
+        <rowsKeyField/>
         <cellValueField/>
         <columnsKeyField/>
-        <rowsKeyField/>
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
+      <datamodelElement entityId="139307419109152" fieldName="recalc"/>
     </column>
     <column name="colFull_calc" title="Начислено">
-      <datamodelElement entityId="139307419109152" fieldName="full_calc"/>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
       <cellDesignInfo>
+        <rowsKeyField/>
         <cellValueField/>
         <columnsKeyField/>
-        <rowsKeyField/>
       </cellDesignInfo>
       <cellsDatasource/>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
+      <datamodelElement entityId="139307419109152" fieldName="full_calc"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="139307419109152" field="false"/>

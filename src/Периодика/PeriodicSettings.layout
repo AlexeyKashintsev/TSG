@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="151px" prefWidth="173px">
+  <widget name="label" parent="Form" prefHeight="16px" prefWidth="120px" text="Расчетный день" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="30px" type="MarginConstraintsDesignInfo" width="120px"/>
+  </widget>
+  <widget name="label1" parent="Form" prefHeight="16px" prefWidth="38px" text="Дата" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="6px" type="MarginConstraintsDesignInfo" width="38px"/>
+  </widget>
+  <widget name="label2" parent="Form" prefHeight="16px" prefWidth="38px" text="СРФ" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="90px" type="MarginConstraintsDesignInfo" width="38px"/>
+  </widget>
+  <widget actionPerformed="buttonActionPerformed" name="button" parent="Form" prefHeight="29px" prefWidth="110px" text="Сохранить" type="ButtonDesignInfo">
+    <constraints bottom="7px" height="29px" right="3px" type="MarginConstraintsDesignInfo" width="110px"/>
+  </widget>
+  <widget name="modelDate" parent="Form" prefHeight="28px" prefWidth="119px" type="DbDateDesignInfo">
+    <datamodelElement entityId="139508636283599" fieldName="per_date"/>
+    <constraints height="28px" left="48px" top="0px" type="MarginConstraintsDesignInfo" width="119px"/>
+  </widget>
+  <widget name="modelDate1" parent="Form" prefHeight="28px" prefWidth="120px" type="DbDateDesignInfo">
+    <datamodelElement entityId="139508636283599" fieldName="per_calc_day"/>
+    <constraints height="28px" left="48px" top="48px" type="MarginConstraintsDesignInfo" width="120px"/>
+  </widget>
+  <widget name="modelFormattedField" parent="Form" prefHeight="28px" prefWidth="120px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="139508636283599" fieldName="per_srf"/>
+    <constraints height="28px" left="48px" top="84px" type="MarginConstraintsDesignInfo" width="120px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>
