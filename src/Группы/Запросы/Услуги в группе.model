@@ -7,9 +7,9 @@
   <entity Title="Способ расчета стоимости услуги" entityHeight="200" entityIconified="false" entityId="139221552004275" entityLocationX="694" entityLocationY="16" entityWidth="150" tableAlias="t" tableName="usl_calc_formula" tableSchemaName=""/>
   <entity Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="139221552004274" entityLocationX="350" entityLocationY="18" entityWidth="150" tableAlias="t1" tableName="grp_services" tableSchemaName=""/>
   <entity Title="Услуги" entityHeight="200" entityIconified="false" entityId="139221552004273" entityLocationX="528" entityLocationY="18" entityWidth="150" tableAlias="t2" tableName="usl_services" tableSchemaName=""/>
+  <relation leftEntityFieldName="calc_id" leftEntityId="139221552004273" rightEntityFieldName="usl_calc_formula_id" rightEntityId="139221552004275"/>
   <relation leftEntityFieldName="grp_groups_id" leftEntityId="139221552004239" rightEntityFieldName="group_id" rightEntityId="139221552004274"/>
   <relation leftEntityFieldName="services_id" leftEntityId="139221552004274" rightEntityFieldName="usl_services_id" rightEntityId="139221552004273"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityFieldName="grp_parent" rightEntityId="139221552004239"/>
-  <relation leftEntityFieldName="calc_id" leftEntityId="139221552004273" rightEntityFieldName="usl_calc_formula_id" rightEntityId="139221552004275"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityFieldName="grp_groups_id" rightEntityId="139221552004239"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityFieldName="grp_parent" rightEntityId="139221552004239"/>
 </datamodel>

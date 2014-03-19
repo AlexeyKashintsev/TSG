@@ -8,14 +8,12 @@
   <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="138538130590342" entityLocationX="212" entityLocationY="225" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
   <entity Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="139220805058434" entityLocationX="408" entityLocationY="239" entityWidth="150" tableAlias="t2" tableName="grp_services" tableSchemaName=""/>
   <entity Title="Квартиры в группах" entityHeight="200" entityIconified="false" entityId="139220806049556" entityLocationX="586" entityLocationY="21" entityWidth="150" tableAlias="t3" tableName="grp_lc_group" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="139470196443680" entityLocationX="214" entityLocationY="6" entityWidth="150" queryId="counters_by_flat" tableAlias="q1" tableName="" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139521971506236" entityLocationX="214" entityLocationY="6" entityWidth="150" queryId="counters_by_flat" tableAlias="q1" tableName="" tableSchemaName=""/>
   <entity Title="Счетчик значения" entityHeight="200" entityIconified="false" entityId="137495823260070" entityLocationX="406" entityLocationY="23" entityWidth="150" tableAlias="t" tableName="per_counter_values" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="flat_id" rightEntityId="139470196443680" rightEntityParameterName="flat_id"/>
-  <relation leftEntityFieldName="flat_service" leftEntityId="139470196443680" rightEntityFieldName="lc_flat_services_id" rightEntityId="138538130590342"/>
-  <relation leftEntityFieldName="group_id" leftEntityId="139220806049556" rightEntityFieldName="group_id" rightEntityId="139220805058434"/>
   <relation leftEntityFieldName="services_id" leftEntityId="139220805058434" rightEntityFieldName="services_id" rightEntityId="138538130590342"/>
+  <relation leftEntityFieldName="counter_id" leftEntityId="139521971506236" rightEntityFieldName="counter_id" rightEntityId="137495823260070"/>
+  <relation leftEntityFieldName="flat_service" leftEntityId="139521971506236" rightEntityFieldName="lc_flat_services_id" rightEntityId="138538130590342"/>
   <relation leftEntityFieldName="lc_id" leftEntityId="138538130590342" rightEntityFieldName="lc_id" rightEntityId="139220806049556"/>
-  <relation leftEntityFieldName="counter_id" leftEntityId="139470196443680" rightEntityFieldName="counter_id" rightEntityId="137495823260070"/>
-  <relation leftEntityId="-1" leftEntityParameterName="all_flats" rightEntityId="139470196443680" rightEntityParameterName="all_flats"/>
   <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="137495823260070"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="139220806049556" rightEntityFieldName="group_id" rightEntityId="139220805058434"/>
 </datamodel>

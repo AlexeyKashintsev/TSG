@@ -1,5 +1,6 @@
 /**
  * 
+ * @name RecalcModule
  * @author Alexey
  * @module
  */ 

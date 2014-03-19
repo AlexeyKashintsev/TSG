@@ -1,16 +1,15 @@
 /**
  * 
- * @name aaa_1
+ * @name BillsBuilder_Doverie
  * @author Alexey
  */
-function aaa_1() {
+function BillsBuilder_Doverie() {
     var self = this;
     var dsLC_byid = this.model.dsLC_byid;
 
     
     self.Group = {};
     self.Flats = {};
-    self.Flats.ar = [];
     /**
      * Report's before render event handler.
      * @param evt Event object.
@@ -28,6 +27,7 @@ function aaa_1() {
     function onBeforeRender(evt){//GEN-FIRST:event_onBeforeRender
         Logger.severe('Collecting data for report');
         var i = 0;
+        self.Flats.ar = [];
        // self.model.params.parFlatID = 139187007155620;
        // self.model.params.parDateID = 138408451934673;
        // self.model.params.parGroupID = 139135094067101;
@@ -107,7 +107,7 @@ function aaa_1() {
                             beg_val: flat_cout.beg_val,
                             cons_val: flat_cout.cons_val
                         };
-                        if (flat_cout.askforvalue)
+                        if (flat_cout.askinbills)
                             askCounters.push(self.allServices.findById(flat_cout.services_id).usl_name + '______');
                     });
                     
