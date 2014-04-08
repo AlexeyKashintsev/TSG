@@ -8,7 +8,7 @@
 function fmDateSelector() {
 
 
-var self = this;
+var self = this, model = self.model;
 
 
 var scrolled = false;
@@ -42,7 +42,7 @@ function btn_nextActionPerformed(evt) {//GEN-FIRST:event_btn_nextActionPerformed
 }//GEN-LAST:event_btn_nextActionPerformed
 
 function btn_lastActionPerformed(evt) {//GEN-FIRST:event_btn_lastActionPerformed
-    self.all_dates.last();
+    model.all_dates.last();
 }//GEN-LAST:event_btn_lastActionPerformed
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
@@ -65,7 +65,8 @@ function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
 }//GEN-LAST:event_paramsOnChanged
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
-    self.all_dates.last(all_datesOnScrolled(evt));    
+    model.all_dates.last();
+    all_datesOnScrolled(evt);
 }//GEN-LAST:event_formWindowOpened
 
 function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
@@ -81,7 +82,7 @@ function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
     var newDateProcessor = new DateModule();
     newDateProcessor.newDate(function(){
         self.model.requery(function(){
-            self.all_dates.last();
+            model.all_dates.last();
         });
     });
 }//GEN-LAST:event_btn_newActionPerformed
