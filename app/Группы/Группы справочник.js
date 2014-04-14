@@ -8,7 +8,7 @@
 function formGroups() {
 
 
-var self = this;
+var self = this, model = self.model, form = this;
 
 
 self.parentForm = null;

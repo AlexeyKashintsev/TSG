@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="48px" prefWidth="719px">
+  <widget name="label211" parent="Form" prefHeight="16px" prefWidth="68px" text="Пени пред" type="LabelDesignInfo">
+    <constraints height="16px" left="600px" top="4px" type="MarginConstraintsDesignInfo" width="68px"/>
+  </widget>
+  <widget editable="false" format="#0.00" name="mfSaldoEnd11" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+    <datamodelElement entityId="137683959019508" fieldName="sal_penalties_old"/>
+    <constraints height="18px" left="600px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget editable="false" format="#0.00" name="mfSaldoEnd1" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+    <datamodelElement entityId="137683959019508" fieldName="sal_penalties_cur"/>
+    <constraints height="18px" left="516px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget name="label21" parent="Form" prefHeight="16px" prefWidth="68px" text="Пени тек" type="LabelDesignInfo">
+    <constraints height="16px" left="516px" top="4px" type="MarginConstraintsDesignInfo" width="68px"/>
+  </widget>
   <widget name="label2" parent="Form" prefHeight="16px" prefWidth="68px" text="Конечное" type="LabelDesignInfo">
-    <constraints height="16px" left="436px" top="6px" type="MarginConstraintsDesignInfo" width="68px"/>
+    <constraints height="16px" left="436px" top="4px" type="MarginConstraintsDesignInfo" width="68px"/>
   </widget>
   <widget name="label13" parent="Form" prefHeight="16px" prefWidth="72px" text="Оплачено" type="LabelDesignInfo">
-    <constraints height="16px" left="348px" top="6px" type="MarginConstraintsDesignInfo" width="72px"/>
+    <constraints height="16px" left="348px" top="4px" type="MarginConstraintsDesignInfo" width="72px"/>
   </widget>
   <widget name="label12" parent="Form" prefHeight="16px" prefWidth="84px" text="Перерасчет" type="LabelDesignInfo">
-    <constraints height="16px" left="264px" top="6px" type="MarginConstraintsDesignInfo" width="84px"/>
+    <constraints height="16px" left="264px" top="4px" type="MarginConstraintsDesignInfo" width="84px"/>
   </widget>
   <widget name="label11" parent="Form" prefHeight="16px" prefWidth="72px" text="Льгота" type="LabelDesignInfo">
-    <constraints height="16px" left="180px" top="6px" type="MarginConstraintsDesignInfo" width="72px"/>
+    <constraints height="16px" left="180px" top="4px" type="MarginConstraintsDesignInfo" width="72px"/>
   </widget>
   <widget editable="false" format="#0.00" name="mfSaldoEnd" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="137683959019508" fieldName="sal_end"/>
@@ -36,10 +50,10 @@
     <constraints height="18px" left="96px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
   </widget>
   <widget name="label" parent="Form" prefHeight="16px" prefWidth="96px" text="Начальное" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="6px" type="MarginConstraintsDesignInfo" width="96px"/>
+    <constraints height="16px" left="12px" top="4px" type="MarginConstraintsDesignInfo" width="96px"/>
   </widget>
   <widget name="label1" parent="Form" prefHeight="16px" prefWidth="72px" text="Начислено" type="LabelDesignInfo">
-    <constraints height="16px" left="96px" top="6px" type="MarginConstraintsDesignInfo" width="72px"/>
+    <constraints height="16px" left="96px" top="4px" type="MarginConstraintsDesignInfo" width="72px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="lcId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139704126555518" entityLocationX="541" entityLocationY="16" entityWidth="150" tableAlias="t1" tableName="cnt_counters" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139704135375625" entityLocationX="734" entityLocationY="21" entityWidth="150" tableAlias="t3" tableName="per_counter_values" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139704127613301" entityLocationX="379" entityLocationY="15" entityWidth="150" tableAlias="t" tableName="cnt_con2services" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139704128871689" entityLocationX="196" entityLocationY="10" entityWidth="150" tableAlias="t2" tableName="lc_flat_services" tableSchemaName=""/>
+  <relation leftEntityFieldName="cnt_counters_id" leftEntityId="139704126555518" rightEntityFieldName="counter_id" rightEntityId="139704135375625"/>
+  <relation leftEntityFieldName="flat_service" leftEntityId="139704127613301" rightEntityFieldName="lc_flat_services_id" rightEntityId="139704128871689"/>
+  <relation leftEntityFieldName="cnt_counters_id" leftEntityId="139704126555518" rightEntityFieldName="counter_id" rightEntityId="139704127613301"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lcId" rightEntityFieldName="lc_id" rightEntityId="139704128871689"/>
+</datamodel>

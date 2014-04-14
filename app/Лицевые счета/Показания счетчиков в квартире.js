@@ -13,6 +13,9 @@ var self = this;
 
 self.isSelectForm = false;
 self.isEditable = true;
+/*self.model.params.parFlatID = 139704089624312;
+self.model.params.parDateID = 139696955465754;*/
+
 
 function setEdit(){
     self.modelGrid.editable = self.btnSave.enabled = self.isEditable;    

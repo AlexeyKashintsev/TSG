@@ -20,6 +20,7 @@ var fmSaldoCur = new fmSaldoCurrnet();
 var fmSaldoHistory = new formSaldoHistory();
 var fmNachisleniya = new form_sums_per_flat();
 var fmOplata = new formPaymentsInFlat();
+var fmLCGroups = new fmGroupsByLC();
 var modCalc = new ServerModule('Calculations');
 
 self.check4Modifications = function(){
@@ -27,6 +28,7 @@ self.check4Modifications = function(){
         &&!fmFlatChars.model.modified
         &&!fmFlatServices.model.modified
         &&!fmFlatCounters.model.modified
+        &&!fmLCGroups.model.modified
         ||askAndSave)
         ||confirm('Не сохраненные изменения будут утеряны. Продолжить?'))
         return true;
@@ -43,7 +45,7 @@ self.setGroup = function(aNewGroupID){
 self.setFlat = function(aNewFlatID){
     self.parFlatID = fmFlatCounters.parFlatID = fmFlatServices.parFlatID = fmNachisleniya.parFlatID = 
             fmOplata.parFlatID = fmSaldoHistory.parFlatID = fmSaldoCur.parFlatID =
-            fmFlatChars.parFlatID = aNewFlatID;
+            fmFlatChars.parFlatID = fmLCGroups.parFlatID = aNewFlatID;
 };
 
 self.setDate = function(aNewDate){
@@ -87,6 +89,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmSaldoHistory.showOnPanel(self.pnlSaldoHistory);
     fmNachisleniya.showOnPanel(self.pnlCurrent);
     fmOplata.showOnPanel(self.pnlOplata);
+    fmLCGroups.showOnPanel(self.pnlLCGroups);
 }//GEN-LAST:event_formWindowOpened
 
 function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed

@@ -2,6 +2,7 @@
  * 
  * @name PeriodicSettings
  * @author Alexey
+ * @public
  */
 function PeriodicSettings() {
     var self = this, model = this.model, form = this;

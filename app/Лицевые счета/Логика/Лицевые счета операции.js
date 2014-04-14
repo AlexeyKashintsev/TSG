@@ -9,10 +9,12 @@
 function LCModule() {
 
 
-var self = this;
+var self = this, model = self.model;
 
 var modSN = null;
 var modCN = null;
+var modDT = new DateModule();
+
    // modSalSum.modLC = this;
 self.setServModules = function(aModSN, aModCN){
     modSN = aModSN;
@@ -25,6 +27,16 @@ self.saveChanges = function(){
         modSN.saveChanges();
     if (modCN&&modCN.model.modified)
         modCN.checkModified();
+};
+
+self.getLcID = function(aLCRegTo, aLCFlatNumber, aLCPeopleRegCount, aLCNumber){
+    model.dsFlatByNumberAndRegister.params.flatNumber = aLCFlatNumber;
+    model.dsFlatByNumberAndRegister.params.regTo = aLCRegTo;
+    model.dsFlatByNumberAndRegister.execute();
+    if (model.dsFlatByNumberAndRegister.length === 1) {
+        return model.dsFlatByNumberAndRegister.cursor.lc_flat_id;
+    } else
+        return null;
 };
 
 /*
@@ -91,6 +103,7 @@ self.addFlat2Group = function(aFlatID, aGroupID, aGroupModifiers){
 self.addFlat2ModifyingGroup = function(aFlatID, aGroupID, aModServices){    
     self.services_by_group.params.parGroup = aGroupID;
     self.services_by_group.requery();
+    if (!aModServices) aModServices = [];
     self.services_by_group.forEach(function(modServ){
         if (modServ.modified_service_id){
             aModServices[modServ.modified_service_id] = modServ.services_id;
@@ -165,8 +178,10 @@ self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID){
     var newDate = aDateID?aDateID:(self.parDateID?self.parDateID:false);
     if (newDate) self.sums_perFlat.insert(self.sums_perFlat.md.flat_service_id, self.services_by_flat.lc_flat_services_id,
                                      self.sums_perFlat.md.date_id, newDate);
-    if (!processIfConnectedService(fs, aServiceID, aFlatID)&&aCalcByCounter) 
-        addCounterToFlat(self.services_by_flat.lc_flat_services_id);
+    if (!processIfConnectedService(fs, aServiceID, aFlatID)&&aCalcByCounter) {
+        var cnt = addCounterToFlat(self.services_by_flat.lc_flat_services_id);
+        modCN.setCounterValueByCounterValueID(cnt, aDateID?aDateID:modDT.getLastDate(), 0, 0);
+    }
     return self.services_by_flat.lc_flat_services_id;
 };
 

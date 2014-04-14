@@ -8,9 +8,7 @@
   <entity Name="dsServices" Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="137513141035797" entityLocationX="193" entityLocationY="19" entityWidth="150" queryId="services_by_flat" tableName="" tableSchemaName=""/>
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137520096845259" entityLocationX="364" entityLocationY="19" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137513141035797" rightEntityParameterName="flat_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="137513141035797" rightEntityParameterName="ParGroup"/>
-  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137520096845259" rightEntityFieldName="usl_services_id" rightEntityId="137520096845259"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137520096845259" rightEntityFieldName="usl_services_id" rightEntityId="137520096845259"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137520096845259" rightEntityFieldName="usl_services_id" rightEntityId="137520096845259"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="137513141035797" rightEntityFieldName="usl_services_id" rightEntityId="137520096845259"/>
-  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="137520096845259" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137520096845259"/>
 </datamodel>

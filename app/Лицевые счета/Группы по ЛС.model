@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parFlatID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="groups_query" Title="" entityHeight="200" entityIconified="false" entityId="139748238795245" entityLocationX="430" entityLocationY="16" entityWidth="150" queryId="groups_query" tableName="" tableSchemaName=""/>
+  <entity Name="groupsByLS" Title="" entityHeight="200" entityIconified="false" entityId="139748236768024" entityLocationX="231" entityLocationY="17" entityWidth="150" queryId="groupsByLS" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="139748236768024" rightEntityParameterName="lc_id"/>
+  <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="139748238795245" rightEntityFieldName="grp_groups_id" rightEntityId="139748238795245"/>
+  <referenceRelation leftEntityFieldName="group_id" leftEntityId="139748236768024" rightEntityFieldName="grp_groups_id" rightEntityId="139748238795245"/>
+</datamodel>

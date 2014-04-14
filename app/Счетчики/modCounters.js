@@ -65,7 +65,7 @@ self.setCounterValueByCounterValueID = function(aCounterID, aDateID, aBegValue, 
         self.dsCountersValues.insert(self.dsCountersValues.md.counter_id, aCounterID,
                                 self.dsCountersValues.md.date_id, aDateID,
                                 self.dsCountersValues.md.beg_val, aBegValue,
-                                self.dsCountersValues.md.end_val, aEndValue);
+                                self.dsCountersValues.md.end_val, aEndValue?aEndValue:aBegValue);
     } else {
         self.dsCountersValues.beg_val = aBegValue;
         self.dsCountersValues.end_val = aEndValue;

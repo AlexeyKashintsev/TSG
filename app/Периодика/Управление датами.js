@@ -12,6 +12,8 @@ var grpProcessed = 0;
 var grpModules = [];
 var callBack = null;
 
+processedCounters = [];
+
 /*
  * Вывод предыдущей даты
  * @param {type} parDateID
@@ -22,6 +24,20 @@ self.prevDate = function(aDateID){
     self.all_dates.scrollTo(self.all_dates.findById(aDateID));
     self.all_dates.prev();
     return self.all_dates.per_date_id;
+};
+
+self.getLastDate = function() {
+    self.model.all_dates.last();
+    return self.model.all_dates.cursor.per_date_id;
+};
+
+self.getPayPeriod4Date = function(aDateID){
+    var curDate = self.all_dates.findById(aDateID).per_pay_day;
+    var prevDate = self.all_dates.findById(self.prevDate(aDateID)).per_pay_day;
+    return {
+        start   : prevDate,
+        end     : curDate
+    };
 };
 
 self.newDate = function(aCallBack) {

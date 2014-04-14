@@ -14,6 +14,7 @@ var self = this, model = self.model;
 var scrolled = false;
 var changed = false;
 self.parentForm = null;
+var deForm = null;
 
 
 function btn_prevActionPerformed(evt) {//GEN-FIRST:event_btn_prevActionPerformed
@@ -91,4 +92,12 @@ function setDate(aNewDateID){
     if (self.parentForm) return self.parentForm.setDate(aNewDateID)
     else return true;
 }
+
+    function btn_confActionPerformed(evt) {//GEN-FIRST:event_btn_confActionPerformed
+        if (!deForm) {
+            deForm = new PeriodicSettings();
+        }
+        deForm.DateID = self.model.all_dates.per_date_id;
+        deForm.model.requery(deForm.showModal);
+    }//GEN-LAST:event_btn_confActionPerformed
 }

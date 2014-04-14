@@ -15,6 +15,7 @@ var groups = null;
 var sums = new Sums();
 var formulEval = new FormulaEvaluator();
 var prepared = false;
+var peniClc = new calculatePeni();
 /**
  * 
  * @param {type} aGroupID
@@ -97,7 +98,7 @@ self.calculateValues = function(aGroupID, aFlatID, aDateID){
     }
 };
 
-function calculateCurrentPeni(aFlatID, aBegSaldo) {
+/*function calculateCurrentPeni(aFlatID, aBegSaldo) {
         var sumOfDebt = aBegSaldo;
         var curPeni = 0;
         var lastDate = model.dsDateByID.per_pay_day;
@@ -132,7 +133,7 @@ function calculateCurrentPeni(aFlatID, aBegSaldo) {
                 return result;
             }
         }
-}
+}*/
 
 function calculateFlatSaldo(){
     self.dsSaldo4calc.requery();
@@ -144,9 +145,14 @@ function calculateFlatSaldo(){
     while (self.dsSaldo4calc.next()){
         var sc = self.dsSumOfSums.find(self.dsSumOfSums.md.lc_id, self.dsSaldo4calc.lc_id)[0];
         var sp = self.dsSumOfPayments.find(self.dsSumOfPayments.md.flat_id, self.dsSaldo4calc.lc_id);
-        var peniOld = self.dsSaldo4calc.sal_penalties_old;
-        var peni = calculateCurrentPeni(self.dsSaldo4calc.lc_id, self.dsSaldo4calc.sal_begin,
-                                    self.dsSaldo4calc.sal_penalties_old);
+       // var peniOld = self.dsSaldo4calc.sal_penalties_old;
+       // var peni = calculateCurrentPeni(self.dsSaldo4calc.lc_id, self.dsSaldo4calc.sal_begin,
+       //                             self.dsSaldo4calc.sal_penalties_old);
+       var peni = peniClc.calculate(self.dsSaldo4calc.lc_id, self.model.params.parDateID);
+       var peniOld = peni.previous;
+       peni = peni.current;
+       self.dsSaldo4calc.sal_penalties_old = peniOld;
+       
         if (sp.length==1) 
             sp = sp[0];
         else 

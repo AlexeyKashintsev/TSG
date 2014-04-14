@@ -8,10 +8,10 @@
   <entity Name="dsSaldo" Title="" entityHeight="200" entityIconified="false" entityId="139443960828712" entityLocationX="406" entityLocationY="211" entityWidth="150" queryId="saldo_in_flats_by_group" tableName="" tableSchemaName=""/>
   <entity Name="dsCntVal" Title="" entityHeight="200" entityIconified="false" entityId="139443928277406" entityLocationX="407" entityLocationY="4" entityWidth="150" queryId="counters_values_in_flats_by_group" tableName="" tableSchemaName=""/>
   <entity Name="dsTarifsInGroup" Title="" entityHeight="200" entityIconified="false" entityId="139444063941446" entityLocationX="201" entityLocationY="57" entityWidth="150" queryId="Тарифы_в_группе" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="139443960828712" rightEntityParameterName="group_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parOldDate" rightEntityId="139443928277406" rightEntityParameterName="date_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="139443928277406" rightEntityParameterName="group_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parOldDate" rightEntityId="139443960828712" rightEntityParameterName="date_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="139444063941446" rightEntityParameterName="group_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="139443928277406" rightEntityParameterName="group_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="139443960828712" rightEntityParameterName="group_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parOldDate" rightEntityId="139444063941446" rightEntityParameterName="date_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parOldDate" rightEntityId="139443928277406" rightEntityParameterName="date_id"/>
 </datamodel>

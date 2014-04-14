@@ -80,7 +80,7 @@ function saveAll(aFileName){
         var sT = new Date();
         try{
             addLog("Сохранение в БД для файла: "+aFileName);
-            modLC.model.save();
+            modLC.saveChanges();
             addLog("Сохранение в БД для файла: "+aFileName+ " завершено");
         }
         catch (e) {
@@ -314,43 +314,49 @@ function readRow(aRowAr, aGroup){
     var LC_FLAT_NUM = getCellValue(aRowAr.cells[impFields.LC_FLAT_NUMBER]);
     var LC_NUM = getCellValue(aRowAr.cells[impFields.LC_NUMBER]);
     var REG_CNT = getCellValue(aRowAr.cells[impFields.LC_REG_CNT]);
- /**/var LC_ID = modLC.addNewLC(FIO, LC_FLAT_NUM, REG_CNT, LC_NUM);//, aGroup, group_modifiers);
-    modLC.addFlat2Group(LC_ID, aGroup);
+    Logger.info('317');
+    var LC_ID = modLC.getLcID(FIO, LC_FLAT_NUM, REG_CNT, LC_NUM);
+    var servModifiers = {};
+    if (!LC_ID) {
+        LC_ID = modLC.addNewLC(FIO, LC_FLAT_NUM, REG_CNT, LC_NUM);
+        modLC.addFlat2Group(LC_ID, aGroup);
     
-    var group_modifiers = [];
-    for (var i in impFields.GROUP_MODIFIER){
-        if (getCellValue(aRowAr.cells[impFields.GROUP_MODIFIER[i].CellNumber]))
-            group_modifiers[group_modifiers.length] = impFields.GROUP_MODIFIER[i].GroupID;
+        var group_modifiers = [];
+        for (var i in impFields.GROUP_MODIFIER){
+            if (getCellValue(aRowAr.cells[impFields.GROUP_MODIFIER[i].CellNumber]))
+                group_modifiers[group_modifiers.length] = impFields.GROUP_MODIFIER[i].GroupID;
+        }
+        servModifiers = modLC.addFlat2Modifyers(LC_ID, group_modifiers);
     }
-    var servModifiers = modLC.addFlat2Modifyers(LC_ID, group_modifiers);
-    
+    Logger.info('330');
     var SALDO_BEG = getCellValue(aRowAr.cells[impFields.SALDO_BEG]);
+    Logger.info('saldoBegValue: ' + SALDO_BEG)
     modSN.initBegSaldo(LC_ID, parDate, SALDO_BEG?SALDO_BEG:null);
-    
+    Logger.info('333');
     var PENALTIES_CUR = getCellValue(aRowAr.cells[impFields.PENALTIES_CUR]);
     modSN.addPenalties(LC_ID, parDate, PENALTIES_CUR, null);
-    
+    Logger.info('336');
     var OPL_DATE = getCellValue(aRowAr.cells[impFields.PAYMENT_DATE]);
     var OPL_SUM = getCellValue(aRowAr.cells[impFields.PAYMENT_SUM]);
     if (OPL_SUM)
         modSN.addOplata(LC_ID, parOplSession, parDate, OPL_SUM, OPL_DATE?OPL_DATE:new Date(), 'Импорт');
     
     var counterValues = {};
-    
+    Logger.info('343');
     for (i in impFields.LC_CHARS){
         var ch_val = getCellValue(aRowAr.cells[impFields.LC_CHARS[i].CellNumber]);
         if (ch_val) modLC.addCharToLC(LC_ID, impFields.LC_CHARS[i].CHAR_ID, ch_val);
     }
-    
+    Logger.info('348');
     for (i in impFields.COUNTERS_BEG){
         counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID] = {};
         counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID].begv = getCellValue(aRowAr.cells[impFields.COUNTERS_BEG[i].CellNumber]);
     }
-    
+    Logger.info('353');
     for (i in impFields.COUNTERS_END){
         counterValues[impFields.COUNTERS_END[i].SERVICE_ID].endv = getCellValue(aRowAr.cells[impFields.COUNTERS_END[i].CellNumber]);
     }
-    
+    Logger.info('357');
     for (var service in counterValues) {
         if (counterValues[service].begv)
         modSN.insertCounterValue(LC_ID, servModifiers[service]?servModifiers[service]:service, parDate, 
@@ -361,7 +367,7 @@ function readRow(aRowAr, aGroup){
     for (i = 0; i < impFields.BINEFICIARIES; i++){
         // Дописать код добавления льготников
     }
-  //  modLC.saveChanges();
+    modLC.saveChanges();
 }
 
 //****************************************************************Импорт данных******************************************************

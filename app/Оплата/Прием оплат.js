@@ -21,7 +21,7 @@ function btFlatNumEnterMouseClicked(evt) {//GEN-FIRST:event_btFlatNumEnterMouseC
 }//GEN-LAST:event_btFlatNumEnterMouseClicked
 
 function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
-    if (self.parFlatID&&self.parDateID&&self.parSum)
+    if (self.parFlatID&&self.parDateID)
         modSal.addOplata(self.parFlatID, self.parSessionID, self.parDateID,
                          self.parSum, self.parDate, self.parComment);
     self.model.save();

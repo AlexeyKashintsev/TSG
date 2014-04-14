@@ -6,4 +6,4 @@
 Select * 
 From per_counter_values t1
  Where :counterID = t1.counter_id
- and :dateID = t1.date_id
+ and (:dateID = t1.date_id or :dateID is null)

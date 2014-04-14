@@ -11,7 +11,7 @@ function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod) {
     model.params.beginUpdate();
     model.params.parGroupID = aGroupID;
     model.params.parOldDate = anOldDate;
-    model.params.endUpdate();
+    model.params.parNewDate = aNewDate;
     
     function initializeTarifs4NewMonth() {
         var tarifs = [];
@@ -36,11 +36,14 @@ function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod) {
         model.dsCntVal.beforeFirst();
         var i = 0;
         while (model.dsCntVal.next()){
-            counters[i] = {};
-            counters[i].counter_id = model.dsCntVal.counter_id;
-            counters[i].date_id = aNewDate;
-            counters[i].beg_val = model.dsCntVal.end_val;
-            i++;
+            if (!processedCounters[model.dsCntVal.counter_id]) {
+                counters[i] = {};
+                counters[i].counter_id = model.dsCntVal.counter_id;
+                counters[i].date_id = aNewDate;
+                counters[i].beg_val = model.dsCntVal.end_val;
+                processedCounters[counters[i].counter_id] = true;
+                i++;
+            }
         }
         for (var j in counters)
             model.dsCntVal.push(counters[j]);        

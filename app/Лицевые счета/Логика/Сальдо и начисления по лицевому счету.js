@@ -8,7 +8,7 @@
 function SaldoAndSumsModule() {
 
 
-    var self = this;
+    var self = this, model = self.model;
 
 
     var modLC = null;
@@ -20,7 +20,7 @@ function SaldoAndSumsModule() {
     };
 
     self.saveChanges = function() {
-        self.model.save();
+        model.save();
     };
 
     /*
@@ -31,17 +31,21 @@ function SaldoAndSumsModule() {
      * @returns {@exp;dsSaldo@pro;per_saldo_flat_id}
      */
     self.initBegSaldo = function(aLC_ID, aDate, aValue) {
-        self.params.beginUpdate();
-        self.parDateID = aDate;
-        self.parFlatID = aLC_ID;
-        self.params.endUpdate();
-        if (self.dsSaldo.length == 0)
-            self.dsSaldo.insert(self.dsSaldo.md.date_id, aDate,
-                    self.dsSaldo.md.lc_id, aLC_ID,
-                    self.dsSaldo.md.sal_begin, aValue);
-        else
-            self.dsSaldo.sal_begin = aValue;
-        return self.dsSaldo.per_saldo_flat_id;
+        Logger.info('Adding beg saldo' + aLC_ID + ' value: ' + aValue);
+        model.params.beginUpdate();
+        model.params.parDateID = aDate;
+        model.params.parFlatID = aLC_ID;
+        model.params.endUpdate();
+        if (model.dsSaldo.length === 0) {
+            Logger.info('Saldo not present: ' + aLC_ID);
+            model.dsSaldo.insert(model.dsSaldo.md.date_id, aDate,
+                    model.dsSaldo.md.lc_id, aLC_ID,
+                    model.dsSaldo.md.sal_begin, aValue);
+        } else {
+            model.dsSaldo.cursor.sal_begin = aValue;
+            Logger.info('Saldo present: ' + aLC_ID + ' value: ' + model.dsSaldo.cursor.sal_begin);
+        }
+        return model.dsSaldo.per_saldo_flat_id;
     };
     
     /*

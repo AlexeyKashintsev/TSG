@@ -18,8 +18,8 @@ self.canSetEdit = false;
 function setEdit(){
     self.modelGrid.editable = self.btnAdd.enabled = 
             self.btnDel.enabled = self.btnSave.enabled = self.isEditable;    
-tbSetEdit.visible = self.canSetEdit;
-    tbSetEdit.selected = self.isEditable;
+    self.tbSetEdit.visible = self.canSetEdit;
+    self.tbSetEdit.selected = self.isEditable;
 }
 
 
@@ -66,16 +66,7 @@ function btnAddActionPerformed() {//GEN-FIRST:event_btnAddActionPerformed
                 cnt_mod.checkModified();
             }
             self.model.requery();
-           //services_by_flat.insert();
-           //services_by_flat.services_id = aValue;
-           //self.dsServices.insert(   self.dsServices.md.services_id, aValue,
-           //                     self.dsServices.md.lc_id, self.parFlatID);
-        });  
-        
-    
-            
-        ////self.dsServices.insert(self.dsServices.md.services_id, *ServIDGet*,
-                //      self.dsServices.md.lc_id, self.parFlatID);
+        });
 }//GEN-LAST:event_btnAddActionPerformed
 
 function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed

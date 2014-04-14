@@ -3,7 +3,7 @@
     <layout type="MarginLayoutDesignInfo"/>
     <constraints height="60px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="modelCombo" parent="panel" prefHeight="24px" prefWidth="113px" type="DbComboDesignInfo">
+  <widget editable="false" name="modelCombo" parent="panel" prefHeight="24px" prefWidth="113px" type="DbComboDesignInfo">
     <displayField entityId="137717716626333" fieldName="TextDate"/>
     <valueField entityId="137717716626333" fieldName="per_date_id"/>
     <datamodelElement entityId="-1" fieldName="parDateID"/>
@@ -14,7 +14,8 @@
   </widget>
   <widget actionPerformed="btn_prevActionPerformed" icon="icons/16x16/actions/old-go-previous.png" name="btn_prev" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo"/>
   <widget actionPerformed="btn_nextActionPerformed" icon="icons/16x16/actions/old-go-next.png" name="btn_next" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo"/>
-  <widget actionPerformed="btn_lastActionPerformed" icon="icons/16x16/actions/old-go-last.png" name="btn_last" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo"/>
+  <widget actionPerformed="btn_lastActionPerformed" icon="icons/16x16/actions/old-go-last.png" name="btn_last" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo" visible="false"/>
+  <widget actionPerformed="btn_confActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/16x16/actions/document-page-setup.png" name="btn_conf" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btn_newActionPerformed" icon="icons/16x16/actions/insert-object.png" name="btn_new" parent="toolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo"/>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

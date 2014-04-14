@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="flatID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="beg_date" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="91" typeName="DATE"/>
+    <parameter description="" name="end_date" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="91" typeName="DATE"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139747460480388" entityLocationX="322" entityLocationY="30" entityWidth="150" tableAlias="t1" tableName="opl_payments" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="end_date" rightEntityFieldName="payment_date" rightEntityId="139747460480388"/>
+  <relation leftEntityId="-1" leftEntityParameterName="beg_date" rightEntityFieldName="payment_date" rightEntityId="139747460480388"/>
+  <relation leftEntityId="-1" leftEntityParameterName="flatID" rightEntityFieldName="flat_id" rightEntityId="139747460480388"/>
+</datamodel>
