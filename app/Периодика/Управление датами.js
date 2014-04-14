@@ -45,7 +45,7 @@ self.newDate = function(aCallBack) {
     model.all_dates.last();
     var prevDate = model.all_dates.cursor.per_date_id;
     var lastDate = model.all_dates.per_date;
-    self.all_dates.insert(self.all_dates.md.per_date, lastDate.setMonth(lastDate.getMonth()+1));
+    self.all_dates.insert(self.all_dates.schema.per_date, lastDate.setMonth(lastDate.getMonth()+1));
     var newDate = model.all_dates.cursor.per_date_id;
     model.save(function(){
         model.dsGroups.beforeFirst();

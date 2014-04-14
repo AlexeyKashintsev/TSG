@@ -143,8 +143,8 @@ function calculateFlatSaldo(){
     
     self.dsSaldo4calc.beforeFirst();
     while (self.dsSaldo4calc.next()){
-        var sc = self.dsSumOfSums.find(self.dsSumOfSums.md.lc_id, self.dsSaldo4calc.lc_id)[0];
-        var sp = self.dsSumOfPayments.find(self.dsSumOfPayments.md.flat_id, self.dsSaldo4calc.lc_id);
+        var sc = self.dsSumOfSums.find(self.dsSumOfSums.schema.lc_id, self.dsSaldo4calc.lc_id)[0];
+        var sp = self.dsSumOfPayments.find(self.dsSumOfPayments.schema.flat_id, self.dsSaldo4calc.lc_id);
        // var peniOld = self.dsSaldo4calc.sal_penalties_old;
        // var peni = calculateCurrentPeni(self.dsSaldo4calc.lc_id, self.dsSaldo4calc.sal_begin,
        //                             self.dsSaldo4calc.sal_penalties_old);

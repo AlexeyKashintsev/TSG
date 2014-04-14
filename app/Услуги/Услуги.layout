@@ -6,9 +6,9 @@
   <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="26px" prefWidth="34px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget name="pnlSelLock" parent="Form" prefHeight="48px" prefWidth="372px" type="PanelDesignInfo">
+  <widget name="pnlSelLock" parent="Form" prefHeight="84px" prefWidth="372px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
-    <constraints bottom="0px" height="48px" left="0px" right="0px" type="MarginConstraintsDesignInfo"/>
+    <constraints bottom="0px" height="84px" left="0px" right="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="btnSelectActionPerformed" icon="icons/22x22/actions/dialog-apply.png" name="btnSelect" parent="pnlSelLock" prefHeight="35px" prefWidth="125px" text="Выбрать" type="ButtonDesignInfo">
     <constraints bottom="7px" height="35px" right="7px" type="MarginConstraintsDesignInfo" width="125px"/>
@@ -16,68 +16,86 @@
   <widget actionPerformed="tbSetEditActionPerformed" name="tbSetEdit" parent="pnlSelLock" prefHeight="35px" prefWidth="35px" toolTipText="Открыть форму для редактирования" type="ToggleButtonDesignInfo">
     <constraints bottom="7px" height="35px" left="7px" type="MarginConstraintsDesignInfo" width="35px"/>
   </widget>
-  <widget name="pnlWorkSpace" parent="Form" prefHeight="264px" prefWidth="372px" type="PanelDesignInfo">
-    <layout type="MarginLayoutDesignInfo"/>
-    <constraints bottom="48px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
+  <widget name="modelCombo" parent="pnlSelLock" prefHeight="28px" prefWidth="132px" type="DbComboDesignInfo">
+    <displayField entityId="139750872275764" fieldName="TextDate"/>
+    <valueField entityId="139750872275764" fieldName="per_date_id"/>
+    <datamodelElement entityId="-1" fieldName="parBeg"/>
+    <constraints height="28px" left="48px" top="0px" type="MarginConstraintsDesignInfo" width="132px"/>
   </widget>
-  <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="264px" prefWidth="372px" type="DbGridDesignInfo">
+  <widget name="label" parent="pnlSelLock" prefHeight="16px" prefWidth="30px" text="С" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="6px" type="MarginConstraintsDesignInfo" width="30px"/>
+  </widget>
+  <widget name="label1" parent="pnlSelLock" prefHeight="16px" prefWidth="26px" text="по" type="LabelDesignInfo">
+    <constraints height="16px" left="192px" top="6px" type="MarginConstraintsDesignInfo" width="26px"/>
+  </widget>
+  <widget name="modelCombo1" parent="pnlSelLock" prefHeight="28px" prefWidth="132px" type="DbComboDesignInfo">
+    <displayField entityId="139750872275764" fieldName="TextDate"/>
+    <valueField entityId="139750872275764" fieldName="per_date_id"/>
+    <datamodelElement entityId="-1" fieldName="parEnd"/>
+    <constraints height="28px" left="228px" top="0px" type="MarginConstraintsDesignInfo" width="132px"/>
+  </widget>
+  <widget name="pnlWorkSpace" parent="Form" prefHeight="228px" prefWidth="372px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints bottom="84px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="228px" prefWidth="372px" type="DbGridDesignInfo">
+    <column name="colService" title="Услуга">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137684100940550" fieldName="usl_name"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Предпочитаемый способ расчета">
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <displayField entityId="137684101269880" fieldName="calc_name"/>
+        <valueField entityId="137684101269880" fieldName="usl_calc_formula_id"/>
+      </controlInfo>
+      <datamodelElement entityId="137684100940550" fieldName="calc_id"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="colConnectedService" title="Связанная услуга">
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <displayField entityId="137684100940550" fieldName="usl_name"/>
+        <valueField entityId="137684100940550" fieldName="usl_services_id"/>
+      </controlInfo>
+      <datamodelElement entityId="137684100940550" fieldName="connected_service"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137684100940550" field="false"/>
     </rowsColumnsDesignInfo>
     <treeDesignInfo>
       <unaryLinkField entityId="137684100940550" fieldName="parent_service"/>
     </treeDesignInfo>
-    <column name="colService" title="Услуга">
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="137684100940550" fieldName="usl_name"/>
-    </column>
-    <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Предпочитаемый способ расчета">
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
-      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137684101269880" fieldName="calc_name"/>
-        <valueField entityId="137684101269880" fieldName="usl_calc_formula_id"/>
-      </controlInfo>
-      <datamodelElement entityId="137684100940550" fieldName="calc_id"/>
-    </column>
-    <column name="colConnectedService" title="Связанная услуга">
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
-      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137684100940550" fieldName="usl_name"/>
-        <valueField entityId="137684100940550" fieldName="usl_services_id"/>
-      </controlInfo>
-      <datamodelElement entityId="137684100940550" fieldName="connected_service"/>
-    </column>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

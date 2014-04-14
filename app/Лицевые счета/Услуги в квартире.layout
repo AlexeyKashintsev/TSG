@@ -12,24 +12,10 @@
   </widget>
   <widget deletable="false" insertable="false" name="modelGrid" parent="pnlWorkSpace" prefHeight="312px" prefWidth="372px" type="DbGridDesignInfo">
     <column name="colService" title="Услуга">
-      <datamodelElement entityId="137513141035797" fieldName="services_id"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="11"/>
-      </headerStyle>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137520096845259" fieldName="usl_name"/>
         <valueField entityId="137520096845259" fieldName="usl_services_id"/>
       </controlInfo>
-    </column>
-    <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Cпособ расчета">
       <datamodelElement entityId="137513141035797" fieldName="services_id"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -42,12 +28,27 @@
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
+    </column>
+    <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Cпособ расчета">
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="137520096845259" fieldName="calc_name"/>
         <valueField entityId="137520096845259" fieldName="usl_services_id"/>
       </controlInfo>
+      <datamodelElement entityId="137513141035797" fieldName="services_id"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="11"/>
+      </headerStyle>
     </column>
     <column fixed="true" name="column" title="Активна">
+      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="137513141035797" fieldName="fs_active"/>
       <cellDesignInfo>
         <cellValueField/>
@@ -60,7 +61,56 @@
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
-      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+    </column>
+    <column name="column3" title="Даты">
+      <column name="colDateBeg" title="с">
+        <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+          <displayField entityId="139750978386891" fieldName="TextDate"/>
+          <valueField entityId="139750978386891" fieldName="per_date_id"/>
+        </controlInfo>
+        <datamodelElement entityId="137513141035797" fieldName="date_start"/>
+        <cellDesignInfo>
+          <cellValueField/>
+          <columnsKeyField/>
+          <rowsKeyField/>
+        </cellDesignInfo>
+        <cellsDatasource/>
+        <columnsDatasource/>
+        <columnsDisplayField/>
+        <headerStyle>
+          <nativeFont name="Lucida Grande" size="11"/>
+        </headerStyle>
+      </column>
+      <column name="colDateEnd" title="по">
+        <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+          <displayField entityId="139750978386891" fieldName="TextDate"/>
+          <valueField entityId="139750978386891" fieldName="per_date_id"/>
+        </controlInfo>
+        <datamodelElement entityId="137513141035797" fieldName="date_end"/>
+        <cellDesignInfo>
+          <cellValueField/>
+          <columnsKeyField/>
+          <rowsKeyField/>
+        </cellDesignInfo>
+        <cellsDatasource/>
+        <columnsDatasource/>
+        <columnsDisplayField/>
+        <headerStyle>
+          <nativeFont name="Lucida Grande" size="11"/>
+        </headerStyle>
+      </column>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137513141035797" field="false"/>

@@ -27,8 +27,6 @@ function setElShown(){
     setEdit();
     if (!isSelectForm){
         self.pnlSelLock.visible = false;
-        self.pnlWorkSpace.height += 48;
-        self.modelGrid.bottom += 48;
     }
 }
 
@@ -68,12 +66,11 @@ function colServicesOnInsert(aEditor){
     fmSelectServicesId.showModal(
         function(aValue){
            services_by_flat.services_id = aValue;           
-        })    
-    
-}
+        });  
+};
 
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
-    self.dsServices.insert(self.dsServices.md.parent_service, self.dsServices.parent_service);
+    self.dsServices.insert(self.dsServices.schema.parent_service, self.dsServices.parent_service);
 }//GEN-LAST:event_btnAddActionPerformed
 
 function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
@@ -87,7 +84,12 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
 }//GEN-LAST:event_formWindowClosing
 
 function btnSelectActionPerformed(evt) {//GEN-FIRST:event_btnSelectActionPerformed
-        self.close({service: self.dsServices.usl_services_id, byCounter: self.dsServices.calc_by_counter});
+        self.close({
+            service     : self.dsServices.usl_services_id,
+            byCounter   : self.dsServices.calc_by_counter,
+            begDate     : self.model.params.parBeg,
+            endDate     : self.model.params.parEnd
+        });
 }//GEN-LAST:event_btnSelectActionPerformed
 
 }

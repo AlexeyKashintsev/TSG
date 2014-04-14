@@ -76,11 +76,11 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
 
 
     function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
-        self.dsOplSessions.insert(self.dsOplSessions.md.date_id, self.parDateID,
-                                  self.dsOplSessions.md.opl_comment, 
+        self.dsOplSessions.insert(self.dsOplSessions.schema.date_id, self.parDateID,
+                                  self.dsOplSessions.schema.opl_comment, 
                                   self.tfSesComment.text!='Комментарий к новой сессии'?
                                   self.tfSesComment.text:'',
-                                  self.dsOplSessions.md.opl_date,  new Date());
+                                  self.dsOplSessions.schema.opl_date,  new Date());
         openCurrentSession();
         self.model.save();
     }//GEN-LAST:event_btnAddActionPerformed

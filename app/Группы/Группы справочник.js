@@ -23,12 +23,12 @@ function processVisible(){
 
 function button11ActionPerformed(evt) {//GEN-FIRST:event_button11ActionPerformed
     var p = self.dsGroups.grp_parent;
-    self.dsGroups.insert(self.dsGroups.md.grp_parent, p);
+    self.dsGroups.insert(self.dsGroups.schema.grp_parent, p);
 }//GEN-LAST:event_button11ActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
     var p = self.dsGroups.grp_groups_id;
-    self.dsGroups.insert(self.dsGroups.md.grp_parent, p);
+    self.dsGroups.insert(self.dsGroups.schema.grp_parent, p);
 }//GEN-LAST:event_button1ActionPerformed
 
 function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed

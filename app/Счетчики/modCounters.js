@@ -17,17 +17,17 @@ self.checkModified = function(){
 };
 
 self.addNewCounter = function(aCntActive, aCntNumber, aCntType){
-    self.dsCounterByID.insert(   self.dsCounterByID.md.cnt_type, aCntType?aCntType:"FC",
-                            self.dsCounterByID.md.cnt_active, aCntActive?aCntActive:true,
-                            self.dsCounterByID.md.cnt_number, aCntNumber?aCntNumber:null);
+    self.dsCounterByID.insert(   self.dsCounterByID.schema.cnt_type, aCntType?aCntType:"FC",
+                            self.dsCounterByID.schema.cnt_active, aCntActive?aCntActive:true,
+                            self.dsCounterByID.schema.cnt_number, aCntNumber?aCntNumber:null);
     return self.dsCounterByID.cnt_counters_id;
 };
 
 self.addCounter2Service = function(aCounter, aFlatService, aGroupService, aDepended){
     self.model.dsCountersByFlat.insert(  self.model.dsCountersByFlat.schema.counter_id, aCounter,
-                                        self.model.dsCountersByFlat.md.flat_service, aFlatService?aFlatService:null,
-                                        self.model.dsCountersByFlat.md.group_service, aGroupService?aGroupService:null,
-                                        self.model.dsCountersByFlat.md.main_service, aDepended?false:true);
+                                        self.model.dsCountersByFlat.schema.flat_service, aFlatService?aFlatService:null,
+                                        self.model.dsCountersByFlat.schema.group_service, aGroupService?aGroupService:null,
+                                        self.model.dsCountersByFlat.schema.main_service, aDepended?false:true);
     return self.model.dsCountersByFlat.cnt_con2services_id;
 };
 
@@ -43,7 +43,7 @@ self.getCounterInFlat = function(aFlatID, aServiceID){
     self.dsCountersByFlat.params.flat_id = aFlatID;
     self.dsCountersByFlat.execute();
     try{
-        return self.dsCountersByFlat.find(self.dsCountersByFlat.md.services_id, aServiceID)[0].counter_id;
+        return self.dsCountersByFlat.find(self.dsCountersByFlat.schema.services_id, aServiceID)[0].counter_id;
     } catch (e) {
         var cnt = addNewCounter();
         var fs = getFlatService(aFlatID, aServiceID);
@@ -62,10 +62,10 @@ self.setCounterValueByCounterValueID = function(aCounterID, aDateID, aBegValue, 
     self.dsCountersValues.params.dateID = aDateID;
     self.dsCountersValues.execute();
     if (self.dsCountersValues.length == 0){
-        self.dsCountersValues.insert(self.dsCountersValues.md.counter_id, aCounterID,
-                                self.dsCountersValues.md.date_id, aDateID,
-                                self.dsCountersValues.md.beg_val, aBegValue,
-                                self.dsCountersValues.md.end_val, aEndValue?aEndValue:aBegValue);
+        self.dsCountersValues.insert(self.dsCountersValues.schema.counter_id, aCounterID,
+                                self.dsCountersValues.schema.date_id, aDateID,
+                                self.dsCountersValues.schema.beg_val, aBegValue,
+                                self.dsCountersValues.schema.end_val, aEndValue?aEndValue:aBegValue);
     } else {
         self.dsCountersValues.beg_val = aBegValue;
         self.dsCountersValues.end_val = aEndValue;

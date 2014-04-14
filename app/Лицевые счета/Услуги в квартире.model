@@ -5,10 +5,13 @@
     <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="11" entityWidth="150"/>
+  <entity Name="all_dates" Title="" entityHeight="200" entityIconified="false" entityId="139750978386891" entityLocationX="553" entityLocationY="16" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
   <entity Name="dsServices" Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="137513141035797" entityLocationX="193" entityLocationY="19" entityWidth="150" queryId="services_by_flat" tableName="" tableSchemaName=""/>
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137520096845259" entityLocationX="364" entityLocationY="19" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137513141035797" rightEntityParameterName="flat_id"/>
-  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137520096845259" rightEntityFieldName="usl_services_id" rightEntityId="137520096845259"/>
-  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137520096845259" rightEntityFieldName="usl_services_id" rightEntityId="137520096845259"/>
+  <referenceRelation leftEntityFieldName="date_start" leftEntityId="137513141035797" rightEntityFieldName="per_date_id" rightEntityId="139750978386891"/>
+  <referenceRelation leftEntityFieldName="date_end" leftEntityId="137513141035797" rightEntityFieldName="per_date_id" rightEntityId="139750978386891"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="137513141035797" rightEntityFieldName="usl_services_id" rightEntityId="137520096845259"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137520096845259" rightEntityFieldName="usl_services_id" rightEntityId="137520096845259"/>
+  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137520096845259" rightEntityFieldName="usl_services_id" rightEntityId="137520096845259"/>
 </datamodel>

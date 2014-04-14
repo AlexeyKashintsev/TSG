@@ -38,9 +38,9 @@ function SaldoAndSumsModule() {
         model.params.endUpdate();
         if (model.dsSaldo.length === 0) {
             Logger.info('Saldo not present: ' + aLC_ID);
-            model.dsSaldo.insert(model.dsSaldo.md.date_id, aDate,
-                    model.dsSaldo.md.lc_id, aLC_ID,
-                    model.dsSaldo.md.sal_begin, aValue);
+            model.dsSaldo.insert(model.dsSaldo.schema.date_id, aDate,
+                    model.dsSaldo.schema.lc_id, aLC_ID,
+                    model.dsSaldo.schema.sal_begin, aValue);
         } else {
             model.dsSaldo.cursor.sal_begin = aValue;
             Logger.info('Saldo present: ' + aLC_ID + ' value: ' + model.dsSaldo.cursor.sal_begin);
@@ -62,13 +62,13 @@ function SaldoAndSumsModule() {
         self.parFlatID = aLC_ID;
         self.params.endUpdate();
         if (self.dsSaldo.length == 0)
-            self.dsSaldo.insert(self.dsSaldo.md.date_id, aDate,
-                    self.dsSaldo.md.lc_id, aLC_ID,
-                    self.dsSaldo.md.sal_penalties_cur, aCurrentValue,
-                    self.dsSaldo.md.sal_penalties_old, aPreviousValue);
+            self.dsSaldo.insert(self.dsSaldo.schema.date_id, aDate,
+                    self.dsSaldo.schema.lc_id, aLC_ID,
+                    self.dsSaldo.schema.sal_penalties_cur, aCurrentValue,
+                    self.dsSaldo.schema.sal_penalties_old, aPreviousValue);
         else {
             self.dsSaldo.sal_penalties_cur = aCurrentValue;
-            self.dsSaldo.md.sal_penalties_old = aPreviousValue;
+            self.dsSaldo.schema.sal_penalties_old = aPreviousValue;
         }
         return self.dsSaldo.per_saldo_flat_id;        
     };
@@ -96,12 +96,12 @@ function SaldoAndSumsModule() {
 
     self.addOplata = function(aFlatID, aSessionID, aDateID, aSum, aDate, aComment) {
         self.dsOplById.insert(
-            self.dsOplById.md.session_id, aSessionID,
-            self.dsOplById.md.flat_id, aFlatID,
-            self.dsOplById.md.payment_sum, aSum,
-            self.dsOplById.md.date_id, aDateID,
-            self.dsOplById.md.payment_date, aDate,
-            self.dsOplById.md.payment_comment, aComment
+            self.dsOplById.schema.session_id, aSessionID,
+            self.dsOplById.schema.flat_id, aFlatID,
+            self.dsOplById.schema.payment_sum, aSum,
+            self.dsOplById.schema.date_id, aDateID,
+            self.dsOplById.schema.payment_date, aDate,
+            self.dsOplById.schema.payment_comment, aComment
     );
         self.model.save();
     };

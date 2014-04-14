@@ -32,7 +32,7 @@ function setElShown(){
 }
 
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
-    self.dsCalcMethod.insert(self.dsCalcMethod.md.calc_name, 'Новый метод расчета');
+    self.dsCalcMethod.insert(self.dsCalcMethod.schema.calc_name, 'Новый метод расчета');
 }//GEN-LAST:event_btnAddActionPerformed
 
 function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed

@@ -12,7 +12,7 @@ var self = this, model = self.model;
 
 
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
-    self.chars_by_group.insert(self.chars_by_group.md.grp_group_id, self.parGroup);
+    self.chars_by_group.insert(self.chars_by_group.schema.grp_group_id, self.parGroup);
 }//GEN-LAST:event_btnAddActionPerformed
 
 function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed

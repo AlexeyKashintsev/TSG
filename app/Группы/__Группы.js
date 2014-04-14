@@ -37,12 +37,12 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 
 function button11ActionPerformed(evt) {//GEN-FIRST:event_button11ActionPerformed
     var p = self.dsGroups.grp_parent;
-    self.dsGroups.insert(self.dsGroups.md.grp_parent, p);
+    self.dsGroups.insert(self.dsGroups.schema.grp_parent, p);
 }//GEN-LAST:event_button11ActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
     var p = self.dsGroups.grp_groups_id;
-    self.dsGroups.insert(self.dsGroups.md.grp_parent, p);
+    self.dsGroups.insert(self.dsGroups.schema.grp_parent, p);
 }//GEN-LAST:event_button1ActionPerformed
 
 function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
@@ -62,7 +62,7 @@ function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed
 }//GEN-LAST:event_button2ActionPerformed
 
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
-    self.dsServices.insert(self.dsServices.md.group_id, self.dsGroups.grp_groups_id);
+    self.dsServices.insert(self.dsServices.schema.group_id, self.dsGroups.grp_groups_id);
 }//GEN-LAST:event_btnAddActionPerformed
 
 function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
@@ -86,9 +86,9 @@ function colCalcTypeOnSelect(aEditor) {//GEN-FIRST:event_colCalcTypeOnSelect
 }//GEN-LAST:event_colCalcTypeOnSelect
 
 function btnAdd1ActionPerformed(evt) {//GEN-FIRST:event_btnAdd1ActionPerformed
-    self.dsChars.insert(self.dsChars.md.grp_group_id, self.dsGroups.grp_groups_id,
-                   self.dsChars.md.add_char_to_lc, true,
-                   self.dsChars.md.char_calc_by_lc, true);
+    self.dsChars.insert(self.dsChars.schema.grp_group_id, self.dsGroups.grp_groups_id,
+                   self.dsChars.schema.add_char_to_lc, true,
+                   self.dsChars.schema.char_calc_by_lc, true);
 }//GEN-LAST:event_btnAdd1ActionPerformed
 
 function btnDel1ActionPerformed(evt) {//GEN-FIRST:event_btnDel1ActionPerformed

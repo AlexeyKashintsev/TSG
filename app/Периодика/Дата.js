@@ -73,7 +73,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
     /*self.all_dates.last();
     var lastDate = self.all_dates.per_date;
-    self.all_dates.insert(self.all_dates.md.per_date, lastDate.setMonth(lastDate.getMonth()+1));
+    self.all_dates.insert(self.all_dates.schema.per_date, lastDate.setMonth(lastDate.getMonth()+1));
     //self.all_dates.scrollTo(self.all_dates.findById(self.all_dates.per_date_id));
     scrolled = false;
     self.parDateID = self.all_dates.per_date_id;

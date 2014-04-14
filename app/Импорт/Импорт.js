@@ -101,21 +101,21 @@ function saveAll(aFileName){
  */
 function ImportFields(){
     this.rowLength = self.dsRowLength.rowLength;
-    var LC_FIO = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 1);
+    var LC_FIO = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 1);
     this.LC_FIO = LC_FIO==''?null:LC_FIO[0].cellnumber-1;
-    var LC_FLAT_NUMBER = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 3);
+    var LC_FLAT_NUMBER = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 3);
     this.LC_FLAT_NUMBER = LC_FLAT_NUMBER==''?null:LC_FLAT_NUMBER[0].cellnumber-1;
-    var LC_NUMBER = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 9);
+    var LC_NUMBER = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 9);
     this.LC_NUMBER = LC_NUMBER==''?null:LC_NUMBER[0].cellnumber-1;
-    var LC_REG_CNT = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 2);
+    var LC_REG_CNT = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 2);
     this.LC_REG_CNT = LC_REG_CNT==''?null:LC_REG_CNT[0].cellnumber-1;
-    var SALDO_BEG = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 8);
+    var SALDO_BEG = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 8);
     this.SALDO_BEG = SALDO_BEG==''?null:SALDO_BEG[0].cellnumber-1;
-    var PAYMENT_DATE = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 11);
+    var PAYMENT_DATE = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 11);
     this.PAYMENT_DATE = PAYMENT_DATE==''?null:PAYMENT_DATE[0].cellnumber-1;
-    var PAYMENT_SUM = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 12);
+    var PAYMENT_SUM = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 12);
     this.PAYMENT_SUM = PAYMENT_SUM==''?null:PAYMENT_SUM[0].cellnumber-1;
-    var PENALTIES_CUR = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 13);
+    var PENALTIES_CUR = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 13);
     this.PENALTIES_CUR = PENALTIES_CUR==''?null:PENALTIES_CUR[0].cellnumber-1;
     
     this.GROUP_MODIFIER = [];
@@ -123,32 +123,32 @@ function ImportFields(){
     this.COUNTERS_BEG = [];
     this.COUNTERS_END = [];
     
-    var GROUP_MODIFIER = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 10);
+    var GROUP_MODIFIER = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 10);
     for (var i in GROUP_MODIFIER){
             this.GROUP_MODIFIER[i] = {CellNumber : GROUP_MODIFIER[i].cellnumber-1,
                                       GroupID : GROUP_MODIFIER[i].groupid};
     };
     
-    var LC_CHARS = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 4);
+    var LC_CHARS = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 4);
     for (var i in LC_CHARS){
             this.LC_CHARS[i] = {CellNumber : LC_CHARS[i].cellnumber-1,
                                 CHAR_ID : LC_CHARS[i].charid};
     };
     
     
-    var COUNTERS_BEG = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 5);
+    var COUNTERS_BEG = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 5);
     for (i=0;i<COUNTERS_BEG.length;i++){
             this.COUNTERS_BEG[i] = {CellNumber : COUNTERS_BEG[i].cellnumber-1,
                                     SERVICE_ID : COUNTERS_BEG[i].serviceid};
     }
 
-    var COUNTERS_END = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 6);
+    var COUNTERS_END = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 6);
     for (i=0;i<COUNTERS_END.length;i++){
             this.COUNTERS_END[i] = {CellNumber : COUNTERS_END[i].cellnumber-1,
                                     SERVICE_ID : COUNTERS_END[i].serviceid};
     };
     
-    var BINEFICIARIES = self.dsExcelFields.find(self.dsExcelFields.md.impfieldtype, 7);
+    var BINEFICIARIES = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 7);
     for (i=0;i<BINEFICIARIES.length;i++){
             this.BINEFICIARIES[i] = {CellNumber : BINEFICIARIES[i].cellnumber-1,
                                      BENEFIT_ID : BINEFICIARIES[i].benefit_id};

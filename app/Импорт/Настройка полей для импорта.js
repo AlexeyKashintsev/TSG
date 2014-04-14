@@ -75,18 +75,18 @@ function btnAdd1ActionPerformed(evt) {//GEN-FIRST:event_btnAdd1ActionPerformed
 function btnDublicateActionPerformed(evt) {//GEN-FIRST:event_btnDublicateActionPerformed
     if(!self.model.modified){
         //self.model.save();
-        self.dsImportVariants.insert(self.dsImportVariants.md.importname,
+        self.dsImportVariants.insert(self.dsImportVariants.schema.importname,
             'Копия ' + self.dsImportVariants.findById(self.parImport).importname);
         var pImp = self.dsImportVariants.importnames_id;
         self.dsExFields.first();
         while (!self.dsExFields.eof()){
-            self.dsEX.insert(   self.dsEX.md.cellnumber, self.dsExFields.cellnumber,
-                                self.dsEX.md.impfieldtype, self.dsExFields.impfieldtype,
-                                self.dsEX.md.impfieldnumber, self.dsExFields.impfieldnumber,
-                                self.dsEX.md.impfile, pImp,
-                                self.dsEX.md.charid, self.dsExFields.charid,
-                                self.dsEX.md.serviceid, self.dsExFields.serviceid,
-                                self.dsEX.md.statpar, self.dsExFields.statpar);
+            self.dsEX.insert(   self.dsEX.schema.cellnumber, self.dsExFields.cellnumber,
+                                self.dsEX.schema.impfieldtype, self.dsExFields.impfieldtype,
+                                self.dsEX.schema.impfieldnumber, self.dsExFields.impfieldnumber,
+                                self.dsEX.schema.impfile, pImp,
+                                self.dsEX.schema.charid, self.dsExFields.charid,
+                                self.dsEX.schema.serviceid, self.dsExFields.serviceid,
+                                self.dsEX.schema.statpar, self.dsExFields.statpar);
             self.dsExFields.next();
         }
         self.model.save();
@@ -104,7 +104,7 @@ function jButton1ActionPerformed(evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
 function jButtonActionPerformed(evt) {//GEN-FIRST:event_jButtonActionPerformed
     if (self.parImport!=null)
-        self.dsExFields.insert(self.dsExFields.md.impfile, self.parImport);
+        self.dsExFields.insert(self.dsExFields.schema.impfile, self.parImport);
     setSaveBtnEnabled();
 }//GEN-LAST:event_jButtonActionPerformed
 

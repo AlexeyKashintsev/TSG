@@ -56,7 +56,9 @@ function btnAddActionPerformed() {//GEN-FIRST:event_btnAddActionPerformed
     fmSelectServicesId.isSelectForm = true;
     fmSelectServicesId.showModal(
         function(aValue){
-            var fs = lc_mod.addServiceToLC(self.parFlatID, aValue.service, aValue.byCounter, self.parDateID);
+            var fs = lc_mod.addServiceToLC( self.parFlatID, aValue.service, aValue.byCounter,
+                                            aValue.begDate?aValue.begDate:self.parDateID,
+                                            aValue.endDate);
             lc_mod.saveChanges();
             if (aValue.byCounter) {
                 var cnt_mod = new CountersModule();

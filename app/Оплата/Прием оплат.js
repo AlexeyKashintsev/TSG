@@ -10,7 +10,7 @@ function opl_get() {
     
 
 function tfFlatNumberActionPerformed(evt) {//GEN-FIRST:event_tfFlatNumberActionPerformed
-    var flat = self.dsFlatsByGroup.find(self.dsFlatsByGroup.md.lc_flatnumber, self.tfFlatNumber.text);
+    var flat = self.dsFlatsByGroup.find(self.dsFlatsByGroup.schema.lc_flatnumber, self.tfFlatNumber.text);
     if (flat.length == 1){
         self.parFlatID = flat[0].lc_flat_id;
     }

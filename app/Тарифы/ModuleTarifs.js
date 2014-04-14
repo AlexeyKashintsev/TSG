@@ -24,10 +24,10 @@ function TarifsModule() {
         self.servicesIsAbsent.execute();
         self.servicesIsAbsent.beforeFirst();
         while (self.servicesIsAbsent.next()) {
-            self.tarifsInGroup.insert(//self.tarifsInGroup.md.usl_tarif_id,self.servicesIsAbsent.grp_services_id,
-                    self.tarifsInGroup.md.services_id, self.servicesIsAbsent.services_id,
-                    self.tarifsInGroup.md.date_id, aDateID,
-                    self.tarifsInGroup.md.group_id, aGroupID);
+            self.tarifsInGroup.insert(//self.tarifsInGroup.schema.usl_tarif_id,self.servicesIsAbsent.grp_services_id,
+                    self.tarifsInGroup.schema.services_id, self.servicesIsAbsent.services_id,
+                    self.tarifsInGroup.schema.date_id, aDateID,
+                    self.tarifsInGroup.schema.group_id, aGroupID);
         }
         self.model.save();
     };
