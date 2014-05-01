@@ -50,6 +50,7 @@ self.calculateValues = function(aGroupID, aFlatID, aDateID){
         if (prepared){
             self.dsSums4calc.beforeFirst();
             while (self.dsSums4calc.next()){
+                Logger.info("Расчет начисления: " + self.dsSums4calc.per_sums_id);
                 try {
                     if (self.dsSums4calc.calc_value_formula)
                         self.dsSums4calc.calc_value = formulEval.calculate(self.dsSums4calc.calc_value_formula,
@@ -143,6 +144,7 @@ function calculateFlatSaldo(){
     
     self.dsSaldo4calc.beforeFirst();
     while (self.dsSaldo4calc.next()){
+        Logger.info("Расчет сальдо в квартире: " + self.dsSaldo4calc.cursor.lc_id);
         var sc = self.dsSumOfSums.find(self.dsSumOfSums.schema.lc_id, self.dsSaldo4calc.lc_id)[0];
         var sp = self.dsSumOfPayments.find(self.dsSumOfPayments.schema.flat_id, self.dsSaldo4calc.lc_id);
        // var peniOld = self.dsSaldo4calc.sal_penalties_old;

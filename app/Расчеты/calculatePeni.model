@@ -6,10 +6,10 @@
   <entity Name="dsPayments" Title="" entityHeight="200" entityIconified="false" entityId="139747488856831" entityLocationX="647" entityLocationY="10" entityWidth="150" queryId="flat_payments_in_period" tableName="" tableSchemaName=""/>
   <entity Name="dsPaySum" Title="" entityHeight="200" entityIconified="false" entityId="139747495258885" entityLocationX="466" entityLocationY="12" entityWidth="150" queryId="flat_payments_in_period_agregare" tableName="" tableSchemaName=""/>
   <entity Name="saldo4calc" Title="" entityHeight="200" entityIconified="false" entityId="139507850307196" entityLocationX="188" entityLocationY="13" entityWidth="150" queryId="Saldo4calc" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="139747495258885" rightEntityParameterName="flatID"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="139747488856831" rightEntityParameterName="flatID"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="139507850307196" rightEntityParameterName="flatid"/>
-  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="139747488856831" rightEntityFieldName="lc_flat_id" rightEntityId="139507850307196"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="139747488856831" rightEntityParameterName="flatID"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="139747495258885" rightEntityParameterName="flatID"/>
   <referenceRelation leftEntityFieldName="flat_id" leftEntityId="139747495258885" rightEntityFieldName="lc_flat_id" rightEntityId="139507850307196"/>
+  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="139747488856831" rightEntityFieldName="lc_flat_id" rightEntityId="139507850307196"/>
   <referenceRelation leftEntityFieldName="lc_id" leftEntityId="139507850307196" rightEntityFieldName="lc_flat_id" rightEntityId="139507850307196"/>
 </datamodel>
