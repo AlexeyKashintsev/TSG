@@ -41,23 +41,30 @@ self.getPayPeriod4Date = function(aDateID){
 };
 
 self.newDate = function(aCallBack) {
+    var progress = new ProgressShow();
+    progress.setMax(model.dsGroups.length * 4 + 1);
     callBack = aCallBack;
     model.all_dates.last();
     var prevDate = model.all_dates.cursor.per_date_id;
     var lastDate = model.all_dates.per_date;
     self.all_dates.insert(self.all_dates.schema.per_date, lastDate.setMonth(lastDate.getMonth()+1));
     var newDate = model.all_dates.cursor.per_date_id;
-    model.save(function(){
-        model.dsGroups.beforeFirst();
-        while (model.dsGroups.next()) {
-            var group = model.dsGroups.grp_groups_id;
-            model.sums_4create.params.dateid = newDate;
-            model.sums_4create.params.groupid = group;
-            model.sums_4create.executeUpdate();
-            grpModules[group] = new NewMonthInitializer4Group(prevDate, newDate, group, self);
-        }        
-    });
-
+    (function(){
+        model.save(function(){
+            (function(){progress.increaseValue(1);}).invokeAndWait();
+            model.dsGroups.beforeFirst();
+            while (model.dsGroups.next()) {
+                var group = model.dsGroups.grp_groups_id;
+                model.sums_4create.params.dateid = newDate;
+                model.sums_4create.params.groupid = group;
+                model.sums_4create.executeUpdate();
+                (function(){progress.increaseValue(1);}).invokeAndWait();
+                grpModules[group] = new NewMonthInitializer4Group(prevDate, newDate, group, self, progress);
+            }
+            (function(){progress.close();}).invokeAndWait();
+        });
+    }).invokeBackground();
+    progress.showModal();
 };
 
 self.ready = function() {

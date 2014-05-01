@@ -4,7 +4,7 @@
  * @author Alexey
  * @module
  */ 
-function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod) {
+function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod, aProgress) {
     var self = this, model = this.model;
     var initCNT = 0;
     
@@ -70,6 +70,7 @@ function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod) {
     }
     
     function ready() {
+        (function(){aProgress.increaseValue(1);}).invokeAndWait();
         initCNT++;
         if (initCNT===3) {
             model.save(function(){

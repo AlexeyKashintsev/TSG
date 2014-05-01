@@ -28,44 +28,51 @@ function calculatePeni() {
         var pp = dateMod.getPayPeriod4Date(aDateID);
         model.dsPaySum.params.beg_date = pp.start;
         model.dsPaySum.params.end_date = pp.end;
+       // model.dsPaySum.params.dateid = aDateID;
         model.dsPaySum.execute();
         return model.dsPaySum.paySum;
     }
     
-    function setCalcPaymentPeriod(aDateID) {
-        var pp = dateMod.getPayPeriod4Date(aDateID);
-        model.dsPayments.params.beg_date = pp.start;
-        model.dsPayments.params.end_date = pp.end;
+    function setCalcPaymentPeriod(aDateID, aPrevDate) {
+        var endDate = dateMod.getPayPeriod4Date(aDateID);
+        var startDate = dateMod.getPayPeriod4Date(aPrevDate);
+        model.dsPayments.params.beg_date = startDate.start;
+        model.dsPayments.params.end_date = endDate.end;
         model.dsPayments.requery();
-        return pp;
+        return {
+            start       :   startDate.start,
+            end         :   endDate.end,
+            peniDate    :   startDate.end
+        };
     }
     
     self.calculate = function(aFlatID, aDateID) {
+        aDateID = dateMod.prevDate(aDateID);
         var prevDate = dateMod.prevDate(aDateID);
         model.params.parFlatID = aFlatID;
         model.saldo4calc.params.dateid = prevDate;
         model.saldo4calc.requery();
         
         var sumOfDebt = model.saldo4calc.sal_begin;
-        var sumOfPayments = getAgregatedPaymentSumInPeriod(prevDate);
+     //   var sumOfPayments = getAgregatedPaymentSumInPeriod(prevDate);
         var curPeni = 0;
         
-        if (sumOfDebt > sumOfPayments) {
+     //   if (sumOfDebt > sumOfPayments) {
            /* model.saldo4calc.params.dateid = aDateID;
             model.saldo4calc.requery();*/
             
-            sumOfDebt -= sumOfPayments;
-            var dates = setCalcPaymentPeriod(aDateID);
-            var lastDate = dates.start;
+      //      sumOfDebt -= sumOfPayments;
+            var dates = setCalcPaymentPeriod(aDateID, prevDate);
+            var lastDate = dates.peniDate;
             model.dsPayments.beforeFirst();
             while (model.dsPayments.next()) {
                 var diff = daysBetween(lastDate, model.dsPayments.payment_date);
-                lastDate = model.dsPayments.payment_date;
                 if (diff <= 0){
                     sumOfDebt -= model.dsPayments.payment_sum;
                 } else {
                     curPeni += sumOfDebt * diff * SRF;
                     sumOfDebt -= model.dsPayments.payment_sum;
+                    lastDate = model.dsPayments.payment_date;
                 };
                 if (sumOfDebt <= 0) break;
             }
@@ -73,10 +80,13 @@ function calculatePeni() {
                 diff = daysBetween(lastDate, dates.end);
                 curPeni += sumOfDebt * diff * SRF;
             }
-        }
+      //  }
+        model.saldo4calc.params.dateid = aDateID;
+        model.saldo4calc.requery();
         return {
             current  : curPeni,
-            previous : model.saldo4calc.cursor.sal_penalties_cur
+            previous : model.saldo4calc.cursor.sal_penalties_cur,
+            saldo    : model.saldo4calc.cursor.sal_end
         };
     };
 }

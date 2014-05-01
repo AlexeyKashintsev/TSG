@@ -4,16 +4,16 @@
     <parameter description="" name="date_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="Квартиры в группах" entityHeight="200" entityIconified="false" entityId="139188716817736" entityLocationX="201" entityLocationY="219" entityWidth="150" tableAlias="t4" tableName="grp_lc_group" tableSchemaName=""/>
-  <entity Title="Услуги" entityHeight="200" entityIconified="false" entityId="138918851406422" entityLocationX="562" entityLocationY="11" entityWidth="150" tableAlias="t2" tableName="usl_services" tableSchemaName=""/>
-  <entity Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="139188715591289" entityLocationX="378" entityLocationY="218" entityWidth="150" tableAlias="t3" tableName="grp_services" tableSchemaName=""/>
-  <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="139116460646439" entityLocationX="374" entityLocationY="9" entityWidth="150" tableAlias="t" tableName="lc_flat_services" tableSchemaName=""/>
-  <entity Title="Начисления" entityHeight="200" entityIconified="false" entityId="137517856618288" entityLocationX="200" entityLocationY="9" entityWidth="150" tableAlias="t1" tableName="per_sums" tableSchemaName=""/>
-  <relation leftEntityFieldName="group_id" leftEntityId="139188716817736" rightEntityFieldName="group_id" rightEntityId="139188715591289"/>
-  <relation leftEntityFieldName="flat_service_id" leftEntityId="137517856618288" rightEntityFieldName="lc_flat_services_id" rightEntityId="139116460646439"/>
-  <relation leftEntityId="-1" leftEntityParameterName="flat_id" rightEntityFieldName="lc_id" rightEntityId="139116460646439"/>
+  <entity Title="Услуги" entityHeight="115" entityIconified="false" entityId="139756152200578" entityLocationX="197" entityLocationY="218" entityWidth="150" tableAlias="t4" tableName="usl_services" tableSchemaName=""/>
+  <entity Title="Квартиры в группах" entityHeight="200" entityIconified="false" entityId="139756146297438" entityLocationX="555" entityLocationY="-4" entityWidth="150" tableAlias="t2" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="Услуги в группе" entityHeight="130" entityIconified="false" entityId="139188715591289" entityLocationX="554" entityLocationY="206" entityWidth="150" tableAlias="t3" tableName="grp_services" tableSchemaName=""/>
+  <entity Title="Услуги в квартире" entityHeight="200" entityIconified="false" entityId="139116460646439" entityLocationX="371" entityLocationY="11" entityWidth="150" tableAlias="t" tableName="lc_flat_services" tableSchemaName=""/>
+  <entity Title="Начисления" entityHeight="200" entityIconified="false" entityId="137517856618288" entityLocationX="195" entityLocationY="10" entityWidth="150" tableAlias="t1" tableName="per_sums" tableSchemaName=""/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="139116460646439" rightEntityFieldName="lc_id" rightEntityId="139756146297438"/>
   <relation leftEntityFieldName="services_id" leftEntityId="139116460646439" rightEntityFieldName="services_id" rightEntityId="139188715591289"/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="139116460646439" rightEntityFieldName="lc_id" rightEntityId="139188716817736"/>
-  <relation leftEntityFieldName="services_id" leftEntityId="139116460646439" rightEntityFieldName="usl_services_id" rightEntityId="138918851406422"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="139756146297438" rightEntityFieldName="group_id" rightEntityId="139188715591289"/>
   <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="137517856618288"/>
+  <relation leftEntityId="-1" leftEntityParameterName="flat_id" rightEntityFieldName="lc_id" rightEntityId="139116460646439"/>
+  <relation leftEntityFieldName="services_id" leftEntityId="139116460646439" rightEntityFieldName="usl_services_id" rightEntityId="139756152200578"/>
+  <relation leftEntityFieldName="flat_service_id" leftEntityId="137517856618288" rightEntityFieldName="lc_flat_services_id" rightEntityId="139116460646439"/>
 </datamodel>

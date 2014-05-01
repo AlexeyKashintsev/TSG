@@ -79,7 +79,7 @@ function BillsBuilder_Doverie() {
                         penalties_old: self.model.saldo_by_flat.cursor.sal_penalties_old
                     };
                     
-                    lc_saldo.debt = lc_saldo.begin - lc_saldo.payments;
+                    lc_saldo.debt = lc_saldo.end - lc_saldo.full_calc;//lc_saldo.begin - lc_saldo.payments;
                     lc_saldo.full_end = lc_saldo.end + lc_saldo.penalties_cur;
 
                     var sum = [];
@@ -96,7 +96,6 @@ function BillsBuilder_Doverie() {
                             count:          cnt
                         };
                     });
-
 
                     var counters = [];
                     var askCounters = [];
@@ -124,6 +123,8 @@ function BillsBuilder_Doverie() {
                     var date = self.all_dates.findById(self.model.params.parDateID).per_date;
                     var monthNames = [ "январь", "Февраль", "март", "апрель", "май", "июнь",
                            "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь" ];
+                    var monthNamesRP = [ "января", "Февраля", "марта", "апреля", "мая", "июня",
+                           "июля", "августа", "сентября", "октября", "ноября", "декабря" ];
                     dates = (monthNames[date.getMonth()]+" "+date.getFullYear());
 
                     var saltoStr = (Math.round(lc_saldo.full_end*100)).toString();
@@ -135,16 +136,18 @@ function BillsBuilder_Doverie() {
                     var bcn = barCodeStr;
                     barCodeStr = bcg.codeIt(barCodeStr);
 
-                    var days = '';
-                    self.all_dates.forEach(function(day){
+                    var DM = new DateModule();
+                    var prevDate = self.model.all_dates.findById(DM.prevDate(self.model.params.parDateID)).per_pay_day;
+                    var days = (prevDate.getDate() + " " + monthNamesRP[prevDate.getMonth()] + " " + prevDate.getFullYear());
+                    var payDay = self.all_dates.findById(self.model.params.parDateID).per_pay_day;
+                    payDay = (payDay.getDate() + " " + monthNamesRP[payDay.getMonth()] + " " + payDay.getFullYear());
+                    
+                   /* self.all_dates.forEach(function(day){
                         day = self.all_dates.findById(self.saldo_by_flat.date_id).per_date;
-                       // alert(date.toLocaleDateString());
-                      //  var monthNames = [ "января", "Февраля", "марта", "апреля", "мая", "июня",
-                        //       "июля", "августа", "сентября", "октября", "ноября", "декабря" ];
                         var prev_date = new Date(day.getFullYear(),day.getMonth()+1,day.getDate());
                         prev_date.setDate(0);
                         days = (prev_date.getDate()+" "+monthNames[prev_date.getMonth()]+" "+prev_date.getFullYear());
-                    });
+                    });*/
 
 
                     var lc_data = { 
@@ -159,6 +162,7 @@ function BillsBuilder_Doverie() {
                         counter:        counters,
                         date:           dates,
                         day:            days,
+                        payDay:         payDay,
                         barcode:        barCodeStr,
                         bk:             bcn,
                         counters4ask:   askCounters

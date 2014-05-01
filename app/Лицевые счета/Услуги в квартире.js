@@ -60,13 +60,6 @@ function btnAddActionPerformed() {//GEN-FIRST:event_btnAddActionPerformed
                                             aValue.begDate?aValue.begDate:self.parDateID,
                                             aValue.endDate);
             lc_mod.saveChanges();
-            if (aValue.byCounter) {
-                var cnt_mod = new CountersModule();
-                var counter = cnt_mod.addNewCounter();
-                cnt_mod.addCounter2Service(counter, fs);
-                cnt_mod.setCounterValueByCounterValueID(counter, self.parDateID, 0, 0);
-                cnt_mod.checkModified();
-            }
             self.model.requery();
         });
 }//GEN-LAST:event_btnAddActionPerformed

@@ -208,7 +208,8 @@ function LCModule() {
     };
 
     self.processIfConnectedService = function(aFlatService, aService, aFlatID) {
-        var conServ = self.model.qServices.findById(aService).connected_service;
+        var conServ = model.qServices.find(model.qServices.schema.usl_services_id, aService)
+        if (conServ) conServ = conServ[0].connected_service;
         if (conServ) {
             if (!modCN)
                 modCN = new CountersModule();

@@ -152,13 +152,15 @@ function calculateFlatSaldo(){
        //                             self.dsSaldo4calc.sal_penalties_old);
        var peni = peniClc.calculate(self.dsSaldo4calc.lc_id, self.model.params.parDateID);
        var peniOld = peni.previous;
-       peni = peni.current;
+       var saldoOld = peni.saldo?peni.saldo:self.dsSaldo4calc.sal_begin;
+       peni = peni.current; 
        self.dsSaldo4calc.sal_penalties_old = peniOld;
        
         if (sp.length==1) 
             sp = sp[0];
         else 
             sp.pay_sum = 0;
+        self.dsSaldo4calc.sal_begin = saldoOld;
         self.dsSaldo4calc.sal_calc = sc.sal_calc;
         self.dsSaldo4calc.sal_benefit = sc.sal_benefit;
         self.dsSaldo4calc.sal_recalc = sc.sal_recalc;
@@ -174,9 +176,9 @@ function calculateFlatSaldo(){
                 peniOld -= extra;
                 extra = 0;
             }
-            peni += peniOld;
-            endSum = -extra
+            endSum = -extra;
         }
+        peni += peniOld;
         endSum += sc.sal_full_calc;
         self.dsSaldo4calc.sal_end = endSum;
         self.dsSaldo4calc.sal_penalties_cur = peni;
