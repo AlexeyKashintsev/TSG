@@ -50,7 +50,7 @@ function calculatePeni() {
         aDateID = dateMod.prevDate(aDateID);
         var prevDate = dateMod.prevDate(aDateID);
         model.params.parFlatID = aFlatID;
-        model.saldo4calc.params.dateid = prevDate;
+        model.saldo4calc.params.dateid = aDateID;
         model.saldo4calc.requery();
         
         var sumOfDebt = model.saldo4calc.sal_begin;

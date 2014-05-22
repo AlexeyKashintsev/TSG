@@ -16,6 +16,7 @@ var sums = new Sums();
 var formulEval = new FormulaEvaluator();
 var prepared = false;
 var peniClc = new calculatePeni();
+var progress = new ProgressShow();
 /**
  * 
  * @param {type} aGroupID
@@ -35,7 +36,9 @@ function prepareCalcModule(aGroupID, aFlatID, aDateID){
         self.dsCalcObject.requery();
         groups = new Groups(aDateID);
         flats = new Flats(aDateID);
-        self.dsSums4calc.requery();    
+        self.dsSums4calc.requery();  
+        self.dsSaldo4calc.requery();
+        progress.setMax(self.dsSums4calc.length + self.dsSaldo4calc.length);
         prepared = true;
         return true;
     } catch (e){
@@ -45,58 +48,68 @@ function prepareCalcModule(aGroupID, aFlatID, aDateID){
 };
 
 self.calculateValues = function(aGroupID, aFlatID, aDateID){
-    prepareCalcModule(aGroupID, aFlatID, aDateID);
-    try {
-        if (prepared){
-            self.dsSums4calc.beforeFirst();
-            while (self.dsSums4calc.next()){
-                Logger.info("Расчет начисления: " + self.dsSums4calc.per_sums_id);
-                try {
-                    if (self.dsSums4calc.calc_value_formula)
-                        self.dsSums4calc.calc_value = formulEval.calculate(self.dsSums4calc.calc_value_formula,
-                                                                      sums.GetSum(self.dsSums4calc.per_sums_id),
-                                                                      'VALUE');
-                } catch (e) {
-                    Logger.warning('Ошибка расчета объема PerSumsID: '+ self.dsSums4calc.per_sums_id);
+    (function() {
+        (function() {progress.setDescription("Подготовка");}).invokeAndWait();
+        prepareCalcModule(aGroupID, aFlatID, aDateID);
+        (function() {progress.setDescription("Расчет начислений");}).invokeAndWait();
+        try {
+            if (prepared){
+                self.dsSums4calc.beforeFirst();
+                while (self.dsSums4calc.next()){
+                    Logger.info("Расчет начисления: " + self.dsSums4calc.per_sums_id);
+                    try {
+                        if (self.dsSums4calc.calc_value_formula)
+                            self.dsSums4calc.calc_value = formulEval.calculate(self.dsSums4calc.calc_value_formula,
+                                                                          sums.GetSum(self.dsSums4calc.per_sums_id),
+                                                                          'VALUE');
+                    } catch (e) {
+                        Logger.warning('Ошибка расчета объема PerSumsID: '+ self.dsSums4calc.per_sums_id);
+                    }
+                    try {
+                        self.dsSums4calc.calc = formulEval.calculate(self.dsSums4calc.calc_formula,
+                                                                sums.GetSum(self.dsSums4calc.per_sums_id),
+                                                                'SCALC');
+                    } catch (e) {
+                        Logger.warning('Ошибка расчета начисления по услуге 888 в квартире  ' + aFlatID);
+                    }
+                    try {
+                        self.dsSums4calc.benefit = formulEval.calculate('0',
+                                                                sums.GetSum(self.dsSums4calc.per_sums_id),
+                                                                'BENEFIT');
+                    } catch (e) {
+                        Logger.warning('Ошибка расчета льготы по услуге 888 в квартире ' + aFlatID);
+                    }
+                    try {
+                        self.dsSums4calc.recalc = formulEval.calculate(self.dsSums4calc.recalc?'RECALC':'0',
+                                                                sums.GetSum(self.dsSums4calc.per_sums_id),
+                                                                'RECALC');
+                    } catch (e) {
+                        Logger.warning('Ошибка расчета суммы перерасчета по услуге 888 в квартире  ' + aFlatID);
+                    };
+                    try {
+                        self.dsSums4calc.full_calc = formulEval.calculate('SCALC-BENEFIT-RECALC',
+                                                                sums.GetSum(self.dsSums4calc.per_sums_id),
+                                                                'FULL_CALC');
+                    } catch (e) {
+                        Logger.warning('Ошибка расчета полного значения по услуге 888 в квартире  ' + aFlatID);
+                    }
+                    (function() {progress.increaseValue(1);}).invokeAndWait();
                 }
-                try {
-                    self.dsSums4calc.calc = formulEval.calculate(self.dsSums4calc.calc_formula,
-                                                            sums.GetSum(self.dsSums4calc.per_sums_id),
-                                                            'SCALC');
-                } catch (e) {
-                    Logger.warning('Ошибка расчета начисления по услуге 888 в квартире  ' + aFlatID);
-                }
-                try {
-                    self.dsSums4calc.benefit = formulEval.calculate('0',
-                                                            sums.GetSum(self.dsSums4calc.per_sums_id),
-                                                            'BENEFIT');
-                } catch (e) {
-                    Logger.warning('Ошибка расчета льготы по услуге 888 в квартире ' + aFlatID);
-                }
-                try {
-                    self.dsSums4calc.recalc = formulEval.calculate(self.dsSums4calc.recalc?'RECALC':'0',
-                                                            sums.GetSum(self.dsSums4calc.per_sums_id),
-                                                            'RECALC');
-                } catch (e) {
-                    Logger.warning('Ошибка расчета суммы перерасчета по услуге 888 в квартире  ' + aFlatID);
-                };
-                try {
-                    self.dsSums4calc.full_calc = formulEval.calculate('SCALC-BENEFIT-RECALC',
-                                                            sums.GetSum(self.dsSums4calc.per_sums_id),
-                                                            'FULL_CALC');
-                } catch (e) {
-                    Logger.warning('Ошибка расчета полного значения по услуге 888 в квартире  ' + aFlatID);
-                }
-                
+                (function() {progress.setDescription("Сохранение значений расчета начислений");}).invokeAndWait();
+                self.model.save();
+                calculateFlatSaldo();
+                (function() {progress.close();}).invokeAndWait();
+                return true;
+            } else {
+                (function() {progress.close();}).invokeAndWait();
+                return false;
             }
-            self.model.save();
-            calculateFlatSaldo();
-            return true;
-        } else return false;
-    } catch (e) {
-        Logger.warning(e);
-        return false;
-    }
+        } catch (e) {
+            Logger.warning(e);
+            return false;
+        }
+    }).invokeBackground();
+    progress.showModal();
 };
 
 /*function calculateCurrentPeni(aFlatID, aBegSaldo) {
@@ -137,13 +150,14 @@ self.calculateValues = function(aGroupID, aFlatID, aDateID){
 }*/
 
 function calculateFlatSaldo(){
-    self.dsSaldo4calc.requery();
+    //self.dsSaldo4calc.requery();
     self.dsSumOfSums.requery();
     self.dsSumOfPayments.requery();
     self.dsPayments.requery();
     
     self.dsSaldo4calc.beforeFirst();
     while (self.dsSaldo4calc.next()){
+        (function() {progress.setDescription("Расчет финальных значений");}).invokeAndWait();
         Logger.info("Расчет сальдо в квартире: " + self.dsSaldo4calc.cursor.lc_id);
         var sc = self.dsSumOfSums.find(self.dsSumOfSums.schema.lc_id, self.dsSaldo4calc.lc_id)[0];
         var sp = self.dsSumOfPayments.find(self.dsSumOfPayments.schema.flat_id, self.dsSaldo4calc.lc_id);
@@ -182,7 +196,9 @@ function calculateFlatSaldo(){
         endSum += sc.sal_full_calc;
         self.dsSaldo4calc.sal_end = endSum;
         self.dsSaldo4calc.sal_penalties_cur = peni;
+        (function() {progress.increaseValue(1);}).invokeAndWait();
     }
+    (function() {progress.setDescription("Сохранение финальных значений");}).invokeAndWait();
     self.model.save();
 };
 

@@ -43,6 +43,7 @@ self.getPayPeriod4Date = function(aDateID){
 self.newDate = function(aCallBack) {
     var progress = new ProgressShow();
     progress.setMax(model.dsGroups.length * 4 + 1);
+    progress.setDescription("Подождите. Производится перенос данных в новый расчетный период");
     callBack = aCallBack;
     model.all_dates.last();
     var prevDate = model.all_dates.cursor.per_date_id;

@@ -23,4 +23,8 @@ function ProgressShow() {
     self.increaseValue = function(aInc) {
         form.progressBar.value += aInc;
     };
+    
+    self.setDescription = function(aDesc) {
+        form.lblPrcName.text = aDesc;
+    };
 }

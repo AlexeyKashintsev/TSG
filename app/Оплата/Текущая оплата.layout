@@ -8,28 +8,26 @@
   </widget>
   <widget editable="false" foregroundColor="#663300" name="modelFormattedField" opaque="false" parent="panel" prefHeight="28px" prefWidth="132px" type="DbLabelDesignInfo">
     <datamodelElement entityId="138702829717095" fieldName="lc_regto"/>
-    <constraints height="28px" left="12px" top="56px" type="MarginConstraintsDesignInfo" width="132px"/>
+    <constraints height="28px" left="12px" top="54px" type="MarginConstraintsDesignInfo" width="132px"/>
     <border etcheHighlightColor="#000000" etcheShadowColor="#000000" type="EtchedBorderDesignInfo"/>
   </widget>
-  <widget deletable="false" editable="false" focusable="false" insertable="false" name="modelGrid" parent="panel" prefHeight="179px" prefWidth="146px" type="DbGridDesignInfo">
+  <widget deletable="false" editable="false" focusable="false" insertable="false" name="modelGrid" parent="panel" prefHeight="143px" prefWidth="146px" type="DbGridDesignInfo">
     <column name="column" title="Дата">
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
       <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138702866029948" fieldName="payment_date"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
     </column>
     <column name="column1" title="Сумма">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="138702866029948" fieldName="payment_sum"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -41,16 +39,24 @@
       <headerStyle>
         <nativeFont name="Lucida Grande" size="13"/>
       </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138702866029948" fieldName="payment_sum"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138702866029948" field="false"/>
     </rowsColumnsDesignInfo>
     <treeDesignInfo/>
-    <constraints bottom="3px" left="3px" right="3px" top="84px" type="MarginConstraintsDesignInfo"/>
+    <constraints bottom="3px" left="3px" right="3px" top="120px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget editable="false" name="modelFormattedField3" parent="panel" prefHeight="28px" prefWidth="132px" type="DbLabelDesignInfo">
     <datamodelElement entityId="138702829717095" fieldName="lc_flatnumber"/>
     <constraints height="28px" left="12px" top="24px" type="MarginConstraintsDesignInfo" width="132px"/>
+  </widget>
+  <widget editable="false" list="false" name="modelCombo" parent="panel" prefHeight="28px" prefWidth="132px" type="DbComboDesignInfo">
+    <displayField entityId="139911082892305" fieldName="grp_name"/>
+    <valueField entityId="139911082892305" fieldName="grp_groups_id"/>
+    <datamodelElement entityId="139911078787730" fieldName="group_id"/>
+    <constraints height="28px" left="12px" top="84px" type="MarginConstraintsDesignInfo" width="132px"/>
   </widget>
   <widget name="panel1" parent="Form" prefHeight="120px" prefWidth="403px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
@@ -89,41 +95,39 @@
   </widget>
   <widget name="modelGrid1" parent="panel2" prefHeight="110px" prefWidth="388px" type="DbGridDesignInfo">
     <column name="column2" readonly="true" title="Счетчик">
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <displayField entityId="138703021155642" fieldName="usl_name"/>
         <valueField entityId="138703021155642" fieldName="usl_services_id"/>
       </controlInfo>
       <datamodelElement entityId="138703018256097" fieldName="services_id"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
     </column>
     <column name="column3" readonly="true" title="Предыдущее">
+      <cellDesignInfo>
+        <cellValueField/>
+        <columnsKeyField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <cellsDatasource/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138703018256097" fieldName="beg_val"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
     </column>
     <column name="column4" title="Текущее">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="138703018256097" fieldName="end_val"/>
       <cellDesignInfo>
         <cellValueField/>
         <columnsKeyField/>
@@ -135,6 +139,8 @@
       <headerStyle>
         <nativeFont name="Lucida Grande" size="13"/>
       </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138703018256097" fieldName="end_val"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138703018256097" field="false"/>
