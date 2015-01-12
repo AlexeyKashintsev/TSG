@@ -4,7 +4,8 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="138686324127452" entityLocationX="370" entityLocationY="19" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
-  <entity Name="dsOplSessions" Title="Сессии оплаты" entityHeight="200" entityIconified="false" entityId="138686322493762" entityLocationX="186" entityLocationY="16" entityWidth="150" queryId="dsOplSessions" tableName="" tableSchemaName=""/>
+  <entity Name="dsOplSessions" Title="Сессии оплаты" entityHeight="200" entityIconified="false" entityId="138686322493762" entityLocationX="187" entityLocationY="16" entityWidth="150" queryId="dsOplSessions" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138686322493762" rightEntityParameterName="date_id"/>
   <referenceRelation leftEntityFieldName="session_id" leftEntityId="138686322493762" rightEntityFieldName="opl_sessions_id" rightEntityId="138686322493762"/>
   <referenceRelation leftEntityFieldName="date_id" leftEntityId="138686322493762" rightEntityFieldName="per_date_id" rightEntityId="138686324127452"/>
 </datamodel>

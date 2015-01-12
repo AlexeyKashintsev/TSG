@@ -83,10 +83,18 @@ function calculatePeni() {
       //  }
         model.saldo4calc.params.dateid = aDateID;
         model.saldo4calc.requery();
-        return {
-            current  : curPeni,
-            previous : model.saldo4calc.cursor.sal_penalties_cur,
-            saldo    : model.saldo4calc.cursor.sal_end
-        };
+        try {
+            return {
+                current  : curPeni,
+                previous : model.saldo4calc.cursor.sal_penalties_cur,
+                saldo    : model.saldo4calc.cursor.sal_end
+            };
+        } catch (e) {
+            return {
+                current  : curPeni,
+                previous : 0,
+                saldo    : 0
+            };
+        }
     };
 }

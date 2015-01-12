@@ -3,7 +3,6 @@
  * @author Alexey
  * @name main_form
  * @public
- * @roles
  */
 
 function main_form() {
@@ -112,7 +111,7 @@ self.setDate = function(aNewDateID){
        fmReportPrint.model.params.parDateID = self.model.params.parDateID;
        self.showFormAsInternal(fmReportPrint);
     }//GEN-LAST:event_button4ActionPerformed
-    
+
     function flats_by_groupOnScrolled(evt) {//GEN-FIRST:event_flats_by_groupOnScrolled
         /*if (self.flats_by_group.next()){
             var repBill = new aaa_1();
