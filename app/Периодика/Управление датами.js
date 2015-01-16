@@ -53,6 +53,7 @@ self.newDate = function(aCallBack) {
     (function(){
         model.save(function(){
             (function(){progress.increaseValue(1);}).invokeAndWait();
+           
             model.dsGroups.beforeFirst();
             while (model.dsGroups.next()) {
                 var group = model.dsGroups.grp_groups_id;
@@ -61,6 +62,16 @@ self.newDate = function(aCallBack) {
                 model.sums_4create.executeUpdate();
                 (function(){progress.increaseValue(1);}).invokeAndWait();
                 grpModules[group] = new NewMonthInitializer4Group(prevDate, newDate, group, self, progress);
+            }
+            
+            model.dsAllLc.beforeFirst();
+            while (model.dsAllLc.next()) {
+                var lc = model.dsAllLc.lc_flat_id;
+          //      model.sums_4create.params.dateid = newDate;
+         //       model.sums_4create.params.groupid = group;
+         //       model.sums_4create.executeUpdate();
+               (function(){progress.increaseValue(1);}).invokeAndWait();
+                grpModules[lc] = new NewMonthInitializer4Lc(prevDate, newDate, lc, self, progress);
             }
             (function(){progress.close();}).invokeAndWait();
         });

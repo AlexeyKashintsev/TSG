@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parGroupID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parOldDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parNewDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="dsTarifsInGroup" Title="" entityHeight="200" entityIconified="false" entityId="139444063941446" entityLocationX="296" entityLocationY="20" entityWidth="150" queryId="Тарифы_в_группе" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="139444063941446" rightEntityParameterName="group_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parOldDate" rightEntityId="139444063941446" rightEntityParameterName="date_id"/>
+</datamodel>

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parameters>
     <parameter description="" name="date_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
-    <parameter description="" name="group_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="139470277833044" entityLocationX="220" entityLocationY="62" entityWidth="150" tableAlias="t2" tableName="grp_lc_group" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="139470277833045" entityLocationX="406" entityLocationY="18" entityWidth="150" tableAlias="t1" tableName="per_saldo_flat" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="139470277833045"/>
-  <relation leftEntityId="-1" leftEntityParameterName="group_id" rightEntityFieldName="group_id" rightEntityId="139470277833044"/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="139470277833044" rightEntityFieldName="lc_id" rightEntityId="139470277833045"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142122316429697" entityLocationX="316" entityLocationY="5" entityWidth="150" tableAlias="t1" tableName="per_saldo_flat" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="142122316429697"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="142122316429697"/>
 </datamodel>
