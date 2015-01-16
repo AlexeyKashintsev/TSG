@@ -31,7 +31,7 @@ function NewMonthInitializer4Lc(anOldDate, aNewDate, aLcID, aMainMod, aProgress)
             i++;
         }
         for (var j in saldo)
-        model.dsSaldo.push(saldo[j]);
+            model.dsSaldo.push(saldo[j]);
         ready();
     }
 
