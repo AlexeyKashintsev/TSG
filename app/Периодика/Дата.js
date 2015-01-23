@@ -24,6 +24,7 @@ function btn_prevActionPerformed(evt) {//GEN-FIRST:event_btn_prevActionPerformed
 function all_datesOnScrolled(evt) {//GEN-FIRST:event_all_datesOnScrolled
     if (!changed){
         self.parDateID = self.all_dates.per_date_id;
+        self.parEditDate = self.all_dates.edit_date;
         scrolled =  true;}
     else {
         changed = false;}
@@ -36,6 +37,7 @@ function all_datesOnScrolled(evt) {//GEN-FIRST:event_all_datesOnScrolled
         self.btn_last.enabled = self.btn_next.enabled = false;
     else self.btn_last.enabled = self.btn_next.enabled = true;
     setDate(self.parDateID);
+    setEditDate(self.parEditDate);
 }//GEN-LAST:event_all_datesOnScrolled
 
 function btn_nextActionPerformed(evt) {//GEN-FIRST:event_btn_nextActionPerformed
@@ -90,6 +92,11 @@ function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
 
 function setDate(aNewDateID){
     if (self.parentForm) return self.parentForm.setDate(aNewDateID)
+    else return true;
+}
+
+function setEditDate(aEditDate){
+    if (self.parentForm) return self.parentForm.setEditDate(aEditDate)
     else return true;
 }
 

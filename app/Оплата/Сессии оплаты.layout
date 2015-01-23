@@ -2,26 +2,27 @@
   <widget name="toolBar" parent="Form" prefHeight="31px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
     <constraints place="First" type="BorderLayoutConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="btnOpenActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-edit.png" name="btnOpen" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Открыть сессию" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget name="tfSesComment" parent="toolBar" prefHeight="29px" prefWidth="214px" text="Комментарий к новой сессии" type="TextFieldDesignInfo"/>
+  <widget name="tfSesComment" parent="toolBar" prefHeight="29px" prefWidth="243px" text="Комментарий к новой сессии" type="TextFieldDesignInfo"/>
   <widget name="pnlWorkSpace" parent="Form" prefHeight="317px" prefWidth="372px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints place="Center" type="BorderLayoutConstraintsDesignInfo"/>
   </widget>
-  <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="317px" prefWidth="372px" type="DbGridDesignInfo">
+  <widget mouseClicked="modelGridMouseClicked" name="modelGrid" parent="pnlWorkSpace" prefHeight="317px" prefWidth="372px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="138686322493762" field="false"/>
+    </rowsColumnsDesignInfo>
     <treeDesignInfo/>
     <column name="colDate_id" readonly="true" title="Расчетный месяц">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="138686324127452" fieldName="per_date_id"/>
         <displayField entityId="138686324127452" fieldName="TextDate"/>
       </controlInfo>
-      <columnsDisplayField/>
-      <datamodelElement entityId="138686322493762" fieldName="date_id"/>
       <columnsDatasource/>
+      <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
         <rowsKeyField/>
@@ -31,12 +32,12 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="138686322493762" fieldName="date_id"/>
     </column>
     <column name="colSes_date" readonly="true" title="Дата">
       <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy HH:mm:ss" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
-      <datamodelElement entityId="138686322493762" fieldName="opl_date"/>
       <columnsDatasource/>
+      <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
         <rowsKeyField/>
@@ -46,12 +47,12 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="138686322493762" fieldName="opl_date"/>
     </column>
     <column name="colSes_comment" title="Комментарий">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
-      <datamodelElement entityId="138686322493762" fieldName="opl_comment"/>
       <columnsDatasource/>
+      <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
         <rowsKeyField/>
@@ -61,12 +62,12 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="138686322493762" fieldName="opl_comment"/>
     </column>
     <column name="colOpl_Count" readonly="true" title="Количество">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
-      <datamodelElement entityId="138686322493762" fieldName="cnt"/>
       <columnsDatasource/>
+      <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
         <rowsKeyField/>
@@ -76,12 +77,12 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="138686322493762" fieldName="cnt"/>
     </column>
     <column name="colOpl_sum" readonly="true" title="Сумма">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDisplayField/>
-      <datamodelElement entityId="138686322493762" fieldName="ses_sum"/>
       <columnsDatasource/>
+      <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
         <rowsKeyField/>
@@ -91,10 +92,8 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="138686322493762" fieldName="ses_sum"/>
     </column>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="138686322493762" field="false"/>
-    </rowsColumnsDesignInfo>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="BorderLayoutDesignInfo"/>

@@ -22,6 +22,8 @@ var fmNachisleniya = new form_sums_per_flat();
 var fmOplata = new formPaymentsInFlat();
 var fmLCGroups = new fmGroupsByLC();
 var modCalc = new ServerModule('Calculations');
+var fmGChars = new formGroupCharacteristics();
+
 
 self.check4Modifications = function(){
     if  ((!fmFlats.model.modified
@@ -37,9 +39,9 @@ self.check4Modifications = function(){
 };
 
 self.setGroup = function(aNewGroupID){
-    self.parGroupID = fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = aNewGroupID;
+    self.parGroupID = fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = fmGChars.parGroup = aNewGroupID;
     self.parFlatID = fmFlats.setCurrentGroup(self.parGroupID);
-    self.setFlat(self.parFlatID);
+    //self.setFlat(self.parFlatID);
 };
 
 self.setFlat = function(aNewFlatID){
@@ -64,6 +66,22 @@ self.setDate = function(aNewDate){
         return false;
 };
 
+self.setEditDate = function(aEditDate){
+    if (self.check4Modifications()){
+        self.parEditDate = aEditDate;
+        fmFlatCounters.parEditDate =
+        fmNachisleniya.parEditDate =
+        fmSaldoCur.parEditDate =
+        fmNachisleniya.parEditDate =
+        fmOplata.parEditDate = 
+        fmFlats.parEditDate = 
+        fmFlatServices.parEditDate = self.parEditDate;
+        return true;
+    }
+    else
+        return false;
+};
+
 function askAndSave(){
     if (confirm('Сохранить изменения')){
         fmGChars.model.save();
@@ -74,7 +92,7 @@ function askAndSave(){
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmGroups.parentForm = self;
-    fmGroups.toolBarVisible = false;
+    fmGroups.toolBarVisible = true;
     fmGroups.showOnPanel(self.pnlGroups);
     
     fmFlats.parentForm = self;
@@ -90,6 +108,8 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmNachisleniya.showOnPanel(self.pnlCurrent);
     fmOplata.showOnPanel(self.pnlOplata);
     fmLCGroups.showOnPanel(self.pnlLCGroups);
+    fmGChars.showOnPanel(self.pnlGroupChars);
+    
 }//GEN-LAST:event_formWindowOpened
 
 function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed

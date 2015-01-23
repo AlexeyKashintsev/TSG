@@ -56,6 +56,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
         fmWorksheet.mainForm = mf;
         self.showFormAsInternal(fmWorksheet);
         self.setDate();
+        self.setEditDate();
     } else self.showFormAsInternal(fmWorksheet);
 }//GEN-LAST:event_buttonActionPerformed
 
@@ -65,12 +66,14 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         fmGroups.mainForm = mf;
         self.showFormAsInternal(fmGroups);
         self.setDate();
+        self.setEditDate();
     } else self.showFormAsInternal(fmGroups);
 }//GEN-LAST:event_button1ActionPerformed
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     self.all_dates.last();
     self.parDateID = self.all_dates.per_date_id;
+    self.parEditDate = self.all_dates.edit_date;
     fmDateSelect.parentForm = mf;
     fmDateSelect.showOnPanel(self.pnlDateSelector);
 }//GEN-LAST:event_formWindowOpened
@@ -85,6 +88,7 @@ function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed
         fmOplSessions.mainForm = mf;
         self.showFormAsInternal(fmOplSessions);
         self.setDate();
+        self.setEditDate();
     } else self.showFormAsInternal(fmOplSessions);
 }//GEN-LAST:event_button2ActionPerformed
 
@@ -104,6 +108,16 @@ self.setDate = function(aNewDateID){
     if (ok&&fmGroups) ok = fmGroups.setDate(aNewDateID);
     if (ok&&fmOplSessions) ok = fmOplSessions.setDate(aNewDateID);
     if (ok) self.parDateID = aNewDateID;
+    return ok;
+};
+
+self.setEditDate = function(aEditDate){
+    if (!aEditDate) aEditDate = self.parEditDate;
+    var ok = true;
+    if (ok&&fmWorksheet) ok = fmWorksheet.setEditDate(aEditDate);
+    if (ok&&fmGroups) ok = fmGroups.setEditDate(aEditDate);
+    if (ok&&fmOplSessions) ok = fmOplSessions.setEditDate(aEditDate);
+    if (ok) self.parEditDate = aEditDate;
     return ok;
 };
 

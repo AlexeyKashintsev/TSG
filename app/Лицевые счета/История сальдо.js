@@ -6,8 +6,6 @@
  */
 
 function formSaldoHistory() {
-
-
 var self = this;
 
 

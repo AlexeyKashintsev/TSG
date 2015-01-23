@@ -3,7 +3,7 @@
  * @author TSG
  * @module
  */ 
-function NewMonthInitializer4Lc(anOldDate, aNewDate, aLcID, aMainMod, aProgress) {
+function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, aProgress) {
     var self = this, model = this.model;
     var initCNT = 0;
     

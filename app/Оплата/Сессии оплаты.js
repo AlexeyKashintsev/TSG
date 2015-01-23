@@ -95,7 +95,8 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
         }
     }//GEN-LAST:event_btnDelActionPerformed
 
-function btnOpenActionPerformed(evt) {//GEN-FIRST:event_btnOpenActionPerformed
-    openCurrentSession();
-}//GEN-LAST:event_btnOpenActionPerformed
+    function modelGridMouseClicked(evt) {//GEN-FIRST:event_modelGridMouseClicked
+    if (evt.clickCount > 1)
+        openCurrentSession();        // TODO Добавьте свой код:
+    }//GEN-LAST:event_modelGridMouseClicked
 }
