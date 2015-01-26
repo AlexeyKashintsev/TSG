@@ -4,6 +4,6 @@
     <parameter description="" name="parEditDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="100" type="16" typeName="BOOLEAN"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150" onAfterChange="paramsOnChanged"/>
-  <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="137717729723310" entityLocationX="239" entityLocationY="27" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
-  <entity Name="flats_by_group" Title="Квартиры по группе" entityHeight="200" entityIconified="false" entityId="139214214746962" entityLocationX="466" entityLocationY="33" entityWidth="150" onAfterScroll="flats_by_groupOnScrolled" queryId="flats_by_group" tableName="" tableSchemaName=""/>
+  <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="137717729723310" entityLocationX="236" entityLocationY="18" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
+  <entity Name="flats_by_group" Title="Квартиры по группе" entityHeight="200" entityIconified="false" entityId="139214214746962" entityLocationX="468" entityLocationY="22" entityWidth="150" onAfterScroll="flats_by_groupOnScrolled" queryId="flats_by_group" tableName="" tableSchemaName=""/>
 </datamodel>

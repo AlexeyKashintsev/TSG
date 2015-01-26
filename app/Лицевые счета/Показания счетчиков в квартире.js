@@ -19,7 +19,7 @@ self.model.params.parDateID = 139696955465754;*/
 
 
 function setEdit(){
-    self.modelGrid.editable = self.edit;
+    self.modelGrid.editable = !!self.edit;
     self.btnSave.enabled = self.isEditable;    
 }
 

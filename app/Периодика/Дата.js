@@ -64,7 +64,8 @@ function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
         self.btn_last.enabled = self.btn_next.enabled = false;
     else self.btn_last.enabled = self.btn_next.enabled = true;
     
-    setDate(self.parDateID);         
+    setDate(self.parDateID);
+    setEditDate(self.parEditDate);
 }//GEN-LAST:event_paramsOnChanged
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened

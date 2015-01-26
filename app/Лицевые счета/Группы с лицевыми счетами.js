@@ -23,6 +23,9 @@ var fmOplata = new formPaymentsInFlat();
 var fmLCGroups = new fmGroupsByLC();
 var modCalc = new ServerModule('Calculations');
 var fmGChars = new formGroupCharacteristics();
+var fmGServs = new formServicesInGroup();
+var fmGTarifs = new fmTarifs();
+var fmGStats = new SaldoGroupView();
 
 
 self.check4Modifications = function(){
@@ -39,8 +42,12 @@ self.check4Modifications = function(){
 };
 
 self.setGroup = function(aNewGroupID){
-    self.parGroupID = fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = fmGChars.parGroup = aNewGroupID;
+    self.parGroupID = fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = fmGChars.parGroup = 
+            fmGServs.parGroup = fmGTarifs.parGroupID =
+            fmGStats.parGroup = aNewGroupID;
     self.parFlatID = fmFlats.setCurrentGroup(self.parGroupID);
+    self.tabbedPane1.visible = true;
+    self.tabbedPane.visible = false;
     //self.setFlat(self.parFlatID);
 };
 
@@ -48,6 +55,8 @@ self.setFlat = function(aNewFlatID){
     self.parFlatID = fmFlatCounters.parFlatID = fmFlatServices.parFlatID = fmNachisleniya.parFlatID = 
             fmOplata.parFlatID = fmSaldoHistory.parFlatID = fmSaldoCur.parFlatID =
             fmFlatChars.parFlatID = fmLCGroups.parFlatID = aNewFlatID;
+    self.tabbedPane1.visible = false;
+    self.tabbedPane.visible = true;
 };
 
 self.setDate = function(aNewDate){
@@ -59,6 +68,7 @@ self.setDate = function(aNewDate){
         fmNachisleniya.parDateID =
         fmOplata.parDateID = 
         fmFlats.parDateID = 
+        fmGTarifs.parDateID = fmGStats.parDate =
         fmFlatServices.parDateID = self.parDateID;
         return true;
     }
@@ -108,8 +118,11 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmNachisleniya.showOnPanel(self.pnlCurrent);
     fmOplata.showOnPanel(self.pnlOplata);
     fmLCGroups.showOnPanel(self.pnlLCGroups);
-    fmGChars.showOnPanel(self.pnlGroupChars);
-    
+    fmGChars.showOnPanel(self.pnlGroupChars1);
+     fmGroups.showOnPanel(self.pnlGroups);
+    fmGServs.showOnPanel(self.pnlGroupServ);
+    fmGTarifs.showOnPanel(self.pnlGroupTarifs);   
+    fmGStats.showOnPanel(self.pnlGroupData);
 }//GEN-LAST:event_formWindowOpened
 
 function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
