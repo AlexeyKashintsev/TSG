@@ -12,10 +12,12 @@ function ReportPrint() {
             processSingleFlat(aPrint, model.params.FlatID);
         } else {
             model.flats_by_group.beforeFirst();
-            while (model.flats_by_group.next())
+            if (confirm('Вы собираетесь открыть '+model.flats_by_group.length+' файлов'))
+            {while (model.flats_by_group.next())
                 if ((!model.params.flatFrom && !model.params.flatTo) || 
                    ((model.params.flatFrom <= model.flats_by_group.lc_flatnumber) && (model.params.flatTo >= model.flats_by_group.lc_flatnumber)))
                     processSingleFlat(aPrint, model.flats_by_group.lc_flat_id);
+             }
         }
     }
     
@@ -29,7 +31,7 @@ function ReportPrint() {
     }
 
     function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
-        process(false);
+        process(false);        
     }//GEN-LAST:event_buttonActionPerformed
 
     function btnPrintActionPerformed(evt) {//GEN-FIRST:event_btnPrintActionPerformed

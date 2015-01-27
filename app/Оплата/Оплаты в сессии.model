@@ -4,11 +4,12 @@
     <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="parCol" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="parSum" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parEdirDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="100" type="16" typeName="BOOLEAN"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="dsSessionColAndSum" Title="Количество и сумма оплат в сессии" entityHeight="200" entityIconified="false" entityId="138702685442407" entityLocationX="369" entityLocationY="15" entityWidth="150" queryId="dsSessionColAndSum" tableName="" tableSchemaName=""/>
   <entity Name="dsPaymentsInSession" Title="Оплаты в сессии" entityHeight="200" entityIconified="false" entityId="138695513474136" entityLocationX="197" entityLocationY="12" entityWidth="150" queryId="dsPaymentsInSession" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parSessionID" rightEntityId="138702685442407" rightEntityParameterName="sessionid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parSessionID" rightEntityId="138695513474136" rightEntityParameterName="sessionid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parSessionID" rightEntityId="138702685442407" rightEntityParameterName="sessionid"/>
   <referenceRelation leftEntityFieldName="flat_id" leftEntityId="138695513474136" rightEntityFieldName="lc_flat_id" rightEntityId="138695513474136"/>
 </datamodel>

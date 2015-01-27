@@ -22,9 +22,7 @@ self.mainForm = null;
 function setEdit(){
     self.modelGrid.editable = 
             self.btnDel.enabled = self.btnSave.enabled = isEditable;    
-    self.btnAddParent.enabled = isEditable;
-    self.tbSetEdit.visible = canSetEdit;
-    self.tbSetEdit.selected = isEditable;
+    
 }
 
 self.updateSession = function(){
@@ -32,9 +30,10 @@ self.updateSession = function(){
     self.parentForm.updateSession();
 };
 
-self.init = function (aSessionID, aDateID){
+self.init = function (aSessionID, aDateID,aEditDate){
     self.parDateID = aDateID;
     self.parSessionID = aSessionID;
+    self.parEditDate = aEditDate;
 };
 
 
@@ -73,6 +72,7 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
     function modelGridMouseClicked(evt) {//GEN-FIRST:event_modelGridMouseClicked
         if (evt.clickCount > 1){
             fmEditOplata.model.params.parDateID = self.parDateID;
+            fmEditOplata.model.params.parEditDate = self.parEditDate;
             fmEditOplata.model.params.parPaymentID = self.dsPaymentsInSession.opl_payments_id;
             fmEditOplata.parentForm = self;
             fmEditOplata.requery();

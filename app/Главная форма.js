@@ -8,7 +8,7 @@
 function main_form() {
 
 
-var self = this;
+var self = this, model = self;
 
 
     guiUtils = new guiModule();
@@ -71,9 +71,9 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
 }//GEN-LAST:event_button1ActionPerformed
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
-    self.all_dates.last();
-    self.parDateID = self.all_dates.per_date_id;
-    self.parEditDate = self.all_dates.edit_date;
+    model.all_dates.last();
+    model.params.parDateID = self.all_dates.per_date_id;
+    model.params.parEditDate = self.all_dates.edit_date;
     fmDateSelect.parentForm = mf;
     fmDateSelect.showOnPanel(self.pnlDateSelector);
 }//GEN-LAST:event_formWindowOpened
@@ -88,7 +88,7 @@ function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed
         fmOplSessions.mainForm = mf;
         self.showFormAsInternal(fmOplSessions);
         self.setDate();
-        self.setEditDate();
+        self.setEditDate(model.params.parEditDate);
     } else self.showFormAsInternal(fmOplSessions);
 }//GEN-LAST:event_button2ActionPerformed
 
@@ -112,10 +112,11 @@ self.setDate = function(aNewDateID){
 };
 
 self.setEditDate = function(aEditDate){
+    //if (!!aEditDate) aEditDate = self.parEditDate;
     var ok = true;
     if (ok&&fmWorksheet) ok = fmWorksheet.setEditDate(aEditDate);
     //if (ok&&fmGroups) ok = fmGroups.setEditDate(aEditDate);
-    //if (ok&&fmOplSessions) ok = fmOplSessions.setEditDate(aEditDate);
+    if (ok&&fmOplSessions) ok = fmOplSessions.setEditDate(aEditDate);
     return ok;
 };
 

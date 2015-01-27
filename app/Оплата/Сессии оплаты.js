@@ -28,6 +28,11 @@ self.setDate = function(aNewDate){
     return true;
 };
 
+self.setEditDate = function(aEditDate){
+    self.parEditDate = aEditDate;
+    return true;
+};
+
 function openCurrentSession(){
     if (!fmSession) {
         fmSession = new oplInSession();
@@ -35,7 +40,7 @@ function openCurrentSession(){
         fmSession.parentForm = self;
     }
 
-    fmSession.init(self.dsOplSessions.opl_sessions_id, self.parDateID);
+    fmSession.init(self.dsOplSessions.opl_sessions_id, self.parDateID,self.parEditDate);
     if (self.mainForm)
         self.mainForm.showFormAsInternal(fmSession);
     else
@@ -45,9 +50,7 @@ function openCurrentSession(){
 function setEdit(){
     self.modelGrid.editable = self.btnAdd.enabled = 
             self.btnDel.enabled = self.btnSave.enabled = isEditable;    
-    self.btnAddParent.enabled = isEditable;
-    self.tbSetEdit.visible = canSetEdit;
-    self.tbSetEdit.selected = isEditable;
+    
 }
 
 function setElShown(){

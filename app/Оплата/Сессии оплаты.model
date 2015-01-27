@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parameters>
     <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parEditDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="100" type="16" typeName="BOOLEAN"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="138686324127452" entityLocationX="370" entityLocationY="19" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>

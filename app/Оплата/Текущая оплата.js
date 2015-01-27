@@ -11,7 +11,7 @@ function opl_view() {
     self.requery = function(){
         self.dsOplById.requery();
         var editable = self.dsOplById.date_id==self.model.params.parDateID;
-        self.btnSave.visible = self.btnDelete.visible = editable;
+        self.btnSave.visible = self.btnDelete.visible = !!self.model.params.parEditDate;
         self.model.requery();
     }
     
