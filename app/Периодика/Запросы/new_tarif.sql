@@ -1,6 +1,7 @@
 /**
  * 
  * @author TSG
+ * @manual 
  * @name new_tarif
  */
 insert into usl_tarif (usl_tarif_id, services_id, date_id, group_id, rate, norm) 

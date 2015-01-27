@@ -17,10 +17,14 @@ self.canSetEdit = true;
 var tarifsModule = new TarifsModule();
 
 function setEdit(){
-    self.modelGrid.editable = self.btnSave.enabled = self.isEditable;    
+    self.btnSave.enabled = self.isEditable;    
    // btnAddParent.enabled = isEditable;
     //tbSetEdit.visible = canSetEdit;
     //tbSetEdit.selected = isEditable;
+}
+
+self.setEditDate = function(aEditDate){
+    self.modelGrid.editable = !!aEditDate;
 }
 
 function setElShown(){

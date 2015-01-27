@@ -48,6 +48,7 @@ self.setGroup = function(aNewGroupID){
     self.parFlatID = fmFlats.setCurrentGroup(self.parGroupID);
     self.tabbedPane1.visible = true;
     self.tabbedPane.visible = false;
+    self.pnlSaldoCur.visible = false; 
     //self.setFlat(self.parFlatID);
 };
 
@@ -57,6 +58,7 @@ self.setFlat = function(aNewFlatID){
             fmFlatChars.parFlatID = fmLCGroups.parFlatID = aNewFlatID;
     self.tabbedPane1.visible = false;
     self.tabbedPane.visible = true;
+    self.pnlSaldoCur.visible = true; 
 };
 
 self.setDate = function(aNewDate){
@@ -79,17 +81,14 @@ self.setDate = function(aNewDate){
 self.setEditDate = function(aEditDate){
     if (self.check4Modifications()){
         self.parEditDate = aEditDate;
-        fmFlatCounters.parEditDate =
-        fmNachisleniya.parEditDate =
-        fmSaldoCur.parEditDate =
-        fmNachisleniya.parEditDate =
-        fmOplata.parEditDate = 
-        fmFlats.parEditDate = 
-        fmFlatServices.parEditDate = self.parEditDate;
+        fmFlatCounters.setEditDate(aEditDate);
+        fmNachisleniya.setEditDate(aEditDate);
+        fmGTarifs.setEditDate(aEditDate);
+        fmGStats.setEditDate(aEditDate);
         return true;
     }
     else
-        return false;
+        return false;    
 };
 
 function askAndSave(){
@@ -109,6 +108,9 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmFlats.isEditable = true;
     fmFlats.isSelectForm = false;
     fmFlats.showOnPanel(self.pnlFlats);
+    
+    self.tabbedPane1.visible = true;
+    self.tabbedPane.visible = false;
     
     fmFlatChars.showOnPanel(self.pnlFlatChars);
     fmFlatServices.showOnPanel(self.pnlServices);

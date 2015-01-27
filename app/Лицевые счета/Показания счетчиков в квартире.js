@@ -16,11 +16,16 @@ self.isEditable = true;
 self.edit = self.model.params.parEditDate;
 /*self.model.params.parFlatID = 139704089624312;
 self.model.params.parDateID = 139696955465754;*/
+    self.modelGrid.editable = !!self.edit;
 
 
 function setEdit(){
     self.modelGrid.editable = !!self.edit;
     self.btnSave.enabled = self.isEditable;    
+}
+
+self.setEditDate = function(aEditDate){
+    self.modelGrid.editable = !!aEditDate;
 }
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
@@ -43,7 +48,7 @@ function colBegValueOnSelect(aEditor) {//GEN-FIRST:event_colBegValueOnSelect
     var res = null;
     fmSelectCalcType.isSelectForm = true;
     fmSelectCalcType.showModal(function(aValue){
-        dsServices.calc_id = aValue;
+        dsServices.calc_id = aValue;        
     });
 }//GEN-LAST:event_colBegValueOnSelect
 

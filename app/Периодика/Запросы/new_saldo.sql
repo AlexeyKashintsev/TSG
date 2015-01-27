@@ -1,6 +1,7 @@
 /**
  *
  * @author TSG
+ * @manual 
  * @name new_saldo
  */ 
  insert into per_saldo_flat(per_saldo_flat_id, date_id, lc_id, sal_begin, sal_penalties_old) 

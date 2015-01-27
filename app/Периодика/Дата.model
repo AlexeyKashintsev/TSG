@@ -4,5 +4,5 @@
     <parameter description="" name="parEditDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="100" type="16" typeName="BOOLEAN"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150" onAfterChange="paramsOnChanged"/>
-  <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="137717716626333" entityLocationX="178" entityLocationY="15" entityWidth="150" onAfterScroll="all_datesOnScrolled" queryId="all_dates" tableName="" tableSchemaName=""/>
+  <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="137717716626333" entityLocationX="299" entityLocationY="18" entityWidth="150" onAfterScroll="all_datesOnScrolled" queryId="all_dates" tableName="" tableSchemaName=""/>
 </datamodel>

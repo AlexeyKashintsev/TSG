@@ -112,12 +112,10 @@ self.setDate = function(aNewDateID){
 };
 
 self.setEditDate = function(aEditDate){
-    if (!aEditDate) aEditDate = self.parEditDate;
     var ok = true;
     if (ok&&fmWorksheet) ok = fmWorksheet.setEditDate(aEditDate);
-    if (ok&&fmGroups) ok = fmGroups.setEditDate(aEditDate);
-    if (ok&&fmOplSessions) ok = fmOplSessions.setEditDate(aEditDate);
-    if (ok) self.parEditDate = aEditDate;
+    //if (ok&&fmGroups) ok = fmGroups.setEditDate(aEditDate);
+    //if (ok&&fmOplSessions) ok = fmOplSessions.setEditDate(aEditDate);
     return ok;
 };
 

@@ -9,10 +9,7 @@
   <entity Name="tarifsInGroup" Title="Тарифы по группе" entityHeight="200" entityIconified="false" entityId="138410359511283" entityLocationX="224" entityLocationY="12" entityWidth="150" queryId="TarifsInGroup" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138410359511283" rightEntityParameterName="parGroup"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138410359511283" rightEntityParameterName="parDate"/>
-  <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="138410359511283" rightEntityFieldName="grp_groups_id" rightEntityId="138410359511283"/>
-  <referenceRelation leftEntityFieldName="modified_service_id" leftEntityId="138410359511283" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
-  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="138410360147288" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
-  <referenceRelation leftEntityFieldName="group_id" leftEntityId="138410359511283" rightEntityFieldName="grp_groups_id" rightEntityId="138410359511283"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="138410359511283" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
+  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="138410360147288" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
   <referenceRelation leftEntityFieldName="parent_service" leftEntityId="138410360147288" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
 </datamodel>
