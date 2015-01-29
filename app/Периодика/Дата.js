@@ -22,12 +22,12 @@ function btn_prevActionPerformed(evt) {//GEN-FIRST:event_btn_prevActionPerformed
 }//GEN-LAST:event_btn_prevActionPerformed
 
 function all_datesOnScrolled(evt) {//GEN-FIRST:event_all_datesOnScrolled
-    if (!changed){
+ //   if (!changed){
         self.parDateID = self.all_dates.per_date_id;
         self.parEditDate = self.all_dates.edit_date;
-        scrolled =  true;}
-    else {
-        changed = false;}
+ //       scrolled =  true;}
+ //   else {
+ //       changed = false;}
        
     if (self.all_dates.rowIndex == 1)
         self.btn_prev.enabled = false;
