@@ -3,6 +3,8 @@
     <parameter description="" name="flat_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="opl_payments" entityHeight="200" entityIconified="false" entityId="137685807437502" entityLocationX="202" entityLocationY="22" entityWidth="150" tableAlias="t1" tableName="opl_payments" tableSchemaName=""/>
+  <entity Title="opl_payments" entityHeight="200" entityIconified="false" entityId="137685807437502" entityLocationX="246" entityLocationY="9" entityWidth="150" tableAlias="t1" tableName="opl_payments" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142253241551562" entityLocationX="530" entityLocationY="16" entityWidth="150" tableAlias="t" tableName="opl_sessions" tableSchemaName=""/>
+  <relation leftEntityFieldName="session_id" leftEntityId="137685807437502" rightEntityFieldName="opl_sessions_id" rightEntityId="142253241551562"/>
   <relation leftEntityId="-1" leftEntityParameterName="flat_id" rightEntityFieldName="flat_id" rightEntityId="137685807437502"/>
 </datamodel>

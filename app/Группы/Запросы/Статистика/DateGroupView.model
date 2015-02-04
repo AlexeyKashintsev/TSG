@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parDateBeg" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parDateEnd" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142305102056259" entityLocationX="403" entityLocationY="18" entityWidth="150" queryId="DateByID" tableAlias="q1" tableName="" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142304059032840" entityLocationX="201" entityLocationY="57" entityWidth="150" tableAlias="t1" tableName="per_date" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142305101767134" entityLocationX="604" entityLocationY="15" entityWidth="150" queryId="DateByID" tableAlias="q" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateEnd" rightEntityId="142305102056259" rightEntityParameterName="dateId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateBeg" rightEntityId="142305101767134" rightEntityParameterName="dateId"/>
+</datamodel>

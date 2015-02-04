@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="415px" prefWidth="409px">
+  <widget name="panel" parent="Form" prefHeight="408px" prefWidth="408px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints height="408px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="408px"/>
+  </widget>
+  <widget name="label2" parent="panel" prefHeight="16px" prefWidth="108px" text="Выполнено" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="327px" type="MarginConstraintsDesignInfo" width="108px"/>
+  </widget>
+  <widget editable="false" focusable="false" name="modelFormattedField21" parent="panel" prefHeight="24px" prefWidth="264px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="142260847793739" fieldName="lc_regto"/>
+    <constraints height="24px" left="120px" top="60px" type="MarginConstraintsDesignInfo" width="264px"/>
+  </widget>
+  <widget name="label121" parent="panel" prefHeight="16px" prefWidth="72px" text="ФИО:" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="64px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget editable="false" focusable="false" name="modelFormattedField2" parent="panel" prefHeight="24px" prefWidth="264px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="142260847793739" fieldName="lc_flatnumber"/>
+    <constraints height="24px" left="120px" top="36px" type="MarginConstraintsDesignInfo" width="264px"/>
+  </widget>
+  <widget editable="false" focusable="false" name="FFGroupName" parent="panel" prefHeight="24px" prefWidth="264px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="142260846517193" fieldName="grp_name"/>
+    <constraints height="24px" left="120px" top="12px" type="MarginConstraintsDesignInfo" width="264px"/>
+  </widget>
+  <widget name="label12" parent="panel" prefHeight="16px" prefWidth="72px" text="Квартира:" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="40px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget name="label11" parent="panel" prefHeight="16px" prefWidth="48px" text="Группа:" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="16px" type="MarginConstraintsDesignInfo" width="48px"/>
+  </widget>
+  <widget name="label1" parent="panel" prefHeight="16px" prefWidth="48px" text="Тип:" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="102px" type="MarginConstraintsDesignInfo" width="48px"/>
+  </widget>
+  <widget name="label" parent="panel" prefHeight="16px" prefWidth="108px" text="Суть проблемы" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="132px" type="MarginConstraintsDesignInfo" width="108px"/>
+  </widget>
+  <widget name="modelCombo" parent="panel" prefHeight="28px" prefWidth="264px" type="DbComboDesignInfo">
+    <valueField entityId="142253805942123" fieldName="adm_issues_types_id"/>
+    <displayField entityId="142253805942123" fieldName="type_name"/>
+    <datamodelElement entityId="142253809417130" fieldName="type_issues"/>
+    <constraints height="28px" left="120px" top="96px" type="MarginConstraintsDesignInfo" width="264px"/>
+  </widget>
+  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="4" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="panel" prefHeight="29px" prefWidth="120px" text="Сохранить" toolTipText="Сохранить" type="ButtonDesignInfo">
+    <constraints height="29px" left="144px" top="353px" type="MarginConstraintsDesignInfo" width="120px"/>
+  </widget>
+  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="4" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="panel" prefHeight="29px" prefWidth="120px" text="Обновить" toolTipText="Обновить" type="ButtonDesignInfo">
+    <constraints height="29px" left="276px" top="353px" type="MarginConstraintsDesignInfo" width="120px"/>
+  </widget>
+  <widget name="mCBClosed" parent="panel" prefHeight="20px" prefWidth="264px" type="DbCheckDesignInfo">
+    <datamodelElement entityId="142253809417130" fieldName="completed"/>
+    <constraints height="20px" left="120px" top="325px" type="MarginConstraintsDesignInfo" width="264px"/>
+  </widget>
+  <widget name="scrollPane" parent="panel" prefHeight="168px" prefWidth="264px" type="ScrollDesignInfo">
+    <constraints height="168px" left="120px" top="132px" type="MarginConstraintsDesignInfo" width="264px"/>
+  </widget>
+  <widget name="taProblemText" parent="scrollPane" prefHeight="166px" prefWidth="262px" type="TextPaneDesignInfo"/>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

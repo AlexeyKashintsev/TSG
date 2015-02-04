@@ -72,4 +72,9 @@ function dsGroupsOnScrolled(evt) {//GEN-FIRST:event_dsGroupsOnScrolled
     function btnSelectActionPerformed(evt) {//GEN-FIRST:event_btnSelectActionPerformed
         self.close(self.dsGroups.grp_groups_id);
     }//GEN-LAST:event_btnSelectActionPerformed
+
+    function modelGridMouseClicked(evt) {//GEN-FIRST:event_modelGridMouseClicked
+        if (self.parentForm)
+        self.parentForm.setGroup(self.dsGroups.grp_groups_id);
+    }//GEN-LAST:event_modelGridMouseClicked
 }

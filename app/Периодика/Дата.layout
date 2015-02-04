@@ -4,8 +4,8 @@
     <constraints height="60px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelCombo" parent="panel" prefHeight="24px" prefWidth="113px" type="DbComboDesignInfo">
-    <valueField entityId="137717716626333" fieldName="per_date_id"/>
     <displayField entityId="137717716626333" fieldName="TextDate"/>
+    <valueField entityId="137717716626333" fieldName="per_date_id"/>
     <datamodelElement entityId="-1" fieldName="parDateID"/>
     <constraints height="24px" left="4px" right="3px" top="6px" type="MarginConstraintsDesignInfo"/>
   </widget>

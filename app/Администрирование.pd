@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel datamodelDbId="null">
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="142253540579666" entityLocationX="334" entityLocationY="67" entityWidth="150" tableName="adm_issues"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="142253581790624" entityLocationX="24" entityLocationY="283" entityWidth="150" tableName="per_date"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="142253549784389" entityLocationX="612" entityLocationY="56" entityWidth="150" tableName="lc_flat"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="142253544509313" entityLocationX="26" entityLocationY="53" entityWidth="150" tableName="grp_groups"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="142253552457912" entityLocationX="631" entityLocationY="280" entityWidth="150" tableName="adm_issues_types"/>
+</datamodel>

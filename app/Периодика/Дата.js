@@ -13,12 +13,13 @@ var self = this, model = self.model;
 
 var scrolled = false;
 var changed = false;
+var fmFlat = new lc_in_group();
 self.parentForm = null;
 var deForm = null;
 
 
 function btn_prevActionPerformed(evt) {//GEN-FIRST:event_btn_prevActionPerformed
-    self.all_dates.prev(); 
+    self.all_dates.prev();              
 }//GEN-LAST:event_btn_prevActionPerformed
 
 function all_datesOnScrolled(evt) {//GEN-FIRST:event_all_datesOnScrolled
@@ -37,11 +38,11 @@ function all_datesOnScrolled(evt) {//GEN-FIRST:event_all_datesOnScrolled
         self.btn_last.enabled = self.btn_next.enabled = false;
     else self.btn_last.enabled = self.btn_next.enabled = true;
     setDate(self.parDateID);
-    setEditDate(self.parEditDate);
+    setEditDate(self.parEditDate);    
 }//GEN-LAST:event_all_datesOnScrolled
 
 function btn_nextActionPerformed(evt) {//GEN-FIRST:event_btn_nextActionPerformed
-    self.all_dates.next();
+    self.all_dates.next();    
 }//GEN-LAST:event_btn_nextActionPerformed
 
 function btn_lastActionPerformed(evt) {//GEN-FIRST:event_btn_lastActionPerformed
@@ -65,7 +66,7 @@ function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
     else self.btn_last.enabled = self.btn_next.enabled = true;
     
     setDate(self.parDateID);
-    setEditDate(self.parEditDate);
+    setEditDate(self.parEditDate);    
 }//GEN-LAST:event_paramsOnChanged
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened

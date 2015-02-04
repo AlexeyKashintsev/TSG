@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="group_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="all_flats" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="100" type="16" typeName="BOOLEAN"/>
+    <parameter description="" name="date_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Квартиры (Лицевые счета)" entityHeight="140" entityIconified="false" entityId="137495759642000" entityLocationX="442" entityLocationY="82" entityWidth="150" tableAlias="t1" tableName="lc_flat" tableSchemaName=""/>
+  <entity Title="Квартиры в группах" entityHeight="200" entityIconified="false" entityId="137503904595092" entityLocationX="209" entityLocationY="8" entityWidth="150" tableAlias="t" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142288315026521" entityLocationX="612" entityLocationY="8" entityWidth="150" tableAlias="t2" tableName="adm_issues" tableSchemaName=""/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="137503904595092" rightEntityFieldName="lc_flat_id" rightEntityId="137495759642000"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="137503904595092" rightEntityFieldName="lc_id" rightEntityId="142288315026521"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_id" polyline="164;76 164;234 606;234 606;111" rightEntityFieldName="date_id" rightEntityId="142288315026521"/>
+  <relation leftEntityId="-1" leftEntityParameterName="group_id" rightEntityFieldName="group_id" rightEntityId="137503904595092"/>
+</datamodel>

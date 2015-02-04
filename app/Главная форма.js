@@ -17,6 +17,7 @@ var self = this, model = self;
     var fmGroups = null;
     var fmOplSessions = null;
     var fmServices = null;
+    var fmIssues = null;
     var fmGroupSelector = null;
     var fmReportPrint = new ReportPrint();
     var mf = this;
@@ -133,4 +134,10 @@ self.setEditDate = function(aEditDate){
             repBill.print();
         }*/
     }//GEN-LAST:event_flats_by_groupOnScrolled
+
+    function button5ActionPerformed(evt) {//GEN-FIRST:event_button5ActionPerformed
+        fmIssues = new AllIssues();
+        fmIssues.mainForm = mf;        
+        self.showFormAsInternal(fmIssues);
+    }//GEN-LAST:event_button5ActionPerformed
 }

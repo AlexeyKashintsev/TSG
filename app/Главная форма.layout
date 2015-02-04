@@ -14,6 +14,7 @@
   <widget actionPerformed="button2ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/alacarte.png" name="button2" parent="toolBar1" prefHeight="55px" prefWidth="55px" toolTipText="Оплата" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="button4ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/48x48/actions/mail-message-new.png" name="button4" parent="toolBar1" prefHeight="55px" prefWidth="55px" toolTipText="Печать квитанций" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="button3ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/accessories-calculator.png" name="button3" parent="toolBar1" prefHeight="55px" prefWidth="55px" toolTipText="Услуги" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="button5ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/48x48/emblems/emblem-important.png" name="button5" parent="toolBar1" prefHeight="55px" prefWidth="55px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="pnlDateSelector" parent="Form" prefHeight="60px" prefWidth="120px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints height="60px" left="67px" top="0px" type="MarginConstraintsDesignInfo" width="120px"/>

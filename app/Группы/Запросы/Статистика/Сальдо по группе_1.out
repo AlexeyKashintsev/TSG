@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><outputFields>
+  <field bindedColumn="sal_begin" sqlType="2"/>
+  <field bindedColumn="sal_benefit" sqlType="2"/>
+  <field bindedColumn="sal_calc" sqlType="2"/>
+  <field bindedColumn="sal_end" sqlType="2"/>
+  <field bindedColumn="sal_full_calc" sqlType="2"/>
+  <field bindedColumn="sal_payments" sqlType="2"/>
+  <field bindedColumn="sal_penalties_cur" sqlType="2"/>
+  <field bindedColumn="sal_recalc" sqlType="2"/>
+</outputFields>

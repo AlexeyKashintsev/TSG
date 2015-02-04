@@ -21,6 +21,7 @@ var fmSaldoHistory = new formSaldoHistory();
 var fmNachisleniya = new form_sums_per_flat();
 var fmOplata = new formPaymentsInFlat();
 var fmLCGroups = new fmGroupsByLC();
+var fmFlatIssues = new formLcIssues();
 var modCalc = new ServerModule('Calculations');
 var fmGChars = new formGroupCharacteristics();
 var fmGServs = new formServicesInGroup();
@@ -34,6 +35,7 @@ self.check4Modifications = function(){
         &&!fmFlatServices.model.modified
         &&!fmFlatCounters.model.modified
         &&!fmLCGroups.model.modified
+        &&!fmFlatIssues.model.modified
         ||askAndSave)
         ||confirm('Не сохраненные изменения будут утеряны. Продолжить?'))
         return true;
@@ -43,7 +45,7 @@ self.check4Modifications = function(){
 
 self.setGroup = function(aNewGroupID){
     self.parGroupID = fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = fmGChars.parGroup = 
-            fmGServs.parGroup = fmGTarifs.parGroupID =
+            fmGServs.parGroup = fmGTarifs.parGroupID = fmFlatIssues.parGroup =
             fmGStats.parGroup = aNewGroupID;
     self.parFlatID = fmFlats.setCurrentGroup(self.parGroupID);
     self.tabbedPane1.visible = true;
@@ -55,10 +57,11 @@ self.setGroup = function(aNewGroupID){
 self.setFlat = function(aNewFlatID){
     self.parFlatID = fmFlatCounters.parFlatID = fmFlatServices.parFlatID = fmNachisleniya.parFlatID = 
             fmOplata.parFlatID = fmSaldoHistory.parFlatID = fmSaldoCur.parFlatID =
-            fmFlatChars.parFlatID = fmLCGroups.parFlatID = aNewFlatID;
+            fmFlatChars.parFlatID = fmLCGroups.parFlatID = fmFlatIssues.parFlat = aNewFlatID;
     self.tabbedPane1.visible = false;
     self.tabbedPane.visible = true;
-    self.pnlSaldoCur.visible = true; 
+    self.pnlSaldoCur.visible = true;
+    //fmFlatIssues.setBtnVisible();
 };
 
 self.setDate = function(aNewDate){
@@ -69,8 +72,9 @@ self.setDate = function(aNewDate){
         fmSaldoCur.parDateID =
         fmNachisleniya.parDateID =
         fmOplata.parDateID = 
-        fmFlats.parDateID = 
-        fmGTarifs.parDateID = fmGStats.parDate =
+        fmFlats.parDateID =
+        fmFlatIssues.parDate =
+        fmGTarifs.parDateID = fmGStats.parDateBeg = fmGStats.parDateEnd =
         fmFlatServices.parDateID = self.parDateID;
         return true;
     }
@@ -104,6 +108,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmGroups.toolBarVisible = true;
     fmGroups.showOnPanel(self.pnlGroups);
     
+    fmFlats.mainForm = self.mainForm;
     fmFlats.parentForm = self;
     fmFlats.isEditable = true;
     fmFlats.isSelectForm = false;
@@ -111,6 +116,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     
     self.tabbedPane1.visible = true;
     self.tabbedPane.visible = false;
+    self.pnlSaldoCur.visible = false;
     
     fmFlatChars.showOnPanel(self.pnlFlatChars);
     fmFlatServices.showOnPanel(self.pnlServices);
@@ -128,7 +134,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 }//GEN-LAST:event_formWindowOpened
 
 function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
-    mainForm.fmWorksheet = null;
+    //mainForm.fmWorksheet = null;
 }//GEN-LAST:event_formWindowClosed
 
 function btnCalcAllGroupActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllGroupActionPerformed
