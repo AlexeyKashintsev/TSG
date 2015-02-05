@@ -15,6 +15,7 @@ var self = this, model = self;
     var fmDateSelect = new fmDateSelector;
     var fmWorksheet = null;
     var fmGroups = null;
+    var fmDebt = null;
     var fmOplSessions = null;
     var fmServices = null;
     var fmIssues = null;
@@ -62,13 +63,13 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
 }//GEN-LAST:event_buttonActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
-    if (!fmGroups) {
-        fmGroups = new formAllGroups2();
-        fmGroups.mainForm = mf;
-        self.showFormAsInternal(fmGroups);
-        self.setDate();
-        self.setEditDate();
-    } else self.showFormAsInternal(fmGroups);
+    if (!fmDebt) {
+        fmDebt = new debt_in_group();
+        fmDebt.mainForm = mf;
+        self.showFormAsInternal(fmDebt);
+        //self.setDate();
+        //self.setEditDate();
+    } else self.showFormAsInternal(fmDebt);
 }//GEN-LAST:event_button1ActionPerformed
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
