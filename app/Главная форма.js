@@ -67,7 +67,7 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         fmGroups.mainForm = mf;
         self.showFormAsInternal(fmGroups);
         self.setDate();
-        self.setEditDate();
+        //self.setEditDate();
     } else self.showFormAsInternal(fmGroups);
 }//GEN-LAST:event_button1ActionPerformed
 

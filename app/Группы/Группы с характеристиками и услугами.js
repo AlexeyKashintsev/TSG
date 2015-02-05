@@ -12,31 +12,32 @@ var self = this;
 
 
 var fmGroups = new formGroups();
-var fmGChars = new formGroupCharacteristics();
-var fmGServs = new formServicesInGroup();
-var fmGTarifs = new fmTarifs();
-var fmGStats = new SaldoGroupView();
+var fmFlats = new lc_in_group();
 
 self.check4Modifications = function(){
-    if ((!fmGChars.model.modified
+    /*if ((!fmGChars.model.modified
        &&!fmGServs.model.modified
        &&!fmGTarifs.model.modified
        ||askAndSave) 
        ||confirm('Не сохраненные изменения будут утеряны. Продолжить?'))
        return true;        
     else 
-       return false;
+       return false;*/
 };
 
 self.setGroup = function(aNewGroupID){
-    fmGChars.parGroup = fmGServs.parGroup = fmGTarifs.parGroupID =
-            fmGStats.parGroup = aNewGroupID;
+    self.model.params.parGroupID = aNewGroupID;
+    self.parFlatID = fmFlats.setCurrentGroup(self.parGroupID);
+};
+
+self.setFlat = function(aNewFlatID){
+    self.parFlatID = aNewFlatID;    
 };
 
 self.setDate = function(aNewDateID){
     if (self.check4Modifications()){
         self.parDateID = aNewDateID;
-        fmGTarifs.parDateID = fmGStats.parDate = self.parDateID;
+        fmFlats.parDateID = self.parDateID;
         return true;
     }
     else
@@ -45,20 +46,20 @@ self.setDate = function(aNewDateID){
 
 function askAndSave(){
     if (confirm('Сохранить изменения')){
-        fmGChars.model.save();
-        fmGServs.model.save();
         return true;
     } else return false;
 }
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
-    fmGroups.parentForm = this;
-    fmGTarifs.modelCombo.visible = false;
+    fmGroups.parentForm = self;
+    fmGroups.toolBarVisible = true;
     fmGroups.showOnPanel(self.pnlGroups);
-    fmGChars.showOnPanel(self.pnlGroupChars);
-    fmGServs.showOnPanel(self.pnlGroupServ);
-    fmGTarifs.showOnPanel(self.pnlGroupTarifs);   
-    fmGStats.showOnPanel(self.pnlGroupData);
+    
+    fmFlats.mainForm = self.mainForm;
+    fmFlats.parentForm = self;
+    fmFlats.isEditable = true;
+    fmFlats.isSelectForm = false;
+    fmFlats.showOnPanel(self.pnlFlats);
 }//GEN-LAST:event_formWindowOpened
 
 function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed

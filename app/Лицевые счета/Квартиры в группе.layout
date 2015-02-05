@@ -22,40 +22,54 @@
     <constraints place="Center" type="BorderLayoutConstraintsDesignInfo"/>
   </widget>
   <widget mouseClicked="modelGridMouseClicked" name="modelGrid" parent="pnlWorkSpace" prefHeight="317px" prefWidth="372px" type="DbGridDesignInfo">
-    <column name="colFlatNumber" title="№" width="15">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="142288324518732" fieldName="lc_flatnumber"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colFlatRegTo" title="ФИО">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="142288324518732" fieldName="lc_regto"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
     <rowsColumnsDesignInfo generalRowFunction="modelGridOnRender">
       <rowsDatasource entityId="142288324518732" field="false"/>
     </rowsColumnsDesignInfo>
     <treeDesignInfo/>
+    <column name="colFlatNumber" title="№" width="15">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="142288324518732" fieldName="lc_flatnumber"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+    </column>
+    <column name="colFlatRegTo" title="ФИО">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="142288324518732" fieldName="lc_regto"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+    </column>
+    <column name="colDebt" title="Долг">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+    </column>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="BorderLayoutDesignInfo"/>
