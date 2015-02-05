@@ -32,10 +32,6 @@ self.setCurrentFlat = function(aNewFlatID){
 };
 
 function setEdit(){
-    /*if (self.parentForm = formAllGroups2())
-        self.modelGrid.colDebt.visible = true;
-    else 
-        self.modelGrid.colDebt.visible = false;*/
     self.modelGrid.editable = self.btnAdd.enabled = 
             self.btnDel.enabled = self.btnSave.enabled = self.isEditable;    
     self.tbSetEdit.visible = self.canSetEdit;
