@@ -13,7 +13,7 @@ var self = this, model = self.model;
 
 var scrolled = false;
 var changed = false;
-var fmFlat = new lc_in_group();
+var fmFlat = new FlatsInGroup();
 self.parentForm = null;
 var deForm = null;
 

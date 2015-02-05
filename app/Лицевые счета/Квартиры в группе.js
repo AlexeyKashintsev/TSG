@@ -1,11 +1,11 @@
 /**
  * 
  * @author Алексей
- * @name lc_in_group
+ * @name FlatsInGroup
  * @public
  */
 
-function lc_in_group() {
+function FlatsInGroup() {
 
 
 var self = this, model = self.model;

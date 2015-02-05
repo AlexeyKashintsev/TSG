@@ -12,7 +12,7 @@ var self = this;
 
 
 var fmGroups = new formGroups();
-var fmFlats = new lc_in_group();
+var fmFlats = new FlatsInGroup();
 var fmFlatChars = new charsFlat();
 var fmFlatServices = new fmServicesByFlat();
 var fmFlatCounters = new fmCounterValuesByFlat();
