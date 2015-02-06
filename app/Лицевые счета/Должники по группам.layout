@@ -4,7 +4,7 @@
     <constraints bottom="-4px" left="0px" right="-6px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget dividerLocation="250" leftComponent="modelGrid" name="splitPane" parent="panel" prefHeight="360px" prefWidth="732px" rightComponent="modelGrid1" type="SplitDesignInfo">
-    <constraints height="360px" left="0px" top="24px" type="MarginConstraintsDesignInfo" width="732px"/>
+    <constraints bottom="4px" left="0px" right="4px" top="24px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelGrid1" parent="splitPane" prefHeight="358px" prefWidth="642px" type="DbGridDesignInfo">
     <column name="colFlatNumber" title="№">
