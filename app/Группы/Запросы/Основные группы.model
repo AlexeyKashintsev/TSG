@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="show_all_option" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="16" typeName="BOOLEAN"/>
+  </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="142114563685934" entityLocationX="298" entityLocationY="31" entityWidth="150" tableAlias="t1" tableName="grp_groups" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142114563685934" entityLocationX="276" entityLocationY="32" entityWidth="150" tableAlias="t1" tableName="grp_groups" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142322322023388" entityLocationX="491" entityLocationY="28" entityWidth="150" tableAlias="t" tableName="grp_type" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="142322322023389" entityLocationX="330" entityLocationY="230" entityWidth="150" tableAlias="t2" tableName="grp_groups" tableSchemaName=""/>
   <relation leftEntityFieldName="grp_type_id" leftEntityId="142322322023388" rightEntityFieldName="grp_type" rightEntityId="142114563685934"/>
 </datamodel>
