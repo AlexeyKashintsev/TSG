@@ -58,7 +58,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
         fmWorksheet.mainForm = mf;
         self.showFormAsInternal(fmWorksheet);
         self.setDate();
-        self.setEditDate();
+        self.setEditDate(model.params.parEditDate);
     } else self.showFormAsInternal(fmWorksheet);
 }//GEN-LAST:event_buttonActionPerformed
 
