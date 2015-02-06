@@ -19,5 +19,6 @@ function debt_in_group() {
     function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
      model.params.parDebt = 0;
      self.modelSpin.value = model.params.parDebt;
+     model.params.show_all_options = true;
     }//GEN-LAST:event_formWindowOpened
 }
