@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="384px" prefWidth="730px" windowOpened="formWindowOpened">
+  <widget name="panel" parent="Form" prefHeight="388px" prefWidth="736px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints bottom="-4px" left="0px" right="-6px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget dividerLocation="250" leftComponent="modelGrid" name="splitPane" parent="panel" prefHeight="360px" prefWidth="732px" rightComponent="modelGrid1" type="SplitDesignInfo">
+    <constraints height="360px" left="0px" top="24px" type="MarginConstraintsDesignInfo" width="732px"/>
+  </widget>
+  <widget name="modelGrid1" parent="splitPane" prefHeight="358px" prefWidth="642px" type="DbGridDesignInfo">
+    <column name="colFlatNumber" title="№">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="142321101592134" fieldName="lc_flatnumber"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="colFlatRegTo" title="ФИО">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="142321101592134" fieldName="lc_regto"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="colDebt" title="Долг">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="142321101592134" fieldName="sal_end"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="142321101592134" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+  </widget>
+  <widget name="modelGrid" parent="splitPane" prefHeight="346px" prefWidth="249px" type="DbGridDesignInfo">
+    <column name="colGroups" title="Группа">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="142314144814038" fieldName="grp_name"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="142314144814038" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo>
+      <unaryLinkField entityId="142314144814038" fieldName="grp_parent"/>
+    </treeDesignInfo>
+  </widget>
+  <widget name="label" parent="panel" prefHeight="24px" prefWidth="72px" text="Долг:" type="LabelDesignInfo">
+    <constraints height="24px" left="12px" top="0px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget name="modelSpin" parent="panel" prefHeight="24px" prefWidth="132px" type="DbSpinDesignInfo">
+    <datamodelElement entityId="-1" fieldName="parDebt"/>
+    <constraints height="24px" left="48px" top="0px" type="MarginConstraintsDesignInfo" width="132px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

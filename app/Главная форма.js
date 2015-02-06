@@ -67,7 +67,7 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         fmDebt = new debt_in_group();
         fmDebt.mainForm = mf;
         self.showFormAsInternal(fmDebt);
-        //self.setDate();
+        self.setDate();
         //self.setEditDate();
     } else self.showFormAsInternal(fmDebt);
 }//GEN-LAST:event_button1ActionPerformed
@@ -107,7 +107,7 @@ self.setDate = function(aNewDateID){
     if (!aNewDateID) aNewDateID = self.parDateID;
     var ok = true;
     if (ok&&fmWorksheet) ok = fmWorksheet.setDate(aNewDateID);
-    if (ok&&fmGroups) ok = fmGroups.setDate(aNewDateID);
+    if (ok&&fmDebt) ok = fmDebt.setDate(aNewDateID);
     if (ok&&fmOplSessions) ok = fmOplSessions.setDate(aNewDateID);
     if (ok) self.parDateID = aNewDateID;
     return ok;
