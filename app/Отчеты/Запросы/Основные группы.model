@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><datamodel>
-  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="142114563685934" entityLocationX="298" entityLocationY="31" entityWidth="150" tableAlias="t1" tableName="grp_groups" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="142114665689094" entityLocationX="491" entityLocationY="28" entityWidth="150" tableAlias="t" tableName="grp_type" tableSchemaName=""/>
-  <relation leftEntityFieldName="grp_type_id" leftEntityId="142114665689094" rightEntityFieldName="grp_type" rightEntityId="142114563685934"/>
-</datamodel>

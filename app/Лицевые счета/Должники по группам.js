@@ -7,9 +7,9 @@
 function debt_in_group() {
     var self = this, model = this.model, form = this;
     
-    /*model.debt_by_group.filter(function(row){
+    /*model.qFlatWithDebtInGroup.filter(function(row){
         if (row.sal_end > 10000)
-            return model.debt_by_group;
+            return model.qFlatWithDebtInGroup;
         });*/
     
     self.setDate = function(aNewDate){

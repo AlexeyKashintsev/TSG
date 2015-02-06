@@ -2,12 +2,14 @@
   <parameters>
     <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="parDebt" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parGroup" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="19" entityLocationY="24" entityWidth="150"/>
   <entity Name="debt_by_group" Title="" entityHeight="200" entityIconified="false" entityId="142321101592134" entityLocationX="464" entityLocationY="64" entityWidth="150" queryId="debt_by_group" tableName="" tableSchemaName=""/>
-  <entity Name="groups_query" Title="" entityHeight="200" entityIconified="false" entityId="142314144814038" entityLocationX="224" entityLocationY="84" entityWidth="150" queryId="groups_query" tableName="" tableSchemaName=""/>
-  <relation leftEntityFieldName="grp_groups_id" leftEntityId="142314144814038" rightEntityId="142321101592134" rightEntityParameterName="group_id"/>
+  <entity Name="groups_query" Title="" entityHeight="200" entityIconified="false" entityId="142314144814038" entityLocationX="232" entityLocationY="89" entityWidth="150" queryId="qMainGroups" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="142321101592134" rightEntityParameterName="group_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDebt" rightEntityId="142321101592134" rightEntityParameterName="debt"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142321101592134" rightEntityParameterName="date_id"/>
   <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="142314144814038" rightEntityFieldName="grp_groups_id" rightEntityId="142314144814038"/>
+  <referenceRelation leftEntityFieldName="group_id" leftEntityId="142321101592134" rightEntityFieldName="grp_groups_id" rightEntityId="142314144814038"/>
 </datamodel>
