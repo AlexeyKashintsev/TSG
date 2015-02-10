@@ -1,7 +1,7 @@
 /**
  *
  * @author Alexey
- * @name Сальдо_по_группе_за_период
+ * @name dsSaldoInGroupForPeriod
  */ 
 Select  sum(t2.sal_begin) AS sal_begin, sum(t2.sal_benefit) AS sal_benefit, sum(t2.sal_calc) AS sal_calc
 , sum(t2.sal_full_calc) AS sal_full_calc, sum(t2.sal_payments) AS sal_payments

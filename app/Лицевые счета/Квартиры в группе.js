@@ -17,10 +17,13 @@ self.parentForm = null;
 self.mainForm = null;
 var flatModule = new LCModule();
 var fmIssuesByFlat = new formLcIssues();
+var Flat = null;
+
 
 self.setCurrentGroup = function(aNewGroupID){
     self.parGroupID = aNewGroupID;
-    return self.issues_by_group.lc_flat_id;    
+    return self.issues_by_group.lc_flat_id;
+    Flat = self.issues_by_group.lc_flat_id;
 };
 
 self.checkIfPossibleToChangeFlat = function(){
@@ -82,9 +85,9 @@ function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
     self.issues_by_group.deleteRow();
 }//GEN-LAST:event_btnDelActionPerformed
 
-
     function modelGridMouseClicked(evt) {//GEN-FIRST:event_modelGridMouseClicked
         self.setCurrentFlat(self.issues_by_group.lc_flat_id);
+        Flat = self.issues_by_group.lc_flat_id;
     }//GEN-LAST:event_modelGridMouseClicked
 
     function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
@@ -141,5 +144,7 @@ function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
                     break;}
                 }
         }
+        //self.issues_by_group.cursor = self.issues_by_group.findById(Flat)                
+        //self.issues_by_group.scrollTo(self.issues_by_group.findById(Flat).lc_flat_id)
     }//GEN-LAST:event_modelGridOnRender
 }
