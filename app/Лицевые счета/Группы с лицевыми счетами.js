@@ -21,6 +21,7 @@ var fmSaldoHistory = new formSaldoHistory();
 var fmNachisleniya = new form_sums_per_flat();
 var fmOplata = new formPaymentsInFlat();
 var fmLCGroups = new fmGroupsByLC();
+var fmGrpAccounts = new fmAccountsByGroup();
 var fmFlatIssues = new formLcIssues();
 var modCalc = new ServerModule('Calculations');
 var fmGChars = new formGroupCharacteristics();
@@ -46,7 +47,7 @@ self.check4Modifications = function(){
 self.setGroup = function(aNewGroupID){
     self.parGroupID = fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = fmGChars.parGroup = 
             fmGServs.parGroup = fmGTarifs.parGroupID = fmFlatIssues.parGroup =
-            fmGStats.parGroup = aNewGroupID;
+            fmGStats.parGroup = fmGrpAccounts.parGroupID = aNewGroupID;
     self.parFlatID = fmFlats.setCurrentGroup(self.parGroupID);
     self.tabbedPane1.visible = true;
     self.tabbedPane.visible = false;
@@ -126,6 +127,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmNachisleniya.showOnPanel(self.pnlCurrent);
     fmOplata.showOnPanel(self.pnlOplata);
     fmLCGroups.showOnPanel(self.pnlLCGroups);
+    fmGrpAccounts.showOnPanel(self.pnlAccounts);
     fmGChars.showOnPanel(self.pnlGroupChars1);
      fmGroups.showOnPanel(self.pnlGroups);
     fmGServs.showOnPanel(self.pnlGroupServ);

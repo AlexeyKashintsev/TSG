@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142356782820305" entityLocationX="215" entityLocationY="8" entityWidth="150" tableAlias="t1" tableName="grp_account" tableSchemaName=""/>
+</datamodel>

@@ -15,6 +15,11 @@
   <widget actionPerformed="button4ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/48x48/actions/mail-message-new.png" name="button4" parent="toolBar1" prefHeight="55px" prefWidth="55px" toolTipText="Печать квитанций" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="button3ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/48x48/apps/accessories-calculator.png" name="button3" parent="toolBar1" prefHeight="55px" prefWidth="55px" toolTipText="Услуги" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="button5ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/48x48/emblems/emblem-important.png" name="button5" parent="toolBar1" prefHeight="55px" prefWidth="55px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget name="modelCombo" parent="toolBar1" prefHeight="20px" prefWidth="100px" selectFunction="modelComboOnSelect" type="DbComboDesignInfo">
+    <valueField entityId="142356785689022" fieldName="grp_account_id"/>
+    <displayField entityId="142356785689022" fieldName="account_name"/>
+    <datamodelElement entityId="142356785689022" fieldName="grp_account_id"/>
+  </widget>
   <widget name="pnlDateSelector" parent="Form" prefHeight="60px" prefWidth="120px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints height="60px" left="67px" top="0px" type="MarginConstraintsDesignInfo" width="120px"/>

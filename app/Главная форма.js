@@ -141,4 +141,10 @@ self.setEditDate = function(aEditDate){
         fmIssues.mainForm = mf;        
         self.showFormAsInternal(fmIssues);
     }//GEN-LAST:event_button5ActionPerformed
+
+    function modelComboOnSelect(aEditor) {//GEN-FIRST:event_modelComboOnSelect
+        var fmAccountSel = new formAccountParams();
+        fmAccountSel.isSelectForm = true;
+        self.showFormAsInternal(fmAccountSel);    
+    }//GEN-LAST:event_modelComboOnSelect
 }

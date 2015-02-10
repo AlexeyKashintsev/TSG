@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="GroupId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142357590293766" entityLocationX="229" entityLocationY="3" entityWidth="150" tableAlias="t1" tableName="grp_accounts_in_group" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="GroupId" rightEntityFieldName="group_id" rightEntityId="142357590293766"/>
+</datamodel>
