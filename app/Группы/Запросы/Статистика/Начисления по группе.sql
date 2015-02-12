@@ -12,4 +12,5 @@ From grp_lc_group t1
  Inner Join #DateGroupView q on q.per_date_id = t.date_id
  Left Join usl_services t3 on t2.services_id = t3.usl_services_id
  Where :groupID = t1.group_id
+ and :parAccount = t2.account_id
  Group by t2.services_id, t3.usl_name

@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
-  <parameters>
-    <parameter description="" name="parDisplay" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
-  </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="issues_type" Title="" entityHeight="200" entityIconified="false" entityId="142303757410945" entityLocationX="463" entityLocationY="36" entityWidth="150" queryId="issues_type" tableName="" tableSchemaName=""/>
   <entity Name="allIssues" Title="" entityHeight="200" entityIconified="false" entityId="142260705832811" entityLocationX="263" entityLocationY="7" entityWidth="150" queryId="allIssues" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDisplay" rightEntityFieldName="type_name" rightEntityId="142260705832811"/>
 </datamodel>

@@ -6,23 +6,23 @@
   <widget name="toolBar" parent="panel" prefHeight="33px" prefWidth="732px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo" width="732px"/>
   </widget>
-  <widget name="label" parent="toolBar" prefHeight="16px" prefWidth="36px" text="Долг:" type="LabelDesignInfo"/>
-  <widget name="modelSpin" parent="toolBar" prefHeight="28px" prefWidth="100px" type="DbSpinDesignInfo">
+  <widget name="label" parent="toolBar" prefHeight="14px" prefWidth="29px" text="Долг:" type="LabelDesignInfo"/>
+  <widget name="modelSpin" parent="toolBar" prefHeight="20px" prefWidth="100px" type="DbSpinDesignInfo">
     <datamodelElement entityId="-1" fieldName="parDebt"/>
   </widget>
-  <widget name="label1" parent="toolBar" prefHeight="16px" prefWidth="45px" text="Группа" type="LabelDesignInfo"/>
-  <widget name="modelCombo" parent="toolBar" prefHeight="28px" prefWidth="100px" type="DbComboDesignInfo">
+  <widget name="label1" parent="toolBar" prefHeight="14px" prefWidth="36px" text="Группа" type="LabelDesignInfo"/>
+  <widget name="modelCombo" parent="toolBar" prefHeight="20px" prefWidth="100px" type="DbComboDesignInfo">
     <valueField entityId="142314144814038" fieldName="grp_groups_id"/>
     <displayField entityId="142314144814038" fieldName="grp_name"/>
     <datamodelElement entityId="-1" fieldName="parGroup"/>
   </widget>
   <widget name="modelGrid1" parent="panel" prefHeight="352px" prefWidth="736px" type="DbGridDesignInfo">
-    <column name="colGroupName">
+    <column name="colGroupName" title="Группа">
+      <datamodelElement entityId="142321101592134" fieldName="group_id"/>
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="142314144814038" fieldName="grp_groups_id"/>
         <displayField entityId="142314144814038" fieldName="grp_name"/>
       </controlInfo>
-      <datamodelElement entityId="142321101592134" fieldName="group_id"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -32,12 +32,12 @@
         <cellValueField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colFlatNumber" title="№">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="142321101592134" fieldName="lc_flatnumber"/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -51,8 +51,8 @@
       </headerStyle>
     </column>
     <column name="colFlatRegTo" title="ФИО">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="142321101592134" fieldName="lc_regto"/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -66,8 +66,8 @@
       </headerStyle>
     </column>
     <column name="colDebt" title="Долг">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="142321101592134" fieldName="sal_end"/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>

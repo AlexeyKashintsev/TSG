@@ -3,8 +3,6 @@
     <parameter description="" name="parGroupID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="dsAllAccounts" Title="" entityHeight="200" entityIconified="false" entityId="142357599804650" entityLocationX="533" entityLocationY="80" entityWidth="150" queryId="dsAllAccounts" tableName="" tableSchemaName=""/>
   <entity Name="dsAccountsByGroup" Title="" entityHeight="200" entityIconified="false" entityId="142357593167184" entityLocationX="265" entityLocationY="9" entityWidth="150" queryId="dsAccountsByGroup" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="142357593167184" rightEntityParameterName="GroupId"/>
-  <referenceRelation leftEntityFieldName="account_id" leftEntityId="142357593167184" rightEntityFieldName="grp_account_id" rightEntityId="142357599804650"/>
 </datamodel>

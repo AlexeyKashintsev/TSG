@@ -2,9 +2,11 @@
   <parameters>
     <parameter description="" name="parFlatID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parAccountID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="saldo_by_flat" Title="Сальдо по квартире" entityHeight="200" entityIconified="false" entityId="137683959019508" entityLocationX="258" entityLocationY="12" entityWidth="150" queryId="saldo_by_flat" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="137683959019508" rightEntityParameterName="date_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137683959019508" rightEntityParameterName="flat_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="137683959019508" rightEntityParameterName="account_id"/>
 </datamodel>

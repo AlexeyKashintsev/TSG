@@ -33,6 +33,11 @@ self.setEditDate = function(aEditDate){
     return true;
 };
 
+self.setAccount = function(aNewAccount){
+    self.parAccountID = aNewAccount;
+    return true;
+};
+
 function openCurrentSession(){
     if (!fmSession) {
         fmSession = new oplInSession();

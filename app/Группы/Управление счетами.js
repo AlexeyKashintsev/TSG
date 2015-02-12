@@ -6,6 +6,7 @@ function formAccountParams() {
     var self = this, model = this.model, form = this;
     var fmBankSel = null;
     self.selector = false;
+    self.mainForm = null;
     
     // TODO : place your code here
 
@@ -26,7 +27,7 @@ function processVisible(){
     }//GEN-LAST:event_btnSaveActionPerformed
 
     function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
-        // TODO Добавьте свой код:
+        model.dsAllAccounts.insert();
     }//GEN-LAST:event_btnAddActionPerformed
 
     function btnSelectActionPerformed(evt) {//GEN-FIRST:event_btnSelectActionPerformed
@@ -44,4 +45,14 @@ function processVisible(){
             self.dsGroupByID.bank = aValue;
         });
     }//GEN-LAST:event_colBankOnSelect
+
+    function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
+        if (self.model.modified&&confirm('Сохранить изменения?')){
+        self.model.save();
+        }        
+    }//GEN-LAST:event_formWindowClosing
+
+    function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
+        model.dsAllAccounts.delete();
+    }//GEN-LAST:event_btnDelActionPerformed
 }

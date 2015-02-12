@@ -10,8 +10,8 @@
   <entity Name="groups_query" Title="" entityHeight="200" entityIconified="false" entityId="142314144814038" entityLocationX="232" entityLocationY="89" entityWidth="150" queryId="qMainGroups" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142321101592134" rightEntityParameterName="date_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="show_all_options" rightEntityId="142314144814038" rightEntityParameterName="show_all_option"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="142321101592134" rightEntityParameterName="group_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDebt" rightEntityId="142321101592134" rightEntityParameterName="debt"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="142321101592134" rightEntityParameterName="group_id"/>
   <referenceRelation leftEntityFieldName="group_id" leftEntityId="142321101592134" rightEntityFieldName="grp_groups_id" rightEntityId="142314144814038"/>
   <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="142314144814038" rightEntityFieldName="grp_groups_id" rightEntityId="142314144814038"/>
 </datamodel>

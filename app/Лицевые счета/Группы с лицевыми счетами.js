@@ -96,6 +96,20 @@ self.setEditDate = function(aEditDate){
         return false;    
 };
 
+self.setAccount = function(aNewAccount){
+    if (self.check4Modifications()){
+        self.parAccountID = aNewAccount;
+        fmGServs.parAccountID = fmGTarifs.parAccountID =
+        fmGStats.parAccountID = fmNachisleniya.parAccountID =
+        fmFlatServices.parAccountID = fmFlatCounters.parAccountID =
+        fmSaldoCur.parAccountID = fmSaldoHistory.parAccountID =
+        fmOplata.parAccountID = self.parAccountID;
+        return true;
+    }
+    else
+        return false;    
+};
+
 function askAndSave(){
     if (confirm('Сохранить изменения')){
         fmGChars.model.save();

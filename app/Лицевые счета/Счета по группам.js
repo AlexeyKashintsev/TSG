@@ -31,4 +31,8 @@ function fmAccountsByGroup() {
     function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
     self.model.save();
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
+        model.dsAccountsByGroup.delete();
+    }//GEN-LAST:event_btnDelActionPerformed
 }

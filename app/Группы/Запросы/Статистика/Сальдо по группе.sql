@@ -10,3 +10,4 @@ From grp_lc_group t1
  Inner Join per_saldo_flat t2 on t1.lc_id = t2.lc_id
  Where :parGroupID = t1.group_id
  and :parDateID = t2.date_id
+ and :parAccount = t2.account_id

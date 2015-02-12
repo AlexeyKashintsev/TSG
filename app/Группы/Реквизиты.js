@@ -55,4 +55,8 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
     function btnSelectActionPerformed(evt) {//GEN-FIRST:event_btnSelectActionPerformed
         self.close(self.bank_queries.grp_bank_id);
     }//GEN-LAST:event_btnSelectActionPerformed
+
+    function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO Добавьте свой код:
+    }//GEN-LAST:event_btnAddActionPerformed
 }

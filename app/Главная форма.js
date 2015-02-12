@@ -58,6 +58,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
         fmWorksheet.mainForm = mf;
         self.showFormAsInternal(fmWorksheet);
         self.setDate();
+        self.setAccount();
         self.setEditDate(model.params.parEditDate);
     } else self.showFormAsInternal(fmWorksheet);
 }//GEN-LAST:event_buttonActionPerformed
@@ -76,6 +77,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     model.all_dates.last();
     model.params.parDateID = self.all_dates.per_date_id;
     model.params.parEditDate = self.all_dates.edit_date;
+    model.params.parAccountID = 142356814258574;
     fmDateSelect.parentForm = mf;
     fmDateSelect.showOnPanel(self.pnlDateSelector);
 }//GEN-LAST:event_formWindowOpened
@@ -91,6 +93,7 @@ function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed
         self.showFormAsInternal(fmOplSessions);
         self.setDate();
         self.setEditDate(model.params.parEditDate);
+        self.setAccount();
     } else self.showFormAsInternal(fmOplSessions);
 }//GEN-LAST:event_button2ActionPerformed
 
@@ -122,6 +125,15 @@ self.setEditDate = function(aEditDate){
     return ok;
 };
 
+self.setAccount = function(aNewAccount){
+    if (!aNewAccount) aNewAccount = self.parAccountID;
+    var ok = true;
+    if (ok&&fmWorksheet) ok = fmWorksheet.setAccount(aNewAccount);
+    if (ok&&fmOplSessions) ok = fmOplSessions.setAccount(aNewAccount);
+    return ok;
+}
+
+
     function button4ActionPerformed(evt) {//GEN-FIRST:event_button4ActionPerformed
        fmReportPrint.model.params.parDateID = self.model.params.parDateID;
        self.showFormAsInternal(fmReportPrint);
@@ -145,6 +157,11 @@ self.setEditDate = function(aEditDate){
     function modelComboOnSelect(aEditor) {//GEN-FIRST:event_modelComboOnSelect
         var fmAccountSel = new formAccountParams();
         fmAccountSel.isSelectForm = true;
+        fmAccountSel.mainForm = mf;
         self.showFormAsInternal(fmAccountSel);    
     }//GEN-LAST:event_modelComboOnSelect
+
+    function modelComboOnRender(evt) {//GEN-FIRST:event_modelComboOnRender
+        self.setAccount();
+    }//GEN-LAST:event_modelComboOnRender
 }
