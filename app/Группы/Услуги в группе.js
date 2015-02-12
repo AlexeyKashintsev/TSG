@@ -8,7 +8,7 @@
 function formServicesInGroup() {
 
 
-var self = this;
+var self = this, model = self.model;
 
 
 self.isSelectForm = false;
@@ -38,14 +38,14 @@ function setElShown(){
 }
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
-    if (self.model.modified&&confirm('Сохранить изменения?')){
-        self.model.save();
+    if (model.modified&&confirm('Сохранить изменения?')){
+        model.save();
     }
-    self.model.requery();
+    model.requery();
 }//GEN-LAST:event_btnReqActionPerformed
 
 function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
-    self.model.save();
+    model.save();
 }//GEN-LAST:event_btnSaveActionPerformed
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
@@ -64,9 +64,9 @@ function colCalcTypeOnSelect(aEditor) {//GEN-FIRST:event_colCalcTypeOnSelect
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
     var fmServSelector = new ServicesForm();
     fmServSelector.showModal(function(aService){
-        self.model.dsServices.insert(self.model.dsServices.schema.group_id, self.parGroup,
-                                     self.model.dsServices.schema.services_id, aService.service,
-                                     self.model.dsServises.schema.account_id, self.parAccountID);
+        model.dsServices.insert(model.dsServices.schema.group_id, self.parGroup,
+                                     model.dsServices.schema.services_id, aService.service,
+                                     model.dsServices.schema.account_id, self.parAccountID);
         grpMod.addService2Flats(self.parGroup, aService.service, null, self.parAccountID);
     });
 }//GEN-LAST:event_btnAddActionPerformed
@@ -76,8 +76,8 @@ function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
 }//GEN-LAST:event_btnDelActionPerformed
 
 function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
-    if (self.model.modified&&confirm('Сохранить изменения?')){
-        self.model.save();
+    if (model.modified&&confirm('Сохранить изменения?')){
+        model.save();
     }
 }//GEN-LAST:event_formWindowClosing
 
@@ -90,7 +90,7 @@ function btnUpActionPerformed(evt) {//GEN-FIRST:event_btnUpActionPerformed
         self.dsServices.grp_services_id = services_id;
         self.dsServices.next();
         self.dsServices.grp_services_id = prev_services_id;
-        self.model.save();
+        model.save();
         self.dsServices.requery(function(){
             self.dsServices.scrollTo(self.dsServices.findById(prev_services_id));
             self.mgUslugi.makeVisible(self.dsServices.cursor);
@@ -108,7 +108,7 @@ if (self.dsServices.rowIndex != self.dsServices.length)
     self.dsServices.grp_services_id = services_id;
     self.dsServices.prev();
     self.dsServices.grp_services_id = next_services_id;
-    self.model.save();
+    model.save();
     self.dsServices.requery(function(){
             self.dsServices.scrollTo(self.dsServices.findById(next_services_id));
             self.mgUslugi.makeVisible(self.dsServices.cursor);

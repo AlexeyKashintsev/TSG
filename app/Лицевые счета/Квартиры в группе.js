@@ -23,7 +23,6 @@ var Flat = null;
 self.setCurrentGroup = function(aNewGroupID){
     self.parGroupID = aNewGroupID;
     return self.issues_by_group.lc_flat_id;
-    Flat = self.issues_by_group.lc_flat_id;
 };
 
 self.checkIfPossibleToChangeFlat = function(){

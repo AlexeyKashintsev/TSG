@@ -7,5 +7,4 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="dsAccountsByGroup" Title="" entityHeight="200" entityIconified="false" entityId="142374248798478" entityLocationX="246" entityLocationY="18" entityWidth="150" queryId="dsAccountsByGroup" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="142374248798478" rightEntityParameterName="GroupId"/>
 </datamodel>

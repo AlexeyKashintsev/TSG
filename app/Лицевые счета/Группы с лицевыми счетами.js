@@ -8,7 +8,7 @@
 function mainWorkSheet() {
 
 
-var self = this;
+var self = this, model = self.model;
 
 
 var fmGroups = new formGroups();
@@ -45,20 +45,22 @@ self.check4Modifications = function(){
 };
 
 self.setGroup = function(aNewGroupID){
-    self.parGroupID = aNewGroupID;
-    for (var i = 0; i<self.dsAccountsByGroup.length; i++){
-        if (self.dsAccountsByGroup.account_id == self.model.params.parAccountID){
-            fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = fmGChars.parGroup = 
+    model.params.parGroupID = null;
+    model.dsAccountsByGroup.params.GroupId = aNewGroupID;
+    model.dsAccountsByGroup.requery(function() {
+        model.dsAccountsByGroup.forEach(function(cursor) {
+            if (cursor.account_id == self.model.params.parAccountID) 
+                model.params.parGroupID = aNewGroupID;
+        });
+        fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = fmGChars.parGroup = 
             fmGServs.parGroup = fmGTarifs.parGroupID = fmFlatIssues.parGroup =
             fmGStats.parGroup = fmGrpAccounts.parGroupID = aNewGroupID;
-    self.parFlatID = fmFlats.setCurrentGroup(self.parGroupID);
-    self.tabbedPane1.visible = true;
-    self.tabbedPane.visible = false;
-    self.pnlSaldoCur.visible = false; 
-    break;}
-    else self.parFlatID = fmFlats.setCurrentGroup(null);
-    }
-    //self.setFlat(self.parFlatID);
+        self.parFlatID = fmFlats.setCurrentGroup(model.params.parGroupID);
+        self.tabbedPane1.visible = true;
+        self.tabbedPane.visible = false;
+        self.pnlSaldoCur.visible = false;        
+    });
+
 };
 
 self.setFlat = function(aNewFlatID){
@@ -106,10 +108,11 @@ self.setAccount = function(aNewAccount){
     if (self.check4Modifications()){
         self.parAccountID = aNewAccount;
         fmGServs.parAccountID = fmGTarifs.parAccountID =
-        fmGStats.parAccountID = fmNachisleniya.parAccountID =
-        fmFlatServices.parAccountID = fmFlatCounters.parAccountID =
-        fmSaldoCur.parAccountID = fmSaldoHistory.parAccountID =
-        fmOplata.parAccountID = self.parAccountID;
+            fmGStats.parAccountID = fmNachisleniya.parAccountID =
+            fmFlatServices.parAccountID = fmFlatCounters.parAccountID =
+            fmSaldoCur.parAccountID = fmSaldoHistory.parAccountID =
+            fmOplata.parAccountID = self.parAccountID;
+        self.setGroup(model.params.parGroupID);
         return true;
     }
     else
@@ -160,7 +163,7 @@ function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
 }//GEN-LAST:event_formWindowClosed
 
 function btnCalcAllGroupActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllGroupActionPerformed
-    modCalc.calculateValues(self.parGroupID, null, self.parDateID);
+    modCalc.calculateValues(model.params.parGroupID, null, self.parDateID);
     fmNachisleniya.model.requery();
     fmSaldoCur.model.requery();
 }//GEN-LAST:event_btnCalcAllGroupActionPerformed
