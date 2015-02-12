@@ -65,8 +65,9 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
     var fmServSelector = new ServicesForm();
     fmServSelector.showModal(function(aService){
         self.model.dsServices.insert(self.model.dsServices.schema.group_id, self.parGroup,
-                                     self.model.dsServices.schema.services_id, aService.service);
-        grpMod.addService2Flats(self.parGroup, aService.service, null);
+                                     self.model.dsServices.schema.services_id, aService.service,
+                                     self.model.dsServises.schema.account_id, self.parAccountID);
+        grpMod.addService2Flats(self.parGroup, aService.service, null, self.parAccountID);
     });
 }//GEN-LAST:event_btnAddActionPerformed
 

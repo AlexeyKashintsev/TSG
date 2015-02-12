@@ -18,16 +18,18 @@ function TarifsModule() {
      * @returns {@exp;services_by_group}
      * TODO Доделать добавление,запутался куда добавлять;
      */
-    self.addMissingTarifs = function(aDateID, aGroupID) {
+    self.addMissingTarifs = function(aDateID, aGroupID, aAccountID) {
         self.servicesIsAbsent.params.parDateID = aDateID;
         self.servicesIsAbsent.params.parGroupID = aGroupID;
+        self.servicesIsAbsent.params.parAccountID = aAccountID;
         self.servicesIsAbsent.execute();
         self.servicesIsAbsent.beforeFirst();
         while (self.servicesIsAbsent.next()) {
             self.tarifsInGroup.insert(//self.tarifsInGroup.schema.usl_tarif_id,self.servicesIsAbsent.grp_services_id,
                     self.tarifsInGroup.schema.services_id, self.servicesIsAbsent.services_id,
                     self.tarifsInGroup.schema.date_id, aDateID,
-                    self.tarifsInGroup.schema.group_id, aGroupID);
+                    self.tarifsInGroup.schema.group_id, aGroupID,
+                    self.tarifsInGroup.schema.account_id, aAccountID);
         }
         self.model.save();
     };

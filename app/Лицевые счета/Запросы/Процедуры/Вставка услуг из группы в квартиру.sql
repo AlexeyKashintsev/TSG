@@ -6,7 +6,8 @@
  * @name insertGroupServicesLC
  *
 insert into lc_flat_services(lc_id, services_id, fs_active)*/ 
-Select :FlatID AS lc_id, t.services_id, true AS fs_active, t3.calc_by_counter
+Select :FlatID AS lc_id, t.services_id, true AS fs_active
+, t3.calc_by_counter, t.account_id 
 From grp_services t
  Left Outer Join lc_flat_services t1 on t.services_id = t1.services_id
  and :FlatID = t1.lc_id

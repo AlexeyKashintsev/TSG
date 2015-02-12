@@ -163,5 +163,6 @@ self.setAccount = function(aNewAccount){
 
     function modelComboOnRender(evt) {//GEN-FIRST:event_modelComboOnRender
         self.setAccount();
+        if (fmWorksheet) fmWorksheet.setGroup()
     }//GEN-LAST:event_modelComboOnRender
 }

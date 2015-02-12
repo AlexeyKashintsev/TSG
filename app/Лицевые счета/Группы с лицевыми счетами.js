@@ -45,13 +45,19 @@ self.check4Modifications = function(){
 };
 
 self.setGroup = function(aNewGroupID){
-    self.parGroupID = fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = fmGChars.parGroup = 
+    self.parGroupID = aNewGroupID;
+    for (var i = 0; i<self.dsAccountsByGroup.length; i++){
+        if (self.dsAccountsByGroup.account_id == self.model.params.parAccountID){
+            fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = fmGChars.parGroup = 
             fmGServs.parGroup = fmGTarifs.parGroupID = fmFlatIssues.parGroup =
             fmGStats.parGroup = fmGrpAccounts.parGroupID = aNewGroupID;
     self.parFlatID = fmFlats.setCurrentGroup(self.parGroupID);
     self.tabbedPane1.visible = true;
     self.tabbedPane.visible = false;
     self.pnlSaldoCur.visible = false; 
+    break;}
+    else self.parFlatID = fmFlats.setCurrentGroup(null);
+    }
     //self.setFlat(self.parFlatID);
 };
 
@@ -143,7 +149,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmLCGroups.showOnPanel(self.pnlLCGroups);
     fmGrpAccounts.showOnPanel(self.pnlAccounts);
     fmGChars.showOnPanel(self.pnlGroupChars1);
-     fmGroups.showOnPanel(self.pnlGroups);
+    fmGroups.showOnPanel(self.pnlGroups);
     fmGServs.showOnPanel(self.pnlGroupServ);
     fmGTarifs.showOnPanel(self.pnlGroupTarifs);   
     fmGStats.showOnPanel(self.pnlGroupData);

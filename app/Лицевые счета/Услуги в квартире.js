@@ -58,7 +58,7 @@ function btnAddActionPerformed() {//GEN-FIRST:event_btnAddActionPerformed
         function(aValue){
             var fs = lc_mod.addServiceToLC( self.parFlatID, aValue.service, aValue.byCounter,
                                             aValue.begDate?aValue.begDate:self.parDateID,
-                                            aValue.endDate);
+                                            self.parAccountID, aValue.endDate);
             lc_mod.saveChanges();
             self.model.requery();
         });

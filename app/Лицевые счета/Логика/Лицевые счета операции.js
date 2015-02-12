@@ -172,7 +172,7 @@ function LCModule() {
      * todo: добавить поиск услуги, добавить добавление значений(self.sums_perFlat)
      *       в модуле SaldoAndSumsModule
      *       и отслеживать эти дополнения, чтобы сохранять их тоже */
-    self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID, aStopDate, aStartPeriod, aEndPeriod) {
+    self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID, aAccountID, aStopDate, aStartPeriod, aEndPeriod) {
         var startDate = aDateID ? aDateID : modDT.getLastDate();
         self.services_by_flat.insert(self.services_by_flat.schema.services_id, aServiceID,
                 self.services_by_flat.schema.lc_id, aFlatID,
@@ -180,7 +180,8 @@ function LCModule() {
                 self.services_by_flat.schema.date_start, startDate,
                 self.services_by_flat.schema.date_end, aStopDate ? aStopDate : null,
                 self.services_by_flat.schema.period_start, aStartPeriod ? aEndPeriod : null,
-                self.services_by_flat.schema.period_end, aEndPeriod ? aEndPeriod : null);
+                self.services_by_flat.schema.period_end, aEndPeriod ? aEndPeriod : null,
+                self.services_by_flat.schema.account_id, aAccountID);
         var fs = self.services_by_flat.lc_flat_services_id;
 
        // var startDate = aDateID ? aDateID : (self.parDateID ? self.parDateID : false);

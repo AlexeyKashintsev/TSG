@@ -5,6 +5,7 @@
   </widget>
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="264px" prefWidth="372px" type="DbGridDesignInfo">
     <column name="Services" title="Услуга">
+      <datamodelElement entityId="138410359511283" fieldName="services_id"/>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="138410360147288" fieldName="usl_services_id"/>
         <displayField entityId="138410360147288" fieldName="usl_name"/>
@@ -20,9 +21,9 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="138410359511283" fieldName="services_id"/>
     </column>
     <column name="Tarifs" title="Тариф">
+      <datamodelElement entityId="138410359511283" fieldName="rate"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
@@ -35,9 +36,9 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="138410359511283" fieldName="rate"/>
     </column>
     <column name="Norma" title="Норма">
+      <datamodelElement entityId="138410359511283" fieldName="norm"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
@@ -50,9 +51,9 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="138410359511283" fieldName="norm"/>
     </column>
     <column name="colChild" readonly="true" title="Дочерняя">
+      <datamodelElement entityId="138410359511283" fieldName="child"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
@@ -65,7 +66,6 @@
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="138410359511283" fieldName="child"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138410359511283" field="false"/>

@@ -6,7 +6,7 @@
  * @writable usl_tarif
  */ 
 Select t1.usl_tarif_id, t1.date_id, t1.group_id, t1.norm, t1.rate, t1.services_id
-, t1.usr_context
+, t1.usr_context, t1.account_id
 , Case  When t.grp_parent = :parGroup Then t.grp_name else '' End AS child 
 From usl_tarif t1
  Inner Join grp_groups t on t.grp_groups_id = t1.group_id

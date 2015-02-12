@@ -9,7 +9,7 @@
 function groups_module() {
     var self = this, model = this.model;
     
-    self.addService2Flats = function(aGroupID, aServiceID, aDateID){
+    self.addService2Flats = function(aGroupID, aServiceID, aDateID, aAccountID){
         var modLC = new ServerModule('LCModule');
         var calcByCnt = false;
         try {
@@ -22,7 +22,7 @@ function groups_module() {
         model.flats_by_group.params.group_id = aGroupID;
         model.flats_by_group.requery(function(){
             model.flats_by_group.forEach(function(aFlat){
-               modLC.addServiceToLC(aFlat.lc_flat_id, aServiceID, calcByCnt, aDateID); 
+               modLC.addServiceToLC(aFlat.lc_flat_id, aServiceID, calcByCnt, aDateID, aAccountID); 
             });
             modLC.saveChanges();
         });

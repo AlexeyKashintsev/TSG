@@ -56,7 +56,7 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
 }//GEN-LAST:event_formWindowClosing
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
-    tarifsModule.addMissingTarifs(self.parDateID, self.parGroupID);
+    tarifsModule.addMissingTarifs(self.parDateID, self.parGroupID, self.parAccountID);
     tarifsModule.applyTarifs(self.parDateID, self.parGroupID);
     self.tarifsInGroup.requery();
 }//GEN-LAST:event_button1ActionPerformed
