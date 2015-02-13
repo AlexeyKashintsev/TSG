@@ -5,11 +5,14 @@
   </widget>
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="264px" prefWidth="372px" type="DbGridDesignInfo">
     <column name="Services" title="Услуга">
-      <datamodelElement entityId="138410359511283" fieldName="services_id"/>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="138410360147288" fieldName="usl_services_id"/>
         <displayField entityId="138410360147288" fieldName="usl_name"/>
       </controlInfo>
+      <datamodelElement entityId="138410359511283" fieldName="services_id"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -18,13 +21,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
     </column>
     <column name="Tarifs" title="Тариф">
-      <datamodelElement entityId="138410359511283" fieldName="rate"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138410359511283" fieldName="rate"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -33,13 +36,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
     </column>
     <column name="Norma" title="Норма">
-      <datamodelElement entityId="138410359511283" fieldName="norm"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138410359511283" fieldName="norm"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -48,13 +51,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
     </column>
     <column name="colChild" readonly="true" title="Дочерняя">
-      <datamodelElement entityId="138410359511283" fieldName="child"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138410359511283" fieldName="child"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -63,9 +66,6 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138410359511283" field="false"/>
@@ -77,7 +77,7 @@
     <constraints bottom="-3px" height="48px" right="13px" type="MarginConstraintsDesignInfo" width="203px"/>
   </widget>
   <widget name="toolBar" parent="Form" prefHeight="33px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
-    <constraints height="33px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="372px"/>
+    <constraints height="33px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <nonvisual name="button" prefHeight="0px" prefWidth="0px" text="button" type="ButtonDesignInfo"/>

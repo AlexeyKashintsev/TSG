@@ -12,4 +12,5 @@ Select t.cnt_con2services_id, t.counter_id, t.group_service
 From lc_flat_services t1
  Inner Join cnt_con2services t on t1.lc_flat_services_id = t.flat_service
  Inner Join cnt_counters t2 on t.counter_id = t2.cnt_counters_id
- Where :flat_id = t1.lc_id or :all_flats = true
+ Where :account_id = t1.account_id
+ and (:flat_id = t1.lc_id or :all_flats = true)

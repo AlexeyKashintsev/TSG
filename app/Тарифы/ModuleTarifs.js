@@ -39,11 +39,12 @@ function TarifsModule() {
      * @param {integer} aDateID
      * @returns {none}
      */
-    self.applyTarifs = function(aDateID, aGroupID){
+    self.applyTarifs = function(aDateID, aGroupID,aAccountID){
        // self.ApplyTarifs.params.groupid = aGroupID;
 //        self.ApplyTarifs.params.dateid = aDateID;
         self.dsUpdatePer_sums.params.groupid = aGroupID;
         self.dsUpdatePer_sums.params.dateid = aDateID;
+        self.dsUpdatePer_sums.params.accountid = aAccountID;
         self.dsUpdatePer_sums.executeUpdate();
       /*  self.dsUpdatePer_sums.beforeFirst();
         while (self.dsUpdatePer_sums.next()) {

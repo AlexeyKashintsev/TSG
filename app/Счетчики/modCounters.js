@@ -1,7 +1,7 @@
 /**
  * 
  * @author Alexey
- * @name CountersModule
+ * @module
  */
 
 function CountersModule() {

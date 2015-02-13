@@ -56,6 +56,7 @@ self.setGroup = function(aNewGroupID){
             fmGServs.parGroup = fmGTarifs.parGroupID = fmFlatIssues.parGroup =
             fmGStats.parGroup = fmGrpAccounts.parGroupID = aNewGroupID;
         self.parFlatID = fmFlats.setCurrentGroup(model.params.parGroupID);
+        model.params.parGroupID = aNewGroupID;
         self.tabbedPane1.visible = true;
         self.tabbedPane.visible = false;
         self.pnlSaldoCur.visible = false;        
