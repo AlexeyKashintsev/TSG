@@ -23,7 +23,8 @@ function ReportPrint() {
     
     function processSingleFlat(aPrint, aFlatID) {
         repBill.model.params.parDateID = self.params.parDateID;
-        repBill.model.params.parFlatID = aFlatID;        
+        repBill.model.params.parFlatID = aFlatID; 
+        repBill.model.params.parAccountID = self.params.AccountID;
         if (aPrint) 
             repBill.print();
         else

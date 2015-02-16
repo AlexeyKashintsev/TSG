@@ -6,7 +6,7 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="Сальдо по квартире" entityHeight="200" entityIconified="false" entityId="137517889849426" entityLocationX="244" entityLocationY="26" entityWidth="150" tableAlias="t1" tableName="per_saldo_flat" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="account_id" rightEntityFieldName="account_id" rightEntityId="137517889849426"/>
-  <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="137517889849426"/>
+  <relation leftEntityId="-1" leftEntityParameterName="account_id" polyline="164;76 186;76 186;220 238;220" rightEntityFieldName="account_id" rightEntityId="137517889849426"/>
   <relation leftEntityId="-1" leftEntityParameterName="flat_id" rightEntityFieldName="lc_id" rightEntityId="137517889849426"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_id" polyline="164;42 194;42 194;95 238;95" rightEntityFieldName="date_id" rightEntityId="137517889849426"/>
 </datamodel>

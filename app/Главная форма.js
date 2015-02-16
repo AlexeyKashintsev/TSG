@@ -154,14 +154,14 @@ self.setAccount = function(aNewAccount){
         self.showFormAsInternal(fmIssues);
     }//GEN-LAST:event_button5ActionPerformed
 
-    function modelComboOnSelect(aEditor) {//GEN-FIRST:event_modelComboOnSelect
-        var fmAccountSel = new formAccountParams();
-        fmAccountSel.isSelectForm = true;
-        fmAccountSel.mainForm = mf;
-        self.showFormAsInternal(fmAccountSel);    
-    }//GEN-LAST:event_modelComboOnSelect
-
     function modelComboOnRender(evt) {//GEN-FIRST:event_modelComboOnRender
         self.setAccount();
     }//GEN-LAST:event_modelComboOnRender
+
+    function button6ActionPerformed(evt) {//GEN-FIRST:event_button6ActionPerformed
+        var fmAccountSel = new formAccountParams();
+        fmAccountSel.isSelectForm = true;
+        fmAccountSel.mainForm = mf;
+        self.showFormAsInternal(fmAccountSel); 
+    }//GEN-LAST:event_button6ActionPerformed
 }

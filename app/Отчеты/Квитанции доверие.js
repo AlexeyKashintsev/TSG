@@ -4,7 +4,7 @@
  * @author Alexey
  */
 function BillsBuilder_Doverie() {
-    var self = this;
+    var self = this, model = self.model;
     var dsLC_byid = this.model.dsLC_byid;
 
     
@@ -68,15 +68,15 @@ function BillsBuilder_Doverie() {
                     Logger.info(Flat.lc_id);
 
                     var lc_saldo = {
-                        begin:      self.model.saldo_by_flat.cursor.sal_begin, 
-                        end:        self.model.saldo_by_flat.cursor.sal_end,  
-                        calc:       self.model.saldo_by_flat.cursor.sal_calc,
-                        benefit:    self.model.saldo_by_flat.cursor.sal_benefit,  
-                        payments:   self.model.saldo_by_flat.cursor.sal_payments,  
-                        recalc:     self.model.saldo_by_flat.cursor.sal_recalc,  
-                        full_calc:  self.model.saldo_by_flat.cursor.sal_full_calc, 
-                        penalties_cur: self.model.saldo_by_flat.cursor.sal_penalties_cur, 
-                        penalties_old: self.model.saldo_by_flat.cursor.sal_penalties_old
+                        begin:      model.saldo_by_flat.cursor.sal_begin, 
+                        end:        model.saldo_by_flat.cursor.sal_end,  
+                        calc:       model.saldo_by_flat.cursor.sal_calc,
+                        benefit:    model.saldo_by_flat.cursor.sal_benefit,  
+                        payments:   model.saldo_by_flat.cursor.sal_payments,  
+                        recalc:     model.saldo_by_flat.cursor.sal_recalc,  
+                        full_calc:  model.saldo_by_flat.cursor.sal_full_calc, 
+                        penalties_cur: model.saldo_by_flat.cursor.sal_penalties_cur, 
+                        penalties_old: model.saldo_by_flat.cursor.sal_penalties_old
                     };
                     
                     lc_saldo.debt = lc_saldo.end - lc_saldo.full_calc;//lc_saldo.begin - lc_saldo.payments;
