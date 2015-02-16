@@ -174,28 +174,30 @@ function LCModule() {
      *       и отслеживать эти дополнения, чтобы сохранять их тоже */
     self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID, aAccountID, aStopDate, aStartPeriod, aEndPeriod) {
         var startDate = aDateID ? aDateID : modDT.getLastDate();
-        self.services_by_flat.params.flat_id = aFlatID;
-        self.services_by_flat.params.parAccount = aAccountID;
-        self.services_by_flat.requery();
-        if (!self.services_by_flat.find(model.services_by_flat.schema.services_id, aServiceID)) {
-        self.services_by_flat.insert(self.services_by_flat.schema.services_id, aServiceID,
-                self.services_by_flat.schema.lc_id, aFlatID,
-                self.services_by_flat.schema.fs_active, true,
-                self.services_by_flat.schema.date_start, startDate,
-                self.services_by_flat.schema.date_end, aStopDate ? aStopDate : null,
-                self.services_by_flat.schema.period_start, aStartPeriod ? aEndPeriod : null,
-                self.services_by_flat.schema.period_end, aEndPeriod ? aEndPeriod : null,
-                self.services_by_flat.schema.account_id, aAccountID);
-            }
-        var fs = self.services_by_flat.lc_flat_services_id;
-
-       // var startDate = aDateID ? aDateID : (self.parDateID ? self.parDateID : false);
-        if (startDate)
-            self.sums_perFlat.insert(self.sums_perFlat.schema.flat_service_id, self.services_by_flat.lc_flat_services_id,
-                    self.sums_perFlat.schema.date_id, startDate);
-        if (!processIfConnectedService(fs, aServiceID, aFlatID,aAccountID) && aCalcByCounter) {
-            var cnt = addCounterToFlat(self.services_by_flat.lc_flat_services_id);
-            modCN.setCounterValueByCounterValueID(cnt, startDate, 0, 0);
+        model.services_by_flat.params.flat_id = aFlatID;
+        model.services_by_flat.params.parAccount = aAccountID;
+        model.services_by_flat.requery();
+        if (model.services_by_flat.find(model.services_by_flat.schema.services_id, aServiceID).length === 0) {
+            model.services_by_flat.push({
+                services_id : aServiceID,
+                lc_id       : aFlatID,
+                fs_active   : true,
+                date_start  : startDate,
+                date_end    : aStopDate ? aStopDate : null,
+                period_start: aStartPeriod ? aEndPeriod : null,
+                period_end  : aEndPeriod ? aEndPeriod : null,
+                account_id  : aAccountID
+            });
+            var fs = self.services_by_flat.lc_flat_services_id;
+            if (startDate)
+                model.sums_perFlat.push({
+                    flat_service_id : self.services_by_flat.lc_flat_services_id,
+                    date_id         : startDate
+                });
+            if (!processIfConnectedService(fs, aServiceID, aFlatID,aAccountID) && aCalcByCounter) {
+                var cnt = addCounterToFlat(self.services_by_flat.lc_flat_services_id);
+                modCN.setCounterValueByCounterValueID(cnt, startDate, 0, 0);
+            }            
         }
         return self.services_by_flat.lc_flat_services_id;
     };
