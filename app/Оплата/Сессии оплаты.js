@@ -88,7 +88,8 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
                                   self.dsOplSessions.schema.opl_comment, 
                                   self.tfSesComment.text!='Комментарий к новой сессии'?
                                   self.tfSesComment.text:'',
-                                  self.dsOplSessions.schema.opl_date,  new Date());
+                                  self.dsOplSessions.schema.opl_date,  new Date(),
+                                  self.dsOplSessions.schema.account_id, self.parAccountID);
         openCurrentSession();
         self.model.save();
     }//GEN-LAST:event_btnAddActionPerformed

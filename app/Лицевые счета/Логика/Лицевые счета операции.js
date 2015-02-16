@@ -174,6 +174,10 @@ function LCModule() {
      *       и отслеживать эти дополнения, чтобы сохранять их тоже */
     self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID, aAccountID, aStopDate, aStartPeriod, aEndPeriod) {
         var startDate = aDateID ? aDateID : modDT.getLastDate();
+        self.services_by_flat.params.flat_id = aFlatID;
+        self.services_by_flat.params.parAccount = aAccountID;
+        self.services_by_flat.requery();
+        if (!self.services_by_flat.find(model.services_by_flat.schema.services_id, aServiceID)) {
         self.services_by_flat.insert(self.services_by_flat.schema.services_id, aServiceID,
                 self.services_by_flat.schema.lc_id, aFlatID,
                 self.services_by_flat.schema.fs_active, true,
@@ -182,13 +186,14 @@ function LCModule() {
                 self.services_by_flat.schema.period_start, aStartPeriod ? aEndPeriod : null,
                 self.services_by_flat.schema.period_end, aEndPeriod ? aEndPeriod : null,
                 self.services_by_flat.schema.account_id, aAccountID);
+            }
         var fs = self.services_by_flat.lc_flat_services_id;
 
        // var startDate = aDateID ? aDateID : (self.parDateID ? self.parDateID : false);
         if (startDate)
             self.sums_perFlat.insert(self.sums_perFlat.schema.flat_service_id, self.services_by_flat.lc_flat_services_id,
                     self.sums_perFlat.schema.date_id, startDate);
-        if (!processIfConnectedService(fs, aServiceID, aFlatID) && aCalcByCounter) {
+        if (!processIfConnectedService(fs, aServiceID, aFlatID,aAccountID) && aCalcByCounter) {
             var cnt = addCounterToFlat(self.services_by_flat.lc_flat_services_id);
             modCN.setCounterValueByCounterValueID(cnt, startDate, 0, 0);
         }
@@ -208,13 +213,13 @@ function LCModule() {
         return cnt;
     };
 
-    self.processIfConnectedService = function(aFlatService, aService, aFlatID) {
+    self.processIfConnectedService = function(aFlatService, aService, aFlatID, aAccountID) {
         var conServ = model.qServices.find(model.qServices.schema.usl_services_id, aService)
         if (conServ) conServ = conServ[0].connected_service;
         if (conServ) {
             if (!modCN)
                 modCN = new CountersModule();
-            var cnt = modCN.getCounterInFlat(aFlatID, conServ);
+            var cnt = modCN.getCounterInFlat(aFlatID, conServ,aAccountID);
             modCN.addCounter2Service(cnt, aFlatService, null, true);
         }
         self.saveChanges();

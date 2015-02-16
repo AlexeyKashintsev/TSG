@@ -38,9 +38,10 @@ self.getFlatService = function(aFlatID, aServiceID){
     return self.dsFlatServiceByServiceAndFlatID.lc_flat_services_id;
 };
 
-self.getCounterInFlat = function(aFlatID, aServiceID){
+self.getCounterInFlat = function(aFlatID, aServiceID, aAccountID){
     checkModified();
     self.dsCountersByFlat.params.flat_id = aFlatID;
+    self.dsCountersByFlat.params.account_id = aAccountID;
     self.dsCountersByFlat.execute();
     try{
         return self.dsCountersByFlat.find(self.dsCountersByFlat.schema.services_id, aServiceID)[0].counter_id;

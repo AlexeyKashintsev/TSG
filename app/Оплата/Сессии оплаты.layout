@@ -12,15 +12,15 @@
     <constraints place="Center" type="BorderLayoutConstraintsDesignInfo"/>
   </widget>
   <widget mouseClicked="modelGridMouseClicked" name="modelGrid" parent="pnlWorkSpace" prefHeight="317px" prefWidth="372px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="138686322493762" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="colDate_id" readonly="true" title="Расчетный месяц">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="138686324127452" fieldName="per_date_id"/>
         <displayField entityId="138686324127452" fieldName="TextDate"/>
       </controlInfo>
+      <datamodelElement entityId="138686322493762" fieldName="date_id"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -29,13 +29,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-      <datamodelElement entityId="138686322493762" fieldName="date_id"/>
     </column>
     <column name="colSes_date" readonly="true" title="Дата">
       <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy HH:mm:ss" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138686322493762" fieldName="opl_date"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -44,13 +44,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-      <datamodelElement entityId="138686322493762" fieldName="opl_date"/>
     </column>
     <column name="colSes_comment" title="Наименование сессии">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138686322493762" fieldName="opl_comment"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -59,13 +59,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-      <datamodelElement entityId="138686322493762" fieldName="opl_comment"/>
     </column>
     <column name="colOpl_Count" readonly="true" title="Количество">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138686322493762" fieldName="cnt"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -74,13 +74,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-      <datamodelElement entityId="138686322493762" fieldName="cnt"/>
     </column>
     <column name="colOpl_sum" readonly="true" title="Сумма">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138686322493762" fieldName="ses_sum"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -89,11 +89,11 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-      <datamodelElement entityId="138686322493762" fieldName="ses_sum"/>
     </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="138686322493762" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="BorderLayoutDesignInfo"/>

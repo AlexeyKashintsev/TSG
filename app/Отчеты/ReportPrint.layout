@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="359px" prefWidth="248px">
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="428px" prefWidth="248px">
+  <widget name="label21" parent="Form" prefHeight="16px" prefWidth="60px" text="Счет" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="108px" type="MarginConstraintsDesignInfo" width="60px"/>
+  </widget>
   <widget name="label" parent="Form" prefHeight="16px" prefWidth="48px" text="Отчет:" type="LabelDesignInfo">
     <constraints height="16px" left="12px" top="12px" type="MarginConstraintsDesignInfo" width="48px"/>
   </widget>
@@ -6,22 +9,22 @@
     <constraints height="16px" left="60px" top="12px" type="MarginConstraintsDesignInfo" width="168px"/>
   </widget>
   <widget name="label2" parent="Form" prefHeight="16px" prefWidth="60px" text="Группа:" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="108px" type="MarginConstraintsDesignInfo" width="60px"/>
+    <constraints height="16px" left="12px" top="168px" type="MarginConstraintsDesignInfo" width="60px"/>
   </widget>
   <widget name="modelCombo" parent="Form" prefHeight="28px" prefWidth="228px" type="DbComboDesignInfo">
     <valueField entityId="142114639954632" fieldName="grp_groups_id"/>
     <displayField entityId="142114639954632" fieldName="grp_name"/>
     <datamodelElement entityId="-1" fieldName="GroupID"/>
-    <constraints height="28px" left="12px" top="132px" type="MarginConstraintsDesignInfo" width="228px"/>
+    <constraints height="28px" left="12px" top="192px" type="MarginConstraintsDesignInfo" width="228px"/>
   </widget>
   <widget name="label3" parent="Form" prefHeight="36px" prefWidth="228px" text="&lt;html&gt;Квартира:&lt;br&gt; (пусто - все квартиры группы)" type="LabelDesignInfo">
-    <constraints height="36px" left="12px" top="168px" type="MarginConstraintsDesignInfo" width="228px"/>
+    <constraints height="36px" left="12px" top="228px" type="MarginConstraintsDesignInfo" width="228px"/>
   </widget>
   <widget name="modelCombo1" parent="Form" prefHeight="28px" prefWidth="228px" type="DbComboDesignInfo">
     <valueField entityId="139515085967355" fieldName="lc_flat_id"/>
     <displayField entityId="139515085967355" fieldName="lc_flatnumber"/>
     <datamodelElement entityId="-1" fieldName="FlatID"/>
-    <constraints height="28px" left="12px" top="204px" type="MarginConstraintsDesignInfo" width="228px"/>
+    <constraints height="28px" left="12px" top="264px" type="MarginConstraintsDesignInfo" width="228px"/>
   </widget>
   <widget name="label4" parent="Form" prefHeight="16px" prefWidth="38px" text="Дата:" type="LabelDesignInfo">
     <constraints height="16px" left="12px" top="48px" type="MarginConstraintsDesignInfo" width="38px"/>
@@ -39,21 +42,27 @@
     <constraints bottom="12px" height="29px" left="144px" type="MarginConstraintsDesignInfo" width="94px"/>
   </widget>
   <widget name="label5" parent="Form" prefHeight="16px" prefWidth="144px" text="Интервал квартир:" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="240px" type="MarginConstraintsDesignInfo" width="144px"/>
+    <constraints bottom="100px" height="16px" left="12px" type="MarginConstraintsDesignInfo" width="144px"/>
   </widget>
   <widget name="label6" parent="Form" prefHeight="16px" prefWidth="12px" text="с" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="270px" type="MarginConstraintsDesignInfo" width="12px"/>
+    <constraints bottom="70px" height="16px" left="12px" type="MarginConstraintsDesignInfo" width="12px"/>
   </widget>
-  <widget name="label7" parent="Form" prefHeight="16px" prefWidth="36px" text=", по" type="LabelDesignInfo">
-    <constraints bottom="73px" height="16px" left="108px" type="MarginConstraintsDesignInfo" width="36px"/>
+  <widget name="label7" parent="Form" prefHeight="17px" prefWidth="36px" text=", по" type="LabelDesignInfo">
+    <constraints bottom="69px" height="17px" left="108px" type="MarginConstraintsDesignInfo" width="36px"/>
   </widget>
   <widget name="modelFormattedField" parent="Form" prefHeight="28px" prefWidth="72px" type="DbLabelDesignInfo">
     <datamodelElement entityId="-1" fieldName="flatTo"/>
-    <constraints height="28px" left="144px" top="264px" type="MarginConstraintsDesignInfo" width="72px"/>
+    <constraints bottom="64px" height="28px" left="144px" type="MarginConstraintsDesignInfo" width="72px"/>
   </widget>
   <widget name="modelFormattedField1" parent="Form" prefHeight="28px" prefWidth="72px" type="DbLabelDesignInfo">
     <datamodelElement entityId="-1" fieldName="flatFrom"/>
-    <constraints height="28px" left="36px" top="264px" type="MarginConstraintsDesignInfo" width="72px"/>
+    <constraints bottom="64px" height="28px" left="36px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget name="modelCombo3" parent="Form" prefHeight="28px" prefWidth="228px" type="DbComboDesignInfo">
+    <valueField entityId="142382355567153" fieldName="grp_account_id"/>
+    <displayField entityId="142382355567153" fieldName="account_name"/>
+    <datamodelElement entityId="-1" fieldName="AccountID"/>
+    <constraints height="28px" left="12px" top="132px" type="MarginConstraintsDesignInfo" width="228px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

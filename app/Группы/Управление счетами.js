@@ -51,8 +51,4 @@ function processVisible(){
         self.model.save();
         }        
     }//GEN-LAST:event_formWindowClosing
-
-    function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
-        model.dsAllAccounts.delete();
-    }//GEN-LAST:event_btnDelActionPerformed
 }
