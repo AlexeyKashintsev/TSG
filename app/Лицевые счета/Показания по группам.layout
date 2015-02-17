@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="400px" windowOpened="formWindowOpened">
+  <widget name="panel" parent="Form" prefHeight="300px" prefWidth="400px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="tabbedPane1" parent="panel" prefHeight="300px" prefWidth="400px" type="TabsDesignInfo">
+    <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlGroupChars1" parent="tabbedPane1" prefHeight="272px" prefWidth="395px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Характеристики" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlGroupServ" parent="tabbedPane1" prefHeight="272px" prefWidth="395px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Услуги" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlGroupTarifs" parent="tabbedPane1" prefHeight="272px" prefWidth="395px" toolTipText="Тарифы" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Тарифы" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlGroupData" parent="tabbedPane1" prefHeight="272px" prefWidth="395px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Статистика" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlAccounts" parent="tabbedPane1" prefHeight="272px" prefWidth="395px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Счета" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

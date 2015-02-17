@@ -15,6 +15,10 @@ function debt_in_group() {
     self.setDate = function(aNewDate){
         model.params.parDateID = aNewDate;
     }
+    
+    self.setAccount = function(aNewAccount){
+        model.params.parAccountID = aNewAccount;
+    }
 
     function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
      model.params.parDebt = 0;
