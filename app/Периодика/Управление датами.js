@@ -53,7 +53,9 @@ self.newDate = function(aCallBack) {
                           self.all_dates.schema.edit_date, true );
     var newDate = model.all_dates.cursor.per_date_id;
     (function(){
-        model.save(function(){
+        model.dsAllAccounts.requery(function(){
+            model.dsAllAccounts.forEach(function(aAccount){             
+                    model.save(function(){
             (function(){progress.increaseValue(1);}).invokeAndWait();
            
             model.dsGroups.beforeFirst();
@@ -63,7 +65,7 @@ self.newDate = function(aCallBack) {
                 model.sums_4create.params.groupid = group;
                 model.sums_4create.executeUpdate();
                 (function(){progress.increaseValue(1);}).invokeAndWait();
-                grpModules[group] = new NewMonthInitializer4Group(prevDate, newDate, group, self, progress);
+                grpModules[group] = new NewMonthInitializer4Group(prevDate, newDate, group, self, progress, aAccount.grp_account_id);
             }
             
             
@@ -72,10 +74,13 @@ self.newDate = function(aCallBack) {
          //       model.sums_4create.params.groupid = group;
          //       model.sums_4create.executeUpdate();
                (function(){progress.increaseValue(1);}).invokeAndWait();
-                grpModules[group] = new NewMonthInitializer4Lc(prevDate, newDate, self, progress);
+                grpModules[group] = new NewMonthInitializer4Lc(prevDate, newDate, self, progress, aAccount.grp_account_id);
             
-            (function(){progress.close();}).invokeAndWait();
+            
         });
+        });
+        });
+        (function(){progress.close();}).invokeAndWait();
     }).invokeBackground();
     progress.showModal();
     self.model.params.prevDate = prevDate;

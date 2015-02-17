@@ -11,11 +11,14 @@
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget deletable="false" insertable="false" name="modelGrid" parent="pnlWorkSpace" prefHeight="312px" prefWidth="372px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137513141035797" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <column name="colService" title="Услуга">
-      <datamodelElement entityId="137513141035797" fieldName="services_id"/>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <valueField entityId="137520096845259" fieldName="usl_services_id"/>
         <displayField entityId="137520096845259" fieldName="usl_name"/>
+        <valueField entityId="137520096845259" fieldName="usl_services_id"/>
       </controlInfo>
       <columnsDatasource/>
       <columnsDisplayField/>
@@ -25,15 +28,15 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <datamodelElement entityId="137513141035797" fieldName="services_id"/>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
     </column>
     <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Cпособ расчета">
-      <datamodelElement entityId="137513141035797" fieldName="services_id"/>
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
-        <valueField entityId="137520096845259" fieldName="usl_services_id"/>
         <displayField entityId="137520096845259" fieldName="calc_name"/>
+        <valueField entityId="137520096845259" fieldName="usl_services_id"/>
       </controlInfo>
       <columnsDatasource/>
       <columnsDisplayField/>
@@ -43,12 +46,12 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <datamodelElement entityId="137513141035797" fieldName="services_id"/>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
     </column>
     <column fixed="true" name="column" title="Активна">
-      <datamodelElement entityId="137513141035797" fieldName="fs_active"/>
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
@@ -58,16 +61,16 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <datamodelElement entityId="137513141035797" fieldName="fs_active"/>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
     </column>
     <column name="column3" title="Даты">
       <column name="colDateBeg" title="с">
-        <datamodelElement entityId="137513141035797" fieldName="date_start"/>
         <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-          <valueField entityId="139750978386891" fieldName="per_date_id"/>
           <displayField entityId="139750978386891" fieldName="TextDate"/>
+          <valueField entityId="139750978386891" fieldName="per_date_id"/>
         </controlInfo>
         <columnsDatasource/>
         <columnsDisplayField/>
@@ -77,15 +80,15 @@
           <columnsKeyField/>
           <cellValueField/>
         </cellDesignInfo>
+        <datamodelElement entityId="137513141035797" fieldName="date_start"/>
         <headerStyle>
           <nativeFont name="Dialog" size="11"/>
         </headerStyle>
       </column>
       <column name="colDateEnd" title="по">
-        <datamodelElement entityId="137513141035797" fieldName="date_end"/>
         <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-          <valueField entityId="139750978386891" fieldName="per_date_id"/>
           <displayField entityId="139750978386891" fieldName="TextDate"/>
+          <valueField entityId="139750978386891" fieldName="per_date_id"/>
         </controlInfo>
         <columnsDatasource/>
         <columnsDisplayField/>
@@ -95,6 +98,7 @@
           <columnsKeyField/>
           <cellValueField/>
         </cellDesignInfo>
+        <datamodelElement entityId="137513141035797" fieldName="date_end"/>
         <headerStyle>
           <nativeFont name="Dialog" size="11"/>
         </headerStyle>
@@ -112,10 +116,6 @@
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="137513141035797" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

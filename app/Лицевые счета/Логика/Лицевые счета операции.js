@@ -235,6 +235,19 @@ function LCModule() {
     function deleteLC(aLC_ID) {
 
     }
+    
+    self.addSaldoToLC = function(aFlatID, aAccountID){
+        if (!self.parDateID) {
+            self.all_dates.last();
+            self.parDateID = self.all_dates.per_date_id;
+        }
+        model.saldo_by_flat.push({
+            lc_id       : aFlatID,
+            date_id     : self.parDateID,
+            sal_begin   : 0,
+            account_id  : aAccountID
+        });
+    }
 
     var saveChanges = self.saveChanges;
     var addFlat2Group = self.addFlat2Group;

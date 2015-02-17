@@ -12,7 +12,6 @@
   </widget>
   <widget name="modelGrid" parent="pnlAccounts" prefHeight="264px" prefWidth="396px" type="DbGridDesignInfo">
     <column name="colAccounts" title="Счета">
-      <datamodelElement entityId="142357593167184" fieldName="account_name"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
@@ -22,6 +21,7 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <datamodelElement entityId="142357593167184" fieldName="account_name"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>

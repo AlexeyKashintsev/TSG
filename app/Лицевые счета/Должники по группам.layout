@@ -10,18 +10,27 @@
   <widget name="modelSpin" parent="toolBar" prefHeight="20px" prefWidth="100px" type="DbSpinDesignInfo">
     <datamodelElement entityId="-1" fieldName="parDebt"/>
   </widget>
-  <widget name="label1" parent="toolBar" prefHeight="14px" prefWidth="36px" text="Группа" type="LabelDesignInfo"/>
+  <widget horizontalAlignment="0" horizontalTextPosition="0" name="label1" opaque="true" parent="toolBar" prefHeight="14px" prefWidth="40px" text="Группа:" type="LabelDesignInfo"/>
   <widget name="modelCombo" parent="toolBar" prefHeight="20px" prefWidth="100px" type="DbComboDesignInfo">
-    <valueField entityId="142314144814038" fieldName="grp_groups_id"/>
     <displayField entityId="142314144814038" fieldName="grp_name"/>
+    <valueField entityId="142314144814038" fieldName="grp_groups_id"/>
     <datamodelElement entityId="-1" fieldName="parGroup"/>
   </widget>
+  <widget name="label2" parent="toolBar" prefHeight="14px" prefWidth="29px" text="Счет:" type="LabelDesignInfo"/>
+  <widget name="modelCombo1" parent="toolBar" prefHeight="20px" prefWidth="100px" type="DbComboDesignInfo">
+    <displayField entityId="142417365700052" fieldName="account_name"/>
+    <valueField entityId="142417365700052" fieldName="grp_account_id"/>
+    <datamodelElement entityId="-1" fieldName="parAccountID"/>
+  </widget>
   <widget name="modelGrid1" parent="panel" prefHeight="352px" prefWidth="736px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="142321101592134" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <column name="colGroupName" title="Группа">
-      <datamodelElement entityId="142321101592134" fieldName="group_id"/>
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
-        <valueField entityId="142314144814038" fieldName="grp_groups_id"/>
         <displayField entityId="142314144814038" fieldName="grp_name"/>
+        <valueField entityId="142314144814038" fieldName="grp_groups_id"/>
       </controlInfo>
       <columnsDatasource/>
       <columnsDisplayField/>
@@ -31,12 +40,12 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <datamodelElement entityId="142321101592134" fieldName="group_id"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colFlatNumber" title="№">
-      <datamodelElement entityId="142321101592134" fieldName="lc_flatnumber"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
@@ -46,12 +55,12 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <datamodelElement entityId="142321101592134" fieldName="lc_flatnumber"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
     </column>
     <column name="colFlatRegTo" title="ФИО">
-      <datamodelElement entityId="142321101592134" fieldName="lc_regto"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
@@ -61,12 +70,12 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <datamodelElement entityId="142321101592134" fieldName="lc_regto"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
     </column>
     <column name="colDebt" title="Долг">
-      <datamodelElement entityId="142321101592134" fieldName="sal_end"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
@@ -76,14 +85,11 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <datamodelElement entityId="142321101592134" fieldName="sal_end"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
     </column>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="142321101592134" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

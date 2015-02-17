@@ -12,11 +12,14 @@ function fmAccountsByGroup() {
         Accounts = new formAccountParams();
         Accounts.selector = true;
         Accounts.showModal(function(aAccount){
-            if (aAccount)
+            if (aAccount){
                 model.dsAccountsByGroup.insert(self.dsAccountsByGroup.schema.group_id, model.params.parGroupID,
                                                self.dsAccountsByGroup.schema.account_id, aAccount);
-            model.save();
-            model.requery();        
+                var grpMod = new ServerModule('groups_module');
+                grpMod.addSaldo2Flats(model.params.parGroupID, aAccount);
+                model.save();
+                model.requery();
+            }
         });
         
     }//GEN-LAST:event_btnAddActionPerformed

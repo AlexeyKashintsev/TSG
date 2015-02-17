@@ -149,8 +149,7 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         fmDebt = new debt_in_group();
         fmDebt.mainForm = mf;
         self.showFormAsInternal(fmDebt);
-        self.setDate();
-        //self.setEditDate();
+        self.setDate();        
     } else self.showFormAsInternal(fmDebt);
 }//GEN-LAST:event_button1ActionPerformed
 
@@ -210,6 +209,7 @@ self.setAccount = function(aNewAccount){
     if (!aNewAccount) aNewAccount = self.parAccountID;
     var ok = true;
     if (ok&&fmWorksheet) ok = fmWorksheet.setAccount(aNewAccount);
+    if (ok&&fmDebt) ok = fmDebt.setAccount(aNewAccount);
     if (ok&&fmOplSessions) ok = fmOplSessions.setAccount(aNewAccount);
     paramSynchronizer.setAccount(aNewAccount);
     return ok;

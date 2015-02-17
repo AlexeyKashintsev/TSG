@@ -13,30 +13,18 @@ var self = this, model = self.model;
 
 var fmGroups = new formGroups();
 var fmFlats = new FlatsInGroup();
-var fmFlatChars = new charsFlat();
-var fmFlatServices = new fmServicesByFlat();
-var fmFlatCounters = new fmCounterValuesByFlat();
-var fmSaldoCur = new fmSaldoCurrnet();
-var fmSaldoHistory = new formSaldoHistory();
-var fmNachisleniya = new form_sums_per_flat();
-var fmOplata = new formPaymentsInFlat();
-var fmLCGroups = new fmGroupsByLC();
-var fmGrpAccounts = new fmAccountsByGroup();
 var fmFlatIssues = new formLcIssues();
-var modCalc = new ServerModule('Calculations');
-var fmGChars = new formGroupCharacteristics();
-var fmGServs = new formServicesInGroup();
-var fmGTarifs = new fmTarifs();
-var fmGStats = new SaldoGroupView();
+var fmGroupSheet = new formGroupWorkSheet();
+var fmFlatSheet = new formFlatWorkSheet();
+
 
 
 self.check4Modifications = function(){
     if  ((!fmFlats.model.modified
-        &&!fmFlatChars.model.modified
-        &&!fmFlatServices.model.modified
-        &&!fmFlatCounters.model.modified
-        &&!fmLCGroups.model.modified
+        &&!fmGroups.model.modified
         &&!fmFlatIssues.model.modified
+        &&!fmFlatSheet.check4Modifications()
+        &&!fmGroupSheet.check4Modifications()
         ||askAndSave)
         ||confirm('Не сохраненные изменения будут утеряны. Продолжить?'))
         return true;
@@ -52,39 +40,32 @@ self.setGroup = function(aNewGroupID){
             if (cursor.account_id == self.model.params.parAccountID) 
                 model.params.parGroupID = aNewGroupID;
         });
-        fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = fmGChars.parGroup = 
-            fmGServs.parGroup = fmGTarifs.parGroupID = fmFlatIssues.parGroup =
-            fmGStats.parGroup = fmGrpAccounts.parGroupID = aNewGroupID;
-        self.parFlatID = fmFlats.setCurrentGroup(model.params.parGroupID);
-        model.params.parGroupID = aNewGroupID;
-        self.tabbedPane1.visible = true;
-        self.tabbedPane.visible = false;
-        self.pnlSaldoCur.visible = false;        
+    fmGroupSheet.setGroup(aNewGroupID);
+    fmFlatSheet.setGroup(aNewGroupID);
+    fmFlatIssues.parGroup = aNewGroupID;
+    self.parFlatID = fmFlats.setCurrentGroup(model.params.parGroupID);
+    model.params.parGroupID = aNewGroupID;
+    fmFlatSheet.close();
+    fmGroupSheet.showOnPanel(self.panel);
+               
     });
 
 };
 
 self.setFlat = function(aNewFlatID){
-    self.parFlatID = fmFlatCounters.parFlatID = fmFlatServices.parFlatID = fmNachisleniya.parFlatID = 
-            fmOplata.parFlatID = fmSaldoHistory.parFlatID = fmSaldoCur.parFlatID =
-            fmFlatChars.parFlatID = fmLCGroups.parFlatID = fmFlatIssues.parFlat = aNewFlatID;
-    self.tabbedPane1.visible = false;
-    self.tabbedPane.visible = true;
-    self.pnlSaldoCur.visible = true;
+    self.parFlatID =  fmFlatIssues.parFlat = aNewFlatID;
+    fmFlatSheet.setFlat(aNewFlatID);
+    fmGroupSheet.close();
+    fmFlatSheet.showOnPanel(self.panel);
     //fmFlatIssues.setBtnVisible();
 };
 
 self.setDate = function(aNewDate){
     if (self.check4Modifications()){
         self.parDateID = aNewDate;
-        fmFlatCounters.parDateID =
-//        fmNachisleniya.parDateID =
-        fmSaldoCur.parDateID =
-        fmOplata.parDateID = 
-        fmFlats.parDateID =
-        fmFlatIssues.parDate =
-        fmGTarifs.parDateID = fmGStats.parDateBeg = fmGStats.parDateEnd =
-        fmFlatServices.parDateID = self.parDateID;
+        fmGroupSheet.setDate(aNewDate);
+        fmFlatSheet.setDate(aNewDate);
+        fmFlats.parDateID = fmFlatIssues.parDate = self.parDateID;
         return true;
     }
     else
@@ -92,26 +73,17 @@ self.setDate = function(aNewDate){
 };
 
 self.setEditDate = function(aEditDate){
-    if (self.check4Modifications()){
         self.parEditDate = aEditDate;
-        fmFlatCounters.setEditDate(aEditDate);
-       // fmNachisleniya.setEditDate(aEditDate);
-        fmGTarifs.setEditDate(aEditDate);
-        fmGStats.setEditDate(aEditDate);
-        return true;
-    }
-    else
-        return false;    
+        fmGroupSheet.setEditDate(aEditDate);
+        fmFlatSheet.setEditDate(aEditDate);
+        
 };
 
 self.setAccount = function(aNewAccount){
     if (self.check4Modifications()){
         self.parAccountID = aNewAccount;
-        fmGServs.parAccountID = fmGTarifs.parAccountID =
-            fmGStats.parAccountID = //fmNachisleniya.parAccountID =
-            fmFlatServices.parAccountID = fmFlatCounters.parAccountID =
-            fmSaldoCur.parAccountID = fmSaldoHistory.parAccountID =
-            fmOplata.parAccountID = self.parAccountID;
+        fmGroupSheet.setAccount(aNewAccount);
+        fmFlatSheet.setAccount(aNewAccount);
         self.setGroup(model.params.parGroupID);
         return true;
     }
@@ -121,8 +93,9 @@ self.setAccount = function(aNewAccount){
 
 function askAndSave(){
     if (confirm('Сохранить изменения')){
-        fmGChars.model.save();
-        fmGServs.model.save();
+        fmFlats.model.save();
+        fmGroups.model.save();
+        fmFlatIssues.model.save();
         return true;
     } else return false;
 }
@@ -137,42 +110,14 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     fmFlats.isEditable = true;
     fmFlats.isSelectForm = false;
     fmFlats.showOnPanel(self.pnlFlats);
-    
-    self.tabbedPane1.visible = true;
-    self.tabbedPane.visible = false;
-    self.pnlSaldoCur.visible = false;
-    
-    fmFlatChars.showOnPanel(self.pnlFlatChars);
-    fmFlatServices.showOnPanel(self.pnlServices);
-    fmFlatCounters.showOnPanel(self.pnlCounters);
-    fmSaldoCur.showOnPanel(self.pnlSaldoCur);
-    fmSaldoHistory.showOnPanel(self.pnlSaldoHistory);
-    fmNachisleniya.showOnPanel(self.pnlCurrent);
-    fmOplata.showOnPanel(self.pnlOplata);
-    fmLCGroups.showOnPanel(self.pnlLCGroups);
-    fmGrpAccounts.showOnPanel(self.pnlAccounts);
-    fmGChars.showOnPanel(self.pnlGroupChars1);
+         
     fmGroups.showOnPanel(self.pnlGroups);
-    fmGServs.showOnPanel(self.pnlGroupServ);
-    fmGTarifs.showOnPanel(self.pnlGroupTarifs);   
-    fmGStats.showOnPanel(self.pnlGroupData);
+    fmGroupSheet.showOnPanel(self.panel);
 }//GEN-LAST:event_formWindowOpened
 
 function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
     //mainForm.fmWorksheet = null;
 }//GEN-LAST:event_formWindowClosed
-
-function btnCalcAllGroupActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllGroupActionPerformed
-    modCalc.calculateValues(model.params.parGroupID, null, self.parDateID);
-    fmNachisleniya.model.requery();
-    fmSaldoCur.model.requery();
-}//GEN-LAST:event_btnCalcAllGroupActionPerformed
-
-function btnCalcAllFlatActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllFlatActionPerformed
-    modCalc.calculateValues(null, self.parFlatID, self.parDateID);
-    fmNachisleniya.model.requery();
-    fmSaldoCur.model.requery();
-}//GEN-LAST:event_btnCalcAllFlatActionPerformed
 
 
 }
