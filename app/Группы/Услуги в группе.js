@@ -64,10 +64,12 @@ function colCalcTypeOnSelect(aEditor) {//GEN-FIRST:event_colCalcTypeOnSelect
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
     var fmServSelector = new ServicesForm();
     fmServSelector.showModal(function(aService){
-        model.dsServices.insert(model.dsServices.schema.group_id, self.parGroup,
+        if (aService){
+            model.dsServices.insert(model.dsServices.schema.group_id , self.parGroup,
                                      model.dsServices.schema.services_id, aService.service,
                                      model.dsServices.schema.account_id, self.parAccountID);
-        grpMod.addService2Flats(self.parGroup, aService.service, null, self.parAccountID);
+            grpMod.addService2Flats(self.parGroup, aService.service, null, self.parAccountID);
+         }
     });
 }//GEN-LAST:event_btnAddActionPerformed
 

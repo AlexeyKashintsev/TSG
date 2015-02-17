@@ -31,4 +31,15 @@ function groups_module() {
     self.deleteServiceFromFlats = function(aGroupID, aServiceID, doDeleteSums, aDateID){
         
     };
+    
+    self.addSaldo2Flats = function(aGroupID, aAccountID){
+        var modLC = new ServerModule('LCModule');
+        model.flats_by_group.params.group_id = aGroupID;
+        model.flats_by_group.requery(function(){
+            model.flats_by_group.forEach(function(aFlat){
+               modLC.addSaldoToLC(aFlat.lc_flat_id, aAccountID); 
+            });
+            modLC.saveChanges();
+        });
+    }
 }
