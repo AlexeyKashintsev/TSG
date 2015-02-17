@@ -3,24 +3,34 @@
     <layout type="MarginLayoutDesignInfo"/>
     <constraints bottom="-4px" left="0px" right="-6px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="toolBar" parent="panel" prefHeight="33px" prefWidth="732px" rollover="true" type="ToolbarDesignInfo">
-    <constraints height="33px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo" width="732px"/>
+  <widget name="panel1" parent="panel" prefHeight="33px" prefWidth="731px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints height="33px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="731px"/>
   </widget>
-  <widget name="label" parent="toolBar" prefHeight="14px" prefWidth="29px" text="Долг:" type="LabelDesignInfo"/>
-  <widget name="modelSpin" parent="toolBar" prefHeight="20px" prefWidth="100px" type="DbSpinDesignInfo">
+  <widget name="label" parent="panel1" prefHeight="14px" prefWidth="60px" text="Долг:" type="LabelDesignInfo">
+    <constraints height="14px" left="10px" top="13px" type="MarginConstraintsDesignInfo" width="60px"/>
+  </widget>
+  <widget name="modelSpin" parent="panel1" prefHeight="20px" prefWidth="100px" type="DbSpinDesignInfo">
     <datamodelElement entityId="-1" fieldName="parDebt"/>
+    <constraints height="20px" left="70px" top="10px" type="MarginConstraintsDesignInfo" width="100px"/>
   </widget>
-  <widget horizontalAlignment="0" horizontalTextPosition="0" name="label1" opaque="true" parent="toolBar" prefHeight="14px" prefWidth="40px" text="Группа:" type="LabelDesignInfo"/>
-  <widget name="modelCombo" parent="toolBar" prefHeight="20px" prefWidth="100px" type="DbComboDesignInfo">
-    <displayField entityId="142314144814038" fieldName="grp_name"/>
-    <valueField entityId="142314144814038" fieldName="grp_groups_id"/>
-    <datamodelElement entityId="-1" fieldName="parGroup"/>
+  <widget horizontalAlignment="0" horizontalTextPosition="0" name="label1" opaque="true" parent="panel1" prefHeight="14px" prefWidth="60px" text="Группа:" type="LabelDesignInfo">
+    <constraints height="14px" left="178px" top="13px" type="MarginConstraintsDesignInfo" width="60px"/>
   </widget>
-  <widget name="label2" parent="toolBar" prefHeight="14px" prefWidth="29px" text="Счет:" type="LabelDesignInfo"/>
-  <widget name="modelCombo1" parent="toolBar" prefHeight="20px" prefWidth="100px" type="DbComboDesignInfo">
+  <widget name="modelCombo1" parent="panel1" prefHeight="20px" prefWidth="100px" type="DbComboDesignInfo">
     <displayField entityId="142417365700052" fieldName="account_name"/>
     <valueField entityId="142417365700052" fieldName="grp_account_id"/>
     <datamodelElement entityId="-1" fieldName="parAccountID"/>
+    <constraints height="20px" left="396px" top="10px" type="MarginConstraintsDesignInfo" width="100px"/>
+  </widget>
+  <widget name="label2" parent="panel1" prefHeight="14px" prefWidth="60px" text="Счет:" type="LabelDesignInfo">
+    <constraints height="14px" left="353px" top="13px" type="MarginConstraintsDesignInfo" width="60px"/>
+  </widget>
+  <widget name="modelCombo" parent="panel1" prefHeight="20px" prefWidth="100px" type="DbComboDesignInfo">
+    <displayField entityId="142314144814038" fieldName="grp_name"/>
+    <valueField entityId="142314144814038" fieldName="grp_groups_id"/>
+    <datamodelElement entityId="-1" fieldName="parGroup"/>
+    <constraints height="20px" left="240px" top="10px" type="MarginConstraintsDesignInfo" width="100px"/>
   </widget>
   <widget name="modelGrid1" parent="panel" prefHeight="352px" prefWidth="736px" type="DbGridDesignInfo">
     <rowsColumnsDesignInfo>
