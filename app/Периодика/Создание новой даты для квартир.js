@@ -3,7 +3,7 @@
  * @author TSG
  * @module
  */ 
-function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, aProgress) {
+function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, aProgress, aAccount) {
     var self = this, model = this.model;
     var initCNT = 0;
     
@@ -13,7 +13,9 @@ function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, aProgress) {
     model.params.parNewDate = aNewDate;*/
     
     model.dsSaldo.params.date_id = anOldDate;
+    model.dsSaldo.params.account_id = aAccount;
     model.dsCntVal.params.date_id = anOldDate;
+    model.dsCntVal.params.account_id = aAccount;
     
     
     function initializeSaldo4NewMonth() {
@@ -28,6 +30,7 @@ function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, aProgress) {
                 model.dsSaldo.cursor.sal_penalties_old?model.dsSaldo.cursor.sal_penalties_old:0 +
                 model.dsSaldo.cursor.sal_penalties_cur?model.dsSaldo.cursor.sal_penalties_cur:0;
             saldo[i].date_id = aNewDate;
+            saldo[i].account_id = aAccount;
             i++;
         }
         for (var j in saldo)
@@ -45,7 +48,7 @@ function initializeCounters4NewMonth() {
                 counters[i] = {};
                 counters[i].counter_id = model.dsCntVal.counter_id;
                 counters[i].date_id = aNewDate;
-                counters[i].beg_val = model.dsCntVal.end_val;
+                counters[i].beg_val = model.dsCntVal.end_val;                
                 processedCounters[counters[i].counter_id] = true;
                 i++;
             }

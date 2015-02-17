@@ -50,6 +50,11 @@ function colCalcTypeOnSelect(aEditor) {//GEN-FIRST:event_colCalcTypeOnSelect
 }//GEN-LAST:event_colCalcTypeOnSelect
 
 function btnAddActionPerformed() {//GEN-FIRST:event_btnAddActionPerformed
+/*
+ * При добавлении услуги в квартиру, услуга добавляется, НО:
+ * так как данной услуги в услугах по группе может не быть,то счетчик по данной услуге не будет отображаться,
+ * так как у этой услуги значение запрашивания на показания в услугах группы равно False;
+ */    
     var fmSelectServicesId = new ServicesForm();
     var res = null;
     var lc_mod = new LCModule();

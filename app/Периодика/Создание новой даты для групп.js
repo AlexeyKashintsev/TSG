@@ -4,7 +4,7 @@
  * @author Alexey
  * @module
  */ 
-function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod, aProgress) {
+function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod, aProgress, aAccount) {
     var self = this, model = this.model;
     var initCNT = 0;
     
@@ -12,6 +12,7 @@ function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod, aPro
     model.params.parGroupID = aGroupID;
     model.params.parOldDate = anOldDate;
     model.params.parNewDate = aNewDate;
+    model.params.parAccountID = aAccount;
     
     function initializeTarifs4NewMonth() {
         var tarifs = [];
@@ -24,6 +25,7 @@ function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod, aPro
             tarifs[i].norm = model.dsTarifsInGroup.cursor.norm;
             tarifs[i].rate = model.dsTarifsInGroup.cursor.rate;
             tarifs[i].date_id = aNewDate;
+            tarifs[i].account_id = aAccount;
             i++;
         }
         for (var j in tarifs)
