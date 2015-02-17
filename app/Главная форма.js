@@ -23,33 +23,114 @@ var self = this, model = self;
     var fmReportPrint = new ReportPrint();
     var mf = this;
     
-function showFormAsModal(formId)
-{
-    modalForm = new Form(formId);
-    modalForm.showModal();
+    function ParamsSynchronizer() {
+        var date = 0;
+        var dateEditable = true;
+        var account = 0;
+        
+        var listeners = [];
+        
+        function checkForModifications() {
+            var ok = true;
+            for (var j in listeners) {
+                try {
+                    if (listeners[j].model.modified && 
+                            !listeners[j].ignoreChanges)
+                        ok = false;
+                } catch (e) {
+                    Logger.info('Листенер отвалился ;( ' + e);
+                }
+            }
+            return ok || confirm('Изменения будут потеряны, продолжить?');
+        }
+        
+        function syncParams(aListener) {
+            try {
+                if (aListener.model.params) {
+                    if (!aListener.doNotSetDate)
+                        aListener.model.params.parDateID = date;
+                    if (!aListener.doNotSetAccount)
+                        aListener.model.params.parAccountID = account;
+                }
+                if (aListener.setEditable)
+                    aListener.setEditable(dateEditable);
+                if (aListener.setDate)
+                    aListener.setDate(date);
+                if (aListener.setAccount)
+                    aListener.setAccount(account);
+                return true;
+            } catch (e) {
+                Logger.info('Листенер отвалился ;( ' + e);
+                return false;
+            }
+        }
+        
+        this.addListener = function(aListener) {
+            if (syncParams(aListener))
+                listeners.push(aListener);
+        };
+        
+        this.setDate = function(aNewDate, anIsEditable) {
+            if (checkForModifications()) {
+                date = aNewDate;
+                dateEditable = anIsEditable;
+                for (var j in listeners)
+                    syncParams(listeners[j]);
+                return true;
+            } else 
+                return false;
+        };
+        
+        this.setAccount = function(aNewAccount) {
+            if (checkForModifications()) {
+                account = aNewAccount;
+                for (var j in listeners)
+                    syncParams(listeners[j]);
+                return true;
+            } else 
+                return false;
+        };
+        
+        this.getData = function() {
+            return date;
+        };
+        
+        this.getDataEditable = function() {
+            return dateEditable;
+        };
+        
+        this.getAccount = function() {
+            return account;
+        };
+        
+        this.getParams = function() {
+            return {
+                date        :   date,
+                isEditable  :   dateEditable,
+                account     :   account
+            };
+        };
+    }
+    
+    paramSynchronizer = new ParamsSynchronizer();
+    
+    function showFormAsModal(formId)
+    {
+        modalForm = new Form(formId);
+        modalForm.showModal();
 }
 
-self.showFormAsInternal = function(aForm)
-{
-   // if (!swapFrames(formId)){
-      //  if(!guiUtils.showOpenedForm(aForm, self.formDesktop)){
-            var frameRunner = aForm;
-            var lenCookie = guiUtils.beginLengthyOperation(this);
-            try{
-                frameRunner.desktop = self.formDesktop;
-                frameRunner.showInternalFrame(self.formDesktop);
-               /* var internalFrame = frameRunner.getInternalFrame(self.formDesktop);
-                internalFrame.resizable = true;
-                internalFrame.maximizable = true;
-                internalFrame.closable = true;
-                internalFrame.iconifiable = true;*/
-              //  guiUtils.putUserFormProperty(internalFrame, formId);
-            }finally{
-                lenCookie.end();
-            }
-            frameRunner.toFront();
-     //   }
-     //   return frameRunner;
+self.showFormAsInternal = function(aForm) {
+        var frameRunner = aForm;
+        var lenCookie = guiUtils.beginLengthyOperation(this);
+        try{
+            frameRunner.desktop = self.formDesktop;
+            frameRunner.showInternalFrame(self.formDesktop);
+
+        }finally{
+            lenCookie.end();
+        }
+        frameRunner.toFront();
 }
 
 function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
@@ -83,7 +164,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 }//GEN-LAST:event_formWindowOpened
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-    //setDate(self.parDateID);
+    self.setAccount();
 }//GEN-LAST:event_paramsOnChanged
 
 function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed
@@ -130,8 +211,9 @@ self.setAccount = function(aNewAccount){
     var ok = true;
     if (ok&&fmWorksheet) ok = fmWorksheet.setAccount(aNewAccount);
     if (ok&&fmOplSessions) ok = fmOplSessions.setAccount(aNewAccount);
+    paramSynchronizer.setAccount(aNewAccount);
     return ok;
-}
+};
 
 
     function button4ActionPerformed(evt) {//GEN-FIRST:event_button4ActionPerformed
@@ -153,10 +235,6 @@ self.setAccount = function(aNewAccount){
         fmIssues.mainForm = mf;        
         self.showFormAsInternal(fmIssues);
     }//GEN-LAST:event_button5ActionPerformed
-
-    function modelComboOnRender(evt) {//GEN-FIRST:event_modelComboOnRender
-        self.setAccount();
-    }//GEN-LAST:event_modelComboOnRender
 
     function button6ActionPerformed(evt) {//GEN-FIRST:event_button6ActionPerformed
         var fmAccountSel = new formAccountParams();

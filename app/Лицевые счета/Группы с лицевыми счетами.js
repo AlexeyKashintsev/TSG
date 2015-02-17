@@ -78,9 +78,8 @@ self.setDate = function(aNewDate){
     if (self.check4Modifications()){
         self.parDateID = aNewDate;
         fmFlatCounters.parDateID =
-        fmNachisleniya.parDateID =
+//        fmNachisleniya.parDateID =
         fmSaldoCur.parDateID =
-        fmNachisleniya.parDateID =
         fmOplata.parDateID = 
         fmFlats.parDateID =
         fmFlatIssues.parDate =
@@ -96,7 +95,7 @@ self.setEditDate = function(aEditDate){
     if (self.check4Modifications()){
         self.parEditDate = aEditDate;
         fmFlatCounters.setEditDate(aEditDate);
-        fmNachisleniya.setEditDate(aEditDate);
+       // fmNachisleniya.setEditDate(aEditDate);
         fmGTarifs.setEditDate(aEditDate);
         fmGStats.setEditDate(aEditDate);
         return true;
@@ -109,7 +108,7 @@ self.setAccount = function(aNewAccount){
     if (self.check4Modifications()){
         self.parAccountID = aNewAccount;
         fmGServs.parAccountID = fmGTarifs.parAccountID =
-            fmGStats.parAccountID = fmNachisleniya.parAccountID =
+            fmGStats.parAccountID = //fmNachisleniya.parAccountID =
             fmFlatServices.parAccountID = fmFlatCounters.parAccountID =
             fmSaldoCur.parAccountID = fmSaldoHistory.parAccountID =
             fmOplata.parAccountID = self.parAccountID;

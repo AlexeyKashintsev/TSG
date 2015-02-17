@@ -8,7 +8,7 @@
 function form_sums_per_flat() {
 
 
-var self = this;
+var self = this, model = self.model;
 self.parentForm = null;
 
 function initModuleSums(){
@@ -16,10 +16,11 @@ function initModuleSums(){
         modSums = new SaldoAndSumsModule();
 }
 
-
-self.setEditDate = function(aEditDate){
-    self.modelGrid.editable = !!aEditDate;
-}
+self.syncParams = function(aDate, anIsEditable, anAccount) {
+    self.modelGrid.editable = anIsEditable;
+    //model.params.parDateID = aDate;
+    //model.params.parAccountID = anAccount;
+};
 
     function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
         self.model.save();
@@ -28,4 +29,5 @@ self.setEditDate = function(aEditDate){
     function btnRequeryActionPerformed(evt) {//GEN-FIRST:event_btnRequeryActionPerformed
         self.model.requery();
     }//GEN-LAST:event_btnRequeryActionPerformed
+    paramSynchronizer.addListener(this);
 }

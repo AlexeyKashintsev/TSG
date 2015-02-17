@@ -6,14 +6,14 @@
     <parameter description="" name="parAccountID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="13" entityWidth="150"/>
+  <entity Name="sums_perFlat" Title="Начисления по квартире" entityHeight="319" entityIconified="false" entityId="137684219497981" entityLocationX="264" entityLocationY="13" entityWidth="150" queryId="sums_perFlat" tableName="" tableSchemaName=""/>
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137684230384165" entityLocationX="470" entityLocationY="21" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
-  <entity Name="sums_perFlat" Title="Начисления по квартире" entityHeight="319" entityIconified="false" entityId="137684219497981" entityLocationX="263" entityLocationY="13" entityWidth="150" queryId="sums_perFlat" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="ParGroupID" rightEntityId="137684219497981" rightEntityParameterName="ParGroup"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="137684219497981" rightEntityParameterName="date_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137684219497981" rightEntityParameterName="flat_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="137684219497981" rightEntityParameterName="parAccount"/>
-  <referenceRelation leftEntityFieldName="services_id" leftEntityId="137684219497981" rightEntityFieldName="usl_services_id" rightEntityId="137684230384165"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137684219497981" rightEntityParameterName="flat_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="137684219497981" rightEntityParameterName="date_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="ParGroupID" rightEntityId="137684219497981" rightEntityParameterName="ParGroup"/>
   <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="137684219497981" rightEntityFieldName="lc_flat_services_id" rightEntityId="137684219497981"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137684230384165" rightEntityFieldName="usl_services_id" rightEntityId="137684230384165"/>
   <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137684230384165" rightEntityFieldName="usl_services_id" rightEntityId="137684230384165"/>
+  <referenceRelation leftEntityFieldName="services_id" leftEntityId="137684219497981" rightEntityFieldName="usl_services_id" rightEntityId="137684230384165"/>
 </datamodel>

@@ -93,6 +93,8 @@ function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
 }//GEN-LAST:event_btn_newActionPerformed
 
 function setDate(aNewDateID){
+    /* retun */
+    paramSynchronizer.setDate(aNewDateID);
     if (self.parentForm) return self.parentForm.setDate(aNewDateID)
     else return true;
 }
