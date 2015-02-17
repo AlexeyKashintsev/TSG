@@ -12,6 +12,28 @@ function formGroupWorkSheet() {
     var fmGrpAccounts = new fmAccountsByGroup();
     
     
+        self.check4Modifications = function(){
+        if (!fmGChars.model.modified
+            &&!fmGServs.model.modified
+            &&!fmGTarifs.model.modified
+            &&!fmGrpAccounts.model.modified
+            ||askAndSave())
+            return true;
+        else
+            return false;
+    }
+    
+    function askAndSave(){
+    if (confirm('Сохранить изменения')){
+        fmGChars.model.save();
+        fmGServs.model.save();
+        fmGTarifs.model.save();
+        fmGrpAccounts.model.save();
+        return true;
+        } else 
+        return false;
+    }
+    
     self.setGroup = function(aNewGroupID){
         fmGChars.parGroup = fmGServs.parGroup = 
         fmGTarifs.parGroupID = fmGStats.parGroup = 

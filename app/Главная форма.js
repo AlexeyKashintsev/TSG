@@ -68,8 +68,7 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         fmDebt = new debt_in_group();
         fmDebt.mainForm = mf;
         self.showFormAsInternal(fmDebt);
-        self.setDate();
-        self.setAccount();
+        self.setDate();        
     } else self.showFormAsInternal(fmDebt);
 }//GEN-LAST:event_button1ActionPerformed
 

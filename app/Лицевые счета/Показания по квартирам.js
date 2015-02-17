@@ -16,6 +16,28 @@ function formFlatWorkSheet() {
     var modCalc = new ServerModule('Calculations');
     
     
+    self.check4Modifications = function(){
+        if (!fmFlatChars.model.modified
+            &&!fmFlatServices.model.modified
+            &&!fmFlatCounters.model.modified
+            &&!fmLCGroups.model.modified
+            ||askAndSave())
+            return true;
+        else
+            return false;
+    }
+    
+    function askAndSave(){
+    if (confirm('Сохранить изменения')){
+        fmFlatChars.model.save();
+        fmFlatServices.model.save();
+        fmFlatCounters.model.save();
+        fmLCGroups.model.save();
+        return true;
+        } else 
+        return false;
+    }
+    
     self.setGroup = function(aNewGroupID){
         fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = aNewGroupID;
     };

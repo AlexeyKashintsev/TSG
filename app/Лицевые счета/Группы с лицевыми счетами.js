@@ -21,11 +21,10 @@ var fmFlatSheet = new formFlatWorkSheet();
 
 self.check4Modifications = function(){
     if  ((!fmFlats.model.modified
-        /*&&!fmFlatChars.model.modified
-        &&!fmFlatServices.model.modified
-        &&!fmFlatCounters.model.modified
-        &&!fmLCGroups.model.modified*/
+        &&!fmGroups.model.modified
         &&!fmFlatIssues.model.modified
+        &&!fmFlatSheet.check4Modifications()
+        &&!fmGroupSheet.check4Modifications()
         ||askAndSave)
         ||confirm('Не сохраненные изменения будут утеряны. Продолжить?'))
         return true;
@@ -41,13 +40,13 @@ self.setGroup = function(aNewGroupID){
             if (cursor.account_id == self.model.params.parAccountID) 
                 model.params.parGroupID = aNewGroupID;
         });
-        fmGroupSheet.setGroup(aNewGroupID);
-        fmFlatSheet.setGroup(aNewGroupID);
-        fmFlatIssues.parGroup = aNewGroupID;
-        self.parFlatID = fmFlats.setCurrentGroup(model.params.parGroupID);
-        model.params.parGroupID = aNewGroupID;
-        fmFlatSheet.close();
-        fmGroupSheet.showOnPanel(self.panel);
+    fmGroupSheet.setGroup(aNewGroupID);
+    fmFlatSheet.setGroup(aNewGroupID);
+    fmFlatIssues.parGroup = aNewGroupID;
+    self.parFlatID = fmFlats.setCurrentGroup(model.params.parGroupID);
+    model.params.parGroupID = aNewGroupID;
+    fmFlatSheet.close();
+    fmGroupSheet.showOnPanel(self.panel);
                
     });
 
@@ -74,15 +73,10 @@ self.setDate = function(aNewDate){
 };
 
 self.setEditDate = function(aEditDate){
-    if (self.check4Modifications()){
         self.parEditDate = aEditDate;
         fmGroupSheet.setEditDate(aEditDate);
         fmFlatSheet.setEditDate(aEditDate);
-               
-        return true;
-    }
-    else
-        return false;    
+        
 };
 
 self.setAccount = function(aNewAccount){
@@ -99,6 +93,9 @@ self.setAccount = function(aNewAccount){
 
 function askAndSave(){
     if (confirm('Сохранить изменения')){
+        fmFlats.model.save();
+        fmGroups.model.save();
+        fmFlatIssues.model.save();
         return true;
     } else return false;
 }
