@@ -13,18 +13,18 @@ function fmAccountsByGroup() {
         Accounts.selector = true;
         Accounts.showModal(function(aAccount){
             if (aAccount){
-                var accingrp = model.dsAccountsByGroup.find(model.dsAccountsByGroup.schema.account_id, aAccount)
+                /*var accingrp = model.dsAccountsByGroup.find(model.dsAccountsByGroup.schema.account_id, aAccount)
                 if(accingrp != null)                
                     alert('Уже есть такой счет в группе');                
                 else
-                {
+                {*/
                     model.dsAccountsByGroup.insert(self.dsAccountsByGroup.schema.group_id, model.params.parGroupID,
                                                    self.dsAccountsByGroup.schema.account_id, aAccount);
                     var grpMod = new ServerModule('groups_module');
                     grpMod.addSaldo2Flats(model.params.parGroupID, aAccount);
                     model.save();
                     model.requery();
-                }            
+               // }            
             }
         });
         
