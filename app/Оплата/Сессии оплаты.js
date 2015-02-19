@@ -27,7 +27,7 @@ self.updateSession = function(){
 self.syncParams = function(aDate, anIsEditable, anAccount) {
     model.params.parEditDate = anIsEditable;
     model.params.parDateID = aDate;
-    model.params.parAccountID = anAccount;
+    model.params.parAccountID = anAccount;    
     //model.params.parDateID = aDate;
     //model.params.parAccountID = anAccount;
 };

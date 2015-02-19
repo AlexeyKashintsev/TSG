@@ -38,9 +38,9 @@ self.setBtnVisible = function (){
 }
 
 
-function formWindowOpened(evt) {                                  
+    function formWindowOpened(evt) {                                  
         self.model.requery();
-        }  
+    }  
         
-paramSynchronizer.addListener(this);
+    paramSynchronizer.addListener(this);
 }

@@ -61,7 +61,8 @@ var self = this, model = self;
                     aListener.setDate(date);
                 if (aListener.setAccount)
                     aListener.setAccount(account);
-                return true;}
+                }
+                return true;
             } catch (e) {
                 Logger.info('Листенер отвалился ;( ' + e);
                 return false;
@@ -140,9 +141,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
     if (!fmWorksheet) {
         fmWorksheet = new mainWorkSheet();
         fmWorksheet.mainForm = mf;
-        self.showFormAsInternal(fmWorksheet);
-        self.setDate();
-        self.setAccount();        
+        self.showFormAsInternal(fmWorksheet);            
     } else self.showFormAsInternal(fmWorksheet);
 }//GEN-LAST:event_buttonActionPerformed
 
@@ -164,7 +163,9 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 }//GEN-LAST:event_formWindowOpened
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-    self.setAccount();
+    paramSynchronizer.setAccount(model.params.parAccountID);
+    if (fmWorksheet) fmWorksheet.setGroup(fmWorksheet.params.parGroupID);
+        //self.setAccount();
 }//GEN-LAST:event_paramsOnChanged
 
 function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed
@@ -179,36 +180,14 @@ function button3ActionPerformed(evt) {//GEN-FIRST:event_button3ActionPerformed
     if (!fmServices) {
         fmServices = new ServicesForm();
         fmServices.mainForm = mf;
-        self.showFormAsInternal(fmServices);
-       // self.setDate();
+        self.showFormAsInternal(fmServices);       
     }	else self.showFormAsInternal(fmServices);
 }//GEN-LAST:event_button3ActionPerformed
 
-self.setDate = function(aNewDateID){
-    if (!aNewDateID) aNewDateID = self.parDateID;
-    var ok = true;
-    if (ok&&fmDebt) ok = fmDebt.setDate(aNewDateID);    
-    if (ok) self.parDateID = aNewDateID;    
-    return ok;
-};
 
-self.setEditDate = function(aEditDate){
-    //if (!!aEditDate) aEditDate = self.parEditDate;
-    var ok = true;    
-    return ok;
-};
-
-self.setAccount = function(aNewAccount){
-    if (!aNewAccount) aNewAccount = self.parAccountID;
-    var ok = true;
-    if (ok&&fmWorksheet) ok = fmWorksheet.setAccount(aNewAccount); 
-    paramSynchronizer.setAccount(aNewAccount);
-    return ok;
-};
 
 
     function button4ActionPerformed(evt) {//GEN-FIRST:event_button4ActionPerformed
-       fmReportPrint.model.params.parDateID = self.model.params.parDateID;
        self.showFormAsInternal(fmReportPrint);
     }//GEN-LAST:event_button4ActionPerformed
 
@@ -234,3 +213,4 @@ self.setAccount = function(aNewAccount){
         self.showFormAsInternal(fmAccountSel); 
     }//GEN-LAST:event_button6ActionPerformed
 }
+

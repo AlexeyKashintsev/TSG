@@ -38,4 +38,6 @@ function ReportPrint() {
     function btnPrintActionPerformed(evt) {//GEN-FIRST:event_btnPrintActionPerformed
         process(true);
     }//GEN-LAST:event_btnPrintActionPerformed
+    
+    paramSynchronizer.addListener(this);
 }

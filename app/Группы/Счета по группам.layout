@@ -13,6 +13,10 @@
   <widget name="modelGrid" parent="pnlAccounts" prefHeight="264px" prefWidth="396px" type="DbGridDesignInfo">
     <column name="colAccounts" title="Счета">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="142357593167184" fieldName="account_name"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -21,15 +25,11 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <datamodelElement entityId="142357593167184" fieldName="account_name"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
     </column>
+    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="142357593167184" field="false"/>
     </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="5px" left="0px" right="4px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="BorderLayoutDesignInfo"/>

@@ -13,7 +13,6 @@ var self = this, model = self.model;
 
 var scrolled = false;
 var changed = false;
-var fmFlat = new FlatsInGroup();
 self.parentForm = null;
 var deForm = null;
 
@@ -37,8 +36,7 @@ function all_datesOnScrolled(evt) {//GEN-FIRST:event_all_datesOnScrolled
     if (self.all_dates.rowIndex == self.all_dates.length )
         self.btn_last.enabled = self.btn_next.enabled = false;
     else self.btn_last.enabled = self.btn_next.enabled = true;
-    setDate(self.parDateID, self.parEditDate);
-    setEditDate(self.parEditDate);    
+    paramSynchronizer.setDate(self.parDateID, self.parEditDate);    
 }//GEN-LAST:event_all_datesOnScrolled
 
 function btn_nextActionPerformed(evt) {//GEN-FIRST:event_btn_nextActionPerformed
@@ -53,6 +51,7 @@ function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
     if (!scrolled){
         changed =  true; 
         self.all_dates.scrollTo(self.all_dates.findById(self.parDateID));
+        paramSynchronizer.setDate(self.parDateID, self.parEditDate); 
            }
         else 
         scrolled = false;
@@ -65,8 +64,7 @@ function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
         self.btn_last.enabled = self.btn_next.enabled = false;
     else self.btn_last.enabled = self.btn_next.enabled = true;
     
-    setDate(self.parDateID);
-    setEditDate(self.parEditDate);    
+         
 }//GEN-LAST:event_paramsOnChanged
 
 function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
@@ -91,18 +89,6 @@ function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
         });
     });
 }//GEN-LAST:event_btn_newActionPerformed
-
-function setDate(aNewDateID, aEditDate){
-    /* retun */
-    paramSynchronizer.setDate(aNewDateID,aEditDate);
-    if (self.parentForm) return self.parentForm.setDate(aNewDateID)
-    else return true;
-}
-
-function setEditDate(aEditDate){
-    if (self.parentForm) return self.parentForm.setEditDate(aEditDate)
-    else return true;
-}
 
     function btn_confActionPerformed(evt) {//GEN-FIRST:event_btn_confActionPerformed
         if (!deForm) {

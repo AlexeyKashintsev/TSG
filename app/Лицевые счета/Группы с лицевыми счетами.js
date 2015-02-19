@@ -60,26 +60,6 @@ self.setFlat = function(aNewFlatID){
     //fmFlatIssues.setBtnVisible();
 };
 
-self.setDate = function(aNewDate){
-    if (self.check4Modifications()){
-        self.parDateID = aNewDate;
-        fmFlats.parDateID = fmFlatIssues.parDate = self.parDateID;
-        return true;
-    }
-    else
-        return false;
-};
-
-
-self.setAccount = function(aNewAccount){
-    if (self.check4Modifications()){
-        self.parAccountID = aNewAccount;
-        self.setGroup(model.params.parGroupID);
-        return true;
-    }
-    else
-        return false;    
-};
 
 function askAndSave(){
     if (confirm('Сохранить изменения')){
@@ -109,5 +89,5 @@ function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
     //mainForm.fmWorksheet = null;
 }//GEN-LAST:event_formWindowClosed
 
-
+paramSynchronizer.addListener(this);
 }

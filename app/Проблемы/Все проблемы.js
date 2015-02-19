@@ -54,7 +54,7 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
         if (evt.clickCount > 1){
             fmIssuesByFlat.mainForm = self.mainForm;
             fmIssuesByFlat.parentForm = self;
-            fmIssuesByFlat.model.params.parDate = self.allIssues.per_date_id;
+            fmIssuesByFlat.model.params.parDateID = self.allIssues.per_date_id;
             fmIssuesByFlat.model.params.parFlat = self.allIssues.lc_flat_id;
             fmIssuesByFlat.model.params.parGroup = self.allIssues.grp_groups_id;
             
