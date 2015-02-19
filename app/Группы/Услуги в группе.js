@@ -131,4 +131,6 @@ if (self.dsServices.rowIndex != self.dsServices.length)
     function mgUslugiOnRender(evt) {//GEN-FIRST:event_mgUslugiOnRender
 
     }//GEN-LAST:event_mgUslugiOnRender
+
+    paramSynchronizer.addListener(this);
 }

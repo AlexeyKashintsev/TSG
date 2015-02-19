@@ -8,7 +8,7 @@
 function opl_session_view() {
 
 
-var self = this;
+var self = this, model = self.model;
 
 
 var isSelectForm = true;
@@ -23,19 +23,13 @@ self.updateSession = function(){
     self.model.requery();
 };
 
-self.setDate = function(aNewDate){
-    self.parDateID = aNewDate;
-    return true;
-};
 
-self.setEditDate = function(aEditDate){
-    self.parEditDate = aEditDate;
-    return true;
-};
-
-self.setAccount = function(aNewAccount){
-    self.parAccountID = aNewAccount;
-    return true;
+self.syncParams = function(aDate, anIsEditable, anAccount) {
+    model.params.parEditDate = anIsEditable;
+    model.params.parDateID = aDate;
+    model.params.parAccountID = anAccount;
+    //model.params.parDateID = aDate;
+    //model.params.parAccountID = anAccount;
 };
 
 function openCurrentSession(){
@@ -108,4 +102,6 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
     if (evt.clickCount > 1)
         openCurrentSession();        // TODO Добавьте свой код:
     }//GEN-LAST:event_modelGridMouseClicked
+
+paramSynchronizer.addListener(this);
 }

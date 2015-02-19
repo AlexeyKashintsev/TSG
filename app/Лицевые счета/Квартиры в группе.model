@@ -8,8 +8,8 @@
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="issues_by_flat" Title="" entityHeight="200" entityIconified="false" entityId="142261282356251" entityLocationX="499" entityLocationY="29" entityWidth="150" queryId="issues_by_flat" tableName="" tableSchemaName=""/>
   <entity Name="issues_by_group" Title="" entityHeight="200" entityIconified="false" entityId="142288324518732" entityLocationX="281" entityLocationY="28" entityWidth="150" queryId="issues_by_group" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAllFlats" rightEntityId="142288324518732" rightEntityParameterName="all_flats"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142288324518732" rightEntityParameterName="date_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="142288324518732" rightEntityParameterName="group_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAllFlats" rightEntityId="142288324518732" rightEntityParameterName="all_flats"/>
   <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142261282356251" rightEntityFieldName="lc_flat_id" rightEntityId="142288324518732"/>
 </datamodel>

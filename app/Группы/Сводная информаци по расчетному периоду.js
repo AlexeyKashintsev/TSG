@@ -15,10 +15,14 @@ function SaldoGroupView() {
     };
     var repBill = new BillsSaldoGroup(reportObject);
     */
-    self.setEditDate = function(aEditDate){
-        self.modelGrid.editable = false;
-}
-    // TODO : place your code here
+
+self.syncParams = function(aDate, anIsEditable, anAccount) {
+    self.modelGrid.editable = anIsEditable;
+    model.params.parDateBeg = model.params.parDateEnd = aDate;
+    model.params.parAccountID = anAccount;
+    //model.params.parDateID = aDate;
+    //model.params.parAccountID = anAccount;
+};
 
     function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
         var dateBeg = '';
@@ -53,5 +57,7 @@ function SaldoGroupView() {
     
         repBill.show();
     }//GEN-LAST:event_buttonActionPerformed
+
+paramSynchronizer.addListener(this);
 }
 

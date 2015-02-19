@@ -41,4 +41,6 @@ self.setBtnVisible = function (){
 function formWindowOpened(evt) {                                  
         self.model.requery();
         }  
+        
+paramSynchronizer.addListener(this);
 }

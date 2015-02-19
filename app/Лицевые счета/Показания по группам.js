@@ -39,22 +39,7 @@ function formGroupWorkSheet() {
         fmGTarifs.parGroupID = fmGStats.parGroup = 
         fmGrpAccounts.parGroupID = aNewGroupID;
     };
-
-    self.setDate = function(aNewDate){
-        fmGTarifs.parDateID = fmGStats.parDateBeg = 
-        fmGStats.parDateEnd = aNewDate;
-    };
-    
-    self.setEditDate = function(aEditDate){
-        fmGTarifs.setEditDate(aEditDate);
-        fmGStats.setEditDate(aEditDate);
-    };
-   
-    self.setAccount = function(aNewAccount){
-        fmGServs.parAccountID = fmGTarifs.parAccountID =
-        fmGStats.parAccountID = aNewAccount;
-    };
-    
+         
     function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
         fmGServs.showOnPanel(self.pnlGroupServ);
         fmGTarifs.showOnPanel(self.pnlGroupTarifs);   

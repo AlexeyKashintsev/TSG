@@ -25,5 +25,5 @@ function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
 	// TODO Добавьте свой код:
 }//GEN-LAST:event_btnAddActionPerformed
-
+paramSynchronizer.addListener(this);
 }

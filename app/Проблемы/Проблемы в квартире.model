@@ -2,20 +2,20 @@
   <parameters>
     <parameter description="" name="parGroup" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="parFlat" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
-    <parameter description="" name="parDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="grp_groups" Title="" entityHeight="200" entityIconified="false" entityId="142260846517193" entityLocationX="182" entityLocationY="246" entityWidth="150" tableName="grp_groups" tableSchemaName=""/>
   <entity Name="lc_flat" Title="" entityHeight="200" entityIconified="false" entityId="142260847793739" entityLocationX="497" entityLocationY="244" entityWidth="150" tableName="lc_flat" tableSchemaName=""/>
   <entity Name="issues_type" Title="" entityHeight="200" entityIconified="false" entityId="142253805942123" entityLocationX="568" entityLocationY="20" entityWidth="150" queryId="issues_type" tableName="" tableSchemaName=""/>
   <entity Name="issues_by_flat" Title="" entityHeight="200" entityIconified="false" entityId="142253809417130" entityLocationX="317" entityLocationY="5" entityWidth="150" queryId="issues_by_flat" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityFieldName="group_id" rightEntityId="142253809417130"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlat" rightEntityFieldName="lc_id" rightEntityId="142253809417130"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDate" rightEntityFieldName="date_id" rightEntityId="142253809417130"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityFieldName="date_id" rightEntityId="142253809417130"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityFieldName="grp_groups_id" rightEntityId="142260846517193"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityFieldName="group_id" rightEntityId="142253809417130"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlat" rightEntityFieldName="lc_flat_id" rightEntityId="142260847793739"/>
   <referenceRelation leftEntityFieldName="group_id" leftEntityId="142253809417130" rightEntityFieldName="grp_groups_id" rightEntityId="142260846517193"/>
   <referenceRelation leftEntityFieldName="type_issues" leftEntityId="142253809417130" rightEntityFieldName="adm_issues_types_id" rightEntityId="142253805942123"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142253809417130" rightEntityFieldName="lc_flat_id" rightEntityId="142260847793739"/>
   <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="142260846517193" rightEntityFieldName="grp_groups_id" rightEntityId="142260846517193"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142253809417130" rightEntityFieldName="lc_flat_id" rightEntityId="142260847793739"/>
 </datamodel>

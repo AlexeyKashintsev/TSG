@@ -48,26 +48,7 @@ function formFlatWorkSheet() {
         fmFlatChars.parFlatID = fmLCGroups.parFlatID = aNewFlatID;
     };
 
-    self.setDate = function(aNewDate){
-        fmFlatCounters.parDateID =
-        fmNachisleniya.parDateID =
-        fmSaldoCur.parDateID =
-        fmNachisleniya.parDateID =
-        fmOplata.parDateID = 
-        fmFlatServices.parDateID = aNewDate;
-    };
-    
-    self.setEditDate = function(aEditDate){
-        fmFlatCounters.setEditDate(aEditDate);
-        fmNachisleniya.setEditDate(aEditDate);
-    };
-   
-    self.setAccount = function(aNewAccount){
-        fmNachisleniya.parAccountID =
-        fmFlatServices.parAccountID = fmFlatCounters.parAccountID =
-        fmSaldoCur.parAccountID = fmSaldoHistory.parAccountID =
-        fmOplata.parAccountID = aNewAccount;
-    };
+     
 
     function btnCalcAllGroupActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllGroupActionPerformed
         modCalc.calculateValues(model.params.parGroupID, null, self.parDateID);

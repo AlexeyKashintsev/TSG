@@ -46,6 +46,9 @@ var self = this, model = self;
         
         function syncParams(aListener) {
             try {
+                if(aListener.syncParams)
+                    aListener.syncParams(date, dateEditable, account);
+                else {
                 if (aListener.model.params) {
                     if (!aListener.doNotSetDate)
                         aListener.model.params.parDateID = date;
@@ -58,7 +61,7 @@ var self = this, model = self;
                     aListener.setDate(date);
                 if (aListener.setAccount)
                     aListener.setAccount(account);
-                return true;
+                return true;}
             } catch (e) {
                 Logger.info('Листенер отвалился ;( ' + e);
                 return false;
@@ -139,8 +142,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
         fmWorksheet.mainForm = mf;
         self.showFormAsInternal(fmWorksheet);
         self.setDate();
-        self.setAccount();
-        self.setEditDate(model.params.parEditDate);
+        self.setAccount();        
     } else self.showFormAsInternal(fmWorksheet);
 }//GEN-LAST:event_buttonActionPerformed
 
@@ -148,8 +150,7 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
     if (!fmDebt) {
         fmDebt = new debt_in_group();
         fmDebt.mainForm = mf;
-        self.showFormAsInternal(fmDebt);
-        self.setDate();        
+        self.showFormAsInternal(fmDebt);             
     } else self.showFormAsInternal(fmDebt);
 }//GEN-LAST:event_button1ActionPerformed
 
@@ -170,10 +171,7 @@ function button2ActionPerformed(evt) {//GEN-FIRST:event_button2ActionPerformed
     if (!fmOplSessions) {
         fmOplSessions = new opl_session_view();
         fmOplSessions.mainForm = mf;
-        self.showFormAsInternal(fmOplSessions);
-        self.setDate();
-        self.setEditDate(model.params.parEditDate);
-        self.setAccount();
+        self.showFormAsInternal(fmOplSessions);        
     } else self.showFormAsInternal(fmOplSessions);
 }//GEN-LAST:event_button2ActionPerformed
 
@@ -189,28 +187,21 @@ function button3ActionPerformed(evt) {//GEN-FIRST:event_button3ActionPerformed
 self.setDate = function(aNewDateID){
     if (!aNewDateID) aNewDateID = self.parDateID;
     var ok = true;
-    if (ok&&fmWorksheet) ok = fmWorksheet.setDate(aNewDateID);
-    if (ok&&fmDebt) ok = fmDebt.setDate(aNewDateID);
-    if (ok&&fmOplSessions) ok = fmOplSessions.setDate(aNewDateID);
-    if (ok) self.parDateID = aNewDateID;
+    if (ok&&fmDebt) ok = fmDebt.setDate(aNewDateID);    
+    if (ok) self.parDateID = aNewDateID;    
     return ok;
 };
 
 self.setEditDate = function(aEditDate){
     //if (!!aEditDate) aEditDate = self.parEditDate;
-    var ok = true;
-    if (ok&&fmWorksheet) ok = fmWorksheet.setEditDate(aEditDate);
-    //if (ok&&fmGroups) ok = fmGroups.setEditDate(aEditDate);
-    if (ok&&fmOplSessions) ok = fmOplSessions.setEditDate(aEditDate);
+    var ok = true;    
     return ok;
 };
 
 self.setAccount = function(aNewAccount){
     if (!aNewAccount) aNewAccount = self.parAccountID;
     var ok = true;
-    if (ok&&fmWorksheet) ok = fmWorksheet.setAccount(aNewAccount);
-    if (ok&&fmDebt) ok = fmDebt.setAccount(aNewAccount);
-    if (ok&&fmOplSessions) ok = fmOplSessions.setAccount(aNewAccount);
+    if (ok&&fmWorksheet) ok = fmWorksheet.setAccount(aNewAccount); 
     paramSynchronizer.setAccount(aNewAccount);
     return ok;
 };

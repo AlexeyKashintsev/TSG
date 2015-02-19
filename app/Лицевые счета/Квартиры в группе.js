@@ -146,4 +146,6 @@ function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
         //self.issues_by_group.cursor = self.issues_by_group.findById(Flat)                
         //self.issues_by_group.scrollTo(self.issues_by_group.findById(Flat).lc_flat_id)
     }//GEN-LAST:event_modelGridOnRender
+
+paramSynchronizer.addListener(this);
 }

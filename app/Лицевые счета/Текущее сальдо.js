@@ -10,5 +10,5 @@ function fmSaldoCurrnet() {
 
 var self = this;
 
-
+paramSynchronizer.addListener(this);
 }

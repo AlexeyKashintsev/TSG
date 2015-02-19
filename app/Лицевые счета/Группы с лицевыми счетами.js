@@ -63,8 +63,6 @@ self.setFlat = function(aNewFlatID){
 self.setDate = function(aNewDate){
     if (self.check4Modifications()){
         self.parDateID = aNewDate;
-        fmGroupSheet.setDate(aNewDate);
-        fmFlatSheet.setDate(aNewDate);
         fmFlats.parDateID = fmFlatIssues.parDate = self.parDateID;
         return true;
     }
@@ -72,18 +70,10 @@ self.setDate = function(aNewDate){
         return false;
 };
 
-self.setEditDate = function(aEditDate){
-        self.parEditDate = aEditDate;
-        fmGroupSheet.setEditDate(aEditDate);
-        fmFlatSheet.setEditDate(aEditDate);
-        
-};
 
 self.setAccount = function(aNewAccount){
     if (self.check4Modifications()){
         self.parAccountID = aNewAccount;
-        fmGroupSheet.setAccount(aNewAccount);
-        fmFlatSheet.setAccount(aNewAccount);
         self.setGroup(model.params.parGroupID);
         return true;
     }

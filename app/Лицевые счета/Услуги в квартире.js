@@ -78,5 +78,5 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
         self.model.save();
     }
 }//GEN-LAST:event_formWindowClosing
-
+paramSynchronizer.addListener(this);
 }

@@ -8,7 +8,7 @@
 function fmCounterValuesByFlat() {
 
 
-var self = this;
+var self = this, model = self.model;
 
 
 self.isSelectForm = false;
@@ -24,9 +24,13 @@ function setEdit(){
     self.btnSave.enabled = self.isEditable;    
 }
 
-self.setEditDate = function(aEditDate){
-    self.modelGrid.editable = !!aEditDate;
-}
+self.syncParams = function(aDate, anIsEditable, anAccount) {
+    self.modelGrid.editable = anIsEditable;
+    model.params.parDateID = aDate;
+    model.params.parAccountID = anAccount;
+    //model.params.parDateID = aDate;
+    //model.params.parAccountID = anAccount;
+};
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
     if (self.model.modified&&confirm('Сохранить изменения?')){
@@ -57,5 +61,5 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
         self.model.save();
     }
 }//GEN-LAST:event_formWindowClosing
-
+paramSynchronizer.addListener(this);
 }

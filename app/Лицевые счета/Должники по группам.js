@@ -12,13 +12,16 @@ function debt_in_group() {
             return model.qFlatWithDebtInGroup;
         });*/
     
-    self.setDate = function(aNewDate){
-        model.params.parDateID = aNewDate;
-    }
+self.syncParams = function(aDate, anIsEditable, anAccount) {
+     model.params.parDateID = aDate;    
+    //model.params.parDateID = aDate;
+    //model.params.parAccountID = anAccount;
+};
         
     function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
      model.params.parDebt = 0;
      self.modelSpin.value = model.params.parDebt;
      model.params.show_all_options = true;
     }//GEN-LAST:event_formWindowOpened
+paramSynchronizer.addListener(this);
 }

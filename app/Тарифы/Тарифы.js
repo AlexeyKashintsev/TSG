@@ -8,7 +8,7 @@
 function fmTarifs() {
 
 
-var self = this;
+var self = this, model = self.model;
 
 
 self.isSelectForm = true;
@@ -23,9 +23,14 @@ function setEdit(){
     //tbSetEdit.selected = isEditable;
 }
 
-self.setEditDate = function(aEditDate){
-    self.modelGrid.editable = !!aEditDate;
-}
+self.syncParams = function(aDate, anIsEditable, anAccount) {
+    self.modelGrid.editable  = anIsEditable;
+    model.params.parDateID = aDate;
+    model.params.parAccountID = anAccount;
+    //model.params.parDateID = aDate;
+    //model.params.parAccountID = anAccount;
+};
+
 
 function setElShown(){
     setEdit();
@@ -61,4 +66,5 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
     self.tarifsInGroup.requery();
 }//GEN-LAST:event_button1ActionPerformed
 
+paramSynchronizer.addListener(this);
 }

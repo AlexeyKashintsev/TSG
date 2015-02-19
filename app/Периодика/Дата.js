@@ -37,7 +37,7 @@ function all_datesOnScrolled(evt) {//GEN-FIRST:event_all_datesOnScrolled
     if (self.all_dates.rowIndex == self.all_dates.length )
         self.btn_last.enabled = self.btn_next.enabled = false;
     else self.btn_last.enabled = self.btn_next.enabled = true;
-    setDate(self.parDateID);
+    setDate(self.parDateID, self.parEditDate);
     setEditDate(self.parEditDate);    
 }//GEN-LAST:event_all_datesOnScrolled
 
@@ -92,9 +92,9 @@ function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
     });
 }//GEN-LAST:event_btn_newActionPerformed
 
-function setDate(aNewDateID){
+function setDate(aNewDateID, aEditDate){
     /* retun */
-    paramSynchronizer.setDate(aNewDateID);
+    paramSynchronizer.setDate(aNewDateID,aEditDate);
     if (self.parentForm) return self.parentForm.setDate(aNewDateID)
     else return true;
 }
