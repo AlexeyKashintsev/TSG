@@ -6,7 +6,7 @@
  * @writable lc_flat
  */ 
 Select t1.lc_flat_id, t1.lc_flatnumber, t1.lc_regto
-, t1.registered_count, t2.adm_issues_id, t2.type_issues
+, t1.registered_count, t2.type_issues
 , t2.completed 
 From lc_flat t1
  Inner Join grp_lc_group t on t.lc_id = t1.lc_flat_id
