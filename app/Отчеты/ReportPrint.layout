@@ -9,8 +9,8 @@
     <constraints height="16px" left="12px" top="108px" type="MarginConstraintsDesignInfo" width="60px"/>
   </widget>
   <widget name="modelCombo" parent="Form" prefHeight="28px" prefWidth="228px" type="DbComboDesignInfo">
-    <displayField entityId="139515084414272" fieldName="grp_name"/>
     <valueField entityId="139515084414272" fieldName="grp_groups_id"/>
+    <displayField entityId="139515084414272" fieldName="grp_name"/>
     <datamodelElement entityId="-1" fieldName="GroupID"/>
     <constraints height="28px" left="12px" top="132px" type="MarginConstraintsDesignInfo" width="228px"/>
   </widget>
@@ -18,8 +18,8 @@
     <constraints height="36px" left="12px" top="168px" type="MarginConstraintsDesignInfo" width="228px"/>
   </widget>
   <widget name="modelCombo1" parent="Form" prefHeight="28px" prefWidth="228px" type="DbComboDesignInfo">
-    <displayField entityId="139515085967355" fieldName="lc_flatnumber"/>
     <valueField entityId="139515085967355" fieldName="lc_flat_id"/>
+    <displayField entityId="139515085967355" fieldName="lc_flatnumber"/>
     <datamodelElement entityId="-1" fieldName="FlatID"/>
     <constraints height="28px" left="12px" top="204px" type="MarginConstraintsDesignInfo" width="228px"/>
   </widget>
@@ -27,8 +27,8 @@
     <constraints height="16px" left="12px" top="48px" type="MarginConstraintsDesignInfo" width="38px"/>
   </widget>
   <widget name="modelCombo2" parent="Form" prefHeight="28px" prefWidth="228px" type="DbComboDesignInfo">
-    <displayField entityId="139515110771960" fieldName="TextDate"/>
     <valueField entityId="139515110771960" fieldName="per_date_id"/>
+    <displayField entityId="139515110771960" fieldName="TextDate"/>
     <datamodelElement entityId="-1" fieldName="parDateID"/>
     <constraints height="28px" left="12px" top="72px" type="MarginConstraintsDesignInfo" width="228px"/>
   </widget>
