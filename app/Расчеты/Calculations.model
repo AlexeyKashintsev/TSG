@@ -23,13 +23,16 @@
   <entity Name="updateNullCounterValues" Title="updateNullCounterValues" entityHeight="104" entityIconified="false" entityId="139509114773441" entityLocationX="193" entityLocationY="432" entityWidth="150" queryId="updateNullCounterValues" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138601888596240" rightEntityParameterName="groupid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138607658059431" rightEntityParameterName="lc_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="138729757682009" rightEntityParameterName="accountid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138729757682009" rightEntityParameterName="lcid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138669808461206" rightEntityParameterName="dateid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138669478569087" rightEntityParameterName="flatid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138729757682009" rightEntityParameterName="groupid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138729757682009" rightEntityParameterName="dateid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="139508325148810" rightEntityParameterName="dateId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="138670091004361" rightEntityParameterName="accountid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="139508325148810" rightEntityParameterName="groupid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="138669478569087" rightEntityParameterName="accountid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138669478569087" rightEntityParameterName="groupid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138607658059431" rightEntityParameterName="groupid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138670091004361" rightEntityParameterName="lcid"/>

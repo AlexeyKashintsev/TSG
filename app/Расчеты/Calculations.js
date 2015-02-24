@@ -32,6 +32,7 @@ function Calculations() {
             self.parDateID = aDateID;
             self.parFlatID = aFlatID;
             self.parGroupID = aGroupID;
+            model.params.parAccountID = 142356814258574;
             model.updateNullCounterValues.params.dateID = aDateID;
             model.updateNullCounterValues.executeUpdate();
             self.dsCalcObject.requery();
