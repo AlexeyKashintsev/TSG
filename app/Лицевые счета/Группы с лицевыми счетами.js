@@ -32,7 +32,7 @@ self.check4Modifications = function(){
         return false;
 };
 
-self.setGroup = function(aNewGroupID){
+self.setGroup = function(aNewGroupID, aFlatID){
     model.params.parGroupID = null;
     model.dsAccountsByGroup.params.GroupId = aNewGroupID;
     model.dsAccountsByGroup.requery(function() {
@@ -45,9 +45,10 @@ self.setGroup = function(aNewGroupID){
     fmFlatIssues.parGroup = aNewGroupID;
     self.parFlatID = fmFlats.setCurrentGroup(model.params.parGroupID);
     model.params.parGroupID = aNewGroupID;
-    fmFlatSheet.close();
-    fmGroupSheet.showOnPanel(self.panel);
-               
+    if(!aFlatID){
+        fmFlatSheet.close();
+        fmGroupSheet.showOnPanel(self.panel);
+    }           
     });
 
 };

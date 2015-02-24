@@ -164,7 +164,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
     paramSynchronizer.setAccount(model.params.parAccountID);
-    if (fmWorksheet) fmWorksheet.setGroup(fmWorksheet.params.parGroupID);
+    if (fmWorksheet) fmWorksheet.setGroup(fmWorksheet.params.parGroupID, fmWorksheet.params.parFlatID);
         //self.setAccount();
 }//GEN-LAST:event_paramsOnChanged
 

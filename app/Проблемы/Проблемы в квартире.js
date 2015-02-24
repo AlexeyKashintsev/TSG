@@ -26,6 +26,7 @@ function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
     model.issues_by_flat.cursor.issue_comment = self.taProblemText.text;
     model.save();
     self.parentForm.model.requery();
+    self.close();
 }//GEN-LAST:event_btnSaveActionPerformed
 
 self.setBtnVisible = function (){
