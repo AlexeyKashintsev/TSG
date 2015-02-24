@@ -9,8 +9,10 @@
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142477967275047" entityLocationX="206" entityLocationY="24" entityWidth="150" queryId="Calc_object" tableAlias="q" tableName="" tableSchemaName=""/>
   <entity Title="Начисления" entityHeight="200" entityIconified="false" entityId="138669434696789" entityLocationX="370" entityLocationY="23" entityWidth="150" tableAlias="t" tableName="per_sums" tableSchemaName=""/>
   <entity Title="Услуги в квартире" entityHeight="99" entityIconified="false" entityId="138669434696788" entityLocationX="540" entityLocationY="23" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="142477967275047" rightEntityFieldName="lc_id" rightEntityId="138669434696788"/>
   <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="138669434696788" rightEntityFieldName="flat_service_id" rightEntityId="138669434696789"/>
-  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138669434696789"/>
   <relation leftEntityId="-1" leftEntityParameterName="accountid" rightEntityFieldName="account_id" rightEntityId="138669434696788"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138669434696789"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="142477967275047" rightEntityFieldName="lc_id" rightEntityId="138669434696788"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityId="142477967275047" rightEntityParameterName="groupid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lcid" rightEntityId="142477967275047" rightEntityParameterName="lc_id"/>
 </datamodel>

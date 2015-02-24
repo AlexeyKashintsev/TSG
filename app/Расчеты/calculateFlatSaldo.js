@@ -14,14 +14,12 @@ function CalculateFlatSaldo() {
 
         model.dsAllAccounts.forEach(function(cursor){
             model.params.parAccountID = cursor.grp_account_id;
-            self.dsSumOfSums.requery();
-            self.dsSumOfPayments.requery();
-            self.dsPayments.requery();
-            self.dsSaldo4calc.beforeFirst();
-            while (self.dsSaldo4calc.next()) {
-                (function() {
-                    progress.setDescription("Расчет финальных значений");
-                }).invokeAndWait();
+            model.dsSumOfSums.requery();            
+            model.dsSumOfPayments.requery();
+            model.dsSaldo4calc.requery();
+            model.dsSaldo4calc.beforeFirst();
+            while (model.dsSaldo4calc.next()) {
+                
                 Logger.info("Расчет сальдо в квартире: " + self.dsSaldo4calc.cursor.lc_id);
                 var sc = self.dsSumOfSums.find(self.dsSumOfSums.schema.lc_id, self.dsSaldo4calc.lc_id)[0];
                 var sp = self.dsSumOfPayments.find(self.dsSumOfPayments.schema.flat_id, self.dsSaldo4calc.lc_id);
