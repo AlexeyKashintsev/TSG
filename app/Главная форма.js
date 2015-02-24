@@ -20,7 +20,7 @@ var self = this, model = self;
     var fmServices = null;
     var fmIssues = null;
     var fmGroupSelector = null;
-    var fmReportPrint = new ReportPrint();
+    var fmReportPrint = null;
     var mf = this;
     
     function ParamsSynchronizer() {
@@ -188,7 +188,8 @@ function button3ActionPerformed(evt) {//GEN-FIRST:event_button3ActionPerformed
 
 
     function button4ActionPerformed(evt) {//GEN-FIRST:event_button4ActionPerformed
-       self.showFormAsInternal(fmReportPrint);
+        fmReportPrint = new ReportPrint();
+        self.showFormAsInternal(fmReportPrint);
     }//GEN-LAST:event_button4ActionPerformed
 
     function flats_by_groupOnScrolled(evt) {//GEN-FIRST:event_flats_by_groupOnScrolled

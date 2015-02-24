@@ -13,4 +13,6 @@ From grp_lc_group t1
  Left Join usl_services t3 on t2.services_id = t3.usl_services_id
  Where :groupID = t1.group_id
  and :parAccount = t2.account_id
+ and (t.calc != null or t.calc!= 0)
+ and (t.full_calc != null or t.full_calc!= 0)
  Group by t2.services_id, t3.usl_name

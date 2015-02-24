@@ -19,8 +19,8 @@
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
   <widget handleFunction="modelComboOnRender" name="modelCombo" parent="panel" prefHeight="20px" prefWidth="228px" type="DbComboDesignInfo">
-    <displayField entityId="142356785689022" fieldName="account_name"/>
     <valueField entityId="142356785689022" fieldName="grp_account_id"/>
+    <displayField entityId="142356785689022" fieldName="account_name"/>
     <datamodelElement entityId="-1" fieldName="parAccountID"/>
     <constraints height="20px" left="12px" top="31px" type="MarginConstraintsDesignInfo" width="228px"/>
   </widget>
