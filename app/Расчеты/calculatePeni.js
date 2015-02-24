@@ -5,7 +5,7 @@
  * @module
  * @public
  */ 
-function calculatePeni() {
+function CalculatePeni() {
     var self = this, model = this.model;
     var SRF = 8.25 / 300 / 100;
     var peniStart = new Date();

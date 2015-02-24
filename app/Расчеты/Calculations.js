@@ -15,8 +15,7 @@ function Calculations() {
     var sums = new Sums();
     var formulEval = new FormulaEvaluator();
     var prepared = false;
-    var peniClc = new calculatePeni();
-    var saldoClc = new calculateFlatSaldo();
+    var saldoClc = new CalculateFlatSaldo();
     var progress = new ProgressShow();
     /**
      * 
@@ -39,8 +38,7 @@ function Calculations() {
             groups = new Groups(aDateID);
             flats = new Flats(aDateID);
             self.dsSums4calc.requery();
-            self.dsSaldo4calc.requery();
-            progress.setMax(self.dsSums4calc.length + self.dsSaldo4calc.length);
+            progress.setMax(self.dsSums4calc.length);
             prepared = true;
             return true;
         } catch (e) {
@@ -127,64 +125,7 @@ function Calculations() {
         }).invokeBackground();
         progress.showModal();
     };
-
-    /*function calculateFlatSaldo() {
-        //self.dsSaldo4calc.requery();
-        self.dsSumOfSums.requery();
-        self.dsSumOfPayments.requery();
-        self.dsPayments.requery();
-
-        self.dsSaldo4calc.beforeFirst();
-        while (self.dsSaldo4calc.next()) {
-            (function() {
-                progress.setDescription("Расчет финальных значений");
-            }).invokeAndWait();
-            Logger.info("Расчет сальдо в квартире: " + self.dsSaldo4calc.cursor.lc_id);
-            var sc = self.dsSumOfSums.find(self.dsSumOfSums.schema.lc_id, self.dsSaldo4calc.lc_id)[0];
-            var sp = self.dsSumOfPayments.find(self.dsSumOfPayments.schema.flat_id, self.dsSaldo4calc.lc_id);
-            var peni = peniClc.calculate(self.dsSaldo4calc.lc_id, self.model.params.parDateID);
-            var peniOld = peni.previous;
-            var saldoOld = peni.saldo ? peni.saldo : self.dsSaldo4calc.sal_begin;
-            peni = peni.current;
-            self.dsSaldo4calc.sal_penalties_old = peniOld;
-
-            if (sp.length == 1)
-                sp = sp[0];
-            else
-                sp.pay_sum = 0;
-            self.dsSaldo4calc.sal_begin = saldoOld;
-            self.dsSaldo4calc.sal_calc = sc.sal_calc;
-            self.dsSaldo4calc.sal_benefit = sc.sal_benefit;
-            self.dsSaldo4calc.sal_recalc = sc.sal_recalc;
-            self.dsSaldo4calc.sal_full_calc = sc.sal_full_calc;
-            self.dsSaldo4calc.sal_payments = sp.pay_sum;
-            var endSum = self.dsSaldo4calc.sal_begin - sp.pay_sum;
-            if (endSum < 0 && peniOld > 0) {
-                var extra = -endSum;
-                if (extra >= peniOld) {
-                    extra -= peniOld;
-                    peniOld = 0;
-                } else {
-                    peniOld -= extra;
-                    extra = 0;
-                }
-                endSum = -extra;
-            }
-            peni += peniOld;
-            endSum += sc.sal_full_calc;
-            self.dsSaldo4calc.sal_end = endSum;
-            self.dsSaldo4calc.sal_penalties_cur = peni;
-            (function() {
-                progress.increaseValue(1);
-            }).invokeAndWait();
-        }
-        (function() {
-            progress.setDescription("Сохранение финальных значений");
-        }).invokeAndWait();
-        self.model.save();
-    }
-    ;*/
-
+    
     /**
      * 
      * @param {type} aDateID
