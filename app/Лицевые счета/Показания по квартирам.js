@@ -39,10 +39,12 @@ function formFlatWorkSheet() {
     }
     
     self.setGroup = function(aNewGroupID){
+        model.params.parGroupID =
         fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = aNewGroupID;
     };
     
     self.setFlat = function(aNewFlatID){
+        model.params.parFlatID =
         fmFlatCounters.parFlatID = fmFlatServices.parFlatID = fmNachisleniya.parFlatID = 
         fmOplata.parFlatID = fmSaldoHistory.parFlatID = fmSaldoCur.parFlatID =
         fmFlatChars.parFlatID = fmLCGroups.parFlatID = aNewFlatID;
@@ -51,13 +53,13 @@ function formFlatWorkSheet() {
      
 
     function btnCalcAllGroupActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllGroupActionPerformed
-        modCalc.calculateValues(model.params.parGroupID, null, self.parDateID);
+        modCalc.calculateValues(model.params.parGroupID, null, model.params.parDateID);
         fmNachisleniya.model.requery();
         fmSaldoCur.model.requery();
     }//GEN-LAST:event_btnCalcAllGroupActionPerformed
 
     function btnCalcAllFlatActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllFlatActionPerformed
-        modCalc.calculateValues(null, self.parFlatID, self.parDateID);
+        modCalc.calculateValues(null, model.params.parFlatID, model.params.parDateID);
         fmNachisleniya.model.requery();
         fmSaldoCur.model.requery();
     }//GEN-LAST:event_btnCalcAllFlatActionPerformed
@@ -72,4 +74,5 @@ function formFlatWorkSheet() {
         fmOplata.showOnPanel(self.pnlOplata);
         fmLCGroups.showOnPanel(self.pnlLCGroups);
     }//GEN-LAST:event_formWindowOpened
+paramSynchronizer.addListener(this);
 }

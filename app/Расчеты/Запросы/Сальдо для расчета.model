@@ -3,12 +3,12 @@
     <parameter description="" name="flatid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="dateid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="groupid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="accountid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="Сальдо по квартире" entityHeight="200" entityIconified="false" entityId="138669452521725" entityLocationX="397" entityLocationY="0" entityWidth="150" tableAlias="" tableName="per_saldo_flat" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="139507920425225" entityLocationX="188" entityLocationY="9" entityWidth="150" queryId="Calc_object" tableAlias="q" tableName="" tableSchemaName=""/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="139507920425225" rightEntityFieldName="lc_id" rightEntityId="138669452521725"/>
-  <relation leftEntityId="-1" leftEntityParameterName="flatid" rightEntityId="139507920425225" rightEntityParameterName="lc_id"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142477973584323" entityLocationX="188" entityLocationY="9" entityWidth="150" queryId="Calc_object" tableAlias="q" tableName="" tableSchemaName=""/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="142477973584323" rightEntityFieldName="lc_id" rightEntityId="138669452521725"/>
+  <relation leftEntityId="-1" leftEntityParameterName="accountid" rightEntityFieldName="account_id" rightEntityId="138669452521725"/>
   <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138669452521725"/>
-  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityId="139507920425225" rightEntityParameterName="groupid"/>
 </datamodel>

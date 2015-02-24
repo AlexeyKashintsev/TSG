@@ -16,6 +16,7 @@ function Calculations() {
     var formulEval = new FormulaEvaluator();
     var prepared = false;
     var peniClc = new calculatePeni();
+    var saldoClc = new calculateFlatSaldo();
     var progress = new ProgressShow();
     /**
      * 
@@ -107,7 +108,7 @@ function Calculations() {
                         progress.setDescription("Сохранение значений расчета начислений");
                     }).invokeAndWait();
                     self.model.save();
-                    calculateFlatSaldo();
+                    saldoClc.calculateFlatSaldo(aGroupID, aFlatID, aDateID);
                     (function() {
                         progress.close();
                     }).invokeAndWait();
@@ -126,7 +127,7 @@ function Calculations() {
         progress.showModal();
     };
 
-    function calculateFlatSaldo() {
+    /*function calculateFlatSaldo() {
         //self.dsSaldo4calc.requery();
         self.dsSumOfSums.requery();
         self.dsSumOfPayments.requery();
@@ -181,7 +182,7 @@ function Calculations() {
         }).invokeAndWait();
         self.model.save();
     }
-    ;
+    ;*/
 
     /**
      * 

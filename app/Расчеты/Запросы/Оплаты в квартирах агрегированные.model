@@ -3,12 +3,17 @@
     <parameter description="" name="dateid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="groupid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="lcid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="accountid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="Объекты расчета" entityHeight="200" entityIconified="false" entityId="138729750192992" entityLocationX="222" entityLocationY="48" entityWidth="150" queryId="Calc_object" tableAlias="q" tableName="" tableSchemaName=""/>
   <entity Title="opl_payments" entityHeight="200" entityIconified="false" entityId="138729746622442" entityLocationX="413" entityLocationY="25" entityWidth="150" tableAlias="t1" tableName="opl_payments" tableSchemaName=""/>
+  <entity Title="Объекты расчета" entityHeight="200" entityIconified="false" entityId="138729750192992" entityLocationX="222" entityLocationY="48" entityWidth="150" queryId="Calc_object" tableAlias="q" tableName="" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142477997789022" entityLocationX="673" entityLocationY="25" entityWidth="150" tableAlias="t" tableName="opl_sessions" tableSchemaName=""/>
+  <relation leftEntityFieldName="opl_sessions_id" leftEntityId="142477997789022" rightEntityFieldName="session_id" rightEntityId="138729746622442"/>
+  <relation leftEntityId="-1" leftEntityParameterName="accountid" rightEntityFieldName="account_id" rightEntityId="142477997789022"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="142477997789022"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138729746622442"/>
   <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityId="138729750192992" rightEntityParameterName="groupid"/>
   <relation leftEntityId="-1" leftEntityParameterName="lcid" rightEntityId="138729750192992" rightEntityParameterName="lc_id"/>
   <relation leftEntityFieldName="lc_id" leftEntityId="138729750192992" rightEntityFieldName="flat_id" rightEntityId="138729746622442"/>
-  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138729746622442"/>
 </datamodel>
