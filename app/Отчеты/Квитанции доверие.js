@@ -41,7 +41,9 @@ function BillsBuilder_Doverie() {
                 bank_name: self.dsGroupAndBank.bank_name,
                 bank_account: self.dsGroupAndBank.bank_account,
                 bank_bik: self.dsGroupAndBank.bank_bik,
-                bank_correction: self.dsGroupAndBank.bank_correction
+                bank_correction: self.dsGroupAndBank.bank_correction,
+                group_inn:  self.dsGroupAndBank.group_inn,
+                group_kpp:  self.dsGroupAndBank.group_kpp
         };
         var flats = [];
         var fc = 0;
