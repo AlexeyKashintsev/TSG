@@ -2,7 +2,6 @@
   <parameters>
     <parameter description="" name="groupid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="dateid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
-    <parameter description="" name="accountid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="cnt_con2services" entityHeight="103" entityIconified="false" entityId="138540336003879" entityLocationX="412" entityLocationY="94" entityWidth="150" tableAlias="t" tableName="cnt_con2services" tableSchemaName=""/>
@@ -10,9 +9,8 @@
   <entity Title="Счетчик значения" entityHeight="111" entityIconified="false" entityId="138540345354427" entityLocationX="214" entityLocationY="49" entityWidth="150" tableAlias="t3" tableName="per_counter_values" tableSchemaName=""/>
   <entity Title="Услуги в группе" entityHeight="79" entityIconified="false" entityId="138487869586171" entityLocationX="430" entityLocationY="8" entityWidth="150" tableAlias="t2" tableName="grp_services" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="group_id" rightEntityId="138487869586171"/>
-  <relation leftEntityId="-1" leftEntityParameterName="accountid" rightEntityFieldName="account_id" rightEntityId="138487869586171"/>
-  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138540345354427"/>
-  <relation leftEntityFieldName="cnt_counters_id" leftEntityId="138540341756140" rightEntityFieldName="counter_id" rightEntityId="138540336003879"/>
   <relation leftEntityFieldName="grp_services_id" leftEntityId="138487869586171" rightEntityFieldName="group_service" rightEntityId="138540336003879"/>
   <relation leftEntityFieldName="counter_id" leftEntityId="138540336003879" rightEntityFieldName="counter_id" rightEntityId="138540345354427"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138540345354427"/>
+  <relation leftEntityFieldName="cnt_counters_id" leftEntityId="138540341756140" rightEntityFieldName="counter_id" rightEntityId="138540336003879"/>
 </datamodel>

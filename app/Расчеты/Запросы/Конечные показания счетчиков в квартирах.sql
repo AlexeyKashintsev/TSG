@@ -12,4 +12,3 @@ From lc_flat_services t
  Inner Join cnt_counters t4 on t1.counter_id = t4.cnt_counters_id
  Where :dateid = t2.date_id
  and :lc_id = t.lc_id
- and :accountid = t.account_id

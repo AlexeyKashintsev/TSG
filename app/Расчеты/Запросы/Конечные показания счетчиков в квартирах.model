@@ -2,17 +2,15 @@
   <parameters>
     <parameter description="" name="lc_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="dateid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
-    <parameter description="" name="accountid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="Счетчик значения" entityHeight="111" entityIconified="false" entityId="138540225793954" entityLocationX="572" entityLocationY="12" entityWidth="150" tableAlias="t2" tableName="per_counter_values" tableSchemaName=""/>
   <entity Title="Услуги в квартире" entityHeight="93" entityIconified="false" entityId="138540218968026" entityLocationX="202" entityLocationY="15" entityWidth="150" tableAlias="t" tableName="lc_flat_services" tableSchemaName=""/>
   <entity Title="cnt_counters" entityHeight="106" entityIconified="false" entityId="138540230932551" entityLocationX="380" entityLocationY="139" entityWidth="150" tableAlias="t4" tableName="cnt_counters" tableSchemaName=""/>
   <entity Title="cnt_con2services" entityHeight="96" entityIconified="false" entityId="138540221654940" entityLocationX="388" entityLocationY="14" entityWidth="150" tableAlias="t1" tableName="cnt_con2services" tableSchemaName=""/>
-  <relation leftEntityFieldName="counter_id" leftEntityId="138540221654940" rightEntityFieldName="counter_id" rightEntityId="138540225793954"/>
-  <relation leftEntityId="-1" leftEntityParameterName="accountid" rightEntityFieldName="account_id" rightEntityId="138540218968026"/>
-  <relation leftEntityId="-1" leftEntityParameterName="lc_id" rightEntityFieldName="lc_id" rightEntityId="138540218968026"/>
-  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="138540218968026" rightEntityFieldName="flat_service" rightEntityId="138540221654940"/>
   <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138540225793954"/>
   <relation leftEntityFieldName="counter_id" leftEntityId="138540221654940" rightEntityFieldName="cnt_counters_id" rightEntityId="138540230932551"/>
+  <relation leftEntityFieldName="counter_id" leftEntityId="138540221654940" rightEntityFieldName="counter_id" rightEntityId="138540225793954"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lc_id" rightEntityFieldName="lc_id" rightEntityId="138540218968026"/>
+  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="138540218968026" rightEntityFieldName="flat_service" rightEntityId="138540221654940"/>
 </datamodel>

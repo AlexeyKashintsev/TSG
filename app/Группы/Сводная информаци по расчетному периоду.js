@@ -20,6 +20,7 @@ self.syncParams = function(aDate, anIsEditable, anAccount) {
     self.modelGrid.editable = anIsEditable;
     model.params.parDateBeg = model.params.parDateEnd = aDate;
     model.params.parAccountID = anAccount;
+    model.requery();
     //model.params.parDateID = aDate;
     //model.params.parAccountID = anAccount;
 };

@@ -162,7 +162,6 @@ function Calculations() {
 
             model.dsGroupCntBeg.params.groupid = aGroupID;
             model.dsGroupCntBeg.params.dateid = aDateID;
-            model.dsGroupCntBeg.params.accountid = model.params.parAccountID;
             model.dsGroupCntBeg.execute();
             model.dsGroupCntBeg.beforeFirst();
             while (model.dsGroupCntBeg.next()) {
@@ -172,8 +171,7 @@ function Calculations() {
             }
 
             model.dsGroupCntEnd.params.groupid = aGroupID;
-            model.dsGroupCntEnd.params.dateid = aDateID;
-            model.dsGroupCntEnd.params.accountid = model.params.parAccountID;
+            model.dsGroupCntEnd.params.dateid = aDateID;            
             model.dsGroupCntEnd.execute();
             model.dsGroupCntEnd.beforeFirst();
             while (model.dsGroupCntEnd.next()) {
@@ -224,8 +222,7 @@ function Calculations() {
             var resCnt = {};
 
             model.dsLCCntBeg.params.lc_id = aLCID;
-            model.dsLCCntBeg.params.dateid = aDateID;
-            model.dsLCCntBeg.params.accountid = model.params.parAccountID;
+            model.dsLCCntBeg.params.dateid = aDateID;            
             model.dsLCCntBeg.execute();
             model.dsLCCntBeg.beforeFirst();
             while (model.dsLCCntBeg.next()) {
@@ -235,8 +232,7 @@ function Calculations() {
             }
 
             model.dsLCCntEnd.params.lc_id = aLCID;
-            model.dsLCCntEnd.params.dateid = aDateID;
-            model.dsLCCntEnd.params.accountid = model.params.parAccountID;
+            model.dsLCCntEnd.params.dateid = aDateID;            
             model.dsLCCntEnd.execute();
             model.dsLCCntEnd.beforeFirst();
             while (model.dsLCCntEnd.next()) {
