@@ -24,6 +24,7 @@ function processVisible(){
 
     function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
     self.model.save();
+    self.mainForm.model.requery();
     }//GEN-LAST:event_btnSaveActionPerformed
 
     function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed

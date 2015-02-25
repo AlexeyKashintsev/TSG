@@ -157,7 +157,8 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     model.all_dates.last();
     model.params.parDateID = self.all_dates.per_date_id;
     model.params.parEditDate = self.all_dates.edit_date;
-    model.params.parAccountID = 142356814258574;
+    model.dsAllAccounts.first();
+    model.params.parAccountID = model.dsAllAccounts.grp_account_id;
     fmDateSelect.parentForm = mf;
     fmDateSelect.showOnPanel(self.pnlDateSelector);
 }//GEN-LAST:event_formWindowOpened
@@ -209,7 +210,7 @@ function button3ActionPerformed(evt) {//GEN-FIRST:event_button3ActionPerformed
 
     function button6ActionPerformed(evt) {//GEN-FIRST:event_button6ActionPerformed
         var fmAccountSel = new formAccountParams();
-        fmAccountSel.isSelectForm = true;
+        fmAccountSel.selector = true;
         fmAccountSel.mainForm = mf;
         self.showFormAsInternal(fmAccountSel); 
     }//GEN-LAST:event_button6ActionPerformed

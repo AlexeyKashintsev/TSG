@@ -14,11 +14,6 @@
   </widget>
   <widget name="modelGrid" parent="panel" prefHeight="266px" prefWidth="401px" type="DbGridDesignInfo">
     <column name="colAccountName" title="Наименование">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="142356868867182" fieldName="account_name"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -27,24 +22,29 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <datamodelElement entityId="142356868867182" fieldName="account_name"/>
     </column>
     <column name="colBank" selectFunction="colBankOnSelect" title="Банк">
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="142356882059373" fieldName="grp_bank_id"/>
         <displayField entityId="142356882059373" fieldName="fname"/>
       </controlInfo>
-      <datamodelElement entityId="142356868867182" fieldName="bank"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
+      <datamodelElement entityId="142356868867182" fieldName="bank"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="142356868867182" field="false"/>
