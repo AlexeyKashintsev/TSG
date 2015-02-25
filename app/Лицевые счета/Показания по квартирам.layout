@@ -19,13 +19,13 @@
   <widget name="tabbedPane" parent="panel" prefHeight="266px" prefWidth="477px" type="TabsDesignInfo">
     <constraints bottom="67px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlFlatChars" parent="tabbedPane" prefHeight="238px" prefWidth="472px" type="PanelDesignInfo">
-    <layout type="MarginLayoutDesignInfo"/>
-    <constraints tabTitle="Характеристики" type="TabsConstraintsDesignInfo"/>
-  </widget>
-  <widget name="pnlCurrent" parent="tabbedPane" prefHeight="238px" prefWidth="472px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlCurrent" parent="tabbedPane" prefHeight="238px" prefWidth="472px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Начисления" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlSaldoHistory" parent="tabbedPane" prefHeight="238px" prefWidth="472px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="История сальдо" type="TabsConstraintsDesignInfo"/>
   </widget>
   <widget dividerLocation="200" leftComponent="pnlServices" name="splitPane2" orientation="0" parent="tabbedPane" prefHeight="238px" prefWidth="472px" rightComponent="pnlCounters" type="SplitDesignInfo" visible="false">
     <constraints tabTitle="Услуги и счетчики" type="TabsConstraintsDesignInfo"/>
@@ -36,13 +36,13 @@
   <widget name="pnlCounters" parent="splitPane2" prefHeight="32px" prefWidth="470px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
-  <widget name="pnlSaldoHistory" parent="tabbedPane" prefHeight="238px" prefWidth="472px" type="PanelDesignInfo" visible="false">
-    <layout type="MarginLayoutDesignInfo"/>
-    <constraints tabTitle="История сальдо" type="TabsConstraintsDesignInfo"/>
-  </widget>
   <widget name="pnlOplata" parent="tabbedPane" prefHeight="238px" prefWidth="472px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Оплата" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="pnlFlatChars" parent="tabbedPane" prefHeight="238px" prefWidth="472px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Характеристики" type="TabsConstraintsDesignInfo"/>
   </widget>
   <widget name="pnlLCGroups" parent="tabbedPane" prefHeight="238px" prefWidth="472px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
