@@ -30,12 +30,12 @@ function Calculations() {
             sums = new Sums();
             self.parDateID = aDateID;
             self.parFlatID = aFlatID;
-            self.parGroupID = aGroupID;            
+            self.parGroupID = aGroupID;
             model.updateNullCounterValues.params.dateID = aDateID;
             model.updateNullCounterValues.executeUpdate();
-            self.dsCalcObject.requery();            
+            self.dsCalcObject.requery();
             groups = new Groups(aDateID);
-            flats = new Flats(aDateID);            
+            flats = new Flats(aDateID);
             self.dsSums4calc.requery();
             progress.setMax(self.dsSums4calc.length);
             prepared = true;
@@ -124,7 +124,7 @@ function Calculations() {
         }).invokeBackground();
         progress.showModal();
     };
-    
+
     /**
      * 
      * @param {type} aDateID
@@ -133,14 +133,11 @@ function Calculations() {
      *                       groupID.ServiceName.CounterName = value;
      */
     function Groups(aDateID) {
-       /* model.dsAllAccounts.forEach(function(cursor){
-                model.params.parAccountID = cursor.grp_account_id;*/
-            self.dsCalcObject.beforeFirst();
-            while (self.dsCalcObject.next())
-                if (!this[self.dsCalcObject.group_id])
-                    this[self.dsCalcObject.group_id] = new GroupConstructor(self.dsCalcObject.group_id, aDateID);
-        
-        
+        self.dsCalcObject.forEach(function(cursor) {
+            if (!this[cursor.group_id])
+                this[cursor.group_id] = new GroupConstructor(cursor.group_id, aDateID);
+        });
+
         function GroupConstructor(aGroupID, aDateID) {
             var grpChars = getGroupChars(aGroupID);
             for (var chrName in grpChars)
@@ -163,31 +160,30 @@ function Calculations() {
         function getGroupServicesAndCounters(aGroupID, aDateID) {
             var resCnt = {};
 
-            self.dsGroupCntBeg.params.groupid = aGroupID;
-            self.dsGroupCntBeg.params.dateid = aDateID;
-            self.dsGroupCntBeg.params.accountid = model.params.parAccountID;
-            self.dsGroupCntBeg.execute();
-            self.dsGroupCntBeg.beforeFirst();
-            while (self.dsGroupCntBeg.next()) {
-                if (!resCnt[self.dsGroupCntBeg.services_id])
-                    resCnt[self.dsGroupCntBeg.services_id] = {};
-                resCnt[self.dsGroupCntBeg.services_id][self.dsGroupCntBeg.fm_name] = self.dsGroupCntBeg.fm_value;
+            model.dsGroupCntBeg.params.groupid = aGroupID;
+            model.dsGroupCntBeg.params.dateid = aDateID;
+            model.dsGroupCntBeg.params.accountid = model.params.parAccountID;
+            model.dsGroupCntBeg.execute();
+            model.dsGroupCntBeg.beforeFirst();
+            while (model.dsGroupCntBeg.next()) {
+                if (!resCnt[model.dsGroupCntBeg.services_id])
+                    resCnt[model.dsGroupCntBeg.services_id] = {};
+                resCnt[model.dsGroupCntBeg.services_id][model.dsGroupCntBeg.fm_name] = model.dsGroupCntBeg.fm_value;
             }
 
-            self.dsGroupCntEnd.params.groupid = aGroupID;
-            self.dsGroupCntEnd.params.dateid = aDateID;
-            self.dsGroupCntEnd.params.accountid = model.params.parAccountID;
-            self.dsGroupCntEnd.execute();
-            self.dsGroupCntEnd.beforeFirst();
-            while (self.dsGroupCntEnd.next()) {
-                if (!resCnt[self.dsGroupCntEnd.services_id])
-                    resCnt[self.dsGroupCntEnd.services_id] = {};
-                resCnt[self.dsGroupCntEnd.services_id][self.dsGroupCntEnd.fm_name] = self.dsGroupCntEnd.fm_value;
+            model.dsGroupCntEnd.params.groupid = aGroupID;
+            model.dsGroupCntEnd.params.dateid = aDateID;
+            model.dsGroupCntEnd.params.accountid = model.params.parAccountID;
+            model.dsGroupCntEnd.execute();
+            model.dsGroupCntEnd.beforeFirst();
+            while (model.dsGroupCntEnd.next()) {
+                if (!resCnt[model.dsGroupCntEnd.services_id])
+                    resCnt[model.dsGroupCntEnd.services_id] = {};
+                resCnt[model.dsGroupCntEnd.services_id][model.dsGroupCntEnd.fm_name] = model.dsGroupCntEnd.fm_value;
             }
 
             return resCnt;
         }
-   // });
     }
     ;
 
@@ -200,14 +196,11 @@ function Calculations() {
      */
     function Flats(aDateID) {
         //this.groups = [];
-        /*model.dsAllAccounts.forEach(function(cursor){
-                model.params.parAccountID = cursor.grp_account_id;*/
-            self.dsCalcObject.beforeFirst();
-            while (self.dsCalcObject.next())
-                if (!this[self.dsCalcObject.lc_id])
-                    this[self.dsCalcObject.lc_id] = new FlatConstructor(self.dsCalcObject.lc_id, aDateID);
-            
-            
+        model.dsCalcObject.beforeFirst();
+        while (model.dsCalcObject.next())
+            if (!this[model.dsCalcObject.lc_id])
+                this[model.dsCalcObject.lc_id] = new FlatConstructor(model.dsCalcObject.lc_id, aDateID);
+
         function FlatConstructor(aLCID, aDateID) {
             var fltChars = getLCChars(aLCID);
             for (var chrName in fltChars)
@@ -219,41 +212,40 @@ function Calculations() {
 
         function getLCChars(aLCID) {
             var resChars = {};
-            self.dsLCChars.params.lc_id = aLCID;
-            self.dsLCChars.execute();
-            self.dsLCChars.beforeFirst();
-            while (self.dsLCChars.next())
-                resChars[self.dsLCChars.fm_name] = self.dsLCChars.fm_value;
+            model.dsLCChars.params.lc_id = aLCID;
+            model.dsLCChars.execute();
+            model.dsLCChars.beforeFirst();
+            while (model.dsLCChars.next())
+                resChars[model.dsLCChars.fm_name] = model.dsLCChars.fm_value;
             return resChars;
         }
 
         function getLCServicesAndCounters(aLCID, aDateID) {
             var resCnt = {};
 
-            self.dsLCCntBeg.params.lc_id = aLCID;
-            self.dsLCCntBeg.params.dateid = aDateID;
-            self.dsLCCntBeg.params.accountid = model.params.parAccountID;
-            self.dsLCCntBeg.execute();
-            self.dsLCCntBeg.beforeFirst();
-            while (self.dsLCCntBeg.next()) {
-                if (!resCnt[self.dsLCCntBeg.services_id])
-                    resCnt[self.dsLCCntBeg.services_id] = {};
-                resCnt[self.dsLCCntBeg.services_id][self.dsLCCntBeg.fm_name] = self.dsLCCntBeg.fm_value;
+            model.dsLCCntBeg.params.lc_id = aLCID;
+            model.dsLCCntBeg.params.dateid = aDateID;
+            model.dsLCCntBeg.params.accountid = model.params.parAccountID;
+            model.dsLCCntBeg.execute();
+            model.dsLCCntBeg.beforeFirst();
+            while (model.dsLCCntBeg.next()) {
+                if (!resCnt[model.dsLCCntBeg.services_id])
+                    resCnt[model.dsLCCntBeg.services_id] = {};
+                resCnt[model.dsLCCntBeg.services_id][model.dsLCCntBeg.fm_name] = model.dsLCCntBeg.fm_value;
             }
 
-            self.dsLCCntEnd.params.lc_id = aLCID;
-            self.dsLCCntEnd.params.dateid = aDateID;
-            self.dsLCCntEnd.params.accountid = model.params.parAccountID;
-            self.dsLCCntEnd.execute();
-            self.dsLCCntEnd.beforeFirst();
-            while (self.dsLCCntEnd.next()) {
-                if (!resCnt[self.dsLCCntEnd.services_id])
-                    resCnt[self.dsLCCntEnd.services_id] = {};
-                resCnt[self.dsLCCntEnd.services_id][self.dsLCCntEnd.fm_name] = self.dsLCCntEnd.fm_value;
+            model.dsLCCntEnd.params.lc_id = aLCID;
+            model.dsLCCntEnd.params.dateid = aDateID;
+            model.dsLCCntEnd.params.accountid = model.params.parAccountID;
+            model.dsLCCntEnd.execute();
+            model.dsLCCntEnd.beforeFirst();
+            while (model.dsLCCntEnd.next()) {
+                if (!resCnt[model.dsLCCntEnd.services_id])
+                    resCnt[model.dsLCCntEnd.services_id] = {};
+                resCnt[model.dsLCCntEnd.services_id][model.dsLCCntEnd.fm_name] = model.dsLCCntEnd.fm_value;
             }
             return resCnt;
         }
-   // });
     }
     ;
 
