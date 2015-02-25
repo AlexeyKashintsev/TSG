@@ -28,15 +28,15 @@ function Calculations() {
         prepared = false;
         try {
             sums = new Sums();
-            self.parDateID = aDateID;
-            self.parFlatID = aFlatID;
-            self.parGroupID = aGroupID;
+            model.params.parDateID = aDateID;
+            model.params.parFlatID = aFlatID;
+            model.params.parGroupID = aGroupID;
             model.updateNullCounterValues.params.dateID = aDateID;
             model.updateNullCounterValues.executeUpdate();
             self.dsCalcObject.requery();
             groups = new Groups(aDateID);
             flats = new Flats(aDateID);
-            self.dsSums4calc.requery();
+            model.dsSums4calc.requery();
             progress.setMax(self.dsSums4calc.length);
             prepared = true;
             return true;
@@ -44,8 +44,7 @@ function Calculations() {
             Logger.warning(e);
             return false;
         }
-    }
-    ;
+    };
 
     self.calculateValues = function(aGroupID, aFlatID, aDateID) {
         (function() {
@@ -105,7 +104,7 @@ function Calculations() {
                     (function() {
                         progress.setDescription("Сохранение значений расчета начислений");
                     }).invokeAndWait();
-                    self.model.save();
+                    model.save();
                     saldoClc.calculateFlatSaldo(aGroupID, aFlatID, aDateID);
                     (function() {
                         progress.close();
@@ -133,10 +132,11 @@ function Calculations() {
      *                       groupID.ServiceName.CounterName = value;
      */
     function Groups(aDateID) {
-        self.dsCalcObject.forEach(function(cursor) {
+        model.dsCalcObject.forEach(function(cursor) {
             if (!this[cursor.group_id])
                 this[cursor.group_id] = new GroupConstructor(cursor.group_id, aDateID);
-        });
+        }, this
+                );
 
         function GroupConstructor(aGroupID, aDateID) {
             var grpChars = getGroupChars(aGroupID);
@@ -149,13 +149,13 @@ function Calculations() {
 
         function getGroupChars(aGroupID) {
             var resChars = {};
-            self.dsGroupChars.params.groupid = aGroupID;
-            self.dsGroupChars.execute();
-            self.dsGroupChars.beforeFirst();
-            while (self.dsGroupChars.next())
-                resChars[self.dsGroupChars.fm_name] = self.dsGroupChars.fm_value;
+            model.dsGroupChars.params.groupid = aGroupID;
+            model.dsGroupChars.execute();
+            model.dsGroupChars.forEach(function(cursor) {
+                resChars[cursor.fm_name] = cursor.fm_value;
+            });
             return resChars;
-        }
+        };
 
         function getGroupServicesAndCounters(aGroupID, aDateID) {
             var resCnt = {};
@@ -163,22 +163,20 @@ function Calculations() {
             model.dsGroupCntBeg.params.groupid = aGroupID;
             model.dsGroupCntBeg.params.dateid = aDateID;
             model.dsGroupCntBeg.execute();
-            model.dsGroupCntBeg.beforeFirst();
-            while (model.dsGroupCntBeg.next()) {
-                if (!resCnt[model.dsGroupCntBeg.services_id])
-                    resCnt[model.dsGroupCntBeg.services_id] = {};
-                resCnt[model.dsGroupCntBeg.services_id][model.dsGroupCntBeg.fm_name] = model.dsGroupCntBeg.fm_value;
-            }
+            model.dsGroupCntBeg.forEach(function(cursor) {
+                if (!resCnt[cursor.services_id])
+                    resCnt[cursor.services_id] = {};
+                resCnt[cursor.services_id][cursor.fm_name] = cursor.fm_value;
+            });
 
             model.dsGroupCntEnd.params.groupid = aGroupID;
             model.dsGroupCntEnd.params.dateid = aDateID;            
-            model.dsGroupCntEnd.execute();
-            model.dsGroupCntEnd.beforeFirst();
-            while (model.dsGroupCntEnd.next()) {
-                if (!resCnt[model.dsGroupCntEnd.services_id])
-                    resCnt[model.dsGroupCntEnd.services_id] = {};
-                resCnt[model.dsGroupCntEnd.services_id][model.dsGroupCntEnd.fm_name] = model.dsGroupCntEnd.fm_value;
-            }
+            model.dsGroupCntEnd.execute();            
+            model.dsGroupCntEnd.forEach(function(cursor) {
+                if (!resCnt[cursor.services_id])
+                    resCnt[cursor.services_id] = {};
+                resCnt[cursor.services_id][cursor.fm_name] = cursor.fm_value;
+            });
 
             return resCnt;
         }
@@ -193,12 +191,12 @@ function Calculations() {
      *                       LCID.ServiceName.CounterName = value;
      */
     function Flats(aDateID) {
-        //this.groups = [];
-        model.dsCalcObject.beforeFirst();
-        while (model.dsCalcObject.next())
-            if (!this[model.dsCalcObject.lc_id])
-                this[model.dsCalcObject.lc_id] = new FlatConstructor(model.dsCalcObject.lc_id, aDateID);
-
+        //this.groups = [];        
+        model.dsCalcObject.forEach(function(cursor) {
+            if (!this[cursor.lc_id])
+                this[cursor.lc_id] = new FlatConstructor(cursor.lc_id, aDateID);
+            }, this
+                    );
         function FlatConstructor(aLCID, aDateID) {
             var fltChars = getLCChars(aLCID);
             for (var chrName in fltChars)
@@ -212,9 +210,9 @@ function Calculations() {
             var resChars = {};
             model.dsLCChars.params.lc_id = aLCID;
             model.dsLCChars.execute();
-            model.dsLCChars.beforeFirst();
-            while (model.dsLCChars.next())
-                resChars[model.dsLCChars.fm_name] = model.dsLCChars.fm_value;
+            model.dsLCChars.forEach(function(cursor) {
+                resChars[cursor.fm_name] = cursor.fm_value;
+            });
             return resChars;
         }
 
@@ -224,22 +222,20 @@ function Calculations() {
             model.dsLCCntBeg.params.lc_id = aLCID;
             model.dsLCCntBeg.params.dateid = aDateID;            
             model.dsLCCntBeg.execute();
-            model.dsLCCntBeg.beforeFirst();
-            while (model.dsLCCntBeg.next()) {
-                if (!resCnt[model.dsLCCntBeg.services_id])
-                    resCnt[model.dsLCCntBeg.services_id] = {};
-                resCnt[model.dsLCCntBeg.services_id][model.dsLCCntBeg.fm_name] = model.dsLCCntBeg.fm_value;
-            }
+            model.dsLCCntBeg.forEach(function(cursor) {
+                if (!resCnt[cursor.services_id])
+                    resCnt[cursor.services_id] = {};
+                resCnt[cursor.services_id][cursor.fm_name] = cursor.fm_value;
+            });
 
             model.dsLCCntEnd.params.lc_id = aLCID;
             model.dsLCCntEnd.params.dateid = aDateID;            
             model.dsLCCntEnd.execute();
-            model.dsLCCntEnd.beforeFirst();
-            while (model.dsLCCntEnd.next()) {
-                if (!resCnt[model.dsLCCntEnd.services_id])
-                    resCnt[model.dsLCCntEnd.services_id] = {};
-                resCnt[model.dsLCCntEnd.services_id][model.dsLCCntEnd.fm_name] = model.dsLCCntEnd.fm_value;
-            }
+            model.dsLCCntEnd.forEach(function(cursor) {
+                if (!resCnt[cursor.services_id])
+                    resCnt[cursor.services_id] = {};
+                resCnt[cursor.services_id][cursor.fm_name] = cursor.fm_value;
+            });
             return resCnt;
         }
     }

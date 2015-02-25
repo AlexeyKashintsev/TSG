@@ -23,6 +23,10 @@
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Характеристики" type="TabsConstraintsDesignInfo"/>
   </widget>
+  <widget name="pnlCurrent" parent="tabbedPane" prefHeight="238px" prefWidth="472px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Начисления" type="TabsConstraintsDesignInfo"/>
+  </widget>
   <widget dividerLocation="200" leftComponent="pnlServices" name="splitPane2" orientation="0" parent="tabbedPane" prefHeight="238px" prefWidth="472px" rightComponent="pnlCounters" type="SplitDesignInfo" visible="false">
     <constraints tabTitle="Услуги и счетчики" type="TabsConstraintsDesignInfo"/>
   </widget>
@@ -43,10 +47,6 @@
   <widget name="pnlLCGroups" parent="tabbedPane" prefHeight="238px" prefWidth="472px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Группы" type="TabsConstraintsDesignInfo"/>
-  </widget>
-  <widget name="pnlCurrent" parent="tabbedPane" prefHeight="238px" prefWidth="472px" type="PanelDesignInfo" visible="false">
-    <layout type="MarginLayoutDesignInfo"/>
-    <constraints tabTitle="Начисления" type="TabsConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>
