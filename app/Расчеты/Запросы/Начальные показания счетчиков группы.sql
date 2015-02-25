@@ -12,3 +12,4 @@ From grp_services t2
  Inner Join per_counter_values t3 on t.counter_id = t3.counter_id
  Where :dateid = t3.date_id
  and :groupid = t2.group_id
+ and :accountid = t2.account_id

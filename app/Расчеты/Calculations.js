@@ -33,9 +33,9 @@ function Calculations() {
             self.parGroupID = aGroupID;            
             model.updateNullCounterValues.params.dateID = aDateID;
             model.updateNullCounterValues.executeUpdate();
-            self.dsCalcObject.requery();
+            self.dsCalcObject.requery();            
             groups = new Groups(aDateID);
-            flats = new Flats(aDateID);
+            flats = new Flats(aDateID);            
             self.dsSums4calc.requery();
             progress.setMax(self.dsSums4calc.length);
             prepared = true;
@@ -133,11 +133,14 @@ function Calculations() {
      *                       groupID.ServiceName.CounterName = value;
      */
     function Groups(aDateID) {
-        self.dsCalcObject.beforeFirst();
-        while (self.dsCalcObject.next())
-            if (!this[self.dsCalcObject.group_id])
-                this[self.dsCalcObject.group_id] = new GroupConstructor(self.dsCalcObject.group_id, aDateID);
-
+       /* model.dsAllAccounts.forEach(function(cursor){
+                model.params.parAccountID = cursor.grp_account_id;*/
+            self.dsCalcObject.beforeFirst();
+            while (self.dsCalcObject.next())
+                if (!this[self.dsCalcObject.group_id])
+                    this[self.dsCalcObject.group_id] = new GroupConstructor(self.dsCalcObject.group_id, aDateID);
+        
+        
         function GroupConstructor(aGroupID, aDateID) {
             var grpChars = getGroupChars(aGroupID);
             for (var chrName in grpChars)
@@ -162,6 +165,7 @@ function Calculations() {
 
             self.dsGroupCntBeg.params.groupid = aGroupID;
             self.dsGroupCntBeg.params.dateid = aDateID;
+            self.dsGroupCntBeg.params.accountid = model.params.parAccountID;
             self.dsGroupCntBeg.execute();
             self.dsGroupCntBeg.beforeFirst();
             while (self.dsGroupCntBeg.next()) {
@@ -172,6 +176,7 @@ function Calculations() {
 
             self.dsGroupCntEnd.params.groupid = aGroupID;
             self.dsGroupCntEnd.params.dateid = aDateID;
+            self.dsGroupCntEnd.params.accountid = model.params.parAccountID;
             self.dsGroupCntEnd.execute();
             self.dsGroupCntEnd.beforeFirst();
             while (self.dsGroupCntEnd.next()) {
@@ -182,6 +187,7 @@ function Calculations() {
 
             return resCnt;
         }
+   // });
     }
     ;
 
@@ -194,11 +200,14 @@ function Calculations() {
      */
     function Flats(aDateID) {
         //this.groups = [];
-        self.dsCalcObject.beforeFirst();
-        while (self.dsCalcObject.next())
-            if (!this[self.dsCalcObject.lc_id])
-                this[self.dsCalcObject.lc_id] = new FlatConstructor(self.dsCalcObject.lc_id, aDateID);
-
+        /*model.dsAllAccounts.forEach(function(cursor){
+                model.params.parAccountID = cursor.grp_account_id;*/
+            self.dsCalcObject.beforeFirst();
+            while (self.dsCalcObject.next())
+                if (!this[self.dsCalcObject.lc_id])
+                    this[self.dsCalcObject.lc_id] = new FlatConstructor(self.dsCalcObject.lc_id, aDateID);
+            
+            
         function FlatConstructor(aLCID, aDateID) {
             var fltChars = getLCChars(aLCID);
             for (var chrName in fltChars)
@@ -223,6 +232,7 @@ function Calculations() {
 
             self.dsLCCntBeg.params.lc_id = aLCID;
             self.dsLCCntBeg.params.dateid = aDateID;
+            self.dsLCCntBeg.params.accountid = model.params.parAccountID;
             self.dsLCCntBeg.execute();
             self.dsLCCntBeg.beforeFirst();
             while (self.dsLCCntBeg.next()) {
@@ -233,6 +243,7 @@ function Calculations() {
 
             self.dsLCCntEnd.params.lc_id = aLCID;
             self.dsLCCntEnd.params.dateid = aDateID;
+            self.dsLCCntEnd.params.accountid = model.params.parAccountID;
             self.dsLCCntEnd.execute();
             self.dsLCCntEnd.beforeFirst();
             while (self.dsLCCntEnd.next()) {
@@ -242,6 +253,7 @@ function Calculations() {
             }
             return resCnt;
         }
+   // });
     }
     ;
 

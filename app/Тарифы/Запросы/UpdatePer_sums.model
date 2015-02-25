@@ -2,7 +2,11 @@
   <parameters>
     <parameter description="" name="groupid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="dateid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="accountid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="Начисления" entityHeight="200" entityIconified="false" entityId="139215172179965" entityLocationX="416" entityLocationY="8" entityWidth="150" tableAlias="" tableName="per_sums" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="139215172179965"/>
+  <relation leftEntityId="-1" leftEntityParameterName="accountid" rightEntityFieldName="recalc" rightEntityId="139215172179965"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="flat_service_id" rightEntityId="139215172179965"/>
 </datamodel>
