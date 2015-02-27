@@ -30,6 +30,7 @@ function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
 }//GEN-LAST:event_btnSaveActionPerformed
 
 self.setBtnVisible = function (){
+    model.issues_by_flat.requery();
     self.taProblemText.text = model.issues_by_flat.cursor.issue_comment;
     /*if(self.issues_by_flat.length == 0)
         {self.modelCombo.visible = self.modelFormattedField.visible =

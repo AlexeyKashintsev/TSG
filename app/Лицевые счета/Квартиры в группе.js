@@ -100,48 +100,40 @@ function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
                     date_id : model.params.parDateID,
                     lc_id: model.issues_by_group.lc_flat_id,
                     group_id: model.params.parGroupID,
-                    type_issues: 142253837403191,
-                    issue_comment: ''
+                    type_issues: 10,
+                    issue_comment: ' '
                 });
                 self.model.save();
+            }              
+
                 fmIssuesByFlat.model.params.parDate = model.params.parDateID;
-                fmIssuesByFlat.model.params.parFlat = model.issues_by_group.lc_flat_id;
                 fmIssuesByFlat.model.params.parGroup = model.params.parGroupID;
+                fmIssuesByFlat.model.params.parFlat = model.issues_by_group.lc_flat_id;
+                fmIssuesByFlat.setBtnVisible();
                 self.model.requery();
-                fmIssuesByFlat.model.requery();
-                fmIssuesByFlat.setBtnVisible();
-                if (self.mainForm)
-                    self.mainForm.showFormAsInternal(fmIssuesByFlat);
-                else
-                    fmIssuesByFlat.show();
-            } else {
-                fmIssuesByFlat.model.params.parDate = self.model.params.parDateID;
-                fmIssuesByFlat.model.params.parGroup = self.model.params.parGroupID;
-                fmIssuesByFlat.model.params.parFlat = self.model.issues_by_group.lc_flat_id;
-                fmIssuesByFlat.setBtnVisible();
                 if (self.mainForm)
                     self.mainForm.showFormAsInternal(fmIssuesByFlat);
                 else
                     fmIssuesByFlat.show();
             }
-        }
+        
     }//GEN-LAST:event_buttonActionPerformed
 
     function modelGridOnRender(evt) {//GEN-FIRST:event_modelGridOnRender
         if (evt.object.completed != true)
         {
             switch (evt.object.type_issues) {
-                case 142253840815610:
+                case 30:
                     {
                         evt.cell.style.background = Color(255, 100, 50);
                         break;
                     }
-                case 142253839110903:
+                case 20:
                     {
                         evt.cell.style.background = Color(0, 155, 205);
                         break;
                     }
-                case 142253837403191:
+                case 10:
                     {
                         evt.cell.style.background = Color(83, 230, 119);
                         break;
