@@ -13,23 +13,20 @@ var self = this, model = self.model;
 
 self.isSelectForm = false;
 self.isEditable = true;
-self.edit = self.model.params.parEditDate;
+
 /*self.model.params.parFlatID = 139704089624312;
 self.model.params.parDateID = 139696955465754;*/
-    self.modelGrid.editable = !!self.edit;
+    
 
 
-function setEdit(){
-    self.modelGrid.editable = !!self.edit;
+function setEdit(){ 
     self.btnSave.enabled = self.isEditable;    
 }
 
 self.syncParams = function(aDate, anIsEditable, anAccount) {
-    self.modelGrid.editable = anIsEditable;
     model.params.parDateID = aDate;
     model.params.parAccountID = anAccount;
-    //model.params.parDateID = aDate;
-    //model.params.parAccountID = anAccount;
+    self.modelGrid.editable = anIsEditable;
 };
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
@@ -61,5 +58,6 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
         self.model.save();
     }
 }//GEN-LAST:event_formWindowClosing
+
 paramSynchronizer.addListener(this);
 }
