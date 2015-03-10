@@ -20,5 +20,7 @@ From per_sums t1
  and :date_id = t1.date_id
  and :parAccount = t.account_id
  and :parAccount = t3.account_id
+ and (t1.calc != null or t1.calc!= 0)
+ and (t1.full_calc != null or t1.full_calc!= 0)
  Group by t1.per_sums_id, t1.flat_service_id, t1.date_id, t1.calc, t1.benefit, t1.recalc, t1.full_calc, t1.rate, t1.calc_value, t.lc_flat_services_id, t.lc_id, t.services_id, t.fs_active) q
  Order by q.grp_services_id

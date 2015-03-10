@@ -9,6 +9,6 @@
   <entity Name="dsOplSessions" Title="Сессии оплаты" entityHeight="200" entityIconified="false" entityId="138686322493762" entityLocationX="191" entityLocationY="10" entityWidth="150" queryId="dsOplSessions" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138686322493762" rightEntityParameterName="date_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="138686322493762" rightEntityParameterName="account_id"/>
-  <referenceRelation leftEntityFieldName="date_id" leftEntityId="138686322493762" rightEntityFieldName="per_date_id" rightEntityId="138686324127452"/>
   <referenceRelation leftEntityFieldName="session_id" leftEntityId="138686322493762" rightEntityFieldName="opl_sessions_id" rightEntityId="138686322493762"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="138686322493762" rightEntityFieldName="per_date_id" rightEntityId="138686324127452"/>
 </datamodel>

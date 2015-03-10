@@ -18,8 +18,8 @@
     <constraints height="14px" left="178px" top="13px" type="MarginConstraintsDesignInfo" width="60px"/>
   </widget>
   <widget name="modelCombo1" parent="panel1" prefHeight="20px" prefWidth="100px" type="DbComboDesignInfo">
-    <displayField entityId="142417365700052" fieldName="account_name"/>
     <valueField entityId="142417365700052" fieldName="grp_account_id"/>
+    <displayField entityId="142417365700052" fieldName="account_name"/>
     <datamodelElement entityId="-1" fieldName="parAccountID"/>
     <constraints height="20px" left="396px" top="10px" type="MarginConstraintsDesignInfo" width="100px"/>
   </widget>
@@ -27,8 +27,8 @@
     <constraints height="14px" left="353px" top="13px" type="MarginConstraintsDesignInfo" width="60px"/>
   </widget>
   <widget name="modelCombo" parent="panel1" prefHeight="20px" prefWidth="100px" type="DbComboDesignInfo">
-    <displayField entityId="142314144814038" fieldName="grp_name"/>
     <valueField entityId="142314144814038" fieldName="grp_groups_id"/>
+    <displayField entityId="142314144814038" fieldName="grp_name"/>
     <datamodelElement entityId="-1" fieldName="parGroup"/>
     <constraints height="20px" left="240px" top="10px" type="MarginConstraintsDesignInfo" width="100px"/>
   </widget>
@@ -39,66 +39,66 @@
     <treeDesignInfo/>
     <column name="colGroupName" title="Группа">
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="142314144814038" fieldName="grp_name"/>
         <valueField entityId="142314144814038" fieldName="grp_groups_id"/>
+        <displayField entityId="142314144814038" fieldName="grp_name"/>
       </controlInfo>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
       <datamodelElement entityId="142321101592134" fieldName="group_id"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-    </column>
-    <column name="colFlatNumber" title="№">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+    </column>
+    <column name="colFlatNumber" title="№">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="142321101592134" fieldName="lc_flatnumber"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-    </column>
-    <column name="colFlatRegTo" title="ФИО">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+    </column>
+    <column name="colFlatRegTo" title="ФИО">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="142321101592134" fieldName="lc_regto"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-    </column>
-    <column name="colDebt" title="Долг">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
-      <datamodelElement entityId="142321101592134" fieldName="sal_end"/>
+    </column>
+    <column name="colDebt" title="Долг">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="142321101592134" fieldName="Debt"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <columnsKeyField/>
+        <cellValueField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
     </column>
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>

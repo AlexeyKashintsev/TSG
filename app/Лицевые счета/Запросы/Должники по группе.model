@@ -7,15 +7,15 @@
     <parameter description="" name="account_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="37" entityWidth="150"/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="142487354176516" entityLocationX="872" entityLocationY="70" entityWidth="150" queryId="qMainGroups" tableAlias="q" tableName="" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142597785626575" entityLocationX="872" entityLocationY="70" entityWidth="150" queryId="qMainGroups" tableAlias="q" tableName="" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142322693489068" entityLocationX="426" entityLocationY="34" entityWidth="150" tableAlias="t1" tableName="lc_flat" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142322729673492" entityLocationX="204" entityLocationY="28" entityWidth="150" tableAlias="t" tableName="grp_lc_group" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142321087426529" entityLocationX="663" entityLocationY="35" entityWidth="150" tableAlias="t2" tableName="per_saldo_flat" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="group_id" rightEntityFieldName="group_id" rightEntityId="142322729673492"/>
-  <relation leftEntityFieldName="group_id" leftEntityId="142322729673492" rightEntityFieldName="grp_groups_id" rightEntityId="142487354176516"/>
   <relation leftEntityId="-1" leftEntityParameterName="account_id" rightEntityFieldName="account_id" rightEntityId="142321087426529"/>
-  <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="142321087426529"/>
-  <relation leftEntityFieldName="sal_end" leftEntityId="142321087426529" rightEntityId="-1" rightEntityParameterName="debt"/>
-  <relation leftEntityFieldName="lc_flat_id" leftEntityId="142322693489068" rightEntityFieldName="lc_id" rightEntityId="142321087426529"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="142322729673492" rightEntityFieldName="grp_groups_id" rightEntityId="142597785626575"/>
+  <relation leftEntityFieldName="sal_begin" leftEntityId="142321087426529" rightEntityId="-1" rightEntityParameterName="debt"/>
+  <relation leftEntityId="-1" leftEntityParameterName="group_id" rightEntityFieldName="group_id" rightEntityId="142322729673492"/>
   <relation leftEntityFieldName="lc_id" leftEntityId="142322729673492" rightEntityFieldName="lc_flat_id" rightEntityId="142322693489068"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="142321087426529"/>
+  <relation leftEntityFieldName="lc_flat_id" leftEntityId="142322693489068" rightEntityFieldName="lc_id" rightEntityId="142321087426529"/>
 </datamodel>

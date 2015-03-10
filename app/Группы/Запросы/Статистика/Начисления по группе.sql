@@ -11,7 +11,7 @@ From grp_lc_group t1
  Inner Join per_sums t on t2.lc_flat_services_id = t.flat_service_id
  Inner Join #DateGroupView q on q.per_date_id = t.date_id
  Left Join usl_services t3 on t2.services_id = t3.usl_services_id
- Where :groupID = t1.group_id
+ Where (:groupID = t1.group_id or :all_flats = true)
  and :parAccount = t2.account_id
  and (t.calc != null or t.calc!= 0)
  and (t.full_calc != null or t.full_calc!= 0)

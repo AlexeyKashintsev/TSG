@@ -4,7 +4,7 @@
  * @name opl_get
  */
 function opl_view() {
-    var self = this;
+    var self = this, model = self.model;
     self.parentForm = null;
     var modSal = new SaldoAndSumsModule();
     
@@ -15,6 +15,13 @@ function opl_view() {
         self.model.requery();
     }
     
+
+self.syncParams = function(aDate, anIsEditable, anAccount) {
+    model.params.parAccountID = anAccount;    
+    //model.params.parDateID = aDate;
+    //model.params.parAccountID = anAccount;
+};
+
 
 function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
  /*   if (self.parFlatID&&self.parDateID&&self.parSum)
@@ -47,4 +54,5 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
     function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
         //self.requery();
     }//GEN-LAST:event_formWindowOpened
+paramSynchronizer.addListener(this);
 }
