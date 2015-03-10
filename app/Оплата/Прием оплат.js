@@ -4,10 +4,16 @@
  * @name opl_get
  */
 function opl_get() {
-    var self = this;
+    var self = this, model = self.model;
     self.parentForm = null;
     var modSal = new SaldoAndSumsModule();
     
+
+self.syncParams = function(aDate, anIsEditable, anAccount) {
+    model.params.parAccountID = anAccount;    
+    //model.params.parDateID = aDate;
+    //model.params.parAccountID = anAccount;
+};
 
 function tfFlatNumberActionPerformed(evt) {//GEN-FIRST:event_tfFlatNumberActionPerformed
     var flat = self.dsFlatsByGroup.find(self.dsFlatsByGroup.schema.lc_flatnumber, self.tfFlatNumber.text);
@@ -35,5 +41,5 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
     self.close();
 }//GEN-LAST:event_button1ActionPerformed
-
+paramSynchronizer.addListener(this);
 }
