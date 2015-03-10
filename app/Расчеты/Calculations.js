@@ -135,9 +135,8 @@ function Calculations() {
         model.dsCalcObject.forEach(function(cursor) {
             if (!this[cursor.group_id])
                 this[cursor.group_id] = new GroupConstructor(cursor.group_id, aDateID);
-        }, this
-                );
-
+        }, this);
+        
         function GroupConstructor(aGroupID, aDateID) {
             var grpChars = getGroupChars(aGroupID);
             for (var chrName in grpChars)
@@ -195,8 +194,7 @@ function Calculations() {
         model.dsCalcObject.forEach(function(cursor) {
             if (!this[cursor.lc_id])
                 this[cursor.lc_id] = new FlatConstructor(cursor.lc_id, aDateID);
-            }, this
-                    );
+            }, this);
         function FlatConstructor(aLCID, aDateID) {
             var fltChars = getLCChars(aLCID);
             for (var chrName in fltChars)

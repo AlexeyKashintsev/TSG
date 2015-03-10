@@ -1,5 +1,5 @@
 /**
- *
+ * @public
  * @author TSG
  * @name dsAllAccounts
  */ 
