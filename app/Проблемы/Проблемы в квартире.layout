@@ -2,7 +2,7 @@
   <widget name="scrollPane" parent="Form" prefHeight="180px" prefWidth="264px" type="ScrollDesignInfo">
     <constraints bottom="103px" left="120px" right="25px" top="132px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="taProblemText" parent="scrollPane" prefHeight="176px" prefWidth="260px" type="TextPaneDesignInfo"/>
+  <widget name="taProblemText" parent="scrollPane" prefHeight="178px" prefWidth="262px" type="TextPaneDesignInfo"/>
   <widget editable="false" focusable="false" name="modelFormattedField21" parent="Form" prefHeight="24px" prefWidth="264px" type="DbLabelDesignInfo">
     <datamodelElement entityId="142260847793739" fieldName="lc_regto"/>
     <constraints height="24px" left="120px" right="25px" top="60px" type="MarginConstraintsDesignInfo"/>

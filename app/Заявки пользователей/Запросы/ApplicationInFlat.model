@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parFlatID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142598782862573" entityLocationX="209" entityLocationY="14" entityWidth="150" tableAlias="t" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142598782862575" entityLocationX="807" entityLocationY="11" entityWidth="150" tableAlias="t3" tableName="lc_flat" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142598782862574" entityLocationX="627" entityLocationY="10" entityWidth="150" tableAlias="t2" tableName="grp_groups" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142598820335997" entityLocationX="629" entityLocationY="231" entityWidth="150" tableAlias="t4" tableName="grp_type" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142598772889097" entityLocationX="431" entityLocationY="14" entityWidth="150" tableAlias="t1" tableName="usr_user" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityFieldName="lc_id" rightEntityId="142598782862573"/>
+  <relation leftEntityFieldName="lc_flat_id" leftEntityId="142598772889097" rightEntityFieldName="lc_id" rightEntityId="142598782862573"/>
+  <relation leftEntityFieldName="lc_flat_id" leftEntityId="142598772889097" rightEntityFieldName="lc_flat_id" rightEntityId="142598782862575"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="142598782862573" rightEntityFieldName="grp_groups_id" rightEntityId="142598782862574"/>
+  <relation leftEntityFieldName="grp_type_id" leftEntityId="142598820335997" rightEntityFieldName="grp_type" rightEntityId="142598782862574"/>
+</datamodel>

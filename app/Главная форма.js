@@ -18,7 +18,7 @@ var self = this, model = self;
     var fmDebt = null;
     var fmOplSessions = null;
     var fmServices = null;
-    var fmIssues = null;
+    var fmWorkFlat = null;
     var fmGroupSelector = null;
     var fmReportPrint = null;
     var mf = this;
@@ -203,9 +203,9 @@ function button3ActionPerformed(evt) {//GEN-FIRST:event_button3ActionPerformed
     }//GEN-LAST:event_flats_by_groupOnScrolled
 
     function button5ActionPerformed(evt) {//GEN-FIRST:event_button5ActionPerformed
-        fmIssues = new AllIssues();
-        fmIssues.mainForm = mf;        
-        self.showFormAsInternal(fmIssues);
+        fmWorkFlat = new mainWorkFlat();
+        fmWorkFlat.mainForm = mf;        
+        self.showFormAsInternal(fmWorkFlat);
     }//GEN-LAST:event_button5ActionPerformed
 
     function button6ActionPerformed(evt) {//GEN-FIRST:event_button6ActionPerformed

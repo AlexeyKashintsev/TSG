@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="360px" prefWidth="400px">
+  <widget name="mCBClosed" parent="Form" prefHeight="20px" prefWidth="238px" type="DbCheckDesignInfo">
+    <datamodelElement entityId="142598775895313" fieldName="active"/>
+    <constraints bottom="64px" height="20px" left="144px" type="MarginConstraintsDesignInfo" width="238px"/>
+  </widget>
+  <widget editable="false" focusable="false" name="modelFormattedField211" parent="Form" prefHeight="24px" prefWidth="200px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="142598775895313" fieldName="email"/>
+    <constraints height="24px" left="156px" right="44px" top="156px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label1211" parent="Form" prefHeight="16px" prefWidth="72px" text="Email:" type="LabelDesignInfo">
+    <constraints height="16px" left="24px" top="160px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget editable="false" focusable="false" name="modelFormattedField22" parent="Form" prefHeight="24px" prefWidth="200px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="142598775895313" fieldName="phone_number"/>
+    <constraints height="24px" left="156px" right="44px" top="120px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label122" parent="Form" prefHeight="16px" prefWidth="120px" text="Номер телефона" type="LabelDesignInfo">
+    <constraints height="16px" left="24px" top="124px" type="MarginConstraintsDesignInfo" width="120px"/>
+  </widget>
+  <widget name="label2" parent="Form" prefHeight="16px" prefWidth="108px" text="Активность" type="LabelDesignInfo">
+    <constraints bottom="66px" height="16px" left="24px" type="MarginConstraintsDesignInfo" width="108px"/>
+  </widget>
+  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="4" icon="icons/22x22/actions/user-group-new.png" name="btnSave" parent="Form" prefHeight="29px" prefWidth="156px" text="Авторизовать" toolTipText="Авторизовать" type="ButtonDesignInfo">
+    <constraints bottom="19px" height="29px" right="16px" type="MarginConstraintsDesignInfo" width="156px"/>
+  </widget>
+  <widget name="label11" parent="Form" prefHeight="16px" prefWidth="48px" text="Группа:" type="LabelDesignInfo">
+    <constraints height="16px" left="24px" top="16px" type="MarginConstraintsDesignInfo" width="48px"/>
+  </widget>
+  <widget name="label12" parent="Form" prefHeight="16px" prefWidth="72px" text="Квартира:" type="LabelDesignInfo">
+    <constraints height="16px" left="24px" top="52px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget editable="false" focusable="false" name="FFGroupName" parent="Form" prefHeight="24px" prefWidth="200px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="142598775895313" fieldName="grp_name"/>
+    <constraints height="24px" left="156px" right="44px" top="12px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget editable="false" focusable="false" name="modelFormattedField2" parent="Form" prefHeight="24px" prefWidth="200px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="142598775895313" fieldName="lc_flatnumber"/>
+    <constraints height="24px" left="156px" right="44px" top="48px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label121" parent="Form" prefHeight="16px" prefWidth="72px" text="ФИО:" type="LabelDesignInfo">
+    <constraints height="16px" left="24px" top="88px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget editable="false" focusable="false" name="modelFormattedField21" parent="Form" prefHeight="24px" prefWidth="200px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="142598775895313" fieldName="lc_regto"/>
+    <constraints height="24px" left="156px" right="44px" top="84px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget dateFormat="dd.MM.yyyy" editable="false" name="modelDate" parent="Form" prefHeight="20px" prefWidth="204px" type="DbDateDesignInfo">
+    <datamodelElement entityId="142598775895313" fieldName="date"/>
+    <constraints height="20px" left="156px" top="216px" type="MarginConstraintsDesignInfo" width="204px"/>
+  </widget>
+  <widget name="label12111" parent="Form" prefHeight="16px" prefWidth="132px" text="Дата подачи заявки" type="LabelDesignInfo">
+    <constraints height="16px" left="24px" top="218px" type="MarginConstraintsDesignInfo" width="132px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

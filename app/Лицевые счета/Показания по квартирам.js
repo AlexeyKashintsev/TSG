@@ -13,6 +13,7 @@ function formFlatWorkSheet() {
     var fmNachisleniya = new form_sums_per_flat();
     var fmOplata = new formPaymentsInFlat();
     var fmLCGroups = new fmGroupsByLC();
+    var fmUsers = new formApplicationByFlat();
     var modCalc = new ServerModule('Calculations');
     
     
@@ -47,7 +48,8 @@ function formFlatWorkSheet() {
         model.params.parFlatID =
         fmFlatCounters.parFlatID = fmFlatServices.parFlatID = fmNachisleniya.parFlatID = 
         fmOplata.parFlatID = fmSaldoHistory.parFlatID = fmSaldoCur.parFlatID =
-        fmFlatChars.parFlatID = fmLCGroups.parFlatID = aNewFlatID;
+        fmFlatChars.parFlatID = fmLCGroups.parFlatID = 
+        fmUsers.parFlatID = aNewFlatID;
     };
 
      
@@ -73,6 +75,7 @@ function formFlatWorkSheet() {
         fmNachisleniya.showOnPanel(self.pnlCurrent);
         fmOplata.showOnPanel(self.pnlOplata);
         fmLCGroups.showOnPanel(self.pnlLCGroups);
+        fmUsers.showOnPanel(self.pnlUser);
     }//GEN-LAST:event_formWindowOpened
 paramSynchronizer.addListener(this);
 }
