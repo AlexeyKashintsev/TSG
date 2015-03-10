@@ -27,7 +27,7 @@ function AllApplications() {
         if (evt.clickCount > 1){
             fmApplication.mainForm = self.mainForm;
             fmApplication.parentForm = self;            
-            fmApplication.model.params.parFlat = self.allApplication.lc_flat_id;
+            fmApplication.model.params.parFlatID = self.allApplication.lc_flat_id;
             self.mainForm.showFormAsInternal(fmApplication);
         }
     }//GEN-LAST:event_modelGridMouseClicked
