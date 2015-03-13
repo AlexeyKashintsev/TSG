@@ -15,13 +15,12 @@ function CalculateFlatSaldo() {
 
         model.dsAllAccounts.forEach(function(cursor){
             model.params.parAccountID = cursor.grp_account_id;
-            model.dsSumOfSums.requery();            
+            model.dsSumOfSums.requery();
             model.dsSumOfPayments.requery();
-            model.dsSaldo4calc.requery();            
+            model.dsSaldo4calc.requery();
             model.dsSaldo4calc.forEach(function(){
-                
                 //Logger.info("Расчет сальдо в квартире: " + self.dsSaldo4calc.cursor.lc_id);                
-                var sc = self.SumOfSums(cursor.account_name);
+                var sc = getSumOfSums(cursor.account_name);
                 var sp = self.dsSumOfPayments.find(self.dsSumOfPayments.schema.flat_id, self.dsSaldo4calc.lc_id);
                 var peni = peniClc.calculate(self.dsSaldo4calc.lc_id, self.model.params.parDateID, model.params.parAccountID);
                 var peniOld = peni.previous;
@@ -64,21 +63,22 @@ function CalculateFlatSaldo() {
             /*(function() {
                 progress.setDescription("Сохранение финальных значений");
             }).invokeAndWait();*/
-            self.model.save();
+            model.save();
         };
         
-        self.SumOfSums = function(account){
-            self.dsSumOfSums.requery();
-            if (self.dsSumOfSums.find(self.dsSumOfSums.schema.lc_id, self.dsSaldo4calc.lc_id).length !=0)
-                var sa = self.dsSumOfSums.find(self.dsSumOfSums.schema.lc_id, self.dsSaldo4calc.lc_id)[0];
+        function getSumOfSums(anAccount){
+            var sa;
+//            model.dsSumOfSums.requery();
+            if (model.dsSumOfSums.find(model.dsSumOfSums.schema.lc_id, model.dsSaldo4calc.lc_id).length !== 0)
+                sa = model.dsSumOfSums.find(model.dsSumOfSums.schema.lc_id, model.dsSaldo4calc.lc_id)[0];
             else {
-                var sa = {
+                sa = {
                     sal_calc:       0,
                     sal_benefit:    0,
                     sal_recalc:     0,
                     sal_full_calc:  0
-                }
-                alert('В расчетном счете "' + account + '" никаких начислений не произведено');
+                };
+                Logger.warning('В расчетном счете "' + anAccount + '" нет начислений!');
             }
         return sa;        
         };
