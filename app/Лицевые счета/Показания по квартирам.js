@@ -75,6 +75,7 @@ function formFlatWorkSheet() {
         fmNachisleniya.showOnPanel(self.pnlCurrent);
         fmOplata.showOnPanel(self.pnlOplata);
         fmLCGroups.showOnPanel(self.pnlLCGroups);
+        fmUsers.parentForm = self;
         fmUsers.showOnPanel(self.pnlUser);
     }//GEN-LAST:event_formWindowOpened
 paramSynchronizer.addListener(this);

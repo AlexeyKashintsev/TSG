@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="360px" prefWidth="400px">
-  <widget name="mCBClosed" parent="Form" prefHeight="20px" prefWidth="238px" type="DbCheckDesignInfo">
+  <widget name="mCBClosed" parent="Form" prefHeight="20px" prefWidth="226px" type="DbCheckDesignInfo">
     <datamodelElement entityId="142598775895313" fieldName="active"/>
-    <constraints bottom="64px" height="20px" left="144px" type="MarginConstraintsDesignInfo" width="238px"/>
+    <constraints bottom="64px" height="20px" left="156px" type="MarginConstraintsDesignInfo" width="226px"/>
   </widget>
   <widget editable="false" focusable="false" name="modelFormattedField211" parent="Form" prefHeight="24px" prefWidth="200px" type="DbLabelDesignInfo">
     <datamodelElement entityId="142598775895313" fieldName="email"/>
@@ -20,8 +20,8 @@
   <widget name="label2" parent="Form" prefHeight="16px" prefWidth="108px" text="Активность" type="LabelDesignInfo">
     <constraints bottom="66px" height="16px" left="24px" type="MarginConstraintsDesignInfo" width="108px"/>
   </widget>
-  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="4" icon="icons/22x22/actions/user-group-new.png" name="btnSave" parent="Form" prefHeight="29px" prefWidth="156px" text="Авторизовать" toolTipText="Авторизовать" type="ButtonDesignInfo">
-    <constraints bottom="19px" height="29px" right="16px" type="MarginConstraintsDesignInfo" width="156px"/>
+  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="4" icon="icons/22x22/actions/user-group-new.png" name="btnSave" parent="Form" prefHeight="30px" prefWidth="156px" text="Авторизовать" toolTipText="Авторизовать" type="ButtonDesignInfo">
+    <constraints bottom="19px" height="30px" right="172px" type="MarginConstraintsDesignInfo" width="156px"/>
   </widget>
   <widget name="label11" parent="Form" prefHeight="16px" prefWidth="48px" text="Группа:" type="LabelDesignInfo">
     <constraints height="16px" left="24px" top="16px" type="MarginConstraintsDesignInfo" width="48px"/>
@@ -50,6 +50,9 @@
   </widget>
   <widget name="label12111" parent="Form" prefHeight="16px" prefWidth="132px" text="Дата подачи заявки" type="LabelDesignInfo">
     <constraints height="16px" left="24px" top="218px" type="MarginConstraintsDesignInfo" width="132px"/>
+  </widget>
+  <widget actionPerformed="buttonActionPerformed" icon="icons/22x22/actions/user-group-delete.PNG" name="button" parent="Form" prefHeight="30px" prefWidth="156px" text="Удалить" type="ButtonDesignInfo">
+    <constraints bottom="19px" height="30px" right="4px" type="MarginConstraintsDesignInfo" width="156px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>
