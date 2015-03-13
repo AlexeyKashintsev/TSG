@@ -22,11 +22,11 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
       <datamodelElement entityId="142356868867182" fieldName="account_name"/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
     </column>
     <column name="colBank" selectFunction="colBankOnSelect" title="Банк">
       <columnsDatasource/>
@@ -37,14 +37,14 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <valueField entityId="142356882059373" fieldName="grp_bank_id"/>
-        <displayField entityId="142356882059373" fieldName="fname"/>
-      </controlInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
       <datamodelElement entityId="142356868867182" fieldName="bank"/>
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <valueField entityId="142356882059373" fieldName="grp_bank_id"/>
+        <displayField entityId="142356882059373" fieldName="fname"/>
+      </controlInfo>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="142356868867182" field="false"/>

@@ -49,7 +49,8 @@ function processVisible(){
 
     function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
         if (self.model.modified&&confirm('Сохранить изменения?')){
-        self.model.save();
+        model.save();
+        self.mainForm.model.requery();
         }        
     }//GEN-LAST:event_formWindowClosing
 }

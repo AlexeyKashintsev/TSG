@@ -73,21 +73,21 @@ function Calculations() {
                                     sums.GetSum(cursor.per_sums_id),
                                     'SCALC');
                         } catch (e) {
-                            Logger.warning('Ошибка расчета начисления по услуге' +cursor.services_id + 'в квартире  ' + aFlatID);
+                            Logger.warning('Ошибка расчета начисления по услуге ' +cursor.services_id + ' в квартире  ' + aFlatID);
                         }
                         try {
                             cursor.benefit = formulEval.calculate('0',
                                     sums.GetSum(cursor.per_sums_id),
                                     'BENEFIT');
                         } catch (e) {
-                            Logger.warning('Ошибка расчета льготы по услуге' +cursor.services_id + 'в квартире ' + aFlatID);
+                            Logger.warning('Ошибка расчета льготы по услуге ' +cursor.services_id + ' в квартире ' + aFlatID);
                         }
                         try {
                             cursor.recalc = formulEval.calculate(cursor.recalc ? 'RECALC' : '0',
                                     sums.GetSum(cursor.per_sums_id),
                                     'RECALC');
                         } catch (e) {
-                            Logger.warning('Ошибка расчета суммы перерасчета по услуге' +cursor.services_id + 'в квартире  ' + aFlatID);
+                            Logger.warning('Ошибка расчета суммы перерасчета по услуге ' +cursor.services_id + ' в квартире  ' + aFlatID);
                         }
                         ;
                         try {
@@ -95,7 +95,7 @@ function Calculations() {
                                     sums.GetSum(cursor.per_sums_id),
                                     'FULL_CALC');
                         } catch (e) {
-                            Logger.warning('Ошибка расчета полного значения по услуге' +cursor.services_id + 'в квартире  ' + aFlatID);
+                            Logger.warning('Ошибка расчета полного значения по услуге ' +cursor.services_id + ' в квартире  ' + aFlatID);
                         }
                         (function() {
                             progress.increaseValue(1);

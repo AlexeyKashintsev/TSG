@@ -27,10 +27,10 @@ function btFlatNumEnterMouseClicked(evt) {//GEN-FIRST:event_btFlatNumEnterMouseC
 }//GEN-LAST:event_btFlatNumEnterMouseClicked
 
 function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
-    if (self.parFlatID&&self.parDateID)
+    if (self.parFlatID&&self.parDateID&&model.params.parSum !== 0)
         modSal.addOplata(self.parFlatID, self.parSessionID, self.parDateID,
                          self.parSum, self.parDate, self.parComment);
-    self.model.save();
+    model.save();
     self.parFlatID = null;
     self.parSum = 0;
     self.tfFlatNumber.text = '';
