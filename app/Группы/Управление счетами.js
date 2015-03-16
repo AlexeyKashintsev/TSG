@@ -43,7 +43,7 @@ function processVisible(){
         var fmBankSel = new formBankParams();
         fmBankSel.isSelectForm = true;
         fmBankSel.showModal(function(aValue){
-            self.dsGroupByID.bank = aValue;
+            model.dsAllAccounts.cursor.bank = aValue;
         });
     }//GEN-LAST:event_colBankOnSelect
 

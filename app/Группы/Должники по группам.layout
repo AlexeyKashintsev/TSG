@@ -115,7 +115,7 @@
   <widget name="label4" parent="panel" prefHeight="36px" prefWidth="96px" text="Сумма долга" type="LabelDesignInfo">
     <constraints bottom="0px" height="36px" left="408px" type="MarginConstraintsDesignInfo" width="96px"/>
   </widget>
-  <widget editable="false" name="modelFormattedField1" parent="panel" prefHeight="36px" prefWidth="132px" type="DbLabelDesignInfo">
+  <widget editable="false" format="#0.00" name="modelFormattedField1" parent="panel" prefHeight="36px" prefWidth="132px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="142650706398474" fieldName="sum"/>
     <constraints bottom="0px" height="36px" right="70px" type="MarginConstraintsDesignInfo" width="132px"/>
   </widget>
