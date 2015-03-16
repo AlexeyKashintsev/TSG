@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parameters>
     <parameter description="" name="groupID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="accountID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="6" entityWidth="150"/>
-  <entity Title="grp_bank" entityHeight="200" entityIconified="false" entityId="138918223126347" entityLocationX="434" entityLocationY="11" entityWidth="150" tableAlias="t" tableName="grp_bank" tableSchemaName=""/>
-  <entity Title="Группы квартир" entityHeight="200" entityIconified="false" entityId="138918222276611" entityLocationX="215" entityLocationY="2" entityWidth="150" tableAlias="t1" tableName="grp_groups" tableSchemaName=""/>
-  <relation leftEntityFieldName="bank" leftEntityId="138918222276611" rightEntityFieldName="grp_bank_id" rightEntityId="138918223126347"/>
-  <relation leftEntityId="-1" leftEntityParameterName="groupID" rightEntityFieldName="grp_groups_id" rightEntityId="138918222276611"/>
+  <entity Title="grp_bank" entityHeight="200" entityIconified="false" entityId="138918223126347" entityLocationX="522" entityLocationY="7" entityWidth="150" tableAlias="t" tableName="grp_bank" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142650358495320" entityLocationX="234" entityLocationY="20" entityWidth="150" tableAlias="t2" tableName="grp_accounts_in_group" tableSchemaName=""/>
+  <relation leftEntityFieldName="bank_id" leftEntityId="142650358495320" rightEntityFieldName="grp_bank_id" rightEntityId="138918223126347"/>
+  <relation leftEntityId="-1" leftEntityParameterName="accountID" rightEntityFieldName="account_id" rightEntityId="142650358495320"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupID" rightEntityFieldName="group_id" rightEntityId="142650358495320"/>
 </datamodel>

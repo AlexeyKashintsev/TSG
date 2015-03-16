@@ -32,6 +32,7 @@ function BillsBuilder_Doverie() {
        // self.model.params.parDateID = 138408451934673;
        // self.model.params.parGroupID = 139135094067101;
         self.dsGroupAndBank.params.groupID = self.dsFlatByIDorByGroup.cursor.group_id;
+        self.dsGroupAndBank.params.accountID = model.params.parAccountID;
         self.dsGroupAndBank.requery();
         self.Group = {
                 grp_name: self.dsGroupAndBank.grp_name,
@@ -43,7 +44,8 @@ function BillsBuilder_Doverie() {
                 bank_bik: self.dsGroupAndBank.bank_bik,
                 bank_correction: self.dsGroupAndBank.bank_correction,
                 group_inn:  self.dsGroupAndBank.group_inn,
-                group_kpp:  self.dsGroupAndBank.group_kpp
+                group_kpp:  self.dsGroupAndBank.group_kpp,
+                percent: self.dsGroupAndBank.percent
         };
         var flats = [];
         var fc = 0;
