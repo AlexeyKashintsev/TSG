@@ -105,10 +105,11 @@ function Calculations() {
                         progress.setDescription("Сохранение значений расчета начислений");
                     }).invokeAndWait();
                     model.save();
-                    saldoClc.calculateFlatSaldo(aGroupID, aFlatID, aDateID);
                     (function() {
                         progress.close();
                     }).invokeAndWait();
+                    saldoClc.calculateFlatSaldo(aGroupID, aFlatID, aDateID);
+
                     return true;
                 } else {
                     (function() {

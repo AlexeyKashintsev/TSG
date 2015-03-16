@@ -6,18 +6,24 @@
 function CalculateFlatSaldo() {
     var self = this, model = this.model;
     var peniClc = new CalculatePeni();
+    var progress = new ProgressShow();
     
     
     self.calculateFlatSaldo = function(aGroupID, aFlatID, aDateID) {
+        (function(){
         model.params.parDateID = aDateID;
         model.params.parFlatID = aFlatID;
         model.params.parGroupID = aGroupID;
 
-        model.dsAllAccounts.forEach(function(cursor){
+        model.dsAllAccounts.forEach(function(cursor){            
             model.params.parAccountID = cursor.grp_account_id;
             model.dsSumOfSums.requery();
             model.dsSumOfPayments.requery();
             model.dsSaldo4calc.requery();
+            progress.setMax(self.dsSaldo4calc.length);
+            (function() {
+                progress.setDescription("Расчет сальдо по счету "+ cursor.account_name);
+            }).invokeAndWait();
             model.dsSaldo4calc.forEach(function(){
                 //Logger.info("Расчет сальдо в квартире: " + self.dsSaldo4calc.cursor.lc_id);                
                 var sc = getSumOfSums(cursor.account_name);
@@ -55,16 +61,21 @@ function CalculateFlatSaldo() {
                 self.dsSaldo4calc.sal_end = endSum;
                 self.dsSaldo4calc.sal_penalties_cur = peni;
 
-                /*(function() {
+                (function() {
                     progress.increaseValue(1);
-                }).invokeAndWait();*/
+                }).invokeAndWait();
             });
         });
-            /*(function() {
+            (function() {
                 progress.setDescription("Сохранение финальных значений");
-            }).invokeAndWait();*/
+            }).invokeAndWait();
             model.save();
-        };
+            (function() {
+                progress.close();
+            }).invokeAndWait();
+        }).invokeBackground();
+        progress.showModal();
+    };
         
         function getSumOfSums(anAccount){
             var sa;
