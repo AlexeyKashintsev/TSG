@@ -4,5 +4,6 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="dsAccountsByGroup" Title="" entityHeight="200" entityIconified="false" entityId="142357593167184" entityLocationX="265" entityLocationY="9" entityWidth="150" queryId="dsAccountsByGroup" tableName="" tableSchemaName=""/>
+  <entity Name="bank_queries" Title="" entityHeight="200" entityIconified="false" entityId="142649469837529" entityLocationX="476" entityLocationY="31" entityWidth="150" queryId="bank_queries" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="142357593167184" rightEntityParameterName="GroupId"/>
 </datamodel>

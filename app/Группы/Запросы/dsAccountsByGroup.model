@@ -5,6 +5,6 @@
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142373316178183" entityLocationX="457" entityLocationY="20" entityWidth="150" tableAlias="t" tableName="grp_account" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142357590293766" entityLocationX="229" entityLocationY="3" entityWidth="150" tableAlias="t1" tableName="grp_accounts_in_group" tableSchemaName=""/>
-  <relation leftEntityFieldName="account_id" leftEntityId="142357590293766" rightEntityFieldName="grp_account_id" rightEntityId="142373316178183"/>
   <relation leftEntityId="-1" leftEntityParameterName="GroupId" rightEntityFieldName="group_id" rightEntityId="142357590293766"/>
+  <relation leftEntityFieldName="account_id" leftEntityId="142357590293766" rightEntityFieldName="grp_account_id" rightEntityId="142373316178183"/>
 </datamodel>

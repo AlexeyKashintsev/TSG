@@ -3,7 +3,7 @@
     <constraints place="North" type="BorderLayoutConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="pnlWorkSpace" parent="Form" prefHeight="281px" prefWidth="494px" type="PanelDesignInfo">
@@ -12,23 +12,11 @@
   </widget>
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="281px" prefWidth="494px" type="DbGridDesignInfo">
     <column name="colGrp_fname" title="Наименование организации">
-      <datamodelElement entityId="138840916883800" fieldName="grp_fname"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
+      <datamodelElement entityId="138840916883800" fieldName="grp_fname"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-    </column>
-    <column name="Grp_short_name" title="Короткое название">
-      <datamodelElement entityId="138840916883800" fieldName="grp_short_name"/>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -37,13 +25,28 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+    </column>
+    <column name="Grp_short_name" title="Короткое название">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138840916883800" fieldName="grp_short_name"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
     </column>
     <column name="colBank_name" title="Наименование банка">
-      <datamodelElement entityId="138840916883800" fieldName="bank_name"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138840916883800" fieldName="bank_name"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -52,13 +55,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colBank_account" title="Р/сч">
-      <datamodelElement entityId="138840916883800" fieldName="bank_account"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138840916883800" fieldName="bank_account"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -67,13 +70,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colBank_bik" title="БИК">
-      <datamodelElement entityId="138840916883800" fieldName="bank_bik"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138840916883800" fieldName="bank_bik"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -82,13 +85,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colBank_correction" title="Кор/сч">
-      <datamodelElement entityId="138840916883800" fieldName="bank_correction"/>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138840916883800" fieldName="bank_correction"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -97,9 +100,6 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138840916883800" field="false"/>

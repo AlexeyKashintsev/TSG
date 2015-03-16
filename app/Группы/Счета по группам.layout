@@ -10,8 +10,8 @@
     <layout type="MarginLayoutDesignInfo"/>
     <constraints place="Center" type="BorderLayoutConstraintsDesignInfo"/>
   </widget>
-  <widget name="modelGrid" parent="pnlAccounts" prefHeight="264px" prefWidth="396px" type="DbGridDesignInfo">
-    <column name="colAccounts" title="Счета">
+  <widget name="modelGrid" parent="pnlAccounts" prefHeight="269px" prefWidth="400px" type="DbGridDesignInfo">
+    <column name="colAccounts" title="Счет">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="142357593167184" fieldName="account_name"/>
       <headerStyle>
@@ -26,11 +26,29 @@
         <cellValueField/>
       </cellDesignInfo>
     </column>
-    <treeDesignInfo/>
+    <column name="colBank" title="Банк">
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <valueField entityId="142649469837529" fieldName="grp_bank_id"/>
+        <displayField entityId="142649469837529" fieldName="bank_name"/>
+      </controlInfo>
+      <datamodelElement entityId="142357593167184" fieldName="bank_id"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+    </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="142357593167184" field="false"/>
     </rowsColumnsDesignInfo>
-    <constraints bottom="5px" left="0px" right="4px" top="0px" type="MarginConstraintsDesignInfo"/>
+    <treeDesignInfo/>
+    <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="BorderLayoutDesignInfo"/>
 </layout>

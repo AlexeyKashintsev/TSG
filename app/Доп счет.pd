@@ -3,7 +3,7 @@
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="142356749769837" entityLocationX="410" entityLocationY="182" entityWidth="150" tableName="lc_flat_services"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="142356808345683" entityLocationX="211" entityLocationY="310" entityWidth="150" tableName="opl_sessions"/>
   <fieldsEntity entityHeight="161" entityIconified="false" entityId="142356749770668" entityLocationX="412" entityLocationY="8" entityWidth="150" tableName="usl_tarif"/>
-  <fieldsEntity entityHeight="87" entityIconified="false" entityId="142356824048161" entityLocationX="210" entityLocationY="64" entityWidth="150" tableName="grp_accounts_in_group"/>
+  <fieldsEntity entityHeight="104" entityIconified="false" entityId="142356824048161" entityLocationX="210" entityLocationY="64" entityWidth="150" tableName="grp_accounts_in_group"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="142356808308220" entityLocationX="15" entityLocationY="294" entityWidth="150" tableName="opl_payments"/>
   <fieldsEntity entityHeight="243" entityIconified="false" entityId="142356749769744" entityLocationX="12" entityLocationY="15" entityWidth="150" tableName="grp_services"/>
   <fieldsEntity entityHeight="268" entityIconified="false" entityId="142356749770102" entityLocationX="622" entityLocationY="9" entityWidth="150" tableName="per_saldo_flat"/>

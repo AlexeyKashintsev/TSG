@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="384px" prefWidth="730px" windowOpened="formWindowOpened">
-  <widget name="panel" parent="Form" prefHeight="388px" prefWidth="736px" type="PanelDesignInfo">
+  <widget name="panel" parent="Form" prefHeight="384px" prefWidth="730px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
-    <constraints bottom="-4px" left="0px" right="-6px" top="0px" type="MarginConstraintsDesignInfo"/>
+    <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="panel1" parent="panel" prefHeight="33px" prefWidth="731px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
@@ -32,11 +32,7 @@
     <datamodelElement entityId="-1" fieldName="parGroup"/>
     <constraints height="20px" left="240px" top="10px" type="MarginConstraintsDesignInfo" width="100px"/>
   </widget>
-  <widget name="modelGrid1" parent="panel" prefHeight="352px" prefWidth="736px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="142321101592134" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
+  <widget name="modelGrid1" parent="panel" prefHeight="312px" prefWidth="730px" type="DbGridDesignInfo">
     <column name="colGroupName" title="Группа">
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="142314144814038" fieldName="grp_groups_id"/>
@@ -50,9 +46,9 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colFlatNumber" title="№">
@@ -65,9 +61,9 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colFlatRegTo" title="ФИО">
@@ -80,9 +76,9 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colDebt" title="Долг">
@@ -95,12 +91,30 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
-    <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="142321101592134" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <constraints bottom="36px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label3" parent="panel" prefHeight="36px" prefWidth="108px" text="Итого должников" type="LabelDesignInfo">
+    <constraints bottom="0px" height="36px" left="204px" type="MarginConstraintsDesignInfo" width="108px"/>
+  </widget>
+  <widget name="modelFormattedField" parent="panel" prefHeight="36px" prefWidth="100px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="142321101592134" fieldName="Col"/>
+    <constraints bottom="0px" height="36px" left="312px" type="MarginConstraintsDesignInfo" width="100px"/>
+  </widget>
+  <widget name="label4" parent="panel" prefHeight="36px" prefWidth="72px" text="Сумма долга" type="LabelDesignInfo">
+    <constraints bottom="0px" height="36px" left="432px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget name="modelFormattedField1" parent="panel" prefHeight="36px" prefWidth="100px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="142321101592134" fieldName="sum_debt"/>
+    <constraints bottom="0px" height="36px" right="102px" type="MarginConstraintsDesignInfo" width="100px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>
