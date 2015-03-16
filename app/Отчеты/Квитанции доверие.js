@@ -34,6 +34,11 @@ function BillsBuilder_Doverie() {
         self.dsGroupAndBank.params.groupID = self.dsFlatByIDorByGroup.cursor.group_id;
         self.dsGroupAndBank.params.accountID = model.params.parAccountID;
         self.dsGroupAndBank.requery();
+        if (self.dsGroupAndBank.percent != 0){
+            var raschet = model.saldo_by_flat.cursor.sal_end*100/(100-self.dsGroupAndBank.percent)- model.saldo_by_flat.cursor.sal_end;
+            raschet = raschet.toFixed(2);
+            var percent = '(C учетом '+self.dsGroupAndBank.percent+'%банка = '+ raschet +'руб.)'
+        };
         self.Group = {
                 grp_name: self.dsGroupAndBank.grp_name,
                 grp_address: self.dsGroupAndBank.grp_address,
@@ -68,12 +73,11 @@ function BillsBuilder_Doverie() {
                     self.counters_values_by_flat.requery();
 
                     //self.model.dsLC_byid.cursor.lc_flatnumber;
-
                     Logger.info(Flat.lc_id);
 
                     var lc_saldo = {
                         begin:      model.saldo_by_flat.cursor.sal_begin, 
-                        end:        model.saldo_by_flat.cursor.sal_end,  
+                        end:        model.saldo_by_flat.cursor.sal_end*100/(100-self.dsGroupAndBank.percent),  
                         calc:       model.saldo_by_flat.cursor.sal_calc,
                         benefit:    model.saldo_by_flat.cursor.sal_benefit,  
                         payments:   model.saldo_by_flat.cursor.sal_payments,  
@@ -172,7 +176,8 @@ function BillsBuilder_Doverie() {
                         payDay:         payDay,
                         barcode:        barCodeStr,
                         bk:             bcn,
-                        counters4ask:   askCounters
+                        counters4ask:   askCounters,
+                        percent:        percent
                     };
 
                    // lc_data.saldo.begin;
