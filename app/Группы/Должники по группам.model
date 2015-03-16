@@ -9,12 +9,18 @@
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="19" entityLocationY="24" entityWidth="150"/>
   <entity Name="debt_by_group" Title="" entityHeight="200" entityIconified="false" entityId="142321101592134" entityLocationX="498" entityLocationY="57" entityWidth="150" queryId="debt_by_group" tableName="" tableSchemaName=""/>
   <entity Name="groups_query" Title="" entityHeight="200" entityIconified="false" entityId="142314144814038" entityLocationX="232" entityLocationY="89" entityWidth="150" queryId="qMainGroups" tableName="" tableSchemaName=""/>
+  <entity Name="all_dates" Title="" entityHeight="200" entityIconified="false" entityId="142650827679667" entityLocationX="416" entityLocationY="276" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
+  <entity Name="dsStatDebt" Title="" entityHeight="200" entityIconified="false" entityId="142650706398474" entityLocationX="690" entityLocationY="112" entityWidth="150" queryId="dsStatDebt" tableName="" tableSchemaName=""/>
   <entity Name="dsAllAccounts" Title="" entityHeight="200" entityIconified="false" entityId="142417365700052" entityLocationX="33" entityLocationY="229" entityWidth="150" queryId="dsAllAccounts" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="142321101592134" rightEntityParameterName="group_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDebt" rightEntityId="142321101592134" rightEntityParameterName="debt"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142321101592134" rightEntityParameterName="date_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="show_all_options" rightEntityId="142314144814038" rightEntityParameterName="show_all_option"/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142321101592134" rightEntityParameterName="account_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDebt" rightEntityId="142650706398474" rightEntityParameterName="debt"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDebt" rightEntityId="142321101592134" rightEntityParameterName="debt"/>
+  <relation leftEntityId="-1" leftEntityParameterName="show_all_options" rightEntityId="142314144814038" rightEntityParameterName="show_all_option"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142650706398474" rightEntityParameterName="account_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142321101592134" rightEntityParameterName="date_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="142321101592134" rightEntityParameterName="group_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142650706398474" rightEntityParameterName="date_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="142650706398474" rightEntityParameterName="group_id"/>
   <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="142314144814038" rightEntityFieldName="grp_groups_id" rightEntityId="142314144814038"/>
   <referenceRelation leftEntityFieldName="group_id" leftEntityId="142321101592134" rightEntityFieldName="grp_groups_id" rightEntityId="142314144814038"/>
 </datamodel>
