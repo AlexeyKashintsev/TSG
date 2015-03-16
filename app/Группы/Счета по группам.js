@@ -30,14 +30,14 @@ function fmAccountsByGroup() {
     }//GEN-LAST:event_btnAddActionPerformed
 
     function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
-    if (self.model.modified&&confirm('Сохранить изменения?')){
-        self.model.save();
+    if (model.modified&&confirm('Сохранить изменения?')){
+        model.save();
     }
-    self.model.requery();
+    model.requery();
     }//GEN-LAST:event_btnReqActionPerformed
 
     function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
-    self.model.save();
+    model.save();
     }//GEN-LAST:event_btnSaveActionPerformed
 
     function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
