@@ -27,7 +27,7 @@ paramSynchronizer.addListener(this);
 
     function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
         var dateDebt = '';
-        var date = self.all_dates.findById(model.params.parDateBeg).per_date;
+        var date = self.all_dates.findById(model.params.parDateID).per_date;
         var monthNames = [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
                "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ];
         dateDebt = (monthNames[date.getMonth()]+" "+date.getFullYear());
