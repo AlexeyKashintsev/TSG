@@ -24,27 +24,27 @@ function CalculateFlatSaldo() {
             (function() {
                 progress.setDescription("Расчет сальдо по счету "+ cursor.account_name);
             }).invokeAndWait();
-            model.dsSaldo4calc.forEach(function(){
+            model.dsSaldo4calc.forEach(function(saldo){
                 //Logger.info("Расчет сальдо в квартире: " + self.dsSaldo4calc.cursor.lc_id);                
-                var sc = getSumOfSums(cursor.account_name);
-                var sp = self.dsSumOfPayments.find(self.dsSumOfPayments.schema.flat_id, self.dsSaldo4calc.lc_id);
-                var peni = peniClc.calculate(self.dsSaldo4calc.lc_id, self.model.params.parDateID, model.params.parAccountID);
+                var sc = getSumOfSums(cursor.account_name, saldo.lc_id);
+                var sp = model.dsSumOfPayments.find(model.dsSumOfPayments.schema.flat_id, saldo.lc_id);
+                var peni = peniClc.calculate(saldo.lc_id, model.params.parDateID, model.params.parAccountID);
                 var peniOld = peni.previous;
-                var saldoOld = peni.saldo ? peni.saldo : self.dsSaldo4calc.sal_begin;
+                var saldoOld = peni.saldo ? peni.saldo : saldo.sal_begin;
                 peni = peni.current;
-                self.dsSaldo4calc.sal_penalties_old = peniOld;
+                saldo.sal_penalties_old = peniOld;
 
                 if (sp.length == 1)
                     sp = sp[0];
                 else
                     sp.pay_sum = 0;
-                self.dsSaldo4calc.sal_begin = saldoOld;
-                self.dsSaldo4calc.sal_calc = sc.sal_calc;
-                self.dsSaldo4calc.sal_benefit = sc.sal_benefit;
-                self.dsSaldo4calc.sal_recalc = sc.sal_recalc;
-                self.dsSaldo4calc.sal_full_calc = sc.sal_full_calc;
-                self.dsSaldo4calc.sal_payments = sp.pay_sum;
-                var endSum = self.dsSaldo4calc.sal_begin - sp.pay_sum;
+                saldo.sal_begin = saldoOld;
+                saldo.sal_calc = sc.sal_calc;
+                saldo.sal_benefit = sc.sal_benefit;
+                saldo.sal_recalc = sc.sal_recalc;
+                saldo.sal_full_calc = sc.sal_full_calc;
+                saldo.sal_payments = sp.pay_sum;
+                var endSum = saldo.sal_begin - sp.pay_sum;
                 if (endSum < 0 && peniOld > 0) {
                     var extra = -endSum;
                     if (extra >= peniOld) {
@@ -58,18 +58,18 @@ function CalculateFlatSaldo() {
                 }
                 peni += peniOld;
                 endSum += sc.sal_full_calc;
-                self.dsSaldo4calc.sal_end = endSum;
-                self.dsSaldo4calc.sal_penalties_cur = peni;
+                saldo.sal_end = endSum;
+                saldo.sal_penalties_cur = peni;
 
                 (function() {
                     progress.increaseValue(1);
                 }).invokeAndWait();
             });
-        });
             (function() {
                 progress.setDescription("Сохранение финальных значений");
             }).invokeAndWait();
             model.save();
+        });
             (function() {
                 progress.close();
             }).invokeAndWait();
@@ -77,11 +77,11 @@ function CalculateFlatSaldo() {
         progress.showModal();
     };
         
-        function getSumOfSums(anAccount){
+        function getSumOfSums(anAccount, aLCID){
             var sa;
 //            model.dsSumOfSums.requery();
-            if (model.dsSumOfSums.find(model.dsSumOfSums.schema.lc_id, model.dsSaldo4calc.lc_id).length !== 0)
-                sa = model.dsSumOfSums.find(model.dsSumOfSums.schema.lc_id, model.dsSaldo4calc.lc_id)[0];
+            if (model.dsSumOfSums.find(model.dsSumOfSums.schema.lc_id, aLCID).length !== 0)
+                sa = model.dsSumOfSums.find(model.dsSumOfSums.schema.lc_id, aLCID)[0];
             else {
                 sa = {
                     sal_calc:       0,
