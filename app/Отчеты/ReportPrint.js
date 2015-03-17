@@ -12,7 +12,7 @@ function ReportPrint() {
             processSingleFlat(aPrint, model.params.FlatID);
         } else {
             model.flats_by_group.beforeFirst();
-            if (confirm('Вы собираетесь открыть '+model.flats_by_group.length+' файлов'))
+            if (confirm('Вы собираетесь открыть '+ (model.params.flatTo - model.params.flatFrom + 1) +' файлов'))
             {while (model.flats_by_group.next())
                 if ((!model.params.flatFrom && !model.params.flatTo) || 
                    ((model.params.flatFrom <= model.flats_by_group.lc_flatnumber) && (model.params.flatTo >= model.flats_by_group.lc_flatnumber)))
