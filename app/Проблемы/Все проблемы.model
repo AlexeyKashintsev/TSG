@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="issues_type" Title="" entityHeight="200" entityIconified="false" entityId="142303757410945" entityLocationX="463" entityLocationY="36" entityWidth="150" queryId="issues_type" tableName="" tableSchemaName=""/>
+  <entity Name="testSource" Title="" entityHeight="200" entityIconified="false" entityId="142660033295355" entityLocationX="698" entityLocationY="47" entityWidth="150" queryId="testSource" tableName="" tableSchemaName=""/>
   <entity Name="allIssues" Title="" entityHeight="200" entityIconified="false" entityId="142260705832811" entityLocationX="263" entityLocationY="7" entityWidth="150" queryId="allIssues" tableName="" tableSchemaName=""/>
+  <entity Name="issues_type" Title="" entityHeight="200" entityIconified="false" entityId="142303757410945" entityLocationX="463" entityLocationY="36" entityWidth="150" queryId="issues_type" tableName="" tableSchemaName=""/>
 </datamodel>
