@@ -7,12 +7,13 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="Сальдо по квартире" entityHeight="200" entityIconified="false" entityId="139224107793726" entityLocationX="350" entityLocationY="8" entityWidth="150" tableAlias="t2" tableName="per_saldo_flat" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="142305086906247" entityLocationX="518" entityLocationY="5" entityWidth="150" queryId="DateGroupView" tableAlias="q" tableName="" tableSchemaName=""/>
   <entity Title="Квартиры в группах" entityHeight="200" entityIconified="false" entityId="139224102803969" entityLocationX="178" entityLocationY="8" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAccount" rightEntityFieldName="account_id" rightEntityId="139224107793726"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityFieldName="group_id" rightEntityId="139224102803969"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142305086906247" rightEntityParameterName="parDateEnd"/>
-  <relation leftEntityFieldName="per_date_id" leftEntityId="142305086906247" rightEntityFieldName="date_id" rightEntityId="139224107793726"/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="139224102803969" rightEntityFieldName="lc_id" rightEntityId="139224107793726"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142305086906247" entityLocationX="518" entityLocationY="5" entityWidth="150" queryId="DateGroupView" tableAlias="q" tableName="" tableSchemaName=""/>
+  <relation leftEntityFieldName="sal_penalties_cur" leftEntityId="139224107793726" rightEntityFieldName="sal_penalties_old" rightEntityId="139224107793726"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateBeg" rightEntityId="142305086906247" rightEntityParameterName="parDateBeg"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="139224102803969" rightEntityFieldName="lc_id" rightEntityId="139224107793726"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccount" rightEntityFieldName="account_id" rightEntityId="139224107793726"/>
+  <relation leftEntityFieldName="per_date_id" leftEntityId="142305086906247" rightEntityFieldName="date_id" rightEntityId="139224107793726"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142305086906247" rightEntityParameterName="parDateEnd"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityFieldName="group_id" rightEntityId="139224102803969"/>
 </datamodel>

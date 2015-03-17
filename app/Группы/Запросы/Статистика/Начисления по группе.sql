@@ -12,11 +12,9 @@ From grp_lc_group t1
  Inner Join #DateGroupView q on q.per_date_id = t.date_id
  Left Join usl_services t3 on t2.services_id = t3.usl_services_id
  Left Join grp_services t4 on t2.services_id = t4.services_id
+         and t1.group_id = t4.group_id and :parAccount = t4.account_id
  Where (:groupID = t1.group_id or :all_flats = true)
  and :parAccount = t2.account_id
- and (t.calc <> null or t.calc <> 0)
- and (t.full_calc <> null or t.full_calc <> 0)
- and :groupID = t4.group_id
- and :parAccount = t4.account_id
+
  Group by t2.services_id, t3.usl_name, t4.grp_services_id
  order by t4.grp_services_id

@@ -7,21 +7,21 @@
     <parameter description="" name="all_flats" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="16" typeName="BOOLEAN"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="142349238075074" entityLocationX="689" entityLocationY="12" entityWidth="150" tableAlias="t3" tableName="usl_services" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="142658565056275" entityLocationX="359" entityLocationY="236" entityWidth="150" tableAlias="t4" tableName="grp_services" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="142305323628181" entityLocationX="513" entityLocationY="16" entityWidth="150" queryId="DateGroupView" tableAlias="q" tableName="" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="139470271674698" entityLocationX="178" entityLocationY="236" entityWidth="150" tableAlias="t" tableName="per_sums" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="139470271674697" entityLocationX="347" entityLocationY="14" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="139470271674696" entityLocationX="179" entityLocationY="12" entityWidth="150" tableAlias="t2" tableName="lc_flat_services" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="groupID" rightEntityFieldName="group_id" rightEntityId="142658565056275"/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="139470271674697" rightEntityFieldName="lc_id" rightEntityId="139470271674696"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142658565056275" entityLocationX="446" entityLocationY="30" entityWidth="150" tableAlias="t4" tableName="grp_services" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139470271674696" entityLocationX="187" entityLocationY="31" entityWidth="150" tableAlias="t2" tableName="lc_flat_services" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139470271674697" entityLocationX="615" entityLocationY="104" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142349238075074" entityLocationX="798" entityLocationY="20" entityWidth="150" tableAlias="t3" tableName="usl_services" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139470271674698" entityLocationX="207" entityLocationY="234" entityWidth="150" tableAlias="t" tableName="per_sums" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142305323628181" entityLocationX="21" entityLocationY="241" entityWidth="150" queryId="DateGroupView" tableAlias="q" tableName="" tableSchemaName=""/>
+  <relation leftEntityFieldName="group_id" leftEntityId="139470271674697" rightEntityFieldName="group_id" rightEntityId="142658565056275"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateIDEnd" rightEntityId="142305323628181" rightEntityParameterName="parDateEnd"/>
   <relation leftEntityFieldName="services_id" leftEntityId="139470271674696" rightEntityFieldName="services_id" rightEntityId="142658565056275"/>
-  <relation leftEntityFieldName="per_date_id" leftEntityId="142305323628181" rightEntityFieldName="date_id" rightEntityId="139470271674698"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccount" rightEntityFieldName="account_id" rightEntityId="142658565056275"/>
   <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="139470271674696" rightEntityFieldName="flat_service_id" rightEntityId="139470271674698"/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccount" rightEntityFieldName="account_id" rightEntityId="139470271674696"/>
-  <relation leftEntityId="-1" leftEntityParameterName="dateIDBeg" rightEntityId="142305323628181" rightEntityParameterName="parDateBeg"/>
-  <relation leftEntityId="-1" leftEntityParameterName="groupID" rightEntityFieldName="group_id" rightEntityId="139470271674697"/>
-  <relation leftEntityId="-1" leftEntityParameterName="dateIDEnd" rightEntityId="142305323628181" rightEntityParameterName="parDateEnd"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAccount" rightEntityFieldName="account_id" rightEntityId="142658565056275"/>
   <relation leftEntityFieldName="services_id" leftEntityId="139470271674696" rightEntityFieldName="usl_services_id" rightEntityId="142349238075074"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="139470271674697" rightEntityFieldName="lc_id" rightEntityId="139470271674696"/>
+  <relation leftEntityFieldName="per_date_id" leftEntityId="142305323628181" rightEntityFieldName="date_id" rightEntityId="139470271674698"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupID" rightEntityFieldName="group_id" rightEntityId="139470271674697"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateIDBeg" rightEntityId="142305323628181" rightEntityParameterName="parDateBeg"/>
 </datamodel>
