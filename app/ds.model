@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="DateBeg" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="DateEnd" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142668953281252" entityLocationX="249" entityLocationY="10" entityWidth="150" queryId="saldoWithProblem" tableAlias="t" tableName="" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142668788726559" entityLocationX="516" entityLocationY="10" entityWidth="150" queryId="saldoWithProblem" tableAlias="q" tableName="" tableSchemaName=""/>
+  <relation leftEntityFieldName="lc_flat_id" leftEntityId="142668953281252" rightEntityFieldName="lc_flat_id" rightEntityId="142668788726559"/>
+  <relation leftEntityId="-1" leftEntityParameterName="DateBeg" rightEntityId="142668953281252" rightEntityParameterName="dateID"/>
+  <relation leftEntityId="-1" leftEntityParameterName="DateEnd" rightEntityId="142668788726559" rightEntityParameterName="dateID"/>
+  <relation leftEntityFieldName="sal_begin" leftEntityId="142668953281252" rightEntityFieldName="sal_end" rightEntityId="142668788726559"/>
+</datamodel>

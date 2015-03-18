@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="dateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142668818953173" entityLocationX="741" entityLocationY="216" entityWidth="150" tableAlias="t3" tableName="grp_groups" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142668693928180" entityLocationX="387" entityLocationY="6" entityWidth="150" tableAlias="t" tableName="lc_flat" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142668690859338" entityLocationX="194" entityLocationY="6" entityWidth="150" tableAlias="t1" tableName="per_saldo_flat" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142668817640619" entityLocationX="734" entityLocationY="8" entityWidth="150" tableAlias="t2" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142668806892133" entityLocationX="563" entityLocationY="6" entityWidth="150" queryId="all_dates" tableAlias="q" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateID" rightEntityFieldName="date_id" rightEntityId="142668690859338"/>
+  <relation leftEntityFieldName="date_id" leftEntityId="142668690859338" rightEntityFieldName="per_date_id" rightEntityId="142668806892133"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="142668690859338" rightEntityFieldName="lc_flat_id" rightEntityId="142668693928180"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="142668817640619" rightEntityFieldName="grp_groups_id" rightEntityId="142668818953173"/>
+  <relation leftEntityFieldName="lc_flat_id" leftEntityId="142668693928180" rightEntityFieldName="lc_id" rightEntityId="142668817640619"/>
+</datamodel>

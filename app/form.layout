@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="400px">
+  <widget name="modelGrid" parent="Form" prefHeight="252px" prefWidth="396px" type="DbGridDesignInfo">
+    <column name="column">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <datamodelElement entityId="142668810043732" fieldName="lc_regto"/>
+    </column>
+    <column name="column1">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <datamodelElement entityId="142668810043732" fieldName="lc_flatnumber"/>
+    </column>
+    <column name="column2">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <datamodelElement entityId="142668810043732" fieldName="TextDate"/>
+    </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="142668810043732" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <constraints height="252px" left="0px" top="48px" type="MarginConstraintsDesignInfo" width="396px"/>
+  </widget>
+  <widget name="modelCombo" parent="Form" prefHeight="20px" prefWidth="100px" type="DbComboDesignInfo">
+    <valueField entityId="142668754532878" fieldName="per_date_id"/>
+    <displayField entityId="142668754532878" fieldName="TextDate"/>
+    <datamodelElement entityId="-1" fieldName="DateBeg"/>
+    <constraints height="20px" left="12px" top="12px" type="MarginConstraintsDesignInfo" width="100px"/>
+  </widget>
+  <widget name="modelCombo1" parent="Form" prefHeight="20px" prefWidth="100px" type="DbComboDesignInfo">
+    <valueField entityId="142668754532878" fieldName="per_date_id"/>
+    <displayField entityId="142668754532878" fieldName="TextDate"/>
+    <datamodelElement entityId="-1" fieldName="DateEnd"/>
+    <constraints height="20px" left="144px" top="12px" type="MarginConstraintsDesignInfo" width="100px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

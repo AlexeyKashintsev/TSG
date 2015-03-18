@@ -89,6 +89,7 @@ function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
         model.params.parFlatID = Flat = self.issues_by_group.lc_flat_id;
     }//GEN-LAST:event_modelGridMouseClicked
 
+
     function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
         fmIssuesByFlat.mainForm = self.mainForm;
         fmIssuesByFlat.parentForm = self;
@@ -150,4 +151,9 @@ function btnDelActionPerformed(evt) {//GEN-FIRST:event_btnDelActionPerformed
         } finally {
         };
     }//GEN-LAST:event_issues_by_groupOnRequeried
+
+    function issues_by_groupOnScrolled(evt) {//GEN-FIRST:event_issues_by_groupOnScrolled
+        self.setCurrentFlat(self.issues_by_group.lc_flat_id);
+        model.params.parFlatID = Flat = self.issues_by_group.lc_flat_id;  
+    }//GEN-LAST:event_issues_by_groupOnScrolled
 }

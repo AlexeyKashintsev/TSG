@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="DateBeg" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="DateEnd" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="all_dates" Title="" entityHeight="200" entityIconified="false" entityId="142668754532878" entityLocationX="655" entityLocationY="39" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
+  <entity Name="ds" Title="" entityHeight="200" entityIconified="false" entityId="142668810043732" entityLocationX="294" entityLocationY="55" entityWidth="150" queryId="ds" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="DateEnd" rightEntityId="142668810043732" rightEntityParameterName="DateEnd"/>
+  <relation leftEntityId="-1" leftEntityParameterName="DateBeg" rightEntityId="142668810043732" rightEntityParameterName="DateBeg"/>
+</datamodel>
