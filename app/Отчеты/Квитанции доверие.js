@@ -87,7 +87,7 @@ function BillsBuilder_Doverie() {
                         penalties_old: model.saldo_by_flat.cursor.sal_penalties_old
                     };
                     
-                    lc_saldo.debt = lc_saldo.end - lc_saldo.full_calc;//lc_saldo.begin - lc_saldo.payments;
+                    lc_saldo.debt = lc_saldo.end - lc_saldo.full_calc - raschet;//lc_saldo.begin - lc_saldo.payments;
                     lc_saldo.full_end = lc_saldo.end + lc_saldo.penalties_cur;
 
                     var sum = [];
