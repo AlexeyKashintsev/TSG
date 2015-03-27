@@ -1,9 +1,9 @@
 /**
  * 
- * @name BillsBuilder_Doverie
+ * @name BillsBuilder_Doverie_kapRemont
  * @author Alexey
  */
-function BillsBuilder_Doverie() {
+function BillsBuilder_Doverie_kapRemont() {
     var self = this, model = self.model;
     var dsLC_byid = this.model.dsLC_byid;
 
@@ -195,6 +195,6 @@ function BillsBuilder_Doverie() {
         self.Flats.i = i;
         Logger.severe('Building report');
     }//GEN-LAST:event_onBeforeRender
-    
+
     // TODO : place your code here
 }

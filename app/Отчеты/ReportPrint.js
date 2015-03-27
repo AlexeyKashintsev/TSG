@@ -6,6 +6,7 @@
 function ReportPrint() {
     var self = this, model = this.model, form = this;
     var repBill = new BillsBuilder_Doverie();
+    var repBillKapRemont = new BillsBuilder_Doverie_kapRemont();
     
     function process(aPrint) {
         if (model.params.FlatID) {
@@ -22,13 +23,24 @@ function ReportPrint() {
     }
     
     function processSingleFlat(aPrint, aFlatID) {
-        repBill.model.params.parDateID = self.params.parDateID;
-        repBill.model.params.parFlatID = aFlatID; 
-        repBill.model.params.parAccountID = self.params.AccountID;
-        if (aPrint) 
-            repBill.print();
-        else
-            repBill.show();
+        if (model.params.AccountID == 142486607303119){
+            repBill.model.params.parDateID = self.params.parDateID;
+            repBill.model.params.parFlatID = aFlatID; 
+            repBill.model.params.parAccountID = self.params.AccountID;
+            if (aPrint) 
+                repBill.print();
+            else
+                repBill.show();
+        }
+        else{
+            repBillKapRemont.model.params.parDateID = self.params.parDateID;
+            repBillKapRemont.model.params.parFlatID = aFlatID; 
+            repBillKapRemont.model.params.parAccountID = self.params.AccountID;
+            if (aPrint) 
+                repBillKapRemont.print();
+            else
+                repBillKapRemont.show();
+        }
     }
 
     function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
