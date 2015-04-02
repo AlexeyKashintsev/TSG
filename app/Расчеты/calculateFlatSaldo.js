@@ -45,13 +45,16 @@ function CalculateFlatSaldo() {
                 saldo.sal_full_calc = sc.sal_full_calc;
                 saldo.sal_payments = sp.pay_sum;
                 var endSum = saldo.sal_begin - sp.pay_sum;
+                var peniPay = 0;
                 if (endSum < 0 && peniOld > 0) {
                     var extra = -endSum;
                     if (extra >= peniOld) {
                         extra -= peniOld;
+                        peniPay = peniOld;
                         peniOld = 0;
                     } else {
                         peniOld -= extra;
+                        peniPay = extra;
                         extra = 0;
                     }
                     endSum = -extra;
@@ -60,6 +63,7 @@ function CalculateFlatSaldo() {
                 endSum += sc.sal_full_calc;
                 saldo.sal_end = endSum;
                 saldo.sal_penalties_cur = peni;
+                saldo.sal_penalties_pay = peniPay.toFixed(2);
 
                 (function() {
                     progress.increaseValue(1);

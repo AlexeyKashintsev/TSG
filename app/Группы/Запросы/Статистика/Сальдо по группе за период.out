@@ -7,4 +7,5 @@
   <field bindedColumn="sal_payments" sqlType="2"/>
   <field bindedColumn="sal_penalties_cur" sqlType="2"/>
   <field bindedColumn="sal_recalc" sqlType="2"/>
+  <field bindedColumn="sal_penalties_pay" sqlType="2"/>
 </outputFields>
