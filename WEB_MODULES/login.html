@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="pwc/reset.css" />
+        <title>4R login page</title>
+        <link rel="stylesheet" href="css/login.css" />
+    </head>
+    <body id="body">
+        <div class="spacer"></div>
+        <div id="stylized" class="myform">
+            <form id="form" name="form" action="j_security_check" method="POST" enctype="application/x-www-form-urlencoded">
+                <img src='img/header_logo_4r.png'></img>
+                <div class="header">
+                    <h1>Вход в приложение</h1>
+                </div>
+                
+                <label>Имя пользователя
+                </label>
+                <input type="text" name="j_username" id="name" />
+                <label>Пароль
+                </label>
+                <input type="password" name="j_password" id="password" />
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+        <!--div class="alert">
+            <h1>Внимание!</h1>
+            <p>Система запущена в режиме опытной эксплуатации</p>
+            <a href="http://bugtracker.platypus-platform.org/news/1">Служба регистрации ошибок</a>
+        </div-->
+        <script type="text/javascript" src="js/keylistener.js"></script>
+        <script>
+            function qrCodeParse(anQrCode, aSecondTime) {
+                try {
+                    var parced = JSON.parse(anQrCode);
+                    if (parced.username && parced.password) {
+                        document.getElementById("name").value = parced.username;
+                        document.getElementById("password").value = parced.password;
+                        document.form.submit();
+                    }
+                } catch (e) {
+                    if (!aSecondTime)
+                        qrCodeParse(bcp.getAnotherLocale(anQrCode), true);
+                }
+            }
+            bcp.action = qrCodeParse;
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,763 @@
+/* ### FONTS ### */
+@font-face { font-family: 'Segoe UI'; src: url('webFonts/segoe_ui_semibold.eot'); src: url('webFonts/segoe_ui_semibold.eot?#iefix') format('embedded-opentype'), url('webFonts/segoe_ui_semibold.svg#Segoe UI Semibold') format('svg'), url('webFonts/segoe_ui_semibold.woff') format('woff'), url('webFonts/segoe_ui_semibold.ttf') format('truetype'); font-weight: bold; font-style: normal;}
+@font-face { font-family: 'Segoe UI'; src: url('webFonts/segoe_ui_light.eot'); src: url('webFonts/segoe_ui_light.eot?#iefix') format('embedded-opentype'), url('webFonts/segoe_ui_light.svg#Segoe UI Semibold') format('svg'), url('webFonts/segoe_ui_light.woff') format('woff'), url('webFonts/segoe_ui_light.ttf') format('truetype'); font-weight: normal; font-style: normal;}
+
+/* ### COMMON ### */
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*[class*="GMD"] {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  vertical-align: top!important;
+  border-radius: 0px!important;
+}
+
+body {
+  margin-top: 50px!important;
+  margin-bottom: 50px!important;
+}
+
+div.actionPanel {
+  background-image: URL('../img/action_panel.jpg');
+  /*border-right: dotted 3px;*/
+}
+
+a.list-group-item {
+  cursor: pointer;
+}
+
+div.mainArea {
+  background-image: URL('../img/background.jpg');
+  background-color: #fcf1ec;
+  background-size: cover;
+  border-left: solid 3px;
+  border-top: solid 3px;
+}
+
+div.dashboard.report {
+  background-color: white;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  overflow:scroll;
+}
+
+@media (min-width: 768px) {
+  div.actionPanel {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    padding-top: 15px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+    #height: 100%;
+    padding-right: 0px;
+    overflow-y: auto;
+  }
+  
+  div.mainArea {
+    margin-top: 50px;
+    #padding-bottom: 50px;
+    padding-top: 15px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    top: 0px;
+    #height: 100%;
+    #overflow-y: scroll;
+  }
+}
+
+span.label-bw {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+div.navbar.navbar-fixed-top {
+  background-color: #54312d;
+}
+
+/*** # DATA # ***/
+th.session-desc {
+  cursor: pointer;
+}
+
+tr.clickable {
+  cursor: pointer;
+}
+
+th.table-title {
+  font-weight: bold;
+}
+
+th.table-body.table-container  {
+  padding: 0px;
+}
+
+
+th.table-body.table-container > tbody > tr:first-child > th {
+  border-top: none;
+}
+
+th.table-body.table-container > tbody > tr {
+  background-color: lightyellow;
+}
+
+/* ### BARISTA ### */
+.red {
+  color: #E74C3C;
+}
+
+.green {
+  color: #26A65B;
+}
+
+button {
+  border: none;
+  margin: 5px;
+  padding:  10px;
+}
+
+button.btnOk {
+  background-color: #26A65B;
+  color: white;
+  width: 75%;
+}
+
+button.btnCancel {
+  background-color: #E74C3C;
+  color: white;
+  width: 25%;
+}
+
+/* TRADE TYPES */
+div.item_type_selector {
+  padding-bottom: 5px;
+  padding-left: 15px;
+  margin-bottom: 5px;
+  border-bottom: solid 3px;
+  margin-top: -15px;
+  padding-top: 15px;
+  background-color: #4f3024;
+}
+
+button.typeSelector {
+  display: inline-block;
+  margin: 0px 0px 10px 5px;
+  padding: 5px;
+  min-width: 80px;
+  min-height: 50px;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* TRADE ITEMS */
+
+div.items_select {
+    overflow-y: auto;
+    height: 100%;
+    position: absolute;
+}
+
+div.item_selector {
+    height: 100%;
+}
+
+div.dashboard {
+    height: 100%;
+}
+
+.itemDescription {
+    cursor: pointer;
+    margin-bottom: 0px;
+    padding: 0px 0px 15px 15px;
+    display: inline-block;
+}
+
+.itemDescription > div.panel {
+  height: 100px;
+  width: 120px;
+  margin: 0px;
+  position: relative;
+  border: none;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  background-image: url('../img/dotnoise-light-grey.png');
+}
+
+p.itemType {
+  font-size: 10px;
+}
+
+h3.item-desc {
+  font-size: 12px;
+  margin: 0px;
+}
+
+h3.item-modifiers {
+    margin: 0px;
+    font-size: smaller;
+}
+
+h1.item-cost {
+  font-size: 22px;
+  position: absolute;
+  bottom: 0px;
+}
+div.item-limit {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    font-size:  12px;
+}
+
+div.item-limit.small {
+    color: gold;
+}
+
+div.item-limit.good {
+    color: LimeGreen;
+}
+
+div.item-limit.bad {
+    color: maroon;
+}
+
+h3.item-add-text {
+  font-size: 12px;
+  margin: 0px;
+  text-align: center;
+}
+
+h1.item-add {
+  margin: 0px;
+  font-size: 48px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* COST MODIFIERS */
+
+div.modifiers {
+  height: 100%;
+  right: 0px;
+  padding-top: 15px;
+  margin-top: -15px;
+  margin-right: 0px;
+  position: absolute;
+  background-color: rgba(253, 227, 167, 0.5);
+}
+
+.price_modifier {
+  height: 80px;
+  width: 120px;
+  margin: 10px 10px 0px 0px;
+  position: relative;
+  background-color: #E67E22;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.price_modifier.selected {
+  background-color: #F9690E;
+  color: white;
+}
+
+h3.price_desc {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  font-size: 16px;
+}
+
+/* ORDER ITEMS */
+.baristaOrder {
+  background-image: url('../img/bright-squares.png');
+}
+
+.orderItems {
+  #background-color: #D2D7D3;
+  text-align: center;
+  position: relative;
+  right: 0px;
+  padding: 10px 10px;
+}
+
+.orderItem  {
+  text-align: right;
+  #background-color: white;
+  margin: 2px;
+  padding-bottom: 4px;
+  padding-right: 2px;
+  cursor: pointer;
+}
+
+.orderItem:hover  {
+  #background-color: #E4F1FE;
+  color: #26A65B;
+}
+
+.orderItem h4 {
+  display: inline-block;
+  padding-right: 5px;
+  position: relative;
+  /*font-family: Segoe UI;*/
+}
+
+.orderItem h4.itemName {
+  position: absolute;
+  left: 20px;
+}
+
+/*.orderItem h4.itemCount {
+  position: absolute;
+  right: 50px;
+}*/
+
+.orderItem button {
+  padding: 0px;
+  margin: 0px;
+  top:  2px;
+  position: relative;
+  width:  25px;
+  height: 30px;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+.orderItem button:hover {
+  color: #E74C3C;
+}
+
+.orderItem button > span {
+  font-size: large;
+  padding-top: 5px;
+}
+
+#orderDetails {
+  margin-left: 5px;
+}
+
+div.clientInfo {
+  margin: 15px
+}
+
+.clientLabel {
+  margin: 5px;
+}
+
+.client-phone-input {
+  width: 90%;
+  font-size: large;
+  border: none;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.client-phone-reset {
+  width: 10%;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  margin-top: 5px;
+  padding: 5px;
+  font-size: large;
+}
+
+.client-phone-reset.active {
+  background-color: #E74C3C;
+  color: white;
+}
+
+
+div#clientRegPane.clientInfo {
+  text-align: center;
+  margin: 0px;
+  color: #E74C3C;
+}
+
+button#btnRegister {
+  width: 100%;
+  background-color: #26A65B;
+  color: white;
+}
+
+div.clientBonusDiv {
+  font-size: large;
+}
+
+ul.clientListDiv {
+  font-size: large;
+}
+
+ul.clientListDiv li{
+  cursor : pointer;
+  padding: 10px 5px;
+}
+
+ul.clientListDiv:hover li{
+  background-color: #ddeeee;
+}
+
+span.right-span{
+  float: right;
+}
+
+/* ### BalanceMeter ### */
+div.weight_calculator {
+    z-index: 500;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -125px;
+    width: 500px;
+    display: block;
+    background-color: white;
+    background-image: url('../img/bright-squares.png');
+}
+
+div.weigth_info {
+    padding-left: 22px;
+    margin-bottom: 22px;
+}
+
+.balance-meter.btnRefresh {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    height: 65px;
+    width: 80px;
+}
+
+div.balance-meter.btnRefresh > span {
+    font-size: larger;
+}
+
+div.balance-meter.btn_pane > button {
+    height: 60px;
+}
+
+/* ### CASHBACK ### */
+div.cash_calculator {
+  display: inline-block;
+  margin: -6px 0px 35px -15px;
+}
+
+div.top_head {
+  position: relative;
+  width: 100%;
+  height: 64px;
+  z-index: 10;
+  font-size: 36px;
+  text-align: right;
+  padding: 2px 15px;
+  color: white;
+  font-weight: 100;
+}
+
+div.cash {
+  display: inline-block;
+  padding-top: 14px;
+}
+
+div.cash_back {
+  float: left;
+}
+
+div.top_head > div.label {
+  font-size: 12px;
+  color: white;
+  z-index: 10;
+  position: absolute;
+  font-weight: 100;
+}
+
+div.top_head > div.money_get {
+  float: right;
+  right: 0px;
+}
+
+div.top_head > div.cashback {
+  float: left;
+  left: 0px;
+}
+
+div.top_head.glass {
+  position: relative;
+  margin-top: -60px;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 5!important;
+}
+
+div.button_area {
+  background-color: silver;
+  display: block;
+  float: left;
+  
+}
+
+div.btn_block {
+  display: inline-block;
+}
+
+div.btn_block.predefined > div.calc_button {
+  background-color: rgb(247, 147, 49);
+  color: white;
+}
+
+div.btn_block.predefined > div.calc_button:active {
+  background-color: rgb(196, 115, 37);
+}
+
+div.btn_block.predefined {
+  border-top: solid 1px gray;
+  width: 120px;
+}
+
+div.btn_block.predefined > div.calc {
+  width: 120px;
+  background-color: #26A65B!important;
+}
+
+div.btn_block.predefined > div.calc.disabled {
+  background-color: grey!important;
+  cursor: default;
+}
+
+div.btn_block.manual {
+  width: 181px;
+  border-left: solid 1px gray;
+  border-top: solid 1px gray;
+}
+
+div.calc_button {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  padding-top: 17px;
+  text-align: center;
+  border-right: solid 1px gray;
+  border-bottom: solid 1px gray;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+div.calc_button:active {
+  background-color: rgb(178, 178, 178);
+}
+
+div.btn_block.disabled > div.calc_button {
+  background-color: lightgrey;
+}
+
+div.btn_block.predefined.disabled > div.calc_button {
+  background-color: darkgray;
+}
+
+/* ### DEVICE SETTINGS ### */
+div.settings {
+    padding-left: 22px;
+    padding-bottom: 22px;
+}
+
+div.setting-pane {
+    display: inline-block;
+    padding-right:  22px;
+}
+/* ### FRANCHAZI ### */
+.trade_point > .panel-heading > * {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.trade_point > .panel > .label {
+  width: 100%;
+}
+
+.trade_point > .panel-body > .btn-group {
+  float: right;
+  margin-top : -5px
+}
+
+.map-marker {
+    cursor: pointer;
+}
+
+.whTitleContainer > div {
+  background-color: rgb(102, 74, 55);
+  display: inline-block;
+  color: white;
+  text-align: center;
+  height: 100%;
+}
+
+/* ### ORDER ITEMS ### */
+.listItem {
+  border-bottom: 1px solid #501000
+}
+
+.selection_result > button {
+  margin: 20px 0px;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+}
+
+button.active {
+  background-color: #DC3E00;
+  color: #fff;  
+}
+
+.selection_result > button.active:hover {
+  background-color: #D03A00;
+}
+
+div.loadDiv {
+    background: url("../img/loadingAnimation.gif") no-repeat scroll center center rgba(0, 0, 0, 0);
+    height: 130px;
+}
+
+/* ### SESSION INDICATOR ###*/
+body > div.session_indicator {
+    display: block;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+  }
+  
+  div.session_indicator_active {
+    background-color: green;
+  }
+  
+  div.session_indicator_ended {
+    background-color: red;
+  }
+  
+  div.session_indicator_broken {
+    background-color: orange;
+  }
+/* ### MAP ### */
+div.form-container {
+    height : 100%;
+    overflow: auto;
+}
+
+div.map-container {
+    height : 100%;
+}
+
+div.modal-body > div.map-container {
+    height : 500px;
+}
+
+div.modal {
+    z-index : 10000;
+}
+
+/* ### ADMIN WIDGETS ### */
+.fran_info  {
+  background-color: white;
+  padding: 10px 15px 0px 15px;
+  margin: 0px -15px 15px -15px;
+}
+
+.fran_info div.row {
+  background-color: #664a37;
+  padding: 10px;
+  
+}
+
+div.widget_body {
+  /*border: solid 5px #664a37;*/
+  margin: 5px;
+  background-color: whitesmoke;
+  min-height: 90px;
+  cursor: pointer;
+}
+
+div.widget_body.active {
+  background-color: lightseagreen;
+  color: white;
+}
+
+div.widget_body.work_bad {
+  background-color: orange;
+  color: white;
+}
+
+div.widget_body.not_work {
+  background-color: indianred;
+  color: white;
+}
+
+div.widget_body:hover {
+  background-color: white;
+}
+
+div.widget_body.active:hover {
+  background-color: #22beb6;
+}
+
+div.widget_body.work_bad:hover {
+  background-color: #ffc006;
+}
+
+div.widget_body.not_work:hover {
+  background-color: #ed6969;
+}
+
+/* ### CHAT ###*/
+.chat {
+    width: 100%;
+    margin-top: 10%;
+}
+
+.chat-msgarea {
+    overflow-y: scroll;
+    height:300px;
+}
+
+.chat-input {
+    width: 100%;
+}
+
+.chat-btn {
+    width: 100%;
+    background-color: #26A65B;
+    color: white;
+}
+
+.chat-username {
+    font-weight: bold;
+}
+
+.chat-btnonline{
+    font-weight: bold;
+}
