@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="group_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="lcNum" nullable="true" parameterMode="1" precision="1" scale="0" selectionForm="null" signed="true" size="100" type="1" typeName="CHAR"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142840985970351" entityLocationX="194" entityLocationY="10" entityWidth="150" tableAlias="t" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142840982882895" entityLocationX="420" entityLocationY="5" entityWidth="150" tableAlias="t1" tableName="lc_flat" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="group_id" rightEntityFieldName="group_id" rightEntityId="142840985970351"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="142840985970351" rightEntityFieldName="lc_flat_id" rightEntityId="142840982882895"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lcNum" rightEntityFieldName="lc_flatnumber" rightEntityId="142840982882895"/>
+</datamodel>

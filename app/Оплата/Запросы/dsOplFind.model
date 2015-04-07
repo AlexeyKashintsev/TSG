@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="sessionid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="sum" nullable="true" parameterMode="1" precision="0" scale="2" selectionForm="null" signed="true" size="10" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="flat" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142841039046900" entityLocationX="379" entityLocationY="-1" entityWidth="150" tableAlias="t1" tableName="opl_payments" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="flat" rightEntityFieldName="flat_id" rightEntityId="142841039046900"/>
+  <relation leftEntityId="-1" leftEntityParameterName="sessionid" rightEntityFieldName="session_id" rightEntityId="142841039046900"/>
+</datamodel>

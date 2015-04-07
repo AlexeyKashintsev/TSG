@@ -6,7 +6,7 @@
   <widget actionPerformed="tfFlatNumberActionPerformed" name="tfFlatNumber" parent="panel" prefHeight="28px" prefWidth="119px" type="TextFieldDesignInfo">
     <constraints height="28px" left="3px" right="30px" top="72px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget icon="icons/16x16/actions/dialog-apply.png" mouseClicked="btFlatNumEnterMouseClicked" name="btFlatNumEnter" parent="panel" prefHeight="28px" prefWidth="26px" type="ButtonDesignInfo">
+  <widget actionPerformed="btFlatNumEnterActionPerformed" icon="icons/16x16/actions/dialog-apply.png" mouseClicked="btFlatNumEnterMouseClicked" name="btFlatNumEnter" parent="panel" prefHeight="28px" prefWidth="26px" type="ButtonDesignInfo">
     <constraints height="28px" left="120px" right="6px" top="72px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="label1" parent="panel" prefHeight="16px" prefWidth="122px" text="Номер квартиры" type="LabelDesignInfo">
@@ -28,6 +28,8 @@
   </widget>
   <widget deletable="false" editable="false" focusable="false" insertable="false" name="modelGrid" parent="panel" prefHeight="122px" prefWidth="146px" type="DbGridDesignInfo">
     <column name="column" title="Дата">
+      <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138702866029948" fieldName="payment_date"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -39,10 +41,10 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="138702866029948" fieldName="payment_date"/>
-      <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy" name="view" prefHeight="0px" prefWidth="0px"/>
     </column>
     <column name="column1" title="Сумма">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138702866029948" fieldName="payment_sum"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -54,8 +56,6 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="138702866029948" fieldName="payment_sum"/>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138702866029948" field="false"/>
@@ -97,24 +97,26 @@
   </widget>
   <widget name="modelGrid1" parent="panel2" prefHeight="101px" prefWidth="264px" type="DbGridDesignInfo">
     <column name="column2" readonly="true" title="Счетчик">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-      <datamodelElement entityId="138703018256097" fieldName="services_id"/>
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="138703021155642" fieldName="usl_services_id"/>
         <displayField entityId="138703021155642" fieldName="usl_name"/>
       </controlInfo>
+      <datamodelElement entityId="138703018256097" fieldName="services_id"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="column3" readonly="true" title="Предыдущее">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138703018256097" fieldName="beg_val"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -126,10 +128,10 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="138703018256097" fieldName="beg_val"/>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
     </column>
     <column name="column4" title="Текущее">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138703018256097" fieldName="end_val"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -141,8 +143,6 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="138703018256097" fieldName="end_val"/>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138703018256097" field="false"/>

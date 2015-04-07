@@ -15,6 +15,7 @@ self.syncParams = function(aDate, anIsEditable, anAccount) {
     //model.params.parAccountID = anAccount;
 };
 
+
     function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
         self.model.save();
     }//GEN-LAST:event_btnSaveActionPerformed

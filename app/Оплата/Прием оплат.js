@@ -42,4 +42,8 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
     self.close();
 }//GEN-LAST:event_button1ActionPerformed
 paramSynchronizer.addListener(this);
+
+    function btFlatNumEnterActionPerformed(evt) {//GEN-FIRST:event_btFlatNumEnterActionPerformed
+        // TODO Добавьте свой код:
+    }//GEN-LAST:event_btFlatNumEnterActionPerformed
 }
