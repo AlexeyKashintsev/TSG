@@ -3,6 +3,8 @@
  * @author Alexey
  * @name dsOplById
  * @manual 
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select * 
 From opl_payments t1

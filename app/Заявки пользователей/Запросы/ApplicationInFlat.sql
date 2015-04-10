@@ -3,6 +3,8 @@
  * @author TSG
  * @name ApplicationInFlat
  * @writable usr_user
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select t1.usr_user_id, t1.lc_flat_id, t3.lc_regto
 , t3.lc_flatnumber, t2.grp_name, t1.phone_number

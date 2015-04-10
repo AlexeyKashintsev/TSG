@@ -3,6 +3,8 @@
  * @author TSG
  * @manual 
  * @name new_saldo
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
  insert into per_saldo_flat(per_saldo_flat_id, date_id, lc_id, sal_begin, sal_penalties_old) 
 (select t.per_saldo_flat_id+1, :new_date as date_id, t.lc_id,

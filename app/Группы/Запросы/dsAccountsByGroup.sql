@@ -2,6 +2,8 @@
  *
  * @author TSG
  * @name dsAccountsByGroup
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select t1.grp_accounts_in_group_id, t1.group_id, t1.account_id
 , t.account_name, t1.bank_id 

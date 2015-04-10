@@ -2,6 +2,8 @@
  *
  * @author Alexey
  * @name saldo_by_flat
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select * 
 From per_saldo_flat t1

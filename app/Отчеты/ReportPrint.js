@@ -17,7 +17,7 @@ function ReportPrint() {
             {while (model.flats_by_group.next())
                 if ((!model.params.flatFrom && !model.params.flatTo) || 
                    ((model.params.flatFrom <= model.flats_by_group.lc_flatnumber) && (model.params.flatTo >= model.flats_by_group.lc_flatnumber)))
-                    processSingleFlat(aPrint, model.flats_by_group.lc_flat_id);
+                        processSingleFlat(aPrint, model.flats_by_group.lc_flat_id);
              }
         }
     }

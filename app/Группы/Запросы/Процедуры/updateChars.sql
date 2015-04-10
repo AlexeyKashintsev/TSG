@@ -2,6 +2,8 @@
  * @author Alexey
  * @manual 
  * @name updateChars
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 update grp_chars
 set grp_char_val = (

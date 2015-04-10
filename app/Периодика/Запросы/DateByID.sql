@@ -2,6 +2,8 @@
  *
  * @author Alexey
  * @name DateByID
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select * 
 From per_date t1

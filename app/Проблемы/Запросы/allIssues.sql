@@ -3,6 +3,8 @@
  * @author TSG
  * @name allIssues
  * @writable adm_issues
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select t1.adm_issues_id, t2.grp_name, t3.lc_flatnumber
 , t3.lc_regto, t.type_name, date_part('year', t4.per_date) ||':'||

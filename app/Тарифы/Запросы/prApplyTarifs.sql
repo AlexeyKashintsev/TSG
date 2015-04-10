@@ -3,6 +3,8 @@
  * @author Alexey
  * @name prApplyTarifs
  * @manual 
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 select *
 from

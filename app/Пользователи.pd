@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel datamodelDbId="null">
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="142865235965685" entityLocationX="316" entityLocationY="16" entityWidth="150" tableName="mtd_users"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="142865235964034" entityLocationX="113" entityLocationY="23" entityWidth="150" tableName="mtd_groups"/>
+</datamodel>

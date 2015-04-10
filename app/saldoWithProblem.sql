@@ -2,6 +2,8 @@
  *
  * @author TSG
  * @name saldoWithProblem
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select t1.sal_begin, t1.sal_end, t.lc_flat_id, t.lc_regto, t.lc_flatnumber, q.TextDate, t3.grp_name
 From per_saldo_flat t1

@@ -2,6 +2,8 @@
  *
  * @author Alexey
  * @name flatByNumberAndRegister
+ * @public
+ * @rolesAllowed admin operator buh
  * @manual
  */ 
 Select * 

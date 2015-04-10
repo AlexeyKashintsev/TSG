@@ -2,6 +2,8 @@
  *
  * @author Alexey
  * @name dsChargesForGroup
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select t2.services_id, sum(t.calc) AS calc, sum(t.benefit) AS benefit
 , sum(t.recalc) AS recalc, sum(t.full_calc) AS full_calc, sum(t.calc_value) AS calc_value

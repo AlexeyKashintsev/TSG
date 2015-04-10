@@ -3,7 +3,7 @@
  * @author Alexey
  * @name opl_get
  */
-function opl_view() {
+function opl_view(aParent) {
     var self = this, model = self.model;
     self.parentForm = null;
     var modSal = new SaldoAndSumsModule();
@@ -37,9 +37,12 @@ function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
 }//GEN-LAST:event_btnSaveActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
-    self.close(function(){
+    /*self.close(function(){
         alert('a');
     });
+    if (aParent)
+        aParent.toFront();*/
+        formWindowClosed();
 }//GEN-LAST:event_button1ActionPerformed
 
 
@@ -49,10 +52,17 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         if (self.parentForm)
             self.parentForm.updateSession();  
         self.close();
+        if (aParent)
+            aParent.toFront();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
         //self.requery();
     }//GEN-LAST:event_formWindowOpened
 paramSynchronizer.addListener(this);
+
+    function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
+        if (aParent)
+            aParent.toFront();
+    }//GEN-LAST:event_formWindowClosed
 }

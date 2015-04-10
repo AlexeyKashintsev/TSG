@@ -2,7 +2,9 @@
  *
  * @author Alexey
  * @name sums_4create
- * @manual 
+ * @manual
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 insert into per_sums
 Select nextval('seqsums') as per_usms_id, t.lc_flat_services_id as flat_service_id, :dateid as date_id

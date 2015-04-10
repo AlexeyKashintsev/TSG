@@ -2,6 +2,8 @@
  *
  * @author Alexey
  * @name dsGroupAndBank
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select *
 From grp_bank t

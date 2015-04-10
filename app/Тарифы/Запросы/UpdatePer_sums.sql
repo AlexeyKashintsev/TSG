@@ -3,6 +3,8 @@
  * @author Андрей
  * @name UpdatePer_sums
  * @manual
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select * 
 From per_sums

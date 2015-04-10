@@ -2,6 +2,8 @@
  *
  * @author Alexey
  * @name qPaymentsInFlat
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select t1.opl_payments_id, t1.session_id, t1.flat_id
 , t1.payment_sum, t1.date_id, t1.payment_date

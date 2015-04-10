@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="266px" prefWidth="557px" windowOpened="formWindowOpened">
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="266px" prefWidth="557px" windowClosed="formWindowClosed" windowOpened="formWindowOpened">
   <widget name="panel" parent="Form" prefHeight="266px" prefWidth="152px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints bottom="0px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="152px"/>
@@ -8,39 +8,39 @@
   </widget>
   <widget editable="false" foregroundColor="#663300" name="modelFormattedField" opaque="false" parent="panel" prefHeight="28px" prefWidth="132px" type="DbLabelDesignInfo">
     <datamodelElement entityId="138702829717095" fieldName="lc_regto"/>
-    <constraints height="28px" left="12px" top="54px" type="MarginConstraintsDesignInfo" width="132px"/>
     <border etcheHighlightColor="#000000" etcheShadowColor="#000000" type="EtchedBorderDesignInfo"/>
+    <constraints height="28px" left="12px" top="54px" type="MarginConstraintsDesignInfo" width="132px"/>
   </widget>
   <widget deletable="false" editable="false" focusable="false" insertable="false" name="modelGrid" parent="panel" prefHeight="143px" prefWidth="146px" type="DbGridDesignInfo">
     <column name="column" title="Дата">
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
       <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138702866029948" fieldName="payment_date"/>
-    </column>
-    <column name="column1" title="Сумма">
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+    </column>
+    <column name="column1" title="Сумма">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138702866029948" fieldName="payment_sum"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138702866029948" field="false"/>
@@ -53,8 +53,8 @@
     <constraints height="28px" left="12px" top="24px" type="MarginConstraintsDesignInfo" width="132px"/>
   </widget>
   <widget editable="false" list="false" name="modelCombo" parent="panel" prefHeight="28px" prefWidth="132px" type="DbComboDesignInfo">
-    <displayField entityId="139911082892305" fieldName="grp_name"/>
     <valueField entityId="139911082892305" fieldName="grp_groups_id"/>
+    <displayField entityId="139911082892305" fieldName="grp_name"/>
     <datamodelElement entityId="139911078787730" fieldName="group_id"/>
     <constraints height="28px" left="12px" top="84px" type="MarginConstraintsDesignInfo" width="132px"/>
   </widget>
@@ -95,52 +95,52 @@
   </widget>
   <widget name="modelGrid1" parent="panel2" prefHeight="110px" prefWidth="388px" type="DbGridDesignInfo">
     <column name="column2" readonly="true" title="Счетчик">
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="138703021155642" fieldName="usl_name"/>
         <valueField entityId="138703021155642" fieldName="usl_services_id"/>
+        <displayField entityId="138703021155642" fieldName="usl_name"/>
       </controlInfo>
       <datamodelElement entityId="138703018256097" fieldName="services_id"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
     </column>
     <column name="column3" readonly="true" title="Предыдущее">
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138703018256097" fieldName="beg_val"/>
-    </column>
-    <column name="column4" title="Текущее">
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+    </column>
+    <column name="column4" title="Текущее">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138703018256097" fieldName="end_val"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138703018256097" field="false"/>

@@ -3,7 +3,7 @@
  * @author Alexey
  * @name opl_get
  */
-function opl_get() {
+function opl_get(aParent) {
     var self = this, model = self.model;
     self.parentForm = null;
     var modSal = new SaldoAndSumsModule();
@@ -39,11 +39,16 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
 }//GEN-LAST:event_buttonActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
-    self.close();
+        formWindowClosed();
 }//GEN-LAST:event_button1ActionPerformed
 paramSynchronizer.addListener(this);
 
     function btFlatNumEnterActionPerformed(evt) {//GEN-FIRST:event_btFlatNumEnterActionPerformed
         // TODO Добавьте свой код:
     }//GEN-LAST:event_btFlatNumEnterActionPerformed
+
+    function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
+        if (aParent)
+            aParent.toFront();
+    }//GEN-LAST:event_formWindowClosed
 }

@@ -14,10 +14,11 @@ var self = this, model = self.model;
 var isSelectForm = true;
 var isEditable = false;
 var canSetEdit = true;
-var fmNewOplata = new opl_get();
-var fmEditOplata = new opl_view();
+var fmNewOplata = new opl_get(self);
+var fmEditOplata = new opl_view(self);
 self.parentForm = null;
 self.mainForm = null;
+var barCodes = {};
 
 function setEdit(){
     self.modelGrid.editable = 
@@ -112,9 +113,7 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
             model.dsGroupByBarCode.requery();
             model.dsFlatByLcNum.params.lcNum = self.intConcat(8,12);
             model.dsFlatByLcNum.requery();
-            model.dsOplFind.params.sum = self.intConcat(12,22)/100;
-            model.dsOplFind.requery();
-            switch (model.dsOplFind.length){
+            switch (model.dsPaymentsInSession.find(model.dsPaymentsInSession.schema.lc_flat_id, model.dsFlatByLcNum.lc_flat_id).length){
                 case 1: 
                     self.OpenOlpata(model.dsOplFind.opl_payments_id);
                     break;
@@ -129,4 +128,14 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
             self.textBarCode.focus();
         }
     }//GEN-LAST:event_paramsOnChanged
+
+    function dsPaymentsInSessionOnRequeried(evt) {//GEN-FIRST:event_dsPaymentsInSessionOnRequeried
+        barCodes = {};
+        model.dsPaymentsInSession.forEach(function(aRow) {
+            if (!barCodes[aRow.barcode])
+                barCodes[aRow.barcode] = aRow.opl_payments_id;
+            else
+                barCodes[aRow.barcode] = 'more than one!';
+        });
+    }//GEN-LAST:event_dsPaymentsInSessionOnRequeried
 }

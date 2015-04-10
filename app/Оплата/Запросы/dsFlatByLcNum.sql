@@ -2,6 +2,8 @@
  *
  * @author TSG
  * @name dsFlatByLcNum
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select * 
 From lc_flat t1

@@ -3,6 +3,8 @@
  * @author Alexey
  * @name counters_values_by_flat
  * @writable per_counter_values
+ * @public
+ * @rolesAllowed admin operator buh
  */ 
 Select t.per_counter_values_id, t.counter_id, t.date_id
 , t.end_val, t.beg_val, t.end_val-t.beg_val AS cons_val
