@@ -1,7 +1,7 @@
 /**
  *
  * @author Алексей
- * @name Способы_расчета
+ * @name qCalcMethods
  * @public
  */ 
 Select * 

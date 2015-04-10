@@ -40,6 +40,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         formWindowClosed();
+        self.close();
 }//GEN-LAST:event_button1ActionPerformed
 paramSynchronizer.addListener(this);
 

@@ -43,6 +43,7 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
     if (aParent)
         aParent.toFront();*/
         formWindowClosed();
+        self.close();
 }//GEN-LAST:event_button1ActionPerformed
 
 

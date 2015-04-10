@@ -17,8 +17,8 @@
   <relation leftEntityFieldName="grp_groups_id" leftEntityId="142840996328136" rightEntityId="142840995671861" rightEntityParameterName="group_id"/>
   <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="142840996328136" rightEntityFieldName="grp_groups_id" rightEntityId="142840996328136"/>
   <referenceRelation leftEntityFieldName="flat_id" leftEntityId="138695513474136" rightEntityFieldName="lc_flat_id" rightEntityId="142840995671861"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142840995671861" rightEntityFieldName="lc_flat_id" rightEntityId="138695513474136"/>
   <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142840995671861" rightEntityFieldName="lc_flat_id" rightEntityId="142840995671861"/>
   <referenceRelation leftEntityFieldName="flat_id" leftEntityId="138695513474136" rightEntityFieldName="lc_flat_id" rightEntityId="138695513474136"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142840995671861" rightEntityFieldName="lc_flat_id" rightEntityId="138695513474136"/>
   <referenceRelation leftEntityFieldName="group_id" leftEntityId="142840995671861" rightEntityFieldName="grp_groups_id" rightEntityId="142840996328136"/>
 </datamodel>

@@ -4,18 +4,18 @@
   </widget>
   <widget name="taProblemText" parent="scrollPane" prefHeight="178px" prefWidth="262px" type="TextPaneDesignInfo"/>
   <widget editable="false" focusable="false" name="modelFormattedField21" parent="Form" prefHeight="24px" prefWidth="264px" type="DbLabelDesignInfo">
-    <datamodelElement entityId="142260847793739" fieldName="lc_regto"/>
+    <datamodelElement entityId="142866119620364" fieldName="lc_regto"/>
     <constraints height="24px" left="120px" right="25px" top="60px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="label121" parent="Form" prefHeight="16px" prefWidth="72px" text="ФИО:" type="LabelDesignInfo">
     <constraints height="16px" left="12px" top="64px" type="MarginConstraintsDesignInfo" width="72px"/>
   </widget>
   <widget editable="false" focusable="false" name="modelFormattedField2" parent="Form" prefHeight="24px" prefWidth="264px" type="DbLabelDesignInfo">
-    <datamodelElement entityId="142260847793739" fieldName="lc_flatnumber"/>
+    <datamodelElement entityId="142866119620364" fieldName="lc_flatnumber"/>
     <constraints height="24px" left="120px" right="25px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget editable="false" focusable="false" name="FFGroupName" parent="Form" prefHeight="24px" prefWidth="264px" type="DbLabelDesignInfo">
-    <datamodelElement entityId="142260846517193" fieldName="grp_name"/>
+    <datamodelElement entityId="142866117043724" fieldName="grp_name"/>
     <constraints height="24px" left="120px" right="25px" top="12px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="label12" parent="Form" prefHeight="16px" prefWidth="72px" text="Квартира:" type="LabelDesignInfo">

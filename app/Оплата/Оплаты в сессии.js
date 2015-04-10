@@ -108,17 +108,19 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
     }
 
     function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-        if(model.params.parCode != null){
+        if(model.params.parCode != null && model.params.parCode != ''){
             model.dsGroupByBarCode.params.grp_id = self.intConcat(4,8);
             model.dsGroupByBarCode.requery();
-            model.dsFlatByLcNum.params.lcNum = self.intConcat(8,12);
+            model.dsFlatByLcNum.params.lcNum = self.intConcat(8,12).toString();
             model.dsFlatByLcNum.requery();
+            var opl = self.intConcat(12,22)/100;
             switch (model.dsPaymentsInSession.find(model.dsPaymentsInSession.schema.lc_flat_id, model.dsFlatByLcNum.lc_flat_id).length){
                 case 1: 
-                    self.OpenOlpata(model.dsOplFind.opl_payments_id);
+                    var oplata = model.dsPaymentsInSession.find(model.dsPaymentsInSession.schema.lc_flat_id, model.dsFlatByLcNum.lc_flat_id);
+                    self.OpenOlpata(oplata.opl_payments_id);
                     break;
                 case 0:
-                    self.NewOplata(model.dsFlatByLcNum.group_id, model.dsFlatByLcNum.lc_flat_id, model.dsFlatByLcNum.lc_flatnumber, model.dsOplFind.params.sum);
+                    self.NewOplata(model.dsFlatByLcNum.group_id, model.dsFlatByLcNum.lc_flat_id, model.dsFlatByLcNum.lc_flatnumber, opl);
                     break;
                 default:
                     alert('В данной сессии больше 1 оплаты с этой квартиры');

@@ -2,6 +2,7 @@
  * 
  * @author Alexey
  * @name Calculations
+ * @public
  */
 
 function Calculations() {
@@ -16,7 +17,7 @@ function Calculations() {
     var formulEval = new FormulaEvaluator();
     var prepared = false;
     var saldoClc = new CalculateFlatSaldo();
-    var progress = new ProgressShow();
+    //var progress = new ProgressShow();
     /**
      * 
      * @param {type} aGroupID
