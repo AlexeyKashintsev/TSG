@@ -20,10 +20,10 @@ function Settings() {
         self.updateSettingsParams(aFranchazi, aTradePoint, aUserName);
         var res = {};
         model.dsSettings.beforeFirst();
-        while (model.dsSettings.next()) {
-            res[model.dsSettings.cursor.setting_name] = 
-                    self.getSettingByName(model.dsSettings.cursor.setting_name);
-        }
+        model.dsSettings.forEach(function(aSetting) {
+            res[aSetting.setting_name] = 
+                    self.getSettingByName(aSetting.setting_name);
+        });
         return res;
     };
 
