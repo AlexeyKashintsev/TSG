@@ -17,7 +17,7 @@ function Calculations() {
     var formulEval = new FormulaEvaluator();
     var prepared = false;
     var saldoClc = new CalculateFlatSaldo();
-    //var progress = new ProgressShow();
+    //var progress = new serverProgress();
     /**
      * 
      * @param {type} aGroupID
@@ -38,7 +38,7 @@ function Calculations() {
             groups = new Groups(aDateID);
             flats = new Flats(aDateID);
             model.dsSums4calc.requery();
-            progress.setMax(self.dsSums4calc.length);
+            serverProgress.setMax(self.dsSums4calc.length);
             prepared = true;
             return true;
         } catch (e) {
@@ -49,13 +49,9 @@ function Calculations() {
 
     self.calculateValues = function(aGroupID, aFlatID, aDateID) {
         (function() {
-            (function() {
-                progress.setDescription("Подготовка");
-            }).invokeAndWait();
+            serverProgress.setDescription("Подготовка");
             prepareCalcModule(aGroupID, aFlatID, aDateID);
-            (function() {
-                progress.setDescription("Расчет начислений");
-            }).invokeAndWait();
+            serverProgress.setDescription("Расчет начислений");
             try {
                 if (prepared) {
                     self.dsSums4calc.beforeFirst();
@@ -98,24 +94,16 @@ function Calculations() {
                         } catch (e) {
                             Logger.warning('Ошибка расчета полного значения по услуге ' +cursor.services_id + ' в квартире  ' + aFlatID);
                         }
-                        (function() {
-                            progress.increaseValue(1);
-                        }).invokeAndWait();
+                            progress.increaseValue();
                     });
-                    (function() {
-                        progress.setDescription("Сохранение значений расчета начислений");
-                    }).invokeAndWait();
+                    serverProgress.setDescription("Сохранение значений расчета начислений");
                     model.save();
-                    (function() {
-                        progress.close();
-                    }).invokeAndWait();
-                    saldoClc.calculateFlatSaldo(aGroupID, aFlatID, aDateID);
-
+                    //saldoClc.calculateFlatSaldo(aGroupID, aFlatID, aDateID);
+                    serverProgress.finish();
                     return true;
                 } else {
-                    (function() {
-                        progress.close();
-                    }).invokeAndWait();
+                    serverProgress.finish();
+
                     return false;
                 }
             } catch (e) {
@@ -123,7 +111,6 @@ function Calculations() {
                 return false;
             }
         }).invokeBackground();
-        progress.showModal();
     };
 
     /**
