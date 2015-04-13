@@ -94,15 +94,25 @@ function SaldoAndSumsModule() {
         self.prcSumsCreate.executeUpdate();
     };
 
-    self.addOplata = function(aFlatID, aSessionID, aDateID, aSum, aDate, aComment) {
-        self.dsOplById.insert(
-            self.dsOplById.schema.session_id, aSessionID,
-            self.dsOplById.schema.flat_id, aFlatID,
-            self.dsOplById.schema.payment_sum, aSum,
-            self.dsOplById.schema.date_id, aDateID,
-            self.dsOplById.schema.payment_date, aDate,
-            self.dsOplById.schema.payment_comment, aComment
-    );
-        self.model.save();
+    self.addOplata = function(aFlatID, aSessionID, aDateID, aSum, aDate, aComment, aPercent, aFullPay) {
+        if (aPercent === 0){
+            if (aFullPay === null)
+                aFullPay = aSum;
+            else
+                aSum = aFullPay;
+        }
+        else
+            aSum = aFullPay/(1 + aPercent/100);
+        model.dsOplById.push({
+            session_id:      aSessionID,
+            flat_id:         aFlatID,
+            payment_sum:     aSum,
+            date_id:         aDateID,
+            payment_date:    aDate,
+            payment_comment: aComment,
+            bank_percent:    aPercent,
+            full_payment:    aFullPay
+        });
+        model.save();
     };
 }

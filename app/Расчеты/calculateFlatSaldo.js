@@ -10,7 +10,7 @@ function CalculateFlatSaldo() {
     
     
     self.calculateFlatSaldo = function(aGroupID, aFlatID, aDateID) {
-        progress.executeServerProcess(function(){
+        (function(){
         model.params.parDateID = aDateID;
         model.params.parFlatID = aFlatID;
         model.params.parGroupID = aGroupID;
@@ -21,9 +21,7 @@ function CalculateFlatSaldo() {
             model.dsSumOfPayments.requery();
             model.dsSaldo4calc.requery();
             serverProgress.setMax(self.dsSaldo4calc.length);
-            (function() {
-                serverProgress.setDescription("Расчет сальдо по счету "+ cursor.account_name);
-            }).invokeAndWait();
+            serverProgress.setDescription("Расчет сальдо по счету "+ cursor.account_name);
             model.dsSaldo4calc.forEach(function(saldo){
                 //Logger.info("Расчет сальдо в квартире: " + self.dsSaldo4calc.cursor.lc_id);                
                 var sc = getSumOfSums(cursor.account_name, saldo.lc_id);
@@ -65,18 +63,12 @@ function CalculateFlatSaldo() {
                 saldo.sal_penalties_cur = peni;
                 saldo.sal_penalties_pay = peniPay.toFixed(2);
 
-                (function() {
-                    serverProgress.increaseValue();
-                }).invokeAndWait();
+                serverProgress.increaseValue();
             });
-            (function() {
                 serverProgress.setDescription("Сохранение финальных значений");
-            }).invokeAndWait();
             model.save();
         });
-            (function() {
                 serverProgress.finish();
-            }).invokeAndWait();
         }).invokeBackground();
     };
         

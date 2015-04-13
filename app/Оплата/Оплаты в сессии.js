@@ -89,7 +89,10 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
         fmNewOplata.parFlatID = flat_id;
         fmNewOplata.parGroupID = group_id;
         fmNewOplata.parSum = sum;
-        fmNewOplata.tfFlatNumber.text = lcNum;
+        fmNewOplata.parPercent = 0;
+        if(lcNum){
+            fmNewOplata.tfFlatNumber.text = lcNum;
+        };
         fmNewOplata.model.requery();
         fmNewOplata.parentForm = self;
         if (self.mainForm)

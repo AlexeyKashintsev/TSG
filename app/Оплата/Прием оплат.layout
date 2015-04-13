@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="257px" prefWidth="504px" windowClosed="formWindowClosed">
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="257px" prefWidth="553px" windowClosed="formWindowClosed">
   <widget name="panel" parent="Form" prefHeight="257px" prefWidth="152px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints bottom="0px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="152px"/>
@@ -63,7 +63,7 @@
     <treeDesignInfo/>
     <constraints bottom="3px" left="3px" right="3px" top="132px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="panel1" parent="Form" prefHeight="120px" prefWidth="351px" type="PanelDesignInfo">
+  <widget name="panel1" parent="Form" prefHeight="120px" prefWidth="400px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints height="120px" left="153px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
@@ -73,33 +73,43 @@
   <widget name="label3" parent="panel1" prefHeight="16px" prefWidth="38px" text="Дата" type="LabelDesignInfo">
     <constraints height="16px" left="12px" top="42px" type="MarginConstraintsDesignInfo" width="38px"/>
   </widget>
-  <widget dateFormat="dd.MM.yyyy" name="modelDate" opaque="false" parent="panel1" prefHeight="25px" prefWidth="264px" type="DbDateDesignInfo">
+  <widget dateFormat="dd.MM.yyyy" name="modelDate" opaque="false" parent="panel1" prefHeight="25px" prefWidth="313px" type="DbDateDesignInfo">
     <datamodelElement entityId="-1" fieldName="parDate"/>
     <constraints height="25px" left="72px" right="15px" top="38px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="label4" parent="panel1" prefHeight="16px" prefWidth="96px" text="Комментарий" type="LabelDesignInfo">
     <constraints height="16px" left="12px" top="66px" type="MarginConstraintsDesignInfo" width="96px"/>
   </widget>
-  <widget format="#0.00" name="modelFormattedField1" parent="panel1" prefHeight="25px" prefWidth="152px" type="DbLabelDesignInfo" valueType="0">
+  <widget format="#0.00" name="modelFormattedField1" parent="panel1" prefHeight="25px" prefWidth="68px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="-1" fieldName="parSum"/>
-    <constraints height="25px" left="76px" right="123px" top="12px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="25px" left="60px" top="12px" type="MarginConstraintsDesignInfo" width="68px"/>
   </widget>
-  <widget name="modelFormattedField2" parent="panel1" prefHeight="25px" prefWidth="324px" type="DbLabelDesignInfo">
+  <widget name="modelFormattedField2" parent="panel1" prefHeight="25px" prefWidth="373px" type="DbLabelDesignInfo">
     <datamodelElement entityId="-1" fieldName="parComment"/>
     <constraints height="25px" left="12px" right="15px" top="87px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="modelFormattedField3" parent="panel1" prefHeight="20px" prefWidth="63px" type="DbLabelDesignInfo">
+  <widget name="modelFormattedField3" parent="panel1" prefHeight="20px" prefWidth="68px" type="DbLabelDesignInfo">
     <datamodelElement entityId="-1" fieldName="parPercent"/>
-    <constraints height="20px" right="0px" top="12px" type="MarginConstraintsDesignInfo" width="63px"/>
+    <constraints height="20px" left="192px" top="14px" type="MarginConstraintsDesignInfo" width="68px"/>
   </widget>
-  <widget name="panel2" parent="Form" prefHeight="137px" prefWidth="351px" type="PanelDesignInfo">
+  <widget name="label5" parent="panel1" prefHeight="14px" prefWidth="60px" text="Процент" type="LabelDesignInfo">
+    <constraints height="14px" left="132px" top="17px" type="MarginConstraintsDesignInfo" width="60px"/>
+  </widget>
+  <widget name="label6" parent="panel1" prefHeight="14px" prefWidth="60px" text="Оплачено" type="LabelDesignInfo">
+    <constraints height="14px" left="264px" top="17px" type="MarginConstraintsDesignInfo" width="60px"/>
+  </widget>
+  <widget name="modelFormattedField4" parent="panel1" prefHeight="20px" prefWidth="68px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="-1" fieldName="parFullPay"/>
+    <constraints height="20px" right="0px" top="14px" type="MarginConstraintsDesignInfo" width="68px"/>
+  </widget>
+  <widget name="panel2" parent="Form" prefHeight="137px" prefWidth="400px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints bottom="0px" left="153px" right="0px" top="120px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="button1ActionPerformed" icon="icons/22x22/actions/window-close.png" name="button1" parent="panel2" prefHeight="36px" prefWidth="120px" text="Закрыть" toolTipText="Закрыть форму" type="ButtonDesignInfo">
     <constraints bottom="1px" height="36px" right="3px" type="MarginConstraintsDesignInfo" width="120px"/>
   </widget>
-  <widget name="modelGrid1" parent="panel2" prefHeight="100px" prefWidth="336px" type="DbGridDesignInfo">
+  <widget name="modelGrid1" parent="panel2" prefHeight="100px" prefWidth="385px" type="DbGridDesignInfo">
     <column name="column2" readonly="true" title="Счетчик">
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="138703021155642" fieldName="usl_services_id"/>
@@ -155,7 +165,7 @@
     <constraints bottom="37px" left="12px" right="3px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="buttonActionPerformed" icon="icons/22x22/actions/stock_add-bookmark.png" name="button" parent="panel2" prefHeight="36px" prefWidth="120px" text="Провести" toolTipText="Провести платеж" type="ButtonDesignInfo">
-    <constraints bottom="0px" height="36px" left="100px" type="MarginConstraintsDesignInfo" width="120px"/>
+    <constraints bottom="0px" height="36px" left="140px" type="MarginConstraintsDesignInfo" width="120px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>
