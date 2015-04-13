@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><layout alwaysOnTop="true" defaultCloseOperation="2" locationByPlatform="true" name="Form" prefHeight="62px" prefWidth="505px" resizable="false" title="Индикатор прогресса" undecorated="true">
+<?xml version="1.0" encoding="UTF-8"?><layout alwaysOnTop="true" defaultCloseOperation="2" name="Form" prefHeight="62px" prefWidth="505px" resizable="false" title="Индикатор прогресса" undecorated="true" windowOpened="formWindowOpened">
   <widget name="progressBar" parent="Form" prefHeight="20px" prefWidth="480px" type="ProgressBarDesignInfo">
     <constraints height="20px" left="12px" top="36px" type="MarginConstraintsDesignInfo" width="480px"/>
   </widget>
