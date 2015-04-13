@@ -41,7 +41,7 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
 }//GEN-LAST:event_buttonActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
-        formWindowClosed();
+        //formWindowClosed();
         self.close();
 }//GEN-LAST:event_button1ActionPerformed
 paramSynchronizer.addListener(this);
@@ -51,7 +51,9 @@ paramSynchronizer.addListener(this);
     }//GEN-LAST:event_btFlatNumEnterActionPerformed
 
     function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
-        if (aParent)
+        if (aParent) {
             aParent.toFront();
+            aParent.textBarCode.focus();
+        }
     }//GEN-LAST:event_formWindowClosed
 }
