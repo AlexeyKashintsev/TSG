@@ -12,7 +12,7 @@ var self = this, model = self;
 
 
     guiUtils = new guiModule();
-    progress = new ProgressShow();
+    clientProgress = new ProgressShow();
     var fmDateSelect = new fmDateSelector;
     var fmWorksheet = null;
     var fmGroups = null;

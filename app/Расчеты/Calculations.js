@@ -94,12 +94,11 @@ function Calculations() {
                         } catch (e) {
                             Logger.warning('Ошибка расчета полного значения по услуге ' +cursor.services_id + ' в квартире  ' + aFlatID);
                         }
-                            progress.increaseValue();
+                            serverProgress.increaseValue();
                     });
                     serverProgress.setDescription("Сохранение значений расчета начислений");
                     model.save();
-                    //saldoClc.calculateFlatSaldo(aGroupID, aFlatID, aDateID);
-                    serverProgress.finish();
+                    saldoClc.calculateFlatSaldo(aGroupID, aFlatID, aDateID);
                     return true;
                 } else {
                     serverProgress.finish();

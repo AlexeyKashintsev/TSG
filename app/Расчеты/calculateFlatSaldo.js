@@ -10,7 +10,6 @@ function CalculateFlatSaldo() {
     
     
     self.calculateFlatSaldo = function(aGroupID, aFlatID, aDateID) {
-        (function(){
         model.params.parDateID = aDateID;
         model.params.parFlatID = aFlatID;
         model.params.parGroupID = aGroupID;
@@ -69,7 +68,6 @@ function CalculateFlatSaldo() {
             model.save();
         });
                 serverProgress.finish();
-        }).invokeBackground();
     };
         
         function getSumOfSums(anAccount, aLCID){

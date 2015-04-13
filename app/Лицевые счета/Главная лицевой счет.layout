@@ -6,8 +6,8 @@
   <widget floatable="false" name="toolBar" orientation="1" parent="panel" prefHeight="67px" prefWidth="35px" rollover="true" type="ToolbarDesignInfo">
     <constraints bottom="0px" height="67px" right="0px" type="MarginConstraintsDesignInfo" width="35px"/>
   </widget>
-  <widget actionPerformed="btnCalcAllGroupActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/apps/system-software-update.png" name="btnCalcAllGroup" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Посчитать все квартиры группы" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnCalcAllFlatActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/apps/system-upgrade.png" name="btnCalcAllFlat" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Посчитать текущую квартиру" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnCalcAllGroupActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/apps/system-software-update.png" name="btnCalcAllGroup" parent="toolBar" prefHeight="26px" prefWidth="27px" toolTipText="Посчитать все квартиры группы" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnCalcAllFlatActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/apps/system-upgrade.png" name="btnCalcAllFlat" parent="toolBar" prefHeight="26px" prefWidth="27px" toolTipText="Посчитать текущую квартиру" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="pnlSaldoCur" parent="panel" prefHeight="67px" prefWidth="433px" type="PanelDesignInfo">
     <layout type="BorderLayoutDesignInfo"/>
     <border borderTitleColor="#000000" title="Сальдо" titleJustification="0" type="TitledBorderDesignInfo">
@@ -19,36 +19,36 @@
   <widget name="tabbedPane" parent="panel" prefHeight="266px" prefWidth="477px" type="TabsDesignInfo">
     <constraints bottom="67px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlCurrent" parent="tabbedPane" prefHeight="222px" prefWidth="472px" type="PanelDesignInfo">
+  <widget name="pnlCurrent" parent="tabbedPane" prefHeight="220px" prefWidth="456px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Начисления" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlSaldoHistory" parent="tabbedPane" prefHeight="222px" prefWidth="472px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlSaldoHistory" parent="tabbedPane" prefHeight="220px" prefWidth="456px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="История сальдо" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget dividerLocation="200" leftComponent="pnlServices" name="splitPane2" orientation="0" parent="tabbedPane" prefHeight="222px" prefWidth="472px" rightComponent="pnlCounters" type="SplitDesignInfo" visible="false">
+  <widget dividerLocation="200" leftComponent="pnlServices" name="splitPane2" orientation="0" parent="tabbedPane" prefHeight="220px" prefWidth="456px" rightComponent="pnlCounters" type="SplitDesignInfo" visible="false">
     <constraints tabTitle="Услуги и счетчики" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlServices" parent="splitPane2" prefHeight="199px" prefWidth="470px" type="PanelDesignInfo">
+  <widget name="pnlServices" parent="splitPane2" prefHeight="198px" prefWidth="452px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
-  <widget name="pnlCounters" parent="splitPane2" prefHeight="16px" prefWidth="470px" type="PanelDesignInfo">
+  <widget name="pnlCounters" parent="splitPane2" prefHeight="13px" prefWidth="452px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
-  <widget name="pnlOplata" parent="tabbedPane" prefHeight="222px" prefWidth="472px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlOplata" parent="tabbedPane" prefHeight="220px" prefWidth="456px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Оплата" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlFlatChars" parent="tabbedPane" prefHeight="222px" prefWidth="472px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlFlatChars" parent="tabbedPane" prefHeight="220px" prefWidth="456px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Характеристики" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlLCGroups" parent="tabbedPane" prefHeight="222px" prefWidth="472px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlLCGroups" parent="tabbedPane" prefHeight="220px" prefWidth="456px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Группы" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlUser" parent="tabbedPane" prefHeight="222px" prefWidth="472px" toolTipText="Пользователь" type="PanelDesignInfo" visible="false">
+  <widget name="pnlUser" parent="tabbedPane" prefHeight="220px" prefWidth="456px" toolTipText="Пользователь" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Пользователь" type="TabsConstraintsDesignInfo"/>
   </widget>

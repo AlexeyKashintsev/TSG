@@ -55,11 +55,13 @@ function formFlatWorkSheet() {
      
 
     function btnCalcAllGroupActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllGroupActionPerformed
-        progress.executeServerProcess(function(){
+        clientProgress.executeServerProcess(function(){
             modCalc.calculateValues(model.params.parGroupID, null, model.params.parDateID);
+            fmNachisleniya.model.requery();
+            fmSaldoCur.model.requery();
         });
-        fmNachisleniya.model.requery();
-        fmSaldoCur.model.requery();
+        /*fmNachisleniya.model.requery();
+        fmSaldoCur.model.requery();*/
     }//GEN-LAST:event_btnCalcAllGroupActionPerformed
 
     function btnCalcAllFlatActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllFlatActionPerformed
