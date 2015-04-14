@@ -20,6 +20,7 @@ function CalculateFlatSaldo() {
             model.dsSumOfPayments.requery();
             model.dsSaldo4calc.requery();
             serverProgress.setMax(self.dsSaldo4calc.length);
+            serverProgress.setValue(0);
             serverProgress.setDescription("Расчет сальдо по счету "+ cursor.account_name);
             model.dsSaldo4calc.forEach(function(saldo){
                 //Logger.info("Расчет сальдо в квартире: " + self.dsSaldo4calc.cursor.lc_id);                
@@ -62,7 +63,7 @@ function CalculateFlatSaldo() {
                 saldo.sal_penalties_cur = peni;
                 saldo.sal_penalties_pay = peniPay.toFixed(2);
 
-                serverProgress.increaseValue();
+                serverProgress.increaseValue(1);
             });
                 serverProgress.setDescription("Сохранение финальных значений");
             model.save();

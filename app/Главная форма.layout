@@ -30,9 +30,6 @@
   <widget actionPerformed="button6ActionPerformed" name="button6" parent="panel" prefHeight="29px" prefWidth="118px" text="Управление" type="ButtonDesignInfo">
     <constraints height="29px" left="120px" top="0px" type="MarginConstraintsDesignInfo" width="118px"/>
   </widget>
-  <widget actionPerformed="button7ActionPerformed" name="button7" parent="panel" prefHeight="29px" prefWidth="94px" text="button7" type="ButtonDesignInfo">
-    <constraints height="29px" right="11px" top="12px" type="MarginConstraintsDesignInfo" width="94px"/>
-  </widget>
   <widget name="pnlDateSelector" parent="Form" prefHeight="60px" prefWidth="120px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints height="60px" left="67px" top="0px" type="MarginConstraintsDesignInfo" width="120px"/>
