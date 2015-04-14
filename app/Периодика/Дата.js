@@ -89,9 +89,11 @@ function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
          self.model.requery();
          self.all_dates.last();*/
         var newDateProcessor = new DateModule();
-        newDateProcessor.newDate(function() {
-            self.model.requery(function() {
-                model.all_dates.last();
+        clientProgress.executeServerProcess(function(){
+            newDateProcessor.newDate(function() {
+                self.model.requery(function() {
+                    model.all_dates.last();
+                });
             });
         });
 }//GEN-LAST:event_btn_newActionPerformed

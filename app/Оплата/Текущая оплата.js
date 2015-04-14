@@ -31,7 +31,7 @@ function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
     self.parFlatID = null;
     self.parSum = 0;
     self.tfFlatNumber.text = '';*/
-    self.model.save();
+    model.save();
     if (self.parentForm)
         self.parentForm.updateSession();
 }//GEN-LAST:event_btnSaveActionPerformed
@@ -53,8 +53,6 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
         if (self.parentForm)
             self.parentForm.updateSession();  
         self.close();
-        if (aParent)
-            aParent.toFront();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
@@ -63,7 +61,18 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
 paramSynchronizer.addListener(this);
 
     function formWindowClosed(evt) {//GEN-FIRST:event_formWindowClosed
-        if (aParent)
+        if (aParent) {
             aParent.toFront();
+            aParent.textBarCode.focus();
+        }
     }//GEN-LAST:event_formWindowClosed
+
+    function dsOplByIdOnChanged(evt) {//GEN-FIRST:event_dsOplByIdOnChanged
+        if(evt.propertyName == 'full_payment'){
+            self.modelFormattedField1.value = evt.newValue / (1 + self.modelFormattedField4.value/100); 
+        };
+        if(evt.propertyName == 'bank_percent'){
+            self.modelFormattedField1.value = self.modelFormattedField5.value / (1 + evt.newValue/100);
+        };
+    }//GEN-LAST:event_dsOplByIdOnChanged
 }

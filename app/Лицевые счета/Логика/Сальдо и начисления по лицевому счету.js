@@ -95,14 +95,7 @@ function SaldoAndSumsModule() {
     };
 
     self.addOplata = function(aFlatID, aSessionID, aDateID, aSum, aDate, aComment, aPercent, aFullPay) {
-        if (aPercent === 0){
-            if (aFullPay === null)
-                aFullPay = aSum;
-            else
-                aSum = aFullPay;
-        }
-        else
-            aSum = aFullPay/(1 + aPercent/100);
+
         model.dsOplById.push({
             session_id:      aSessionID,
             flat_id:         aFlatID,

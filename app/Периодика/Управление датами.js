@@ -41,9 +41,9 @@ function DateModule() {
     };
 
     self.newDate = function(aCallBack) {
-        var progress = new ProgressShow();
-        progress.setMax(model.dsGroups.length * 4 + 1);
-        progress.setDescription("Подождите. Производится перенос данных в новый расчетный период");
+
+        serverProgress.setMax(model.dsGroups.length * 4 + 1);
+        serverProgress.setDescription("Подождите. Производится перенос данных в новый расчетный период");
         callBack = aCallBack;
         model.all_dates.last();
         var prevDate = model.all_dates.cursor.per_date_id;
@@ -56,9 +56,7 @@ function DateModule() {
             model.dsAllAccounts.requery(function() {
                 model.dsAllAccounts.forEach(function(aAccount) {
                     model.save(function() {
-                        (function() {
-                            progress.increaseValue(1);
-                        }).invokeAndWait();
+                            serverProgress.increaseValue();
 
                         model.dsGroups.beforeFirst();
                         while (model.dsGroups.next()) {
@@ -66,9 +64,7 @@ function DateModule() {
                             model.sums_4create.params.dateid = newDate;
                             model.sums_4create.params.groupid = group;
                             model.sums_4create.executeUpdate();
-                            (function() {
-                                progress.increaseValue(1);
-                            }).invokeAndWait();
+                                serverProgress.increaseValue();
                             grpModules[group] = new NewMonthInitializer4Group(prevDate, newDate, group, self, progress, aAccount.grp_account_id);
                         }
 
@@ -77,18 +73,13 @@ function DateModule() {
                         //      model.sums_4create.params.dateid = newDate;
                         //       model.sums_4create.params.groupid = group;
                         //       model.sums_4create.executeUpdate();
-                        (function() {
-                            progress.increaseValue(1);
-                        }).invokeAndWait();
+                            serverProgress.increaseValue();
                         grpModules[group] = new NewMonthInitializer4Lc(prevDate, newDate, self, progress, aAccount.grp_account_id);
                     });
                 });
             });
-            (function() {
-                progress.close();
-            }).invokeAndWait();
+                serverProgress.finish();
         }).invokeBackground();
-        progress.showModal();
         self.model.params.prevDate = prevDate;
         self.model.params.newDate = newDate;
         //model.new_counter.execute();

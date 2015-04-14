@@ -38,6 +38,10 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
     self.tfFlatNumber.text = '';
     if (self.parentForm)
         self.parentForm.updateSession();
+    if (self.barCode == true){
+        self.barCode = false;
+        self.close();
+    };
 }//GEN-LAST:event_buttonActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
@@ -56,4 +60,13 @@ paramSynchronizer.addListener(this);
             aParent.textBarCode.focus();
         }
     }//GEN-LAST:event_formWindowClosed
+  
+    function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
+        if(evt.propertyName == 'parFullPay'){
+            self.modelFormattedField4.value = evt.newValue / (1 + model.params.parPercent/100); 
+        };
+        if(evt.propertyName == 'parPercent'){
+            self.modelFormattedField4.value = self.modelFormattedField1.value / (1 + model.params.parPercent/100);
+        };
+    }//GEN-LAST:event_paramsOnChanged
 }

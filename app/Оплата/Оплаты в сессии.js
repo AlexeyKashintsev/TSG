@@ -88,10 +88,11 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
         fmNewOplata.parSessionID = self.parSessionID;
         fmNewOplata.parFlatID = flat_id;
         fmNewOplata.parGroupID = group_id;
-        fmNewOplata.parSum = sum;
+        fmNewOplata.parFullPay = sum;
         fmNewOplata.parPercent = 0;
         if(lcNum){
             fmNewOplata.tfFlatNumber.text = lcNum;
+            fmNewOplata.params.barCode = true;
         };
         fmNewOplata.model.requery();
         fmNewOplata.parentForm = self;
@@ -133,14 +134,4 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
             self.textBarCode.focus();
         }
     }//GEN-LAST:event_paramsOnChanged
-
-    function dsPaymentsInSessionOnRequeried(evt) {//GEN-FIRST:event_dsPaymentsInSessionOnRequeried
-        barCodes = {};
-        model.dsPaymentsInSession.forEach(function(aRow) {
-            if (!barCodes[aRow.barcode])
-                barCodes[aRow.barcode] = aRow.opl_payments_id;
-            else
-                barCodes[aRow.barcode] = 'more than one!';
-        });
-    }//GEN-LAST:event_dsPaymentsInSessionOnRequeried
 }

@@ -65,9 +65,11 @@ function formFlatWorkSheet() {
     }//GEN-LAST:event_btnCalcAllGroupActionPerformed
 
     function btnCalcAllFlatActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllFlatActionPerformed
-        modCalc.calculateValues(null, model.params.parFlatID, model.params.parDateID);
-        fmNachisleniya.model.requery();
-        fmSaldoCur.model.requery();
+         clientProgress.executeServerProcess(function(){
+             modCalc.calculateValues(null, model.params.parFlatID, model.params.parDateID);
+            fmNachisleniya.model.requery();
+            fmSaldoCur.model.requery();
+        });
     }//GEN-LAST:event_btnCalcAllFlatActionPerformed
 
     function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
