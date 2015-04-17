@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="dsTables" Title="Oracle-список нереплицированных таблиц_" entityHeight="200" entityIconified="false" entityId="139236082593509" entityLocationX="33" entityLocationY="238" entityWidth="150" queryId="135789356406234" tableName="" tableSchemaName=""/>
+  <entity Name="dsState" Title="Oracle-Соcтояние view" entityHeight="200" entityIconified="false" entityId="139235892976544" entityLocationX="210" entityLocationY="31" entityWidth="150" queryId="135782364471867" tableName="" tableSchemaName=""/>
+</datamodel>

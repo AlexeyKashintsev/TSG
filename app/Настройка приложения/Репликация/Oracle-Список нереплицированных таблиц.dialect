@@ -1,0 +1,14 @@
+/**
+ * @name 135789356406234
+ */
+select row_number() over() id, tableName from
+(
+select lower(table_name) tableName from information_schema.tables 
+where lower(table_name) not like 'mtd_%'and
+lower(table_name) not like 'replicate_%' and
+table_schema = current_schema and 
+table_type = 'BASE TABLE'
+except
+select lower(tableName) tableName from replicate_views
+) r
+order by 1

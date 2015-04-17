@@ -1,0 +1,40 @@
+select
+ viewName,
+ usr_name,
+ schemaName,
+ statusView
+from
+(
+select
+ viewName,
+ usr_name as usr_name,
+ schemaName as schemaName,
+ (case when colT = colV then 'Ok'
+       when colT <> colV then 'РАЗНОЕ КОЛИЧЕСТВО СТОЛБЦОВ'
+       when colT is null then 'ОТСУТСТВУЕТ ТАБЛИЦА'
+       when colV is null then 'ОТСУТСТВУЕТ ПРЕДСТАВЛЕНИЕ'
+       else 'ОШИБКА СОСТОЯНИЯ' end) statusView
+
+from
+(
+   with u as
+   (select * from mtd_users t where
+       (usr_name,usr_context) in
+       (select min(usr_name),usr_context from mtd_users where usr_context is not null group by usr_context)
+   ),
+   viewColumns as (select lower(table_schema) table_schema, lower(table_name) table_name,count(*) cnt_columnV from information_schema.columns group by lower(table_schema), lower(table_name))
+
+   select
+       u.usr_name,
+       lower(u.usr_context) schemaName,
+       lower(v.tablename) viewname,
+       b1.cnt_columnV colT,
+       b2.cnt_columnV colV
+   from  u, replicate_views v
+   left join viewColumns b1 on b1.table_name = lower(v.tableName) and b1.table_schema = current_schema
+   left join viewColumns b2 on b2.table_name = lower(v.tableName)
+   where  (b2.table_schema is null or b2.table_schema = lower(u.usr_context))
+) z1
+) z2
+--where statusView <> 'Ok'
+order by lower(viewName),lower(schemaName)

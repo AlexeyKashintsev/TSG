@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="dsViews" Title="список заданных view" entityHeight="200" entityIconified="false" entityId="136073887368797" entityLocationX="209" entityLocationY="16" entityWidth="150" queryId="135780931934378" tableName="" tableSchemaName=""/>
+  <entity Name="dsNotDefinedViews" Title="список нереплицированных таблиц" entityHeight="200" entityIconified="false" entityId="136074825329672" entityLocationX="398" entityLocationY="22" entityWidth="150" queryId="135789356406234" tableName="" tableSchemaName=""/>
+</datamodel>

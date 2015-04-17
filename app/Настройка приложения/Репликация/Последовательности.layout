@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="366px" prefWidth="708px">
+  <widget name="toolBar" parent="Form" prefHeight="25px" prefWidth="708px" rollover="true" type="ToolbarDesignInfo">
+    <constraints height="25px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="btnCreateSequenceActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/pin--plus.png" name="btnCreateSequence" parent="toolBar" prefHeight="23px" prefWidth="23px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnDropSequenceActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/pin--minus.png" name="btnDropSequence" parent="toolBar" prefHeight="23px" prefWidth="23px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnRefreshActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/refresh/refresh.png" name="btnRefresh" parent="toolBar" prefHeight="23px" prefWidth="23px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget dividerLocation="200" leftComponent="panel" name="splitPane" parent="Form" prefHeight="312px" prefWidth="708px" rightComponent="panel1" type="SplitDesignInfo">
+    <constraints bottom="30px" left="0px" right="0px" top="24px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="panel" parent="splitPane" prefHeight="310px" prefWidth="199px" type="PanelDesignInfo">
+    <layout type="BorderLayoutDesignInfo"/>
+  </widget>
+  <widget name="toolBar1" parent="panel" prefHeight="17px" prefWidth="199px" rollover="true" type="ToolbarDesignInfo">
+    <constraints place="First" type="BorderLayoutConstraintsDesignInfo"/>
+  </widget>
+  <widget focusable="false" horizontalTextPosition="4" name="jcbSchemas" parent="toolBar1" prefHeight="15px" prefWidth="69px" text="Все схемы" type="CheckDesignInfo" verticalTextPosition="3"/>
+  <widget deletable="false" editable="false" insertable="false" name="grdSchemas" parent="panel" prefHeight="293px" prefWidth="199px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="136073885334397" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <column name="colContext" title="Схема">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="136073885334397" fieldName="context"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDisplayField/>
+    </column>
+    <constraints place="Center" type="BorderLayoutConstraintsDesignInfo"/>
+  </widget>
+  <widget name="panel1" parent="splitPane" prefHeight="310px" prefWidth="502px" type="PanelDesignInfo">
+    <layout type="BorderLayoutDesignInfo"/>
+  </widget>
+  <widget name="toolBar2" parent="panel1" prefHeight="17px" prefWidth="502px" rollover="true" type="ToolbarDesignInfo">
+    <constraints place="First" type="BorderLayoutConstraintsDesignInfo"/>
+  </widget>
+  <widget focusable="false" horizontalTextPosition="4" name="jcbSequences" parent="toolBar2" prefHeight="15px" prefWidth="145px" text="Все последовательности" type="CheckDesignInfo" verticalTextPosition="3"/>
+  <widget deletable="false" editable="false" insertable="false" name="grdSequences" parent="panel1" prefHeight="293px" prefWidth="502px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="136074073767104" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <column name="colSequencename" title="Последовательность">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="136074073767104" fieldName="sequencename"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDisplayField/>
+    </column>
+    <constraints place="Center" type="BorderLayoutConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="jbCloseActionPerformed" name="jbClose" parent="Form" prefHeight="23px" prefWidth="101px" text="Закрыть" type="ButtonDesignInfo">
+    <constraints bottom="5px" height="23px" right="12px" type="MarginConstraintsDesignInfo" width="101px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

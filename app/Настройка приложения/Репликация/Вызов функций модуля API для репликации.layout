@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="366px" prefWidth="871px">
+  <widget name="tabbedPane" parent="Form" prefHeight="360px" prefWidth="865px" type="TabsDesignInfo">
+    <constraints bottom="3px" left="3px" right="3px" top="3px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="panel" parent="tabbedPane" prefHeight="314px" prefWidth="844px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Схема" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label" parent="panel" prefHeight="24px" prefWidth="204px" text="Имя схемы" type="LabelDesignInfo">
+    <constraints height="24px" left="12px" top="12px" type="MarginConstraintsDesignInfo" width="204px"/>
+  </widget>
+  <widget name="txtCreateSchema" parent="panel" prefHeight="24px" prefWidth="652px" type="TextFieldDesignInfo">
+    <constraints height="24px" left="12px" right="180px" top="36px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="btnCreateSchemaActionPerformed" name="btnCreateSchema" parent="panel" prefHeight="25px" prefWidth="150px" text="Создать схему" type="ButtonDesignInfo">
+    <constraints height="25px" right="11px" top="36px" type="MarginConstraintsDesignInfo" width="150px"/>
+  </widget>
+  <widget actionPerformed="btnDropSchemaActionPerformed" name="btnDropSchema" parent="panel" prefHeight="25px" prefWidth="150px" text="Удалить схему" type="ButtonDesignInfo">
+    <constraints height="25px" right="11px" top="72px" type="MarginConstraintsDesignInfo" width="150px"/>
+  </widget>
+  <widget name="comboDropSchema" parent="panel" prefHeight="23px" prefWidth="652px" type="DbComboDesignInfo">
+    <valueField entityId="139227762969453" fieldName="context"/>
+    <displayField entityId="139227762969453" fieldName="context"/>
+    <datamodelElement entityId="-1" fieldName="pSchema"/>
+    <constraints height="23px" left="12px" right="180px" top="72px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="panel1" parent="tabbedPane" prefHeight="314px" prefWidth="844px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Представление" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label1" parent="panel1" prefHeight="24px" prefWidth="180px" text="Имя схемы" type="LabelDesignInfo">
+    <constraints height="24px" left="12px" top="24px" type="MarginConstraintsDesignInfo" width="180px"/>
+  </widget>
+  <widget name="label2" parent="panel1" prefHeight="24px" prefWidth="168px" text="Имя представления" type="LabelDesignInfo">
+    <constraints height="24px" left="12px" top="60px" type="MarginConstraintsDesignInfo" width="168px"/>
+  </widget>
+  <widget actionPerformed="btnCreateViewActionPerformed" name="btnCreateView" parent="panel1" prefHeight="25px" prefWidth="120px" text="Создать" type="ButtonDesignInfo">
+    <constraints bottom="19px" height="25px" left="12px" type="MarginConstraintsDesignInfo" width="120px"/>
+  </widget>
+  <widget actionPerformed="btnDropViewActionPerformed" name="btnDropView" parent="panel1" prefHeight="25px" prefWidth="108px" text="Удалить" type="ButtonDesignInfo">
+    <constraints bottom="19px" height="25px" left="144px" type="MarginConstraintsDesignInfo" width="108px"/>
+  </widget>
+  <widget name="comboViewSchema" parent="panel1" prefHeight="23px" prefWidth="676px" type="DbComboDesignInfo">
+    <valueField entityId="139228028342205" fieldName="context"/>
+    <displayField entityId="139228028342205" fieldName="context"/>
+    <datamodelElement entityId="-1" fieldName="pViewSchema"/>
+    <constraints height="23px" left="156px" right="12px" top="24px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="comboView" parent="panel1" prefHeight="23px" prefWidth="676px" type="DbComboDesignInfo">
+    <valueField entityId="139228117849939" fieldName="tablename"/>
+    <displayField entityId="139228117849939" fieldName="f2"/>
+    <datamodelElement entityId="-1" fieldName="pView"/>
+    <constraints height="23px" left="156px" right="12px" top="60px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="panel2" parent="tabbedPane" prefHeight="314px" prefWidth="844px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Последовательность" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label3" parent="panel2" prefHeight="24px" prefWidth="180px" text="Имя схемы" type="LabelDesignInfo">
+    <constraints height="24px" left="12px" top="24px" type="MarginConstraintsDesignInfo" width="180px"/>
+  </widget>
+  <widget name="label4" parent="panel2" prefHeight="24px" prefWidth="180px" text="Имя последовательности" type="LabelDesignInfo">
+    <constraints height="24px" left="12px" top="60px" type="MarginConstraintsDesignInfo" width="180px"/>
+  </widget>
+  <widget actionPerformed="btnCreateSequenceActionPerformed" name="btnCreateSequence" parent="panel2" prefHeight="24px" prefWidth="132px" text="Создать" type="ButtonDesignInfo">
+    <constraints bottom="20px" height="24px" left="12px" type="MarginConstraintsDesignInfo" width="132px"/>
+  </widget>
+  <widget actionPerformed="btnDropSequenceActionPerformed" name="btnDropSequence" parent="panel2" prefHeight="24px" prefWidth="120px" text="Удалить" type="ButtonDesignInfo">
+    <constraints bottom="20px" height="24px" left="168px" type="MarginConstraintsDesignInfo" width="120px"/>
+  </widget>
+  <widget name="comboSequenceSchema" parent="panel2" prefHeight="23px" prefWidth="616px" type="DbComboDesignInfo">
+    <valueField entityId="139228244718599" fieldName="context"/>
+    <displayField entityId="139228244718599" fieldName="context"/>
+    <datamodelElement entityId="-1" fieldName="pSequenceSchema"/>
+    <constraints height="23px" left="216px" right="12px" top="24px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="comboSequence" parent="panel2" prefHeight="23px" prefWidth="616px" type="DbComboDesignInfo">
+    <valueField entityId="139228245506216" fieldName="id"/>
+    <displayField entityId="139228245506216" fieldName="sequencename"/>
+    <datamodelElement entityId="-1" fieldName="pSequence"/>
+    <constraints height="23px" left="216px" right="12px" top="60px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="panel3" parent="tabbedPane" prefHeight="314px" prefWidth="844px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Добавить описание представления" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label5" parent="panel3" prefHeight="24px" prefWidth="168px" text="Имя таблицы" type="LabelDesignInfo">
+    <constraints height="24px" left="24px" top="24px" type="MarginConstraintsDesignInfo" width="168px"/>
+  </widget>
+  <widget name="txtAddDefine" parent="panel3" prefHeight="23px" prefWidth="628px" type="TextFieldDesignInfo">
+    <constraints height="23px" left="204px" right="12px" top="24px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label6" parent="panel3" prefHeight="24px" prefWidth="132px" text="Тип представления" type="LabelDesignInfo">
+    <constraints height="24px" left="24px" top="72px" type="MarginConstraintsDesignInfo" width="132px"/>
+  </widget>
+  <widget buttonGroup="buttonGroup" name="rbAllR" parent="panel3" prefHeight="22px" prefWidth="628px" selected="true" text="только чтение по всем записям" type="RadioDesignInfo">
+    <constraints height="22px" left="204px" right="12px" top="72px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget buttonGroup="buttonGroup" name="rbAllRW" parent="panel3" prefHeight="22px" prefWidth="628px" text="чтение/запись по всем записям" type="RadioDesignInfo">
+    <constraints height="22px" left="204px" right="12px" top="96px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget buttonGroup="buttonGroup" name="rbOwnerRW" parent="panel3" prefHeight="22px" prefWidth="628px" text="чтение/запись только по своим записям" type="RadioDesignInfo">
+    <constraints height="22px" left="204px" right="12px" top="120px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="chkRecreateAll" parent="panel3" prefHeight="22px" prefWidth="456px" text="пересоздать представление у всех существующих пользователей" type="CheckDesignInfo">
+    <constraints height="22px" left="24px" top="168px" type="MarginConstraintsDesignInfo" width="456px"/>
+  </widget>
+  <widget actionPerformed="btnAddDefineActionPerformed" name="btnAddDefine" parent="panel3" prefHeight="25px" prefWidth="264px" text="Добавить/заменить описание" type="ButtonDesignInfo">
+    <constraints bottom="18px" height="25px" left="12px" type="MarginConstraintsDesignInfo" width="264px"/>
+  </widget>
+  <widget name="panel4" parent="tabbedPane" prefHeight="314px" prefWidth="844px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Удалить описание представления" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label7" parent="panel4" prefHeight="24px" prefWidth="192px" text="Описание к представлению" type="LabelDesignInfo">
+    <constraints height="24px" left="12px" top="24px" type="MarginConstraintsDesignInfo" width="192px"/>
+  </widget>
+  <widget name="chkRemoveAll" parent="panel4" prefHeight="22px" prefWidth="444px" text="удалить представление у всех существующих пользователей" type="CheckDesignInfo">
+    <constraints height="22px" left="12px" top="72px" type="MarginConstraintsDesignInfo" width="444px"/>
+  </widget>
+  <widget actionPerformed="btnRemoveDefineActionPerformed" name="btnRemoveDefine" parent="panel4" prefHeight="25px" prefWidth="336px" text="Удалить описание" type="ButtonDesignInfo">
+    <constraints bottom="18px" height="25px" left="12px" type="MarginConstraintsDesignInfo" width="336px"/>
+  </widget>
+  <widget name="comboRemoveDefine" parent="panel4" prefHeight="23px" prefWidth="592px" type="DbComboDesignInfo">
+    <valueField entityId="139228286190536" fieldName="tablename"/>
+    <displayField entityId="139228286190536" fieldName="f2"/>
+    <datamodelElement entityId="-1" fieldName="pRemoveDefine"/>
+    <constraints height="23px" left="240px" right="12px" top="24px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <nonvisual name="buttonGroup" type="ButtonGroupDesignInfo"/>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

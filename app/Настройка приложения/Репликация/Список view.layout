@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="425px" prefWidth="849px">
+  <widget name="modelGrid" parent="Form" prefHeight="384px" prefWidth="849px" type="DbGridDesignInfo">
+    <column name="colUsr_name" title="Пользователь">
+      <datamodelElement entityId="141354169846265" fieldName="usr_name"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDisplayField/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+    </column>
+    <column name="colSchemaname" title="Схема БД">
+      <datamodelElement entityId="141354169846265" fieldName="schemaname"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDisplayField/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+    </column>
+    <column name="colViewname" title="Таблица">
+      <datamodelElement entityId="141354169846265" fieldName="viewname"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDisplayField/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+    </column>
+    <column name="colStatusview" title="Состояние">
+      <datamodelElement entityId="141354169846265" fieldName="statusview"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDisplayField/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+    </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="141354169846265" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <constraints bottom="41px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="btnCloseActionPerformed" name="btnClose" parent="Form" prefHeight="23px" prefWidth="101px" text="Закрыть" type="ButtonDesignInfo">
+    <constraints bottom="6px" height="23px" right="16px" type="MarginConstraintsDesignInfo" width="101px"/>
+  </widget>
+  <widget actionPerformed="btnRefreshActionPerformed" icon="icons/refresh/refresh.png" name="btnRefresh" parent="Form" prefHeight="23px" prefWidth="107px" text="Обновить" type="ButtonDesignInfo">
+    <constraints bottom="6px" height="23px" right="130px" type="MarginConstraintsDesignInfo" width="107px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

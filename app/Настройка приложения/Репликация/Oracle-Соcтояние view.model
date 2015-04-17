@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="Таблицы для репликации" entityHeight="200" entityIconified="false" entityId="135884098140675" entityLocationX="176" entityLocationY="6" entityWidth="150" tableAlias="v" tableName="replicate_views" tableSchemaName=""/>
+  <entity Title="Пользователи" entityHeight="200" entityIconified="false" entityId="135884104025093" entityLocationX="352" entityLocationY="6" entityWidth="150" tableAlias="u" tableName="mtd_users" tableSchemaName=""/>
+</datamodel>

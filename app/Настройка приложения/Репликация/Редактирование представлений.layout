@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="366px" prefWidth="862px">
+  <widget dividerLocation="400" leftComponent="panel" name="splitPane" parent="Form" prefHeight="336px" prefWidth="862px" rightComponent="panel1" type="SplitDesignInfo">
+    <constraints bottom="30px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="panel" parent="splitPane" prefHeight="334px" prefWidth="399px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+  </widget>
+  <widget floatable="false" name="toolBar1" parent="panel" prefHeight="24px" prefWidth="396px" type="ToolbarDesignInfo">
+    <constraints height="24px" left="0px" right="3px" top="24px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="jbEditRActionPerformed" focusable="false" horizontalTextPosition="0" name="jbEditR" parent="toolBar1" prefHeight="21px" prefWidth="43px" text="Чтения" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="jbEditRWActionPerformed" focusable="false" horizontalTextPosition="0" name="jbEditRW" parent="toolBar1" prefHeight="21px" prefWidth="83px" text="Чтения\Записи" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="jbEditRWUserActionPerformed" focusable="false" horizontalTextPosition="0" name="jbEditRWUser" parent="toolBar1" prefHeight="21px" prefWidth="163px" text="Чтения\Записи пользователем" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="jbDeleteActionPerformed" focusable="false" horizontalTextPosition="0" name="jbDelete" parent="toolBar1" prefHeight="21px" prefWidth="73px" text="Недоступной" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnRefreshViews1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/refresh/refresh.png" name="btnRefreshViews1" parent="toolBar1" prefHeight="22px" prefWidth="23px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget deletable="false" editable="false" insertable="false" name="grdSchemas" parent="panel" prefHeight="262px" prefWidth="396px" type="DbGridDesignInfo">
+    <column name="colTablename1" title="Представление">
+      <datamodelElement entityId="136073887368797" fieldName="tablename"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDisplayField/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+    </column>
+    <column name="colF21" title="Тип представления">
+      <datamodelElement entityId="136073887368797" fieldName="f2"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDisplayField/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+    </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="136073887368797" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <constraints bottom="0px" left="0px" right="3px" top="72px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget focusable="false" horizontalTextPosition="4" name="jcbEditAll" parent="panel" prefHeight="22px" prefWidth="396px" text="Для всех пользователей" type="CheckDesignInfo" verticalTextPosition="3">
+    <constraints height="22px" left="0px" right="3px" top="48px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label" parent="panel" prefHeight="24px" prefWidth="384px" text="Сделать таблицу доступной только для..." type="LabelDesignInfo">
+    <constraints height="24px" left="5px" right="10px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="panel1" parent="splitPane" prefHeight="334px" prefWidth="456px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+  </widget>
+  <widget name="label1" parent="panel1" prefHeight="24px" prefWidth="450px" text="Добавиь таблицу, как доступную только для..." type="LabelDesignInfo">
+    <constraints height="24px" left="6px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget floatable="false" name="toolBar2" parent="panel1" prefHeight="23px" prefWidth="456px" type="ToolbarDesignInfo">
+    <constraints height="23px" left="0px" right="0px" top="24px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="jbAddRActionPerformed" focusable="false" horizontalTextPosition="0" name="jbAddR" parent="toolBar2" prefHeight="21px" prefWidth="43px" text="Чтения" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="jbAddRWActionPerformed" focusable="false" horizontalTextPosition="0" name="jbAddRW" parent="toolBar2" prefHeight="21px" prefWidth="83px" text="Чтения\Записи" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="jbAddRWUserActionPerformed" focusable="false" horizontalTextPosition="0" name="jbAddRWUser" parent="toolBar2" prefHeight="21px" prefWidth="163px" text="Чтения\Записи пользователем" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnRefreshViewsActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/refresh/refresh.png" name="btnRefreshViews" parent="toolBar2" prefHeight="21px" prefWidth="23px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget deletable="false" editable="false" insertable="false" name="grdViews" parent="panel1" prefHeight="262px" prefWidth="456px" type="DbGridDesignInfo">
+    <column name="colId" title="id">
+      <datamodelElement entityId="136074825329672" fieldName="id"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDisplayField/>
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+    </column>
+    <column name="colTablename" title="Представление">
+      <datamodelElement entityId="136074825329672" fieldName="tablename"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <columnsDisplayField/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+    </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="136074825329672" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <constraints bottom="0px" left="0px" right="0px" top="72px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget focusable="false" horizontalTextPosition="4" name="jcbCreateAll" parent="panel1" prefHeight="25px" prefWidth="456px" text="Для всех пользователей" type="CheckDesignInfo" verticalTextPosition="3">
+    <constraints height="25px" left="0px" right="0px" top="48px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="jbCloseActionPerformed" name="jbClose" parent="Form" prefHeight="23px" prefWidth="101px" text="Закрыть" type="ButtonDesignInfo">
+    <constraints bottom="5px" height="23px" right="12px" type="MarginConstraintsDesignInfo" width="101px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

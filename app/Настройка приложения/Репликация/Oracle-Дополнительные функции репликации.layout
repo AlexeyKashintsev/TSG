@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="470px" prefWidth="550px">
+  <widget name="tabbedPane" parent="Form" prefHeight="464px" prefWidth="544px" type="TabsDesignInfo">
+    <constraints bottom="3px" left="3px" right="3px" top="3px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="panel" parent="tabbedPane" prefHeight="425px" prefWidth="532px" type="PanelDesignInfo">
+    <layout type="BorderLayoutDesignInfo"/>
+    <constraints tabTitle="Ошибочные представления" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget floatable="false" name="toolBar" parent="panel" prefHeight="27px" prefWidth="532px" rollover="true" type="ToolbarDesignInfo">
+    <constraints place="First" type="BorderLayoutConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="btnRefreshStateActionPerformed" focusable="false" horizontalTextPosition="0" name="btnRefreshState" parent="toolBar" prefHeight="25px" prefWidth="70px" text="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget name="panel4" parent="panel" prefHeight="398px" prefWidth="532px" type="PanelDesignInfo">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints place="Center" type="BorderLayoutConstraintsDesignInfo"/>
+  </widget>
+  <widget name="modelGrid" parent="panel4" prefHeight="392px" prefWidth="526px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="139235892976544" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <column name="column" title="Представление">
+      <headerStyle>
+        <nativeFont name="DejaVu Sans" size="11"/>
+      </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="139235892976544" fieldName="viewName"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+    </column>
+    <column name="column1" title="Схема Oracle">
+      <headerStyle>
+        <nativeFont name="DejaVu Sans" size="11"/>
+      </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="139235892976544" fieldName="schemaName"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+    </column>
+    <column name="column2" title="Имя пользователя">
+      <headerStyle>
+        <nativeFont name="DejaVu Sans" size="11"/>
+      </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="139235892976544" fieldName="usr_name"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+    </column>
+    <column name="column3" title="Ошибка">
+      <headerStyle>
+        <nativeFont name="DejaVu Sans" size="11"/>
+      </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="139235892976544" fieldName="statusView"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+    </column>
+    <constraints bottom="3px" left="3px" right="3px" top="3px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="panel1" parent="tabbedPane" prefHeight="425px" prefWidth="532px" type="PanelDesignInfo" visible="false">
+    <layout type="MarginLayoutDesignInfo"/>
+    <constraints tabTitle="Нереплицированные таблицы" type="TabsConstraintsDesignInfo"/>
+  </widget>
+  <widget name="panel2" parent="panel1" prefHeight="419px" prefWidth="526px" type="PanelDesignInfo">
+    <layout type="BorderLayoutDesignInfo"/>
+    <constraints bottom="3px" left="3px" right="3px" top="3px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="modelGrid1" parent="panel2" prefHeight="392px" prefWidth="526px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="139236082593509" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <column name="column4" title="Имя таблицы">
+      <headerStyle>
+        <nativeFont name="DejaVu Sans" size="11"/>
+      </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="139236082593509" fieldName="tablename"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+    </column>
+    <constraints place="Center" type="BorderLayoutConstraintsDesignInfo"/>
+  </widget>
+  <widget floatable="false" name="toolBar1" parent="panel2" prefHeight="27px" prefWidth="526px" rollover="true" type="ToolbarDesignInfo">
+    <constraints place="First" type="BorderLayoutConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="btnRefreshTablesActionPerformed" focusable="false" horizontalTextPosition="0" name="btnRefreshTables" parent="toolBar1" prefHeight="25px" prefWidth="70px" text="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>
