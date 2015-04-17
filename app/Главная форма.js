@@ -218,13 +218,5 @@ function button3ActionPerformed(evt) {//GEN-FIRST:event_button3ActionPerformed
         fmAccountSel.mainForm = mf;
         self.showFormAsInternal(fmAccountSel); 
     }//GEN-LAST:event_button6ActionPerformed
-
-    function button7ActionPerformed(evt) {//GEN-FIRST:event_button7ActionPerformed
-        
-        var tstPrg = new ServerModule("TestProgress");
-        progress.executeServerProcess((function() {
-            tstPrg.testIt();
-        }));
-    }//GEN-LAST:event_button7ActionPerformed
 }
 

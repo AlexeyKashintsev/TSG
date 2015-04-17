@@ -43,6 +43,7 @@ function DateModule() {
     self.newDate = function(aCallBack) {
 
         serverProgress.setMax(model.dsGroups.length * 4 + 1);
+        serverProgress.setValue(0);
         serverProgress.setDescription("Подождите. Производится перенос данных в новый расчетный период");
         callBack = aCallBack;
         model.all_dates.last();

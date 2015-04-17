@@ -39,6 +39,7 @@ function Calculations() {
             flats = new Flats(aDateID);
             model.dsSums4calc.requery();
             serverProgress.setMax(self.dsSums4calc.length);
+            serverProgress.setValue(0);
             prepared = true;
             return true;
         } catch (e) {
@@ -94,7 +95,7 @@ function Calculations() {
                         } catch (e) {
                             Logger.warning('Ошибка расчета полного значения по услуге ' +cursor.services_id + ' в квартире  ' + aFlatID);
                         }
-                            serverProgress.increaseValue();
+                            serverProgress.increaseValue(1);
                     });
                     serverProgress.setDescription("Сохранение значений расчета начислений");
                     model.save();
