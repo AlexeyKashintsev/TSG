@@ -2,9 +2,6 @@
   <widget name="modelGrid" parent="Form" prefHeight="252px" prefWidth="396px" type="DbGridDesignInfo">
     <column name="column">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -13,13 +10,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
       <datamodelElement entityId="142668810043732" fieldName="lc_regto"/>
     </column>
     <column name="column1">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -28,13 +25,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
       <datamodelElement entityId="142668810043732" fieldName="lc_flatnumber"/>
     </column>
     <column name="column2">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -43,6 +40,9 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
       <datamodelElement entityId="142668810043732" fieldName="TextDate"/>
     </column>
     <rowsColumnsDesignInfo>
@@ -62,6 +62,9 @@
     <displayField entityId="142668754532878" fieldName="TextDate"/>
     <datamodelElement entityId="-1" fieldName="DateEnd"/>
     <constraints height="20px" left="144px" top="12px" type="MarginConstraintsDesignInfo" width="100px"/>
+  </widget>
+  <widget actionPerformed="buttonActionPerformed" name="button" parent="Form" prefHeight="23px" prefWidth="65px" text="button" type="ButtonDesignInfo">
+    <constraints height="23px" right="35px" top="12px" type="MarginConstraintsDesignInfo" width="65px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>
