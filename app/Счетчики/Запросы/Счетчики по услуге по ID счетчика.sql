@@ -5,5 +5,5 @@
  * @public 
  */ 
 Select * 
-From cnt_con2services t1
+From cnt_con2flats t1
  Where :counterID = t1.counter_id

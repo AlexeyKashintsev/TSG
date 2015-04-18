@@ -533,31 +533,31 @@
 <pkColumn pkField="grp_bank_id" pkName="grp_bank_pk" pkSchema="public" pkTable="grp_bank"/>
 </primaryKey>
 </table>
-<table description="" name="CNT_CON2SERVICES">
+<table description="" name="cnt_con2flats">
 <columns>
-<column description="" isPk="true" javaType="java.math.BigDecimal" name="cnt_con2services_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="true" javaType="java.math.BigDecimal" name="cnt_con2flats_id" nullable="false" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 <column description="" isPk="false" javaType="java.math.BigDecimal" name="counter_id" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
-<column description="" isPk="false" javaType="java.math.BigDecimal" name="group_service" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
+<column description="" isPk="false" javaType="java.math.BigDecimal" name="group_counter" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 <column description="" isPk="false" javaType="java.math.BigDecimal" name="flat_service" nullable="true" precision="10" scale="0" signed="true" size="0" type="2" typeName="numeric"/>
 <column description="" isPk="false" javaType="java.lang.Boolean" name="main_service" nullable="true" precision="10" scale="0" signed="true" size="0" type="16" typeName="bool"/>
 </columns>
 <indexes>
-<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="cnt_con2services_pk" unique="true">
-<indColumn ascending="true" name="cnt_con2services_id" position="1"/>
+<index clustered="false" fKeyName="" hashed="false" isPKey="true" name="cnt_con2flats_pk" unique="true">
+<indColumn ascending="true" name="cnt_con2flats_id" position="1"/>
 </index>
 </indexes>
-<primaryKey name="cnt_con2services_pk">
-<pkColumn pkField="cnt_con2services_id" pkName="cnt_con2services_pk" pkSchema="public" pkTable="cnt_con2services"/>
+<primaryKey name="cnt_con2flats_pk">
+<pkColumn pkField="cnt_con2flats_id" pkName="cnt_con2flats_pk" pkSchema="public" pkTable="cnt_con2flats"/>
 </primaryKey>
 <foreignKeys>
 <foreignKey name="fk_138537863950176">
-<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="counter_id" fkName="fk_138537863950176" fkSchema="public" fkTable="cnt_con2services" fkUpdateRule="CASCADE" pkField="cnt_counters_id" pkName="cnt_counters_pk" pkSchema="public" pkTable="cnt_counters"/>
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="counter_id" fkName="fk_138537863950176" fkSchema="public" fkTable="cnt_con2flats" fkUpdateRule="CASCADE" pkField="cnt_counters_id" pkName="cnt_counters_pk" pkSchema="public" pkTable="cnt_counters"/>
 </foreignKey>
 <foreignKey name="fk_138537868517895">
-<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="flat_service" fkName="fk_138537868517895" fkSchema="public" fkTable="cnt_con2services" fkUpdateRule="CASCADE" pkField="lc_flat_services_id" pkName="lc_flat_services_pk" pkSchema="public" pkTable="lc_flat_services"/>
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="flat_service" fkName="fk_138537868517895" fkSchema="public" fkTable="cnt_con2flats" fkUpdateRule="CASCADE" pkField="lc_flat_services_id" pkName="lc_flat_services_pk" pkSchema="public" pkTable="lc_flat_services"/>
 </foreignKey>
 <foreignKey name="fk_138537866996390">
-<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="group_service" fkName="fk_138537866996390" fkSchema="public" fkTable="cnt_con2services" fkUpdateRule="CASCADE" pkField="grp_services_id" pkName="grp_services_pk" pkSchema="public" pkTable="grp_services"/>
+<fkColumn fkDeferrable="true" fkDeleteRule="CASCADE" fkField="group_counter" fkName="fk_138537866996390" fkSchema="public" fkTable="cnt_con2flats" fkUpdateRule="CASCADE" pkField="grp_services_id" pkName="grp_services_pk" pkSchema="public" pkTable="grp_services"/>
 </foreignKey>
 </foreignKeys>
 </table>

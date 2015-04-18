@@ -10,7 +10,7 @@
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="139514417399273" entityLocationX="555" entityLocationY="14" entityWidth="150" tableAlias="t" tableName="per_sums" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="139514418576831" entityLocationX="363" entityLocationY="15" entityWidth="150" tableAlias="t2" tableName="lc_flat_services" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="139514436145275" entityLocationX="365" entityLocationY="221" entityWidth="150" tableAlias="t4" tableName="cnt_con2services" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139514436145275" entityLocationX="365" entityLocationY="221" entityWidth="150" tableAlias="t4" tableName="cnt_con2flats" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="139514412181213" entityLocationX="188" entityLocationY="9" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="139514428349271" entityLocationX="194" entityLocationY="217" entityWidth="150" tableAlias="t3" tableName="per_counter_values" tableSchemaName=""/>
   <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="139514418576831" rightEntityFieldName="flat_service_id" rightEntityId="139514417399273"/>

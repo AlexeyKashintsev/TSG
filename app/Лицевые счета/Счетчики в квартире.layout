@@ -34,7 +34,7 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="137720545814454" fieldName="cnt_con2services_id"/>
+      <datamodelElement entityId="137720545814454" fieldName="cnt_con2flats_id"/>
     </column>
     <column name="colNum" title="Номер">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>

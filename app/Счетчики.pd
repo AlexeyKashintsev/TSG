@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel datamodelDbId="null">
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138537830410293" entityLocationX="517" entityLocationY="10" entityWidth="150" tableName="per_counter_values"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138537852400061" entityLocationX="10" entityLocationY="9" entityWidth="150" tableName="grp_services"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138537844908191" entityLocationX="352" entityLocationY="224" entityWidth="150" tableName="cnt_types"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138537857597160" entityLocationX="185" entityLocationY="11" entityWidth="150" tableName="cnt_con2services"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138537832711200" entityLocationX="352" entityLocationY="11" entityWidth="150" tableName="cnt_counters"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138537853193744" entityLocationX="10" entityLocationY="222" entityWidth="150" tableName="lc_flat_services"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138537830410293" entityLocationX="714" entityLocationY="12" entityWidth="150" tableName="per_counter_values"/>
+  <fieldsEntity entityHeight="237" entityIconified="false" entityId="138537852400061" entityLocationX="146" entityLocationY="222" entityWidth="150" tableName="grp_services"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="142937282622699" entityLocationX="356" entityLocationY="6" entityWidth="150" tableName="cnt_con2flats"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138537844908191" entityLocationX="529" entityLocationY="230" entityWidth="150" tableName="cnt_types"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="142937290123993" entityLocationX="146" entityLocationY="10" entityWidth="150" tableName="grp_service_counters"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138537832711200" entityLocationX="537" entityLocationY="9" entityWidth="150" tableName="cnt_counters"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138537853193744" entityLocationX="355" entityLocationY="232" entityWidth="150" tableName="lc_flat_services"/>
 </datamodel>

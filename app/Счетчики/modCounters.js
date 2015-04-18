@@ -26,9 +26,9 @@ self.addNewCounter = function(aCntActive, aCntNumber, aCntType){
 self.addCounter2Service = function(aCounter, aFlatService, aGroupService, aDepended){
     self.model.dsCountersByFlat.insert(  self.model.dsCountersByFlat.schema.counter_id, aCounter,
                                         self.model.dsCountersByFlat.schema.flat_service, aFlatService?aFlatService:null,
-                                        self.model.dsCountersByFlat.schema.group_service, aGroupService?aGroupService:null,
+                                        self.model.dsCountersByFlat.schema.group_counter, aGroupService?aGroupService:null,
                                         self.model.dsCountersByFlat.schema.main_service, aDepended?false:true);
-    return self.model.dsCountersByFlat.cnt_con2services_id;
+    return self.model.dsCountersByFlat.cnt_con2flats_id;
 };
 
 self.getFlatService = function(aFlatID, aServiceID){
