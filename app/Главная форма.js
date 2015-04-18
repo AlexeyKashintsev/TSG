@@ -139,11 +139,11 @@ self.showFormAsInternal = function(aForm) {
 }
 
 function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
-    if (!fmWorksheet) {
+    //if (!fmWorksheet) {
         fmWorksheet = new mainWorkSheet();
         fmWorksheet.mainForm = mf;
         self.showFormAsInternal(fmWorksheet);            
-    } else self.showFormAsInternal(fmWorksheet);
+    //} else self.showFormAsInternal(fmWorksheet);
 }//GEN-LAST:event_buttonActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
@@ -195,12 +195,12 @@ function button3ActionPerformed(evt) {//GEN-FIRST:event_button3ActionPerformed
     }//GEN-LAST:event_button4ActionPerformed
 
     function flats_by_groupOnScrolled(evt) {//GEN-FIRST:event_flats_by_groupOnScrolled
-        /*if (self.flats_by_group.next()){
+        if (self.flats_by_group.next()){
             var repBill = new aaa_1();
             repBill.model.params.parDateID = self.parDateID;
             repBill.model.params.parFlatID = self.flats_by_group.lc_flat_id;//aGroup;
             repBill.print();
-        }*/
+        }
     }//GEN-LAST:event_flats_by_groupOnScrolled
 
     function button5ActionPerformed(evt) {//GEN-FIRST:event_button5ActionPerformed
