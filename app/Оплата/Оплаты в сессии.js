@@ -19,6 +19,7 @@ var fmEditOplata = new opl_view(self);
 self.parentForm = null;
 self.mainForm = null;
 var barCodes = {};
+var importForm = new ImportData();
 
 function setEdit(){
     self.modelGrid.editable = 
@@ -101,7 +102,7 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
         else
             fmNewOplata.show();
     };
-
+    //TODO Название функции не удачно выбрано
     self.intConcat = function(beg, end){
         var code = model.params.parCode;
         var res = '';
@@ -134,4 +135,9 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
             self.textBarCode.focus();
         }
     }//GEN-LAST:event_paramsOnChanged
+
+    function btnImportActionPerformed(evt) {//GEN-FIRST:event_btnImportActionPerformed
+        importForm.setParams(model.params.parSessionID, model.params.parDateID)
+        importForm.showModal(model.requery);
+    }//GEN-LAST:event_btnImportActionPerformed
 }
