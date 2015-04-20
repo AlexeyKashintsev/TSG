@@ -138,6 +138,8 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
 
     function btnImportActionPerformed(evt) {//GEN-FIRST:event_btnImportActionPerformed
         importForm.setParams(model.params.parSessionID, model.params.parDateID)
-        importForm.showModal(model.requery);
+        importForm.showModal(function() {
+            model.requery();
+        });
     }//GEN-LAST:event_btnImportActionPerformed
 }

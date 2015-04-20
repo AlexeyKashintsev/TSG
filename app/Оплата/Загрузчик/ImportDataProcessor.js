@@ -6,18 +6,21 @@
 function ImportDataProcessor() {
     var self = this, model = this.model;
     var saldoMod = new SaldoAndSumsModule();
+    var errorRecords = [];
     
     function getLCByCode(aCode) {
         model.dsLCByCode.params.grp_code = parseInt(aCode[0]);
         model.dsLCByCode.params.flat_code = parseInt(aCode.substring(1));
         model.dsLCByCode.requery();
-        return model.dsLCByCode.cursor.lc_flat_id;
+        return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
     };
     
-    var dateId, sessionId;
-    self.setParams = function(aSessionId, aDateId) {
+    var dateId, sessionId, accountId;
+    self.setParams = function(aSessionId, aDateId, anAccountId) {
         sessionId = aSessionId;
         dateId = aDateId;
+        accountId = anAccountId;
+        errorRecords = [];
     };
     
     /**
@@ -44,8 +47,12 @@ function ImportDataProcessor() {
                                     , aRow.OPL_DATE, aRow.OPL_COMMENT
                                     , aPercent, aRow.OPL_SUM);
             } else {
-                //TODO Обработать сию печальную ситуацию
+                errorRecords.push(aRow);
             }
         });
+    };
+    
+    self.getErrors = function() {
+        return errorRecords;
     };
 }

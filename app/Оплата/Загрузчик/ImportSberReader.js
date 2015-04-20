@@ -8,6 +8,9 @@ function ImportSberReader() {
     var parcedData = [];
     var specification = {};
     
+    self.extensions = ['txt'];
+
+    
     var lineConfiguration = {
         LC_CODE: {
             cell: 2,
@@ -23,6 +26,10 @@ function ImportSberReader() {
         },
         OPL_COMMENT: {
             cell: 10,
+            type: 'text'
+        },
+        OPL_FULL_INFO: {
+            cell: 7,
             type: 'text'
         }
     };

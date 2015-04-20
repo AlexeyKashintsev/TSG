@@ -23,12 +23,13 @@
   </widget>
   <widget editable="false" foregroundColor="#663300" name="modelFormattedField" opaque="false" parent="panel" prefHeight="28px" prefWidth="141px" type="DbLabelDesignInfo">
     <datamodelElement entityId="138702829717095" fieldName="lc_regto"/>
-    <border etcheHighlightColor="#000000" etcheShadowColor="#000000" type="EtchedBorderDesignInfo"/>
     <constraints height="28px" left="3px" top="104px" type="MarginConstraintsDesignInfo" width="141px"/>
+    <border etcheHighlightColor="#000000" etcheShadowColor="#000000" type="EtchedBorderDesignInfo"/>
   </widget>
   <widget deletable="false" editable="false" focusable="false" insertable="false" name="modelGrid" parent="panel" prefHeight="200px" prefWidth="146px" type="DbGridDesignInfo">
     <column name="column" title="Дата">
       <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138702866029948" fieldName="payment_date"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -40,10 +41,10 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="138702866029948" fieldName="payment_date"/>
     </column>
     <column name="column1" title="Сумма">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138702866029948" fieldName="payment_sum"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -55,7 +56,6 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="138702866029948" fieldName="payment_sum"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138702866029948" field="false"/>
@@ -63,58 +63,59 @@
     <treeDesignInfo/>
     <constraints bottom="3px" left="3px" right="3px" top="132px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="panel1" parent="Form" prefHeight="132px" prefWidth="461px" type="PanelDesignInfo">
+  <widget name="panel1" parent="Form" prefHeight="144px" prefWidth="461px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
-    <constraints height="132px" left="153px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="144px" left="153px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="label2" parent="panel1" prefHeight="16px" prefWidth="132px" text="К зачислению на счет" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="52px" type="MarginConstraintsDesignInfo" width="132px"/>
+  <widget name="label2" parent="panel1" prefHeight="16px" prefWidth="96px" text="К зачислению" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="52px" type="MarginConstraintsDesignInfo" width="96px"/>
   </widget>
-  <widget name="label3" parent="panel1" prefHeight="16px" prefWidth="38px" text="Дата" type="LabelDesignInfo">
-    <constraints height="16px" right="111px" top="75px" type="MarginConstraintsDesignInfo" width="38px"/>
+  <widget name="label3" parent="panel1" prefHeight="16px" prefWidth="96px" text="Дата оплаты:" type="LabelDesignInfo">
+    <constraints height="16px" right="53px" top="75px" type="MarginConstraintsDesignInfo" width="96px"/>
   </widget>
   <widget dateFormat="dd.MM.yyyy" name="modelDate" opaque="false" parent="panel1" prefHeight="25px" prefWidth="134px" type="DbDateDesignInfo">
     <datamodelElement entityId="-1" fieldName="parDate"/>
-    <constraints height="25px" right="15px" top="98px" type="MarginConstraintsDesignInfo" width="134px"/>
+    <constraints bottom="15px" height="25px" right="15px" type="MarginConstraintsDesignInfo" width="134px"/>
   </widget>
   <widget name="label4" parent="panel1" prefHeight="16px" prefWidth="96px" text="Комментарий" type="LabelDesignInfo">
     <constraints height="16px" left="12px" top="80px" type="MarginConstraintsDesignInfo" width="96px"/>
   </widget>
   <widget name="modelFormattedField2" parent="panel1" prefHeight="25px" prefWidth="288px" type="DbLabelDesignInfo">
     <datamodelElement entityId="-1" fieldName="parComment"/>
-    <constraints height="25px" left="12px" top="98px" type="MarginConstraintsDesignInfo" width="288px"/>
+    <constraints bottom="15px" height="25px" left="12px" type="MarginConstraintsDesignInfo" width="288px"/>
   </widget>
   <widget format="#,##0.###" name="modelFormattedField3" parent="panel1" prefHeight="25px" prefWidth="104px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="-1" fieldName="parPercent"/>
     <constraints height="25px" right="9px" top="12px" type="MarginConstraintsDesignInfo" width="104px"/>
   </widget>
-  <widget name="label5" parent="panel1" prefHeight="14px" prefWidth="60px" text="Процент" type="LabelDesignInfo">
+  <widget name="label5" parent="panel1" prefHeight="14px" prefWidth="60px" text="% банка" type="LabelDesignInfo">
     <constraints height="14px" right="137px" top="17px" type="MarginConstraintsDesignInfo" width="60px"/>
   </widget>
   <widget name="label6" parent="panel1" prefHeight="14px" prefWidth="84px" text="Оплачено" type="LabelDesignInfo">
     <constraints height="14px" left="12px" top="17px" type="MarginConstraintsDesignInfo" width="84px"/>
   </widget>
-  <widget editable="false" format="#0.00" name="modelFormattedField4" parent="panel1" prefHeight="25px" prefWidth="120px" type="DbLabelDesignInfo" valueType="0">
+  <widget editable="false" format="#0.00" name="modelFormattedField4" parent="panel1" prefHeight="25px" prefWidth="144px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="-1" fieldName="parSum"/>
-    <constraints height="25px" left="156px" right="185px" top="48px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="25px" left="108px" right="209px" top="48px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget format="#0.00" name="modelFormattedField1" parent="panel1" prefHeight="25px" prefWidth="156px" type="DbLabelDesignInfo" valueType="0">
+  <widget format="#0.00" name="modelFormattedField1" parent="panel1" prefHeight="25px" prefWidth="144px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="-1" fieldName="parFullPay"/>
-    <constraints height="25px" left="96px" right="209px" top="12px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="25px" left="108px" right="209px" top="12px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="panel2" parent="Form" prefHeight="203px" prefWidth="461px" type="PanelDesignInfo">
+  <widget name="panel2" parent="Form" prefHeight="191px" prefWidth="461px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
-    <constraints bottom="0px" left="153px" right="0px" top="132px" type="MarginConstraintsDesignInfo"/>
+    <constraints bottom="0px" left="153px" right="0px" top="144px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="button1ActionPerformed" icon="icons/22x22/actions/window-close.png" name="button1" parent="panel2" prefHeight="36px" prefWidth="120px" text="Закрыть" toolTipText="Закрыть форму" type="ButtonDesignInfo">
     <constraints bottom="1px" height="36px" right="5px" type="MarginConstraintsDesignInfo" width="120px"/>
   </widget>
-  <widget name="modelGrid1" parent="panel2" prefHeight="166px" prefWidth="446px" type="DbGridDesignInfo">
+  <widget name="modelGrid1" parent="panel2" prefHeight="154px" prefWidth="446px" type="DbGridDesignInfo">
     <column name="column2" readonly="true" title="Счетчик">
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="138703021155642" fieldName="usl_services_id"/>
         <displayField entityId="138703021155642" fieldName="usl_name"/>
       </controlInfo>
+      <datamodelElement entityId="138703018256097" fieldName="services_id"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -126,10 +127,10 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="138703018256097" fieldName="services_id"/>
     </column>
     <column name="column3" readonly="true" title="Предыдущее">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138703018256097" fieldName="beg_val"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -141,10 +142,10 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="138703018256097" fieldName="beg_val"/>
     </column>
     <column name="column4" title="Текущее">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138703018256097" fieldName="end_val"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -156,7 +157,6 @@
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="138703018256097" fieldName="end_val"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138703018256097" field="false"/>

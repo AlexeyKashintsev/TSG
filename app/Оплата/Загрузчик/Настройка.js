@@ -8,7 +8,7 @@
 function ImportData() {
 
 
-    var self = this;
+    var self = this, model = self.model;
 
 
     var IMPORT_MODULE = "ImportReadProcessor";
@@ -74,7 +74,7 @@ function buttonStartImportActionPerformed(evt) {//GEN-FIRST:event_buttonStartImp
         impmod.stop = false;
         var er = impmod.startImport(selectedFile, self.LogOutText
                                     , self.jProgressBar, self.labelFileCounter
-                                    , sessionId, dateId);
+                                    , sessionId, dateId, model.params.account_id);
         if (er!=null)
             alert(er, er=="ok"?"Импорт завершен":"Ошибка импорта");
     }).invokeBackground();

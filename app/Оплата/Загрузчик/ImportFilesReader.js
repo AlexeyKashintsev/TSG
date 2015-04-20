@@ -45,9 +45,9 @@ function ImportReadProcessor() {
         }).invokeAndWait();
     }
 
-    self.startImport = function(aFiles, aLogOut, aProgress, aFileCount, aSessionId, aDateId) {
+    self.startImport = function(aFiles, aLogOut, aProgress, aFileCount, aSessionId, aDateId, anAccountId) {
         var path = aFiles.path;
-        processor.setParams(aSessionId, aDateId);
+        processor.setParams(aSessionId, aDateId, anAccountId);
         
         progressInd = aProgress;
         filesCounter = aFileCount;
@@ -63,6 +63,15 @@ function ImportReadProcessor() {
             setProcessedCount(1, 1, path);
             importFromSingleFile(path);
         }
+        
+        var erRec = processor.getErrors();
+        addLog('\nОшибки при импорте - ' + erRec.length + '\n');
+        for (var j in erRec) {
+            addLog('\nЗапись: ' + erRec[j].OPL_FULL_INFO
+                    + '\nДата: ' + erRec[j].OPL_DATE
+                    + '\nСумма: ' + erRec[j].OPL_SUM);
+        }
+        
     };
 
     function importFromFiles(aFiles) {
@@ -79,25 +88,41 @@ function ImportReadProcessor() {
     }
 
     function importFromSingleFile(aFileName) {
-        addLog("\nИмпорт из файла: " + aFileName);
-        try {
-            errCount = 0;
-            var reader = new ImportSberReader();
-            processor.processData(reader.importFromFile(aFileName));
-        }
-        catch (e) {
-            addErrorLog("Ошибка импорта из файла: " + e);
-        }
-        finally {
-            if (errCount < MAX_ERRORS_PER_LIST) {
-                addLog("\nИмпорт из файла: " + aFileName + " завершен.\n");
-                //if (!stop || confirm('Сохранить данные из последнего файла?'))
-                    //saveAll(aFileName);
-            } else {
-                addErrorLog("\nОшибка импорта из файла: " + aFileName + ". Проверьте сопоставление полей\nДанные не будут сохранены!\n");
+        var reader = new ImportSberReader();
+        if (checkExtension(aFileName, reader)) {
+            addLog("\nИмпорт из файла: " + aFileName);
+            try {
+                errCount = 0;
+                processor.processData(reader.importFromFile(aFileName));
             }
+            catch (e) {
+                addErrorLog("Ошибка импорта из файла: " + e);
+            }
+            finally {
+                if (errCount < MAX_ERRORS_PER_LIST) {
+                    addLog("\nИмпорт из файла: " + aFileName + " завершен.\n");
+                    //if (!stop || confirm('Сохранить данные из последнего файла?'))
+                        //saveAll(aFileName);
+                } else {
+                    addErrorLog("\nОшибка импорта из файла: " + aFileName + ". Проверьте сопоставление полей\nДанные не будут сохранены!\n");
+                }
+            }
+            return '';
+        } else {
+            addLog("\nФайл " + aFileName + " пропущен.\n");
         }
-        return '';
     }
 
+    function checkExtension(aFile, aReader) {
+        var a = aFile.split(".");
+        if( a.length === 1 || ( a[0] === "" && a.length === 2 ) ) {
+            var ext = "";
+        }
+        ext = a.pop();
+        for (var j in aReader.extensions) {
+            if (ext === aReader.extensions[j])
+                return true;
+        }
+        return false;
+    }
 }
