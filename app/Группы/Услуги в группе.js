@@ -71,7 +71,7 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
             if (aService.calc_by_counter === true){
                 model.dsGrpServiceCounter.push({
                 grp_service_id:     model.dsServices.grp_services_id,
-                counter_name:       aService.service_name
+                counter_name:       'Общий'
             });}
             grpMod.addService2Flats(self.parGroup, aService.service, null, self.parAccountID, model.dsGrpServiceCounter.grp_service_counters_id);
          }
