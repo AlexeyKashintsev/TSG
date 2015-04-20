@@ -4,10 +4,10 @@
     <parameter description="" name="parEnd" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="dsCalcType" Title="Способы расчета" entityHeight="200" entityIconified="false" entityId="137684101269880" entityLocationX="398" entityLocationY="9" entityWidth="150" queryId="qCalcMethods" tableName="" tableSchemaName=""/>
   <entity Name="dsServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137684100940550" entityLocationX="206" entityLocationY="11" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
+  <entity Name="dsCalcType" Title="Способы расчета" entityHeight="200" entityIconified="false" entityId="137684101269880" entityLocationX="398" entityLocationY="9" entityWidth="150" queryId="qCalcMethods" tableName="" tableSchemaName=""/>
   <entity Name="all_dates" Title="" entityHeight="200" entityIconified="false" entityId="139750872275764" entityLocationX="594" entityLocationY="23" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
   <referenceRelation leftEntityFieldName="calc_id" leftEntityId="137684100940550" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137684101269880"/>
-  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137684100940550" rightEntityFieldName="usl_services_id" rightEntityId="137684100940550"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137684100940550" rightEntityFieldName="usl_services_id" rightEntityId="137684100940550"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137684100940550" rightEntityFieldName="usl_services_id" rightEntityId="137684100940550"/>
 </datamodel>
