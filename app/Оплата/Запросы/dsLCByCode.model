@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="grp_code" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="flat_code" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142947299100814" entityLocationX="242" entityLocationY="4" entityWidth="150" tableAlias="t1" tableName="grp_groups" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142947300547239" entityLocationX="644" entityLocationY="23" entityWidth="150" tableAlias="t2" tableName="lc_flat" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142947299827816" entityLocationX="424" entityLocationY="12" entityWidth="150" tableAlias="t" tableName="grp_lc_group" tableSchemaName=""/>
+  <relation leftEntityFieldName="group_id" leftEntityId="142947299827816" rightEntityFieldName="grp_groups_id" rightEntityId="142947299100814"/>
+  <relation leftEntityId="-1" leftEntityParameterName="grp_code" rightEntityFieldName="grpid" rightEntityId="142947299100814"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="142947299827816" rightEntityFieldName="lc_flat_id" rightEntityId="142947300547239"/>
+  <relation leftEntityId="-1" leftEntityParameterName="flat_code" rightEntityFieldName="lc_num" rightEntityId="142947300547239"/>
+</datamodel>

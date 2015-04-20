@@ -2,6 +2,7 @@
   <widget name="toolBar" parent="Form" prefHeight="30px" prefWidth="654px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="30px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
+  <widget actionPerformed="btnImportActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-import.png" name="btnImport" parent="toolBar" prefHeight="28px" prefWidth="29px" toolTipText="Загрузить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="28px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="28px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="28px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
@@ -16,6 +17,10 @@
   <widget deletable="false" editable="false" insertable="false" mouseClicked="modelGridMouseClicked" name="modelGrid" parent="pnlWorkSpace" prefHeight="287px" prefWidth="654px" type="DbGridDesignInfo">
     <column name="colFlat_id" readonly="true" selectOnly="true" title="ФИО">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <datamodelElement entityId="138695513474136" fieldName="lc_regto"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -24,13 +29,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <datamodelElement entityId="138695513474136" fieldName="lc_regto"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colPayment_date" title="Дата">
       <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy HH:mm:ss" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <datamodelElement entityId="138695513474136" fieldName="payment_date"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -39,13 +44,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <datamodelElement entityId="138695513474136" fieldName="payment_date"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colPayment_sum" title="Сумма">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <datamodelElement entityId="138695513474136" fieldName="payment_sum"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -54,13 +59,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <datamodelElement entityId="138695513474136" fieldName="payment_sum"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colPayment_comment" title="Комментарий">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <datamodelElement entityId="138695513474136" fieldName="payment_comment"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -69,10 +74,6 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <datamodelElement entityId="138695513474136" fieldName="payment_comment"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138695513474136" field="false"/>

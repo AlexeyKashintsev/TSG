@@ -17,10 +17,10 @@
         <valueField entityId="138686324127452" fieldName="per_date_id"/>
         <displayField entityId="138686324127452" fieldName="TextDate"/>
       </controlInfo>
-      <datamodelElement entityId="138686322493762" fieldName="date_id"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="138686322493762" fieldName="date_id"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -32,10 +32,10 @@
     </column>
     <column name="colSes_date" readonly="true" title="Дата">
       <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy HH:mm:ss" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="138686322493762" fieldName="opl_date"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="138686322493762" fieldName="opl_date"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -47,10 +47,10 @@
     </column>
     <column name="colSes_comment" title="Наименование сессии">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="138686322493762" fieldName="opl_comment"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="138686322493762" fieldName="opl_comment"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -62,10 +62,10 @@
     </column>
     <column name="colOpl_Count" readonly="true" title="Количество">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="138686322493762" fieldName="cnt"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="138686322493762" fieldName="cnt"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -77,10 +77,10 @@
     </column>
     <column name="colOpl_sum" readonly="true" title="Сумма">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="138686322493762" fieldName="ses_sum"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="138686322493762" fieldName="ses_sum"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
