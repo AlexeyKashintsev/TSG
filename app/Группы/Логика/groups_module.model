@@ -3,6 +3,6 @@
   <entity Name="flats_by_group" Title="Квартиры по группе" entityHeight="200" entityIconified="false" entityId="139223773960768" entityLocationX="212" entityLocationY="18" entityWidth="150" queryId="flats_by_group" tableName="" tableSchemaName=""/>
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="139223806681788" entityLocationX="462" entityLocationY="22" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
   <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="139223817837377" entityLocationX="461" entityLocationY="230" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
-  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="139223806681788" rightEntityFieldName="usl_services_id" rightEntityId="139223806681788"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="139223806681788" rightEntityFieldName="usl_services_id" rightEntityId="139223806681788"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="139223806681788" rightEntityFieldName="usl_services_id" rightEntityId="139223806681788"/>
 </datamodel>

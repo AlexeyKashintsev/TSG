@@ -172,7 +172,7 @@ function LCModule() {
      * todo: добавить поиск услуги, добавить добавление значений(self.sums_perFlat)
      *       в модуле SaldoAndSumsModule
      *       и отслеживать эти дополнения, чтобы сохранять их тоже */
-    self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID, aAccountID, aStopDate, aStartPeriod, aEndPeriod) {
+    self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID, aAccountID, aStopDate, aStartPeriod, aEndPeriod, grpCount) {
         var startDate = aDateID ? aDateID : modDT.getLastDate();
         model.services_by_flat.params.flat_id = aFlatID;
         model.services_by_flat.params.parAccount = aAccountID;
@@ -195,7 +195,7 @@ function LCModule() {
                     date_id         : startDate
                 });
             if (!processIfConnectedService(fs, aServiceID, aFlatID,aAccountID) && aCalcByCounter) {
-                var cnt = addCounterToFlat(self.services_by_flat.lc_flat_services_id);
+                var cnt = addCounterToFlat(self.services_by_flat.lc_flat_services_id, grpCount);
                 modCN.setCounterValueByCounterValueID(cnt, startDate, 0, 0);
             }            
         }
@@ -207,11 +207,11 @@ function LCModule() {
      * @param {type} aFlatService
      * @returns {@exp;dsCountersByFlat@pro;lc_counter_id} 
      */
-    self.addCounterToFlat = function(aFlatService) {
+    self.addCounterToFlat = function(aFlatService, grpCount) {
         if (!modCN)
             modCN = new CountersModule();
         var cnt = modCN.addNewCounter();
-        modCN.addCounter2Service(cnt, aFlatService, null);
+        modCN.addCounter2Service(cnt, aFlatService, grpCount);
         return cnt;
     };
 

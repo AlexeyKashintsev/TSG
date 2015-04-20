@@ -88,7 +88,9 @@ function btnSelectActionPerformed(evt) {//GEN-FIRST:event_btnSelectActionPerform
             service     : self.dsServices.usl_services_id,
             byCounter   : self.dsServices.calc_by_counter,
             begDate     : self.model.params.parBeg,
-            endDate     : self.model.params.parEnd
+            endDate     : self.model.params.parEnd,
+            service_name: self.model.dsServices.usl_name,
+            calc_by_counter: self.model.dsServices.calc_by_counter
         });
 }//GEN-LAST:event_btnSelectActionPerformed
 

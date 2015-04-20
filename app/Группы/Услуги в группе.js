@@ -68,7 +68,12 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
             model.dsServices.insert(model.dsServices.schema.group_id , self.parGroup,
                                      model.dsServices.schema.services_id, aService.service,
                                      model.dsServices.schema.account_id, self.parAccountID);
-            grpMod.addService2Flats(self.parGroup, aService.service, null, self.parAccountID);
+            if (aService.calc_by_counter === true){
+                model.dsGrpServiceCounter.push({
+                grp_service_id:     model.dsServices.grp_services_id,
+                counter_name:       aService.service_name
+            });}
+            grpMod.addService2Flats(self.parGroup, aService.service, null, self.parAccountID, model.dsGrpServiceCounter.grp_service_counters_id);
          }
     });
 }//GEN-LAST:event_btnAddActionPerformed
@@ -133,4 +138,15 @@ if (self.dsServices.rowIndex != self.dsServices.length)
     }//GEN-LAST:event_mgUslugiOnRender
 
     paramSynchronizer.addListener(this);
+
+    function btnServicesActionPerformed(evt) {//GEN-FIRST:event_btnServicesActionPerformed
+        var fmServCount = new formServiceCounters();
+        fmServCount.model.params.parGroup = model.params.parGroup;
+        fmServCount.model.params.parService = model.dsServices.services_id;
+        fmServCount.model.params.parGrpServ = model.dsServices.grp_services_id;
+        fmServCount.model.dsGrpServiceCounter.requery();
+        fmServCount.showModal(function(aRow){
+            
+        });
+    }//GEN-LAST:event_btnServicesActionPerformed
 }
