@@ -5,14 +5,14 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="cnt_con2flats" entityHeight="103" entityIconified="false" entityId="138540336003879" entityLocationX="412" entityLocationY="94" entityWidth="150" tableAlias="t" tableName="cnt_con2flats" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142951565600078" entityLocationX="626" entityLocationY="48" entityWidth="150" tableAlias="t4" tableName="grp_service_counters" tableSchemaName=""/>
   <entity Title="cnt_counters" entityHeight="95" entityIconified="false" entityId="138540341756140" entityLocationX="215" entityLocationY="163" entityWidth="150" tableAlias="t1" tableName="cnt_counters" tableSchemaName=""/>
   <entity Title="Счетчик значения" entityHeight="111" entityIconified="false" entityId="138540345354427" entityLocationX="214" entityLocationY="49" entityWidth="150" tableAlias="t3" tableName="per_counter_values" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="142945456896261" entityLocationX="630" entityLocationY="60" entityWidth="150" tableAlias="t4" tableName="grp_service_counters" tableSchemaName=""/>
   <entity Title="Услуги в группе" entityHeight="79" entityIconified="false" entityId="138487869586171" entityLocationX="430" entityLocationY="8" entityWidth="150" tableAlias="t2" tableName="grp_services" tableSchemaName=""/>
-  <relation leftEntityFieldName="counter_id" leftEntityId="138540336003879" rightEntityFieldName="counter_id" rightEntityId="138540345354427"/>
-  <relation leftEntityFieldName="grp_services_id" leftEntityId="138487869586171" rightEntityFieldName="grp_service_id" rightEntityId="142945456896261"/>
-  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="group_id" rightEntityId="138487869586171"/>
-  <relation leftEntityFieldName="grp_service_counters_id" leftEntityId="142945456896261" rightEntityFieldName="group_counter" rightEntityId="138540336003879"/>
-  <relation leftEntityFieldName="cnt_counters_id" leftEntityId="138540341756140" rightEntityFieldName="counter_id" rightEntityId="138540336003879"/>
+  <relation leftEntityFieldName="grp_services_id" leftEntityId="138487869586171" rightEntityFieldName="grp_service_id" rightEntityId="142951565600078"/>
   <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="138540345354427"/>
+  <relation leftEntityFieldName="counter_id" leftEntityId="138540336003879" rightEntityFieldName="counter_id" rightEntityId="138540345354427"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="group_id" rightEntityId="138487869586171"/>
+  <relation leftEntityFieldName="cnt_counters_id" leftEntityId="138540341756140" rightEntityFieldName="counter_id" rightEntityId="138540336003879"/>
+  <relation leftEntityFieldName="grp_service_counters_id" leftEntityId="142951565600078" rightEntityFieldName="group_counter" rightEntityId="138540336003879"/>
 </datamodel>

@@ -8,11 +8,11 @@
   <entity Name="dsGrpServiceCounter" Title="" entityHeight="200" entityIconified="false" entityId="142943635462557" entityLocationX="18" entityLocationY="224" entityWidth="150" queryId="dsGrpServiceCounter" tableName="" tableSchemaName=""/>
   <entity Name="dsServices" Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="137496294091245" entityLocationX="223" entityLocationY="28" entityWidth="150" queryId="services_by_group" tableName="" tableSchemaName=""/>
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137520081638120" entityLocationX="468" entityLocationY="30" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="137496294091245" rightEntityParameterName="parGroup"/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="137496294091245" rightEntityParameterName="parAccountID"/>
-  <referenceRelation leftEntityFieldName="services_id" leftEntityId="137496294091245" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
-  <referenceRelation leftEntityFieldName="grp_service_id" leftEntityId="142943635462557" rightEntityFieldName="grp_services_id" rightEntityId="137496294091245"/>
-  <referenceRelation leftEntityFieldName="modified_service_id" leftEntityId="137496294091245" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="137496294091245" rightEntityParameterName="parGroup"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137520081638120" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
   <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137520081638120" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
+  <referenceRelation leftEntityFieldName="services_id" leftEntityId="137496294091245" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
+  <referenceRelation leftEntityFieldName="modified_service_id" leftEntityId="137496294091245" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
+  <referenceRelation leftEntityFieldName="grp_service_id" leftEntityId="142943635462557" rightEntityFieldName="grp_services_id" rightEntityId="137496294091245"/>
 </datamodel>

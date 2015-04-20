@@ -9,29 +9,12 @@
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="312px" prefWidth="372px" type="DbGridDesignInfo">
-    <column name="colService" title="Счетчик">
+    <column name="colService" title="Услуга" width="40">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="137520137252417" fieldName="usl_services_id"/>
         <displayField entityId="137520137252417" fieldName="usl_name"/>
       </controlInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="11"/>
-      </headerStyle>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
       <datamodelElement entityId="138538099972866" fieldName="services_id"/>
-    </column>
-    <column name="colBegValue" selectFunction="colBegValueOnSelect" title="Начало" width="15">
-      <controlInfo classHint="DbLabelDesignInfo" format="#0" name="view" prefHeight="0px" prefWidth="0px" valueType="0"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="11"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -40,28 +23,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <datamodelElement entityId="138538099972866" fieldName="beg_val"/>
-    </column>
-    <column name="colEndValue" title="Конец" width="15">
-      <controlInfo classHint="DbLabelDesignInfo" format="#0" name="view" prefHeight="0px" prefWidth="0px" valueType="0"/>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <datamodelElement entityId="138538099972866" fieldName="end_val"/>
     </column>
-    <column name="colCalcValue" title="Расход" width="15">
+    <column name="colCount" title="Счетчик" width="40">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="11"/>
-      </headerStyle>
+      <datamodelElement entityId="138538099972866" fieldName="counter_name"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -70,12 +38,59 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <datamodelElement entityId="138538099972866" fieldName="cons_val"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
     </column>
+    <column name="colBegValue" selectFunction="colBegValueOnSelect" title="Начало" width="20">
+      <controlInfo classHint="DbLabelDesignInfo" format="#0" name="view" prefHeight="0px" prefWidth="0px" valueType="0"/>
+      <datamodelElement entityId="138538099972866" fieldName="beg_val"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="colEndValue" title="Конец" width="20">
+      <controlInfo classHint="DbLabelDesignInfo" format="#0" name="view" prefHeight="0px" prefWidth="0px" valueType="0"/>
+      <datamodelElement entityId="138538099972866" fieldName="end_val"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="colCalcValue" title="Расход" width="20">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138538099972866" fieldName="cons_val"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="11"/>
+      </headerStyle>
+    </column>
+    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138538099972866" field="false"/>
     </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
