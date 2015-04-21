@@ -210,18 +210,18 @@ function Calculations() {
             model.dsLCCntBeg.params.dateid = aDateID;            
             model.dsLCCntBeg.execute();
             model.dsLCCntBeg.forEach(function(cursor) {
-                if (!resCnt[cursor.services_id])
-                    resCnt[cursor.services_id] = {};
-                resCnt[cursor.services_id][cursor.fm_name] = cursor.fm_value;
+                if (!resCnt[cursor.lc_flat_services_id])
+                    resCnt[cursor.lc_flat_services_id] = {};
+                resCnt[cursor.lc_flat_services_id][cursor.fm_name] = cursor.fm_value;
             });
 
             model.dsLCCntEnd.params.lc_id = aLCID;
             model.dsLCCntEnd.params.dateid = aDateID;            
             model.dsLCCntEnd.execute();
             model.dsLCCntEnd.forEach(function(cursor) {
-                if (!resCnt[cursor.services_id])
-                    resCnt[cursor.services_id] = {};
-                resCnt[cursor.services_id][cursor.fm_name] = cursor.fm_value;
+                if (!resCnt[cursor.lc_flat_services_id])
+                    resCnt[cursor.lc_flat_services_id] = {};
+                resCnt[cursor.lc_flat_services_id][cursor.fm_name] = cursor.fm_value;
             });
             return resCnt;
         }
@@ -242,6 +242,7 @@ function Calculations() {
             this.groupid = sum.group_id;
             this.lcid = sum.lc_id;
             this.serviceid = sum.services_id;
+            this.flatserviceid = sum.flat_service_id;
             this.COST = sum.rate;
             this.RECALC = sum.recalc;
         }
@@ -269,7 +270,7 @@ function Calculations() {
 
         function prepFormula(aFormula) {
             aFormula = aFormula.replace(/GRP_/g, 'groups[A.groupid].').replace(/LC_/g, 'flats[A.lcid].');
-            aFormula = aFormula.replace(/.BEG_/g, '[A.serviceid].BEG_').replace(/.END_/g, '[A.serviceid].END_');
+            aFormula = aFormula.replace(/.BEG_/g, '[A.flatserviceid].BEG_').replace(/.END_/g, '[A.flatserviceid].END_');
             aFormula = aFormula.replace(/VALUE/g, 'A.VALUE').replace(/COST/g, 'A.COST').replace(/RECALC/g, 'A.RECALC');
             aFormula = aFormula.replace(/BENEFIT/g, 'A.BENEFIT').replace(/FULL_CALC/g, 'A.FULL_CALC').replace(/SCALC/g, 'A.SCALC');
             return aFormula;
