@@ -45,9 +45,10 @@ function ImportReadProcessor() {
         }).invokeAndWait();
     }
 
-    self.startImport = function(aFiles, aLogOut, aProgress, aFileCount, aSessionId, aDateId, anAccountId) {
+    self.startImport = function(aFiles, aLogOut, aProgress, aFileCount, aSessionId,
+                                aDateId, anAccountId, aBankPercent) {
         var path = aFiles.path;
-        processor.setParams(aSessionId, aDateId, anAccountId);
+        processor.setParams(aSessionId, aDateId, anAccountId, aBankPercent);
         
         progressInd = aProgress;
         filesCounter = aFileCount;

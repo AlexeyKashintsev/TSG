@@ -38,14 +38,11 @@
   <widget name="lblFileAmount" parent="panel" prefHeight="14px" prefWidth="150px" text="0" type="LabelDesignInfo">
     <constraints height="14px" left="96px" top="160px" type="MarginConstraintsDesignInfo" width="150px"/>
   </widget>
-  <widget name="label2" parent="panel" prefHeight="16px" prefWidth="180px" text="Счет для загрузки оплат:" type="LabelDesignInfo" visible="false">
-    <constraints height="16px" left="12px" top="192px" type="MarginConstraintsDesignInfo" width="180px"/>
+  <widget format="#,##0" name="ffBankPercent" parent="panel" prefHeight="28px" prefWidth="106px" type="FormattedFieldDesignInfo" valueType="0">
+    <constraints height="28px" left="12px" top="216px" type="MarginConstraintsDesignInfo" width="106px"/>
   </widget>
-  <widget name="modelCombo" parent="panel" prefHeight="28px" prefWidth="420px" type="DbComboDesignInfo" visible="false">
-    <valueField entityId="142951236282940" fieldName="grp_account_id"/>
-    <displayField entityId="142951236282940" fieldName="account_name"/>
-    <datamodelElement entityId="-1" fieldName="account_id"/>
-    <constraints height="28px" left="12px" right="8px" top="216px" type="MarginConstraintsDesignInfo"/>
+  <widget name="label2" parent="panel" prefHeight="16px" prefWidth="132px" text="Процент банка" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="192px" type="MarginConstraintsDesignInfo" width="132px"/>
   </widget>
   <widget name="panel1" parent="jTabbedPane" prefHeight="412px" prefWidth="440px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
