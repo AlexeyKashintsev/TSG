@@ -20,6 +20,7 @@ self.addNewCounter = function(aCntActive, aCntNumber, aCntType){
     self.dsCounterByID.insert(   self.dsCounterByID.schema.cnt_type, aCntType?aCntType:"FC",
                             self.dsCounterByID.schema.cnt_active, aCntActive?aCntActive:true,
                             self.dsCounterByID.schema.cnt_number, aCntNumber?aCntNumber:null);
+                            self.model.save();
     return self.dsCounterByID.cnt_counters_id;
 };
 

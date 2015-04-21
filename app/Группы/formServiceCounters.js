@@ -12,9 +12,10 @@ function formServiceCounters() {
         model.dsGrpServiceCounter.push({
             grp_service_id: model.params.parGrpServ
         });
+        model.save();
         model.flats_by_group.requery();
         model.flats_by_group.forEach(function(aFlat){
-            model.service_by_flat.params.flat_id = aFlat.lc_flat_id;
+            model.services_by_flat.params.flat_id = aFlat.lc_flat_id;
             model.services_by_flat.requery();
             var serv = model.services_by_flat.find(model.services_by_flat.schema.services_id, model.params.parService);
             var cnt = LCMod.addCounterToFlat(serv[0].lc_flat_services_id, model.dsGrpServiceCounter.grp_service_counters_id);
