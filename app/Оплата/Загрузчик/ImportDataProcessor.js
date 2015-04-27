@@ -15,11 +15,12 @@ function ImportDataProcessor() {
         return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
     };
     
-    var dateId, sessionId, accountId;
-    self.setParams = function(aSessionId, aDateId, anAccountId) {
+    var dateId, sessionId, accountId, bankPercent;
+    self.setParams = function(aSessionId, aDateId, anAccountId, aBankPercent) {
         sessionId = aSessionId;
         dateId = aDateId;
         accountId = anAccountId;
+        bankPercent = aBankPercent ? aBankPercent : 0;
         errorRecords = [];
     };
     
@@ -33,9 +34,7 @@ function ImportDataProcessor() {
      * , OPL_COMMENT}
      * @returns {undefined}
      */
-    self.processData = function(aDataArray, aPercent) {
-        if (!aPercent)
-            aPercent = 0;
+    self.processData = function(aDataArray) {
         if (!dateId)
             dateId = paramSynchronizer.getData();
         
@@ -43,9 +42,9 @@ function ImportDataProcessor() {
             var lcid = aRow.LC_ID ? aRow.LC_ID : getLCByCode(aRow.LC_CODE);
             if (lcid) {
                 saldoMod.addOplata(lcid, sessionId, dateId
-                                    , aRow.OPL_SUM - aRow.OPL_SUM * aPercent
+                                    , aRow.OPL_SUM - aRow.OPL_SUM * bankPercent/100
                                     , aRow.OPL_DATE, aRow.OPL_COMMENT
-                                    , aPercent, aRow.OPL_SUM);
+                                    , bankPercent, aRow.OPL_SUM);
             } else {
                 errorRecords.push(aRow);
             }

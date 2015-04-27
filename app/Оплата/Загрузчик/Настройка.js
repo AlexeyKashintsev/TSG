@@ -8,7 +8,7 @@
 function ImportData() {
 
 
-    var self = this, model = self.model;
+    var self = this, model = self.model, form = self.form;
 
 
     var IMPORT_MODULE = "ImportReadProcessor";
@@ -34,7 +34,7 @@ function ImportData() {
 function statparSelectValue(aEditor) {//GEN-FIRST:event_statparSelectValue
     var stp = selectStatPar();
     if (stp!=null) aEditor.value = stp;
-    setSaveBtnEnabled()
+    setSaveBtnEnabled();
 }//GEN-LAST:event_statparSelectValue
 
 function dbcImportTypeSelectValue(aEditor) {//GEN-FIRST:event_dbcImportTypeSelectValue
@@ -74,7 +74,8 @@ function buttonStartImportActionPerformed(evt) {//GEN-FIRST:event_buttonStartImp
         impmod.stop = false;
         var er = impmod.startImport(selectedFile, self.LogOutText
                                     , self.jProgressBar, self.labelFileCounter
-                                    , sessionId, dateId, model.params.account_id);
+                                    , sessionId, dateId, model.params.account_id
+                                    , self.ffBankPercent.value);
         if (er!=null)
             alert(er, er=="ok"?"Импорт завершен":"Ошибка импорта");
     }).invokeBackground();
