@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parEnd" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parAccount" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parGrp" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142961824140657" entityLocationX="675" entityLocationY="14" entityWidth="150" tableAlias="t2" tableName="lc_flat" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142961788573495" entityLocationX="428" entityLocationY="23" entityWidth="150" tableAlias="t1" tableName="per_saldo_flat" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="142961820926599" entityLocationX="219" entityLocationY="9" entityWidth="150" tableAlias="t" tableName="grp_lc_group" tableSchemaName=""/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="142961820926599" rightEntityFieldName="lc_id" rightEntityId="142961788573495"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="142961788573495" rightEntityFieldName="lc_flat_id" rightEntityId="142961824140657"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parEnd" rightEntityFieldName="sal_full_calc" rightEntityId="142961788573495"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGrp" rightEntityFieldName="group_id" rightEntityId="142961820926599"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccount" rightEntityFieldName="account_id" rightEntityId="142961788573495"/>
+</datamodel>

@@ -24,7 +24,7 @@ function ReportPrint() {
     
     function processSingleFlat(aPrint, aFlatID) {
        // if (model.params.AccountID == 142486607303119){
-            repBill = new Report(reportName);
+            repBill = new Report(model.dsAllAccounts.find(model.dsAllAccounts.schema.grp_account_id, model.params.AccountID)[0].report_name);
             repBill.model.params.parDateID = self.params.parDateID;
             repBill.model.params.parFlatID = aFlatID; 
             repBill.model.params.parAccountID = self.params.AccountID;
