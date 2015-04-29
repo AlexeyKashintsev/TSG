@@ -112,9 +112,8 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
         return parseInt(res,10);
     }
 
-    function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-        if(model.params.parCode != null && model.params.parCode != ''){
-            model.dsGroupByBarCode.params.grp_id = self.intConcat(4,8);
+    self.barCodeConversion = function(){
+        model.dsGroupByBarCode.params.grp_id = self.intConcat(4,8);
             model.dsGroupByBarCode.requery();
             model.dsFlatByLcNum.params.lcNum = self.intConcat(8,12).toString();
             model.dsFlatByLcNum.requery();
@@ -133,6 +132,11 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
             };
             model.params.parCode = null;    
             self.textBarCode.focus();
+    };
+
+    function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
+        if(model.params.parCode != null && model.params.parCode != '' && evt.propertyName == 'parCode'){
+            self.barCodeConversion();
         }
     }//GEN-LAST:event_paramsOnChanged
 
