@@ -40,15 +40,15 @@ self.setGroup = function(aNewGroupID, aFlatID){
             if (cursor.account_id == self.model.params.parAccountID) 
                 model.params.parGroupID = aNewGroupID;
         });
-    fmGroupSheet.setGroup(aNewGroupID);
-    fmFlatSheet.setGroup(aNewGroupID);
-    fmFlatIssues.parGroup = aNewGroupID;
-    self.parFlatID = fmFlats.setCurrentGroup(model.params.parGroupID);
-    model.params.parGroupID = aNewGroupID;
-    if(!aFlatID){
-        fmFlatSheet.close();
-        fmGroupSheet.showOnPanel(self.panel);
-    }           
+        fmGroupSheet.setGroup(aNewGroupID);
+        fmFlatSheet.setGroup(aNewGroupID);
+        fmFlatIssues.parGroup = aNewGroupID;
+        self.parFlatID = fmFlats.setCurrentGroup(model.params.parGroupID);
+        model.params.parGroupID = aNewGroupID;
+        if(!aFlatID){
+            fmFlatSheet.close();
+            fmGroupSheet.showOnPanel(self.panel);
+        }           
     });
 
 };

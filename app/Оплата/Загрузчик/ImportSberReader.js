@@ -83,6 +83,7 @@ function ImportSberReader() {
         var fis = new java.io.FileInputStream(aFilePath);
         var scanner = new java.util.Scanner(fis);
         var string = null;
+        specification = {};
         
         if (parcedData !== [])
             parcedData = [];
@@ -95,5 +96,8 @@ function ImportSberReader() {
         return parcedData;
     };
     
+    self.getSpecification = function() {
+        return specification;
+    };
     
 }

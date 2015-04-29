@@ -9,7 +9,8 @@ function ImportReadProcessor() {
     var processor = new ImportDataProcessor();
     var errCount = 0, stop = false;
     var MAX_ERRORS_PER_LIST = 100;
-
+    var recCount = 0;
+    
     function addLog(aMsg) {
         Logger.info(aMsg);
         if (logOutTextField != null)
@@ -53,6 +54,7 @@ function ImportReadProcessor() {
         filesCounter = aFileCount;
         logOutTextField = aLogOut;
         errCount = 0;
+        recCount = 0;
         
         if (aFiles.isDirectory()) {
             addLog('\nИмпорт файлов из директории: ' + path);
@@ -93,7 +95,18 @@ function ImportReadProcessor() {
             addLog("\nИмпорт из файла: " + aFileName);
             try {
                 errCount = 0;
-                processor.processData(reader.importFromFile(aFileName));
+                var data = reader.importFromFile(aFileName);
+                var impSpec = reader.getSpecification();
+                if (!processor.check(data, impSpec))
+                    addLog("\nНе верно число прочитанных записей!");
+                recCount += impSpec.RECORD_COUNT;
+                processor.processData(data, impSpec);
+                addLog("\nЗаписей в реестре: " + impSpec.RECORD_COUNT +
+                       "\nЗаписей прочитано: " + processor.getReadCount());
+                /*addLog("\nЧисло записей: " + impSpec.RECORD_COUNT
+                        + '\nСумма реестра: ' + impSpec.FULL_MONEY
+                        + '\nУдержанная сумма: ' + impSpec.BANK_PERCENT
+                        + '\nСумма к перечеслению: ' + impSpec.ACCOUNT_MONEY);*/
             }
             catch (e) {
                 addErrorLog("Ошибка импорта из файла: " + e);

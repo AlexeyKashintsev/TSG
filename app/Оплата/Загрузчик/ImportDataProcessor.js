@@ -7,6 +7,8 @@ function ImportDataProcessor() {
     var self = this, model = this.model;
     var saldoMod = new SaldoAndSumsModule();
     var errorRecords = [];
+    var allRecords = [];
+    var recReadCount = 0;
     
     function getLCByCode(aCode) {
         model.dsLCByCode.params.grp_code = aCode[0];
@@ -23,6 +25,12 @@ function ImportDataProcessor() {
         errorRecords = [];
     };
     
+    self.check = function(aDataArray, aImpSpec) {
+        var fileLen = aImpSpec.RECORD_COUNT;
+        var recCount = (fileLen === aDataArray.length);
+        return recCount;
+    };
+    
     /**
      * 
      * @param {type} aDataArray ->
@@ -33,15 +41,19 @@ function ImportDataProcessor() {
      * , OPL_COMMENT}
      * @returns {undefined}
      */
-    self.processData = function(aDataArray, aPercent) {
-        if (!aPercent)
-            aPercent = 0;
+    self.processData = function(aDataArray, aImpSpec) {
+//        if (!aPercent)
+          var  aPercent = 0;
         if (!dateId)
             dateId = paramSynchronizer.getData();
+        recReadCount = 0;
         
         aDataArray.forEach(function(aRow) {
-            var lcid = aRow.LC_ID ? aRow.LC_ID : getLCByCode(aRow.LC_CODE);
+            var lcid = !!aRow.LC_ID ? aRow.LC_ID : 
+                    (!!aRow.LC_CODE ? getLCByCode(aRow.LC_CODE) : null);
+           
             if (lcid) {
+                recReadCount++;
                 saldoMod.addOplata(lcid, sessionId, dateId
                                     , aRow.OPL_SUM - aRow.OPL_SUM * aPercent
                                     , aRow.OPL_DATE, aRow.OPL_COMMENT
@@ -55,4 +67,8 @@ function ImportDataProcessor() {
     self.getErrors = function() {
         return errorRecords;
     };
+    
+    self.getReadCount = function() {
+        return recReadCount;
+    }
 }
