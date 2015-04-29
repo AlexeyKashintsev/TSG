@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="dsAllAccounts" Title="" entityHeight="200" entityIconified="false" entityId="142968959267109" entityLocationX="223" entityLocationY="12" entityWidth="150" queryId="dsAllAccounts" tableName="" tableSchemaName=""/>
+</datamodel>

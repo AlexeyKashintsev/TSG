@@ -9,14 +9,14 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150" onAfterChange="paramsOnChanged"/>
   <entity Name="dsFlatByLcNum" Title="" entityHeight="200" entityIconified="false" entityId="142840995671861" entityLocationX="223" entityLocationY="224" entityWidth="150" queryId="dsFlatByLcNum" tableName="" tableSchemaName=""/>
+  <entity Name="dsGroupByBarCode" Title="" entityHeight="200" entityIconified="false" entityId="142840996328136" entityLocationX="13" entityLocationY="222" entityWidth="150" queryId="dsGroupByBarCode" tableName="" tableSchemaName=""/>
   <entity Name="dsSessionColAndSum" Title="Количество и сумма оплат в сессии" entityHeight="200" entityIconified="false" entityId="138702685442407" entityLocationX="557" entityLocationY="7" entityWidth="150" queryId="dsSessionColAndSum" tableName="" tableSchemaName=""/>
   <entity Name="dsPaymentsInSession" Title="Оплаты в сессии" entityHeight="200" entityIconified="false" entityId="138695513474136" entityLocationX="372" entityLocationY="8" entityWidth="150" queryId="dsPaymentsInSession" tableName="" tableSchemaName=""/>
-  <entity Name="dsGroupByBarCode" Title="" entityHeight="200" entityIconified="false" entityId="142840996328136" entityLocationX="13" entityLocationY="222" entityWidth="150" queryId="dsGroupByBarCode" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parSessionID" rightEntityId="138695513474136" rightEntityParameterName="sessionid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parSessionID" rightEntityId="138702685442407" rightEntityParameterName="sessionid"/>
   <relation leftEntityFieldName="grp_groups_id" leftEntityId="142840996328136" rightEntityId="142840995671861" rightEntityParameterName="group_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parSessionID" rightEntityId="138695513474136" rightEntityParameterName="sessionid"/>
+  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="138695513474136" rightEntityFieldName="lc_flat_id" rightEntityId="142840995671861"/>
   <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142840995671861" rightEntityFieldName="lc_flat_id" rightEntityId="142840995671861"/>
   <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="142840996328136" rightEntityFieldName="grp_groups_id" rightEntityId="142840996328136"/>
   <referenceRelation leftEntityFieldName="group_id" leftEntityId="142840995671861" rightEntityFieldName="grp_groups_id" rightEntityId="142840996328136"/>
-  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="138695513474136" rightEntityFieldName="lc_flat_id" rightEntityId="142840995671861"/>
 </datamodel>

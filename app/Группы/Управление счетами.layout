@@ -28,12 +28,12 @@
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
     </column>
-    <column name="colBank" selectFunction="colBankOnSelect" title="Банк">
+    <column name="colBank" selectFunction="colBankOnSelect" title="Название отчета">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <valueField entityId="142356882059373" fieldName="grp_bank_id"/>
-        <displayField entityId="142356882059373" fieldName="fname"/>
+        <valueField entityId="142961612193796" fieldName="report_name"/>
+        <displayField entityId="142961612193796" fieldName="report_name_view"/>
       </controlInfo>
-      <datamodelElement entityId="142356868867182" fieldName="bank"/>
+      <datamodelElement entityId="142356868867182" fieldName="report_name"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
