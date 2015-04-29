@@ -38,7 +38,8 @@ function ImportSberReader() {
         RECORD_COUNT: 'Число записей',
         FULL_MONEY: 'Сумма реестра',
         BANK_PERCENT: 'Удержанная сумма',
-        ACCOUNT_MONEY: 'Сумма к перечеслению'
+        ACCOUNT_MONEY: 'Сумма к перечеслению',
+        REG_NUMBER: 'Номер реестра/ID реестра ЕПС',
     };
     
     function getData(aData, aDataType) {
@@ -55,6 +56,16 @@ function ImportSberReader() {
             }
         }
         return res;
+    }
+    
+    function postProcess(anArray) {
+        if (!anArray.LC_CODE) {
+            var str = anArray.OPL_FULL_INFO;
+            var specAr = str.split(':');
+            anArray.LC_CODE = specAr[3];
+        }
+        return anArray;
+        
     }
     
     function processString(aString) {
@@ -74,6 +85,7 @@ function ImportSberReader() {
                 var recAr = {};
                 for (var j in lineConfiguration)
                     recAr[j] = getData(dataAr[lineConfiguration[j].cell], lineConfiguration[j].type);
+                recAr = postProcess(recAr);
                 parcedData.push(recAr);
             }
         }
