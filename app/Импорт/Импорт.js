@@ -139,13 +139,13 @@ function ImportFields(){
     var COUNTERS_BEG = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 5);
     for (i=0;i<COUNTERS_BEG.length;i++){
             this.COUNTERS_BEG[i] = {CellNumber : COUNTERS_BEG[i].cellnumber-1,
-                                    SERVICE_ID : COUNTERS_BEG[i].serviceid};
+                                    SERVICE_COUNTER_ID : COUNTERS_BEG[i].serviceid};
     }
 
     var COUNTERS_END = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 6);
     for (i=0;i<COUNTERS_END.length;i++){
             this.COUNTERS_END[i] = {CellNumber : COUNTERS_END[i].cellnumber-1,
-                                    SERVICE_ID : COUNTERS_END[i].serviceid};
+                                    SERVICE_COUNTER_ID : COUNTERS_END[i].serviceid};
     };
     
     var BINEFICIARIES = self.dsExcelFields.find(self.dsExcelFields.schema.impfieldtype, 7);

@@ -39,22 +39,23 @@ self.getFlatService = function(aFlatID, aServiceID){
     return self.dsFlatServiceByServiceAndFlatID.lc_flat_services_id;
 };
 
-self.getCounterInFlat = function(aFlatID, aServiceID, aAccountID){
+self.getCounterInFlat = function(aFlatID, aServiceCounterID, anAccountID){
     checkModified();
     self.dsCountersByFlat.params.flat_id = aFlatID;
-    self.dsCountersByFlat.params.account_id = aAccountID;
+    self.dsCountersByFlat.params.account_id = anAccountID;
     self.dsCountersByFlat.execute();
     try{
-        return self.dsCountersByFlat.find(self.dsCountersByFlat.schema.services_id, aServiceID)[0].counter_id;
+        return self.dsCountersByFlat.find(self.dsCountersByFlat.schema.group_counter, aServiceCounterID)[0].counter_id;
     } catch (e) {
-        var cnt = addNewCounter();
-        var fs = getFlatService(aFlatID, aServiceID);
+       /* var cnt = addNewCounter();
+        var fs = getFlatService(aFlatID, aServiceCounterID);
         addCounter2Service(cnt, fs, null);
-        return cnt;
+        return cnt;*/
+        Logger.warning('Ошибка!!!! modCounters.getCounterInFlat');
     };
 };
 
-self.setCounterValueByLCAndService = function(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue){
+self.setCounterValueByLCAndServiceCounter = function(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue){
     var counter = getCounterInFlat(aLC_ID, aServiceID);
     setCounterValueByCounterValueID(counter, aDateID, aBegValue, aEndValue);
 };
@@ -63,7 +64,7 @@ self.setCounterValueByCounterValueID = function(aCounterID, aDateID, aBegValue, 
     self.dsCountersValues.params.counterID = aCounterID;
     self.dsCountersValues.params.dateID = aDateID;
     self.dsCountersValues.execute();
-    if (self.dsCountersValues.length == 0){
+    if (self.dsCountersValues.length === 0){
         self.dsCountersValues.insert(self.dsCountersValues.schema.counter_id, aCounterID,
                                 self.dsCountersValues.schema.date_id, aDateID,
                                 self.dsCountersValues.schema.beg_val, aBegValue,
@@ -81,6 +82,6 @@ var addNewCounter = self.addNewCounter;
 var addCounter2Service = self.addCounter2Service;
 var getCounterInFlat = self.getCounterInFlat;
 var getFlatService = self.getFlatService;
-var setCounterValueByLCAndService = self.setCounterValueByLCAndService;
+var setCounterValueByLCAndServiceCounter = self.setCounterValueByLCAndServiceCounter;
 var setCounterValueByCounterValueID = self.setCounterValueByCounterValueID;
 }

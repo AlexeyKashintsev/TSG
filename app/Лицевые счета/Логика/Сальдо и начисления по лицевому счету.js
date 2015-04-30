@@ -81,10 +81,10 @@ function SaldoAndSumsModule() {
      * @param {type} aEndValue
      * @returns {undefined}
      */
-    self.insertCounterValue = function(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue) {
+    self.insertCounterValue = function(aLC_ID, aServiceCounterID, aDateID, aBegValue, aEndValue) {
         if (!modCN)
             modCN = new CountersModule();
-        modCN.setCounterValueByLCAndService(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue);
+        modCN.setCounterValueByLCAndServiceCounter(aLC_ID, aServiceCounterID, aDateID, aBegValue, aEndValue);
     };
 
     self.initSums = function(aGroupID, aLcID, aDateID) {

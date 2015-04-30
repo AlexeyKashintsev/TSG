@@ -9,12 +9,16 @@ function ImportDataProcessor() {
     var errorRecords = [];
     var allRecords = [];
     var curStat = {
-        recReadCount: 0,
+        readCount: 0,
         recReadSum: 0,
         recReadErrors: 0
     };
     
-    var allCount, allSum, allErrors;
+    var allStat = {
+        allCount: 0,
+        allSum: 0,
+        allErrors: 0
+    };
     
     function getLCByCode(aCode) {
         model.dsLCByCode.params.grp_code = aCode[0];
@@ -51,7 +55,7 @@ function ImportDataProcessor() {
     self.processData = function(aDataArray, aImpSpec) {
         if (!dateId)
             dateId = paramSynchronizer.getData();
-        curStat.recReadCount = 0;
+        curStat.readCount = 0;
         curStat.recReadSum = 0;
         curStat.recReadErrors = 0;
         
@@ -60,7 +64,7 @@ function ImportDataProcessor() {
                     (!!aRow.LC_CODE ? getLCByCode(aRow.LC_CODE) : null);
            
             if (lcid) {
-                curStat.recReadCount++;
+                curStat.readCount++;
                 curStat.recReadSum += aRow.OPL_SUM;
                 saldoMod.addOplata(lcid, sessionId, dateId
                                     , aRow.OPL_SUM - aRow.OPL_SUM * bankPercent/100
@@ -71,9 +75,9 @@ function ImportDataProcessor() {
                 curStat.recReadErrors++;
             }
         });
-        allCount += curStat.recReadCount;
-        allSum += curStat.recReadSum;
-        allErrors += curStat.recReadErrors;
+        allStat.allCount += curStat.readCount;
+        allStat.allSum += curStat.recReadSum;
+        allStat.allErrors += curStat.recReadErrors;
     };
     
     self.getErrors = function() {
@@ -81,6 +85,10 @@ function ImportDataProcessor() {
     };
     
     self.getLastStat = function() {
-        return ;
-    }
+        return curStat;
+    };
+    
+    self.getFullStat = function() {
+        return allStat;
+    };
 }
