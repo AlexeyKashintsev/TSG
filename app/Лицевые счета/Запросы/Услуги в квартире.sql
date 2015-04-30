@@ -18,4 +18,4 @@ From lc_flat_services t1
  and (:flat_id = t1.lc_id or :all_flats = true)
  Group by t1.lc_flat_services_id, t1.lc_id, t1.services_id, t1.fs_active
 , t1.date_start, t1.date_end, t1.period_start, t1.period_end, t1.account_id) q
- /*Order by grp_services_id*/
+ Order by usl_order

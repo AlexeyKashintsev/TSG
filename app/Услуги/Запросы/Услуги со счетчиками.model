@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="Способ расчета стоимости услуги" entityHeight="200" entityIconified="false" entityId="137520104721059" entityLocationX="465" entityLocationY="17" entityWidth="150" tableAlias="t" tableName="usl_calc_formula" tableSchemaName=""/>
-  <entity Title="Услуги" entityHeight="200" entityIconified="false" entityId="137485512826912" entityLocationX="203" entityLocationY="21" entityWidth="150" tableAlias="t1" tableName="usl_services" tableSchemaName=""/>
-  <relation leftEntityFieldName="calc_id" leftEntityId="137485512826912" rightEntityFieldName="usl_calc_formula_id" rightEntityId="137520104721059"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="143033675243108" entityLocationX="180" entityLocationY="54" entityWidth="150" tableAlias="t" tableName="grp_groups" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="143033664138799" entityLocationX="794" entityLocationY="3" entityWidth="150" tableAlias="t2" tableName="grp_service_counters" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="143033677612076" entityLocationX="363" entityLocationY="13" entityWidth="150" tableAlias="t3" tableName="grp_services" tableSchemaName=""/>
+  <entity Title="Услуги" entityHeight="200" entityIconified="false" entityId="137485512826912" entityLocationX="590" entityLocationY="4" entityWidth="150" tableAlias="t1" tableName="usl_services" tableSchemaName=""/>
+  <relation leftEntityFieldName="services_id" leftEntityId="143033677612076" rightEntityFieldName="usl_services_id" rightEntityId="137485512826912"/>
+  <relation leftEntityFieldName="grp_service_id" leftEntityId="143033664138799" rightEntityFieldName="grp_services_id" rightEntityId="143033677612076"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="143033677612076" rightEntityFieldName="grp_groups_id" rightEntityId="143033675243108"/>
 </datamodel>
