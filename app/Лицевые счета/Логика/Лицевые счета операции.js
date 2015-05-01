@@ -215,13 +215,13 @@ function LCModule() {
         return cnt;
     };
 
-    self.processIfConnectedService = function(aFlatService, aService, aFlatID, aAccountID) {
-        var conServ = model.qServices.find(model.qServices.schema.usl_services_id, aService)
+    self.processIfConnectedService = function(aFlatService, aService, aFlatID, anAccountID) {
+        var conServ = model.qServices.find(model.qServices.schema.usl_services_id, aService);
         if (conServ) conServ = conServ[0].connected_service;
         if (conServ) {
             if (!modCN)
                 modCN = new CountersModule();
-            var cnt = modCN.getCounterInFlat(aFlatID, conServ,aAccountID);
+            var cnt = modCN.getCounterInFlat(aFlatID, conServ, anAccountID);
             modCN.addCounter2Service(cnt, aFlatService, null, true);
         }
         self.saveChanges();

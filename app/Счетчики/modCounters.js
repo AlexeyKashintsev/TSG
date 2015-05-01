@@ -55,6 +55,8 @@ self.getCounterInFlat = function(aFlatID, aServiceCounterID, anAccountID){
     };
 };
 
+
+
 self.setCounterValueByLCAndServiceCounter = function(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue){
     var counter = getCounterInFlat(aLC_ID, aServiceID);
     setCounterValueByCounterValueID(counter, aDateID, aBegValue, aEndValue);

@@ -3,7 +3,7 @@
  * @name BillsBuilder_Doverie
  * @author Alexey
  */
-function BillsBuilder_Doverie() {
+function BillsBuilder_Nash_Dom() {
     var self = this, model = self.model;
     var dsLC_byid = this.model.dsLC_byid;
 
@@ -139,17 +139,17 @@ function BillsBuilder_Doverie() {
                     dates = (monthNames[date.getMonth()]+" "+date.getFullYear());
 
                     var saltoStr = (Math.round(lc_saldo.full_end*100)).toString();
-                    var lc_num = strConcat(self.dsGroupAndBank.grpid, self.dsLC_byid.lc_num, 5);
-                    var barCodeStr = strConcat('1134', lc_num, 12);
-                    barCodeStr = strConcat(barCodeStr, saltoStr, 22);
+                    var lc_num = 1;//strConcat(self.dsGroupAndBank.grpid, self.dsLC_byid.lc_num, 5);
+                    var barCodeStr = 1;//strConcat('1134', lc_num, 12);
+                    barCodeStr = 0;//strConcat(barCodeStr, saltoStr, 22);
                     
-                    try {
+                    /*try {
                         var bcg = new Packages.barCodeGenerator.Code128;
                         var bcn = barCodeStr;
                         barCodeStr = bcg.codeIt(barCodeStr);
                     } catch(e) {
                         barCodeStr = 'No package!';
-                    }
+                    }*/
                     var DM = new DateModule();
                     var prevDate = self.model.all_dates.findById(DM.prevDate(self.model.params.parDateID)).per_pay_day;
                     var days = (prevDate.getDate() + " " + monthNamesRP[prevDate.getMonth()] + " " + prevDate.getFullYear());
@@ -178,7 +178,7 @@ function BillsBuilder_Doverie() {
                         day:            days,
                         payDay:         payDay,
                         barcode:        barCodeStr,
-                        bk:             bcn,
+                        bk:             barCodeStr,//bcn,
                         counters4ask:   askCounters,
                         percent:        percent
                     };
