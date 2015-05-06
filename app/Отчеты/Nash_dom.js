@@ -6,7 +6,7 @@
 function BillsBuilder_Nash_Dom() {
     var self = this, model = self.model;
     var dsLC_byid = this.model.dsLC_byid;
-
+ 
     
     self.Group = {};
     self.Flats = {};
