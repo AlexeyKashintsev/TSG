@@ -4,7 +4,7 @@
  * @author Alexey
  * @module
  */ 
-function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod, aProgress, aAccount) {
+function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod, aAccount) {
     var self = this, model = this.model;
     var initCNT = 0;
     
@@ -16,18 +16,17 @@ function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod, aPro
     
     function initializeTarifs4NewMonth() {
         var tarifs = [];
-        model.dsTarifsInGroup.beforeFirst();
         var i = 0;
-        while (model.dsTarifsInGroup.next()) {
+        model.dsTarifsInGroup.forEach(function(cursor) {
             tarifs[i] = {};
-            tarifs[i].services_id = model.dsTarifsInGroup.cursor.services_id;
-            tarifs[i].group_id = model.dsTarifsInGroup.cursor.group_id;
-            tarifs[i].norm = model.dsTarifsInGroup.cursor.norm;
-            tarifs[i].rate = model.dsTarifsInGroup.cursor.rate;
+            tarifs[i].services_id = cursor.services_id;
+            tarifs[i].group_id = cursor.group_id;
+            tarifs[i].norm = cursor.norm;
+            tarifs[i].rate = cursor.rate;
             tarifs[i].date_id = aNewDate;
             tarifs[i].account_id = aAccount;
             i++;
-        }
+        });
         for (var j in tarifs)
             model.dsTarifsInGroup.push(tarifs[j]);        
         ready();
@@ -38,7 +37,7 @@ function NewMonthInitializer4Group(anOldDate, aNewDate, aGroupID, aMainMod, aPro
     
     
     function ready() {
-        (function(){aProgress.increaseValue(1);}).invokeAndWait();
+        serverProgress.increaseValue(1);
         initCNT++;
         if (initCNT===1) {
             model.save(function(){
