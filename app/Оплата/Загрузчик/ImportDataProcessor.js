@@ -54,7 +54,7 @@ function ImportDataProcessor() {
      */
     self.processData = function(aDataArray, aImpSpec) {
         if (!dateId)
-            dateId = paramSynchronizer.getData();
+            dateId = paramSynchronizer.getDate();
         curStat.readCount = 0;
         curStat.recReadSum = 0;
         curStat.recReadErrors = 0;
