@@ -3,7 +3,7 @@
  * @author TSG
  * @module
  */ 
-function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, aProgress, aAccount) {
+function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, aAccount) {
     var self = this, model = this.model;
     var initCNT = 0;
     
@@ -20,19 +20,18 @@ function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, aProgress, aAccou
     
     function initializeSaldo4NewMonth() {
         var saldo = [];
-        model.dsSaldo.beforeFirst();
         var i = 0;
-        while (model.dsSaldo.next()) {
+        model.dsSaldo.forEach(function(cursor) {
             saldo[i] = {};
-            saldo[i].lc_id = model.dsSaldo.cursor.lc_id;
-            saldo[i].sal_begin = model.dsSaldo.cursor.sal_end;
+            saldo[i].lc_id = cursor.lc_id;
+            saldo[i].sal_begin = cursor.sal_end;
             saldo[i].sal_penalties_old = 
-                model.dsSaldo.cursor.sal_penalties_old?model.dsSaldo.cursor.sal_penalties_old:0 +
-                model.dsSaldo.cursor.sal_penalties_cur?model.dsSaldo.cursor.sal_penalties_cur:0;
+                cursor.sal_penalties_old ? cursor.sal_penalties_old : 0 +
+                cursor.sal_penalties_cur ? cursor.sal_penalties_cur : 0;
             saldo[i].date_id = aNewDate;
             saldo[i].account_id = aAccount;
             i++;
-        }
+        });
         for (var j in saldo)
             model.dsSaldo.push(saldo[j]);
         ready();
@@ -41,25 +40,24 @@ function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, aProgress, aAccou
 
 function initializeCounters4NewMonth() {
         var counters = [];
-        model.dsCntVal.beforeFirst();
         var i = 0;
-        while (model.dsCntVal.next()){
-            if (!processedCounters[model.dsCntVal.counter_id]) {
+        model.dsCntVal.forEach(function(cursor) {
+            if (!processedCounters[cursor.counter_id]) {
                 counters[i] = {};
-                counters[i].counter_id = model.dsCntVal.counter_id;
+                counters[i].counter_id = cursor.counter_id;
                 counters[i].date_id = aNewDate;
-                counters[i].beg_val = model.dsCntVal.end_val;                
+                counters[i].beg_val = cursor.end_val;                
                 processedCounters[counters[i].counter_id] = true;
                 i++;
             }
-        }
+        });
         for (var j in counters)
             model.dsCntVal.push(counters[j]);        
         ready();
     }
 
   function ready() {
-        (function(){aProgress.increaseValue(1);}).invokeAndWait();
+        serverProgress.increaseValue(1);
         initCNT++;
         if (initCNT===2) {
             model.save(function(){
@@ -71,4 +69,4 @@ function initializeCounters4NewMonth() {
     
     model.dsSaldo.requery(function(){initializeSaldo4NewMonth();});
     model.dsCntVal.requery(function(){initializeCounters4NewMonth();});
-    }
+}

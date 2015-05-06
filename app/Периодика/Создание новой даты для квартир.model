@@ -5,6 +5,6 @@
     <parameter description="" name="ParNewDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="dsCntVal" Title="" entityHeight="200" entityIconified="false" entityId="142140188639041" entityLocationX="542" entityLocationY="130" entityWidth="150" queryId="counters_values_in_flats" tableName="" tableSchemaName=""/>
   <entity Name="dsSaldo" Title="" entityHeight="200" entityIconified="false" entityId="142140855915670" entityLocationX="236" entityLocationY="58" entityWidth="150" queryId="saldo_in_flats_by_group" tableName="" tableSchemaName=""/>
+  <entity Name="dsCntVal" Title="" entityHeight="200" entityIconified="false" entityId="142140188639041" entityLocationX="542" entityLocationY="130" entityWidth="150" queryId="counters_values_in_flats" tableName="" tableSchemaName=""/>
 </datamodel>

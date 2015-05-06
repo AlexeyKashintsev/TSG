@@ -6,8 +6,9 @@
  * @public
  * @rolesAllowed admin operator buh
  */ 
-insert into per_sums
-Select nextval('seqsums') as per_usms_id, t.lc_flat_services_id as flat_service_id, :dateid as date_id
+insert into per_sums (per_sums_id, flat_service_id, date_id, usr_context)
+Select nextval('seqsums') as per_usms_id, t.lc_flat_services_id as flat_service_id
+, :dateid as date_id, t.usr_context
 From grp_lc_group t1
  Inner Join lc_flat_services t on t1.lc_id = t.lc_id
  Left Join per_sums t2 on t.lc_flat_services_id = t2.flat_service_id and :dateid = t2.date_id

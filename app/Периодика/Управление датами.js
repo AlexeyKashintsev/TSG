@@ -73,7 +73,7 @@ function DateModule() {
                         //       model.sums_4create.params.groupid = group;
                         //       model.sums_4create.executeUpdate();
                         serverProgress.increaseValue();
-                        grpModules[group] = new NewMonthInitializer4Lc(prevDate, newDate, self, progress, aAccount.grp_account_id);
+                        grpModules[group] = new NewMonthInitializer4Lc(prevDate, newDate, self, aAccount.grp_account_id);
                     });
                 });
             });
