@@ -172,10 +172,12 @@ function LCModule() {
      * todo: добавить поиск услуги, добавить добавление значений(self.sums_perFlat)
      *       в модуле SaldoAndSumsModule
      *       и отслеживать эти дополнения, чтобы сохранять их тоже */
-    self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID, aAccountID, aStopDate, aStartPeriod, aEndPeriod, grpCount) {
+    self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID
+                                    , anAccountID, aStopDate, aStartPeriod, aEndPeriod
+                                    , aGroupService) {
         var startDate = aDateID ? aDateID : modDT.getLastDate();
         model.services_by_flat.params.flat_id = aFlatID;
-        model.services_by_flat.params.parAccount = aAccountID;
+        model.services_by_flat.params.parAccount = anAccountID;
         model.services_by_flat.requery();
         if (model.services_by_flat.find(model.services_by_flat.schema.services_id, aServiceID).length === 0) {
             model.services_by_flat.push({
@@ -186,7 +188,7 @@ function LCModule() {
                 date_end    : aStopDate ? aStopDate : null,
                 period_start: aStartPeriod ? aEndPeriod : null,
                 period_end  : aEndPeriod ? aEndPeriod : null,
-                account_id  : aAccountID
+                account_id  : anAccountID
             });
             var fs = self.services_by_flat.lc_flat_services_id;
             if (startDate)
@@ -194,8 +196,8 @@ function LCModule() {
                     flat_service_id : self.services_by_flat.lc_flat_services_id,
                     date_id         : startDate
                 });
-            if (!processIfConnectedService(fs, aServiceID, aFlatID,aAccountID) && aCalcByCounter) {
-                var cnt = addCounterToFlat(self.services_by_flat.lc_flat_services_id, grpCount);
+            if (!processIfConnectedService(fs, aServiceID, aFlatID, anAccountID) && aCalcByCounter) {
+                var cnt = addCounterToFlat(self.services_by_flat.lc_flat_services_id, aGroupService);
                 modCN.setCounterValueByCounterValueID(cnt, startDate, 0, 0);
             }            
         }

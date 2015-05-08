@@ -19,7 +19,7 @@ function fmAccountsByGroup() {
                 {
                     model.dsAccountsByGroup.insert(self.dsAccountsByGroup.schema.group_id, model.params.parGroupID,
                                                    self.dsAccountsByGroup.schema.account_id, aAccount);
-                    var grpMod = new ServerModule('groups_module');
+                    var grpMod = new ServerModule('GroupsModule');
                     grpMod.addSaldo2Flats(model.params.parGroupID, aAccount);
                     model.save();
                     model.requery();

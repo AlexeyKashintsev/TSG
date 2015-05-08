@@ -14,7 +14,7 @@ function formServiceCounters() {
         });
         model.save();
         model.flats_by_group.requery();
-        model.flats_by_group.forEach(function(aFlat){
+        model.flats_by_group.forEach(function(aFlat) {
             model.services_by_flat.params.flat_id = aFlat.lc_flat_id;
             model.services_by_flat.requery();
             var serv = model.services_by_flat.find(model.services_by_flat.schema.services_id, model.params.parService);
@@ -35,6 +35,6 @@ function formServiceCounters() {
     model.save();
     }//GEN-LAST:event_btnSaveActionPerformed
 
-paramSynchronizer.addListener(this);
+    paramSynchronizer.addListener(this);
 }
 

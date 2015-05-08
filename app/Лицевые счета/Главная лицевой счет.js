@@ -41,7 +41,8 @@ function formFlatWorkSheet() {
     
     self.setGroup = function(aNewGroupID){
         model.params.parGroupID =
-        fmFlatServices.parGroupID = fmNachisleniya.ParGroupID = aNewGroupID;
+            fmFlatServices.parGroupID = 
+            fmNachisleniya.ParGroupID = aNewGroupID;
     };
     
     self.setFlat = function(aNewFlatID){

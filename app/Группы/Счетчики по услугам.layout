@@ -10,9 +10,16 @@
     <constraints bottom="0px" left="0px" right="0px" top="33px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelGrid" parent="panel" prefHeight="267px" prefWidth="400px" type="DbGridDesignInfo">
-    <column name="column" title="Название счетчика">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="142943911169023" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <column name="colCounterName" title="Название счетчика">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="142943911169023" fieldName="counter_name"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -21,14 +28,25 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+    </column>
+    <column name="colConCounter" title="Связанный счетчик">
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <valueField entityId="143102190234417" fieldName="grp_service_counters_id"/>
+        <displayField entityId="143102190234417" fieldName="f_name"/>
+      </controlInfo>
+      <datamodelElement entityId="142943911169023" fieldName="con_grp_counter"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
     </column>
-    <treeDesignInfo/>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="142943911169023" field="false"/>
-    </rowsColumnsDesignInfo>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

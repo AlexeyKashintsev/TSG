@@ -14,7 +14,7 @@ function formServicesInGroup() {
     self.isSelectForm = false;
     self.isEditable = true;
     var canSetEdit = false;
-    var grpMod = new ServerModule('groups_module');
+    var grpMod = new ServerModule('GroupsModule');
 
     self.setModifying = function(aModifying) {
         self.mgUslugi.colModService.visible = aModifying;
@@ -35,6 +35,14 @@ function formServicesInGroup() {
             self.pnlWorkSpace.height += 48;
             self.mgUslugi.bottom += 48;
         }
+    }
+    
+    function applyChanges() {
+        model.dsServices.forEach(function(cursor) {
+            if (cursor.new_service)
+                grpMod.addService2Flats(cursor.group_id, cursor.services_id,
+                                        null, cursor.account_id, model.dsGrpServiceCounter.grp_service_counters_id);
+        });
     }
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
@@ -65,17 +73,20 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
         var fmServSelector = new ServicesForm();
         fmServSelector.showModal(function(aService) {
             if (aService) {
-                model.dsServices.insert(model.dsServices.schema.group_id, self.parGroup,
-                        model.dsServices.schema.services_id, aService.service,
-                        model.dsServices.schema.account_id, self.parAccountID);
-                if (aService.calc_by_counter === true) {
+                model.dsServices.push({
+                    group_id:  model.parGroup,
+                    services_id: aService.service,
+                    account_id: self.parAccountID,
+                    new_service: true
+                });
+                if (aService.calc_by_counter === true && confirm('Добавить счетчик "Общий"?')) {
                     model.dsGrpServiceCounter.push({
                         grp_service_id: model.dsServices.grp_services_id,
                         counter_name: 'Общий'
                     });
                 }
-                model.save();
-                grpMod.addService2Flats(self.parGroup, aService.service, null, self.parAccountID, model.dsGrpServiceCounter.grp_service_counters_id);
+                //model.save();
+                //grpMod.addService2Flats(self.parGroup, aService.service, null, self.parAccountID, model.dsGrpServiceCounter.grp_service_counters_id);
             }
         });
 }//GEN-LAST:event_btnAddActionPerformed
@@ -145,4 +156,8 @@ function btnDownActionPerformed(evt) {//GEN-FIRST:event_btnDownActionPerformed
 
         });
     }//GEN-LAST:event_btnServicesActionPerformed
+
+    function btnServices1ActionPerformed(evt) {//GEN-FIRST:event_btnServices1ActionPerformed
+        // TODO Добавьте свой код:
+    }//GEN-LAST:event_btnServices1ActionPerformed
 }
