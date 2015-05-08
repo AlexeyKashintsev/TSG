@@ -57,25 +57,23 @@ function DateModule() {
             model.dsAllAccounts.requery(function() {
                 model.dsAllAccounts.forEach(function(aAccount) {
                     model.save(function() {
-                            serverProgress.increaseValue();
-
-                        model.dsGroups.beforeFirst();
-                        while (model.dsGroups.next()) {
-                            var group = model.dsGroups.grp_groups_id;
+                        serverProgress.increaseValue();
+                        model.dsGroups.forEach(function(cursor) {
+                            var group = cursor.grp_groups_id;
                             model.sums_4create.params.dateid = newDate;
                             model.sums_4create.params.groupid = group;
                             model.sums_4create.executeUpdate();
-                                serverProgress.increaseValue();
-                            grpModules[group] = new NewMonthInitializer4Group(prevDate, newDate, group, self, progress, aAccount.grp_account_id);
-                        }
+                            serverProgress.increaseValue();
+                            grpModules[group] = new NewMonthInitializer4Group(prevDate, newDate, group, self, aAccount.grp_account_id);
+                        });
 
 
                         var group = model.dsGroups.grp_groups_id;
                         //      model.sums_4create.params.dateid = newDate;
                         //       model.sums_4create.params.groupid = group;
                         //       model.sums_4create.executeUpdate();
-                            serverProgress.increaseValue();
-                        grpModules[group] = new NewMonthInitializer4Lc(prevDate, newDate, self, progress, aAccount.grp_account_id);
+                        serverProgress.increaseValue();
+                        grpModules[group] = new NewMonthInitializer4Lc(prevDate, newDate, self, aAccount.grp_account_id);
                     });
                 });
             });
