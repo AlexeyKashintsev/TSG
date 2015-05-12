@@ -93,7 +93,7 @@ function ImportSberReader() {
     
     self.importFromFile = function(aFilePath) {
         var fis = new java.io.FileInputStream(aFilePath);
-        var scanner = new java.util.Scanner(fis);
+        var scanner = new java.util.Scanner(fis,  "windows-1251");
         var string = null;
         specification = {};
         

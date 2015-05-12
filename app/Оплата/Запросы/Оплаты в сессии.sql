@@ -16,3 +16,4 @@ From opl_payments t1
  Left Join grp_groups t2 on t3.group_id = t2.grp_groups_id
  Left Join grp_type t4 on t2.grp_type = t4.grp_type_id
  Where :sessionid = t1.session_id and t4.main_group = true
+order by t1.opl_payments_id

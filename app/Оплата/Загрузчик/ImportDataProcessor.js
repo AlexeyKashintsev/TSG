@@ -21,10 +21,13 @@ function ImportDataProcessor() {
     };
     
     function getLCByCode(aCode) {
-        model.dsLCByCode.params.grp_code = aCode[0];
-        model.dsLCByCode.params.flat_code = aCode.substring(1);
-        model.dsLCByCode.requery();
-        return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
+        if (aCode.length === 5) {
+            model.dsLCByCode.params.grp_code = aCode[0];
+            model.dsLCByCode.params.flat_code = aCode.substring(1);
+            model.dsLCByCode.requery();
+            return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
+        } else
+            return false;
     };
     
     var dateId, sessionId, accountId, bankPercent;
