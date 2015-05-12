@@ -7,16 +7,11 @@
     <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="flats_by_group" Title="" entityHeight="200" entityIconified="false" entityId="142946918207994" entityLocationX="655" entityLocationY="18" entityWidth="150" queryId="flats_by_group" tableName="" tableSchemaName=""/>
-  <entity Name="dsAllGroupCountersByGroup" Title="" entityHeight="200" entityIconified="false" entityId="143102190234417" entityLocationX="229" entityLocationY="241" entityWidth="150" queryId="dsAllGroupCountersByGroup" tableName="" tableSchemaName=""/>
   <entity Name="dsGrpServiceCounter" Title="" entityHeight="200" entityIconified="false" entityId="142943911169023" entityLocationX="225" entityLocationY="12" entityWidth="150" queryId="dsGrpServiceCounter" tableName="" tableSchemaName=""/>
-  <entity Name="services_by_flat" Title="" entityHeight="272" entityIconified="false" entityId="142946906848469" entityLocationX="417" entityLocationY="13" entityWidth="150" queryId="services_by_flat" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="143102190234417" rightEntityParameterName="group_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGrpServ" rightEntityId="142943911169023" rightEntityParameterName="parGrpServ"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="142946918207994" rightEntityParameterName="group_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142946906848469" rightEntityParameterName="parAccount"/>
+  <entity Name="dsAllGroupCountersByGroup" Title="" entityHeight="200" entityIconified="false" entityId="143102190234417" entityLocationX="229" entityLocationY="241" entityWidth="150" queryId="dsAllGroupCountersByGroup" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="143102190234417" rightEntityParameterName="account_id"/>
-  <referenceRelation leftEntityFieldName="con_grp_counter" leftEntityId="142943911169023" rightEntityFieldName="grp_service_counters_id" rightEntityId="143102190234417"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142946906848469" rightEntityFieldName="lc_flat_id" rightEntityId="142946918207994"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGrpServ" rightEntityId="142943911169023" rightEntityParameterName="parGrpServ"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="143102190234417" rightEntityParameterName="group_id"/>
   <referenceRelation leftEntityFieldName="con_grp_counter" leftEntityId="142943911169023" rightEntityFieldName="grp_service_counters_id" rightEntityId="142943911169023"/>
+  <referenceRelation leftEntityFieldName="con_grp_counter" leftEntityId="142943911169023" rightEntityFieldName="grp_service_counters_id" rightEntityId="143102190234417"/>
 </datamodel>

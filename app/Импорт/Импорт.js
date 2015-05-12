@@ -326,7 +326,7 @@ function readRow(aRowAr, aGroup){
             if (getCellValue(aRowAr.cells[impFields.GROUP_MODIFIER[i].CellNumber]))
                 group_modifiers[group_modifiers.length] = impFields.GROUP_MODIFIER[i].GroupID;
         }
-        servModifiers = modLC.addFlat2Modifyers(LC_ID, group_modifiers);
+        servModifiers = modLC.addFlat2Modifiers(LC_ID, group_modifiers);
     }
     Logger.info('330');
     var SALDO_BEG = getCellValue(aRowAr.cells[impFields.SALDO_BEG]);

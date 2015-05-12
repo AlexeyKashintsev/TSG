@@ -7,26 +7,16 @@
  */
 
 function LCModule() {
-
-
     var self = this, model = self.model;
+    var modLCServ = new LCServicesAnCounters();
 
-    var modSN = null;
-    var modCN = null;
-    var modDT = new DateModule();
-
-    // modSalSum.modLC = this;
     self.setServModules = function(aModSN, aModCN) {
-        modSN = aModSN;
-        modCN = aModCN;
+        modLCServ.setServModules(aModCN);
     };
 
     self.saveChanges = function() {
-        self.model.save();
-        if (modSN && modSN.model.modified)
-            modSN.saveChanges();
-        if (modCN && modCN.model.modified)
-            modCN.checkModified();
+        model.save();
+        modLCServ.saveChanges();
     };
 
     self.getLcID = function(aLCRegTo, aLCFlatNumber, aLCPeopleRegCount, aLCNumber) {
@@ -123,7 +113,7 @@ function LCModule() {
         return aModServices;
     };
 
-    self.addFlat2Modifyers = function(aFlatID, aGroupModifiers) {
+    self.addFlat2Modifiers = function(aFlatID, aGroupModifiers) {
         var modServices = [];
         if (aGroupModifiers) {
             for (var i in aGroupModifiers) {
@@ -161,75 +151,6 @@ function LCModule() {
     };
     //});
 
-
-    /*
-     * Добавить услугу в квартиру
-     * @param {type} aFlatID
-     * @param {type} aServiceID
-     * @param {type} aCalcByCounter
-     * @param {type} aDateID
-     * @returns {@exp;services_by_flat@pro;lc_flat_services_id}
-     * todo: добавить поиск услуги, добавить добавление значений(self.sums_perFlat)
-     *       в модуле SaldoAndSumsModule
-     *       и отслеживать эти дополнения, чтобы сохранять их тоже */
-    self.addServiceToLC = function(aFlatID, aServiceID, aCalcByCounter, aDateID
-                                    , anAccountID, aStopDate, aStartPeriod, aEndPeriod
-                                    , aGroupService) {
-        var startDate = aDateID ? aDateID : modDT.getLastDate();
-        model.services_by_flat.params.flat_id = aFlatID;
-        model.services_by_flat.params.parAccount = anAccountID;
-        model.services_by_flat.requery();
-        if (model.services_by_flat.find(model.services_by_flat.schema.services_id, aServiceID).length === 0) {
-            model.services_by_flat.push({
-                services_id : aServiceID,
-                lc_id       : aFlatID,
-                fs_active   : true,
-                date_start  : startDate,
-                date_end    : aStopDate ? aStopDate : null,
-                period_start: aStartPeriod ? aEndPeriod : null,
-                period_end  : aEndPeriod ? aEndPeriod : null,
-                account_id  : anAccountID
-            });
-            var fs = self.services_by_flat.lc_flat_services_id;
-            if (startDate)
-                model.sums_perFlat.push({
-                    flat_service_id : self.services_by_flat.lc_flat_services_id,
-                    date_id         : startDate
-                });
-            if (!processIfConnectedService(fs, aServiceID, aFlatID, anAccountID) && aCalcByCounter) {
-                var cnt = addCounterToFlat(self.services_by_flat.lc_flat_services_id, aGroupService);
-                modCN.setCounterValueByCounterValueID(cnt, startDate, 0, 0);
-            }            
-        }
-        return self.services_by_flat.lc_flat_services_id;
-    };
-
-    /*
-     * Добавить счетчик в квартиру
-     * @param {type} aFlatService
-     * @returns {@exp;dsCountersByFlat@pro;lc_counter_id} 
-     */
-    self.addCounterToFlat = function(aFlatService, grpCount) {
-        if (!modCN)
-            modCN = new CountersModule();
-        var cnt = modCN.addNewCounter();
-        modCN.addCounter2Service(cnt, aFlatService, grpCount);
-        return cnt;
-    };
-
-    self.processIfConnectedService = function(aFlatService, aService, aFlatID, anAccountID) {
-        var conServ = model.qServices.find(model.qServices.schema.usl_services_id, aService);
-        if (conServ) conServ = conServ[0].connected_service;
-        if (conServ) {
-            if (!modCN)
-                modCN = new CountersModule();
-            var cnt = modCN.getCounterInFlat(aFlatID, conServ, anAccountID);
-            modCN.addCounter2Service(cnt, aFlatService, null, true);
-        }
-        self.saveChanges();
-        return conServ;
-    };
-
     /*
      * Удаление лицевого счета
      * to do: subj
@@ -249,13 +170,16 @@ function LCModule() {
             sal_begin   : 0,
             account_id  : aAccountID
         });
-    }
+    };
 
     var saveChanges = self.saveChanges;
     var addFlat2Group = self.addFlat2Group;
     var addNewLC = self.addNewLC;
     var addCharToLC = self.addCharToLC;
-    var addServiceToLC = self.addServiceToLC;
-    var addCounterToFlat = self.addCounterToFlat;
+    var addServiceToLC = modLCServ.addServiceToLC;
+    self.addServiceToLC = addServiceToLC;
+    var addCounterToFlat = modLCServ.addCounterToFlat;
+    self.addCounterToFlat = addCounterToFlat;
     var processIfConnectedService = self.processIfConnectedService;
+    self.processIfConnectedService = processIfConnectedService;
 }
