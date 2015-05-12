@@ -96,7 +96,7 @@ var self = this, model = self;
                 return false;
         };
         
-        this.getData = function() {
+        this.getDate = function() {
             return date;
         };
         

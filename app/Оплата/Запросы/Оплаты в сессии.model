@@ -3,8 +3,14 @@
     <parameter description="" name="sessionid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="Квартиры (Лицевые счета)" entityHeight="137" entityIconified="false" entityId="138695662486147" entityLocationX="366" entityLocationY="11" entityWidth="150" tableAlias="t" tableName="lc_flat" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="143092764547623" entityLocationX="694" entityLocationY="7" entityWidth="150" tableAlias="t2" tableName="grp_groups" tableSchemaName=""/>
   <entity Title="opl_payments" entityHeight="200" entityIconified="false" entityId="138686028867600" entityLocationX="177" entityLocationY="8" entityWidth="150" tableAlias="t1" tableName="opl_payments" tableSchemaName=""/>
-  <relation leftEntityFieldName="flat_id" leftEntityId="138686028867600" rightEntityFieldName="lc_flat_id" rightEntityId="138695662486147"/>
+  <entity Title="Квартиры (Лицевые счета)" entityHeight="137" entityIconified="false" entityId="138695662486147" entityLocationX="366" entityLocationY="11" entityWidth="150" tableAlias="t" tableName="lc_flat" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="143092775943022" entityLocationX="874" entityLocationY="9" entityWidth="150" tableAlias="t4" tableName="grp_type" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="143092764549102" entityLocationX="529" entityLocationY="11" entityWidth="150" tableAlias="t3" tableName="grp_lc_group" tableSchemaName=""/>
+  <relation leftEntityFieldName="flat_id" leftEntityId="138686028867600" rightEntityFieldName="lc_id" rightEntityId="143092764549102"/>
+  <relation leftEntityFieldName="grp_type" leftEntityId="143092764547623" rightEntityFieldName="grp_type_id" rightEntityId="143092775943022"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="143092764549102" rightEntityFieldName="grp_groups_id" rightEntityId="143092764547623"/>
   <relation leftEntityId="-1" leftEntityParameterName="sessionid" rightEntityFieldName="session_id" rightEntityId="138686028867600"/>
+  <relation leftEntityFieldName="flat_id" leftEntityId="138686028867600" rightEntityFieldName="lc_flat_id" rightEntityId="138695662486147"/>
 </datamodel>

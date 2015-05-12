@@ -39,7 +39,7 @@ function ImportSberReader() {
         FULL_MONEY: 'Сумма реестра',
         BANK_PERCENT: 'Удержанная сумма',
         ACCOUNT_MONEY: 'Сумма к перечеслению',
-        REG_NUMBER: 'Номер реестра/ID реестра ЕПС',
+        REG_NUMBER: 'Номер реестра/ID реестра ЕПС'
     };
     
     function getData(aData, aDataType) {
@@ -93,7 +93,7 @@ function ImportSberReader() {
     
     self.importFromFile = function(aFilePath) {
         var fis = new java.io.FileInputStream(aFilePath);
-        var scanner = new java.util.Scanner(fis);
+        var scanner = new java.util.Scanner(fis,  "windows-1251");
         var string = null;
         specification = {};
         
