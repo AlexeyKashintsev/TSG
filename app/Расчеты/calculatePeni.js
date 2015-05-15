@@ -55,14 +55,9 @@ function CalculatePeni() {
         model.saldo4calc.requery();
         
         var sumOfDebt = model.saldo4calc.sal_begin;
-     //   var sumOfPayments = getAgregatedPaymentSumInPeriod(prevDate);
         var curPeni = 0;
         
-     //   if (sumOfDebt > sumOfPayments) {
-           /* model.saldo4calc.params.dateid = aDateID;
-            model.saldo4calc.requery();*/
-            
-      //      sumOfDebt -= sumOfPayments;
+        if (sumOfDebt > 0) {
             var dates = setCalcPaymentPeriod(aDateID, prevDate);
             var lastDate = dates.peniDate;
             model.dsPayments.beforeFirst();
@@ -81,9 +76,10 @@ function CalculatePeni() {
                 diff = daysBetween(lastDate, dates.end);
                 curPeni += sumOfDebt * diff * SRF;
             }
-      //  }
-        model.saldo4calc.params.dateid = aDateID;
-        model.saldo4calc.requery();
+        }
+//        ВОТ ЭТО ПОД ВОПРОСОМ!!!
+//        model.saldo4calc.params.dateid = aDateID;
+//        model.saldo4calc.requery();
         try {
             return {
                 current  : curPeni,

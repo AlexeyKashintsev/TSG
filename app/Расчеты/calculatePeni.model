@@ -8,10 +8,10 @@
   <entity Name="dsPayments" Title="Оплаты в квартире за период" entityHeight="200" entityIconified="false" entityId="139747488856831" entityLocationX="647" entityLocationY="10" entityWidth="150" queryId="flat_payments_in_period" tableName="" tableSchemaName=""/>
   <entity Name="dsPaySum" Title="Оплаты в квартире за период агрегированные" entityHeight="200" entityIconified="false" entityId="139747495258885" entityLocationX="466" entityLocationY="12" entityWidth="150" queryId="flat_payments_in_period_agregare" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="139747495258885" rightEntityParameterName="flatID"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="139507850307196" rightEntityParameterName="accountid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="139747488856831" rightEntityParameterName="accountID"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="139747488856831" rightEntityParameterName="flatID"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="139507850307196" rightEntityParameterName="flatid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="139747488856831" rightEntityParameterName="flatID"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="139747488856831" rightEntityParameterName="accountID"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="139507850307196" rightEntityParameterName="accountid"/>
   <referenceRelation leftEntityFieldName="flat_id" leftEntityId="139747495258885" rightEntityFieldName="lc_flat_id" rightEntityId="139507850307196"/>
   <referenceRelation leftEntityFieldName="flat_id" leftEntityId="139747488856831" rightEntityFieldName="lc_flat_id" rightEntityId="139507850307196"/>
   <referenceRelation leftEntityFieldName="session_id" leftEntityId="139747488856831" rightEntityFieldName="opl_sessions_id" rightEntityId="139747488856831"/>
