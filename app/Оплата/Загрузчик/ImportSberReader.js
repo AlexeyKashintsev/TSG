@@ -39,7 +39,7 @@ function ImportSberReader() {
         FULL_MONEY: 'Сумма реестра',
         BANK_PERCENT: 'Удержанная сумма',
         ACCOUNT_MONEY: 'Сумма к перечеслению',
-        REG_NUMBER: 'Номер реестра/ID реестра ЕПС',
+        REG_NUMBER: 'Номер реестра/ID реестра ЕПС'
     };
     
     function getData(aData, aDataType) {
