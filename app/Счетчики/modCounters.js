@@ -2,6 +2,8 @@
  * 
  * @author Alexey
  * @module
+ * @public 
+ * TODO non public
  */
 
 function CountersModule() {
@@ -22,18 +24,18 @@ function CountersModule() {
                 cnt_active: aCntActive ? aCntActive : true,
                 cnt_number: aCntNumber ? aCntNumber : null
             });
-        model.save();
+        //model.save();
         return model.dsCounterByID.cnt_counters_id;
     };
 
     self.addCounter2Service = function(aCounter, aFlatService, aGroupService, aDepended) {
-        model.dsNewCnt.push({
+        model.dsNewCntCon.push({
                             counter_id: aCounter,
                             flat_service: aFlatService ? aFlatService : null,
                             group_counter: aGroupService ? aGroupService : null,
                             main_service: aDepended ? false : true
                         });
-        return model.dsNewCnt.cnt_con2flats_id;
+        return model.dsNewCntCon.cnt_con2flats_id;
     };
 
     self.getFlatService = function(aFlatID, aServiceID) {

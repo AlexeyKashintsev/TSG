@@ -349,19 +349,19 @@ function readRow(aRowAr, aGroup){
     }
     Logger.info('348');
     for (i in impFields.COUNTERS_BEG){
-        counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID] = {};
-        counterValues[impFields.COUNTERS_BEG[i].SERVICE_ID].begv = getCellValue(aRowAr.cells[impFields.COUNTERS_BEG[i].CellNumber]);
+        counterValues[impFields.COUNTERS_BEG[i].SERVICE_COUNTER_ID] = {};
+        counterValues[impFields.COUNTERS_BEG[i].SERVICE_COUNTER_ID].begv = getCellValue(aRowAr.cells[impFields.COUNTERS_BEG[i].CellNumber]);
     }
     Logger.info('353');
     for (i in impFields.COUNTERS_END){
-        counterValues[impFields.COUNTERS_END[i].SERVICE_ID].endv = getCellValue(aRowAr.cells[impFields.COUNTERS_END[i].CellNumber]);
+        counterValues[impFields.COUNTERS_END[i].SERVICE_COUNTER_ID].endv = getCellValue(aRowAr.cells[impFields.COUNTERS_END[i].CellNumber]);
     }
     Logger.info('357');
-    for (var service in counterValues) {
-        if (counterValues[service].begv)
-        modSN.insertCounterValue(LC_ID, servModifiers[service]?servModifiers[service]:service, parDate, 
-                                    counterValues[service].begv, 
-                                    counterValues[service].endv);
+    for (var service_counter in counterValues) {
+        if (counterValues[service_counter].begv)
+        modSN.insertCounterValue(LC_ID, servModifiers[service_counter]?servModifiers[service_counter]:service_counter, parDate, 
+                                    counterValues[service_counter].begv, 
+                                    counterValues[service_counter].endv);
     }
     
     for (i = 0; i < impFields.BINEFICIARIES; i++){

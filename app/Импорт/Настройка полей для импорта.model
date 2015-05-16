@@ -7,17 +7,14 @@
   <entity Name="groups_query" Title="Группы" entityHeight="200" entityIconified="false" entityId="139185437144235" entityLocationX="578" entityLocationY="298" entityWidth="150" queryId="groups_query" tableName="" tableSchemaName=""/>
   <entity Name="qServicesWithCounters" Title="Услуги со счетчиками" entityHeight="200" entityIconified="false" entityId="138083206226988" entityLocationX="394" entityLocationY="196" entityWidth="150" queryId="qServicesWithCounters" tableName="" tableSchemaName=""/>
   <entity Name="characteristics_types" Title="Характеристики типы" entityHeight="97" entityIconified="false" entityId="138083145474798" entityLocationX="564" entityLocationY="195" entityWidth="150" queryId="characteristics_types" tableName="" tableSchemaName=""/>
-  <entity Name="dsImportVariants" Title="Варианты импортов справочник" entityHeight="65" entityIconified="false" entityId="137727326511139" entityLocationX="393" entityLocationY="19" entityWidth="150" queryId="_32948409985907" tableName="" tableSchemaName=""/>
   <entity Name="" Title="Справочник Типы полей импорта" entityHeight="87" entityIconified="false" entityId="135091217935996" entityLocationX="393" entityLocationY="89" entityWidth="231" queryId="Справочник_Типы_полей_Excel" tableName="" tableSchemaName=""/>
+  <entity Name="dsImportVariants" Title="Варианты импортов справочник" entityHeight="65" entityIconified="false" entityId="137727326511139" entityLocationX="393" entityLocationY="19" entityWidth="150" queryId="_32948409985907" tableName="" tableSchemaName=""/>
   <entity Name="dsExFields" Title="Импорт из таблицы все поля" entityHeight="200" entityIconified="false" entityId="138083128574508" entityLocationX="210" entityLocationY="20" entityWidth="150" queryId="importFields" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parImport" rightEntityId="138083128574508" rightEntityParameterName="impFileType"/>
-  <referenceRelation leftEntityFieldName="parent" leftEntityId="135091217935996" rightEntityFieldName="impfieldstypes_id" rightEntityId="135091217935996"/>
-  <referenceRelation leftEntityFieldName="impfieldtype" leftEntityId="138083128574508" rightEntityFieldName="impfieldstypes_id" rightEntityId="135091217935996"/>
   <referenceRelation leftEntityFieldName="impfile" leftEntityId="139135269376693" rightEntityFieldName="importnames_id" rightEntityId="137727326511139"/>
-  <referenceRelation leftEntityFieldName="impfieldtype" leftEntityId="139135269376693" rightEntityFieldName="impfieldstypes_id" rightEntityId="135091217935996"/>
-  <referenceRelation leftEntityFieldName="impfile" leftEntityId="138083128574508" rightEntityFieldName="importnames_id" rightEntityId="137727326511139"/>
-  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="138083206226988" rightEntityFieldName="usl_services_id" rightEntityId="138083206226988"/>
-  <referenceRelation leftEntityFieldName="calc_id" leftEntityId="138083206226988" rightEntityFieldName="usl_calc_formula_id" rightEntityId="138083206226988"/>
-  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="138083206226988" rightEntityFieldName="usl_services_id" rightEntityId="138083206226988"/>
   <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="139185437144235" rightEntityFieldName="grp_groups_id" rightEntityId="139185437144235"/>
+  <referenceRelation leftEntityFieldName="impfile" leftEntityId="138083128574508" rightEntityFieldName="importnames_id" rightEntityId="137727326511139"/>
+  <referenceRelation leftEntityFieldName="impfieldtype" leftEntityId="139135269376693" rightEntityFieldName="impfieldstypes_id" rightEntityId="135091217935996"/>
+  <referenceRelation leftEntityFieldName="impfieldtype" leftEntityId="138083128574508" rightEntityFieldName="impfieldstypes_id" rightEntityId="135091217935996"/>
+  <referenceRelation leftEntityFieldName="parent" leftEntityId="135091217935996" rightEntityFieldName="impfieldstypes_id" rightEntityId="135091217935996"/>
 </datamodel>

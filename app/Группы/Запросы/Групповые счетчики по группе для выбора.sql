@@ -2,6 +2,7 @@
  *
  * @author Алексей
  * @name dsAllGroupCountersByGroup
+ * @public
  */ 
 Select t.grp_service_counters_id, t2.usl_name, t.counter_name
 , t2.usl_name || '/' || t.counter_name as f_name

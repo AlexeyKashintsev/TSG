@@ -11,7 +11,7 @@ function main_form() {
 var self = this, model = self;
 
 
-    guiUtils = new guiModule();
+    //guiUtils = new guiModule();
     clientProgress = new ProgressShow();
     var fmDateSelect = new fmDateSelector;
     var fmWorksheet = null;
@@ -127,13 +127,13 @@ var self = this, model = self;
 
 self.showFormAsInternal = function(aForm) {
         var frameRunner = aForm;
-        var lenCookie = guiUtils.beginLengthyOperation(this);
+        //var lenCookie = guiUtils.beginLengthyOperation(this);
         try{
             frameRunner.desktop = self.formDesktop;
             frameRunner.showInternalFrame(self.formDesktop);
 
         }finally{
-            lenCookie.end();
+            //lenCookie.end();
         }
         frameRunner.toFront();
 }
@@ -161,7 +161,7 @@ function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
     model.dsAllAccounts.first();
     model.params.parAccountID = model.dsAllAccounts.grp_account_id;
     fmDateSelect.parentForm = mf;
-    fmDateSelect.showOnPanel(self.pnlDateSelector);
+    fmDateSelect.showOnPanel(self.pnlDateSelector);    
 }//GEN-LAST:event_formWindowOpened
 
 function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged

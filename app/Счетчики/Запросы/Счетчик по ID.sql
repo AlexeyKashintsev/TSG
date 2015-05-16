@@ -3,6 +3,7 @@
  * @author Alexey
  * @name counter_by_id
  * @manual 
+ * @public
  */ 
 Select * 
 From cnt_counters t1

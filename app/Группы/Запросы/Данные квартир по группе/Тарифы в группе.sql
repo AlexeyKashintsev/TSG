@@ -3,6 +3,7 @@
  * @author Alexey
  * @name Тарифы_в_группе
  * @writable usl_tarif
+ * @public
  */ 
 Select t1.usl_tarif_id, t1.services_id, t1.date_id, t1.group_id, t1.rate, t1.norm
 , t1.usr_context, t1.account_id

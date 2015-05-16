@@ -3,6 +3,7 @@
  * @author Alexey
  * @name FlatServiceByServiceAndFlatID
  * @manual 
+ * @public
  */ 
 Select * 
 From lc_flat_services t1

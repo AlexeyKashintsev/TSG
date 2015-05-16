@@ -15,7 +15,7 @@ function LCServicesAnCounters() {
     
     self.saveChanges = function() {
         model.save();
-        if (modCN && modCN.model.modified)
+        if (modCN)
             modCN.checkModified();
     };
     
@@ -58,7 +58,7 @@ function LCServicesAnCounters() {
             
             grpCounters.forEach(function(counter) {
                 if (!counter.counterConCounter) {
-                    self.addCounterToFlat(flatService, counter.counterId);
+                    self.addCounterToFlat(flatService, counter.counterId, null, aFlatID);
                 } else 
                     processIfConnectedService(aFlatID, flatService, counter.counterId, counter.counterConCounter);
             });
@@ -70,16 +70,23 @@ function LCServicesAnCounters() {
         }
         return self.services_by_flat.lc_flat_services_id;
     };
-
+    
+    var addedCounters = {};
     /*
      * Добавить счетчик в квартиру
      * @param {type} aFlatService
      * @returns {@exp;dsCountersByFlat@pro;lc_counter_id} 
      */
-    self.addCounterToFlat = function(aFlatService, grpCount) {
+    self.addCounterToFlat = function(aFlatService, grpCount, aDateID, aFlatId) {
         if (!modCN)
             modCN = new CountersModule();
         var cnt = modCN.addNewCounter();
+        if (aFlatId) {
+            if (!addedCounters[aFlatId])
+                addedCounters[aFlatId] = {};
+            addedCounters[aFlatId][grpCount] = cnt;
+        }
+        if (aDateID) modCN.setCounterValueByCounterValueID(cnt, aDateID, 0);
         modCN.addCounter2Service(cnt, aFlatService, grpCount);
         return cnt;
     };
@@ -87,7 +94,9 @@ function LCServicesAnCounters() {
     function processIfConnectedService(aFlatId, aFlatService, aGroupCounter, aConnectedCounter) {
         if (!modCN)
             modCN = new CountersModule();
-        var counter = modCN.getCounterInFlat(aFlatId, aConnectedCounter, null);
+        var counter = addedCounters[aFlatId] ? 
+                        addedCounters[aFlatId][aConnectedCounter] : 
+                        modCN.getCounterInFlat(aFlatId, aConnectedCounter, null);
         if (counter)
             modCN.addCounter2Service(counter, aFlatService, aGroupCounter);
         /*var conServ = model.qServices.find(model.qServices.schema.usl_services_id, aService);

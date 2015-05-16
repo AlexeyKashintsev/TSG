@@ -4,6 +4,7 @@
  * @author Alexey
  * @name counters_values_in_flats
  * @writable per_counter_values
+ * @public
  */ 
 Select t2.counter_id, t.per_counter_values_id, t.counter_id
 , t.date_id, t.end_val, t.beg_val

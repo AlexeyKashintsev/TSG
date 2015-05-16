@@ -76,7 +76,7 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
 function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
 //    self.dsflats_by_group.insert(self.dsflats_by_group.schema.lc_group, parGroup);
         flatModule.parDateID = self.parDateID;
-        flatModule.addNewLC('', '', 0, self.parGroupID);
+        flatModule.addNewLC('', '', 0, 0, self.parGroupID);
         self.issues_by_group.requery();
 }//GEN-LAST:event_btnAddActionPerformed
 

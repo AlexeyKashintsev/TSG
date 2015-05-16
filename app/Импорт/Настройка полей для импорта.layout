@@ -28,113 +28,113 @@
   <widget name="dbGrid1" parent="Form" prefHeight="262px" prefWidth="659px" type="DbGridDesignInfo">
     <column name="cellnumber" title="№ ячейки" width="15">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
+      <datamodelElement entityId="138083128574508" fieldName="cellnumber"/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="138083128574508" fieldName="cellnumber"/>
     </column>
     <column name="impfieldtype" selectOnly="true" title="Тип поля">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="135091217935996" fieldName="fieldtypename"/>
         <valueField entityId="135091217935996" fieldName="impfieldstypes_id"/>
+        <displayField entityId="135091217935996" fieldName="fieldtypename"/>
       </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
+      <datamodelElement entityId="138083128574508" fieldName="impfieldtype"/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="138083128574508" fieldName="impfieldtype"/>
     </column>
     <column name="impChar" title="Характеристика" width="30">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="138083145474798" fieldName="char_name"/>
         <valueField entityId="138083145474798" fieldName="char_types_id"/>
+        <displayField entityId="138083145474798" fieldName="char_name"/>
       </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
+      <datamodelElement entityId="138083128574508" fieldName="charid"/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="138083128574508" fieldName="charid"/>
     </column>
     <column name="impUsluga" title="Услуга">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="138083206226988" fieldName="usl_name"/>
-        <valueField entityId="138083206226988" fieldName="usl_services_id"/>
+        <valueField entityId="138083206226988" fieldName="grp_service_counters_id"/>
+        <displayField entityId="138083206226988" fieldName="f_name"/>
       </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
+      <datamodelElement entityId="138083128574508" fieldName="serviceid"/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="138083128574508" fieldName="serviceid"/>
     </column>
     <column name="colGroup" selectFunction="colGroupOnSelect" title="Группа  bbb">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="139185437144235" fieldName="grp_name"/>
         <valueField entityId="139185437144235" fieldName="grp_groups_id"/>
+        <displayField entityId="139185437144235" fieldName="grp_name"/>
       </controlInfo>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
+      <datamodelElement entityId="138083128574508" fieldName="groupid"/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Lucida Grande" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="138083128574508" fieldName="groupid"/>
     </column>
     <column name="isRequired" title="Обязательное" width="10">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <cellDesignInfo>
-        <cellValueField/>
-        <columnsKeyField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <cellsDatasource/>
+      <datamodelElement entityId="138083128574508" fieldName="isrequired"/>
       <columnsDatasource/>
       <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="138083128574508" fieldName="isrequired"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="138083128574508" field="false"/>
     </rowsColumnsDesignInfo>
     <treeDesignInfo>
+      <unaryLinkField/>
       <param2GetChildren/>
       <paramSourceField/>
-      <unaryLinkField/>
     </treeDesignInfo>
     <constraints bottom="39px" left="0px" right="0px" top="98px" type="MarginConstraintsDesignInfo"/>
   </widget>
@@ -144,8 +144,8 @@
   <widget actionPerformed="jButtonActionPerformed" focusable="false" horizontalTextPosition="0" icon="plus-button.png" name="jButton" parent="jToolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="jButton1ActionPerformed" focusable="false" horizontalTextPosition="0" icon="minus-button.png" name="jButton1" parent="jToolBar" prefHeight="20px" prefWidth="28px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="modelCombo" parent="Form" prefHeight="28px" prefWidth="540px" type="DbComboDesignInfo">
-    <displayField entityId="137727326511139" fieldName="importname"/>
     <valueField entityId="137727326511139" fieldName="importnames_id"/>
+    <displayField entityId="137727326511139" fieldName="importname"/>
     <datamodelElement entityId="-1" fieldName="parImport"/>
     <constraints height="28px" left="108px" top="36px" type="MarginConstraintsDesignInfo" width="540px"/>
   </widget>

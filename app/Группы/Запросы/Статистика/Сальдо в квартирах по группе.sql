@@ -5,6 +5,7 @@
  * @name saldo_in_flats_by_group
  * @writable per_saldo_flat
  * @manual
+ * @public
  */ 
 Select * 
 From per_saldo_flat t1
