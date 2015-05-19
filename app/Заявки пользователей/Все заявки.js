@@ -1,5 +1,6 @@
 /**
  * 
+ * @name AllApplications
  * @author TSG
  */
 function AllApplications() {

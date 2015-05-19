@@ -1,5 +1,6 @@
 /**
  * 
+ * @name TestProgress
  * @author Alexey
  * @module
  * @public

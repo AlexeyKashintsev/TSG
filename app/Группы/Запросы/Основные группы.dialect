@@ -1,3 +1,6 @@
+/**
+ * @name qMainGroups
+ */
 select * 
 from (
 Select t1.grp_groups_id, t1.grp_name, t1.grp_parent, t1.grp_type, t1.grp_address

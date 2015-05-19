@@ -1,5 +1,6 @@
 /**
  * Datasource module is stateless data fetch/apply provider.
+ * @name testSource
  * @author Alexey
  * @module 
  */

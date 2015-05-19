@@ -1,3 +1,6 @@
+/**
+ * @name UpdatePer_sums
+ */
 Update per_sums
 set rate = (Select t3.rate
 From grp_lc_group t1

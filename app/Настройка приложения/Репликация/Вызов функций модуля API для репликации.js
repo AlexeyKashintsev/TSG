@@ -1,5 +1,6 @@
 /**
  * 
+ * @name ReplicatesAPIView
  * @author vy
  */
 function ReplicatesAPIView() {

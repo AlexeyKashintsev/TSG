@@ -1,2 +1,5 @@
+/**
+ * @name addUserRole
+ */
 insert into mtd_groups (usr_name, group_name)
 values (:usr_name, :usr_group)

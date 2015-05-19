@@ -1,5 +1,6 @@
 /**
  * 
+ * @name ProgressServer
  * @author Alexey
  * @module
  * @public

@@ -1,5 +1,6 @@
 /**
  * 
+ * @name CountersModule
  * @author Alexey
  * @module
  * @public 

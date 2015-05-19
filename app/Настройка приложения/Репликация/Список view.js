@@ -1,5 +1,6 @@
 /**
  * 
+ * @name CheckViewsView
  * @author Andrew
  * @rolesAllowed admin
  */

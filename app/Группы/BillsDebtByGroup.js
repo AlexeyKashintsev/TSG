@@ -1,5 +1,6 @@
 /**
  * 
+ * @name BillsDebtByGroup
  * @author TSG
  */
 function BillsDebtByGroup(aReportObject) {

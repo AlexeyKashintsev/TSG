@@ -1,3 +1,6 @@
+/**
+ * @name ViewsEditorView
+ */
 /*
  * @author AB
  * @module

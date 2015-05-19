@@ -1,5 +1,6 @@
 /**
  * 
+ * @name ReplicationAPI
  * @author vy
  * @module
  */

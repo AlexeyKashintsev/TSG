@@ -1,3 +1,6 @@
+/**
+ * @name SequencesView
+ */
 /*
  * @author AB
  * @module

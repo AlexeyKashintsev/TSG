@@ -1,5 +1,6 @@
 /**
  * 
+ * @name LCServicesAnCounters
  * @author Alexey
  * @module
  */ 

@@ -1,5 +1,6 @@
 /**
  * 
+ * @name ImportSberReader
  * @author Алексей
  * @module
  */ 
