@@ -8,9 +8,9 @@
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="opl_payments" entityHeight="200" entityIconified="false" entityId="139747460480388" entityLocationX="322" entityLocationY="30" entityWidth="150" tableAlias="t1" tableName="opl_payments" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142478143614043" entityLocationX="556" entityLocationY="26" entityWidth="150" tableAlias="t" tableName="opl_sessions" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="accountID" rightEntityFieldName="account_id" rightEntityId="142478143614043"/>
-  <relation leftEntityId="-1" leftEntityParameterName="beg_date" rightEntityFieldName="payment_date" rightEntityId="139747460480388"/>
-  <relation leftEntityId="-1" leftEntityParameterName="end_date" rightEntityFieldName="payment_date" rightEntityId="139747460480388"/>
-  <relation leftEntityFieldName="opl_sessions_id" leftEntityId="142478143614043" rightEntityFieldName="session_id" rightEntityId="139747460480388"/>
   <relation leftEntityId="-1" leftEntityParameterName="flatID" rightEntityFieldName="flat_id" rightEntityId="139747460480388"/>
+  <relation leftEntityId="-1" leftEntityParameterName="accountID" rightEntityFieldName="account_id" rightEntityId="142478143614043"/>
+  <relation leftEntityFieldName="opl_sessions_id" leftEntityId="142478143614043" rightEntityFieldName="session_id" rightEntityId="139747460480388"/>
+  <relation leftEntityId="-1" leftEntityParameterName="end_date" rightEntityFieldName="payment_date" rightEntityId="139747460480388"/>
+  <relation leftEntityId="-1" leftEntityParameterName="beg_date" rightEntityFieldName="payment_date" rightEntityId="139747460480388"/>
 </datamodel>

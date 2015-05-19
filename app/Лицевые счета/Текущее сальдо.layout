@@ -10,9 +10,6 @@
     <datamodelElement entityId="137683959019508" fieldName="sal_penalties_cur"/>
     <constraints height="18px" left="516px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
   </widget>
-  <widget name="label21" parent="Form" prefHeight="16px" prefWidth="68px" text="Пени тек" type="LabelDesignInfo">
-    <constraints height="16px" left="516px" top="4px" type="MarginConstraintsDesignInfo" width="68px"/>
-  </widget>
   <widget name="label2" parent="Form" prefHeight="16px" prefWidth="68px" text="Конечное" type="LabelDesignInfo">
     <constraints height="16px" left="436px" top="4px" type="MarginConstraintsDesignInfo" width="68px"/>
   </widget>
@@ -54,6 +51,10 @@
   </widget>
   <widget name="label1" parent="Form" prefHeight="16px" prefWidth="72px" text="Начислено" type="LabelDesignInfo">
     <constraints height="16px" left="96px" top="4px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget name="modelCheckBox" parent="Form" prefHeight="20px" prefWidth="72px" text="Пени" type="DbCheckDesignInfo">
+    <datamodelElement entityId="137683959019508" fieldName="calc_peni"/>
+    <constraints height="20px" left="516px" top="2px" type="MarginConstraintsDesignInfo" width="72px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

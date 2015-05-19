@@ -2,6 +2,7 @@
  *
  * @author Alexey
  * @name flat_payments_in_period
+ * @manual
  */ 
 Select * 
 From opl_payments t1

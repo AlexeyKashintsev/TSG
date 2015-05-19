@@ -3,7 +3,7 @@
  * @author TSG
  * @module
  */ 
-function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, aAccount) {
+function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, anAccount) {
     var self = this, model = this.model;
     var initCNT = 0;
     
@@ -13,9 +13,9 @@ function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, aAccount) {
     model.params.parNewDate = aNewDate;*/
     
     model.dsSaldo.params.date_id = anOldDate;
-    model.dsSaldo.params.account_id = aAccount;
+    model.dsSaldo.params.account_id = anAccount;
     model.dsCntVal.params.date_id = anOldDate;
-    model.dsCntVal.params.account_id = aAccount;
+    model.dsCntVal.params.account_id = anAccount;
     
     
     function initializeSaldo4NewMonth() {
@@ -29,7 +29,8 @@ function NewMonthInitializer4Lc(anOldDate, aNewDate, aMainMod, aAccount) {
                 cursor.sal_penalties_old ? cursor.sal_penalties_old : 0 +
                 cursor.sal_penalties_cur ? cursor.sal_penalties_cur : 0;
             saldo[i].date_id = aNewDate;
-            saldo[i].account_id = aAccount;
+            saldo[i].account_id = anAccount;
+            saldo[i].calc_peni = cursor.calc_peni;
             i++;
         });
         for (var j in saldo)

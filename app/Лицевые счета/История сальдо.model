@@ -6,7 +6,7 @@
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="137588944927161" entityLocationX="413" entityLocationY="31" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
   <entity Name="dsSaldo" Title="Сальдо по квартире" entityHeight="278" entityIconified="false" entityId="137588933491844" entityLocationX="191" entityLocationY="18" entityWidth="150" queryId="saldo_by_flat" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137588933491844" rightEntityParameterName="flat_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="137588933491844" rightEntityParameterName="account_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137588933491844" rightEntityParameterName="flat_id"/>
   <referenceRelation leftEntityFieldName="date_id" leftEntityId="137588933491844" rightEntityFieldName="per_date_id" rightEntityId="137588944927161"/>
 </datamodel>

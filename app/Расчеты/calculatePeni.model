@@ -10,7 +10,7 @@
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="139747488856831" rightEntityParameterName="flatID"/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="139747488856831" rightEntityParameterName="accountID"/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="139507850307196" rightEntityParameterName="accountid"/>
-  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="139747488856831" rightEntityFieldName="lc_flat_id" rightEntityId="139507850307196"/>
   <referenceRelation leftEntityFieldName="lc_id" leftEntityId="139507850307196" rightEntityFieldName="lc_flat_id" rightEntityId="139507850307196"/>
+  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="139747488856831" rightEntityFieldName="lc_flat_id" rightEntityId="139507850307196"/>
   <referenceRelation leftEntityFieldName="session_id" leftEntityId="139747488856831" rightEntityFieldName="opl_sessions_id" rightEntityId="139747488856831"/>
 </datamodel>

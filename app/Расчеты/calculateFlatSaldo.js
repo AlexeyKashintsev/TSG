@@ -27,7 +27,13 @@ function CalculateFlatSaldo() {
                 //Logger.info("Расчет сальдо в квартире: " + self.dsSaldo4calc.cursor.lc_id);                
                 var sc = getSumOfSums(cursor.account_name, saldo.lc_id);
                 var sp = model.dsSumOfPayments.find(model.dsSumOfPayments.schema.flat_id, saldo.lc_id);
-                var peni = peniClc.calculate(saldo.lc_id, model.params.parDateID, model.params.parAccountID);
+                var peni = model.dsMainGroupByLCWithAccounts.cursor.calculate_peni ?
+                                peniClc.calculate(saldo.lc_id, model.params.parDateID, model.params.parAccountID) :
+                                {
+                                    current  : 0,
+                                    previous : 0,
+                                    saldo    : false
+                                };;
                 var peniOld = peni.previous;
                 var saldoOld = peni.saldo ? peni.saldo : saldo.sal_begin;
                 peni = peni.current;

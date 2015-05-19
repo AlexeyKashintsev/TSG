@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="lc_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="account_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="group_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="143204660180041" entityLocationX="842" entityLocationY="19" entityWidth="150" tableAlias="t3" tableName="grp_type" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="143204644632293" entityLocationX="187" entityLocationY="13" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="143204660179410" entityLocationX="590" entityLocationY="5" entityWidth="150" tableAlias="t2" tableName="grp_groups" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="143204645864861" entityLocationX="409" entityLocationY="7" entityWidth="150" tableAlias="t" tableName="grp_accounts_in_group" tableSchemaName=""/>
+  <relation leftEntityFieldName="group_id" leftEntityId="143204644632293" rightEntityFieldName="group_id" rightEntityId="143204645864861"/>
+  <relation leftEntityId="-1" leftEntityParameterName="account_id" rightEntityFieldName="account_id" rightEntityId="143204645864861"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="143204645864861" rightEntityFieldName="grp_groups_id" rightEntityId="143204660179410"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lc_id" rightEntityFieldName="lc_id" rightEntityId="143204644632293"/>
+  <relation leftEntityFieldName="grp_type" leftEntityId="143204660179410" rightEntityFieldName="grp_type_id" rightEntityId="143204660180041"/>
+  <relation leftEntityId="-1" leftEntityParameterName="group_id" rightEntityFieldName="group_id" rightEntityId="143204644632293"/>
+</datamodel>
