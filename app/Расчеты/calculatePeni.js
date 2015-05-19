@@ -24,15 +24,6 @@ function CalculatePeni() {
         }
     }
     
-    function getAgregatedPaymentSumInPeriod(aDateID) {
-        var pp = dateMod.getPayPeriod4Date(aDateID);
-        model.dsPaySum.params.beg_date = pp.start;
-        model.dsPaySum.params.end_date = pp.end;
-       // model.dsPaySum.params.dateid = aDateID;
-        model.dsPaySum.execute();
-        return model.dsPaySum.paySum;
-    }
-    
     function setCalcPaymentPeriod(aDateID, aPrevDate) {
         var endDate = dateMod.getPayPeriod4Date(aDateID);
         var startDate = dateMod.getPayPeriod4Date(aPrevDate);
