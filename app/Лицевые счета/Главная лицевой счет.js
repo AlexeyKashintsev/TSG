@@ -41,11 +41,13 @@ function formFlatWorkSheet() {
     }
 
     self.setGroup = function(aNewGroupID) {
+        model.params.parGroupID = aNewGroupID;
         (function() {fmFlatServices.setGroupId(aNewGroupID);}).invokeBackground();
         (function() {fmNachisleniya.setGroupId(aNewGroupID);}).invokeBackground();
     };
 
     self.setFlat = function(aNewFlatID) {
+        model.params.parFlatID = aNewFlatID;
         (function() {fmFlatCounters.setLcId(aNewFlatID);}).invokeBackground();
         (function() {fmFlatChars.setLcId(aNewFlatID);}).invokeBackground();
         (function() {fmLCGroups.setLcId(aNewFlatID);}).invokeBackground();
