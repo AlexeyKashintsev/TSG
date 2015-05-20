@@ -6,7 +6,9 @@
 function formApplicationByFlat() {
     var self = this, model = this.model, form = this;
     
-    // TODO : place your code here
+    self.setLcId = function(aFlatId) {
+        model.params.parFlatID = aFlatId;
+    };
 
     function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
         model.applicationInFlat.cursor.active = true;
