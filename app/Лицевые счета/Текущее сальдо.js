@@ -6,9 +6,13 @@
  */
 
 function fmSaldoCurrnet() {
-var self = this, model = self.model;
+    var self = this, model = self.model;
 
-paramSynchronizer.addListener(this);
+    paramSynchronizer.addListener(this);
+    
+    self.setLcId = function(aFlatId) {
+        model.params.parFlatID = aFlatId;
+    };
 
     function saldo_by_flatOnChanged(evt) {//GEN-FIRST:event_saldo_by_flatOnChanged
         model.save();

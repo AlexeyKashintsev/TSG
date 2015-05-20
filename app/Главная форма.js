@@ -71,8 +71,9 @@ var self = this, model = self;
         }
         
         this.addListener = function(aListener) {
-            if (syncParams(aListener))
-                listeners.push(aListener);
+            (function() {
+                if (syncParams(aListener))
+                    listeners.push(aListener);}).invokeBackground();
         };
         
         this.setDate = function(aNewDate, anIsEditable) {

@@ -5,7 +5,7 @@
  * @name counters_by_flat
  * @writable cnt_con2flats
  */ 
-Select t.cnt_con2flats_id, t.counter_id, t.group_counter
+Select t.cnt_con2flats_id, t1.lc_id, t.counter_id, t.group_counter
 , t.flat_service, t2.cnt_counters_id, t2.cnt_number
 , t2.cnt_type, t2.cnt_active, t1.services_id
 , t.main_service 

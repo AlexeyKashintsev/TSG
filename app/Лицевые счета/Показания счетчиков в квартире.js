@@ -6,28 +6,28 @@
  */
 
 function fmCounterValuesByFlat() {
+    var self = this, model = self.model;
 
 
-var self = this, model = self.model;
+    self.isSelectForm = false;
+    self.isEditable = true;
 
+    /*self.model.params.parFlatID = 139704089624312;
+     self.model.params.parDateID = 139696955465754;*/
 
-self.isSelectForm = false;
-self.isEditable = true;
+     self.setLcId = function(aFlatId) {
+        model.params.parFlatID = aFlatId;
+    };
 
-/*self.model.params.parFlatID = 139704089624312;
-self.model.params.parDateID = 139696955465754;*/
-    
+    function setEdit() {
+        self.btnSave.enabled = self.isEditable;
+    }
 
-
-function setEdit(){ 
-    self.btnSave.enabled = self.isEditable;    
-}
-
-self.syncParams = function(aDate, anIsEditable, anAccount) {
-    model.params.parDateID = aDate;
-    model.params.parAccountID = anAccount;
-    self.modelGrid.editable = anIsEditable;
-};
+    self.syncParams = function(aDate, anIsEditable, anAccount) {
+        model.params.parDateID = aDate;
+        model.params.parAccountID = anAccount;
+        self.modelGrid.editable = anIsEditable;
+    };
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
     if (self.model.modified&&confirm('Сохранить изменения?')){

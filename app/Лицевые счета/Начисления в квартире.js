@@ -6,23 +6,27 @@
  */
 
 function form_sums_per_flat() {
+    var self = this, model = self.model;
+    self.parentForm = null;
+    
+    self.setGroupId = function(aGroupId) {
+        model.params.parGroupID = aGroupId;
+    };
+    
+    self.setLcId = function(aFlatId) {
+        model.params.parFlatID = aFlatId;
+    };
 
+    function initModuleSums() {
+        if (!modSums)
+            modSums = new SaldoAndSumsModule();
+    }
 
-var self = this, model = self.model;
-self.parentForm = null;
-
-function initModuleSums(){
-    if (!modSums)
-        modSums = new SaldoAndSumsModule();
-}
-
-self.syncParams = function(aDate, anIsEditable, anAccount) {
-    self.modelGrid.editable = anIsEditable;
-    model.params.parDateID = aDate;
-    model.params.parAccountID = anAccount;
-    //model.params.parDateID = aDate;
-    //model.params.parAccountID = anAccount;
-};
+    self.syncParams = function(aDate, anIsEditable, anAccount) {
+        self.modelGrid.editable = anIsEditable;
+        model.params.parDateID = aDate;
+        model.params.parAccountID = anAccount;
+    };
 
     function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
         self.model.save();

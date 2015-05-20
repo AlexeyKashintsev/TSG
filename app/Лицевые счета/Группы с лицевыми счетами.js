@@ -35,7 +35,7 @@ self.check4Modifications = function(){
 self.setGroup = function(aNewGroupID, aFlatID){
     model.params.parGroupID = null;
     model.dsAccountsByGroup.params.GroupId = aNewGroupID;
-    model.dsAccountsByGroup.requery(function() {
+    model.dsAccountsByGroup.execute(function() {
         model.dsAccountsByGroup.forEach(function(cursor) {
             if (cursor.account_id == self.model.params.parAccountID) 
                 model.params.parGroupID = aNewGroupID;

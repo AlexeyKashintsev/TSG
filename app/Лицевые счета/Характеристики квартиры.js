@@ -6,10 +6,11 @@
  */
 
 function charsFlat() {
+    var self = this, model = self.model;
 
-
-var self = this, model = self.model;
-
+    self.setLcId = function(aFlatId) {
+        model.params.parFlatID = aFlatId;
+    };
 
 function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
     if (self.model.modified&&confirm('Сохранить изменения?')){
