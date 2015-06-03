@@ -55,7 +55,6 @@ function Calculations() {
             serverProgress.setDescription("Расчет начислений");
             try {
                 if (prepared) {
-                    self.dsSums4calc.beforeFirst();
                     model.dsSums4calc.forEach(function(cursor) {
                         //Logger.info("Расчет начисления: " + cursor.per_sums_id);
                         try {
@@ -71,7 +70,7 @@ function Calculations() {
                                     sums.GetSum(cursor.per_sums_id),
                                     'SCALC');
                         } catch (e) {
-                            Logger.warning('Ошибка расчета начисления по услуге ' +cursor.services_id + ' в квартире  ' + aFlatID);
+                            Logger.warning('Ошибка расчета начисления по услуге ' + cursor.services_id + ' в квартире  ' + aFlatID);
                         }
                         try {
                             cursor.benefit = formulEval.calculate('0',
@@ -225,8 +224,7 @@ function Calculations() {
             });
             return resCnt;
         }
-    }
-    ;
+    };
 
     function Sums() {
         this.sums = {};
@@ -244,7 +242,10 @@ function Calculations() {
             this.serviceid = sum.services_id;
             this.flatserviceid = sum.flat_service_id;
             this.COST = sum.rate;
+            this.DEF_NRM = sum.def_norm;
+            this.NRM = sum.norm;
             this.RECALC = sum.recalc;
+            this.BY_NRM = sum.calc_by_norm;
         }
     }
     /**
@@ -264,21 +265,22 @@ function Calculations() {
         this.calculate = function(aFormula, aSum, aParam) {
             if (!formulas[aFormula])
                 formulas[aFormula] = prepFormula(aFormula);
-            aSum[aParam] = calcFormula(formulas[aFormula], aSum);
+            var calc = calcFormula(formulas[aFormula], aSum);
+            aSum[aParam] = calc ? calc : 0;
             return aSum[aParam];
         };
 
         function prepFormula(aFormula) {
+            aFormula = aFormula.replace(/BENEFIT/g, 'A.BENEFIT').replace(/FULL_CALC/g, 'A.FULL_CALC').replace(/SCALC/g, 'A.SCALC');
+            aFormula = aFormula.replace(/CALC_BY_NORM/g, 'A.BY_NRM').replace(/DEF_NORM/g, 'A.DEF_NRM').replace(/NORM/g, 'A.NRM');
             aFormula = aFormula.replace(/GRP_/g, 'groups[A.groupid].').replace(/LC_/g, 'flats[A.lcid].');
             aFormula = aFormula.replace(/.BEG_/g, '[A.flatserviceid].BEG_').replace(/.END_/g, '[A.flatserviceid].END_');
             aFormula = aFormula.replace(/VALUE/g, 'A.VALUE').replace(/COST/g, 'A.COST').replace(/RECALC/g, 'A.RECALC');
-            aFormula = aFormula.replace(/BENEFIT/g, 'A.BENEFIT').replace(/FULL_CALC/g, 'A.FULL_CALC').replace(/SCALC/g, 'A.SCALC');
             return aFormula;
         }
 
         function calcFormula(evalFormula, A) {
             return eval(evalFormula);
         }
-    }
-    ;
+    };
 }

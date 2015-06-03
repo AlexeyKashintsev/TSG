@@ -11,57 +11,68 @@
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget deletable="false" insertable="false" name="modelGrid" parent="pnlWorkSpace" prefHeight="312px" prefWidth="372px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="137513141035797" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="colService" title="Услуга">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137520096845259" fieldName="usl_name"/>
         <valueField entityId="137520096845259" fieldName="usl_services_id"/>
+        <displayField entityId="137520096845259" fieldName="usl_name"/>
       </controlInfo>
+      <datamodelElement entityId="137513141035797" fieldName="services_id"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
-      <datamodelElement entityId="137513141035797" fieldName="services_id"/>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
     </column>
-    <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Cпособ расчета">
-      <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
-        <displayField entityId="137520096845259" fieldName="calc_name"/>
-        <valueField entityId="137520096845259" fieldName="usl_services_id"/>
-      </controlInfo>
+    <column name="colCalcByNorm" title="Считать по норме" width="25">
+      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137513141035797" fieldName="calc_by_norm"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+    </column>
+    <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Cпособ расчета">
+      <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
+        <valueField entityId="137520096845259" fieldName="usl_services_id"/>
+        <displayField entityId="137520096845259" fieldName="calc_name"/>
+      </controlInfo>
       <datamodelElement entityId="137513141035797" fieldName="services_id"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <columnsKeyField/>
+        <cellValueField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
     </column>
     <column fixed="true" name="column" title="Активна">
       <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137513141035797" fieldName="fs_active"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
-      <datamodelElement entityId="137513141035797" fieldName="fs_active"/>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
@@ -69,36 +80,36 @@
     <column name="column3" title="Даты">
       <column name="colDateBeg" title="с">
         <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-          <displayField entityId="139750978386891" fieldName="TextDate"/>
           <valueField entityId="139750978386891" fieldName="per_date_id"/>
+          <displayField entityId="139750978386891" fieldName="TextDate"/>
         </controlInfo>
+        <datamodelElement entityId="137513141035797" fieldName="date_start"/>
         <columnsDatasource/>
         <columnsDisplayField/>
         <cellsDatasource/>
         <cellDesignInfo>
-          <rowsKeyField/>
           <columnsKeyField/>
           <cellValueField/>
+          <rowsKeyField/>
         </cellDesignInfo>
-        <datamodelElement entityId="137513141035797" fieldName="date_start"/>
         <headerStyle>
           <nativeFont name="Dialog" size="11"/>
         </headerStyle>
       </column>
       <column name="colDateEnd" title="по">
         <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
-          <displayField entityId="139750978386891" fieldName="TextDate"/>
           <valueField entityId="139750978386891" fieldName="per_date_id"/>
+          <displayField entityId="139750978386891" fieldName="TextDate"/>
         </controlInfo>
+        <datamodelElement entityId="137513141035797" fieldName="date_end"/>
         <columnsDatasource/>
         <columnsDisplayField/>
         <cellsDatasource/>
         <cellDesignInfo>
-          <rowsKeyField/>
           <columnsKeyField/>
           <cellValueField/>
+          <rowsKeyField/>
         </cellDesignInfo>
-        <datamodelElement entityId="137513141035797" fieldName="date_end"/>
         <headerStyle>
           <nativeFont name="Dialog" size="11"/>
         </headerStyle>
@@ -108,14 +119,18 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137513141035797" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

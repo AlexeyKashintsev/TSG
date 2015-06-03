@@ -5,14 +5,14 @@
     <parameter description="" name="date_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="Услуги в квартире" entityHeight="94" entityIconified="false" entityId="138548044417557" entityLocationX="179" entityLocationY="12" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
-  <entity Title="Объекты расчета" entityHeight="79" entityIconified="false" entityId="139214788605348" entityLocationX="542" entityLocationY="6" entityWidth="150" queryId="Calc_object" tableAlias="q1" tableName="" tableSchemaName=""/>
-  <entity Title="Способ расчета стоимости услуги" entityHeight="200" entityIconified="false" entityId="138609285919328" entityLocationX="533" entityLocationY="92" entityWidth="150" tableAlias="t4" tableName="usl_calc_formula" tableSchemaName=""/>
-  <entity Title="Услуги" entityHeight="200" entityIconified="false" entityId="138609282639040" entityLocationX="368" entityLocationY="95" entityWidth="150" tableAlias="t3" tableName="usl_services" tableSchemaName=""/>
+  <entity Title="" entityHeight="99" entityIconified="false" entityId="143333829796623" entityLocationX="182" entityLocationY="12" entityWidth="150" queryId="Calc_object" tableAlias="q1" tableName="" tableSchemaName=""/>
   <entity Title="Начисления" entityHeight="200" entityIconified="false" entityId="138548054014705" entityLocationX="180" entityLocationY="123" entityWidth="150" tableAlias="t" tableName="per_sums" tableSchemaName=""/>
-  <relation leftEntityFieldName="usl_services_id" leftEntityId="138609282639040" rightEntityFieldName="services_id" rightEntityId="138548044417557"/>
+  <entity Title="Услуги" entityHeight="200" entityIconified="false" entityId="138609282639040" entityLocationX="549" entityLocationY="107" entityWidth="150" tableAlias="t3" tableName="usl_services" tableSchemaName=""/>
+  <entity Title="Услуги в квартире" entityHeight="231" entityIconified="false" entityId="138548044417557" entityLocationX="371" entityLocationY="12" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
+  <entity Title="Способ расчета стоимости услуги" entityHeight="200" entityIconified="false" entityId="138609285919328" entityLocationX="714" entityLocationY="90" entityWidth="150" tableAlias="t4" tableName="usl_calc_formula" tableSchemaName=""/>
   <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="138548044417557" rightEntityFieldName="flat_service_id" rightEntityId="138548054014705"/>
   <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="138548054014705"/>
   <relation leftEntityFieldName="calc_id" leftEntityId="138609282639040" rightEntityFieldName="usl_calc_formula_id" rightEntityId="138609285919328"/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="139214788605348" rightEntityFieldName="lc_id" rightEntityId="138548044417557"/>
+  <relation leftEntityFieldName="usl_services_id" leftEntityId="138609282639040" rightEntityFieldName="services_id" rightEntityId="138548044417557"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="143333829796623" rightEntityFieldName="lc_id" rightEntityId="138548044417557"/>
 </datamodel>

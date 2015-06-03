@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel datamodelDbId="null">
-  <fieldsEntity entityHeight="125" entityIconified="false" entityId="137477743567456" entityLocationX="579" entityLocationY="176" entityWidth="150" tableName="usl_services"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137477864339664" entityLocationX="751" entityLocationY="385" entityWidth="150" tableName="usl_benefit_type"/>
-  <fieldsEntity entityHeight="201" entityIconified="false" entityId="137477890142330" entityLocationX="296" entityLocationY="52" entityWidth="150" tableName="grp_services"/>
-  <fieldsEntity entityHeight="143" entityIconified="false" entityId="137477739214915" entityLocationX="78" entityLocationY="76" entityWidth="150" tableName="grp_groups"/>
-  <fieldsEntity entityHeight="102" entityIconified="false" entityId="137477776601206" entityLocationX="773" entityLocationY="48" entityWidth="150" tableName="usl_calc_formula"/>
-  <fieldsEntity entityHeight="94" entityIconified="false" entityId="137477817619276" entityLocationX="782" entityLocationY="243" entityWidth="150" tableName="usl_calc_benefit_formula"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="137477856462865" entityLocationX="85" entityLocationY="248" entityWidth="150" tableName="lc_flat"/>
-  <fieldsEntity entityHeight="137" entityIconified="false" entityId="137478218585526" entityLocationX="581" entityLocationY="14" entityWidth="151" tableName="usl_tarif"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137477837295753" entityLocationX="559" entityLocationY="310" entityWidth="150" tableName="usl_benefit"/>
-  <fieldsEntity entityHeight="185" entityIconified="false" entityId="137477871263122" entityLocationX="296" entityLocationY="278" entityWidth="150" tableName="lc_flat_services"/>
+  <fieldsEntity entityHeight="143" entityIconified="false" entityId="137477739214915" entityLocationX="78" entityLocationY="76" entityWidth="150" tableName="grp_groups"/>
+  <fieldsEntity entityHeight="221" entityIconified="false" entityId="137477871263122" entityLocationX="299" entityLocationY="282" entityWidth="150" tableName="lc_flat_services"/>
+  <fieldsEntity entityHeight="102" entityIconified="false" entityId="137477776601206" entityLocationX="591" entityLocationY="367" entityWidth="150" tableName="usl_calc_formula"/>
+  <fieldsEntity entityHeight="151" entityIconified="false" entityId="137477743567456" entityLocationX="563" entityLocationY="204" entityWidth="150" tableName="usl_services"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137477837295753" entityLocationX="1080" entityLocationY="199" entityWidth="150" tableName="usl_benefit"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137477864339664" entityLocationX="853" entityLocationY="341" entityWidth="150" tableName="usl_benefit_type"/>
+  <fieldsEntity entityHeight="201" entityIconified="false" entityId="137477890142330" entityLocationX="296" entityLocationY="52" entityWidth="150" tableName="grp_services"/>
+  <fieldsEntity entityHeight="166" entityIconified="false" entityId="137478218585526" entityLocationX="581" entityLocationY="1" entityWidth="151" tableName="usl_tarif"/>
+  <fieldsEntity entityHeight="94" entityIconified="false" entityId="137477817619276" entityLocationX="1157" entityLocationY="56" entityWidth="150" tableName="usl_calc_benefit_formula"/>
 </datamodel>
