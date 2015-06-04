@@ -34,13 +34,6 @@ function BillsBuilder_Doverie() {
         self.dsGroupAndBank.params.groupID = self.dsFlatByIDorByGroup.cursor.group_id;
         self.dsGroupAndBank.params.accountID = model.params.parAccountID;
         self.dsGroupAndBank.requery();
-        if (self.dsGroupAndBank.percent !== 0){
-            var raschet = model.saldo_by_flat.cursor.sal_end*100/(100-self.dsGroupAndBank.percent)- model.saldo_by_flat.cursor.sal_end;
-            raschet = raschet.toFixed(2);
-            var percent = '(C учетом '+self.dsGroupAndBank.percent+'%банка = '+ raschet +'руб.)';            
-        }
-        else 
-            var raschet = 0;
 
         self.Group = {
                 grp_name: self.dsGroupAndBank.grp_name,
@@ -80,7 +73,7 @@ function BillsBuilder_Doverie() {
 
                     var lc_saldo = {
                         begin:      model.saldo_by_flat.cursor.sal_begin, 
-                        end:        model.saldo_by_flat.cursor.sal_end*100/(100-self.dsGroupAndBank.percent),  
+                        end:        model.saldo_by_flat.cursor.sal_end,  
                         calc:       model.saldo_by_flat.cursor.sal_calc,
                         benefit:    model.saldo_by_flat.cursor.sal_benefit,  
                         payments:   model.saldo_by_flat.cursor.sal_payments,  
@@ -90,8 +83,19 @@ function BillsBuilder_Doverie() {
                         penalties_old: model.saldo_by_flat.cursor.sal_penalties_old
                     };
                     
-                    lc_saldo.debt = lc_saldo.end - lc_saldo.full_calc - raschet;//lc_saldo.begin - lc_saldo.payments;
-                    lc_saldo.full_end = lc_saldo.end + lc_saldo.penalties_cur;
+                    if (self.dsGroupAndBank.percent !== 0){
+                        var raschet = model.saldo_by_flat.cursor.sal_end*100/(100-self.dsGroupAndBank.percent)- model.saldo_by_flat.cursor.sal_end;
+                        raschet = raschet.toFixed(2);
+                        var percent = '(C учетом '+self.dsGroupAndBank.percent+'%банка = '+ raschet +'руб.)';            
+                    }
+                    else 
+                        var raschet = 0;
+                    
+                    lc_saldo.debt = lc_saldo.begin - lc_saldo.payments;
+                    if(lc_saldo.end + lc_saldo.penalties_cur > 0){
+                        lc_saldo.full_end = lc_saldo.end + lc_saldo.penalties_cur + parseFloat(raschet);
+                    }
+                    else lc_saldo.full_end = 0;
 
                     var sum = [];
                     var cnt = 0;
