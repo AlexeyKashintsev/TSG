@@ -7,7 +7,7 @@ function BillsBuilder_Nadezhda() {
     var self = this, model = self.model;
     var dsLC_byid = this.model.dsLC_byid;
  
-    
+    var flatsArr = [];
     self.Group = {};
     self.Flats = {};
     /**
@@ -23,7 +23,10 @@ function BillsBuilder_Nadezhda() {
         return str_res + aEndStr.toString();
     }
     
-    
+
+    self.flatToRender = function(aFlats){
+        flatsArr = aFlats;
+    };
     function onBeforeRender(evt){//GEN-FIRST:event_onBeforeRender
         Logger.severe('Collecting data for report');
         var i = 0;
@@ -57,7 +60,7 @@ function BillsBuilder_Nadezhda() {
         };
         var flats = [];
         var fc = 0;
-        self.dsFlatByIDorByGroup.forEach(function(Flat){
+        flatsArr.forEach(function(Flat){
             if (!flats[Flat.lc_id]&&(fc<50)){
                 flats[Flat.lc_id] = true;
                 fc++;

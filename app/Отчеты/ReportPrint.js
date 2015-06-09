@@ -14,8 +14,17 @@ function ReportPrint() {
             processSingleFlat(aPrint, model.params.FlatID);
         } else {
             if (!repBill.all_flats) {
+                var flatsCount = 0;
+                if(model.params.flatTo !== null && model.params.flatFrom !== null)
+                    flatsCount = model.params.flatTo - model.params.flatFrom + 1;
+                if(model.params.flatTo !== null && model.params.flatFrom == null)
+                    flatsCount = model.params.flatTo;
+                if(model.params.flatTo === null && model.params.flatFrom !== null)
+                    flatsCount = model.flats_by_group.length - model.params.flatFrom + 1;
+                if(model.params.flatTo === null && model.params.flatFrom === null)
+                    flatsCount = model.flats_by_group.length;
                 model.flats_by_group.beforeFirst();
-                if (confirm('Вы собираетесь открыть '+ (model.params.flatTo - model.params.flatFrom + 1) +' файлов'))
+                if (confirm('Вы собираетесь открыть '+ flatsCount +' файлов'))
                     model.flats_by_group.forEach(function(flat) {
                         if ((!model.params.flatFrom && !model.params.flatTo) || 
                            ((model.params.flatFrom <= flat.lc_flatnumber) && (model.params.flatTo >= flat.lc_flatnumber)))
@@ -23,13 +32,26 @@ function ReportPrint() {
                     });
                 }
             else {
-                repBill.model.params.parDateID = self.params.parDateID;
-                repBill.model.params.parGroupID = self.params.GroupID; 
-                repBill.model.params.parAccountID = self.params.AccountID;
-                if (aPrint) 
-                    repBill.print();
-                else
-                    repBill.show();
+                var number = 0;
+                var flats = [];
+                for (var flat = 0; flat < model.flats_by_group.length; flat ++){
+                    flats.push({
+                        lc_id: model.flats_by_group[flat].lc_flat_id});
+                    if (number !== 3 && flat !== model.flats_by_group.length){
+                        number++;
+                    }
+                    else{
+                        number = 0;
+                        repBill.model.params.parDateID = self.params.parDateID;
+                        repBill.model.params.parAccountID = self.params.AccountID;
+                        repBill.flatToRender(flats);
+                        if (aPrint) 
+                            repBill.print();
+                        else
+                            repBill.show();
+                        flats = [];
+                    };
+                };
             }
         }
     }

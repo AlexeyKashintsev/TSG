@@ -3,6 +3,6 @@
     <parameter description="" name="Group_ID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="grp_lc_group" entityHeight="200" entityIconified="false" entityId="137686249856101" entityLocationX="194" entityLocationY="9" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="Group_ID" rightEntityFieldName="group_id" rightEntityId="137686249856101"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="143342692576529" entityLocationX="237" entityLocationY="3" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="Group_ID" rightEntityFieldName="group_id" rightEntityId="143342692576529"/>
 </datamodel>

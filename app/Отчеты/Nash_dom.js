@@ -55,18 +55,18 @@ function BillsBuilder_Nash_Dom() {
                 flats[Flat.lc_id] = true;
                 fc++;
                 try{
-                    self.dsLC_byid.params.lc_id = Flat.lc_id;
-                    self.saldo_by_flat.params.flat_id = Flat.lc_id;
-                    self.sums_perFlatWithUslNames.params.flat_id = Flat.lc_id;
-                    self.chars_flat.params.flat_id = Flat.lc_id;
-                    self.counters_values_by_flat.params.flat_id = Flat.lc_id;
+                    model.dsLC_byid.params.lc_id = Flat.lc_id;
+                    model.saldo_by_flat.params.flat_id = Flat.lc_id;
+                    model.sums_perFlatWithUslNames.params.flat_id = Flat.lc_id;
+                    model.chars_flat.params.flat_id = Flat.lc_id;
+                    model.counters_values_by_flat.params.flat_id = Flat.lc_id;
 
 
-                    self.dsLC_byid.requery();
-                    self.saldo_by_flat.requery();
-                    self.sums_perFlatWithUslNames.requery();
-                    self.chars_flat.requery();
-                    self.counters_values_by_flat.requery();
+                    model.dsLC_byid.requery();
+                    model.saldo_by_flat.requery();
+                    model.sums_perFlatWithUslNames.requery();
+                    model.chars_flat.requery();
+                    model.counters_values_by_flat.requery();
 
                     //self.model.dsLC_byid.cursor.lc_flatnumber;
                     Logger.info(Flat.lc_id);
