@@ -113,12 +113,15 @@ function BillsBuilder_Nadezhda() {
 
                     var counters = [];
                     var askCounters = [];
+                    var count = 0;
                     self.counters_values_by_flat.forEach(function(flat_cout){
+                        count++;
                         counters[counters.length] = {
                             usl_name:self.allServices.findById(flat_cout.services_id).usl_name,
                             end_val: flat_cout.end_val,
                             beg_val: flat_cout.beg_val,
-                            cons_val: flat_cout.cons_val
+                            cons_val: flat_cout.cons_val,
+                            count:  count
                         };
                         if (flat_cout.askinbills)
                             askCounters.push(self.allServices.findById(flat_cout.services_id).usl_name + '______');
