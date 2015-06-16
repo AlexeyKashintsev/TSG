@@ -10,7 +10,7 @@ function ReportPrint() {
     
     function process(aPrint) {
         repBill = new Report(model.dsAllAccounts.find(model.dsAllAccounts.schema.grp_account_id, model.params.AccountID)[0].report_name);
-        if (model.params.FlatID) {
+        if (model.params.FlatID && !repBill.all_flats) {
             processSingleFlat(aPrint, model.params.FlatID);
         } else {
             if (!repBill.all_flats) {
@@ -34,10 +34,28 @@ function ReportPrint() {
             else {
                 var number = 0;
                 var flats = [];
-                for (var flat = 0; flat < 5; flat ++){
+                if(!model.params.FlatID){
+                    if (model.params.flatFrom !== null){
+                        var flatFrom = model.params.flatFrom-1;
+                    }
+                    else{
+                        var flatFrom = 0;
+                    }
+                    if (model.params.flatTo !== null){
+                        var flatTo = model.params.flatTo;
+                    }
+                    else{
+                        var flatTo = model.flats_by_group.length;
+                    }
+                }
+                else{
+                    var flatFrom = 0;
+                    var flatTo = 1;
+                }
+                for (var flat = flatFrom; flat < flatTo; flat ++){
                     flats.push({
-                        lc_id: model.flats_by_group[flat].lc_flat_id});
-                    if (number !== 3 && flat !== model.flats_by_group.length){
+                        lc_id: model.params.FlatID ? model.params.FlatID : model.flats_by_group[flat].lc_flat_id});
+                    if (number !== 3 && flat !== flatTo-1){
                         number++;
                     }
                     else{
