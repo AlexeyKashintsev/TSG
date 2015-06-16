@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parAccountID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parGroupID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parServiceID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="dsCounterValuesForGroup" Title="" entityHeight="200" entityIconified="false" entityId="143401332593719" entityLocationX="217" entityLocationY="10" entityWidth="150" queryId="dsCounterValuesForGroup" tableName="" tableSchemaName=""/>
+  <entity Name="dsCounterWithAskforvalue" Title="" entityHeight="200" entityIconified="false" entityId="143435798367181" entityLocationX="444" entityLocationY="241" entityWidth="150" onRequeried="dsCounterWithAskforvalueOnRequeried" queryId="dsCounterWithAskforvalue" tableName="" tableSchemaName=""/>
+  <entity Name="qServices" Title="" entityHeight="200" entityIconified="false" entityId="143401249284372" entityLocationX="205" entityLocationY="244" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
+  <entity Name="flats_by_group" Title="" entityHeight="200" entityIconified="false" entityId="143401316739049" entityLocationX="413" entityLocationY="24" entityWidth="150" queryId="flats_by_group" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parServiceID" rightEntityId="143401332593719" rightEntityParameterName="service_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="143401316739049" rightEntityParameterName="group_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="143435798367181" rightEntityParameterName="account_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="143401332593719" rightEntityParameterName="group_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="143401332593719" rightEntityParameterName="account_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="143435798367181" rightEntityParameterName="group_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="143401332593719" rightEntityParameterName="date_id"/>
+  <referenceRelation leftEntityFieldName="services_id" leftEntityId="143435798367181" rightEntityFieldName="usl_services_id" rightEntityId="143401249284372"/>
+  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="143435798367181" rightEntityFieldName="usl_services_id" rightEntityId="143401249284372"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="143401249284372" rightEntityFieldName="usl_services_id" rightEntityId="143435798367181"/>
+  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="143401249284372" rightEntityFieldName="usl_services_id" rightEntityId="143435798367181"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="143401332593719" rightEntityFieldName="lc_flat_id" rightEntityId="143401316739049"/>
+  <referenceRelation leftEntityFieldName="modified_service_id" leftEntityId="143435798367181" rightEntityFieldName="usl_services_id" rightEntityId="143401249284372"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="143401249284372" rightEntityFieldName="usl_services_id" rightEntityId="143401249284372"/>
+  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="143401249284372" rightEntityFieldName="usl_services_id" rightEntityId="143401249284372"/>
+  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="143435798367181" rightEntityFieldName="usl_services_id" rightEntityId="143435798367181"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="143435798367181" rightEntityFieldName="usl_services_id" rightEntityId="143401249284372"/>
+  <referenceRelation leftEntityFieldName="services_id" leftEntityId="143435798367181" rightEntityFieldName="usl_services_id" rightEntityId="143435798367181"/>
+  <referenceRelation leftEntityFieldName="modified_service_id" leftEntityId="143435798367181" rightEntityFieldName="usl_services_id" rightEntityId="143435798367181"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="143435798367181" rightEntityFieldName="usl_services_id" rightEntityId="143435798367181"/>
+  <referenceRelation leftEntityFieldName="services_id" leftEntityId="143401332593719" rightEntityFieldName="usl_services_id" rightEntityId="143435798367181"/>
+  <referenceRelation leftEntityFieldName="services_id" leftEntityId="143401332593719" rightEntityFieldName="usl_services_id" rightEntityId="143401249284372"/>
+</datamodel>

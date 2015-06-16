@@ -34,7 +34,7 @@ function ReportPrint() {
             else {
                 var number = 0;
                 var flats = [];
-                for (var flat = 0; flat < model.flats_by_group.length; flat ++){
+                for (var flat = 0; flat < 5; flat ++){
                     flats.push({
                         lc_id: model.flats_by_group[flat].lc_flat_id});
                     if (number !== 3 && flat !== model.flats_by_group.length){
