@@ -18,7 +18,7 @@ self.syncParams = function(aDate, anIsEditable, anAccount) {
 function tfFlatNumberActionPerformed(evt) {//GEN-FIRST:event_tfFlatNumberActionPerformed
     var flat = self.dsFlatsByGroup.find(self.dsFlatsByGroup.schema.lc_flatnumber, self.tfFlatNumber.text);
     if (flat.length == 1){
-        self.parFlatID = flat[0].lc_flat_id;
+        model.params.parFlatID = flat[0].lc_flat_id;
     }
 }//GEN-LAST:event_tfFlatNumberActionPerformed
 
