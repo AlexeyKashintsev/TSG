@@ -30,18 +30,21 @@ function SaldoAndSumsModule() {
      * @param {type} aValue
      * @returns {@exp;dsSaldo@pro;per_saldo_flat_id}
      */
-    self.initBegSaldo = function(aLC_ID, aDate, aValue) {
+    self.initBegSaldo = function(aLC_ID, aDate, anAccount, aValue) {
         Logger.info('Adding beg saldo' + aLC_ID + ' value: ' + aValue);
-        model.params.beginUpdate();
-        model.params.parDateID = aDate;
-        model.params.parFlatID = aLC_ID;
-        model.params.endUpdate();
+        
+        model.dsSaldo.params.account_id = anAccount;
+        model.dsSaldo.params.date_id = aDate;
+        model.dsSaldo.params.flat_id = aLC_ID;
+        model.dsSaldo.execute();
+        
         if (model.dsSaldo.length === 0) {
             Logger.info('Saldo not present: ' + aLC_ID);
             model.dsSaldo.push({
                     date_id: aDate,
                     lc_id: aLC_ID,
-                    sal_begin: aValue
+                    sal_begin: aValue,
+                    account_id: anAccount
                 });
         } else {
             model.dsSaldo.cursor.sal_begin = aValue;
@@ -58,12 +61,13 @@ function SaldoAndSumsModule() {
      * @param {type} aPreviousValue
      * @returns {undefined}
      */
-    self.addPenalties = function(aLC_ID, aDate, aCurrentValue, aPreviousValue){
-        self.params.beginUpdate();
-        self.parDateID = aDate;
-        self.parFlatID = aLC_ID;
-        self.params.endUpdate();
-        if (self.dsSaldo.length == 0)
+    self.addPenalties = function(aLC_ID, aDate, anAccount, aCurrentValue, aPreviousValue){
+        model.dsSaldo.params.account_id = anAccount;
+        model.dsSaldo.params.date_id = aDate;
+        model.dsSaldo.params.flat_id = aLC_ID;
+        model.dsSaldo.execute();
+        
+        if (!self.dsSaldo.length)
             self.dsSaldo.insert(self.dsSaldo.schema.date_id, aDate,
                     self.dsSaldo.schema.lc_id, aLC_ID,
                     self.dsSaldo.schema.sal_penalties_cur, aCurrentValue,

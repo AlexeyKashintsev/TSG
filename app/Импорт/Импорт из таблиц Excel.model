@@ -4,13 +4,19 @@
     <parameter description="" name="parGroup" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="parDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="parSession" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parAccount" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parNew" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="100" type="16" typeName="BOOLEAN"/>
+    <parameter description="" name="parOld" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="100" type="16" typeName="BOOLEAN"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150" onAfterChange="rowChanged"/>
+  <entity Name="dsAccountsByGroup" Title="" entityHeight="200" entityIconified="false" entityId="143981335892462" entityLocationX="177" entityLocationY="223" entityWidth="150" queryId="dsAccountsByGroup" tableName="" tableSchemaName=""/>
   <entity Name="dsOplSessions" Title="Сессии оплаты" entityHeight="200" entityIconified="false" entityId="139185480665426" entityLocationX="371" entityLocationY="220" entityWidth="150" queryId="dsOplSessions" tableName="" tableSchemaName=""/>
   <entity Name="dsImportVarians" Title="Варианты импортов справочник" entityHeight="200" entityIconified="false" entityId="137727381929816" entityLocationX="176" entityLocationY="13" entityWidth="150" queryId="_32948409985907" tableName="" tableSchemaName=""/>
   <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="138288658968203" entityLocationX="567" entityLocationY="9" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
   <entity Name="groups_query" Title="Группы" entityHeight="200" entityIconified="false" entityId="138101042761421" entityLocationX="371" entityLocationY="10" entityWidth="150" queryId="groups_query" tableName="" tableSchemaName=""/>
-  <referenceRelation leftEntityFieldName="session_id" leftEntityId="139185480665426" rightEntityFieldName="opl_sessions_id" rightEntityId="139185480665426"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="143981335892462" rightEntityParameterName="GroupId"/>
   <referenceRelation leftEntityFieldName="date_id" leftEntityId="139185480665426" rightEntityFieldName="per_date_id" rightEntityId="138288658968203"/>
   <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="138101042761421" rightEntityFieldName="grp_groups_id" rightEntityId="138101042761421"/>
+  <referenceRelation leftEntityFieldName="group_id" leftEntityId="143981335892462" rightEntityFieldName="grp_groups_id" rightEntityId="138101042761421"/>
+  <referenceRelation leftEntityFieldName="session_id" leftEntityId="139185480665426" rightEntityFieldName="opl_sessions_id" rightEntityId="139185480665426"/>
 </datamodel>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="400px">
+  <widget name="modelGrid" parent="Form" prefHeight="300px" prefWidth="396px" type="DbGridDesignInfo">
+    <column name="column">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="143939172494522" fieldName="lc_regto"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <column name="column1" plain="false">
+      <columnsDatasource entityId="143939168685731" field="false"/>
+      <columnsDisplayField entityId="143939168685731" fieldName="grp_name"/>
+      <cellsDatasource entityId="143939176667734" field="false"/>
+      <cellDesignInfo>
+        <cellControlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+        <rowsKeyField entityId="143939176667734" fieldName="lc_id"/>
+        <columnsKeyField entityId="143939176667734" fieldName="group_id"/>
+        <cellValueField entityId="143939176667734" fieldName="grp_lc_group_id"/>
+      </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Lucida Grande" size="13"/>
+      </headerStyle>
+    </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="143939172494522" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <constraints bottom="0px" left="0px" right="4px" top="0px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

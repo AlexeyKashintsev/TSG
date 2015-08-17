@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="alLCTest" Title="" entityHeight="200" entityIconified="false" entityId="143939172494522" entityLocationX="183" entityLocationY="21" entityWidth="150" queryId="alLCTest" tableName="" tableSchemaName=""/>
+  <entity Name="groups_query" Title="" entityHeight="200" entityIconified="false" entityId="143939168685731" entityLocationX="549" entityLocationY="5" entityWidth="150" queryId="groups_query" tableName="" tableSchemaName=""/>
+  <entity Name="allLCAndGroups" Title="" entityHeight="200" entityIconified="false" entityId="143939176667734" entityLocationX="364" entityLocationY="16" entityWidth="150" queryId="allLCAndGroups" tableName="" tableSchemaName=""/>
+  <referenceRelation leftEntityFieldName="group_id" leftEntityId="143939176667734" rightEntityFieldName="grp_groups_id" rightEntityId="143939168685731"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="143939176667734" rightEntityFieldName="lc_flat_id" rightEntityId="143939172494522"/>
+  <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="143939168685731" rightEntityFieldName="grp_groups_id" rightEntityId="143939168685731"/>
+</datamodel>
