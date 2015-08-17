@@ -5,8 +5,9 @@
     <parameter description="" name="parAccount" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="dsUpdatePer_sums" Title="" entityHeight="200" entityIconified="false" entityId="142484885678126" entityLocationX="124" entityLocationY="261" entityWidth="150" queryId="UpdatePer_sums" tableName="" tableSchemaName=""/>
   <entity Name="servicesIsAbsent" Title="Недостающие тарифы" entityHeight="200" entityIconified="false" entityId="138625186999529" entityLocationX="455" entityLocationY="29" entityWidth="150" queryId="ServicesIsAbsent" tableName="" tableSchemaName=""/>
+  <entity Name="dsUpdatePer_sums" Title="" entityHeight="200" entityIconified="false" entityId="142484885678126" entityLocationX="124" entityLocationY="261" entityWidth="150" queryId="UpdatePer_sums" tableName="" tableSchemaName=""/>
   <entity Name="tarifsInGroup" Title="Тарифы по группе" entityHeight="200" entityIconified="false" entityId="138601884396193" entityLocationX="254" entityLocationY="22" entityWidth="150" queryId="TarifsInGroup" tableName="" tableSchemaName=""/>
   <entity Name="prApplyTarifs" Title="prApplyTarifs" entityHeight="200" entityIconified="false" entityId="138678099731507" entityLocationX="635" entityLocationY="38" entityWidth="150" queryId="prApplyTarifs" tableName="" tableSchemaName=""/>
+  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="142484885678126" rightEntityFieldName="lc_flat_services_id" rightEntityId="138678099731507"/>
 </datamodel>

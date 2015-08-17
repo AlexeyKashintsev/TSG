@@ -19,7 +19,6 @@ function Settings() {
     self.getSettings = function(aFranchazi, aTradePoint, aUserName) {
         self.updateSettingsParams(aFranchazi, aTradePoint, aUserName);
         var res = {};
-        model.dsSettings.beforeFirst();
         model.dsSettings.forEach(function(aSetting) {
             res[aSetting.setting_name] = 
                     self.getSettingByName(aSetting.setting_name);

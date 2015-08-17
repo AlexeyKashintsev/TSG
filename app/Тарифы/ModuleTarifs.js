@@ -8,7 +8,7 @@
 function TarifsModule() {
 
 
-    var self = this;
+    var self = this, model = self.model;
 
 
     /*
@@ -19,19 +19,18 @@ function TarifsModule() {
      * TODO Доделать добавление,запутался куда добавлять;
      */
     self.addMissingTarifs = function(aDateID, aGroupID, aAccountID) {
-        self.servicesIsAbsent.params.parDateID = aDateID;
-        self.servicesIsAbsent.params.parGroupID = aGroupID;
-        self.servicesIsAbsent.params.parAccountID = aAccountID;
-        self.servicesIsAbsent.execute();
-        self.servicesIsAbsent.beforeFirst();
-        while (self.servicesIsAbsent.next()) {
-            self.tarifsInGroup.insert(//self.tarifsInGroup.schema.usl_tarif_id,self.servicesIsAbsent.grp_services_id,
-                    self.tarifsInGroup.schema.services_id, self.servicesIsAbsent.services_id,
-                    self.tarifsInGroup.schema.date_id, aDateID,
-                    self.tarifsInGroup.schema.group_id, aGroupID,
-                    self.tarifsInGroup.schema.account_id, aAccountID);
-        }
-        self.model.save();
+        model.servicesIsAbsent.params.parDateID = aDateID;
+        model.servicesIsAbsent.params.parGroupID = aGroupID;
+        model.servicesIsAbsent.params.parAccountID = aAccountID;
+        model.servicesIsAbsent.execute();
+        model.servicesIsAbsent.forEach(function(cursor) {
+            model.tarifsInGroup.insert(//self.tarifsInGroup.schema.usl_tarif_id,self.servicesIsAbsent.grp_services_id,
+                    model.tarifsInGroup.schema.services_id, model.servicesIsAbsent.services_id,
+                    model.tarifsInGroup.schema.date_id, aDateID,
+                    model.tarifsInGroup.schema.group_id, aGroupID,
+                    model.tarifsInGroup.schema.account_id, aAccountID);
+        });
+        model.save();
     };
     /**
      * Применяет тарифы к начислениям в квартирах
@@ -42,10 +41,10 @@ function TarifsModule() {
     self.applyTarifs = function(aDateID, aGroupID,aAccountID){
        // self.ApplyTarifs.params.groupid = aGroupID;
 //        self.ApplyTarifs.params.dateid = aDateID;
-        self.dsUpdatePer_sums.params.groupid = aGroupID;
-        self.dsUpdatePer_sums.params.dateid = aDateID;
-        self.dsUpdatePer_sums.params.accountid = aAccountID;
-        self.dsUpdatePer_sums.executeUpdate();
+        model.dsUpdatePer_sums.params.groupid = aGroupID;
+        model.dsUpdatePer_sums.params.dateid = aDateID;
+        model.dsUpdatePer_sums.params.accountid = aAccountID;
+        model.dsUpdatePer_sums.executeUpdate();
       /*  self.dsUpdatePer_sums.beforeFirst();
         while (self.dsUpdatePer_sums.next()) {
             self.dsUpdatePer_sums.rate = self.dsUpdatePer_sums.tRate;

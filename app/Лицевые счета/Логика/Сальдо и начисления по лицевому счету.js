@@ -38,9 +38,11 @@ function SaldoAndSumsModule() {
         model.params.endUpdate();
         if (model.dsSaldo.length === 0) {
             Logger.info('Saldo not present: ' + aLC_ID);
-            model.dsSaldo.insert(model.dsSaldo.schema.date_id, aDate,
-                    model.dsSaldo.schema.lc_id, aLC_ID,
-                    model.dsSaldo.schema.sal_begin, aValue);
+            model.dsSaldo.push({
+                    date_id: aDate,
+                    lc_id: aLC_ID,
+                    sal_begin: aValue
+                });
         } else {
             model.dsSaldo.cursor.sal_begin = aValue;
             Logger.info('Saldo present: ' + aLC_ID + ' value: ' + model.dsSaldo.cursor.sal_begin);
