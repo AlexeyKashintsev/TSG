@@ -23,8 +23,8 @@
   </widget>
   <widget editable="false" foregroundColor="#663300" name="modelFormattedField" opaque="false" parent="panel" prefHeight="28px" prefWidth="141px" type="DbLabelDesignInfo">
     <datamodelElement entityId="138702829717095" fieldName="lc_regto"/>
-    <constraints height="28px" left="3px" top="104px" type="MarginConstraintsDesignInfo" width="141px"/>
     <border etcheHighlightColor="#000000" etcheShadowColor="#000000" type="EtchedBorderDesignInfo"/>
+    <constraints height="28px" left="3px" top="104px" type="MarginConstraintsDesignInfo" width="141px"/>
   </widget>
   <widget deletable="false" editable="false" focusable="false" insertable="false" name="modelGrid" parent="panel" prefHeight="200px" prefWidth="146px" type="DbGridDesignInfo">
     <column name="column" title="Дата">

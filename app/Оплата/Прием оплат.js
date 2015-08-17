@@ -27,10 +27,12 @@ function btFlatNumEnterMouseClicked(evt) {//GEN-FIRST:event_btFlatNumEnterMouseC
 }//GEN-LAST:event_btFlatNumEnterMouseClicked
 
 function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
+    var tStart = new Date();
     if (self.parFlatID&&self.parDateID&&(model.params.parSum !== 0 || model.params.parFullPay !== 0))
         modSal.addOplata(self.parFlatID, self.parSessionID, self.parDateID,
                          self.parSum, self.parDate, self.parComment, self.parPercent, self.parFullPay);
     model.save();
+    var tSave = new Date();
     self.parFlatID = null;
     self.parSum = 0;
     self.parPercent = 0;
@@ -38,10 +40,12 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
     self.tfFlatNumber.text = '';
     if (self.parentForm)
         self.parentForm.updateSession();
-    if (self.barCode == true){
+    if (self.barCode === true) {
         self.barCode = false;
         self.close();
     };
+    var tClose = new Date();
+    Logger.info('Save time: ' + (tSave - tStart) + ', Close time: ' + (tClose - tSave));
 }//GEN-LAST:event_buttonActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed

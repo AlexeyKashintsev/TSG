@@ -28,8 +28,14 @@ function setEdit(){
 }
 
 self.updateSession = function(){
-    self.model.requery();
+    var sT = new Date();
+//    self.model.requery();
+    model.dsSessionColAndSum.requery();
+    model.dsPaymentsInSession.requery();
+    var rT = new Date();
     self.parentForm.updateSession();
+    var eT = new Date();
+    Logger.warning('1: ' + (rT-sT) + ', 2: ' + (eT - rT));
 };
 
 self.init = function (aSessionID, aDateID,aEditDate){
