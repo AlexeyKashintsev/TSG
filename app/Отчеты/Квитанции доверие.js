@@ -80,7 +80,8 @@ function BillsBuilder_Doverie() {
                         recalc:     model.saldo_by_flat.cursor.sal_recalc,  
                         full_calc:  model.saldo_by_flat.cursor.sal_full_calc, 
                         penalties_cur: model.saldo_by_flat.cursor.sal_penalties_cur, 
-                        penalties_old: model.saldo_by_flat.cursor.sal_penalties_old
+                        penalties_old: model.saldo_by_flat.cursor.sal_penalties_old,
+                        sal_penalties_pay: model.saldo_by_flat.cursor.sal_penalties_pay
                     };
                     
                     if (self.dsGroupAndBank.percent !== 0){
@@ -91,7 +92,7 @@ function BillsBuilder_Doverie() {
                     else 
                         var raschet = 0;
                     
-                    lc_saldo.debt = lc_saldo.begin - lc_saldo.payments;
+                    lc_saldo.debt = lc_saldo.begin - lc_saldo.payments + lc_saldo.sal_penalties_pay;
                     if(lc_saldo.end + lc_saldo.penalties_cur > 0){
                         lc_saldo.full_end = lc_saldo.end + lc_saldo.penalties_cur + parseFloat(raschet);
                     }
