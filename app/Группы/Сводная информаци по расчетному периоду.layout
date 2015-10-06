@@ -52,18 +52,15 @@
     <constraints height="16px" left="12px" top="36px" type="MarginConstraintsDesignInfo" width="132px"/>
   </widget>
   <widget name="label4" parent="Form" prefHeight="16px" prefWidth="180px" text="Начисления по группе:" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="108px" type="MarginConstraintsDesignInfo" width="180px"/>
+    <constraints height="16px" left="12px" top="168px" type="MarginConstraintsDesignInfo" width="180px"/>
   </widget>
-  <widget name="modelGrid" parent="Form" prefHeight="228px" prefWidth="704px" type="DbGridDesignInfo">
+  <widget name="modelGrid" parent="Form" prefHeight="168px" prefWidth="704px" type="DbGridDesignInfo">
     <column name="colServices_id" title="Услуга">
-      <datamodelElement entityId="139307419109152" fieldName="services_id"/>
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="139307429591837" fieldName="usl_services_id"/>
         <displayField entityId="139307429591837" fieldName="usl_name"/>
       </controlInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
+      <datamodelElement entityId="139307419109152" fieldName="services_id"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -72,13 +69,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="colCalc_value" title="Объем">
-      <datamodelElement entityId="139307419109152" fieldName="calc_value"/>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
+      <datamodelElement entityId="139307419109152" fieldName="calc_value"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -87,13 +84,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="colCalc" title="Рассчитано">
-      <datamodelElement entityId="139307419109152" fieldName="calc"/>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
+      <datamodelElement entityId="139307419109152" fieldName="calc"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -102,13 +99,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="colBenefit" title="Льгота">
-      <datamodelElement entityId="139307419109152" fieldName="benefit"/>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
+      <datamodelElement entityId="139307419109152" fieldName="benefit"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -117,13 +114,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="colRecalc" title="Перерасчет">
-      <datamodelElement entityId="139307419109152" fieldName="recalc"/>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
+      <datamodelElement entityId="139307419109152" fieldName="recalc"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -132,13 +129,13 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
     <column name="colFull_calc" title="Начислено">
-      <datamodelElement entityId="139307419109152" fieldName="full_calc"/>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
+      <datamodelElement entityId="139307419109152" fieldName="full_calc"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -147,12 +144,15 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
     </column>
+    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="139307419109152" field="false"/>
     </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
-    <constraints bottom="-3px" left="12px" right="13px" top="132px" type="MarginConstraintsDesignInfo"/>
+    <constraints bottom="-3px" left="12px" right="13px" top="192px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="label5" parent="Form" prefHeight="14px" prefWidth="120px" text="Период:" type="LabelDesignInfo">
     <constraints height="14px" left="12px" top="15px" type="MarginConstraintsDesignInfo" width="120px"/>
@@ -177,6 +177,10 @@
   </widget>
   <widget actionPerformed="buttonActionPerformed" name="button" parent="Form" prefHeight="23px" prefWidth="132px" text="Сформировать" type="ButtonDesignInfo">
     <constraints height="23px" left="432px" top="12px" type="MarginConstraintsDesignInfo" width="132px"/>
+  </widget>
+  <widget name="modelFormattedField" parent="Form" prefHeight="28px" prefWidth="72px" type="DbLabelDesignInfo">
+    <datamodelElement entityId="142305636548457" fieldName="sal_calc"/>
+    <constraints height="28px" left="96px" top="108px" type="MarginConstraintsDesignInfo" width="72px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

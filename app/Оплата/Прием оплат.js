@@ -39,7 +39,9 @@ function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
     self.parFullPay = 0;
     self.tfFlatNumber.text = '';
     if (self.parentForm)
-        self.parentForm.updateSession();
+        (function() {
+            self.parentForm.updateSession();
+        }).invokeBackground();
     if (self.barCode === true) {
         self.barCode = false;
         self.close();
