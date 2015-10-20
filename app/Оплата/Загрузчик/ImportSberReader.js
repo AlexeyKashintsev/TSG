@@ -52,7 +52,7 @@ function ImportSberReader() {
             }
             case 'date': {
                     var date = aData.split('/');
-                    res = new Date(date[2], parseInt(date[1]) - 1,  parseInt(date[0]));
+                    res = new Date(+date[2], +date[1] - 1,  +date[0]);
                     break;
             }
         }
