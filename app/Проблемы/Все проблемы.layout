@@ -6,84 +6,87 @@
   <widget focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="28px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="28px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="28px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget name="modelCheckBox" parent="toolBar" prefHeight="20px" prefWidth="117px" text="Только открытые" type="DbCheckDesignInfo">
+    <datamodelElement entityId="-1" fieldName="completed"/>
+  </widget>
   <widget name="pnlWorkSpace" parent="Form" prefHeight="318px" prefWidth="654px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints bottom="0px" left="0px" right="0px" top="30px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget deletable="false" editable="false" insertable="false" mouseClicked="modelGridMouseClicked" name="modelGrid" parent="pnlWorkSpace" prefHeight="324px" prefWidth="654px" type="DbGridDesignInfo">
     <column name="GrpIssues" readonly="true" selectOnly="true" title="Группа">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <datamodelElement entityId="142260705832811" fieldName="grp_name"/>
     </column>
     <column name="LcIssues" title="Квартира">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <datamodelElement entityId="142260705832811" fieldName="lc_flatnumber"/>
     </column>
     <column name="LcRegtoIssues" title="ФИО">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <datamodelElement entityId="142260705832811" fieldName="lc_regto"/>
     </column>
     <column name="DateIssues" title="Дата">
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <columnsKeyField/>
+        <cellValueField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
       <controlInfo classHint="DbTextDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
+      <datamodelElement entityId="142260705832811" fieldName="TextDate"/>
+    </column>
+    <column name="IssuesType" title="Критичность">
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
-      <datamodelElement entityId="142260705832811" fieldName="TextDate"/>
-    </column>
-    <column name="IssuesType" title="Критичность">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
       <datamodelElement entityId="142260705832811" fieldName="type_name"/>
     </column>
     <rowsColumnsDesignInfo>

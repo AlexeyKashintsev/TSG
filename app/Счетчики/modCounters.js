@@ -75,10 +75,10 @@ function CountersModule() {
         model.dsCountersValues.params.dateID = aDateID;
         model.dsCountersValues.execute();
         if (model.dsCountersValues.length === 0) {
-            model.dsCountersValues.insert(model.dsCountersValues.schema.counter_id, aCounterID,
-                    model.dsCountersValues.schema.date_id, aDateID,
-                    model.dsCountersValues.schema.beg_val, aBegValue,
-                    model.dsCountersValues.schema.end_val, aEndValue ? aEndValue : aBegValue);
+            model.dsCountersValues.push({counter_id: aCounterID,
+                    date_id: aDateID,
+                    beg_val: aBegValue,
+                    end_val: (aEndValue ? aEndValue : aBegValue)});
         } else {
             model.dsCountersValues.beg_val = aBegValue;
             model.dsCountersValues.end_val = aEndValue;

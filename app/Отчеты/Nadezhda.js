@@ -99,10 +99,11 @@ function BillsBuilder_Nadezhda() {
                         recalc:     flatsArr[j] ? model.saldo_by_flat.cursor.sal_recalc : '',  
                         full_calc:  flatsArr[j] ? model.saldo_by_flat.cursor.sal_full_calc : '', 
                         penalties_cur: flatsArr[j] ? model.saldo_by_flat.cursor.sal_penalties_cur : '', 
-                        penalties_old: flatsArr[j] ? model.saldo_by_flat.cursor.sal_penalties_old : ''
+                        penalties_old: flatsArr[j] ? model.saldo_by_flat.cursor.sal_penalties_old : '',
+                        sal_penalties_pay: flatsArr[j] ? model.saldo_by_flat.cursor.sal_penalties_pay : ''
                     };
                     
-                    lc_saldo.debt = flatsArr[j] ? lc_saldo.end - lc_saldo.full_calc - raschet : '';//lc_saldo.begin - lc_saldo.payments;
+                    lc_saldo.debt = flatsArr[j] ? lc_saldo.end - lc_saldo.full_calc - raschet + lc_saldo.sal_penalties_pay: '';//lc_saldo.begin - lc_saldo.payments;
                     lc_saldo.full_end = flatsArr[j] ? lc_saldo.end + lc_saldo.penalties_cur : '';
 
                     var sum = [];

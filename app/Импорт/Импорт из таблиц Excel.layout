@@ -6,67 +6,85 @@
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Настройка" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget backgroundColor="#f0f0f0" foregroundColor="#000000" name="dbcImportType111" parent="panel" prefHeight="20px" prefWidth="422px" selectFunction="dbcImportType111SelectValue" type="DbComboDesignInfo">
-    <displayField entityId="139185480665426" fieldName="opl_comment"/>
+  <widget backgroundColor="#f0f0f0" foregroundColor="#000000" name="dbcImportType1111" parent="panel" prefHeight="20px" prefWidth="158px" selectFunction="dbcImportType1111SelectValue" type="DbComboDesignInfo">
+    <valueField entityId="143981335892462" fieldName="account_id"/>
+    <displayField entityId="143981335892462" fieldName="account_name"/>
+    <datamodelElement entityId="-1" fieldName="parAccount"/>
+    <constraints height="20px" left="10px" top="176px" type="MarginConstraintsDesignInfo" width="158px"/>
+    <easFont name="Tahoma" size="11" style="1"/>
+  </widget>
+  <widget name="jLabel2111" parent="panel" prefHeight="14px" prefWidth="88px" text="Аккаунт" type="LabelDesignInfo">
+    <constraints height="14px" left="12px" top="156px" type="MarginConstraintsDesignInfo" width="88px"/>
+  </widget>
+  <widget backgroundColor="#f0f0f0" foregroundColor="#000000" name="dbcImportType111" parent="panel" prefHeight="20px" prefWidth="252px" selectFunction="dbcImportType111SelectValue" type="DbComboDesignInfo">
     <valueField entityId="139185480665426" fieldName="opl_sessions_id"/>
+    <displayField entityId="139185480665426" fieldName="opl_comment"/>
     <datamodelElement entityId="-1" fieldName="parSession"/>
-    <constraints height="20px" left="10px" top="202px" type="MarginConstraintsDesignInfo" width="422px"/>
+    <constraints height="20px" left="180px" right="8px" top="132px" type="MarginConstraintsDesignInfo"/>
     <easFont name="Tahoma" size="11" style="1"/>
   </widget>
   <widget name="jLabel211" parent="panel" prefHeight="14px" prefWidth="230px" text="Сессия оплаты для импорта" type="LabelDesignInfo">
-    <constraints height="14px" left="10px" top="178px" type="MarginConstraintsDesignInfo" width="230px"/>
+    <constraints height="14px" left="192px" top="108px" type="MarginConstraintsDesignInfo" width="230px"/>
   </widget>
-  <widget name="jLabel21" parent="panel" prefHeight="14px" prefWidth="230px" text="Дата импорта" type="LabelDesignInfo">
-    <constraints height="14px" left="12px" top="132px" type="MarginConstraintsDesignInfo" width="230px"/>
+  <widget name="jLabel21" parent="panel" prefHeight="14px" prefWidth="108px" text="Дата импорта" type="LabelDesignInfo">
+    <constraints height="14px" left="12px" top="108px" type="MarginConstraintsDesignInfo" width="108px"/>
   </widget>
-  <widget backgroundColor="#f0f0f0" foregroundColor="#000000" name="dbcImportType11" parent="panel" prefHeight="20px" prefWidth="422px" selectFunction="dbcImportType11SelectValue" type="DbComboDesignInfo">
-    <displayField entityId="138288658968203" fieldName="TextDate"/>
+  <widget backgroundColor="#f0f0f0" foregroundColor="#000000" name="dbcImportType11" parent="panel" prefHeight="20px" prefWidth="158px" selectFunction="dbcImportType11SelectValue" type="DbComboDesignInfo">
     <valueField entityId="138288658968203" fieldName="per_date_id"/>
+    <displayField entityId="138288658968203" fieldName="TextDate"/>
     <datamodelElement entityId="-1" fieldName="parDate"/>
-    <constraints height="20px" left="12px" top="156px" type="MarginConstraintsDesignInfo" width="422px"/>
+    <constraints height="20px" left="10px" top="132px" type="MarginConstraintsDesignInfo" width="158px"/>
     <easFont name="Tahoma" size="11" style="1"/>
   </widget>
   <widget backgroundColor="#f0f0f0" foregroundColor="#000000" name="dbcImportType1" parent="panel" prefHeight="20px" prefWidth="422px" selectFunction="dbcImportType1SelectValue" type="DbComboDesignInfo">
-    <displayField entityId="138101042761421" fieldName="grp_name"/>
     <valueField entityId="138101042761421" fieldName="grp_groups_id"/>
+    <displayField entityId="138101042761421" fieldName="grp_name"/>
     <datamodelElement entityId="-1" fieldName="parGroup"/>
-    <constraints height="20px" left="10px" top="108px" type="MarginConstraintsDesignInfo" width="422px"/>
+    <constraints height="20px" left="10px" right="8px" top="84px" type="MarginConstraintsDesignInfo"/>
     <easFont name="Tahoma" size="11" style="1"/>
   </widget>
   <widget name="jLabel4" parent="panel" prefHeight="14px" prefWidth="254px" text="Настройка сопоставления полей:" type="LabelDesignInfo">
     <constraints height="14px" left="10px" top="10px" type="MarginConstraintsDesignInfo" width="254px"/>
   </widget>
-  <widget backgroundColor="#f0f0f0" foregroundColor="#000000" name="dbcImportType" parent="panel" prefHeight="20px" prefWidth="422px" selectFunction="dbcImportTypeSelectValue" type="DbComboDesignInfo">
-    <displayField entityId="137727381929816" fieldName="importname"/>
+  <widget backgroundColor="#f0f0f0" foregroundColor="#000000" name="dbcImportType" parent="panel" prefHeight="20px" prefWidth="266px" selectFunction="dbcImportTypeSelectValue" type="DbComboDesignInfo">
     <valueField entityId="137727381929816" fieldName="importnames_id"/>
+    <displayField entityId="137727381929816" fieldName="importname"/>
     <datamodelElement entityId="-1" fieldName="parImport"/>
-    <constraints height="20px" left="10px" right="8px" top="30px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="20px" left="10px" right="164px" top="35px" type="MarginConstraintsDesignInfo"/>
     <easFont name="Tahoma" size="11" style="1"/>
   </widget>
   <widget name="jLabel2" parent="panel" prefHeight="14px" prefWidth="230px" text="Группа в которую импортировать:" type="LabelDesignInfo">
-    <constraints height="14px" left="10px" top="84px" type="MarginConstraintsDesignInfo" width="230px"/>
+    <constraints height="14px" left="10px" top="60px" type="MarginConstraintsDesignInfo" width="230px"/>
   </widget>
   <widget name="label" parent="panel" prefHeight="14px" prefWidth="380px" text="Файл/каталог с импортируемыми данными" type="LabelDesignInfo">
-    <constraints height="14px" left="10px" top="230px" type="MarginConstraintsDesignInfo" width="380px"/>
+    <constraints height="14px" left="10px" top="206px" type="MarginConstraintsDesignInfo" width="380px"/>
   </widget>
   <widget backgroundColor="#f0f0f0" editable="false" horizontalAlignment="0" name="textFieldFilePath" parent="panel" prefHeight="20px" prefWidth="422px" text="Не выбран" toolTipText="" type="TextFieldDesignInfo">
-    <constraints height="20px" left="10px" top="250px" type="MarginConstraintsDesignInfo" width="422px"/>
+    <constraints height="20px" left="10px" top="226px" type="MarginConstraintsDesignInfo" width="422px"/>
     <easFont name="Tahoma" size="11" style="1"/>
   </widget>
   <widget actionPerformed="buttonActionPerformed" icon="folder-horizontal.png" name="button" parent="panel" prefHeight="23px" prefWidth="140px" text="Выбрать" type="ButtonDesignInfo">
-    <constraints bottom="109px" height="23px" left="292px" type="MarginConstraintsDesignInfo" width="140px"/>
+    <constraints height="23px" left="292px" top="256px" type="MarginConstraintsDesignInfo" width="140px"/>
   </widget>
   <widget actionPerformed="buttonStartImportActionPerformed" enabled="false" icon="document-excel-table.png" name="buttonStartImport" parent="panel" prefHeight="23px" prefWidth="201px" text="Импортировать" type="ButtonDesignInfo">
     <constraints bottom="19px" height="23px" right="11px" type="MarginConstraintsDesignInfo" width="201px"/>
   </widget>
   <widget actionPerformed="button2ActionPerformed" icon="gear.png" name="button2" parent="panel" prefHeight="23px" prefWidth="140px" text="Настроить" toolTipText="" type="ButtonDesignInfo">
-    <constraints height="23px" right="10px" top="60px" type="MarginConstraintsDesignInfo" width="140px"/>
+    <constraints height="23px" right="12px" top="35px" type="MarginConstraintsDesignInfo" width="140px"/>
   </widget>
   <widget name="label1" parent="panel" prefHeight="14px" prefWidth="90px" text="Всего файлов:" type="LabelDesignInfo">
-    <constraints bottom="118px" height="14px" left="10px" type="MarginConstraintsDesignInfo" width="90px"/>
+    <constraints height="14px" left="10px" top="256px" type="MarginConstraintsDesignInfo" width="90px"/>
   </widget>
   <widget name="lblFileAmount" parent="panel" prefHeight="14px" prefWidth="150px" text="0" type="LabelDesignInfo">
-    <constraints bottom="118px" height="14px" left="100px" type="MarginConstraintsDesignInfo" width="150px"/>
+    <constraints height="14px" left="100px" top="256px" type="MarginConstraintsDesignInfo" width="150px"/>
+  </widget>
+  <widget name="mcbNew" parent="panel" prefHeight="25px" prefWidth="216px" text="Создавать новые" type="DbCheckDesignInfo">
+    <datamodelElement entityId="-1" fieldName="parNew"/>
+    <constraints height="25px" left="12px" top="288px" type="MarginConstraintsDesignInfo" width="216px"/>
+  </widget>
+  <widget name="mcbExist" parent="panel" prefHeight="25px" prefWidth="216px" text="Обновлять существующие" type="DbCheckDesignInfo">
+    <datamodelElement entityId="-1" fieldName="parOld"/>
+    <constraints height="25px" left="12px" top="315px" type="MarginConstraintsDesignInfo" width="216px"/>
   </widget>
   <widget name="panel1" parent="jTabbedPane" prefHeight="412px" prefWidth="440px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>

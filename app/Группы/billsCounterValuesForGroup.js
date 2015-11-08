@@ -1,5 +1,6 @@
 /**
  * 
+ * @name billsCounterValuesForGroup
  * @author TSG
  */
 function billsCounterValuesForGroup() {

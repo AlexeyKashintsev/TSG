@@ -24,4 +24,20 @@ function formSaldoHistory() {
         self.model.save();
     }//GEN-LAST:event_btnSaveActionPerformed
     paramSynchronizer.addListener(this);
+
+    function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
+        var comment = prompt('Укажите комментарий к операции');
+        if (comment) {
+            var ssm = new ServerModule('SaldoAndSumsModule');
+            var res = ssm.moveSaldo(model.dsSaldo.cursor.lc_id, model.dsSaldo.cursor.date_id, model.dsSaldo.cursor.account_id, comment);
+            if (res != 0)
+                alert(res);
+            else {
+                alert('Завершено');
+                model.requery();
+            }
+        }
+        
+        
+    }//GEN-LAST:event_buttonActionPerformed
 }

@@ -7,6 +7,6 @@
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="13" entityWidth="150"/>
   <entity Name="dsRowLength" Title="Количество ячеек в строке" entityHeight="66" entityIconified="false" entityId="136139083464176" entityLocationX="243" entityLocationY="15" entityWidth="150" queryId="Количество_ячеек_в_строке" tableName="" tableSchemaName=""/>
   <entity Name="dsExcelFields" Title="Импорт из таблицы все поля" entityHeight="200" entityIconified="false" entityId="138100873888468" entityLocationX="243" entityLocationY="88" entityWidth="150" queryId="importFields" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parImportType" rightEntityId="136139083464176" rightEntityParameterName="importType"/>
   <relation leftEntityId="-1" leftEntityParameterName="parImportType" rightEntityId="138100873888468" rightEntityParameterName="impFileType"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parImportType" rightEntityId="136139083464176" rightEntityParameterName="importType"/>
 </datamodel>

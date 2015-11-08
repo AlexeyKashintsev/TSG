@@ -56,18 +56,18 @@ function CalculatePeni() {
             if (sumOfDebt > 0) {
                 var dates = setCalcPaymentPeriod(aDateID, prevDate);
                 var lastDate = dates.peniDate;
-                model.dsPayments.beforeFirst();
-                while (model.dsPayments.next()) {
-                    var diff = daysBetween(lastDate, model.dsPayments.payment_date);
-                    if (diff <= 0){
-                        sumOfDebt -= model.dsPayments.payment_sum;
-                    } else {
-                        curPeni += sumOfDebt * diff * SRF;
-                        sumOfDebt -= model.dsPayments.payment_sum;
-                        lastDate = model.dsPayments.payment_date;
-                    };
-                    if (sumOfDebt <= 0) break;
-                }
+                model.dsPayments.forEach(function(cursor) {
+                    if (sumOfDebt > 0) {
+                        var diff = daysBetween(lastDate, model.dsPayments.payment_date);
+                        if (diff <= 0){
+                            sumOfDebt -= model.dsPayments.payment_sum;
+                        } else {
+                            curPeni += sumOfDebt * diff * SRF;
+                            sumOfDebt -= model.dsPayments.payment_sum;
+                            lastDate = model.dsPayments.payment_date;
+                        };
+                    }
+                });
                 if (sumOfDebt > 0) {
                     diff = daysBetween(lastDate, dates.end);
                     curPeni += sumOfDebt * diff * SRF;

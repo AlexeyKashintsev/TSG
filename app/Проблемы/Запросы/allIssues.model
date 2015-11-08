@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="completed" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="16" typeName="BOOLEAN"/>
+  </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142260431373416" entityLocationX="708" entityLocationY="6" entityWidth="150" tableAlias="t3" tableName="lc_flat" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142260423834359" entityLocationX="183" entityLocationY="7" entityWidth="150" tableAlias="t1" tableName="adm_issues" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142260430168710" entityLocationX="540" entityLocationY="6" entityWidth="150" tableAlias="t2" tableName="grp_groups" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142260426612596" entityLocationX="370" entityLocationY="8" entityWidth="150" tableAlias="t" tableName="adm_issues_types" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142260577534399" entityLocationX="180" entityLocationY="215" entityWidth="150" tableAlias="t4" tableName="per_date" tableSchemaName=""/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="142260423834359" rightEntityFieldName="lc_flat_id" rightEntityId="142260431373416"/>
-  <relation leftEntityFieldName="group_id" leftEntityId="142260423834359" rightEntityFieldName="grp_groups_id" rightEntityId="142260430168710"/>
-  <relation leftEntityFieldName="date_id" leftEntityId="142260423834359" rightEntityFieldName="per_date_id" rightEntityId="142260577534399"/>
+  <relation leftEntityId="-1" leftEntityParameterName="completed" rightEntityFieldName="completed" rightEntityId="142260423834359"/>
   <relation leftEntityFieldName="type_issues" leftEntityId="142260423834359" rightEntityFieldName="adm_issues_types_id" rightEntityId="142260426612596"/>
+  <relation leftEntityFieldName="group_id" leftEntityId="142260423834359" rightEntityFieldName="grp_groups_id" rightEntityId="142260430168710"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="142260423834359" rightEntityFieldName="lc_flat_id" rightEntityId="142260431373416"/>
+  <relation leftEntityFieldName="date_id" leftEntityId="142260423834359" rightEntityFieldName="per_date_id" rightEntityId="142260577534399"/>
 </datamodel>

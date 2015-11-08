@@ -4,12 +4,9 @@
     <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="3" typeName="DECIMAL"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="dsCountersValues" Title="Значение счетчиков в квартире" entityHeight="200" entityIconified="false" entityId="138219810221602" entityLocationX="412" entityLocationY="15" entityWidth="150" queryId="counters_values_by_flat" tableName="" tableSchemaName=""/>
+  <entity Name="qSaldoMove" Title="" entityHeight="200" entityIconified="false" entityId="144628690866304" entityLocationX="384" entityLocationY="13" entityWidth="150" queryId="qSaldoMove" tableName="" tableSchemaName=""/>
   <entity Name="prcSumsCreate" Title="Создание начислений" entityHeight="78" entityIconified="false" entityId="138488631016470" entityLocationX="611" entityLocationY="18" entityWidth="150" queryId="sums_4create" tableName="" tableSchemaName=""/>
-  <entity Name="dsOplById" Title="Оплата по ID" entityHeight="217" entityIconified="false" entityId="138705480359130" entityLocationX="611" entityLocationY="106" entityWidth="150" queryId="dsOplById" tableName="" tableSchemaName=""/>
   <entity Name="dsSaldo" Title="Сальдо по квартире" entityHeight="336" entityIconified="false" entityId="138219364939274" entityLocationX="208" entityLocationY="12" entityWidth="150" queryId="saldo_by_flat" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138219364939274" rightEntityParameterName="date_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138219810221602" rightEntityParameterName="date_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138219364939274" rightEntityParameterName="flat_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="138219810221602" rightEntityParameterName="flat_id"/>
+  <entity Name="dsOplById" Title="Оплата по ID" entityHeight="217" entityIconified="false" entityId="138705480359130" entityLocationX="611" entityLocationY="106" entityWidth="150" queryId="dsOplById" tableName="" tableSchemaName=""/>
+  <referenceRelation leftEntityFieldName="psf_id" leftEntityId="144628690866304" rightEntityFieldName="per_saldo_flat_id" rightEntityId="138219364939274"/>
 </datamodel>

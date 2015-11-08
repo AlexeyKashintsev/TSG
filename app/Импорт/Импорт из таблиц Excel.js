@@ -8,7 +8,7 @@
 function ImportFromFiles() {
 
 
-var self = this;
+var self = this, model = self.model, form = self;
 
 
 var IMPORT_MODULE = "modImport";
@@ -101,11 +101,24 @@ function buttonStartImportActionPerformed(evt) {//GEN-FIRST:event_buttonStartImp
     if (impmod==null) impmod = new ServerModule(IMPORT_MODULE);
     (function (){
         impmod.stop = false;
-        var er = impmod.initializeImport(self.parImport, self.parGroup,
-                                        self.parDate, self.parSession, selectedFile, self.LogOutText,
-                                        self.jProgressBar, self.labelFileCounter);
+        var impSettings = {
+            importType: self.parImport,
+            group: self.parGroup,
+            impDate: self.parDate,
+            impSession: self.parSession,
+            impAccount: self.parAccount,
+            files: selectedFile,
+            addNew: model.params.parNew,
+            processExist: model.params.parOld
+        };
+        var interface = {
+            logOut: form.LogOutText,
+            progress: form.jProgressBar,
+            fileCounter: form.labelFileCounter
+        };
+        var er = impmod.initializeImport(impSettings, interface);
         if (er!=null)
-            alert(er, er=="ok"?"Импорт завершен":"Ошибка импорта");
+            alert(er, er=="ok" ? "Импорт завершен" : "Ошибка импорта");
     }).invokeBackground();
 }//GEN-LAST:event_buttonStartImportActionPerformed
 
@@ -136,4 +149,8 @@ function dbcImportType11SelectValue(aEditor) {//GEN-FIRST:event_dbcImportType11S
     function dbcImportType111SelectValue(aEditor) {//GEN-FIRST:event_dbcImportType111SelectValue
         // TODO Добавьте свой код:
     }//GEN-LAST:event_dbcImportType111SelectValue
+
+    function dbcImportType1111SelectValue(aEditor) {//GEN-FIRST:event_dbcImportType1111SelectValue
+        // TODO Добавьте свой код:
+    }//GEN-LAST:event_dbcImportType1111SelectValue
 }

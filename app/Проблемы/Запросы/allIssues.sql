@@ -15,4 +15,5 @@ From adm_issues t1
  Inner Join grp_groups t2 on t1.group_id = t2.grp_groups_id
  Inner Join lc_flat t3 on t1.lc_id = t3.lc_flat_id
  Inner Join per_date t4 on t1.date_id = t4.per_date_id
+where (:completed <> t1.completed or completed is null)
 order by grp_name,lc_flat_id

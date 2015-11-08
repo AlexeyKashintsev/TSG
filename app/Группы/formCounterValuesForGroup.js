@@ -1,5 +1,6 @@
 /**
  * 
+ * @name formCounterValuesForGroup
  * @author TSG
  */
 function formCounterValuesForGroup() {

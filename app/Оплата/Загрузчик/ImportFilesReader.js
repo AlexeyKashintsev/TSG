@@ -70,9 +70,9 @@ function ImportReadProcessor() {
         
         var allStat = processor.getFullStat();
         
-        allStat.allCount
-        allStat.allSum
-        allStat.allErrors
+//        allStat.allCount
+//        allStat.allSum
+//        allStat.allErrors
         
         addLog( "\n*** Результат импорта: ***" +
                 "\nЗаписей прочитано: " + allStat.allCount + 

@@ -167,10 +167,11 @@ function ImportFields(){
  * @returns {String}
  * to do: убрать aGroup из передачи в другие функции, почистить все. Заменить aGroup на parGroup - где нужно вставлять его
  */
-self.initializeImport = function(anImportType, aGroup, aDate, aPaySession, aFiles, aLogOut, aProgress, aFileCount, aErFileName){
-    if(anImportType==null||aGroup==null||aFiles==null)
+        
+self.initializeImport = function(aSettings, anInterface) {//anImportType, aGroup, aDate, aPaySession, anAccount, aFiles, aLogOut, aProgress, aFileCount, aErFileName){
+    if(aSettings.importType==null||aSettings.group==null||aSettings.files==null)
         return "Error null parameter";
-    logOutTextField = aLogOut;
+    logOutTextField = anInterface.logOut;
     if (logOutTextField!=null)
     var startTime = new Date();
     try{
@@ -180,12 +181,15 @@ self.initializeImport = function(anImportType, aGroup, aDate, aPaySession, aFile
             //инициализация модулей
         }
         catch (e) {alert('!'+e)}
-        self.parImportType = anImportType;
-        parDate = aDate;
-        parOplSession = aPaySession;
-        impFields = new ImportFields(anImportType);
-        progressInd = aProgress;
-        filesCounter = aFileCount;
+        self.parImportType = aSettings.importType;
+        parDate = aSettings.impDate;
+        parOplSession = aSettings.impSession;
+        parAccount = aSettings.impAccount;
+        parDoNew = aSettings.addNew;
+        parDoExist = aSettings.processExist;
+        impFields = new ImportFields(aSettings.importType);
+        progressInd = anInterface.progress;
+        filesCounter = anInterface.fileCounter;
         errorRecAdded = false;
       /* отбаботка ошибочных записей
        *   if (impFields.impType == 2){
@@ -194,19 +198,19 @@ self.initializeImport = function(anImportType, aGroup, aDate, aPaySession, aFile
         }*/
         
         
-        var path = aFiles.path;
-        if (aFiles.isDirectory()){
+        var path = aSettings.files.path;
+        if (aSettings.files.isDirectory()){
             addLog('\nИмпорт файлов из директории: '+path);
-            importFromFiles(aFiles, aGroup)
+            importFromFiles(aSettings.files, aSettings.group);
         }
         else {
             addLog('\nИмпорт одного файла');
             setProcessedCount( 1, 1, path);
-            importFromSingleFile(path, aGroup);
+            importFromSingleFile(path, aSettings.group);
         }
         if (errorRecAdded) {
             addLog("\nСохранение ошибок в файл...");
-            errorRecordModule.saveErFile(aErFileName.path);
+//            errorRecordModule.saveErFile(aErFileName.path);
             addLog("Завершено\nУдаление ошибок из таблиц");
             importModuleAddresses.deleteErrors();
         }
@@ -314,60 +318,62 @@ function readRow(aRowAr, aGroup){
     var LC_FLAT_NUM = getCellValue(aRowAr.cells[impFields.LC_FLAT_NUMBER]);
     var LC_NUM = getCellValue(aRowAr.cells[impFields.LC_NUMBER]);
     var REG_CNT = getCellValue(aRowAr.cells[impFields.LC_REG_CNT]);
-    Logger.info('317');
+    Logger.finest('317');
     var LC_ID = modLC.getLcID(FIO, LC_FLAT_NUM, REG_CNT, LC_NUM);
     var servModifiers = {};
-    if (!LC_ID) {
-        LC_ID = modLC.addNewLC(FIO, LC_FLAT_NUM, REG_CNT, LC_NUM);
-        modLC.addFlat2Group(LC_ID, aGroup);
-    
-        var group_modifiers = [];
-        for (var i in impFields.GROUP_MODIFIER){
-            if (getCellValue(aRowAr.cells[impFields.GROUP_MODIFIER[i].CellNumber]))
-                group_modifiers[group_modifiers.length] = impFields.GROUP_MODIFIER[i].GroupID;
+    if (LC_ID && parDoExist || !LC_ID && parDoNew) {
+        if (!LC_ID) {
+            LC_ID = modLC.addNewLC(FIO, LC_FLAT_NUM, REG_CNT, LC_NUM);
+            modLC.addFlat2Group(LC_ID, aGroup);
+
+            var group_modifiers = [];
+            for (var i in impFields.GROUP_MODIFIER){
+                if (getCellValue(aRowAr.cells[impFields.GROUP_MODIFIER[i].CellNumber]))
+                    group_modifiers[group_modifiers.length] = impFields.GROUP_MODIFIER[i].GroupID;
+            }
+            servModifiers = modLC.addFlat2Modifiers(LC_ID, group_modifiers);
         }
-        servModifiers = modLC.addFlat2Modifiers(LC_ID, group_modifiers);
+        Logger.finest('330');
+        var SALDO_BEG = getCellValue(aRowAr.cells[impFields.SALDO_BEG]);
+        Logger.finest('saldoBegValue: ' + SALDO_BEG)
+        modSN.initBegSaldo(LC_ID, parDate, parAccount, SALDO_BEG?SALDO_BEG:null);
+        Logger.finest('333');
+        var PENALTIES_CUR = getCellValue(aRowAr.cells[impFields.PENALTIES_CUR]);
+        modSN.addPenalties(LC_ID, parDate, parAccount, PENALTIES_CUR, null);
+        Logger.finest('336');
+        var OPL_DATE = getCellValue(aRowAr.cells[impFields.PAYMENT_DATE]);
+        var OPL_SUM = getCellValue(aRowAr.cells[impFields.PAYMENT_SUM]);
+        if (OPL_SUM)
+            modSN.addOplata(LC_ID, parOplSession, parDate, OPL_SUM, OPL_DATE?OPL_DATE:new Date(), 'Импорт');
+
+        var counterValues = {};
+        Logger.finest('343');
+        for (i in impFields.LC_CHARS){
+            var ch_val = getCellValue(aRowAr.cells[impFields.LC_CHARS[i].CellNumber]);
+            if (ch_val) modLC.addCharToLC(LC_ID, impFields.LC_CHARS[i].CHAR_ID, ch_val);
+        }
+        Logger.finest('348');
+        for (i in impFields.COUNTERS_BEG){
+            counterValues[impFields.COUNTERS_BEG[i].SERVICE_COUNTER_ID] = {};
+            counterValues[impFields.COUNTERS_BEG[i].SERVICE_COUNTER_ID].begv = getCellValue(aRowAr.cells[impFields.COUNTERS_BEG[i].CellNumber]);
+        }
+        Logger.finest('353');
+        for (i in impFields.COUNTERS_END){
+            counterValues[impFields.COUNTERS_END[i].SERVICE_COUNTER_ID].endv = getCellValue(aRowAr.cells[impFields.COUNTERS_END[i].CellNumber]);
+        }
+        Logger.finest('357');
+        for (var service_counter in counterValues) {
+            if (counterValues[service_counter].begv)
+            modSN.insertCounterValue(LC_ID, servModifiers[service_counter]?servModifiers[service_counter]:service_counter, parDate, 
+                                        counterValues[service_counter].begv, 
+                                        counterValues[service_counter].endv);
+        }
+
+        for (i = 0; i < impFields.BINEFICIARIES; i++){
+            // Дописать код добавления льготников
+        }
+        modLC.saveChanges();
     }
-    Logger.info('330');
-    var SALDO_BEG = getCellValue(aRowAr.cells[impFields.SALDO_BEG]);
-    Logger.info('saldoBegValue: ' + SALDO_BEG)
-    modSN.initBegSaldo(LC_ID, parDate, SALDO_BEG?SALDO_BEG:null);
-    Logger.info('333');
-    var PENALTIES_CUR = getCellValue(aRowAr.cells[impFields.PENALTIES_CUR]);
-    modSN.addPenalties(LC_ID, parDate, PENALTIES_CUR, null);
-    Logger.info('336');
-    var OPL_DATE = getCellValue(aRowAr.cells[impFields.PAYMENT_DATE]);
-    var OPL_SUM = getCellValue(aRowAr.cells[impFields.PAYMENT_SUM]);
-    if (OPL_SUM)
-        modSN.addOplata(LC_ID, parOplSession, parDate, OPL_SUM, OPL_DATE?OPL_DATE:new Date(), 'Импорт');
-    
-    var counterValues = {};
-    Logger.info('343');
-    for (i in impFields.LC_CHARS){
-        var ch_val = getCellValue(aRowAr.cells[impFields.LC_CHARS[i].CellNumber]);
-        if (ch_val) modLC.addCharToLC(LC_ID, impFields.LC_CHARS[i].CHAR_ID, ch_val);
-    }
-    Logger.info('348');
-    for (i in impFields.COUNTERS_BEG){
-        counterValues[impFields.COUNTERS_BEG[i].SERVICE_COUNTER_ID] = {};
-        counterValues[impFields.COUNTERS_BEG[i].SERVICE_COUNTER_ID].begv = getCellValue(aRowAr.cells[impFields.COUNTERS_BEG[i].CellNumber]);
-    }
-    Logger.info('353');
-    for (i in impFields.COUNTERS_END){
-        counterValues[impFields.COUNTERS_END[i].SERVICE_COUNTER_ID].endv = getCellValue(aRowAr.cells[impFields.COUNTERS_END[i].CellNumber]);
-    }
-    Logger.info('357');
-    for (var service_counter in counterValues) {
-        if (counterValues[service_counter].begv)
-        modSN.insertCounterValue(LC_ID, servModifiers[service_counter]?servModifiers[service_counter]:service_counter, parDate, 
-                                    counterValues[service_counter].begv, 
-                                    counterValues[service_counter].endv);
-    }
-    
-    for (i = 0; i < impFields.BINEFICIARIES; i++){
-        // Дописать код добавления льготников
-    }
-    modLC.saveChanges();
 }
 
 //****************************************************************Импорт данных******************************************************
@@ -378,15 +384,16 @@ function checkRow(aRowAr){
 
 function checkRequiredFields(aRowAr){
     var res = true;
-    self.dsExcelFields.beforeFirst();
-    while (self.dsExcelFields.next()&&res)
-        try {
-            if (self.dsExcelFields.isrequired&&aRowAr[self.dsExcelFields.cellnumber-1]==null)
+    self.dsExcelFields.forEach(function(cursor) {
+        if (res)
+            try {
+                if (self.dsExcelFields.isrequired && aRowAr[self.dsExcelFields.cellnumber-1] === null)
+                    res = false;
+            } catch(e) {
                 res = false;
-        } catch(e) {
-            res = false;
-            addErrorLog('\n '+': Ошибка чтения ячейки '+self.dsExcelFields.cellnumber+': '+e);
-        }
+                addErrorLog('\n '+': Ошибка чтения ячейки '+self.dsExcelFields.cellnumber+': '+e);
+            }
+    });        
     return res;
 }
 

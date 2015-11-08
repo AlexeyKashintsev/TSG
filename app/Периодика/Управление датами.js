@@ -25,6 +25,14 @@ function DateModule() {
         self.all_dates.prev();
         return self.all_dates.per_date_id;
     };
+    
+    self.nextDate = function(aDateID) {
+        self.all_dates.scrollTo(self.all_dates.findById(aDateID));
+        if (self.all_dates.next())
+            return self.all_dates.per_date_id;
+        else
+            return false;                
+    };
 
     self.getLastDate = function() {
         self.model.all_dates.last();

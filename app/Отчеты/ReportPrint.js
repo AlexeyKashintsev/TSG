@@ -23,7 +23,6 @@ function ReportPrint() {
                     flatsCount = model.flats_by_group.length - model.params.flatFrom + 1;
                 if(model.params.flatTo === null && model.params.flatFrom === null)
                     flatsCount = model.flats_by_group.length;
-                model.flats_by_group.beforeFirst();
                 if (confirm('Вы собираетесь открыть '+ flatsCount +' файлов'))
                     model.flats_by_group.forEach(function(flat) {
                         if ((!model.params.flatFrom && !model.params.flatTo) || 
