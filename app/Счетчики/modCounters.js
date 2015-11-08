@@ -49,10 +49,12 @@ function CountersModule() {
     self.getCounterInFlat = function(aFlatID, aServiceCounterID, anAccountID) {
         //checkModified();
         model.dsCountersByFlat.params.flat_id = aFlatID;
-        model.dsCountersByFlat.params.account_id = anAccountID;
+        model.dsCountersByFlat.params.account_id = anAccountID ? anAccountID : null;
         model.dsCountersByFlat.execute();
         try {
-            return model.dsCountersByFlat.find(model.dsCountersByFlat.schema.group_counter, aServiceCounterID)[0].counter_id;
+            var tmpCounter = model.dsCountersByFlat.find(model.dsCountersByFlat.schema.group_counter, aServiceCounterID);
+            tmpCounter = tmpCounter.length ? tmpCounter : model.dsCountersByFlat.find(model.dsCountersByFlat.schema.services_id, aServiceCounterID);
+            return tmpCounter[0].counter_id;
         } catch (e) {
             /* var cnt = addNewCounter();
              var fs = getFlatService(aFlatID, aServiceCounterID);
@@ -65,12 +67,13 @@ function CountersModule() {
 
 
 
-    self.setCounterValueByLCAndServiceCounter = function(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue) {
+    self.setCounterValueByLCAndServiceCounter = function(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue, anAccount) {
         var counter = getCounterInFlat(aLC_ID, aServiceID);
+        if (counter)
         setCounterValueByCounterValueID(counter, aDateID, aBegValue, aEndValue);
     };
 
-    self.setCounterValueByCounterValueID = function(aCounterID, aDateID, aBegValue, aEndValue) {
+    self.setCounterValueByCounterValueID = function(aCounterID, aDateID, aBegValue, aEndValue, anAccount) {
         model.dsCountersValues.params.counterID = aCounterID;
         model.dsCountersValues.params.dateID = aDateID;
         model.dsCountersValues.execute();
@@ -80,8 +83,9 @@ function CountersModule() {
                     beg_val: aBegValue,
                     end_val: (aEndValue ? aEndValue : aBegValue)});
         } else {
-            model.dsCountersValues.beg_val = aBegValue;
-            model.dsCountersValues.end_val = aEndValue;
+            if (aBegValue !== null)
+                model.dsCountersValues.beg_val = +aBegValue;
+            model.dsCountersValues.end_val = +aEndValue;
         }
         model.save();
         return true;

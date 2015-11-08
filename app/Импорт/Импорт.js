@@ -32,7 +32,7 @@ var multithreads = false;
 var stop = false;
 
 var wb = null;
-var evalutor = null;
+var evaluator = null;
 var saveThreads = 0;
 
 var modLC = new ServerModule('LCModule');

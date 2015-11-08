@@ -72,7 +72,8 @@ function buttonStartImportActionPerformed(evt) {//GEN-FIRST:event_buttonStartImp
     if (impmod==null) impmod = new ServerModule(IMPORT_MODULE);
     (function (){
         impmod.stop = false;
-        var er = impmod.startImport(selectedFile, self.LogOutText
+        var er = impmod.startImport(selectedFile, model.params.import_module
+                                    , self.LogOutText
                                     , self.jProgressBar, self.labelFileCounter
                                     , sessionId, dateId, model.params.account_id
                                     , self.ffBankPercent.value);

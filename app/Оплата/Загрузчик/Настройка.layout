@@ -2,24 +2,24 @@
   <widget name="jTabbedPane" parent="Form" prefHeight="458px" prefWidth="461px" type="TabsDesignInfo">
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="panel" parent="jTabbedPane" prefHeight="412px" prefWidth="440px" type="PanelDesignInfo">
+  <widget name="panel" parent="jTabbedPane" prefHeight="430px" prefWidth="456px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Настройка" type="TabsConstraintsDesignInfo"/>
   </widget>
   <widget name="jLabel4" parent="panel" prefHeight="14px" prefWidth="254px" text="Наименование импорта:" type="LabelDesignInfo">
     <constraints height="14px" left="10px" top="10px" type="MarginConstraintsDesignInfo" width="254px"/>
   </widget>
-  <widget backgroundColor="#f0f0f0" enabled="false" focusable="false" foregroundColor="#000000" name="dbcImportType" parent="panel" prefHeight="20px" prefWidth="422px" selectFunction="dbcImportTypeSelectValue" type="DbComboDesignInfo">
-    <valueField entityId="137727381929816" fieldName="importnames_id"/>
-    <displayField entityId="137727381929816" fieldName="importname"/>
-    <datamodelElement entityId="-1" fieldName="parImport"/>
+  <widget backgroundColor="#f0f0f0" enabled="false" focusable="false" foregroundColor="#000000" name="dbcImportType" parent="panel" prefHeight="20px" prefWidth="438px" selectFunction="dbcImportTypeSelectValue" type="DbComboDesignInfo">
+    <valueField entityId="144698509761008" fieldName="reader_module_name"/>
+    <displayField entityId="144698509761008" fieldName="source_name"/>
+    <datamodelElement entityId="-1" fieldName="import_module"/>
     <constraints height="20px" left="10px" right="8px" top="30px" type="MarginConstraintsDesignInfo"/>
     <easFont name="Tahoma" size="11" style="1"/>
   </widget>
   <widget name="label" parent="panel" prefHeight="14px" prefWidth="380px" text="Файл/каталог с импортируемыми данными:" type="LabelDesignInfo">
     <constraints height="14px" left="12px" top="96px" type="MarginConstraintsDesignInfo" width="380px"/>
   </widget>
-  <widget backgroundColor="#f0f0f0" editable="false" horizontalAlignment="0" name="textFieldFilePath" parent="panel" prefHeight="20px" prefWidth="422px" text="Не выбран" toolTipText="" type="TextFieldDesignInfo">
+  <widget backgroundColor="#f0f0f0" editable="false" horizontalAlignment="0" name="textFieldFilePath" parent="panel" prefHeight="20px" prefWidth="438px" text="Не выбран" toolTipText="" type="TextFieldDesignInfo">
     <constraints height="20px" left="12px" right="6px" top="120px" type="MarginConstraintsDesignInfo"/>
     <easFont name="Tahoma" size="11" style="1"/>
   </widget>
@@ -44,17 +44,17 @@
   <widget name="label2" parent="panel" prefHeight="16px" prefWidth="132px" text="Процент банка" type="LabelDesignInfo">
     <constraints height="16px" left="12px" top="192px" type="MarginConstraintsDesignInfo" width="132px"/>
   </widget>
-  <widget name="panel1" parent="jTabbedPane" prefHeight="412px" prefWidth="440px" type="PanelDesignInfo" visible="false">
+  <widget name="panel1" parent="jTabbedPane" prefHeight="430px" prefWidth="456px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Импорт" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="jProgressBar" parent="panel1" prefHeight="14px" prefWidth="399px" type="ProgressBarDesignInfo">
+  <widget name="jProgressBar" parent="panel1" prefHeight="14px" prefWidth="415px" type="ProgressBarDesignInfo">
     <constraints height="14px" left="10px" right="31px" top="30px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="jLabel41" parent="panel1" prefHeight="14px" prefWidth="100px" text="Текущий файл:" type="LabelDesignInfo">
     <constraints height="14px" left="10px" top="10px" type="MarginConstraintsDesignInfo" width="100px"/>
   </widget>
-  <widget name="labelFileCounter" parent="panel1" prefHeight="12px" prefWidth="294px" text="0 из 0" type="LabelDesignInfo">
+  <widget name="labelFileCounter" parent="panel1" prefHeight="12px" prefWidth="310px" text="0 из 0" type="LabelDesignInfo">
     <constraints height="12px" left="110px" right="36px" top="12px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="button4ActionPerformed" icon="information-button.png" name="button4" parent="panel1" prefHeight="22px" prefWidth="22px" toolTipText="Подробно" type="ButtonDesignInfo">
@@ -63,9 +63,9 @@
   <widget actionPerformed="button5ActionPerformed" icon="cross.png" name="button5" parent="panel1" prefHeight="22px" prefWidth="22px" type="ButtonDesignInfo">
     <constraints height="22px" right="1px" top="25px" type="MarginConstraintsDesignInfo" width="22px"/>
   </widget>
-  <widget name="scrollPane" parent="panel1" prefHeight="368px" prefWidth="440px" toolTipText="" type="ScrollDesignInfo">
+  <widget name="scrollPane" parent="panel1" prefHeight="386px" prefWidth="456px" toolTipText="" type="ScrollDesignInfo">
     <constraints bottom="-4px" left="0px" right="0px" top="48px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="LogOutText" parent="scrollPane" prefHeight="364px" prefWidth="436px" type="TextPaneDesignInfo"/>
+  <widget name="LogOutText" parent="scrollPane" prefHeight="384px" prefWidth="454px" type="TextPaneDesignInfo"/>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

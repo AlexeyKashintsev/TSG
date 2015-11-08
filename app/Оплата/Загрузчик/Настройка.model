@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parameters>
     <parameter description="" name="account_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="import_module" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="100" type="12" typeName="VARCHAR"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150" onAfterChange="rowChanged"/>
   <entity Name="dsAllAccounts" Title="" entityHeight="200" entityIconified="false" entityId="142951236282940" entityLocationX="215" entityLocationY="22" entityWidth="150" queryId="dsAllAccounts" tableName="" tableSchemaName=""/>
+  <entity Name="qOplSources" Title="" entityHeight="200" entityIconified="false" entityId="144698509761008" entityLocationX="438" entityLocationY="44" entityWidth="150" queryId="qOplSources" tableName="" tableSchemaName=""/>
 </datamodel>

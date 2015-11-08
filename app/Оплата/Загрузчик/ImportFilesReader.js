@@ -11,6 +11,7 @@ function ImportReadProcessor() {
     var errCount = 0, stop = false;
     var MAX_ERRORS_PER_LIST = 100;
     var recCount = 0;
+    var reader;
     
     function addLog(aMsg) {
         Logger.info(aMsg);
@@ -47,9 +48,10 @@ function ImportReadProcessor() {
         }).invokeAndWait();
     }
 
-    self.startImport = function(aFiles, aLogOut, aProgress, aFileCount, aSessionId,
+    self.startImport = function(aFiles, aReaderModule, aLogOut, aProgress, aFileCount, aSessionId,
                                 aDateId, anAccountId, aBankPercent) {
         var path = aFiles.path;
+        reader = new Module(aReaderModule);
         processor.setParams(aSessionId, aDateId, anAccountId, aBankPercent);
         
         progressInd = aProgress;
@@ -103,7 +105,7 @@ function ImportReadProcessor() {
     }
 
     function importFromSingleFile(aFileName) {
-        var reader = new ImportSberReader();
+//        var reader = new ImportSberReader();
         if (checkExtension(aFileName, reader)) {
             //addLog("\nИмпорт из файла: " + aFileName);
             try {

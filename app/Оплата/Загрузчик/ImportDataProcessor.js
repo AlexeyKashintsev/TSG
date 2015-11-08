@@ -7,6 +7,7 @@
 function ImportDataProcessor() {
     var self = this, model = this.model;
     var saldoMod = new SaldoAndSumsModule();
+    var modCounters = new CountersModule();
     var errorRecords = [];
     var allRecords = [];
     var curStat = {
@@ -22,9 +23,10 @@ function ImportDataProcessor() {
     };
     
     function getLCByCode(aCode) {
-        if (aCode.length === 5) {
-            model.dsLCByCode.params.grp_code = aCode[0];
-            model.dsLCByCode.params.flat_code = aCode.substring(1);
+        var code = (aCode).toString();
+        if (code.length === 5) {
+            model.dsLCByCode.params.grp_code = code[0];
+            model.dsLCByCode.params.flat_code = code.substring(1);
             model.dsLCByCode.requery();
             return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
         } else
@@ -62,6 +64,7 @@ function ImportDataProcessor() {
         curStat.readCount = 0;
         curStat.recReadSum = 0;
         curStat.recReadErrors = 0;
+        var hw_service, cw_service;
         
         aDataArray.forEach(function(aRow) {
             var lcid = !!aRow.LC_ID ? aRow.LC_ID : 
@@ -74,6 +77,18 @@ function ImportDataProcessor() {
                                     , aRow.OPL_SUM - aRow.OPL_SUM * bankPercent/100
                                     , aRow.OPL_DATE, aRow.OPL_COMMENT + aImpSpec.REG_NUMBER ? aImpSpec.REG_NUMBER : ''
                                     , bankPercent, aRow.OPL_SUM);
+                if (aRow.CUR_HW) {
+                    if (!hw_service)
+                        hw_service = model.qServiceWithSpecParam.find(model.qServiceWithSpecParam.schema.imp_name, "HW")[0].usl_services_id;
+                    if (hw_service)
+                        modCounters.setCounterValueByLCAndServiceCounter(lcid, hw_service, dateId, null, aRow.CUR_HW);
+                }
+                if (aRow.CUR_CW) {
+                    if (!cw_service)
+                        cw_service = model.qServiceWithSpecParam.find(model.qServiceWithSpecParam.schema.imp_name, "CW")[0].usl_services_id;
+                    if (cw_service)
+                        modCounters.setCounterValueByLCAndServiceCounter(lcid, cw_service, dateId, null, aRow.CUR_CW);
+                }
             } else {
                 errorRecords.push(aRow);
                 curStat.recReadErrors++;
