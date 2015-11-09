@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><outputFields>
+  <field bindedColumn="er_type" sqlType="12"/>
+  <field bindedColumn="service_id" sqlType="2"/>
+  <field bindedColumn="saved_value" sqlType="2"/>
+  <field bindedColumn="lc_id" sqlType="2"/>
+  <field bindedColumn="calculated_value" sqlType="2"/>
+  <field bindedColumn="value_name" sqlType="12"/>
+  <field bindedColumn="date_id" sqlType="2"/>
+</outputFields>

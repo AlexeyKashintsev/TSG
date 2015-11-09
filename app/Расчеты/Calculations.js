@@ -28,6 +28,8 @@ function Calculations() {
     function prepareCalcModule(aGroupID, aFlatID, aDateID) {
         prepared = false;
         try {
+            serverProgress.setFinished(false);
+            serverProgress.setValue(0);
             sums = new Sums();
             model.params.parDateID = aDateID;
             model.params.parFlatID = aFlatID;
@@ -39,7 +41,6 @@ function Calculations() {
             flats = new Flats(aDateID);
             model.dsSums4calc.requery();
             serverProgress.setMax(self.dsSums4calc.length);
-            serverProgress.setValue(0);
             prepared = true;
             return true;
         } catch (e) {
@@ -49,69 +50,141 @@ function Calculations() {
     };
 
     self.calculateValues = function(aGroupID, aFlatID, aDateID) {
+        function applyValues(cursor, values) {
+            for (var j in values)
+                cursor[j] = values[j];
+        }
+        
+        function saveData() {
+            serverProgress.setDescription("Сохранение значений расчета начислений");
+            model.save();
+            saldoClc.calculateFlatSaldo(aGroupID, aFlatID, aDateID);
+        }
         (function() {
-            serverProgress.setDescription("Подготовка");
-            prepareCalcModule(aGroupID, aFlatID, aDateID);
-            serverProgress.setDescription("Расчет начислений");
-            try {
-                if (prepared) {
-                    model.dsSums4calc.forEach(function(cursor) {
-                        //Logger.info("Расчет начисления: " + cursor.per_sums_id);
-                        try {
-                            if (cursor.calc_value_formula)
-                                cursor.calc_value = formulEval.calculate(cursor.calc_value_formula,
-                                        sums.GetSum(cursor.per_sums_id),
-                                        'VALUE');
-                        } catch (e) {
-                            Logger.warning('Ошибка расчета объема PerSumsID: ' + cursor.per_sums_id);
-                        }
-                        try {
-                            cursor.calc = formulEval.calculate(cursor.calc_formula,
-                                    sums.GetSum(cursor.per_sums_id),
-                                    'SCALC');
-                        } catch (e) {
-                            Logger.warning('Ошибка расчета начисления по услуге ' + cursor.services_id + ' в квартире  ' + aFlatID);
-                        }
-                        try {
-                            cursor.benefit = formulEval.calculate('0',
-                                    sums.GetSum(cursor.per_sums_id),
-                                    'BENEFIT');
-                        } catch (e) {
-                            Logger.warning('Ошибка расчета льготы по услуге ' +cursor.services_id + ' в квартире ' + aFlatID);
-                        }
-                        try {
-                            cursor.recalc = formulEval.calculate(cursor.recalc ? 'RECALC' : '0',
-                                    sums.GetSum(cursor.per_sums_id),
-                                    'RECALC');
-                        } catch (e) {
-                            Logger.warning('Ошибка расчета суммы перерасчета по услуге ' +cursor.services_id + ' в квартире  ' + aFlatID);
-                        }
-                        ;
-                        try {
-                            cursor.full_calc = formulEval.calculate('SCALC-BENEFIT-RECALC',
-                                    sums.GetSum(cursor.per_sums_id),
-                                    'FULL_CALC');
-                        } catch (e) {
-                            Logger.warning('Ошибка расчета полного значения по услуге ' +cursor.services_id + ' в квартире  ' + aFlatID);
-                        }
-                            serverProgress.increaseValue(1);
-                    });
-                    serverProgress.setDescription("Сохранение значений расчета начислений");
-                    model.save();
-                    saldoClc.calculateFlatSaldo(aGroupID, aFlatID, aDateID);
-                    return true;
-                } else {
-                    serverProgress.finish();
-
-                    return false;
-                }
-            } catch (e) {
-                Logger.warning(e);
-                return false;
-            }
+            proceedData(aGroupID, aFlatID, aDateID, applyValues, saveData);
         }).invokeBackground();
     };
+    
+    var errors = [];
+    self.getErrors = function() {
+        return errors;
+    };
+    
+    self.doAudit = function(aGroupID, aFlatID, aDateID) {
+        function doCheckValues(cursor, values) {
+            for (var j in values)
+                try {
+                    if ((cursor[j]).toFixed(2) != (values[j]).toFixed(2)) {
+                        var er = {
+                            er_type: "Расчитанное и сохраненное значения не совпадают",
+                            lc_id: cursor.lc_id,
+                            service_id: cursor.services_id,
+                            date_id: cursor.date_id,
+                            value_name: j,
+                            saved_value: cursor[j],
+                            calculated_value: values[j]
+                        };
+                        Logger.warning(er.er_type + ': ' + er.saved_value + ' != ' + er.calculated_value);
+                        errors.push(er);
+                    }
+                } catch (e) {
+                        if (!cursor[j] && values[j] || cursor[j]) {
+                            var er = {
+                                er_type: "Ошибка при сравнении: " + e,
+                                lc_id: cursor.lc_id,
+                                service_id: cursor.services_id,
+                                date_id: cursor.date_id,
+                                value_name: j,
+                                saved_value: cursor[j],
+                                calculated_value: values[j]
+                            };
+                            Logger.warning(er.er_type + ': ' + er.saved_value + ' != ' + er.calculated_value);
+                            errors.push(er);
+                        }
+                }
+        }
+        
+        function endProcess() {
+            saldoClc.doAudit(aGroupID, aFlatID, aDateID);
+            if (saldoClc.getErrors())
+                errors.push(saldoClc.getErrors());
+            serverProgress.finish();
+        }
+        
+        errors = [];
+        
+        (function() {
+            proceedData(aGroupID, aFlatID, aDateID, doCheckValues, endProcess);
+        }).invokeBackground();
+    };
+    
+    function proceedData(aGroupID, aFlatID, aDateID, aProceedFunction, aFinishCallback) {
+ 
+        serverProgress.setDescription("Подготовка");
+        prepareCalcModule(aGroupID, aFlatID, aDateID);
 
+        serverProgress.setDescription("Расчет начислений");
+        try {
+            if (prepared) {
+                model.dsSums4calc.forEach(function(cursor) {
+                    aProceedFunction(cursor, getValues(cursor));
+                    serverProgress.increaseValue(1);
+                });
+                aFinishCallback();
+            } else {
+                serverProgress.finish();
+                return false;
+            }
+        } catch (e) {
+            Logger.warning(e);
+            serverProgress.finish();
+            return false;
+        }
+    }
+    
+    function getValues(data) {
+            //Logger.info("Расчет начисления: " + cursor.per_sums_id);
+        var res = {};
+        try {
+            if (data.calc_value_formula)
+                res.calc_value = formulEval.calculate(data.calc_value_formula,
+                        sums.GetSum(data.per_sums_id),
+                        'VALUE');
+        } catch (e) {
+            Logger.warning('Ошибка расчета объема PerSumsID: ' + data.per_sums_id);
+        }
+        try {
+            res.calc = formulEval.calculate(data.calc_formula,
+                    sums.GetSum(data.per_sums_id),
+                    'SCALC');
+        } catch (e) {
+            Logger.warning('Ошибка расчета начисления по услуге ' + data.services_id + ' в квартире  ' + aFlatID);
+        }
+        try {
+            res.benefit = formulEval.calculate('0',
+                    sums.GetSum(data.per_sums_id),
+                    'BENEFIT');
+        } catch (e) {
+            Logger.warning('Ошибка расчета льготы по услуге ' +data.services_id + ' в квартире ' + aFlatID);
+        }
+        try {
+            res.recalc = formulEval.calculate(data.recalc ? 'RECALC' : '0',
+                    sums.GetSum(data.per_sums_id),
+                    'RECALC');
+        } catch (e) {
+            Logger.warning('Ошибка расчета суммы перерасчета по услуге ' +data.services_id + ' в квартире  ' + aFlatID);
+        }
+        ;
+        try {
+            res.full_calc = formulEval.calculate('SCALC-BENEFIT-RECALC',
+                    sums.GetSum(data.per_sums_id),
+                    'FULL_CALC');
+        } catch (e) {
+            Logger.warning('Ошибка расчета полного значения по услуге ' +data.services_id + ' в квартире  ' + aFlatID);
+        }
+
+        return res;
+    }
     /**
      * 
      * @param {type} aDateID

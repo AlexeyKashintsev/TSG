@@ -8,13 +8,35 @@ function ProgressShow() {
     var serverProgress = new ServerModule('ProgressServer');
     var shown = false;
     
-    self.executeServerProcess = function(aServerFunction) {
+    var executing = false, queue = [];
+    self.enqueServerProcess = function(aServerFunction, aFinishCallback) {
+        if (!executing) {
+            executing = true;
+            self.executeServerProcess(aServerFunction, aFinishCallback);
+        } else {
+            queue.push({
+                aSF: aServerFunction,
+                aFC: aFinishCallback
+            });
+        }
+    };
+    
+    function executeNextProcess() {
+        executing = false;
+        if (queue.length) {
+            var el = queue.shift();
+            self.enqueServerProcess(el.aSF, el.aFC);
+        }            
+    };
+    
+    self.executeServerProcess = function(aServerFunction, aFinishCallback) {
         var robot = new java.awt.Robot();
         (function() {
-            robot.delay(50);
+            //robot.delay(50);
             aServerFunction();
         }).invokeBackground();
         (function() {
+            robot.delay(100);
             var b = true;
             var pd = {};
             while (b) {
@@ -25,6 +47,9 @@ function ProgressShow() {
                         b = false;
                     }
                     shown = false;
+                    if (aFinishCallback)
+                        aFinishCallback();
+                    executeNextProcess();
                 } else {
                     if (!shown)
                     (function() {

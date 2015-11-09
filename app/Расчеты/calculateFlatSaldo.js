@@ -11,6 +11,60 @@ function CalculateFlatSaldo() {
     
     
     self.calculateFlatSaldo = function(aGroupID, aFlatID, aDateID) {
+        proceed(aGroupID, aFlatID, aDateID, function(cursor, values) {
+            for (var j in values)
+                cursor[j] = values[j];
+        });
+    };
+    
+    var errors = [];
+    self.getErrors = function() {
+        return errors;
+    };
+    self.doAudit = function(aGroupID, aFlatID, aDateID) {
+        function doCheckValues(cursor, values) {
+            for (var j in values)
+                try {
+                    if ((cursor[j]).toFixed(2) != (values[j]).toFixed(2)) {
+                        var er = {
+                            er_type: "Расчитанное и сохраненное значения сальдо не совпадают",
+                            lc_id: cursor.lc_id,
+                            service_id: cursor.services_id,
+                            date_id: cursor.date_id,
+                            value_name: j,
+                            saved_value: cursor[j],
+                            calculated_value: values[j]
+                        };
+                        Logger.warning(er.er_type + ': ' + er.saved_value + ' != ' + er.calculated_value);
+                        errors.push(er);
+                    }
+                } catch (e) {
+                        if (!cursor[j] && values[j] || cursor[j]) {
+                            var er = {
+                                er_type: "Ошибка при сравнении: " + e,
+                                lc_id: cursor.lc_id,
+                                service_id: cursor.services_id,
+                                date_id: cursor.date_id,
+                                value_name: j,
+                                saved_value: cursor[j],
+                                calculated_value: values[j]
+                            };
+                            Logger.warning(er.er_type + ': ' + er.saved_value + ' != ' + er.calculated_value);
+                            errors.push(er);
+                        }
+                }
+        }
+        
+        function endProcess() {
+            serverProgress.finish();
+        }
+        
+        errors = [];
+        
+        proceed(aGroupID, aFlatID, aDateID, doCheckValues, endProcess);
+    };
+    
+    function proceed(aGroupID, aFlatID, aDateID, aProceedFunction) {
         model.params.parDateID = aDateID;
         model.params.parFlatID = aFlatID;
         model.params.parGroupID = aGroupID;
@@ -25,73 +79,77 @@ function CalculateFlatSaldo() {
             serverProgress.setDescription("Расчет сальдо по счету "+ cursor.account_name);
             model.dsSaldo4calc.forEach(function(saldo){
                 //Logger.info("Расчет сальдо в квартире: " + self.dsSaldo4calc.cursor.lc_id);                
-                var sc = getSumOfSums(cursor.account_name, saldo.lc_id);
-                var sp = model.dsSumOfPayments.find(model.dsSumOfPayments.schema.flat_id, saldo.lc_id);
-                var peni = model.dsMainGroupByLCWithAccounts.cursor.calculate_peni ?
-                                peniClc.calculate(saldo.lc_id, model.params.parDateID, model.params.parAccountID) :
-                                {
-                                    current  : 0,
-                                    previous : 0,
-                                    saldo    : false
-                                };;
-                var peniOld = peni.previous;
-                var saldoOld = peni.saldo ? peni.saldo : saldo.sal_begin;
-                peni = peni.current;
-                saldo.sal_penalties_old = peniOld;
-
-                if (sp.length == 1)
-                    sp = sp[0];
-                else
-                    sp.pay_sum = 0;
-                saldo.sal_begin = saldoOld;
-                saldo.sal_calc = sc.sal_calc;
-                saldo.sal_benefit = sc.sal_benefit;
-                saldo.sal_recalc = sc.sal_recalc;
-                saldo.sal_full_calc = sc.sal_full_calc;
-                saldo.sal_payments = sp.pay_sum;
-                var endSum = saldo.sal_begin - sp.pay_sum;
-                var peniPay = 0;
-                if (endSum < 0 && peniOld > 0) {
-                    var extra = -endSum;
-                    if (extra >= peniOld) {
-                        extra -= peniOld;
-                        peniPay = peniOld;
-                        peniOld = 0;
-                    } else {
-                        peniOld -= extra;
-                        peniPay = extra;
-                        extra = 0;
-                    }
-                    endSum = -extra;
-                }
-                peni += peniOld;
-                endSum += sc.sal_full_calc;
-                saldo.sal_end = endSum;
-                saldo.sal_penalties_cur = peni;
-                saldo.sal_penalties_pay = peniPay.toFixed(2);
-
+                aProceedFunction(saldo, getValues(cursor, saldo));
                 serverProgress.increaseValue(1);
             });
                 serverProgress.setDescription("Сохранение финальных значений");
             model.save();
         });
-                serverProgress.finish();
+        serverProgress.finish();
     };
-        
-        function getSumOfSums(anAccount, aLCID){
-            var sa;
-//            model.dsSumOfSums.requery();
-            if (model.dsSumOfSums.find(model.dsSumOfSums.schema.lc_id, aLCID).length !== 0)
-                sa = model.dsSumOfSums.find(model.dsSumOfSums.schema.lc_id, aLCID)[0];
-            else {
-                sa = {
-                    sal_calc:       0,
-                    sal_benefit:    0,
-                    sal_recalc:     0,
-                    sal_full_calc:  0
-                };
-                Logger.warning('В расчетном счете "' + anAccount + '" нет начислений!');
+    
+    function getValues(cursor, data) {
+        var res = {};
+        var sc = getSumOfSums(cursor.account_name, data.lc_id);
+        var sp = model.dsSumOfPayments.find(model.dsSumOfPayments.schema.flat_id, data.lc_id);
+        var peni = model.dsMainGroupByLCWithAccounts.cursor.calculate_peni ?
+                        peniClc.calculate(data.lc_id, model.params.parDateID, model.params.parAccountID) :
+                        {
+                            current  : 0,
+                            previous : 0,
+                            saldo    : false
+                        };;
+        var peniOld = peni.previous;
+        var saldoOld = peni.saldo ? peni.saldo : data.sal_begin;
+        peni = peni.current;
+        res.sal_penalties_old = peniOld;
+
+        if (sp.length == 1)
+            sp = sp[0];
+        else
+            sp.pay_sum = 0;
+        res.sal_begin = saldoOld;
+        res.sal_calc = sc.sal_calc;
+        res.sal_benefit = sc.sal_benefit;
+        res.sal_recalc = sc.sal_recalc;
+        res.sal_full_calc = sc.sal_full_calc;
+        res.sal_payments = sp.pay_sum;
+        var endSum = res.sal_begin - sp.pay_sum;
+        var peniPay = 0;
+        if (endSum < 0 && peniOld > 0) {
+            var extra = -endSum;
+            if (extra >= peniOld) {
+                extra -= peniOld;
+                peniPay = peniOld;
+                peniOld = 0;
+            } else {
+                peniOld -= extra;
+                peniPay = extra;
+                extra = 0;
             }
+            endSum = -extra;
+        }
+        peni += peniOld;
+        endSum += sc.sal_full_calc;
+        res.sal_end = endSum;
+        res.sal_penalties_cur = peni;
+        res.sal_penalties_pay = peniPay.toFixed(2);
+    }
+        
+    function getSumOfSums(anAccount, aLCID){
+        var sa;
+//            model.dsSumOfSums.requery();
+        if (model.dsSumOfSums.find(model.dsSumOfSums.schema.lc_id, aLCID).length !== 0)
+            sa = model.dsSumOfSums.find(model.dsSumOfSums.schema.lc_id, aLCID)[0];
+        else {
+            sa = {
+                sal_calc:       0,
+                sal_benefit:    0,
+                sal_recalc:     0,
+                sal_full_calc:  0
+            };
+            Logger.warning('В расчетном счете "' + anAccount + '" нет начислений!');
+        }
         return sa;        
-        };
+    };
 }

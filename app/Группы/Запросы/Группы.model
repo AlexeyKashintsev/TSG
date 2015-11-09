@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="izolation" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="100" type="12" typeName="VARCHAR"/>
+  </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="Группы квартир" entityHeight="200" entityIconified="false" entityId="137484902354976" entityLocationX="196" entityLocationY="12" entityWidth="150" tableAlias="t1" tableName="grp_groups" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="izolation" rightEntityFieldName="usr_context" rightEntityId="137484902354976"/>
 </datamodel>

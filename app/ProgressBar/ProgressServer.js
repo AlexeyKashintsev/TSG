@@ -20,6 +20,10 @@ function ProgressServer() {
         };
     };
     
+    self.setFinished = function(aValue) {
+        finished = aValue;
+    };
+    
     self.setMax = function(aMaxValue) {
         finished = false;
         max = aMaxValue;
