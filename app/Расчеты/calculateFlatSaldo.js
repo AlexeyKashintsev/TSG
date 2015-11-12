@@ -134,6 +134,7 @@ function CalculateFlatSaldo() {
         res.sal_end = endSum;
         res.sal_penalties_cur = peni;
         res.sal_penalties_pay = peniPay.toFixed(2);
+        return res;
     }
         
     function getSumOfSums(anAccount, aLCID){
