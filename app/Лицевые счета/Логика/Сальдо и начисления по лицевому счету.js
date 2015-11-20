@@ -50,6 +50,7 @@ function SaldoAndSumsModule() {
             model.dsSaldo.cursor.sal_begin = aValue;
             Logger.info('Saldo present: ' + aLC_ID + ' value: ' + model.dsSaldo.cursor.sal_begin);
         }
+        model.save();
         return model.dsSaldo.per_saldo_flat_id;
     };
     
