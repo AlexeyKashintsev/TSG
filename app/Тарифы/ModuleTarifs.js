@@ -24,11 +24,12 @@ function TarifsModule() {
         model.servicesIsAbsent.params.parAccountID = aAccountID;
         model.servicesIsAbsent.execute();
         model.servicesIsAbsent.forEach(function(cursor) {
-            model.tarifsInGroup.insert(//self.tarifsInGroup.schema.usl_tarif_id,self.servicesIsAbsent.grp_services_id,
-                    model.tarifsInGroup.schema.services_id, model.servicesIsAbsent.services_id,
-                    model.tarifsInGroup.schema.date_id, aDateID,
-                    model.tarifsInGroup.schema.group_id, aGroupID,
-                    model.tarifsInGroup.schema.account_id, aAccountID);
+            model.tarifsInGroup.push({
+                    services_id: cursor.services_id,
+                    date_id: aDateID,
+                    group_id: aGroupID,
+                    account_id: aAccountID
+                });
         });
         model.save();
     };
