@@ -88,6 +88,7 @@ function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
          self.model.save();
          self.model.requery();
          self.all_dates.last();*/
+    if (confirm('Перейти на новый расчетный период?')) {
         var newDateProcessor = new DateModule();
         clientProgress.executeServerProcess(function(){
             newDateProcessor.newDate(function() {
@@ -96,6 +97,7 @@ function btn_newActionPerformed(evt) {//GEN-FIRST:event_btn_newActionPerformed
                 });
             });
         });
+    }
 }//GEN-LAST:event_btn_newActionPerformed
 
     function btn_confActionPerformed(evt) {//GEN-FIRST:event_btn_confActionPerformed

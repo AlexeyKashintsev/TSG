@@ -5,6 +5,6 @@
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="137478317712293" entityLocationX="11" entityLocationY="235" entityWidth="150" tableName="lc_flat_services"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="144628669382649" entityLocationX="947" entityLocationY="42" entityWidth="150" tableName="per_saldo_move"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="137483460841493" entityLocationX="926" entityLocationY="336" entityWidth="150" tableName="per_date"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137483467089210" entityLocationX="467" entityLocationY="118" entityWidth="150" tableName="lc_flat"/>
-  <fieldsEntity entityHeight="318" entityIconified="false" entityId="137483459015804" entityLocationX="707" entityLocationY="45" entityWidth="150" tableName="per_saldo_flat"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137483467089210" entityLocationX="419" entityLocationY="71" entityWidth="150" tableName="lc_flat"/>
+  <fieldsEntity entityHeight="378" entityIconified="false" entityId="137483459015804" entityLocationX="617" entityLocationY="10" entityWidth="150" tableName="per_saldo_flat"/>
 </datamodel>
