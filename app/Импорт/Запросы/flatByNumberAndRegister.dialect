@@ -1,0 +1,4 @@
+Select * 
+From lc_flat t1
+ Where :regTo ilike t1.lc_regto
+ and :flatNumber ilike t1.lc_flatnumber

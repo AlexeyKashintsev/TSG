@@ -70,7 +70,7 @@ function CountersModule() {
     self.setCounterValueByLCAndServiceCounter = function(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue, anAccount) {
         var counter = getCounterInFlat(aLC_ID, aServiceID);
         if (counter)
-        setCounterValueByCounterValueID(counter, aDateID, aBegValue, aEndValue);
+            setCounterValueByCounterValueID(counter, aDateID, aBegValue, aEndValue);
     };
 
     self.setCounterValueByCounterValueID = function(aCounterID, aDateID, aBegValue, aEndValue, anAccount) {
@@ -83,7 +83,7 @@ function CountersModule() {
                     beg_val: aBegValue,
                     end_val: (aEndValue ? aEndValue : aBegValue)});
         } else {
-            if (aBegValue !== null)
+            if (!!aBegValue)
                 model.dsCountersValues.beg_val = +aBegValue;
             model.dsCountersValues.end_val = +aEndValue;
         }

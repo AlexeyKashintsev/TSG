@@ -5,15 +5,4 @@
   <entity Name="dsCountersByFlat" Title="Счетчики в квартире" entityHeight="249" entityIconified="false" entityId="138538399211575" entityLocationX="412" entityLocationY="21" entityWidth="150" queryId="counters_by_flat" tableName="" tableSchemaName=""/>
   <entity Name="dsNewCntCon" Title="" entityHeight="200" entityIconified="false" entityId="143144227835636" entityLocationX="419" entityLocationY="284" entityWidth="150" queryId="counters_by_flat" tableName="" tableSchemaName=""/>
   <entity Name="dsCountersValues" Title="Значения счетчика по ID и дате" entityHeight="200" entityIconified="false" entityId="138539306440731" entityLocationX="590" entityLocationY="18" entityWidth="150" queryId="counter_values_by_ID_and_date" tableName="" tableSchemaName=""/>
-  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138539306440731" rightEntityFieldName="cnt_counters_id" rightEntityId="138538333276687"/>
-  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138538399211575" rightEntityFieldName="cnt_counters_id" rightEntityId="138538333276687"/>
-  <referenceRelation leftEntityFieldName="flat_service" leftEntityId="138538399211575" rightEntityFieldName="lc_flat_services_id" rightEntityId="138539474906483"/>
-  <referenceRelation leftEntityFieldName="flat_service" leftEntityId="143144227835636" rightEntityFieldName="lc_flat_services_id" rightEntityId="138539474906483"/>
-  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="143144227835636" rightEntityFieldName="cnt_counters_id" rightEntityId="138538333276687"/>
-  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138538399211575" rightEntityFieldName="cnt_counters_id" rightEntityId="143144227835636"/>
-  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138539306440731" rightEntityFieldName="cnt_counters_id" rightEntityId="138538399211575"/>
-  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138539306440731" rightEntityFieldName="cnt_counters_id" rightEntityId="143144227835636"/>
-  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="143144227835636" rightEntityFieldName="cnt_counters_id" rightEntityId="138538399211575"/>
-  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="143144227835636" rightEntityFieldName="cnt_counters_id" rightEntityId="143144227835636"/>
-  <referenceRelation leftEntityFieldName="counter_id" leftEntityId="138538399211575" rightEntityFieldName="cnt_counters_id" rightEntityId="138538399211575"/>
 </datamodel>

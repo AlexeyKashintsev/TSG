@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="357px" prefWidth="729px">
-  <widget name="label21" parent="Form" prefHeight="16px" prefWidth="96px" text="Оплачено пени" type="LabelDesignInfo">
+  <widget editable="false" format="#0.00" name="mfPenaltie1" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+    <datamodelElement entityId="142305636548457" fieldName="sal_penalties_cur"/>
+    <constraints height="18px" left="432px" top="84px" type="MarginConstraintsDesignInfo" width="70px"/>
+  </widget>
+  <widget name="label211" parent="Form" prefHeight="16px" prefWidth="96px" text="Пени всего" type="LabelDesignInfo">
     <constraints height="16px" left="432px" top="60px" type="MarginConstraintsDesignInfo" width="96px"/>
+  </widget>
+  <widget name="label21" parent="Form" prefHeight="16px" prefWidth="96px" text="Оплачено пени" type="LabelDesignInfo">
+    <constraints height="16px" left="432px" top="108px" type="MarginConstraintsDesignInfo" width="96px"/>
   </widget>
   <widget editable="false" format="#0.00" name="mfPenaltie" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="142305636548457" fieldName="sal_penalties_pay"/>
-    <constraints height="18px" left="432px" top="84px" type="MarginConstraintsDesignInfo" width="70px"/>
+    <constraints height="18px" left="432px" top="132px" type="MarginConstraintsDesignInfo" width="70px"/>
   </widget>
   <widget name="label1" parent="Form" prefHeight="16px" prefWidth="72px" text="Начислено" type="LabelDesignInfo">
     <constraints height="16px" left="96px" top="60px" type="MarginConstraintsDesignInfo" width="72px"/>
@@ -55,7 +62,14 @@
     <constraints height="16px" left="12px" top="168px" type="MarginConstraintsDesignInfo" width="180px"/>
   </widget>
   <widget name="modelGrid" parent="Form" prefHeight="168px" prefWidth="704px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="139307419109152" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <column name="colServices_id" title="Услуга">
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="139307429591837" fieldName="usl_services_id"/>
         <displayField entityId="139307429591837" fieldName="usl_name"/>
@@ -69,11 +83,11 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+    </column>
+    <column name="colCalc_value" title="Объем">
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-    </column>
-    <column name="colCalc_value" title="Объем">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="139307419109152" fieldName="calc_value"/>
       <columnsDatasource/>
@@ -84,11 +98,11 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+    </column>
+    <column name="colCalc" title="Рассчитано">
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-    </column>
-    <column name="colCalc" title="Рассчитано">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="139307419109152" fieldName="calc"/>
       <columnsDatasource/>
@@ -99,11 +113,11 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+    </column>
+    <column name="colBenefit" title="Льгота">
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-    </column>
-    <column name="colBenefit" title="Льгота">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="139307419109152" fieldName="benefit"/>
       <columnsDatasource/>
@@ -114,11 +128,11 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+    </column>
+    <column name="colRecalc" title="Перерасчет">
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-    </column>
-    <column name="colRecalc" title="Перерасчет">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="139307419109152" fieldName="recalc"/>
       <columnsDatasource/>
@@ -129,11 +143,11 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+    </column>
+    <column name="colFull_calc" title="Начислено">
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-    </column>
-    <column name="colFull_calc" title="Начислено">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="139307419109152" fieldName="full_calc"/>
       <columnsDatasource/>
@@ -144,14 +158,7 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
-    <treeDesignInfo/>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="139307419109152" field="false"/>
-    </rowsColumnsDesignInfo>
     <constraints bottom="-3px" left="12px" right="13px" top="192px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="label5" parent="Form" prefHeight="14px" prefWidth="120px" text="Период:" type="LabelDesignInfo">

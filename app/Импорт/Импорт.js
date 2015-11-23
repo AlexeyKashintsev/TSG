@@ -334,9 +334,11 @@ function readRow(aRowAr, aGroup){
             servModifiers = modLC.addFlat2Modifiers(LC_ID, group_modifiers);
         }
         Logger.finest('330');
-        var SALDO_BEG = getCellValue(aRowAr.cells[impFields.SALDO_BEG]);
-        Logger.finest('saldoBegValue: ' + SALDO_BEG)
-        modSN.initBegSaldo(LC_ID, parDate, parAccount, SALDO_BEG?SALDO_BEG:null);
+        if (impFields.SALDO_BEG) {
+            var SALDO_BEG = getCellValue(aRowAr.cells[impFields.SALDO_BEG]);
+            Logger.finest('saldoBegValue: ' + SALDO_BEG);
+            modSN.initBegSaldo(LC_ID, parDate, parAccount, SALDO_BEG?SALDO_BEG:null);
+        }
         Logger.finest('333');
         var PENALTIES_CUR = getCellValue(aRowAr.cells[impFields.PENALTIES_CUR]);
         modSN.addPenalties(LC_ID, parDate, parAccount, PENALTIES_CUR, null);
@@ -359,14 +361,17 @@ function readRow(aRowAr, aGroup){
         }
         Logger.finest('353');
         for (i in impFields.COUNTERS_END){
+            if (!counterValues[impFields.COUNTERS_END[i].SERVICE_COUNTER_ID])
+                counterValues[impFields.COUNTERS_END[i].SERVICE_COUNTER_ID] = {};
             counterValues[impFields.COUNTERS_END[i].SERVICE_COUNTER_ID].endv = getCellValue(aRowAr.cells[impFields.COUNTERS_END[i].CellNumber]);
         }
         Logger.finest('357');
         for (var service_counter in counterValues) {
-            if (counterValues[service_counter].begv)
-            modSN.insertCounterValue(LC_ID, servModifiers[service_counter]?servModifiers[service_counter]:service_counter, parDate, 
+            if (counterValues[service_counter].begv || counterValues[service_counter].endv)
+                modSN.insertCounterValue(LC_ID, servModifiers[service_counter]?servModifiers[service_counter]:service_counter, parDate, 
                                         counterValues[service_counter].begv, 
                                         counterValues[service_counter].endv);
+                    
         }
 
         for (i = 0; i < impFields.BINEFICIARIES; i++){

@@ -20,8 +20,8 @@ function LCModule() {
     };
 
     self.getLcID = function(aLCRegTo, aLCFlatNumber, aLCPeopleRegCount, aLCNumber) {
-        model.dsFlatByNumberAndRegister.params.flatNumber = aLCFlatNumber;
-        model.dsFlatByNumberAndRegister.params.regTo = aLCRegTo;
+        model.dsFlatByNumberAndRegister.params.flatNumber = aLCFlatNumber.toString();
+        model.dsFlatByNumberAndRegister.params.regTo = aLCRegTo.toString();
         model.dsFlatByNumberAndRegister.execute();
         if (model.dsFlatByNumberAndRegister.length === 1) {
             return model.dsFlatByNumberAndRegister.cursor.lc_flat_id;

@@ -5,21 +5,14 @@
     <parameter description="" name="parGroupID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="17" entityLocationY="9" entityWidth="150"/>
-  <entity Name="dsLCGrp" Title="Вхождение лицевых счетов в группы" entityHeight="200" entityIconified="false" entityId="137686253981826" entityLocationX="189" entityLocationY="12" entityWidth="150" queryId="qLCInGroups" tableName="" tableSchemaName=""/>
+  <entity Name="services_by_group" Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="139186846884167" entityLocationX="205" entityLocationY="417" entityWidth="150" queryId="services_by_group" tableName="" tableSchemaName=""/>
+  <entity Name="insertGroupServicesLC" Title="Вставка услуг из группы в квартиру" entityHeight="134" entityIconified="false" entityId="137702078658292" entityLocationX="39" entityLocationY="309" entityWidth="150" queryId="insertGroupServicesLC" tableName="" tableSchemaName=""/>
+  <entity Name="all_dates" Title="Все даты" entityHeight="112" entityIconified="false" entityId="137720222224222" entityLocationX="39" entityLocationY="450" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
   <entity Name="dsFlatByNumberAndRegister" Title="flatByNumberAndRegister" entityHeight="200" entityIconified="false" entityId="139706834919088" entityLocationX="722" entityLocationY="242" entityWidth="150" queryId="flatByNumberAndRegister" tableName="" tableSchemaName=""/>
   <entity Name="dsFlat" Title="Квартира по ID" entityHeight="200" entityIconified="false" entityId="137686187399700" entityLocationX="360" entityLocationY="14" entityWidth="150" queryId="lc_by_ID" tableName="" tableSchemaName=""/>
-  <entity Name="insertGroupServicesLC" Title="Вставка услуг из группы в квартиру" entityHeight="134" entityIconified="false" entityId="137702078658292" entityLocationX="39" entityLocationY="309" entityWidth="150" queryId="insertGroupServicesLC" tableName="" tableSchemaName=""/>
+  <entity Name="dsLCGrp" Title="Вхождение лицевых счетов в группы" entityHeight="200" entityIconified="false" entityId="137686253981826" entityLocationX="189" entityLocationY="12" entityWidth="150" queryId="qLCInGroups" tableName="" tableSchemaName=""/>
   <entity Name="saldo_by_flat" Title="" entityHeight="200" entityIconified="false" entityId="142409443767154" entityLocationX="918" entityLocationY="29" entityWidth="150" queryId="saldo_by_flat" tableName="" tableSchemaName=""/>
-  <entity Name="set_service_in_flat" Title="Заменить услугу в квартире" entityHeight="82" entityIconified="false" entityId="139186789569643" entityLocationX="534" entityLocationY="17" entityWidth="150" queryId="set_service_in_flat" tableName="" tableSchemaName=""/>
-  <entity Name="services_by_group" Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="139186846884167" entityLocationX="205" entityLocationY="417" entityWidth="150" queryId="services_by_group" tableName="" tableSchemaName=""/>
-  <entity Name="all_dates" Title="Все даты" entityHeight="112" entityIconified="false" entityId="137720222224222" entityLocationX="39" entityLocationY="450" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
-  <entity Name="insertGroupCharsLC" Title="Вставка характеристик из группы в квартиру" entityHeight="94" entityIconified="false" entityId="137702048011272" entityLocationX="200" entityLocationY="308" entityWidth="150" queryId="insertGroupCharsLC" tableName="" tableSchemaName=""/>
   <entity Name="dsCharsFlat" Title="Характеристики квартиры" entityHeight="200" entityIconified="false" entityId="137703112556892" entityLocationX="539" entityLocationY="255" entityWidth="150" queryId="chars_flat" tableName="" tableSchemaName=""/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142409443767154" rightEntityFieldName="lc_flat_id" rightEntityId="137686187399700"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="137686253981826" rightEntityFieldName="lc_flat_id" rightEntityId="137686187399700"/>
-  <referenceRelation leftEntityFieldName="date_id" leftEntityId="142409443767154" rightEntityFieldName="per_date_id" rightEntityId="137720222224222"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="137686253981826" rightEntityFieldName="lc_flat_id" rightEntityId="139706834919088"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142409443767154" rightEntityFieldName="lc_flat_id" rightEntityId="139706834919088"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="137703112556892" rightEntityFieldName="lc_flat_id" rightEntityId="139706834919088"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="137703112556892" rightEntityFieldName="lc_flat_id" rightEntityId="137686187399700"/>
+  <entity Name="set_service_in_flat" Title="Заменить услугу в квартире" entityHeight="82" entityIconified="false" entityId="139186789569643" entityLocationX="534" entityLocationY="17" entityWidth="150" queryId="set_service_in_flat" tableName="" tableSchemaName=""/>
+  <entity Name="insertGroupCharsLC" Title="Вставка характеристик из группы в квартиру" entityHeight="94" entityIconified="false" entityId="137702048011272" entityLocationX="200" entityLocationY="308" entityWidth="150" queryId="insertGroupCharsLC" tableName="" tableSchemaName=""/>
 </datamodel>
