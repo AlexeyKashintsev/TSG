@@ -92,48 +92,54 @@ function CalculateFlatSaldo() {
         var res = {};
         var sc = getSumOfSums(cursor.account_name, data.lc_id);
         var sp = model.dsSumOfPayments.find(model.dsSumOfPayments.schema.flat_id, data.lc_id);
-        var peni = model.dsMainGroupByLCWithAccounts.cursor.calculate_peni ?
-                        peniClc.calculate(data.lc_id, model.params.parDateID, model.params.parAccountID) :
-                        {
-                            current  : 0,
-                            previous : 0,
-                            saldo    : false
-                        };;
-        var peniOld = peni.previous;
-        var saldoOld = peni.saldo ? peni.saldo : data.sal_begin;
-        peni = peni.current;
-        res.sal_penalties_old = peniOld;
-
+        
         if (sp.length == 1)
             sp = sp[0];
         else
             sp.pay_sum = 0;
-        res.sal_begin = saldoOld;
+
         res.sal_calc = sc.sal_calc;
         res.sal_benefit = sc.sal_benefit;
         res.sal_recalc = sc.sal_recalc;
         res.sal_full_calc = sc.sal_full_calc;
         res.sal_payments = sp.pay_sum;
-        var endSum = res.sal_begin - sp.pay_sum;
-        var peniPay = 0;
-        if (endSum < 0 && peniOld > 0) {
-            var extra = -endSum;
-            if (extra >= peniOld) {
-                extra -= peniOld;
-                peniPay = peniOld;
-                peniOld = 0;
-            } else {
-                peniOld -= extra;
-                peniPay = extra;
-                extra = 0;
+        
+        var endSum;
+//        doCalcPeni
+        if (model.dsMainGroupByLCWithAccounts.cursor.calculate_peni) {
+            var peni = peniClc.calculate(data.lc_id, model.params.parDateID, model.params.parAccountID);
+            var peniOld = peni.previous;
+            var saldoOld = peni.saldo ? peni.saldo : data.sal_begin;
+            endSum = saldoOld - sp.pay_sum;
+            peni = peni.current;
+            res.sal_penalties_old = peniOld;
+            
+            var peniPay = 0;
+            if (endSum < 0 && peniOld > 0) {
+                var extra = -endSum;
+                if (extra >= peniOld) {
+                    extra -= peniOld;
+                    peniPay = peniOld;
+                    peniOld = 0;
+                } else {
+                    peniOld -= extra;
+                    peniPay = extra;
+                    extra = 0;
+                }
+                endSum = -extra;
             }
-            endSum = -extra;
+            
+            res.sal_penalties_calc = peni.toFixed(2);
+            res.sal_penalties_cur = (peni + peniOld).toFixed(2);
+            res.sal_penalties_pay = peniPay.toFixed(2);
+        } else {
+            saldoOld = data.sal_begin;
+            endSum = saldoOld - sp.pay_sum;
         }
-        peni += peniOld;
+        res.sal_begin = saldoOld;
         endSum += sc.sal_full_calc;
         res.sal_end = endSum;
-        res.sal_penalties_cur = peni;
-        res.sal_penalties_pay = peniPay.toFixed(2);
+        
         return res;
     }
         
