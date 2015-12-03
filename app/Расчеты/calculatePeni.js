@@ -42,7 +42,7 @@ function CalculatePeni() {
         model.params.parAccountID = aAccountID;
         model.saldo4calc.params.dateid = aDateID;
         model.saldo4calc.requery();
-        var calc = model.saldo4calc.cursor.calc_peni;
+        var calc = (model.saldo4calc.cursor.calc_peni !== false);
         if (calc) {
             aDateID = dateMod.prevDate(aDateID);
             var prevDate = dateMod.prevDate(aDateID);
