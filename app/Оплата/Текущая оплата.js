@@ -8,12 +8,20 @@ function opl_view(aParent) {
     self.parentForm = null;
     var modSal = new SaldoAndSumsModule();
     
-    self.requery = function(){
+    function requery(){
         self.dsOplById.requery();
         var editable = self.dsOplById.date_id==self.model.params.parDateID;
         self.btnSave.visible = self.btnDelete.visible = !!self.model.params.parEditDate;
         self.model.requery();
-    }
+    };
+    
+    self.openOplata = function(aDateId, aDateIsEditable, aPayID) {
+        model.params.parDateID = aDateId;
+        model.params.parEditDate = aDateIsEditable;
+        model.params.parPaymentID = aPayID;
+        requery();
+        model.dsOplById.length;
+    };
     
 
 self.syncParams = function(aDate, anIsEditable, anAccount) {
@@ -34,6 +42,7 @@ function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed
     model.save();
     if (self.parentForm)
         self.parentForm.updateSession();
+    self.close();
 }//GEN-LAST:event_btnSaveActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
@@ -68,11 +77,15 @@ paramSynchronizer.addListener(this);
     }//GEN-LAST:event_formWindowClosed
 
     function dsOplByIdOnChanged(evt) {//GEN-FIRST:event_dsOplByIdOnChanged
-        if(evt.propertyName == 'full_payment'){
-            self.modelFormattedField1.value = evt.newValue / (1 + self.modelFormattedField4.value/100); 
-        };
-        if(evt.propertyName == 'bank_percent'){
-            self.modelFormattedField1.value = self.modelFormattedField5.value / (1 + evt.newValue/100);
-        };
+        if (evt.propertyName == 'full_payment' || evt.propertyName == 'bank_percent') {
+            var c = model.dsOplById.cursor;
+            c.payment_sum = c.full_payment - (!!(+c.bank_percent) ? +(c.bank_percent * c.full_payment / 100) : 0);
+        }
+//        if(evt.propertyName == 'full_payment'){
+//            self.mffPayCalc.value = evt.newValue / (1 + self.mffBankPercent.value/100); 
+//        };
+//        if(evt.propertyName == 'bank_percent'){
+//            self.mffPayCalc.value = self.mffPayFull.value / (1 + evt.newValue/100);
+//        };
     }//GEN-LAST:event_dsOplByIdOnChanged
 }

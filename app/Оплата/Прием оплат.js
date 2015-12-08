@@ -9,11 +9,47 @@ function opl_get(aParent) {
     var modSal = new SaldoAndSumsModule();
     
 
-self.syncParams = function(aDate, anIsEditable, anAccount) {
-    model.params.parAccountID = anAccount;    
-    //model.params.parDateID = aDate;
-    //model.params.parAccountID = anAccount;
-};
+    self.syncParams = function(aDate, anIsEditable, anAccount) {
+        model.params.parAccountID = anAccount;
+    };
+
+    function refresh() {
+        self.parFlatID = null;
+        self.parSum = 0;
+        self.parPercent = 0;
+        self.parFullPay = 0;
+        self.tfFlatNumber.text = '';
+        if (self.parentForm)
+            (function() {
+                self.parentForm.updateSession();
+            }).invokeBackground();
+        if (self.barCode === true) {
+            self.barCode = false;
+            self.close();
+        };
+    }
+
+    self.newOplata = function(aSession, aDate, aFlatId, aFlatNum, aGroupId, aSum) {
+        refresh();
+        model.params.parDateID = aDate;
+        model.params.parSessionID = aSession;
+        model.params.parFlatID = aFlatId;
+        model.params.parGroupID = aGroupId;
+        model.params.parFullPay = aSum;
+        model.params.parPercent = 0;
+        if (aFlatNum){
+            model.params.tfFlatNumber.text = aFlatNum;
+            model.params.params.barCode = true;
+        };
+        model.requery();
+    };
+    
+    self.openOplata = function(PayID) {
+        model.params.parDateID = self.parDateID;
+        model.params.parEditDate = self.parEditDate;
+        model.params.parPaymentID = PayID;
+        model.requery();
+    };
 
 function tfFlatNumberActionPerformed(evt) {//GEN-FIRST:event_tfFlatNumberActionPerformed
     var flat = self.dsFlatsByGroup.find(self.dsFlatsByGroup.schema.lc_flatnumber, self.tfFlatNumber.text);
@@ -27,27 +63,11 @@ function btFlatNumEnterMouseClicked(evt) {//GEN-FIRST:event_btFlatNumEnterMouseC
 }//GEN-LAST:event_btFlatNumEnterMouseClicked
 
 function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
-    var tStart = new Date();
     if (self.parFlatID&&self.parDateID&&(model.params.parSum !== 0 || model.params.parFullPay !== 0))
         modSal.addOplata(self.parFlatID, self.parSessionID, self.parDateID,
                          self.parSum, self.parDate, self.parComment, self.parPercent, self.parFullPay);
     model.save();
-    var tSave = new Date();
-    self.parFlatID = null;
-    self.parSum = 0;
-    self.parPercent = 0;
-    self.parFullPay = 0;
-    self.tfFlatNumber.text = '';
-    if (self.parentForm)
-        (function() {
-            self.parentForm.updateSession();
-        }).invokeBackground();
-    if (self.barCode === true) {
-        self.barCode = false;
-        self.close();
-    };
-    var tClose = new Date();
-    Logger.info('Save time: ' + (tSave - tStart) + ', Close time: ' + (tClose - tSave));
+    refresh();
 }//GEN-LAST:event_buttonActionPerformed
 
 function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
@@ -68,11 +88,15 @@ paramSynchronizer.addListener(this);
     }//GEN-LAST:event_formWindowClosed
   
     function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-        if(evt.propertyName == 'parFullPay'){
-            self.modelFormattedField4.value = evt.newValue / (1 + model.params.parPercent/100); 
-        };
-        if(evt.propertyName == 'parPercent'){
-            self.modelFormattedField4.value = self.modelFormattedField1.value / (1 + model.params.parPercent/100);
-        };
+        if (evt.propertyName == 'full_payment' || evt.propertyName == 'bank_percent') {
+            var c = model.dsOplById.cursor;
+            c.payment_sum = c.full_payment - (!!(+c.bank_percent) ? +(c.bank_percent * c.full_payment / 100) : 0);
+        }
+//        if(evt.propertyName == 'parFullPay'){
+//            self.modelFormattedField4.value = evt.newValue / (1 + model.params.parPercent/100); 
+//        };
+//        if(evt.propertyName == 'parPercent'){
+//            self.modelFormattedField4.value = self.modelFormattedField1.value / (1 + model.params.parPercent/100);
+//        };
     }//GEN-LAST:event_paramsOnChanged
 }

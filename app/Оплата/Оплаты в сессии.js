@@ -74,16 +74,14 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
 
     function modelGridMouseClicked(evt) {//GEN-FIRST:event_modelGridMouseClicked
         if (evt.clickCount > 1){
-            self.OpenOlpata(self.dsPaymentsInSession.opl_payments_id);
+            self.openOplata(self.dsPaymentsInSession.opl_payments_id);
         }
     }//GEN-LAST:event_modelGridMouseClicked
 
-    self.OpenOlpata = function(PayID){
-        fmEditOplata.model.params.parDateID = self.parDateID;
-        fmEditOplata.model.params.parEditDate = self.parEditDate;
-        fmEditOplata.model.params.parPaymentID = PayID;
+    self.openOplata = function(aPayID){
+        fmEditOplata.openOplata(self.parDateID, self.parEditDate, aPayID);
         fmEditOplata.parentForm = self;
-        fmEditOplata.requery();
+//        fmEditOplata.requery();
         if (self.mainForm)
             self.mainForm.showFormAsInternal(fmEditOplata);
         else
@@ -91,17 +89,7 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
     };
 
     self.NewOplata = function(group_id, flat_id, lcNum, sum){
-        fmNewOplata.parDateID = self.parDateID;
-        fmNewOplata.parSessionID = self.parSessionID;
-        fmNewOplata.parFlatID = flat_id;
-        fmNewOplata.parGroupID = group_id;
-        fmNewOplata.parFullPay = sum;
-        fmNewOplata.parPercent = 0;
-        if(lcNum){
-            fmNewOplata.tfFlatNumber.text = lcNum;
-            fmNewOplata.params.barCode = true;
-        };
-        fmNewOplata.model.requery();
+        fmNewOplata.newOplata(self.parSessionID, self.parDateID, flat_id, lcNum, group_id, sum)
         fmNewOplata.parentForm = self;
         if (self.mainForm)
             self.mainForm.showFormAsInternal(fmNewOplata);
@@ -127,7 +115,7 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
             switch (model.dsPaymentsInSession.find(model.dsPaymentsInSession.schema.lc_flat_id, model.dsFlatByLcNum.lc_flat_id).length){
                 case 1: 
                     var oplata = model.dsPaymentsInSession.find(model.dsPaymentsInSession.schema.lc_flat_id, model.dsFlatByLcNum.lc_flat_id);
-                    self.OpenOlpata(oplata[0].opl_payments_id);
+                    self.openOplata(oplata[0].opl_payments_id);
                     break;
                 case 0:
                     self.NewOplata(model.dsFlatByLcNum.group_id, model.dsFlatByLcNum.lc_flat_id, model.dsFlatByLcNum.lc_flatnumber, opl);

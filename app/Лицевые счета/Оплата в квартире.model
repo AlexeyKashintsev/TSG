@@ -7,7 +7,7 @@
     <parameter description="" name="parAccountID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="qPaymentsInFlat" Title="Оплаты в квартире" entityHeight="200" entityIconified="false" entityId="137685811346765" entityLocationX="229" entityLocationY="18" entityWidth="150" queryId="qPaymentsInFlat" tableName="" tableSchemaName=""/>
+  <entity Name="qPaymentsInFlat" Title="Оплаты в квартире" entityHeight="200" entityIconified="false" entityId="137685811346765" entityLocationX="229" entityLocationY="18" entityWidth="151" queryId="qPaymentsInFlat" tableName="" tableSchemaName=""/>
   <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="137685832783762" entityLocationX="472" entityLocationY="11" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="137685811346765" rightEntityParameterName="account_id"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="137685811346765" rightEntityParameterName="flat_id"/>

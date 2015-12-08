@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parEditDate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="100" type="16" typeName="BOOLEAN"/>
+    <parameter description="" name="parAccountID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="all_dates" Title="Все даты" entityHeight="200" entityIconified="false" entityId="138686324127452" entityLocationX="422" entityLocationY="12" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
+  <entity Name="dsOplSessions" Title="Сессии оплаты" entityHeight="200" entityIconified="false" entityId="138686322493762" entityLocationX="191" entityLocationY="10" entityWidth="150" queryId="dsOplSessions" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138686322493762" rightEntityParameterName="date_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="138686322493762" rightEntityParameterName="account_id"/>
+  <referenceRelation leftEntityFieldName="session_id" leftEntityId="138686322493762" rightEntityFieldName="opl_sessions_id" rightEntityId="138686322493762"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="138686322493762" rightEntityFieldName="per_date_id" rightEntityId="138686324127452"/>
+</datamodel>
