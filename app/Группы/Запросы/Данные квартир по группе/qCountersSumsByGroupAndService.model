@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="date_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="group_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="service_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="144965711040284" entityLocationX="408" entityLocationY="56" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="144965711040285" entityLocationX="701" entityLocationY="7" entityWidth="150" tableAlias="t2" tableName="cnt_con2flats" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="144965711040298" entityLocationX="615" entityLocationY="202" entityWidth="150" tableAlias="t3" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="144965711040277" entityLocationX="217" entityLocationY="54" entityWidth="150" tableAlias="t" tableName="per_counter_values" tableSchemaName=""/>
+  <relation leftEntityFieldName="flat_service" leftEntityId="144965711040285" rightEntityFieldName="lc_flat_services_id" rightEntityId="144965711040284"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="144965711040284" rightEntityFieldName="lc_id" rightEntityId="144965711040298"/>
+  <relation leftEntityFieldName="counter_id" leftEntityId="144965711040285" rightEntityFieldName="counter_id" rightEntityId="144965711040277"/>
+</datamodel>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="group_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="all_flats" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="100" type="16" typeName="BOOLEAN"/>
+    <parameter description="" name="date_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139457233465944" entityLocationX="680" entityLocationY="5" entityWidth="150" tableAlias="t2" tableName="cnt_con2flats" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139457233465951" entityLocationX="510" entityLocationY="5" entityWidth="150" tableAlias="t" tableName="per_counter_values" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139457233465950" entityLocationX="344" entityLocationY="3" entityWidth="150" tableAlias="t1" tableName="lc_flat_services" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="139457233465943" entityLocationX="177" entityLocationY="5" entityWidth="150" tableAlias="t3" tableName="grp_lc_group" tableSchemaName=""/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="139457233465950" rightEntityFieldName="lc_id" rightEntityId="139457233465943"/>
+  <relation leftEntityFieldName="counter_id" leftEntityId="139457233465944" rightEntityFieldName="counter_id" rightEntityId="139457233465951"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="139457233465951"/>
+  <relation leftEntityId="-1" leftEntityParameterName="group_id" rightEntityFieldName="group_id" rightEntityId="139457233465943"/>
+  <relation leftEntityFieldName="flat_service" leftEntityId="139457233465944" rightEntityFieldName="lc_flat_services_id" rightEntityId="139457233465950"/>
+</datamodel>
