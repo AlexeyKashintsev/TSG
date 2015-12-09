@@ -13,10 +13,6 @@
   <widget name="modelGrid" parent="pnlAccounts" prefHeight="269px" prefWidth="400px" type="DbGridDesignInfo">
     <column name="colAccounts" title="Счет">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
-      <datamodelElement entityId="142357593167184" fieldName="account_name"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -25,16 +21,31 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <datamodelElement entityId="142357593167184" fieldName="account_name"/>
     </column>
     <column name="colBank" title="Банк">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="142649469837529" fieldName="grp_bank_id"/>
         <displayField entityId="142649469837529" fieldName="user_name"/>
       </controlInfo>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
       <datamodelElement entityId="142357593167184" fieldName="bank_id"/>
+    </column>
+    <column name="colPeni" title="Начислять пени">
+      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -43,27 +54,16 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
-    </column>
-    <column name="colPeni" title="Начислять пени">
-      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
       <datamodelElement entityId="142357593167184" fieldName="calculate_peni"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="142357593167184" field="false"/>
     </rowsColumnsDesignInfo>
     <treeDesignInfo/>
-    <constraints height="269px" left="12px" top="0px" type="MarginConstraintsDesignInfo" width="400px"/>
+    <constraints height="269px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="400px"/>
   </widget>
   <layout type="BorderLayoutDesignInfo"/>
 </layout>
