@@ -88,9 +88,9 @@ paramSynchronizer.addListener(this);
     }//GEN-LAST:event_formWindowClosed
   
     function paramsOnChanged(evt) {//GEN-FIRST:event_paramsOnChanged
-        if (evt.propertyName == 'full_payment' || evt.propertyName == 'bank_percent') {
-            var c = model.dsOplById.cursor;
-            c.payment_sum = c.full_payment - (!!(+c.bank_percent) ? +(c.bank_percent * c.full_payment / 100) : 0);
+        if (evt.propertyName == 'parFullPay' || evt.propertyName == 'parPercent') {
+            var c = model.params;
+            c.parSum = c.parFullPay - (!!(+c.parPercent) ? +(c.parPercent * c.parFullPay / 100) : 0);
         }
 //        if(evt.propertyName == 'parFullPay'){
 //            self.modelFormattedField4.value = evt.newValue / (1 + model.params.parPercent/100); 
