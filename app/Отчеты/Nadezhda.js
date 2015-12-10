@@ -67,7 +67,7 @@ function BillsBuilder_Nadezhda() {
         });
         var flats = [];
         var fc = 0;
-        for(var j = 0; j < 4; j++){
+        for(var j = 0; j < 2; j++){
         //flatsArr.forEach(function(Flat){
             if ((fc<50)){
                 //flats[flatsArr[j].lc_id] = true;

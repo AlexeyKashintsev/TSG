@@ -54,7 +54,7 @@ function ReportPrint() {
                 for (var flat = flatFrom; flat < flatTo; flat ++){
                     flats.push({
                         lc_id: model.params.FlatID ? model.params.FlatID : model.flats_by_group[flat].lc_flat_id});
-                    if (number !== 3 && flat !== flatTo-1){
+                    if (number !== 1 && flat !== flatTo-1){
                         number++;
                     }
                     else{
