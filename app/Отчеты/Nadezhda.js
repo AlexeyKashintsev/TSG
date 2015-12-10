@@ -146,13 +146,16 @@ function BillsBuilder_Nadezhda() {
                                     + ':' + flat_char.lc_char_val;
                     });
 
-                    var dates = '';
+                    var dates = '', dateV = '';
                     var date = self.all_dates.findById(self.model.params.parDateID).per_date;
                     var monthNames = [ "январь", "Февраль", "март", "апрель", "май", "июнь",
                            "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь" ];
                     var monthNamesRP = [ "января", "Февраля", "марта", "апреля", "мая", "июня",
                            "июля", "августа", "сентября", "октября", "ноября", "декабря" ];
+                    var monthNamesVP = [ "январе", "Феврале", "марте", "апреле", "мае", "июне",
+                            "июле", "августе", "сентябре", "октябре", "ноябре", "декабре" ];
                     dates = (monthNames[date.getMonth()]+" "+date.getFullYear());
+                    dateV = (monthNamesVP[date.getMonth()]+" "+date.getFullYear());
 
                     var saltoStr = (Math.round(lc_saldo.full_end*100)).toString();
                     var lc_num = 1;//strConcat(self.dsGroupAndBank.grpid, self.dsLC_byid.lc_num, 5);
@@ -170,15 +173,8 @@ function BillsBuilder_Nadezhda() {
                     var prevDate = self.model.all_dates.findById(DM.prevDate(self.model.params.parDateID)).per_pay_day;
                     var days = (prevDate.getDate() + " " + monthNamesRP[prevDate.getMonth()] + " " + prevDate.getFullYear());
                     var payDay = self.all_dates.findById(self.model.params.parDateID).per_pay_day;
+                    var firstDay = ("01 " + monthNamesRP[prevDate.getMonth()] + " " + prevDate.getFullYear());
                     payDay = (payDay.getDate() + " " + monthNamesRP[payDay.getMonth()] + " " + payDay.getFullYear());
-                    
-                   /* self.all_dates.forEach(function(day){
-                        day = self.all_dates.findById(self.saldo_by_flat.date_id).per_date;
-                        var prev_date = new Date(day.getFullYear(),day.getMonth()+1,day.getDate());
-                        prev_date.setDate(0);
-                        days = (prev_date.getDate()+" "+monthNames[prev_date.getMonth()]+" "+prev_date.getFullYear());
-                    });*/
-
 
                     var lc_data = { 
                         lc_id:          flatsArr[j] ? dsLC_byid.cursor.lc_id : '',
@@ -191,7 +187,8 @@ function BillsBuilder_Nadezhda() {
                         sums:           sum,
                         counter:        counters,
                         date:           dates,
-                        day:            days,
+                        dateV:          dateV,
+                        day:            firstDay,
                         payDay:         payDay,
                         barcode:        barCodeStr,
                         bk:             barCodeStr,//bcn,
