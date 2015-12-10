@@ -42,17 +42,19 @@ function CalculatePeni() {
         model.params.parAccountID = aAccountID;
         model.saldo4calc.params.dateid = aDateID;
         model.saldo4calc.requery();
+        
         var calc = (model.saldo4calc.cursor.calc_peni !== false);
+        var curPeni = 0;
+        
+        aDateID = dateMod.prevDate(aDateID);
+        var prevDate = dateMod.prevDate(aDateID);
+
+        model.saldo4calc.params.dateid = aDateID;
+        model.saldo4calc.requery();
+        
         if (calc) {
-            aDateID = dateMod.prevDate(aDateID);
-            var prevDate = dateMod.prevDate(aDateID);
-
-            model.saldo4calc.params.dateid = aDateID;
-            model.saldo4calc.requery();
-
             var sumOfDebt = model.saldo4calc.sal_begin;
-            var curPeni = 0;
-
+            
             if (sumOfDebt > 0) {
                 var dates = setCalcPaymentPeriod(aDateID, prevDate);
                 var lastDate = dates.peniDate;
@@ -83,8 +85,8 @@ function CalculatePeni() {
                 previous : model.saldo4calc.cursor.sal_penalties_cur,
                 saldo    : model.saldo4calc.cursor.sal_end
             } : {
-                current  : model.saldo4calc.cursor.sal_penalties_cur,
-                previous : model.saldo4calc.cursor.sal_penalties_old,
+                current  : model.saldo4calc.cursor.sal_penalties_cur ? model.saldo4calc.cursor.sal_penalties_cur : (model.saldo4calc.cursor.sal_end ? model.saldo4calc.cursor.sal_end : 0),
+                previous : model.saldo4calc.cursor.sal_end,
                 saldo    : false
             };
         } catch (e) {

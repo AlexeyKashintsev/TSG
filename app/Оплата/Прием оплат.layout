@@ -27,6 +27,10 @@
     <constraints height="28px" left="3px" top="104px" type="MarginConstraintsDesignInfo" width="141px"/>
   </widget>
   <widget deletable="false" editable="false" focusable="false" insertable="false" name="modelGrid" parent="panel" prefHeight="200px" prefWidth="146px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="138702866029948" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <column name="column" title="Дата">
       <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138702866029948" fieldName="payment_date"/>
@@ -34,9 +38,9 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
@@ -49,18 +53,14 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="138702866029948" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="3px" left="3px" right="3px" top="132px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="panel1" parent="Form" prefHeight="144px" prefWidth="461px" type="PanelDesignInfo">
@@ -84,7 +84,7 @@
     <datamodelElement entityId="-1" fieldName="parComment"/>
     <constraints bottom="15px" height="25px" left="12px" type="MarginConstraintsDesignInfo" width="288px"/>
   </widget>
-  <widget format="#,##0.###" name="modelFormattedField3" parent="panel1" prefHeight="25px" prefWidth="104px" type="DbLabelDesignInfo" valueType="0">
+  <widget format="#0.00" name="modelFormattedField3" parent="panel1" prefHeight="25px" prefWidth="104px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="-1" fieldName="parPercent"/>
     <constraints height="25px" right="9px" top="12px" type="MarginConstraintsDesignInfo" width="104px"/>
   </widget>
@@ -110,6 +110,10 @@
     <constraints bottom="1px" height="36px" right="5px" type="MarginConstraintsDesignInfo" width="120px"/>
   </widget>
   <widget name="modelGrid1" parent="panel2" prefHeight="154px" prefWidth="446px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="138703018256097" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <column name="column2" readonly="true" title="Счетчик">
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="138703021155642" fieldName="usl_services_id"/>
@@ -120,9 +124,9 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
@@ -135,9 +139,9 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
@@ -150,18 +154,14 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="138703018256097" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="37px" left="12px" right="3px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="buttonActionPerformed" icon="icons/22x22/actions/stock_add-bookmark.png" name="button" parent="panel2" prefHeight="36px" prefWidth="120px" text="Провести" toolTipText="Провести платеж" type="ButtonDesignInfo">
