@@ -37,26 +37,19 @@ function BillsBuilder_Nadezhda() {
         self.dsGroupAndBank.params.groupID = self.dsFlatByIDorByGroup.cursor.group_id;
         self.dsGroupAndBank.params.accountID = model.params.parAccountID;
         self.dsGroupAndBank.requery();
-        if (self.dsGroupAndBank.percent){
-            var raschet = model.saldo_by_flat.cursor.sal_end*100/(100-self.dsGroupAndBank.percent)- model.saldo_by_flat.cursor.sal_end;
-            raschet = raschet.toFixed(2);
-            var percent = '(C учетом '+self.dsGroupAndBank.percent+'%банка = '+ raschet +'руб.)';            
-        }
-        else 
-            var raschet = 0;
 
         self.Group = {
-                grp_name: self.dsGroupAndBank.grp_name,
-                grp_address: self.dsGroupAndBank.grp_address,
-                grp_fname: self.dsGroupAndBank.grp_fname,
+                grp_name:       self.dsGroupAndBank.grp_name,
+                grp_address:    self.dsGroupAndBank.grp_address,
+                grp_fname:      self.dsGroupAndBank.grp_fname,
                 grp_short_name: self.dsGroupAndBank.grp_short_name,
-                bank_name: self.dsGroupAndBank.bank_name,
-                bank_account: self.dsGroupAndBank.bank_account,
-                bank_bik: self.dsGroupAndBank.bank_bik,
+                bank_name:      self.dsGroupAndBank.bank_name,
+                bank_account:   self.dsGroupAndBank.bank_account,
+                bank_bik:       self.dsGroupAndBank.bank_bik,
                 bank_correction: self.dsGroupAndBank.bank_correction,
-                group_inn:  self.dsGroupAndBank.group_inn,
-                group_kpp:  self.dsGroupAndBank.group_kpp,
-                percent: self.dsGroupAndBank.percent
+                group_inn:      self.dsGroupAndBank.group_inn,
+                group_kpp:      self.dsGroupAndBank.group_kpp,
+                percent:        self.dsGroupAndBank.percent
         };
         var maxCountServices = 0;
         flatsArr.forEach(function(flat){
@@ -68,9 +61,7 @@ function BillsBuilder_Nadezhda() {
         var flats = [];
         var fc = 0;
         for(var j = 0; j < 2; j++){
-        //flatsArr.forEach(function(Flat){
             if ((fc<50)){
-                //flats[flatsArr[j].lc_id] = true;
                 fc++;
                 try{
                     
@@ -87,12 +78,9 @@ function BillsBuilder_Nadezhda() {
                     self.chars_flat.requery();
                     self.counters_values_by_flat.requery();
 
-                    //self.model.dsLC_byid.cursor.lc_flatnumber;
-                    //Logger.info(flatsArr[j].lc_id);
-
                     var lc_saldo = {
                         begin:      flatsArr[j] ? model.saldo_by_flat.cursor.sal_begin : '', 
-                        end:        flatsArr[j] ? model.saldo_by_flat.cursor.sal_end*100/(100-self.dsGroupAndBank.percent) : '',  
+                        end:        flatsArr[j] ? model.saldo_by_flat.cursor.sal_end : '',  
                         calc:       flatsArr[j] ? model.saldo_by_flat.cursor.sal_calc: '',
                         benefit:    flatsArr[j] ? model.saldo_by_flat.cursor.sal_benefit : '',  
                         payments:   flatsArr[j] ? model.saldo_by_flat.cursor.sal_payments : '',  
@@ -103,8 +91,13 @@ function BillsBuilder_Nadezhda() {
                         sal_penalties_pay: flatsArr[j] ? model.saldo_by_flat.cursor.sal_penalties_pay : ''
                     };
                     
-                    lc_saldo.debt = flatsArr[j] ? lc_saldo.end - lc_saldo.full_calc - raschet + lc_saldo.sal_penalties_pay: '';//lc_saldo.begin - lc_saldo.payments;
+                    lc_saldo.debt = flatsArr[j] ? lc_saldo.end - lc_saldo.full_calc + lc_saldo.sal_penalties_pay: '';//lc_saldo.begin - lc_saldo.payments;
                     lc_saldo.full_end = flatsArr[j] ? lc_saldo.end + lc_saldo.penalties_cur : '';
+                    
+                    var percentCalc1 = lc_saldo.full_end*100/99;
+                    var percentCalc1_5 = lc_saldo.full_end*100/98.5;
+                    lc_saldo.full_1_5 = percentCalc1_5.toFixed(2);   
+                    lc_saldo.full_1 = percentCalc1.toFixed(2); 
 
                     var sum = [];
                     var cnt = 0;
@@ -192,8 +185,7 @@ function BillsBuilder_Nadezhda() {
                         payDay:         payDay,
                         barcode:        barCodeStr,
                         bk:             barCodeStr,//bcn,
-                        counters4ask:   askCounters,
-                        percent:        percent
+                        counters4ask:   askCounters
                     };
 
                    // lc_data.saldo.begin;
