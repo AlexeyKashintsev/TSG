@@ -85,13 +85,16 @@ function CalculatePeni() {
                 previous : model.saldo4calc.cursor.sal_penalties_cur,
                 saldo    : model.saldo4calc.cursor.sal_end
             } : {
-                current  : model.saldo4calc.cursor.sal_penalties_cur ? model.saldo4calc.cursor.sal_penalties_cur : (model.saldo4calc.cursor.sal_end ? model.saldo4calc.cursor.sal_end : 0),
-                previous : model.saldo4calc.cursor.sal_end,
+                current  : model.saldo4calc.cursor.sal_penalties_cur !== null ? 
+                    model.saldo4calc.cursor.sal_penalties_cur : 
+                            (model.saldo4calc.cursor.sal_penalties_old !== null ?
+                                model.saldo4calc.cursor.sal_penalties_old : 0),
+                previous : model.saldo4calc.cursor.sal_penalties_old,
                 saldo    : false
             };
         } catch (e) {
             return {
-                current  : curPeni,
+                current  : curPeni ,
                 previous : 0,
                 saldo    : false
             };
