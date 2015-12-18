@@ -13,8 +13,8 @@ function SaldoAndSumsModule() {
 
     var modLC = null;
     var modCN = null;
-    
-    self.setServModules = function(aModSN, aModCN){
+
+    self.setServModules = function(aModSN, aModCN) {
         modSN = aModSN;
         modCN = aModCN;
     };
@@ -32,20 +32,20 @@ function SaldoAndSumsModule() {
      */
     self.initBegSaldo = function(aLC_ID, aDate, anAccount, aValue) {
         Logger.info('Adding beg saldo' + aLC_ID + ' value: ' + aValue);
-        
+
         model.dsSaldo.params.account_id = anAccount;
         model.dsSaldo.params.date_id = aDate;
         model.dsSaldo.params.flat_id = aLC_ID;
         model.dsSaldo.execute();
-        
+
         if (model.dsSaldo.length === 0) {
             Logger.info('Saldo not present: ' + aLC_ID);
             model.dsSaldo.push({
-                    date_id: aDate,
-                    lc_id: aLC_ID,
-                    sal_begin: aValue,
-                    account_id: anAccount
-                });
+                date_id: aDate,
+                lc_id: aLC_ID,
+                sal_begin: aValue,
+                account_id: anAccount
+            });
         } else {
             model.dsSaldo.cursor.sal_begin = aValue;
             Logger.info('Saldo present: ' + aLC_ID + ' value: ' + model.dsSaldo.cursor.sal_begin);
@@ -53,7 +53,7 @@ function SaldoAndSumsModule() {
         model.save();
         return model.dsSaldo.per_saldo_flat_id;
     };
-    
+
     /*
      * Добавить пени в квартиру
      * @param {type} aLC_ID
@@ -62,12 +62,12 @@ function SaldoAndSumsModule() {
      * @param {type} aPreviousValue
      * @returns {undefined}
      */
-    self.addPenalties = function(aLC_ID, aDate, anAccount, aCurrentValue, aPreviousValue){
+    self.addPenalties = function(aLC_ID, aDate, anAccount, aCurrentValue, aPreviousValue) {
         model.dsSaldo.params.account_id = anAccount;
         model.dsSaldo.params.date_id = aDate;
         model.dsSaldo.params.flat_id = aLC_ID;
         model.dsSaldo.execute();
-        
+
         if (!self.dsSaldo.length)
             self.dsSaldo.insert(self.dsSaldo.schema.date_id, aDate,
                     self.dsSaldo.schema.lc_id, aLC_ID,
@@ -77,7 +77,7 @@ function SaldoAndSumsModule() {
             self.dsSaldo.sal_penalties_cur = aCurrentValue;
             self.dsSaldo.schema.sal_penalties_old = aPreviousValue;
         }
-        return self.dsSaldo.per_saldo_flat_id;        
+        return self.dsSaldo.per_saldo_flat_id;
     };
 
     /*
@@ -104,18 +104,18 @@ function SaldoAndSumsModule() {
     self.addOplata = function(aFlatID, aSessionID, aDateID, aSum, aDate, aComment, aPercent, aFullPay) {
 
         model.dsOplById.push({
-            session_id:      aSessionID,
-            flat_id:         aFlatID,
-            payment_sum:     aSum,
-            date_id:         aDateID,
-            payment_date:    aDate,
+            session_id: aSessionID,
+            flat_id: aFlatID,
+            payment_sum: aSum,
+            date_id: aDateID,
+            payment_date: aDate,
             payment_comment: aComment,
-            bank_percent:    aPercent,
-            full_payment:    aFullPay
+            bank_percent: aPercent,
+            full_payment: aFullPay
         });
         model.save();
     };
-    
+
     function checkCurrentSaldo(aFlatId, aDateId, anAccount) {
         if (aFlatId || aDateId) {
             model.dsSaldo.params.account_id = anAccount;
@@ -126,7 +126,7 @@ function SaldoAndSumsModule() {
         var sum = cs.sal_benefit + cs.sal_full_calc + cs.sal_penalties_pay + cs.sal_recalc;
         return cs.sal_end == (cs.sal_begin + sum - cs.sal_payments).toFixed(2);
     }
-    
+
     self.moveSaldo = function(aFlatId, aDateFromId, anAccount, aComment) {
         var dm = new DateModule();
         var nextDate = aDateFromId;
@@ -136,43 +136,42 @@ function SaldoAndSumsModule() {
         model.dsSaldo.params.flat_id = aFlatId;
         model.dsSaldo.requery();
         moveIt();
-        
+
         function moveIt() {
             var es = model.dsSaldo.cursor.sal_end;
             nextDate = dm.nextDate(nextDate);
             if (nextDate) {
                 model.dsSaldo.params.date_id = nextDate;
-                model.dsSaldo.execute();
-                var dif = model.dsSaldo.cursor.sal_begin - es;
-                if (dif) {
-                    var oldData = JSON.stringify(model.dsSaldo.cursor);
-                    model.dsSaldo.cursor.sal_begin = (model.dsSaldo.cursor.sal_begin - dif).toFixed(2);
-                    model.dsSaldo.cursor.sal_end = (model.dsSaldo.cursor.sal_end - dif).toFixed(2);
-                    if (checkCurrentSaldo()){
-                        model.qSaldoMove.push({
-                            psf_id: model.dsSaldo.cursor.per_saldo_flat_id,
-                            old_data: oldData,
-                            comment: aComment
-                        });
-                        if (lastDate !== nextDate)
-                            moveIt();
-                        else {
-                            model.save();
-                            return 0;
-                        }
-                    } else {
-                        model.revert();
-                        model.qSaldoMove.push({
-                            psf_id: model.dsSaldo.cursor.per_saldo_flat_id,
-                            old_data: 'Ошибка при переносе даты. Квартира: ' + aFlatId + ', дата: ' + nextDate,
-                            comment: aComment
-                        });
-                        model.save();
-                        Logger.info('Сальдо не сходиться квартира: ' + aFlatId + ', дата: ' + nextDate);
-                        return 'Ошибка при переносе даты. Квартира: ' + aFlatId + ', дата: ' + nextDate;
+                model.dsSaldo.execute();                
+                var oldData = JSON.stringify(model.dsSaldo.cursor);
+                var cursor = model.dsSaldo.cursor;
+                cursor.sal_begin = es;
+                cursor.sal_end = (cursor.sal_begin + cursor.sal_calc + cursor.sal_recalc - cursor.sal_payments).toFixed(2);
+                
+                if (checkCurrentSaldo()) {
+                    model.qSaldoMove.push({
+                        psf_id: model.dsSaldo.cursor.per_saldo_flat_id,
+                        old_data: oldData,
+                        comment: aComment
+                    });
+                    model.save();
+                    if (lastDate !== nextDate)
+                        moveIt();
+                    else {
+                        return 0;
                     }
+                } else {
+                    model.revert();
+                    model.qSaldoMove.push({
+                        psf_id: model.dsSaldo.cursor.per_saldo_flat_id,
+                        old_data: 'Ошибка при переносе даты. Квартира: ' + aFlatId + ', дата: ' + nextDate,
+                        comment: aComment
+                    });
+                    model.save();
+                    Logger.info('Сальдо не сходиться квартира: ' + aFlatId + ', дата: ' + nextDate);
+                    return 'Ошибка при переносе даты. Квартира: ' + aFlatId + ', дата: ' + nextDate;
                 }
             }
-        } 
+        }
     };
 }
