@@ -9,8 +9,8 @@
   <entity Title="" entityHeight="200" entityIconified="false" entityId="145070358455976" entityLocationX="259" entityLocationY="138" entityWidth="150" tableAlias="t" tableName="lc_flat" tableSchemaName=""/>
   <entity Title="" entityHeight="119" entityIconified="false" entityId="145069833300745" entityLocationX="259" entityLocationY="7" entityWidth="150" queryId="qLCInGroups" tableAlias="q1" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="group_id" rightEntityId="145069833300745" rightEntityParameterName="Group_ID"/>
-  <relation leftEntityFieldName="account_id" leftEntityId="145069838173405" rightEntityId="-1" rightEntityParameterName="account_id"/>
+  <relation leftEntityFieldName="account_id" leftEntityId="145069838173405" polyline="496;240 496;130 164;130 164;76" rightEntityId="-1" rightEntityParameterName="account_id"/>
   <relation leftEntityFieldName="lc_id" leftEntityId="145069838173405" rightEntityFieldName="lc_id" rightEntityId="145069833300745"/>
-  <relation leftEntityFieldName="date_id" leftEntityId="145069838173405" rightEntityId="-1" rightEntityParameterName="date_id"/>
+  <relation leftEntityFieldName="date_id" leftEntityId="145069838173405" polyline="496;87 496;130 164;130 164;59" rightEntityId="-1" rightEntityParameterName="date_id"/>
   <relation leftEntityFieldName="lc_id" leftEntityId="145069833300745" rightEntityFieldName="lc_flat_id" rightEntityId="145070358455976"/>
 </datamodel>
