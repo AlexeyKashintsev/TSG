@@ -12,9 +12,10 @@ function formGroupWorkSheet() {
     var fmGStats = new SaldoGroupView();
     var fmGrpAccounts = new fmAccountsByGroup();
     var fmCounters = new formCounterValuesForGroup();
+    var fmLCDetails = new fmDetailInfoByGroup();
     
     
-        self.check4Modifications = function(){
+    self.check4Modifications = function(){
         if (!fmGChars.model.modified
             &&!fmGServs.model.modified
             &&!fmGTarifs.model.modified
@@ -23,7 +24,7 @@ function formGroupWorkSheet() {
             return true;
         else
             return false;
-    }
+    };
     
     function askAndSave(){
     if (confirm('Сохранить изменения')){
@@ -39,7 +40,8 @@ function formGroupWorkSheet() {
     self.setGroup = function(aNewGroupID){
         fmGChars.parGroup = fmGServs.parGroup = 
         fmGTarifs.parGroupID = fmGStats.parGroup = 
-        fmGrpAccounts.parGroupID = fmCounters.parGroupID = aNewGroupID;
+        fmGrpAccounts.parGroupID = fmCounters.parGroupID = 
+        fmLCDetails.parGroupID = aNewGroupID;
     };
          
     function formWindowOpened(evt) {//GEN-FIRST:event_formWindowOpened
@@ -49,5 +51,6 @@ function formGroupWorkSheet() {
         fmGrpAccounts.showOnPanel(self.pnlAccounts);
         fmGChars.showOnPanel(self.pnlGroupChars1);
         fmCounters.showOnPanel(self.pnlCounters);
+        fmLCDetails.showOnPanel(self.pnlFlats);
     }//GEN-LAST:event_formWindowOpened
 }

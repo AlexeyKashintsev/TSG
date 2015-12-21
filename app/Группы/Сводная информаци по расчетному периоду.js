@@ -43,7 +43,8 @@ self.syncParams = function(aDate, anIsEditable, anAccount) {
         var cv = [];
         model.dsChargesForGroup.forEach(function(aRow) {
             cv.push(aRow);
-        })
+        });
+        
         var reportObject = {
             sal_begin   :   model.dsBeginSaldoInGroup.sal_begin,
             sal_end     :   model.dsEndSaldoInGroup.sal_end ,

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parGroupID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="qLcFlatAndSaldo4Report" Title="" entityHeight="200" entityIconified="false" entityId="145069853448581" entityLocationX="200" entityLocationY="9" entityWidth="150" queryId="qLcFlatAndSaldo4Report" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="145069853448581" rightEntityParameterName="group_id"/>
+</datamodel>
