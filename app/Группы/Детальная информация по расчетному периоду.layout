@@ -1,48 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="400px">
-  <widget name="modelGrid" parent="Form" prefHeight="252px" prefWidth="400px" type="DbGridDesignInfo">
-    <column name="colPer_saldo_flat_id">
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="1024px">
+  <widget name="modelGrid" parent="Form" prefHeight="252px" prefWidth="1024px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="145069853448581" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <column name="colLc_Num" title="Квартира">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="per_saldo_flat_id"/>
+      <datamodelElement entityId="145069853448581" fieldName="lc_flatnumber"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
-    <column name="colLc_id" title="Квартира">
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="lc_id"/>
+    <column name="colLc_FIO" title="ФИО">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="145069853448581" fieldName="lc_regto"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colDate_id" title="Дата">
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="date_id"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
         <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colSal_begin" title="Начальное сальдо">
@@ -52,12 +41,12 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colSal_calc" title="Начислено 100%">
@@ -67,12 +56,12 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colSal_benefit" title="Льгота">
@@ -82,12 +71,12 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colSal_recalc" title="Перерассчет">
@@ -97,12 +86,12 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colSal_full_calc" title="Начислено">
@@ -112,12 +101,12 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colSal_payments" title="Оплачено">
@@ -127,12 +116,12 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colSal_end" title="Конечное сальдо">
@@ -142,57 +131,12 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colUsr_context" title="Не трогать! Для изоляции данных.">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="usr_context"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
         <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colAccount_id">
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="account_id"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colCalc_peni" title="Считать пени">
-      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="calc_peni"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colSal_penalties_calc" title="Пени начислено">
@@ -202,12 +146,12 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colSal_penalties_old" title="Пени с предыдущего периода">
@@ -217,12 +161,12 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colSal_penalties_cur" title="Пени текущее">
@@ -232,12 +176,12 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
     <column name="colSal_penalties_pay" title="Пени оплачено">
@@ -247,81 +191,17 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colGrp_lc_group_id">
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="grp_lc_group_id"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
         <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
       </cellDesignInfo>
       <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
+        <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
-    <column name="colGroup_id">
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="group_id"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colLc_id1">
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="lc_id"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colUsr_context1" title="Не трогать! Для изоляции данных.">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="usr_context"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Lucida Grande" size="13"/>
-      </headerStyle>
-    </column>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="145069853448581" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="48px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="button" parent="Form" prefHeight="29px" prefWidth="86px" text="button" type="ButtonDesignInfo">
+  <widget actionPerformed="buttonActionPerformed" name="button" parent="Form" prefHeight="29px" prefWidth="86px" text="Отчет" type="ButtonDesignInfo">
     <constraints height="29px" right="14px" top="12px" type="MarginConstraintsDesignInfo" width="86px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

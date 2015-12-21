@@ -3,41 +3,41 @@
     <layout type="MarginLayoutDesignInfo"/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlFlats" parent="panel" prefHeight="300px" prefWidth="731px" type="TabsDesignInfo">
+  <widget name="pnlAll" parent="panel" prefHeight="300px" prefWidth="731px" type="TabsDesignInfo">
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlGroupChars1" parent="pnlFlats" prefHeight="254px" prefWidth="710px" type="PanelDesignInfo">
+  <widget name="pnlGroupChars1" parent="pnlAll" prefHeight="272px" prefWidth="726px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Характеристики" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlGroupServ" parent="pnlFlats" prefHeight="254px" prefWidth="710px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlGroupServ" parent="pnlAll" prefHeight="272px" prefWidth="726px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Услуги" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlGroupTarifs" parent="pnlFlats" prefHeight="254px" prefWidth="710px" toolTipText="Тарифы" type="PanelDesignInfo" visible="false">
+  <widget name="pnlGroupTarifs" parent="pnlAll" prefHeight="272px" prefWidth="726px" toolTipText="Тарифы" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Тарифы" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlStats" parent="pnlFlats" prefHeight="254px" prefWidth="710px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlStats" parent="pnlAll" prefHeight="272px" prefWidth="726px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Статистика" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="tabbedPane" parent="pnlStats" prefHeight="254px" prefWidth="710px" type="TabsDesignInfo">
+  <widget name="tabbedPane" parent="pnlStats" prefHeight="272px" prefWidth="726px" type="TabsDesignInfo">
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlGroupData" parent="tabbedPane" prefHeight="208px" prefWidth="689px" type="PanelDesignInfo">
+  <widget name="pnlGroupData" parent="tabbedPane" prefHeight="244px" prefWidth="721px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Сальдо" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlCounters" parent="tabbedPane" prefHeight="208px" prefWidth="689px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlCounters" parent="tabbedPane" prefHeight="244px" prefWidth="721px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Счетчики" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="pnlAccounts" parent="pnlFlats" prefHeight="254px" prefWidth="710px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlAccounts" parent="pnlAll" prefHeight="272px" prefWidth="726px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Счета" type="TabsConstraintsDesignInfo"/>
   </widget>
-  <widget name="panel1" parent="pnlFlats" prefHeight="254px" prefWidth="710px" type="PanelDesignInfo" visible="false">
+  <widget name="pnlFlats" parent="pnlAll" prefHeight="272px" prefWidth="726px" type="PanelDesignInfo" visible="false">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints tabTitle="Квартиры" type="TabsConstraintsDesignInfo"/>
   </widget>
