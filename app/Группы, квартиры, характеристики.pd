@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel datamodelDbId="null">
   <fieldsEntity entityHeight="162" entityIconified="false" entityId="142952395250750" entityLocationX="579" entityLocationY="84" entityWidth="150" tableName="grp_account"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="137476937463676" entityLocationX="753" entityLocationY="15" entityWidth="150" tableName="grp_chars"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137476957359503" entityLocationX="733" entityLocationY="266" entityWidth="150" tableName="char_types"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137476957359503" entityLocationX="864" entityLocationY="391" entityWidth="150" tableName="char_types"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="137476913538116" entityLocationX="217" entityLocationY="14" entityWidth="150" tableName="grp_groups"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="137476906702717" entityLocationX="15" entityLocationY="19" entityWidth="150" tableName="grp_type"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137477589329136" entityLocationX="417" entityLocationY="266" entityWidth="150" tableName="lc_chars"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="145389243553130" entityLocationX="409" entityLocationY="233" entityWidth="150" tableName="grp_bank"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137477589329136" entityLocationX="600" entityLocationY="453" entityWidth="150" tableName="lc_chars"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="137503894934357" entityLocationX="17" entityLocationY="239" entityWidth="150" tableName="grp_lc_group"/>
   <fieldsEntity entityHeight="135" entityIconified="false" entityId="142356837925638" entityLocationX="413" entityLocationY="90" entityWidth="150" tableName="grp_accounts_in_group"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137476968744900" entityLocationX="207" entityLocationY="267" entityWidth="150" tableName="lc_flat"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="137476968744900" entityLocationX="292" entityLocationY="453" entityWidth="150" tableName="lc_flat"/>
 </datamodel>
