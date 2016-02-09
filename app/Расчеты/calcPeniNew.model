@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="flat_payments_in_period" Title="" entityHeight="200" entityIconified="false" entityId="145493110295978" entityLocationX="508" entityLocationY="43" entityWidth="150" queryId="flat_payments_in_period" tableName="" tableSchemaName=""/>
+  <entity Name="saldo4calc" Title="" entityHeight="420" entityIconified="false" entityId="145493112214244" entityLocationX="307" entityLocationY="45" entityWidth="150" queryId="Saldo4calc" tableName="" tableSchemaName=""/>
+  <entity Name="qDebtsByLc" Title="" entityHeight="228" entityIconified="false" entityId="145500461486402" entityLocationX="718" entityLocationY="51" entityWidth="150" queryId="qDebtsByLc" tableName="" tableSchemaName=""/>
+  <entity Name="qDebtById" Title="" entityHeight="200" entityIconified="false" entityId="145500600459947" entityLocationX="898" entityLocationY="51" entityWidth="150" queryId="qDebtById" tableName="" tableSchemaName=""/>
+  <referenceRelation leftEntityFieldName="session_id" leftEntityId="145493110295978" rightEntityFieldName="opl_sessions_id" rightEntityId="145493110295978"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="145493112214244" rightEntityFieldName="lc_flat_id" rightEntityId="145493112214244"/>
+  <referenceRelation leftEntityFieldName="flat_id" leftEntityId="145493110295978" rightEntityFieldName="lc_flat_id" rightEntityId="145493112214244"/>
+</datamodel>

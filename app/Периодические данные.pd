@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel datamodelDbId="null">
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288021562922" entityLocationX="10" entityLocationY="20" entityWidth="150" tableName="per_date"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288023051590" entityLocationX="415" entityLocationY="48" entityWidth="150" tableName="per_saldo_flat"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288022654644" entityLocationX="27" entityLocationY="241" entityWidth="150" tableName="per_counter_values"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288025250450" entityLocationX="593" entityLocationY="15" entityWidth="150" tableName="usl_tarif"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288032298701" entityLocationX="336" entityLocationY="435" entityWidth="150" tableName="lc_flat_services"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288022654644" entityLocationX="27" entityLocationY="241" entityWidth="150" tableName="per_counter_values"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="145493159686956" entityLocationX="1019" entityLocationY="235" entityWidth="150" tableName="lc_flat"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288025250450" entityLocationX="710" entityLocationY="15" entityWidth="150" tableName="usl_tarif"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288021562922" entityLocationX="10" entityLocationY="20" entityWidth="150" tableName="per_date"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288023642746" entityLocationX="227" entityLocationY="187" entityWidth="150" tableName="per_sums"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="145499977789090" entityLocationX="648" entityLocationY="348" entityWidth="150" tableName="per_debt"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="138288023051590" entityLocationX="415" entityLocationY="48" entityWidth="150" tableName="per_saldo_flat"/>
 </datamodel>

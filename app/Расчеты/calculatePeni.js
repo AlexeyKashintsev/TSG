@@ -37,9 +37,9 @@ function CalculatePeni() {
         };
     }
     
-    self.calculate = function(aFlatID, aDateID, aAccountID) {
+    self.calculate = function(aFlatID, aDateID, anAccountID) {
         model.params.parFlatID = aFlatID;
-        model.params.parAccountID = aAccountID;
+        model.params.parAccountID = anAccountID;
         model.saldo4calc.params.dateid = aDateID;
         model.saldo4calc.requery();
         
