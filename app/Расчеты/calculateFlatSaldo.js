@@ -6,9 +6,9 @@
  */ 
 function CalculateFlatSaldo() {
     var self = this, model = this.model;
-    var peniClc = new CalculatePeni();
+//    var peniClc = new CalculatePeni();
     //var progress = new ProgressShow();
-    
+    var peniNew = new calcPeniNew();
     
     self.calculateFlatSaldo = function(aGroupID, aFlatID, aDateID) {
         proceed(aGroupID, aFlatID, aDateID, function(cursor, values) {
@@ -107,7 +107,8 @@ function CalculateFlatSaldo() {
         var endSum;
 //        doCalcPeni
         if (model.dsMainGroupByLCWithAccounts.cursor.calculate_peni) {
-            var peni = peniClc.calculate(data.lc_id, model.params.parDateID, model.params.parAccountID);
+//            var peni = peniClc.calculate(data.lc_id, model.params.parDateID, model.params.parAccountID);
+            var peni = peniNew.calculate(data, sp.pay_sum);
             var peniOld = peni.previous;
             var saldoOld = peni.saldo ? peni.saldo : data.sal_begin;
             endSum = saldoOld - sp.pay_sum;

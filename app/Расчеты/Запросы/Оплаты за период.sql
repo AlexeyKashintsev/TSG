@@ -1,14 +1,14 @@
 /**
  *
  * @author Alexey
- * @name Оплаты_за_период
+ * @name qPaymentsByDate
  * @public
  * @manual
  */ 
-Select * 
+Select t1.* 
 From opl_payments t1
- Left Join grp_lc_group t on t.lc_id = t1.flat_id
+ Inner Join opl_sessions t2 on t1.session_id = t2.opl_sessions_id
  Where :dateId = t1.date_id
  and (:flatId = t1.flat_id or :flatId is null)
- and (:groupid = t.group_id or :groupid is null)
+ and :accountId = t2.account_id
  Order by payment_date

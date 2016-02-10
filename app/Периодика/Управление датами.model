@@ -13,9 +13,9 @@
   <entity Name="new_tarif" Title="" entityHeight="200" entityIconified="false" entityId="142227401498475" entityLocationX="60" entityLocationY="274" entityWidth="150" queryId="new_tarif" tableName="" tableSchemaName=""/>
   <entity Name="new_saldo" Title="" entityHeight="200" entityIconified="false" entityId="142227401320366" entityLocationX="253" entityLocationY="272" entityWidth="150" queryId="new_saldo" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="prevDate" rightEntityId="142227401498475" rightEntityParameterName="old_date"/>
+  <relation leftEntityId="-1" leftEntityParameterName="prevDate" rightEntityId="142227401145377" rightEntityParameterName="old_date"/>
   <relation leftEntityId="-1" leftEntityParameterName="prevDate" rightEntityId="142227401320366" rightEntityParameterName="old_date"/>
   <relation leftEntityId="-1" leftEntityParameterName="newDate" rightEntityId="142227401320366" rightEntityParameterName="new_date"/>
-  <relation leftEntityId="-1" leftEntityParameterName="prevDate" rightEntityId="142227401145377" rightEntityParameterName="old_date"/>
   <relation leftEntityId="-1" leftEntityParameterName="newDate" rightEntityId="142227401145377" rightEntityParameterName="new_date"/>
   <relation leftEntityId="-1" leftEntityParameterName="newDate" rightEntityId="142227401498475" rightEntityParameterName="new_date"/>
   <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="139444495996046" rightEntityFieldName="grp_groups_id" rightEntityId="139444495996046"/>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="lcId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="dateId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="anAccountId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="145500418755206" entityLocationX="613" entityLocationY="9" entityWidth="150" tableAlias="t1" tableName="per_debt_history" tableSchemaName=""/>
+  <entity Title="" entityHeight="156" entityIconified="false" entityId="145500471498505" entityLocationX="441" entityLocationY="66" entityWidth="150" tableAlias="t2" tableName="per_date" tableSchemaName=""/>
+  <entity Title="" entityHeight="337" entityIconified="false" entityId="145500424914728" entityLocationX="260" entityLocationY="10" entityWidth="150" tableAlias="t" tableName="per_saldo_flat" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="lcId" rightEntityFieldName="lc_id" rightEntityId="145500424914728"/>
+  <relation leftEntityId="-1" leftEntityParameterName="anAccountId" rightEntityFieldName="account_id" rightEntityId="145500424914728"/>
+  <relation leftEntityFieldName="date_id" leftEntityId="145500424914728" rightEntityFieldName="per_date_id" rightEntityId="145500471498505"/>
+  <relation leftEntityFieldName="debt_id" leftEntityId="145500418755206" rightEntityFieldName="per_saldo_flat_id" rightEntityId="145500424914728"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityFieldName="date_id" rightEntityId="145500424914728"/>
+</datamodel>
