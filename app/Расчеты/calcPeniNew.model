@@ -5,16 +5,18 @@
   <entity Name="qDebtsByLC" Title="" entityHeight="200" entityIconified="false" entityId="145510794434085" entityLocationX="502" entityLocationY="26" entityWidth="150" queryId="qDebtsByLC" tableName="" tableSchemaName=""/>
   <entity Name="qDebtById" Title="" entityHeight="236" entityIconified="false" entityId="145500600459947" entityLocationX="792" entityLocationY="21" entityWidth="150" queryId="qDebtById" tableName="" tableSchemaName=""/>
   <entity Name="qDebtByIdM" Title="" entityHeight="200" entityIconified="false" entityId="145521120786330" entityLocationX="955" entityLocationY="22" entityWidth="150" queryId="qDebtById" tableName="" tableSchemaName=""/>
+  <entity Name="qPeniPeriods" Title="" entityHeight="200" entityIconified="false" entityId="145527139768452" entityLocationX="36" entityLocationY="283" entityWidth="150" queryId="qPeniPeriods" tableName="" tableSchemaName=""/>
   <entity Name="all_dates" Title="" entityHeight="200" entityIconified="false" entityId="145510848578075" entityLocationX="502" entityLocationY="270" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
+  <referenceRelation leftEntityFieldName="payment_id" leftEntityId="145500600459947" rightEntityFieldName="opl_payments_id" rightEntityId="145511537581318"/>
+  <referenceRelation leftEntityFieldName="debt_id" leftEntityId="145521120786330" rightEntityFieldName="per_debts_id" rightEntityId="145510794434085"/>
   <referenceRelation leftEntityFieldName="flat_id" leftEntityId="145511537581318" rightEntityFieldName="lc_flat_id" rightEntityId="145493112214244"/>
-  <referenceRelation leftEntityFieldName="debt_id" leftEntityId="145500600459947" rightEntityFieldName="per_debts_id" rightEntityId="145510794434085"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="145493112214244" rightEntityFieldName="lc_flat_id" rightEntityId="145493112214244"/>
-  <referenceRelation leftEntityFieldName="per_saldo" leftEntityId="145510794434085" rightEntityFieldName="per_saldo_flat_id" rightEntityId="145493112214244"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="145511537581318" rightEntityFieldName="per_date_id" rightEntityId="145510848578075"/>
   <referenceRelation leftEntityFieldName="payment_id" leftEntityId="145521120786330" rightEntityFieldName="opl_payments_id" rightEntityId="145511537581318"/>
   <referenceRelation leftEntityFieldName="date_id" leftEntityId="145521120786330" rightEntityFieldName="per_date_id" rightEntityId="145510848578075"/>
-  <referenceRelation leftEntityFieldName="date_id" leftEntityId="145511537581318" rightEntityFieldName="per_date_id" rightEntityId="145510848578075"/>
-  <referenceRelation leftEntityFieldName="debt_id" leftEntityId="145521120786330" rightEntityFieldName="per_debts_id" rightEntityId="145510794434085"/>
-  <referenceRelation leftEntityFieldName="payment_id" leftEntityId="145500600459947" rightEntityFieldName="opl_payments_id" rightEntityId="145511537581318"/>
-  <referenceRelation leftEntityFieldName="date_id" leftEntityId="145500600459947" rightEntityFieldName="per_date_id" rightEntityId="145510848578075"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="145527139768452" rightEntityFieldName="per_date_id" rightEntityId="145510848578075"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="145493112214244" rightEntityFieldName="lc_flat_id" rightEntityId="145493112214244"/>
+  <referenceRelation leftEntityFieldName="per_saldo" leftEntityId="145510794434085" rightEntityFieldName="per_saldo_flat_id" rightEntityId="145493112214244"/>
   <referenceRelation leftEntityFieldName="date_id" leftEntityId="145493112214244" rightEntityFieldName="per_date_id" rightEntityId="145510848578075"/>
+  <referenceRelation leftEntityFieldName="debt_id" leftEntityId="145500600459947" rightEntityFieldName="per_debts_id" rightEntityId="145510794434085"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="145500600459947" rightEntityFieldName="per_date_id" rightEntityId="145510848578075"/>
 </datamodel>

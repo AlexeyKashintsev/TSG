@@ -3,6 +3,9 @@
     <parameter description="" name="DateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="qPeniPeriods" Title="" entityHeight="200" entityIconified="false" entityId="145527455653855" entityLocationX="396" entityLocationY="17" entityWidth="150" queryId="qPeniPeriods" tableName="" tableSchemaName=""/>
   <entity Name="dateByID" Title="" entityHeight="200" entityIconified="false" entityId="139508636283599" entityLocationX="190" entityLocationY="13" entityWidth="150" queryId="DateByID" tableName="" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="DateID" rightEntityId="145527455653855" rightEntityParameterName="dateId"/>
   <relation leftEntityId="-1" leftEntityParameterName="DateID" rightEntityId="139508636283599" rightEntityParameterName="dateId"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="145527455653855" rightEntityFieldName="per_date_id" rightEntityId="139508636283599"/>
 </datamodel>

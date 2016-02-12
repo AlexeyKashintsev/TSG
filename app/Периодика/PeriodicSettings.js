@@ -10,4 +10,14 @@ function PeriodicSettings() {
     function buttonActionPerformed(evt) {//GEN-FIRST:event_buttonActionPerformed
         model.save(form.close);
     }//GEN-LAST:event_buttonActionPerformed
+
+    function btnAddPeriodActionPerformed(evt) {//GEN-FIRST:event_btnAddPeriodActionPerformed
+        model.qPeniPeriods.push({
+            date_id: model.params.DateID
+        });
+    }//GEN-LAST:event_btnAddPeriodActionPerformed
+
+    function btnDelPeriodActionPerformed(evt) {//GEN-FIRST:event_btnDelPeriodActionPerformed
+        model.qPeniPeriods.deleteRow();
+    }//GEN-LAST:event_btnDelPeriodActionPerformed
 }

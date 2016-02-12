@@ -1,27 +1,77 @@
-<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="151px" prefWidth="221px">
-  <widget name="label" parent="Form" prefHeight="16px" prefWidth="120px" text="Оплатить до:" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="30px" type="MarginConstraintsDesignInfo" width="120px"/>
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="398px" prefWidth="344px">
+  <widget name="label" parent="Form" prefHeight="16px" prefWidth="96px" text="Оплатить до:" type="LabelDesignInfo">
+    <constraints height="16px" left="12px" top="102px" type="MarginConstraintsDesignInfo" width="96px"/>
   </widget>
   <widget name="label1" parent="Form" prefHeight="16px" prefWidth="38px" text="Дата:" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="6px" type="MarginConstraintsDesignInfo" width="38px"/>
+    <constraints height="16px" left="12px" top="18px" type="MarginConstraintsDesignInfo" width="38px"/>
   </widget>
   <widget name="label2" parent="Form" prefHeight="16px" prefWidth="38px" text="СРФ:" type="LabelDesignInfo">
-    <constraints height="16px" left="12px" top="90px" type="MarginConstraintsDesignInfo" width="38px"/>
+    <constraints height="16px" left="12px" top="138px" type="MarginConstraintsDesignInfo" width="38px"/>
   </widget>
   <widget actionPerformed="buttonActionPerformed" name="button" parent="Form" prefHeight="29px" prefWidth="110px" text="Сохранить" type="ButtonDesignInfo">
     <constraints bottom="7px" height="29px" right="3px" type="MarginConstraintsDesignInfo" width="110px"/>
   </widget>
-  <widget dateFormat="dd.MM.yyyy" name="modelDate" parent="Form" prefHeight="28px" prefWidth="167px" type="DbDateDesignInfo">
+  <widget dateFormat="dd.MM.yyyy" name="modelDate" parent="Form" prefHeight="28px" prefWidth="288px" type="DbDateDesignInfo">
     <datamodelElement entityId="139508636283599" fieldName="per_date"/>
-    <constraints height="28px" left="48px" right="6px" top="0px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="28px" left="48px" right="8px" top="12px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget dateFormat="dd.MM.yyyy" name="modelDate1" parent="Form" prefHeight="28px" prefWidth="204px" type="DbDateDesignInfo">
+  <widget dateFormat="dd.MM.yyyy" name="modelDate1" parent="Form" prefHeight="28px" prefWidth="228px" type="DbDateDesignInfo">
     <datamodelElement entityId="139508636283599" fieldName="per_pay_day"/>
-    <constraints height="28px" left="12px" right="5px" top="48px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="28px" left="108px" right="8px" top="96px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget format="#0.00" name="modelFormattedField" parent="Form" prefHeight="28px" prefWidth="168px" type="DbLabelDesignInfo" valueType="0">
+  <widget format="#0.00" name="modelFormattedField" parent="Form" prefHeight="28px" prefWidth="291px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="139508636283599" fieldName="per_srf"/>
-    <constraints height="28px" left="48px" right="5px" top="84px" type="MarginConstraintsDesignInfo"/>
+    <constraints height="28px" left="48px" top="132px" type="MarginConstraintsDesignInfo" width="291px"/>
+  </widget>
+  <widget name="modelGrid" parent="Form" prefHeight="139px" prefWidth="324px" type="DbGridDesignInfo">
+    <column name="colDebt_age" title="Возраст долга">
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <datamodelElement entityId="145527455653855" fieldName="debt_age"/>
+    </column>
+    <column name="colPeni_rate" title="Коэффициент">
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <datamodelElement entityId="145527455653855" fieldName="peni_rate"/>
+    </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="145527455653855" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
+    <constraints bottom="43px" left="12px" right="8px" top="216px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget actionPerformed="btnAddPeriodActionPerformed" name="btnAddPeriod" parent="Form" prefHeight="35px" prefWidth="48px" text="+" type="ButtonDesignInfo">
+    <constraints height="35px" left="12px" top="168px" type="MarginConstraintsDesignInfo" width="48px"/>
+  </widget>
+  <widget actionPerformed="btnDelPeriodActionPerformed" name="btnDelPeriod" parent="Form" prefHeight="35px" prefWidth="48px" text="-" type="ButtonDesignInfo">
+    <constraints height="35px" left="60px" top="168px" type="MarginConstraintsDesignInfo" width="48px"/>
+  </widget>
+  <widget name="label3" parent="Form" prefHeight="14px" prefWidth="96px" text="Дата расчета:" type="LabelDesignInfo">
+    <constraints height="14px" left="12px" top="67px" type="MarginConstraintsDesignInfo" width="96px"/>
+  </widget>
+  <widget name="modelDate2" parent="Form" prefHeight="28px" prefWidth="228px" type="DbDateDesignInfo">
+    <datamodelElement entityId="139508636283599" fieldName="per_calc_day"/>
+    <constraints height="28px" left="108px" right="8px" top="60px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>
