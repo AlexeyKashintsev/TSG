@@ -1,0 +1,7 @@
+delete from per_debt_history
+where debt_id in (
+    select t.per_debts_id
+    from per_saldo_flat t2
+    inner join per_debts t on t2.per_saldo_flat_id = t.per_saldo
+    where t2.lc_id = :lcId)
+and date_id = :dateId

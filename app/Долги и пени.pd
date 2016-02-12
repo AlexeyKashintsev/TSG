@@ -3,7 +3,7 @@
   <fieldsEntity entityHeight="121" entityIconified="false" entityId="145510444661683" entityLocationX="32" entityLocationY="456" entityWidth="150" tableName="per_peni_periods"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="145500020282489" entityLocationX="223" entityLocationY="419" entityWidth="150" tableName="per_date"/>
   <fieldsEntity entityHeight="229" entityIconified="false" entityId="145500067414746" entityLocationX="631" entityLocationY="113" entityWidth="150" tableName="per_debt_history"/>
-  <fieldsEntity entityHeight="200" entityIconified="false" entityId="145500020281886" entityLocationX="397" entityLocationY="252" entityWidth="150" tableName="lc_flat"/>
+  <fieldsEntity entityHeight="200" entityIconified="false" entityId="145500020281886" entityLocationX="415" entityLocationY="274" entityWidth="150" tableName="lc_flat"/>
   <fieldsEntity entityHeight="200" entityIconified="false" entityId="145510078526353" entityLocationX="334" entityLocationY="16" entityWidth="150" tableName="per_debts"/>
   <fieldsEntity entityHeight="198" entityIconified="false" entityId="145500021188009" entityLocationX="31" entityLocationY="237" entityWidth="150" tableName="per_saldo_flat"/>
 </datamodel>

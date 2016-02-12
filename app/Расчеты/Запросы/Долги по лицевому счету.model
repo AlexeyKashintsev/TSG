@@ -5,8 +5,10 @@
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="6" entityLocationY="7" entityWidth="150"/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="145510725044934" entityLocationX="417" entityLocationY="13" entityWidth="150" tableAlias="t1" tableName="per_debts" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="145528249866986" entityLocationX="638" entityLocationY="10" entityWidth="150" tableAlias="t2" tableName="per_debt_history" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="145510726605873" entityLocationX="216" entityLocationY="30" entityWidth="150" tableAlias="t" tableName="per_saldo_flat" tableSchemaName=""/>
   <relation leftEntityFieldName="per_saldo" leftEntityId="145510725044934" rightEntityFieldName="per_saldo_flat_id" rightEntityId="145510726605873"/>
-  <relation leftEntityId="-1" leftEntityParameterName="lcId" rightEntityFieldName="lc_id" rightEntityId="145510726605873"/>
   <relation leftEntityId="-1" leftEntityParameterName="accountId" rightEntityFieldName="account_id" rightEntityId="145510726605873"/>
+  <relation leftEntityFieldName="per_debts_id" leftEntityId="145510725044934" rightEntityFieldName="debt_id" rightEntityId="145528249866986"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lcId" rightEntityFieldName="lc_id" rightEntityId="145510726605873"/>
 </datamodel>
