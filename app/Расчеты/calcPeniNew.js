@@ -9,14 +9,19 @@ function calcPeniNew() {
     var dateMod = new DateModule();
     var payments = [];
     var prevPeni, prevSaldo;
-
+    
+    function getDiffDays(aStart, aEnd) {
+        var diff = aEnd - aStart;
+        return diff > 0 ? Math.floor(diff / (1000 * 60 * 60 * 24)) : 0;
+    }
+    
     function getDebtAge(aDebtDate, aDateTo) {
         var date = typeof aDateTo === 'number' ?
                 getDate(aDateTo).per_calc_day : aDateTo;
         var ddate = typeof aDebtDate === 'number' ?
                 aDebtDate(aDateTo).per_pay_day : aDebtDate;
-        var diff = date - ddate;
-        return Math.floor(diff / (1000 * 60 * 60 * 24));
+                
+        return getDiffDays(ddate, date)
     }
 
     function getDateWithAddDays(aDate, aDays) {
@@ -30,13 +35,15 @@ function calcPeniNew() {
     }
 
     function checkCurrentDebt(aCSaldo, aSum) {
+        
+        
         if (aCSaldo.sal_begin - aSum > 0) {
             function createDebt() {
-                var dd = getDate(cs.date_id).per_pay_day;
+                var dd = getDate(prevSaldo.date_id).per_pay_day;
                 model.qDebtsByLC.push({
-                    per_saldo: cs.per_saldo_flat_id,
-                    debt_sum: cs.sal_end,
-                    debt_remain: cs.sal_end,
+                    per_saldo: prevSaldo.per_saldo_flat_id,
+                    debt_sum: prevSaldo.sal_end,
+                    debt_remain: prevSaldo.sal_end,
                     debt_age: 0,
                     debt_date: dd
                 });
@@ -52,10 +59,11 @@ function calcPeniNew() {
                 });
                 model.save();
             }
+            
             model.saldo4calc.params.dateid = dateMod.prevDate(aCSaldo.date_id);
             model.saldo4calc.requery();
-            var cs = model.saldo4calc.cursor;
-            var f = model.qDebtsByLC.find(model.qDebtsByLC.schema.per_saldo, cs.per_saldo_flat_id);
+            var prevSaldo = model.saldo4calc.cursor;
+            var f = model.qDebtsByLC.find(model.qDebtsByLC.schema.per_saldo, prevSaldo.per_saldo_flat_id);
 
             if (!f.length) {
                 createDebt();
@@ -64,13 +72,14 @@ function calcPeniNew() {
                 model.qDebtsByLC.deleteRow();
                 createDebt();
             }
+            
+            prevPeni = prevSaldo.sal_penalties_cur;
+            prevSaldo = prevSaldo.sal_end;
         }
-        prevPeni = cs.sal_penalties_cur;
-        prevSaldo = cs.sal_end;
     }
     
     function getPeniForPeriod(aStartDate, anEndDate, anAge, aSum, aDate) {
-        var diff = Math.floor((anEndDate - aStartDate) / (1000 * 60 * 60 * 24));
+        var diff = getDiffDays(aStartDate, anEndDate);
         var rate;
         model.qPeniPeriods.forEach(function(period) {
             if (anAge >= period.debt_age) {
@@ -79,7 +88,7 @@ function calcPeniNew() {
         });
         return {
             days : diff,
-            peni : diff * aSum * aDate.per_srf * rate
+            peni : diff * aSum * aDate.per_srf * (rate ? rate : 0)
         };
     };
     
@@ -87,7 +96,7 @@ function calcPeniNew() {
         var peniOp = getPeniForPeriod(aDateFrom, aDateTo, aDebt.debt_age, aDebt.debt_remain, aCurDate);
         var paid = 0;
         if (aPayment) {
-            if (aDebt.debt_remain <= aPayment.sum) {
+            if (aDebt.debt_remain >= aPayment.sum) {
                 paid = aPayment.sum;
             } else {
                 paid = aDebt.debt_remain;
