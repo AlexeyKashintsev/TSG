@@ -11,24 +11,24 @@
   <entity Name="dsMainGroupByLCWithAccounts" Title="" entityHeight="200" entityIconified="false" entityId="143204685012465" entityLocationX="677" entityLocationY="4" entityWidth="150" queryId="dsMainGroupByLCWithAccounts" tableName="" tableSchemaName=""/>
   <entity Name="dsSumOfSums" Title="" entityHeight="200" entityIconified="false" entityId="142477900792112" entityLocationX="225" entityLocationY="11" entityWidth="150" queryId="SumOfSums" tableName="" tableSchemaName=""/>
   <entity Name="dsSumOfPayments" Title="" entityHeight="200" entityIconified="false" entityId="142477903245349" entityLocationX="427" entityLocationY="21" entityWidth="150" queryId="SumOfPayments" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="142477903245349" rightEntityParameterName="groupid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="142477905203103" rightEntityParameterName="flatid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142477903245349" rightEntityParameterName="accountid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142477900792112" rightEntityParameterName="dateid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="142477905203103" rightEntityParameterName="groupid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142477905203103" rightEntityParameterName="accountid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="143204685012465" rightEntityParameterName="group_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="142477900792112" rightEntityParameterName="lcid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142477903245349" rightEntityParameterName="dateid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142477905203103" rightEntityParameterName="dateid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="143204685012465" rightEntityParameterName="account_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="142477903245349" rightEntityParameterName="groupid"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142477903245349" rightEntityParameterName="accountid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="142477903245349" rightEntityParameterName="lcid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="142477900792112" rightEntityParameterName="groupid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142477905203103" rightEntityParameterName="accountid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142477900792112" rightEntityParameterName="dateid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="143204685012465" rightEntityParameterName="account_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="142477905203103" rightEntityParameterName="dateid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142477900792112" rightEntityParameterName="accountid"/>
   <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="143204685012465" rightEntityParameterName="lc_id"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parFlatID" rightEntityId="142477900792112" rightEntityParameterName="lcid"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="143204685012465" rightEntityParameterName="group_id"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142477900792112" rightEntityParameterName="accountid"/>
   <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142477905203103" rightEntityFieldName="lc_flat_id" rightEntityId="142477905203103"/>
-  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142477900792112" rightEntityFieldName="lc_flat_id" rightEntityId="142477905203103"/>
-  <referenceRelation leftEntityFieldName="account_id" leftEntityId="143204685012465" rightEntityFieldName="grp_account_id" rightEntityId="142477940695322"/>
-  <referenceRelation leftEntityFieldName="account_id" leftEntityId="142477905203103" rightEntityFieldName="grp_account_id" rightEntityId="142477940695322"/>
   <referenceRelation leftEntityFieldName="flat_id" leftEntityId="142477903245349" rightEntityFieldName="lc_flat_id" rightEntityId="142477905203103"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="142477900792112" rightEntityFieldName="lc_flat_id" rightEntityId="142477905203103"/>
+  <referenceRelation leftEntityFieldName="account_id" leftEntityId="142477905203103" rightEntityFieldName="grp_account_id" rightEntityId="142477940695322"/>
+  <referenceRelation leftEntityFieldName="account_id" leftEntityId="143204685012465" rightEntityFieldName="grp_account_id" rightEntityId="142477940695322"/>
 </datamodel>
