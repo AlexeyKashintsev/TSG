@@ -21,7 +21,7 @@ function calcPeniNew() {
         var ddate = typeof aDebtDate === 'number' ?
                 aDebtDate(aDateTo).per_pay_day : aDebtDate;
                 
-        return getDiffDays(ddate, date)
+        return getDiffDays(ddate, date);
     }
 
     function getDateWithAddDays(aDate, aDays) {
@@ -42,8 +42,8 @@ function calcPeniNew() {
                 var dd = getDate(prevSaldo.date_id).per_pay_day;
                 model.qDebtsByLC.push({
                     per_saldo: prevSaldo.per_saldo_flat_id,
-                    debt_sum: prevSaldo.sal_end,
-                    debt_remain: prevSaldo.sal_end,
+                    debt_sum: prevSaldo.sal_full_calc,
+                    debt_remain: prevSaldo.sal_full_calc,
                     debt_age: 0,
                     debt_date: dd
                 });
@@ -88,16 +88,18 @@ function calcPeniNew() {
         });
         return {
             days : diff,
-            peni : diff * aSum * aDate.per_srf * (rate ? rate : 0)
+            peni : diff * aSum * aDate.per_srf * (rate ? rate : 0) / 100
         };
     };
     
-    function addOperation(aDebt, aPayment, aDateFrom, aDateTo, aCurDate) {
-        var peniOp = getPeniForPeriod(aDateFrom, aDateTo, aDebt.debt_age, aDebt.debt_remain, aCurDate);
+    function addOperation(aDebt, aPayment, lastOp, aDateTo, aCurDate, periodChange) {
+        var dateFrom = lastOp.op_date;
+        var peniOp = getPeniForPeriod(dateFrom, aDateTo, aDebt.debt_age, aDebt.debt_remain, aCurDate);
         var paid = 0;
         if (aPayment) {
             if (aDebt.debt_remain >= aPayment.sum) {
                 paid = aPayment.sum;
+                aPayment.sum = 0;
             } else {
                 paid = aDebt.debt_remain;
                 aPayment.sum = aPayment.sum - paid;
@@ -106,21 +108,32 @@ function calcPeniNew() {
         }
         aDebt.debt_age = getDebtAge(aDebt.debt_date, aDateTo);
         
-        model.qDebtByIdM.push({
-            debt_id: model.qDebtsByLC.cursor.per_debts_id,
-            debt_remain:  aDebt.debt_remain,
-            debt_age_days:  getDebtAge(aDebt.debt_date, aDateTo),
-            peni_calculated: peniOp.peni,
-            peni_days: peniOp.days,
-            debt_paid: paid,
-            date_id: aCurDate.per_date_id,
-            op_date: aDateTo,
-            payment_id: aPayment ? aPayment.id : null
-        });
-        
-        return peniOp.peni;
-    };
+        if (peniOp.peni || periodChange || aPayment) {
+            model.qDebtByIdM.push({
+                debt_id: aDebt.per_debts_id,
+                debt_remain:  aDebt.debt_remain,
+                debt_age_days:  getDebtAge(aDebt.debt_date, aDateTo),
+                peni_calculated: peniOp.peni,
+                peni_days: peniOp.days,
+                debt_paid: paid,
+                date_id: aCurDate.per_date_id,
+                op_date: aDateTo,
+                payment_id: aPayment ? aPayment.id : null
+            });
 
+            return model.qDebtByIdM;
+        } else {
+            return lastOp;
+        }
+    };
+    function getPeni() {
+        var peni = 0;
+        model.qDebtByIdM.forEach(function(peniRec) {
+            peni += peniRec.peni_calculated;
+        });
+        return peni;
+    };
+    
     function proceedDebts(curDate) {
         var peni = 0;
         model.qDebtsByLC.forEach(function(debt) {
@@ -130,30 +143,33 @@ function calcPeniNew() {
                 model.qDebtById.last();
                 var lastOp = model.qDebtById.cursor;
                 var nextPeriod, pp = 0;
+                
+                debt.debt_age = model.qDebtById.cursor.debt_age_days;
+                
                 model.qPeniPeriods.forEach(function(period) {
                     if (period.debt_age > debt.debt_age && pp <= debt.debt_age) {
                         nextPeriod = getDateWithAddDays(debt.debt_date, period.debt_age);
                         pp = period.debt_age;
                     }
                 });
-    //            var nextPeriod = (debt.debt_age < 30 ? debt.next_30 : (
-    //                    debt.debt_age < 90 ? debt.next_90 : null));
+                
                 for (var j in payments) {                
                     if (nextPeriod && +nextPeriod < +payments[j].date)
-                        peni += addOperation(debt, null, lastOp.op_date, nextPeriod, curDate);
-                    peni += addOperation(debt, payments[j], lastOp.op_date, payments[j].date, curDate);
+                        lastOp = addOperation(debt, null, lastOp, nextPeriod, curDate, true);
+                    if (payments[j].sum > 0)
+                        lastOp = addOperation(debt, payments[j], lastOp, payments[j].date, curDate);
                 };
 
                 if (debt.debt_remain > 0) {
                     if (nextPeriod && +nextPeriod < +curDate.per_calc_day && +lastOp.op_date < +nextPeriod)
-                        peni += addOperation(debt, null, lastOp.op_date, nextPeriod, curDate);
+                        lastOp = addOperation(debt, null, lastOp, nextPeriod, curDate, true);
                     if (+lastOp.op_date < curDate.per_calc_day)
-                    peni += addOperation(debt, null, lastOp.op_date, curDate.per_calc_day, curDate);
+                    lastOp = addOperation(debt, null, lastOp, curDate.per_calc_day, curDate);
                 }
             }
         });
         model.save();
-        return peni;
+        return getPeni();
     }
 
     self.calculate = function(aCurrentSaldo, aSumOfPayments) {
