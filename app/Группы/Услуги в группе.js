@@ -85,12 +85,12 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
                     account_id: self.parAccountID,
                     new_service: true
                 });
-                /*if (aService.calc_by_counter === true && confirm('Добавить счетчик "Общий"?')) {
+                if (aService.calc_by_counter === true && confirm('Добавить счетчик "Общий"?')) {
                     model.dsGrpServiceCounter.push({
                         grp_service_id: model.dsServices.grp_services_id,
                         counter_name: 'Общий'
                     });
-                }*/
+                }
                 //model.save();
                 //grpMod.addService2Flats(self.parGroup, aService.service, null, self.parAccountID, model.dsGrpServiceCounter.grp_service_counters_id);
             }

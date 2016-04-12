@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="dsNewServicesByFlat" Title="" entityHeight="200" entityIconified="false" entityId="143144235966738" entityLocationX="395" entityLocationY="232" entityWidth="150" queryId="services_by_flat" tableName="" tableSchemaName=""/>
   <entity Name="sums_perFlat" Title="" entityHeight="200" entityIconified="false" entityId="143143300193918" entityLocationX="659" entityLocationY="23" entityWidth="150" queryId="sums_perFlat" tableName="" tableSchemaName=""/>
-  <entity Name="services_by_flat" Title="" entityHeight="200" entityIconified="false" entityId="143143121352670" entityLocationX="392" entityLocationY="11" entityWidth="150" queryId="services_by_flat" tableName="" tableSchemaName=""/>
+  <entity Name="dsNewServicesByFlat" Title="" entityHeight="200" entityIconified="false" entityId="143144235966738" entityLocationX="395" entityLocationY="232" entityWidth="150" queryId="services_by_flat" tableName="" tableSchemaName=""/>
   <entity Name="qServices" Title="" entityHeight="200" entityIconified="false" entityId="143143116439548" entityLocationX="207" entityLocationY="14" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
-  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="143143300193918" rightEntityFieldName="lc_flat_services_id" rightEntityId="143143121352670"/>
-  <referenceRelation leftEntityFieldName="services_id" leftEntityId="143143300193918" rightEntityFieldName="usl_services_id" rightEntityId="143143116439548"/>
-  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="143143300193918" rightEntityFieldName="lc_flat_services_id" rightEntityId="143143300193918"/>
+  <entity Name="services_by_flat" Title="" entityHeight="200" entityIconified="false" entityId="143143121352670" entityLocationX="392" entityLocationY="11" entityWidth="150" queryId="services_by_flat" tableName="" tableSchemaName=""/>
   <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="143143300193918" rightEntityFieldName="lc_flat_services_id" rightEntityId="143144235966738"/>
-  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="143143116439548" rightEntityFieldName="usl_services_id" rightEntityId="143143116439548"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="143143116439548" rightEntityFieldName="usl_services_id" rightEntityId="143143116439548"/>
+  <referenceRelation leftEntityFieldName="services_id" leftEntityId="143143300193918" rightEntityFieldName="usl_services_id" rightEntityId="143143116439548"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="143143121352670" rightEntityFieldName="usl_services_id" rightEntityId="143143116439548"/>
+  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="143143300193918" rightEntityFieldName="lc_flat_services_id" rightEntityId="143143300193918"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="143143116439548" rightEntityFieldName="usl_services_id" rightEntityId="143143116439548"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="143144235966738" rightEntityFieldName="usl_services_id" rightEntityId="143143116439548"/>
+  <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="143143300193918" rightEntityFieldName="lc_flat_services_id" rightEntityId="143143121352670"/>
 </datamodel>

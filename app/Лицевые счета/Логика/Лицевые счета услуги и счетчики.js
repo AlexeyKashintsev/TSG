@@ -57,9 +57,11 @@ function LCServicesAnCounters() {
             
             var grpCounters = modGRP.getGroupCounters(aGroupService);
             
+            model.save();
+            
             grpCounters.forEach(function(counter) {
                 if (!counter.counterConCounter) {
-                    self.addCounterToFlat(flatService, counter.counterId, null, aFlatID);
+                    self.addCounterToFlat(flatService, counter.counterId, aDateID, aFlatID);
                 } else 
                     processIfConnectedService(aFlatID, flatService, counter.counterId, counter.counterConCounter);
             });
@@ -87,8 +89,8 @@ function LCServicesAnCounters() {
                 addedCounters[aFlatId] = {};
             addedCounters[aFlatId][grpCount] = cnt;
         }
-        if (aDateID) modCN.setCounterValueByCounterValueID(cnt, aDateID, 0);
         modCN.addCounter2Service(cnt, aFlatService, grpCount);
+        if (aDateID) modCN.setCounterValueByCounterValueID(cnt, aDateID, 0);
         return cnt;
     };
 
