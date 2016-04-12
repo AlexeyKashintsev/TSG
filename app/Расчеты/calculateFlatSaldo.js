@@ -108,11 +108,18 @@ function CalculateFlatSaldo() {
 //        doCalcPeni
         if (model.dsMainGroupByLCWithAccounts.cursor.calculate_peni) {
 //            var peni = peniClc.calculate(data.lc_id, model.params.parDateID, model.params.parAccountID);
-            var peni = peniNew.calculate(data, sp.pay_sum);
+            var peni = {
+                previous: data.sal_penalties_old
+            };
+            try {
+                peni = peniNew.calculate(data, sp.pay_sum);
+            } catch (e) {
+                Logger.warning('Ошибка расчета пени: ' + e);
+            }
             var peniOld = peni.previous;
             var saldoOld = peni.saldo ? peni.saldo : data.sal_begin;
             endSum = saldoOld - sp.pay_sum;
-            peni = peni.current;
+            peni = peni.current ? peni.current : 0;
             res.sal_penalties_old = peniOld;
             
             var peniPay = 0;
