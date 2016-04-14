@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="363px" prefWidth="851px">
-  <widget name="toolBar" parent="Form" prefHeight="31px" prefWidth="851px" rollover="true" type="ToolbarDesignInfo">
-    <constraints height="31px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
+  <widget name="toolBar" parent="Form" prefHeight="31px" prefWidth="538px" rollover="true" type="ToolbarDesignInfo">
+    <constraints height="31px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="538px"/>
   </widget>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="buttonActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/24x24/apps/deluge.png" name="button" parent="toolBar" prefHeight="29px" prefWidth="31px" toolTipText="Перенос сальдо" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="modelGrid" parent="Form" prefHeight="331px" prefWidth="851px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="137588933491844" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <column name="colDate" readonly="true" title="Дата">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="137588944927161" fieldName="per_date_id"/>
         <displayField entityId="137588944927161" fieldName="TextDate"/>
       </controlInfo>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <datamodelElement entityId="137588933491844" fieldName="date_id"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -18,13 +26,13 @@
         <cellValueField/>
         <rowsKeyField/>
       </cellDesignInfo>
-      <datamodelElement entityId="137588933491844" fieldName="date_id"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colSalBeg" title="Начальное">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <datamodelElement entityId="137588933491844" fieldName="sal_begin"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -33,13 +41,13 @@
         <cellValueField/>
         <rowsKeyField/>
       </cellDesignInfo>
-      <datamodelElement entityId="137588933491844" fieldName="sal_begin"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colSal100" readonly="true" title="Начислено">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <datamodelElement entityId="137588933491844" fieldName="sal_calc"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -48,13 +56,13 @@
         <cellValueField/>
         <rowsKeyField/>
       </cellDesignInfo>
-      <datamodelElement entityId="137588933491844" fieldName="sal_calc"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colSalBenefit" readonly="true" title="Льгота">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <datamodelElement entityId="137588933491844" fieldName="sal_benefit"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -63,13 +71,13 @@
         <cellValueField/>
         <rowsKeyField/>
       </cellDesignInfo>
-      <datamodelElement entityId="137588933491844" fieldName="sal_benefit"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colSalRecalc" readonly="true" title="Перерасчет">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <datamodelElement entityId="137588933491844" fieldName="sal_recalc"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -78,13 +86,13 @@
         <cellValueField/>
         <rowsKeyField/>
       </cellDesignInfo>
-      <datamodelElement entityId="137588933491844" fieldName="sal_recalc"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colSalOpl" readonly="true" title="Оплачено">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <datamodelElement entityId="137588933491844" fieldName="sal_payments"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -93,13 +101,13 @@
         <cellValueField/>
         <rowsKeyField/>
       </cellDesignInfo>
-      <datamodelElement entityId="137588933491844" fieldName="sal_payments"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colSalEnd" readonly="true" title="Конечное">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <datamodelElement entityId="137588933491844" fieldName="sal_end"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -108,14 +116,15 @@
         <cellValueField/>
         <rowsKeyField/>
       </cellDesignInfo>
-      <datamodelElement entityId="137588933491844" fieldName="sal_end"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
     <column name="colPeni" title="Пени">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <column name="colActivePeni" title=" " width="12">
         <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+        <headerStyle>
+          <nativeFont name="Dialog" size="13"/>
+        </headerStyle>
+        <datamodelElement entityId="137588933491844" fieldName="calc_peni"/>
         <columnsDatasource/>
         <columnsDisplayField/>
         <cellsDatasource/>
@@ -124,13 +133,13 @@
           <cellValueField/>
           <rowsKeyField/>
         </cellDesignInfo>
-        <datamodelElement entityId="137588933491844" fieldName="calc_peni"/>
-        <headerStyle>
-          <nativeFont name="Dialog" size="13"/>
-        </headerStyle>
       </column>
       <column name="colPrevPeni" title="Предыдущее">
         <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+        <headerStyle>
+          <nativeFont name="Dialog" size="13"/>
+        </headerStyle>
+        <datamodelElement entityId="137588933491844" fieldName="sal_penalties_old"/>
         <columnsDatasource/>
         <columnsDisplayField/>
         <cellsDatasource/>
@@ -139,13 +148,13 @@
           <cellValueField/>
           <rowsKeyField/>
         </cellDesignInfo>
-        <datamodelElement entityId="137588933491844" fieldName="sal_penalties_old"/>
-        <headerStyle>
-          <nativeFont name="Dialog" size="13"/>
-        </headerStyle>
       </column>
       <column name="colCalcPeni" title="Начислено">
         <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+        <headerStyle>
+          <nativeFont name="Dialog" size="13"/>
+        </headerStyle>
+        <datamodelElement entityId="137588933491844" fieldName="sal_penalties_calc"/>
         <columnsDatasource/>
         <columnsDisplayField/>
         <cellsDatasource/>
@@ -154,13 +163,13 @@
           <cellValueField/>
           <rowsKeyField/>
         </cellDesignInfo>
-        <datamodelElement entityId="137588933491844" fieldName="sal_penalties_calc"/>
-        <headerStyle>
-          <nativeFont name="Dialog" size="13"/>
-        </headerStyle>
       </column>
       <column name="colPeniPay" title="Оплачено">
         <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+        <headerStyle>
+          <nativeFont name="Dialog" size="13"/>
+        </headerStyle>
+        <datamodelElement entityId="137588933491844" fieldName="sal_penalties_pay"/>
         <columnsDatasource/>
         <columnsDisplayField/>
         <cellsDatasource/>
@@ -169,13 +178,13 @@
           <cellValueField/>
           <rowsKeyField/>
         </cellDesignInfo>
-        <datamodelElement entityId="137588933491844" fieldName="sal_penalties_pay"/>
-        <headerStyle>
-          <nativeFont name="Dialog" size="13"/>
-        </headerStyle>
       </column>
       <column name="colCurPeni" title="Текущее">
         <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+        <headerStyle>
+          <nativeFont name="Dialog" size="13"/>
+        </headerStyle>
+        <datamodelElement entityId="137588933491844" fieldName="sal_penalties_cur"/>
         <columnsDatasource/>
         <columnsDisplayField/>
         <cellsDatasource/>
@@ -184,12 +193,10 @@
           <cellValueField/>
           <rowsKeyField/>
         </cellDesignInfo>
-        <datamodelElement entityId="137588933491844" fieldName="sal_penalties_cur"/>
-        <headerStyle>
-          <nativeFont name="Dialog" size="13"/>
-        </headerStyle>
       </column>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -198,15 +205,12 @@
         <cellValueField/>
         <rowsKeyField/>
       </cellDesignInfo>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
     </column>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="137588933491844" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="32px" type="MarginConstraintsDesignInfo"/>
   </widget>
+  <widget name="toolBar1" parent="Form" prefHeight="31px" prefWidth="312px" rollover="true" type="ToolbarDesignInfo">
+    <constraints height="31px" left="540px" top="0px" type="MarginConstraintsDesignInfo" width="312px"/>
+  </widget>
+  <widget actionPerformed="btnDetPeniActionPerformed" focusable="false" horizontalTextPosition="0" name="btnDetPeni" parent="toolBar1" prefHeight="21px" prefWidth="101px" text="Детализация пени" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

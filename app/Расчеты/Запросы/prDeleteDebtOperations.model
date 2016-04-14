@@ -2,11 +2,34 @@
   <parameters>
     <parameter description="" name="dateId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
     <parameter description="" name="lcId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="accountId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="145528342930636" entityLocationX="587" entityLocationY="20" entityWidth="150" tableAlias="t2" tableName="per_saldo_flat" tableSchemaName=""/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="145528342929757" entityLocationX="160" entityLocationY="11" entityWidth="150" tableAlias="t1" tableName="per_debt_history" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="145528342929757" entityLocationX="206" entityLocationY="11" entityWidth="150" tableAlias="t1" tableName="per_debt_history" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="145528342930285" entityLocationX="414" entityLocationY="20" entityWidth="150" tableAlias="t" tableName="per_debts" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lcId" rightEntityId="-1" rightEntityParameterName="accountId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lcId" rightEntityId="-1" rightEntityParameterName="accountId"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
   <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
   <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>
   <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityId="-1" rightEntityParameterName="lcId"/>

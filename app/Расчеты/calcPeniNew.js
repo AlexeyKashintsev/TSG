@@ -42,8 +42,8 @@ function calcPeniNew() {
                 var dd = getDate(prevSaldo.date_id).per_pay_day;
                 model.qDebtsByLC.push({
                     per_saldo: prevSaldo.per_saldo_flat_id,
-                    debt_sum: prevSaldo.sal_full_calc,//sal_end
-                    debt_remain: prevSaldo. sal_full_calc,
+                    debt_sum: prevSaldo.sal_full_calc,//sal_end,
+                    debt_remain: prevSaldo.sal_full_calc,//sal_end,
                     debt_age: 0,
                     debt_date: dd
                 });
@@ -61,6 +61,7 @@ function calcPeniNew() {
             }
             
             model.saldo4calc.params.dateid = dateMod.prevDate(aCSaldo.date_id);
+            model.saldo4calc.params.accountid = aCSaldo.account_id;
             model.saldo4calc.requery();
             var prevSaldo = model.saldo4calc.cursor;
             var f = model.qDebtsByLC.find(model.qDebtsByLC.schema.per_saldo, prevSaldo.per_saldo_flat_id);
@@ -164,7 +165,7 @@ function calcPeniNew() {
                     if (nextPeriod && +nextPeriod < +curDate.per_calc_day && +lastOp.op_date < +nextPeriod)
                         lastOp = addOperation(debt, null, lastOp, nextPeriod, curDate, true);
                     if (+lastOp.op_date < curDate.per_calc_day)
-                    lastOp = addOperation(debt, null, lastOp, curDate.per_calc_day, curDate);
+                        lastOp = addOperation(debt, null, lastOp, curDate.per_calc_day, curDate);
                 }
             }
         });

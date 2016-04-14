@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="qDebtsByLC" Title="" entityHeight="200" entityIconified="false" entityId="146055823029926" entityLocationX="257" entityLocationY="22" entityWidth="150" queryId="qDebtsByLC" tableName="" tableSchemaName=""/>
+  <entity Name="qDebtById" Title="" entityHeight="200" entityIconified="false" entityId="146055825956351" entityLocationX="505" entityLocationY="24" entityWidth="150" queryId="qDebtById" tableName="" tableSchemaName=""/>
+  <entity Name="all_dates" Title="" entityHeight="200" entityIconified="false" entityId="146055918674795" entityLocationX="787" entityLocationY="42" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
+  <relation leftEntityFieldName="per_debts_id" leftEntityId="146055823029926" rightEntityId="146055825956351" rightEntityParameterName="debt_id"/>
+  <referenceRelation leftEntityFieldName="debt_id" leftEntityId="146055825956351" rightEntityFieldName="per_debts_id" rightEntityId="146055823029926"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="146055825956351" rightEntityFieldName="per_date_id" rightEntityId="146055918674795"/>
+</datamodel>

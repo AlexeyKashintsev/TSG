@@ -40,4 +40,9 @@ function formSaldoHistory() {
         
         
     }//GEN-LAST:event_buttonActionPerformed
+
+    function btnDetPeniActionPerformed(evt) {//GEN-FIRST:event_btnDetPeniActionPerformed
+        var peniDet = new fmDebtsInLC();
+        peniDet.showDetails(model.params.parFlatID, model.params.parAccountID);
+    }//GEN-LAST:event_btnDetPeniActionPerformed
 }

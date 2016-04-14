@@ -1,0 +1,8 @@
+delete from per_debts t
+where t.per_saldo in (
+select t1.per_saldo_flat_id
+From #qLCInGroups q1
+ Inner Join per_saldo_flat t1 on q1.lc_id = t1.lc_id
+ Where (:lc_id = t1.lc_id or :lc_id is null)
+and (:date_id <= t1.date_id or :date_id is null)
+)
