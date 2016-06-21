@@ -184,30 +184,33 @@ function calcPeniNew() {
         model.prDeleteDebtOperations.params.accountId = aCurrentSaldo.account_id;
         model.prDeleteDebtOperations.executeUpdate();
         
-        model.qDebtByIdM.requery();
-        
-        model.saldo4calc.params.flatid =
-                model.qDebtsByLC.params.lcId = aCurrentSaldo.lc_id;
-        model.saldo4calc.params.accountid =
-                model.qDebtsByLC.params.accountId = aCurrentSaldo.account_id;
-        model.qDebtsByLC.requery();
+        if (aCurrentSaldo.calc_peni) {
+            model.qDebtByIdM.requery();
 
-        checkCurrentDebt(aCurrentSaldo, aSumOfPayments);
+            model.saldo4calc.params.flatid =
+                    model.qDebtsByLC.params.lcId = aCurrentSaldo.lc_id;
+            model.saldo4calc.params.accountid =
+                    model.qDebtsByLC.params.accountId = aCurrentSaldo.account_id;
+            model.qDebtsByLC.requery();
 
-        if (model.qDebtsByLC.length) {
-            model.qPaymentsByDate.params.accountId = aCurrentSaldo.account_id;
-            model.qPaymentsByDate.params.dateId = aCurrentSaldo.date_id;
-            model.qPaymentsByDate.params.flatId = aCurrentSaldo.lc_id;
-            model.qPaymentsByDate.requery();
-            payments = [];
-            model.qPaymentsByDate.forEach(function(payment) {
-                payments.push({
-                    date:   payment.payment_date,
-                    sum:    payment.payment_sum,
-                    id:     payment.opl_payments_id
+            checkCurrentDebt(aCurrentSaldo, aSumOfPayments);
+
+            if (model.qDebtsByLC.length) {
+                model.qPaymentsByDate.params.accountId = aCurrentSaldo.account_id;
+                model.qPaymentsByDate.params.dateId = aCurrentSaldo.date_id;
+                model.qPaymentsByDate.params.flatId = aCurrentSaldo.lc_id;
+                model.qPaymentsByDate.requery();
+                payments = [];
+                model.qPaymentsByDate.forEach(function(payment) {
+                    payments.push({
+                        date:   payment.payment_date,
+                        sum:    payment.payment_sum,
+                        id:     payment.opl_payments_id
+                    });
                 });
-            });
-            var peni = proceedDebts(getDate(aCurrentSaldo.date_id));
+                var peni = proceedDebts(getDate(aCurrentSaldo.date_id));
+            } else
+                peni = 0;
         } else
             peni = 0;
         
