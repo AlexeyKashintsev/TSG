@@ -3,7 +3,7 @@
  * @name BillsBuilder_Doverie_kapRemont
  * @author Alexey
  */
-function BillsBuilder_ТфырВщь_kapRemont() {
+function BillsBuilder_NashDom_kapRemont() {
     var self = this, model = self.model;
     var dsLC_byid = this.model.dsLC_byid;
 

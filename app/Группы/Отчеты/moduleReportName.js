@@ -28,6 +28,7 @@ function moduleReportName() {
             {report_name_view: "Доверие Общий", report_name: "BillsBuilder_Doverie"},
             {report_name_view: "Интерстрой Общий", report_name: "BillsBuilder_Interstroy"},
             {report_name_view: "Доверие Капремонт", report_name: "BillsBuilder_Doverie_kapRemont"},
+            {report_name_view: "Наш Дом Капремонт", report_name: "BillsBuilder_NashDom_kapRemont"},
             {report_name_view: "Наш Дом Общий", report_name: "BillsBuilder_Nash_Dom"},
         ];
         // TODO : place data achivement code. Fetching from mongodb for example
