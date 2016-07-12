@@ -137,8 +137,8 @@ function CalculateFlatSaldo() {
                 endSum = -extra;
             }
             
-            res.sal_penalties_calc = peni.toFixed(2);
-            res.sal_penalties_cur = (peni + peniOld).toFixed(2);
+            res.sal_penalties_calc = data.calc_peni ? peni.toFixed(2) : 0; //Здесь определяем стоит ли добавлять пени
+            res.sal_penalties_cur = (res.sal_penalties_calc + peniOld).toFixed(2);
             res.sal_penalties_pay = peniPay.toFixed(2);
         } else {
             saldoOld = data.sal_begin;

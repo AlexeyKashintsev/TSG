@@ -184,7 +184,7 @@ function calcPeniNew() {
         model.prDeleteDebtOperations.params.accountId = aCurrentSaldo.account_id;
         model.prDeleteDebtOperations.executeUpdate();
         
-        if (aCurrentSaldo.calc_peni) {
+//        if (aCurrentSaldo.calc_peni) {
             model.qDebtByIdM.requery();
 
             model.saldo4calc.params.flatid =
@@ -211,8 +211,8 @@ function calcPeniNew() {
                 var peni = proceedDebts(getDate(aCurrentSaldo.date_id));
             } else
                 peni = 0;
-        } else
-            peni = 0;
+//        } else
+//            peni = 0;
         
         if (!prevSaldo) {
             model.saldo4calc.params.dateid = dateMod.prevDate(aCurrentSaldo.date_id);
