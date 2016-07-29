@@ -143,7 +143,7 @@ function BillsBuilder_Nash_Dom() {
                     dates = (monthNames[date.getMonth()]+" "+date.getFullYear());
 
                     var saltoStr = (Math.round(lc_saldo.full_end*100)).toString();
-                    var lc_num = 1;//strConcat(self.dsGroupAndBank.grpid, self.dsLC_byid.lc_num, 5);
+                    var lc_num = strConcat(self.dsGroupAndBank.params.groupID, self.dsLC_byid.lc_num, 5);
                     var barCodeStr = 1;//strConcat('1134', lc_num, 12);
                     barCodeStr = 0;//strConcat(barCodeStr, saltoStr, 22);
                     
