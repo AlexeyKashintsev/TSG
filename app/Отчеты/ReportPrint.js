@@ -102,5 +102,9 @@ function ReportPrint() {
         process(true);
     }//GEN-LAST:event_btnPrintActionPerformed
     
-    paramSynchronizer.addListener(this);
+    try {
+        paramSynchronizer.addListener(this);
+    } catch(e) {
+        Logger.warning(e);
+    }
 }

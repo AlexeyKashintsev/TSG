@@ -140,6 +140,7 @@ function calcPeniNew() {
         model.qDebtsByLC.forEach(function(debt) {
             if (debt.debt_remain > 0) {
                 model.qDebtById.params.debt_id = debt.per_debts_id;
+                model.qDebtById.params.date_id = curDate.per_date_id;
                 model.qDebtById.requery();
                 model.qDebtById.last();
                 var lastOp = model.qDebtById.cursor;
@@ -191,6 +192,7 @@ function calcPeniNew() {
                     model.qDebtsByLC.params.lcId = aCurrentSaldo.lc_id;
             model.saldo4calc.params.accountid =
                     model.qDebtsByLC.params.accountId = aCurrentSaldo.account_id;
+            model.qDebtsByLC.params.date_id = aCurrentSaldo.date_id;
             model.qDebtsByLC.requery();
 
             checkCurrentDebt(aCurrentSaldo, aSumOfPayments);

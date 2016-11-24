@@ -23,5 +23,9 @@ function RecalcModule() {
         });
     };
     
+    self.recalcPeni = function(aFlatId, aStartDateId) {
+        
+    };
+    
 //    self.Recalc(139187291174888, null, 137517637493759, 139462837304873, 5.9, 138408451811751);
 }

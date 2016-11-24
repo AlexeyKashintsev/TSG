@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="159px" prefWidth="400px">
+  <widget name="label1" parent="Form" prefHeight="14px" prefWidth="60px" text="Квартира" type="LabelDesignInfo">
+    <constraints height="14px" left="12px" top="51px" type="MarginConstraintsDesignInfo" width="60px"/>
+  </widget>
+  <widget name="modelCombo" parent="Form" prefHeight="20px" prefWidth="312px" type="DbComboDesignInfo">
+    <valueField entityId="147997725406842" fieldName="grp_groups_id"/>
+    <displayField entityId="147997725406842" fieldName="grp_name"/>
+    <datamodelElement entityId="-1" fieldName="group_id"/>
+    <constraints height="20px" left="72px" right="16px" top="12px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="modelCombo1" parent="Form" prefHeight="20px" prefWidth="312px" type="DbComboDesignInfo">
+    <valueField entityId="147997727755629" fieldName="lc_flat_id"/>
+    <displayField entityId="147997727755629" fieldName="lc_flatnumber"/>
+    <datamodelElement entityId="-1" fieldName="lc_id"/>
+    <constraints height="20px" left="72px" right="16px" top="48px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="modelCombo2" parent="Form" prefHeight="20px" prefWidth="312px" type="DbComboDesignInfo">
+    <valueField entityId="147997723664672" fieldName="TextDate"/>
+    <displayField entityId="147997723664672" fieldName="per_date_id"/>
+    <datamodelElement entityId="-1" fieldName="date_id"/>
+    <constraints height="20px" left="72px" right="16px" top="84px" type="MarginConstraintsDesignInfo"/>
+  </widget>
+  <widget name="label" parent="Form" prefHeight="14px" prefWidth="60px" text="Группа" type="LabelDesignInfo">
+    <constraints height="14px" left="12px" top="15px" type="MarginConstraintsDesignInfo" width="60px"/>
+  </widget>
+  <widget name="label2" parent="Form" prefHeight="14px" prefWidth="60px" text="Дата начала" type="LabelDesignInfo">
+    <constraints height="14px" left="12px" top="87px" type="MarginConstraintsDesignInfo" width="60px"/>
+  </widget>
+  <widget name="button" parent="Form" prefHeight="23px" prefWidth="65px" text="Старт" type="ButtonDesignInfo">
+    <constraints bottom="16px" height="23px" right="23px" type="MarginConstraintsDesignInfo" width="65px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

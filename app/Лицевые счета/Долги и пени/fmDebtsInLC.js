@@ -9,6 +9,7 @@ function fmDebtsInLC() {
     self.showDetails = function(aLcId, anAccountId) {
         model.qDebtsByLC.params.lcId = aLcId;
         model.qDebtsByLC.params.accountId = anAccountId;
+        model.qDebtsByLC.params.show_all = true;
         model.qDebtsByLC.requery();
         self.showModal();
     };
