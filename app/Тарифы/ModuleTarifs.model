@@ -9,5 +9,6 @@
   <entity Name="servicesIsAbsent" Title="Недостающие тарифы" entityHeight="200" entityIconified="false" entityId="138625186999529" entityLocationX="455" entityLocationY="29" entityWidth="150" queryId="ServicesIsAbsent" tableName="" tableSchemaName=""/>
   <entity Name="tarifsInGroup" Title="Тарифы по группе" entityHeight="200" entityIconified="false" entityId="138601884396193" entityLocationX="254" entityLocationY="22" entityWidth="150" queryId="TarifsInGroup" tableName="" tableSchemaName=""/>
   <entity Name="prApplyTarifs" Title="prApplyTarifs" entityHeight="200" entityIconified="false" entityId="138678099731507" entityLocationX="635" entityLocationY="38" entityWidth="150" queryId="prApplyTarifs" tableName="" tableSchemaName=""/>
+  <entity Name="prClearTarifs" Title="" entityHeight="200" entityIconified="false" entityId="149449571966677" entityLocationX="642" entityLocationY="275" entityWidth="150" queryId="prClearTarifs" tableName="" tableSchemaName=""/>
   <referenceRelation leftEntityFieldName="flat_service_id" leftEntityId="142484885678126" rightEntityFieldName="lc_flat_services_id" rightEntityId="138678099731507"/>
 </datamodel>

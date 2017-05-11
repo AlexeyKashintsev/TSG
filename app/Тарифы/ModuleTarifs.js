@@ -19,10 +19,15 @@ function TarifsModule() {
      * TODO Доделать добавление,запутался куда добавлять;
      */
     self.addMissingTarifs = function(aDateID, aGroupID, aAccountID) {
+        model.prClearTarifs.params.parDateID = aDateID;
+        model.prClearTarifs.params.parGroupID = aGroupID;
+        model.prClearTarifs.params.parAccountID = aAccountID;
+        model.prClearTarifs.executeUpdate();
+        
         model.servicesIsAbsent.params.parDateID = aDateID;
         model.servicesIsAbsent.params.parGroupID = aGroupID;
         model.servicesIsAbsent.params.parAccountID = aAccountID;
-        model.servicesIsAbsent.execute();
+        model.servicesIsAbsent.requery();
         model.servicesIsAbsent.forEach(function(cursor) {
             model.tarifsInGroup.push({
                     services_id: cursor.services_id,

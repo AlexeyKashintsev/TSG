@@ -20,7 +20,11 @@ function fmRecalcPeni() {
                     serverProgress.setValue(0);
                     while (model.flats_by_group.next()) {
                         serverProgress.increaseValue();
-                        recalcModule.recalcPeni(model.params.account_id, model.flats_by_group.cursor.lc_flat_id, model.params.date_id);     
+                        try {
+                            recalcModule.recalcPeni(model.params.account_id, model.flats_by_group.cursor.lc_flat_id, model.params.date_id);     
+                        } catch(e) {
+                            Logger.warning(e);
+                        }
                     }
                     serverProgress.finish();
                 });

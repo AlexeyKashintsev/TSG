@@ -66,5 +66,7 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
     self.tarifsInGroup.requery();
 }//GEN-LAST:event_button1ActionPerformed
 
+
+
 paramSynchronizer.addListener(this);
 }

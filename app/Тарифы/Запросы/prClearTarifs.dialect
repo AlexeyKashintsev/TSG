@@ -1,0 +1,7 @@
+update per_sums
+set rate = 0
+where date_id = :parDateID
+ and flat_service_id in (select t2.lc_flat_services_id
+                         from lc_flat_services t2
+                         inner join grp_lc_group t1 on t2.lc_id = t1.lc_id
+                         where t1.group_id = :parGroupID and t2.account_id = :parAccountID)

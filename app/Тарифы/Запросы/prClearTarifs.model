@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parGroupID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parDateID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parAccountID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="149449839445768" entityLocationX="237" entityLocationY="29" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="149449822210036" entityLocationX="644" entityLocationY="20" entityWidth="150" tableAlias="t" tableName="per_sums" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="149449825903866" entityLocationX="437" entityLocationY="24" entityWidth="150" tableAlias="t2" tableName="lc_flat_services" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityFieldName="group_id" rightEntityId="149449839445768"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="149449825903866" rightEntityFieldName="lc_id" rightEntityId="149449839445768"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityFieldName="date_id" rightEntityId="149449822210036"/>
+  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="149449825903866" rightEntityFieldName="flat_service_id" rightEntityId="149449822210036"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityFieldName="account_id" rightEntityId="149449825903866"/>
+</datamodel>

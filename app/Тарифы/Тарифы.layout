@@ -4,12 +4,15 @@
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="264px" prefWidth="372px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="138410359511283" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <column name="Services" title="Услуга">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="138410360147288" fieldName="usl_services_id"/>
         <displayField entityId="138410360147288" fieldName="usl_name"/>
       </controlInfo>
-      <datamodelElement entityId="138410359511283" fieldName="services_id"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
@@ -21,10 +24,10 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <datamodelElement entityId="138410359511283" fieldName="services_id"/>
     </column>
     <column name="Tarifs" title="Тариф">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="138410359511283" fieldName="rate"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
@@ -36,10 +39,10 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <datamodelElement entityId="138410359511283" fieldName="rate"/>
     </column>
     <column name="Norma" title="Норма">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="138410359511283" fieldName="norm"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
@@ -51,10 +54,10 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <datamodelElement entityId="138410359511283" fieldName="norm"/>
     </column>
     <column name="colChild" readonly="true" title="Дочерняя">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="138410359511283" fieldName="child"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
@@ -66,11 +69,8 @@
         <columnsKeyField/>
         <cellValueField/>
       </cellDesignInfo>
+      <datamodelElement entityId="138410359511283" fieldName="child"/>
     </column>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="138410359511283" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="45px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="button1ActionPerformed" name="button1" parent="pnlWorkSpace" prefHeight="48px" prefWidth="203px" text="Применить тарифы группы" type="ButtonDesignInfo">
