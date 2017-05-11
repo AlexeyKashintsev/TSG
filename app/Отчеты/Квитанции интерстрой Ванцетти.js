@@ -167,11 +167,29 @@ function BillsBuilder_Interstroy() {
                         prev_date.setDate(0);
                         days = (prev_date.getDate()+" "+monthNames[prev_date.getMonth()]+" "+prev_date.getFullYear());
                     });*/
-
+                    var square;
+                    self.chars_flat.forEach(function(flat_char){
+                        if (flat_char.lc_char_val)
+                            square = flat_char.lc_char_val;
+                    });
+                     var tableInfo = {
+                         SRooms: 2032.8,
+                         SOverall: 11201.0,
+                         ElectricityNorm: 4.5,
+                         ElectricityTariff: 2.72,
+                         ElectricityCalculation: 2.97,
+                         ElectricityCalculationString: 'Pээ = 4,5*2032,8*2,72/11201,0 = 2,22 руб/м2',
+                         ElectricityResultString: square + ' * 2,22 = ' + (square*2.97).toFixed(2),
+                         ColdWaterNorm: 0.03,
+                         ColdWaterTariff: 17.50,
+                         ColdWaterCalculation: 0.09,
+                         ColdWaterCalculationString: 'Pхв = 0.03*2032,8*17,50/11201,0 = 0,09 руб/м2',
+                         ColdWaterResultString: square + ' * 0,09 = ' + (square*0.09).toFixed(2)
+                     };
 
                     var lc_data = { 
                         lc_id:          dsLC_byid.cursor.lc_id,
-                        lc_regto:       dsLC_byid.cursor.lc_regto,
+                        lc_regto:       dsLC_byid.cursor.lc_regto+ ' (Л/c В20' + dsLC_byid.cursor.lc_num + ')',
                         lc_flatnumber:  dsLC_byid.cursor.lc_flatnumber,
                         reg_count:      dsLC_byid.cursor.registered_count,
                         lc_num:         lc_num,
@@ -185,7 +203,8 @@ function BillsBuilder_Interstroy() {
                         barcode:        barCodeStr,
                         bk:             bcn,
                         counters4ask:   askCounters,
-                        percent:        percent
+                        percent:        percent,
+                        tableInfo:      tableInfo
                     };
 
                    // lc_data.saldo.begin;
