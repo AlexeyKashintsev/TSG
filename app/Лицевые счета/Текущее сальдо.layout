@@ -6,7 +6,7 @@
     <datamodelElement entityId="137683959019508" fieldName="sal_penalties_old"/>
     <constraints height="18px" left="600px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
   </widget>
-  <widget editable="false" format="#0.00" name="mfSaldoEnd1" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+  <widget format="#0.00" name="mfSaldoEnd1" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="137683959019508" fieldName="sal_penalties_cur"/>
     <constraints height="18px" left="516px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
   </widget>
@@ -22,7 +22,7 @@
   <widget name="label11" parent="Form" prefHeight="16px" prefWidth="72px" text="Льгота" type="LabelDesignInfo">
     <constraints height="16px" left="180px" top="4px" type="MarginConstraintsDesignInfo" width="72px"/>
   </widget>
-  <widget editable="false" format="#0.00" name="mfSaldoEnd" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+  <widget format="#0.00" name="mfSaldoEnd" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="137683959019508" fieldName="sal_end"/>
     <constraints height="18px" left="436px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
   </widget>
@@ -38,7 +38,7 @@
     <datamodelElement entityId="137683959019508" fieldName="sal_benefit"/>
     <constraints height="18px" left="180px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
   </widget>
-  <widget editable="false" format="#0.00" name="mfSaldoBeg" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
+  <widget format="#0.00" name="mfSaldoBeg" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="137683959019508" fieldName="sal_begin"/>
     <constraints height="18px" left="12px" top="24px" type="MarginConstraintsDesignInfo" width="70px"/>
   </widget>
