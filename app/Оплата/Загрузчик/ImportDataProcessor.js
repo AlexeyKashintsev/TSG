@@ -29,8 +29,11 @@ function ImportDataProcessor() {
             model.dsLCByCode.params.flat_code = code.substring(1);
             model.dsLCByCode.requery();
             return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
-        } else
-            return false;
+        } else {
+            model.dsLCByCode.params.lc_num = code;
+            model.dsLCByCode.requery();
+            return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
+        }
     };
     
     var dateId, sessionId, accountId, bankPercent;
@@ -44,7 +47,7 @@ function ImportDataProcessor() {
     
     self.check = function(aDataArray, aImpSpec) {
         var fileLen = aImpSpec.RECORD_COUNT;
-        var recCount = (fileLen === aDataArray.length);
+        var recCount = (fileLen == aDataArray.length);
         return recCount;
     };
     

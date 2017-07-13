@@ -118,7 +118,7 @@ function ImportReadProcessor() {
                 processor.processData(data, impSpec);
                 var stat = processor.getLastStat();
                 
-                if (impSpec.RECORD_COUNT !== stat.readCount)
+                if (impSpec.RECORD_COUNT != stat.readCount)
                     addLog("\nФайл прочитан с ошибками: " + aFileName +
                            "\n*** Спецификация файла: ***" +
                            "\nНомер реестра: " + impSpec.REG_NUMBER +
