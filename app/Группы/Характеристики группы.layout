@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="388px" prefWidth="400px">
-  <widget name="mcBank" parent="Form" prefHeight="28px" prefWidth="264px" selectFunction="mcBankOnSelect" type="DbComboDesignInfo">
+  <widget enabled="false" focusable="false" name="mcBank" parent="Form" prefHeight="28px" prefWidth="264px" selectFunction="mcBankOnSelect" type="DbComboDesignInfo">
     <valueField entityId="138840958146843" fieldName="grp_bank_id"/>
     <displayField entityId="138840958146843" fieldName="fname"/>
     <datamodelElement entityId="137496190835709" fieldName="bank"/>
@@ -37,67 +37,67 @@
   </widget>
   <widget deletable="false" insertable="false" name="modelGrid" parent="Form" prefHeight="172px" prefWidth="400px" type="DbGridDesignInfo">
     <column name="colCharType" title="Характеристика">
+      <cellDesignInfo>
+        <columnsKeyField/>
+        <cellValueField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <datamodelElement entityId="137496168237043" fieldName="grp_char_type"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <columnsDisplayField/>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="137496171186332" fieldName="char_types_id"/>
         <displayField entityId="137496171186332" fieldName="char_name"/>
       </controlInfo>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="137496168237043" fieldName="grp_char_type"/>
     </column>
     <column name="colCharValue" title="Значение">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <datamodelElement entityId="137496168237043" fieldName="grp_char_val"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <columnsDisplayField/>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="137496168237043" fieldName="grp_char_val"/>
     </column>
     <column name="colCharAdd2Lc" title="Добавлять автоматически">
-      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <datamodelElement entityId="137496168237043" fieldName="add_char_to_lc"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <columnsDisplayField/>
+      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="137496168237043" fieldName="add_char_to_lc"/>
     </column>
     <column name="colCharCalc" title="Расчитывается">
-      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <datamodelElement entityId="137496168237043" fieldName="char_calc_by_lc"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <columnsDisplayField/>
+      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <headerStyle>
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
-      <datamodelElement entityId="137496168237043" fieldName="char_calc_by_lc"/>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="137496168237043" field="false"/>
@@ -110,7 +110,7 @@
   </widget>
   <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar1" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar1" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget name="label3" parent="Form" prefHeight="16px" prefWidth="84px" text="Реквизиты:" type="LabelDesignInfo">
+  <widget enabled="false" name="label3" parent="Form" prefHeight="16px" prefWidth="84px" text="Реквизиты:" type="LabelDesignInfo">
     <constraints height="16px" left="12px" top="150px" type="MarginConstraintsDesignInfo" width="84px"/>
   </widget>
   <widget name="label4" parent="Form" prefHeight="16px" prefWidth="24px" text="ID" type="LabelDesignInfo">
