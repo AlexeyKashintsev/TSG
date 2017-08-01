@@ -25,19 +25,19 @@ function ImportRKCReader() {
 
     var lineConfiguration = {
         LC_CODE: {
-            cell: 7,
+            cell: 3,
             type: 'string'
         },
         OPL_SUM: {
-            cell: 8,
+            cell: 4,
             type: 'number'
         },
         OPL_DATE: {
-            cell: 3,
+            cell: 1,
             type: 'date'
         },
         OPL_COMMENT: {
-            cell: 1,
+            cell: 0,
             type: 'number'
         }
     };

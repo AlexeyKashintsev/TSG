@@ -319,6 +319,7 @@ function Calculations() {
             this.NRM = sum.norm;
             this.RECALC = sum.recalc;
             this.BY_NRM = sum.calc_by_norm;
+            this.REG_CNT = sum.registered_count;
         }
     }
     /**
@@ -345,7 +346,7 @@ function Calculations() {
 
         function prepFormula(aFormula) {
             aFormula = aFormula.replace(/BENEFIT/g, 'A.BENEFIT').replace(/FULL_CALC/g, 'A.FULL_CALC').replace(/SCALC/g, 'A.SCALC');
-            aFormula = aFormula.replace(/CALC_BY_NORM/g, 'A.BY_NRM').replace(/DEF_NORM/g, 'A.DEF_NRM').replace(/NORM/g, 'A.NRM');
+            aFormula = aFormula.replace(/CALC_BY_NORM/g, 'A.BY_NRM').replace(/DEF_NORM/g, 'A.DEF_NRM').replace(/NORM/g, 'A.NRM').replace(/REG_CNT/g, 'A.REG_CNT');
             aFormula = aFormula.replace(/GRP_/g, 'groups[A.groupid].').replace(/LC_/g, 'flats[A.lcid].');
             aFormula = aFormula.replace(/.BEG_/g, '[A.flatserviceid].BEG_').replace(/.END_/g, '[A.flatserviceid].END_');
             aFormula = aFormula.replace(/VALUE/g, 'A.VALUE').replace(/COST/g, 'A.COST').replace(/RECALC/g, 'A.RECALC');

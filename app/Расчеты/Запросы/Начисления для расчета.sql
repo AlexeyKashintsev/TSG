@@ -5,7 +5,7 @@
  * @manual 
  * @writable per_sums
  */ 
-Select Distinct t1.lc_id, t1.services_id, t1.fs_active
+Select Distinct t1.lc_id, t1.services_id, t1.fs_active, q1.registered_count
 , t4.calc_formula, t4.calc_value_formula, t.per_sums_id
 , t.flat_service_id, t.date_id, t.calc
 , t.benefit, t.recalc, t.full_calc
