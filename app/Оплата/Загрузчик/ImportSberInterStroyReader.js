@@ -13,10 +13,9 @@ function ImportSberInterStroyReader() {
 
     
     var lineConfiguration = {
-        LC_CODE: {
+        LC_NUM: {
             cell: 5,
-            type: 'string',
-            remFirst: 1
+            type: 'string'
         },
         OPL_SUM: {
             cell: 9,
@@ -65,20 +64,12 @@ function ImportSberInterStroyReader() {
                     break;
             }
         }
-        if (config.remFirst) {
-            res = res.substring(config.remFirst);
-        }
         return res;
     }
     
     function postProcess(anArray) {
-        if (!anArray.LC_CODE) {
-            var str = anArray.OPL_FULL_INFO;
-            var specAr = str.split(':');
-            anArray.LC_CODE = specAr[3];
-        }
+        anArray.LC_NUM = +anArray.LC_NUM.substring(1);
         return anArray;
-        
     }
     
     function processString(aString) {

@@ -27,6 +27,7 @@ function ImportDataProcessor() {
         if (code.length === 5) {
             model.dsLCByCode.params.grp_code = code[0];
             model.dsLCByCode.params.flat_code = code.substring(1);
+            model.dsLCByCode.params.lc_num = code;
             model.dsLCByCode.requery();
             return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
         } else {
@@ -34,6 +35,12 @@ function ImportDataProcessor() {
             model.dsLCByCode.requery();
             return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
         }
+    };
+    
+    function getLCByNum(aNum) {
+        model.dsLCByCode.params.lc_num = +aNum;
+        model.dsLCByCode.requery();
+        return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
     };
     
     var dateId, sessionId, accountId, bankPercent;
@@ -71,7 +78,8 @@ function ImportDataProcessor() {
         
         aDataArray.forEach(function(aRow) {
             var lcid = !!aRow.LC_ID ? aRow.LC_ID : 
-                    (!!aRow.LC_CODE ? getLCByCode(aRow.LC_CODE) : null);
+                    (!!aRow.LC_CODE ? getLCByCode(aRow.LC_CODE) : 
+                    (!!aRow.LC_NUM ? getLCByNum(aRow.LC_NUM) : null));
            
             if (lcid) {
                 curStat.readCount++;

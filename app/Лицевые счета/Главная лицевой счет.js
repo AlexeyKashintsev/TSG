@@ -63,7 +63,7 @@ function formFlatWorkSheet() {
 
     function btnCalcAllGroupActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllGroupActionPerformed
         clientProgress.executeServerProcess(function() {
-            modCalc.calculateValues(model.params.parGroupID, null, model.params.parDateID);
+            modCalc.calculateValues(model.params.parGroupID, null, model.params.parDateID, true);
             fmNachisleniya.model.requery();
             fmSaldoCur.model.requery();
         });
@@ -73,7 +73,7 @@ function formFlatWorkSheet() {
 
     function btnCalcAllFlatActionPerformed(evt) {//GEN-FIRST:event_btnCalcAllFlatActionPerformed
         clientProgress.executeServerProcess(function() {
-            modCalc.calculateValues(null, model.params.parFlatID, model.params.parDateID);
+            modCalc.calculateValues(null, model.params.parFlatID, model.params.parDateID, true);
             fmNachisleniya.model.requery();
             fmSaldoCur.model.requery();
         });

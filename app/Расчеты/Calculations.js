@@ -49,7 +49,7 @@ function Calculations() {
         }
     };
 
-    self.calculateValues = function(aGroupID, aFlatID, aDateID) {
+    self.calculateValues = function(aGroupID, aFlatID, aDateID, anOnlySaldo) {
         function applyValues(cursor, values) {
             for (var j in values)
                 cursor[j] = values[j];
@@ -57,11 +57,15 @@ function Calculations() {
         
         function saveData() {
             serverProgress.setDescription("Сохранение значений расчета начислений");
-            model.save();
+            if (!anOnlySaldo)
+                model.save();
             saldoClc.calculateFlatSaldo(aGroupID, aFlatID, aDateID);
         }
         (function() {
-            proceedData(aGroupID, aFlatID, aDateID, applyValues, saveData);
+            if (!anOnlySaldo)
+                proceedData(aGroupID, aFlatID, aDateID, applyValues, saveData)
+            else
+                saveData();
         }).invokeBackground();
     };
     

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="new_date" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="12" typeName="VARCHAR"/>
+    <parameter description="" name="old_date" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="12" typeName="VARCHAR"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="150167076461516" entityLocationX="170" entityLocationY="120" entityWidth="150" tableAlias="p0" tableName="per_saldo_flat" tableSchemaName=""/>
+  <relation leftEntityFieldName="date_id" leftEntityId="150167076461516" rightEntityId="-1" rightEntityParameterName="new_date"/>
+</datamodel>
