@@ -27,14 +27,15 @@ function ImportDataProcessor() {
         if (code.length === 5) {
             model.dsLCByCode.params.grp_code = code[0];
             model.dsLCByCode.params.flat_code = code.substring(1);
+//            model.dsLCByCode.params.lc_num = code;
+            model.dsLCByCode.requery();
+            return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
+        } else 
+            return null;/*{
             model.dsLCByCode.params.lc_num = code;
             model.dsLCByCode.requery();
             return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
-        } else {
-            model.dsLCByCode.params.lc_num = code;
-            model.dsLCByCode.requery();
-            return model.dsLCByCode.empty ? false : model.dsLCByCode.cursor.lc_flat_id;
-        }
+        }*/
     };
     
     function getLCByNum(aNum) {
