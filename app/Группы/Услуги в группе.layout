@@ -2,31 +2,28 @@
   <widget name="toolBar" parent="Form" prefHeight="33px" prefWidth="336px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="0px" top="0px" type="MarginConstraintsDesignInfo" width="336px"/>
   </widget>
-  <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnUpActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/mail-reply-sender.png" name="btnUp" parent="toolBar" prefHeight="29px" prefWidth="29px" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnDownActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/mail-send-receive.png" name="btnDown" parent="toolBar" prefHeight="29px" prefWidth="29px" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnServicesActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/categories/preferences-system.png" name="btnServices" parent="toolBar" prefHeight="29px" prefWidth="29px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnAddActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-add.png" name="btnAdd" parent="toolBar" prefHeight="31px" prefWidth="35px" toolTipText="Добавить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnDelActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/list-remove.png" name="btnDel" parent="toolBar" prefHeight="31px" prefWidth="35px" toolTipText="Удалить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnStopActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/media-playback-stop.png" name="btnStop" parent="toolBar" prefHeight="31px" prefWidth="35px" toolTipText="Остановить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnUpActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/mail-reply-sender.png" name="btnUp" parent="toolBar" prefHeight="31px" prefWidth="35px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnDownActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/mail-send-receive.png" name="btnDown" parent="toolBar" prefHeight="31px" prefWidth="35px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="31px" prefWidth="35px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="31px" prefWidth="35px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnServicesActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/categories/preferences-system.png" name="btnServices" parent="toolBar" prefHeight="31px" prefWidth="35px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="pnlWorkSpace" parent="Form" prefHeight="312px" prefWidth="372px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget deletable="false" insertable="false" name="mgUslugi" parent="pnlWorkSpace" prefHeight="312px" prefWidth="372px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo generalRowFunction="mgUslugiOnRender">
-      <rowsDatasource entityId="137496294091245" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="colService" title="Услуга">
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="137520081638120" fieldName="usl_services_id"/>
         <displayField entityId="137520081638120" fieldName="usl_name"/>
       </controlInfo>
       <datamodelElement entityId="137496294091245" fieldName="services_id"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -37,14 +34,14 @@
       </cellDesignInfo>
     </column>
     <column name="colCalcType" selectFunction="colCalcTypeOnSelect" title="Cпособ расчета">
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="137520081638120" fieldName="usl_services_id"/>
         <displayField entityId="137520081638120" fieldName="calc_name"/>
       </controlInfo>
       <datamodelElement entityId="137496294091245" fieldName="services_id"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -55,14 +52,14 @@
       </cellDesignInfo>
     </column>
     <column name="colModService" selectFunction="colModServiceOnSelect" title="Модифицируемая услуга">
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="137520081638120" fieldName="usl_services_id"/>
         <displayField entityId="137520081638120" fieldName="usl_name"/>
       </controlInfo>
       <datamodelElement entityId="137496294091245" fieldName="modified_service_id"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -73,11 +70,11 @@
       </cellDesignInfo>
     </column>
     <column name="colAskValue" title="Спаршивать значение">
-      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="137496294091245" fieldName="askforvalue"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137496294091245" fieldName="askforvalue"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -88,11 +85,11 @@
       </cellDesignInfo>
     </column>
     <column name="colAskInBill" title="Спрашивать в квитанции">
-      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="137496294091245" fieldName="askinbills"/>
       <headerStyle>
         <nativeFont name="Dialog" size="10"/>
       </headerStyle>
+      <controlInfo classHint="DbCheckDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137496294091245" fieldName="askinbills"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -103,11 +100,11 @@
       </cellDesignInfo>
     </column>
     <column name="column" readonly="true" title="Дочерний">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="137496294091245" fieldName="childService"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="137496294091245" fieldName="childService"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
@@ -117,11 +114,33 @@
         <cellValueField/>
       </cellDesignInfo>
     </column>
+    <column name="column1" selectOnly="true" title="Действительна до">
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
+      <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
+        <valueField entityId="151739406929759" fieldName="per_date_id"/>
+        <displayField entityId="151739406929759" fieldName="TextDate"/>
+      </controlInfo>
+      <datamodelElement entityId="137496294091245" fieldName="date_end"/>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+    </column>
+    <rowsColumnsDesignInfo generalRowFunction="mgUslugiOnRender">
+      <rowsDatasource entityId="137496294091245" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget floatable="false" name="toolBar1" parent="Form" prefHeight="33px" prefWidth="36px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="336px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="btnServices1ActionPerformed" enabled="false" focusable="false" horizontalTextPosition="0" icon="icons/22x22/categories/applications-accessories.png" name="btnServices1" parent="toolBar1" prefHeight="29px" prefWidth="29px" toolTipText="Применить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnServices1ActionPerformed" enabled="false" focusable="false" horizontalTextPosition="0" icon="icons/22x22/categories/applications-accessories.png" name="btnServices1" parent="toolBar1" prefHeight="31px" prefWidth="35px" toolTipText="Применить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

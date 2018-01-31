@@ -1,0 +1,4 @@
+update lc_flat_services
+set date_end = :dateId
+where lc_flat_services.lc_id in (select lc_id from grp_lc_group where group_id = :groupId)
+and services_id = :uslugaId

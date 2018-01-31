@@ -8,6 +8,7 @@
 Select t1.grp_services_id, t1.group_id, t1.services_id
 , t1.usr_context, t1.modified_service_id, t.calc_by_counter
 , t1.askforvalue, t1.askinbills, t1.account_id
+, t1.date_end
 , case when :parGroup = t3.grp_parent then t3.grp_name else '' end as childService
 , t1.usl_order, false as new_service, false as modified
 From grp_services t1

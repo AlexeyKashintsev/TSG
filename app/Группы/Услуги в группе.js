@@ -164,4 +164,13 @@ function btnDownActionPerformed(evt) {//GEN-FIRST:event_btnDownActionPerformed
     function btnServices1ActionPerformed(evt) {//GEN-FIRST:event_btnServices1ActionPerformed
         // TODO Добавьте свой код:
     }//GEN-LAST:event_btnServices1ActionPerformed
+
+    function btnStopActionPerformed(evt) {//GEN-FIRST:event_btnStopActionPerformed
+        model.prSetStopDateForUslInFlat.params.dateId = model.params.parDateID;
+        model.prSetStopDateForUslInFlat.params.groupId = model.params.parGroup;
+        model.prSetStopDateForUslInFlat.params.uslugaId = model.dsServices.cursor.services_id;
+        model.prSetStopDateForUslInFlat.executeUpdate();
+        model.dsServices.cursor.date_end = model.params.parDateID;
+        model.save();
+    }//GEN-LAST:event_btnStopActionPerformed
 }
