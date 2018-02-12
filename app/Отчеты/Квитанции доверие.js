@@ -34,8 +34,8 @@ function BillsBuilder_Doverie() {
         self.dsGroupAndBank.params.groupID = self.dsFlatByIDorByGroup.cursor.group_id;
         self.dsGroupAndBank.params.accountID = model.params.parAccountID;
         self.dsGroupAndBank.requery();
-
-        self.Group = {
+        var group =
+            self.Group = {
                 grp_name: self.dsGroupAndBank.grp_name,
                 grp_address: self.dsGroupAndBank.grp_address,
                 grp_fname: self.dsGroupAndBank.grp_fname,
@@ -155,6 +155,43 @@ function BillsBuilder_Doverie() {
                     } catch(e) {
                         barCodeStr = 'No package!';
                     }
+                    
+                   
+                    var payString = "ST00012|NAME=" + group.grp_fname +
+                        "|PersonalAcc=" + group.bank_account +
+                        "|BankName=" + group.bank_name +
+                        "|BIC=" + group.bank_bik +
+                        "|CorrespAcc=" + group.bank_correction +
+                        "|SUM=" + Math.round(lc_saldo.full_end * 100) +
+                        "|Purpose=Оплата услуг ЖКХ" +
+                        "|PayeeINN=" + group.group_inn +
+                        "|KPP=" + group.group_kpp +
+                        "|LastName=" + 
+                        "|FirstName=" + model.dsLC_byid.cursor.lc_regto +
+                        "|MiddleName=" +
+                        "|PersAcc=" + lc_num +
+                        "|PayerAddress=" + group.grp_address + ', ' + group.grp_name + ', кв. ' + model.dsLC_byid.cursor.lc_flatnumber + 
+                        "|PaymPeriod=" + self.model.params.parDateID;
+/*{"data":"
+         * ST00012|
+         * NAME=Филиал ПАО \"КВАДРА - ВГ\" |
+         * PersonalAcc=40702810113000069739|
+         * BankName=Центрально-Черноземный банк Сбербанкa России г.Воронеж|
+         * BIC=042007681|
+         * CorrespAcc=3010181060000000681|
+         * SUM= 402327|
+         * Purpose=Оплата услуг отопления и ГВС |
+         * PayeeINN=6829012680|
+         * KPP=366302001|
+         * LastName=ВЫЛЕГЖАНИН|
+         * FirstName=ДМИТРИЙ|
+         * MiddleName=НИКОЛАЕВИЧ|
+         * PersAcc=993324386|
+         * PayerAddress=ПИСАТЕЛЯ МАРШАКА УЛ., д.24, кв.29|
+         * PaymPeriod=0116","size":4.5,"cells":["L2","L16"]}*/
+                    self.qrCode = {};
+                    self.qrCode.pstring = '{"data":"' + payString + '","size":4.5,"cells":["L3", "L16"]}';
+                    
                     var DM = new DateModule();
                     var prevDate = self.model.all_dates.findById(DM.prevDate(self.model.params.parDateID)).per_pay_day;
                     var days = (prevDate.getDate() + " " + monthNamesRP[prevDate.getMonth()] + " " + prevDate.getFullYear());
