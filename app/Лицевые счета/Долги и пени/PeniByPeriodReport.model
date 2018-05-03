@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="lc_by_ID" Title="" entityHeight="200" entityIconified="false" entityId="152284838856107" entityLocationX="228" entityLocationY="11" entityWidth="150" queryId="lc_by_ID" tableName="" tableSchemaName=""/>
+  <entity Name="qPeniRecordsByFlatByPeriod" Title="" entityHeight="200" entityIconified="false" entityId="152284840067861" entityLocationX="500" entityLocationY="22" entityWidth="150" queryId="qPeniRecordsByFlatByPeriod" tableName="" tableSchemaName=""/>
+  <entity Name="all_dates" Title="" entityHeight="200" entityIconified="false" entityId="152285284567782" entityLocationX="525" entityLocationY="373" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
+  <entity Name="saldo_by_flat" Title="" entityHeight="200" entityIconified="false" entityId="152285061474099" entityLocationX="302" entityLocationY="227" entityWidth="150" queryId="saldo_by_flat" tableName="" tableSchemaName=""/>
+  <relation leftEntityFieldName="date_id" leftEntityId="152285061474099" rightEntityFieldName="per_date_id" rightEntityId="152285284567782"/>
+  <relation leftEntityFieldName="date_id" leftEntityId="152285061474099" rightEntityFieldName="date_id" rightEntityId="152284840067861"/>
+  <relation leftEntityFieldName="date_id" leftEntityId="152285061474099" rightEntityFieldName="per_date_id" rightEntityId="152285284567782"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="152285061474099" rightEntityFieldName="per_date_id" rightEntityId="152285284567782"/>
+  <referenceRelation leftEntityFieldName="lc_id" leftEntityId="152285061474099" rightEntityFieldName="lc_flat_id" rightEntityId="152284838856107"/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="152284840067861" rightEntityFieldName="per_date_id" rightEntityId="152285284567782"/>
+</datamodel>

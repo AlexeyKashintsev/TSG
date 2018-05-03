@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="date_start" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="date_end" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
+  <entity Name="all_dates" Title="" entityHeight="200" entityIconified="false" entityId="152277193822087" entityLocationX="434" entityLocationY="27" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
+  <entity Name="qPeniRecordsByFlatByPeriod" Title="&lt;нулевое значение&gt;" entityHeight="200" entityIconified="false" entityId="152284064515348" entityLocationX="639" entityLocationY="10" entityWidth="150" queryId="qPeniRecordsByFlatByPeriod" tableName="" tableSchemaName=""/>
+  <referenceRelation leftEntityFieldName="date_id" leftEntityId="152284064515348" rightEntityFieldName="per_date_id" rightEntityId="152277193822087"/>
+</datamodel>

@@ -6,153 +6,149 @@
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
   <widget name="modelGrid" parent="panel" prefHeight="387px" prefWidth="199px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="146055823029926" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="colDebt_sum">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="146055823029926" fieldName="debt_sum"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="146055823029926" fieldName="debt_sum"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colDebt_age">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="146055823029926" fieldName="debt_age"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="146055823029926" fieldName="debt_age"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colDebt_date">
       <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy HH:mm:ss" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="146055823029926" fieldName="debt_date"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="146055823029926" fieldName="debt_date"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colDebt_remain">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="146055823029926" fieldName="debt_remain"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="146055823029926" fieldName="debt_remain"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="146055823029926" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="panel1" parent="splitPane" prefHeight="387px" prefWidth="741px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
   </widget>
   <widget name="modelGrid1" parent="panel1" prefHeight="387px" prefWidth="741px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="146055825956351" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="colPayment_id">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="146055825956351" fieldName="payment_id"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="146055825956351" fieldName="payment_id"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colDebt_remain1">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="146055825956351" fieldName="debt_remain"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="146055825956351" fieldName="debt_remain"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colDebt_age_days">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="146055825956351" fieldName="debt_age_days"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="146055825956351" fieldName="debt_age_days"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colPeni_calculated">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="146055825956351" fieldName="peni_calculated"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="146055825956351" fieldName="peni_calculated"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colDebt_paid">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="146055825956351" fieldName="debt_paid"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="146055825956351" fieldName="debt_paid"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colDate_id">
@@ -160,55 +156,60 @@
         <valueField entityId="146055918674795" fieldName="per_date_id"/>
         <displayField entityId="146055918674795" fieldName="TextDate"/>
       </controlInfo>
+      <datamodelElement entityId="146055825956351" fieldName="date_id"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="146055825956351" fieldName="date_id"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colOp_date">
       <controlInfo classHint="DbDateDesignInfo" dateFormat="dd.MM.yyyy HH:mm:ss" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="146055825956351" fieldName="op_date"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="146055825956351" fieldName="op_date"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
     <column name="colPeni_days">
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="146055825956351" fieldName="peni_days"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <datamodelElement entityId="146055825956351" fieldName="peni_days"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
+        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
-        <rowsKeyField/>
       </cellDesignInfo>
     </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="146055825956351" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="toolBar" parent="Form" prefHeight="36px" prefWidth="948px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="36px" left="0px" right="-1px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/24x24/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="31px" prefWidth="31px" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnRequeryActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/24x24/actions/new-view-refresh.png" name="btnRequery" parent="toolBar" prefHeight="31px" prefWidth="31px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/24x24/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="34px" prefWidth="37px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnRequeryActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/24x24/actions/new-view-refresh.png" name="btnRequery" parent="toolBar" prefHeight="34px" prefWidth="37px" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="buttonActionPerformed" focusable="false" horizontalTextPosition="0" name="button" parent="toolBar" prefHeight="25px" prefWidth="79px" text="show detailed" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

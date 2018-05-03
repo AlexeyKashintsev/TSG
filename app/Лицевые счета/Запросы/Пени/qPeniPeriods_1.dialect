@@ -1,0 +1,6 @@
+select *, row_number() over () as rnum
+from (
+Select *
+From per_peni_periods t1
+ Where :date_start <= t1.date_id and :date_end >= t1.date_id
+order by date_id, debt_age) eq

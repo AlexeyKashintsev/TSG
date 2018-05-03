@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="flat" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="account" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="date_start" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="date_end" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="152277409989440" entityLocationX="1243" entityLocationY="9" entityWidth="150" queryId="all_dates" tableAlias="q" tableName="" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="152163826943957" entityLocationX="862" entityLocationY="23" entityWidth="150" tableAlias="t2" tableName="per_date" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="152163794574772" entityLocationX="241" entityLocationY="28" entityWidth="150" tableAlias="t1" tableName="per_saldo_flat" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="152163795540273" entityLocationX="416" entityLocationY="28" entityWidth="150" tableAlias="t" tableName="per_debts" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="152163815967737" entityLocationX="623" entityLocationY="29" entityWidth="150" tableAlias="t3" tableName="per_debt_history" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="152277357112550" entityLocationX="1078" entityLocationY="28" entityWidth="150" queryId="qPeniPeriodsStartStop" tableAlias="q1" tableName="" tableSchemaName=""/>
+  <relation leftEntityFieldName="e_age" leftEntityId="152277357112550" rightEntityFieldName="debt_age_days" rightEntityId="152163815967737"/>
+  <relation leftEntityFieldName="date_id" leftEntityId="152277357112550" rightEntityFieldName="date_id" rightEntityId="152163815967737"/>
+  <relation leftEntityFieldName="date_id" leftEntityId="152163815967737" rightEntityFieldName="per_date_id" rightEntityId="152277409989440"/>
+  <relation leftEntityId="-1" leftEntityParameterName="account" rightEntityFieldName="account_id" rightEntityId="152163794574772"/>
+  <relation leftEntityFieldName="s_age" leftEntityId="152277357112550" rightEntityFieldName="debt_age_days" rightEntityId="152163815967737"/>
+  <relation leftEntityFieldName="debt_id" leftEntityId="152163815967737" rightEntityFieldName="per_debts_id" rightEntityId="152163795540273"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_start" rightEntityId="152277357112550" rightEntityParameterName="date_start"/>
+  <relation leftEntityFieldName="per_saldo" leftEntityId="152163795540273" rightEntityFieldName="per_saldo_flat_id" rightEntityId="152163794574772"/>
+  <relation leftEntityId="-1" leftEntityParameterName="flat" rightEntityFieldName="lc_id" rightEntityId="152163794574772"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_end" rightEntityId="152277357112550" rightEntityParameterName="date_end"/>
+  <relation leftEntityFieldName="date_id" leftEntityId="152163794574772" rightEntityFieldName="per_date_id" rightEntityId="152163826943957"/>
+</datamodel>

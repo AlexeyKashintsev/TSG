@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="150px" prefWidth="286px" title="Детализация пени за период">
+  <widget name="modelCombo1" parent="Form" prefHeight="24px" prefWidth="132px" type="DbComboDesignInfo">
+    <valueField entityId="152277193822087" fieldName="per_date_id"/>
+    <displayField entityId="152277193822087" fieldName="TextDate"/>
+    <datamodelElement entityId="-1" fieldName="date_end"/>
+    <constraints height="24px" left="144px" top="60px" type="MarginConstraintsDesignInfo" width="132px"/>
+  </widget>
+  <widget name="label1" parent="Form" prefHeight="14px" prefWidth="72px" text="Дата по" type="LabelDesignInfo">
+    <constraints height="14px" left="144px" top="39px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget name="label" parent="Form" prefHeight="14px" prefWidth="72px" text="Дата с" type="LabelDesignInfo">
+    <constraints height="14px" left="12px" top="39px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget name="modelCombo" parent="Form" prefHeight="24px" prefWidth="132px" type="DbComboDesignInfo">
+    <valueField entityId="152277193822087" fieldName="per_date_id"/>
+    <displayField entityId="152277193822087" fieldName="TextDate"/>
+    <datamodelElement entityId="-1" fieldName="date_start"/>
+    <constraints height="24px" left="12px" top="60px" type="MarginConstraintsDesignInfo" width="132px"/>
+  </widget>
+  <widget actionPerformed="button1ActionPerformed" name="button1" parent="Form" prefHeight="36px" prefWidth="132px" text="Сформировать" type="ButtonDesignInfo">
+    <constraints bottom="17px" height="36px" right="8px" type="MarginConstraintsDesignInfo" width="132px"/>
+  </widget>
+  <widget name="label2" parent="Form" prefHeight="14px" prefWidth="264px" text="Выберите период детализации" type="LabelDesignInfo">
+    <constraints height="14px" left="12px" top="12px" type="MarginConstraintsDesignInfo" width="264px"/>
+  </widget>
+  <layout type="MarginLayoutDesignInfo"/>
+</layout>

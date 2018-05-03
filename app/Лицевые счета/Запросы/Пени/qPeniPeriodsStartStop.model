@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="date_start" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="date_end" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="152164087645335" entityLocationX="282" entityLocationY="36" entityWidth="150" queryId="qPeniPeriods_2" tableAlias="q1" tableName="" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="152164087645336" entityLocationX="736" entityLocationY="35" entityWidth="150" queryId="qPeniPeriods_1" tableAlias="q" tableName="" tableSchemaName=""/>
+  <relation leftEntityFieldName="rnum" leftEntityId="152164087645335" rightEntityFieldName="rnum" rightEntityId="152164087645336"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_start" rightEntityId="152164087645336" rightEntityParameterName="date_start"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_end" rightEntityId="152164087645335" rightEntityParameterName="date_end"/>
+  <relation leftEntityFieldName="date_id" leftEntityId="152164087645335" rightEntityFieldName="date_id" rightEntityId="152164087645336"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_end" rightEntityId="152164087645336" rightEntityParameterName="date_end"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_start" rightEntityId="152164087645335" rightEntityParameterName="date_start"/>
+</datamodel>

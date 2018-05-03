@@ -189,7 +189,7 @@ function BillsBuilder_Nash_Dom() {
          * PayerAddress=ПИСАТЕЛЯ МАРШАКА УЛ., д.24, кв.29|
          * PaymPeriod=0116","size":4.5,"cells":["L2","L16"]}*/
                     self.qrCode = {};
-                    self.qrCode.pstring = '{"data":"' + payString + '","size":4.5,"cells":["L3", "L16"]}';
+                    self.qrCode.pstring = '{"data":"' + payString + '","size":4.5,"cells":["K4", "K23"]}';
                     
                     var DM = new DateModule();
                     var prevDate = self.model.all_dates.findById(DM.prevDate(self.model.params.parDateID)).per_pay_day;

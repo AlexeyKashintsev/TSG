@@ -4,7 +4,7 @@
     <parameter description="" name="date_end" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="Временная ось" entityHeight="200" entityIconified="false" entityId="137535118645971" entityLocationX="202" entityLocationY="9" entityWidth="150" tableAlias="t1" tableName="per_date" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="date_start" rightEntityFieldName="per_date_id" rightEntityId="137535118645971"/>
-  <relation leftEntityId="-1" leftEntityParameterName="date_end" rightEntityFieldName="per_date_id" rightEntityId="137535118645971"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="152164018546544" entityLocationX="206" entityLocationY="8" entityWidth="150" tableAlias="t1" tableName="per_peni_periods" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_start" rightEntityFieldName="date_id" rightEntityId="152164018546544"/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_end" rightEntityFieldName="date_id" rightEntityId="152164018546544"/>
 </datamodel>
