@@ -170,6 +170,12 @@ function btnDownActionPerformed(evt) {//GEN-FIRST:event_btnDownActionPerformed
         model.prSetStopDateForUslInFlat.params.groupId = model.params.parGroup;
         model.prSetStopDateForUslInFlat.params.uslugaId = model.dsServices.cursor.services_id;
         model.prSetStopDateForUslInFlat.executeUpdate();
+        
+        model.prDeleteNachislene.params.parDateId = model.params.parDateID;
+        model.prDeleteNachislene.params.parGroupId = model.params.parGroup;
+        model.prDeleteNachislene.params.parUslId = model.dsServices.cursor.services_id;
+        model.prDeleteNachislene.executeUpdate();
+        
         model.dsServices.cursor.date_end = model.params.parDateID;
         model.save();
     }//GEN-LAST:event_btnStopActionPerformed

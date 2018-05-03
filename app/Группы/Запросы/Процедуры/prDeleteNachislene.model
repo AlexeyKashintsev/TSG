@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="parGroupId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parUslId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="parDateId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="152532913421968" entityLocationX="462" entityLocationY="54" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="152532914422381" entityLocationX="686" entityLocationY="63" entityWidth="150" tableAlias="t2" tableName="per_sums" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="152532913421945" entityLocationX="234" entityLocationY="146" entityWidth="150" tableAlias="t" tableName="lc_flat_services" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateId" rightEntityFieldName="date_id" rightEntityId="152532914422381"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parUslId" rightEntityFieldName="services_id" rightEntityId="152532913421945"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="152532913421968" rightEntityFieldName="lc_id" rightEntityId="152532913421945"/>
+  <relation leftEntityFieldName="lc_flat_services_id" leftEntityId="152532913421945" rightEntityFieldName="flat_service_id" rightEntityId="152532914422381"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parGroupId" rightEntityFieldName="group_id" rightEntityId="152532913421968"/>
+</datamodel>

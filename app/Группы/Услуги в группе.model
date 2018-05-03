@@ -7,19 +7,20 @@
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
   <entity Name="dsGrpServiceCounter" Title="" entityHeight="200" entityIconified="false" entityId="142943635462557" entityLocationX="18" entityLocationY="224" entityWidth="150" queryId="dsGrpServiceCounter" tableName="" tableSchemaName=""/>
   <entity Name="prSetStopDateForUslInFlat" Title="" entityHeight="200" entityIconified="false" entityId="151739325435237" entityLocationX="699" entityLocationY="42" entityWidth="150" queryId="prSetStopDateForUslInFlat" tableName="" tableSchemaName=""/>
+  <entity Name="prDeleteNachislene" Title="" entityHeight="200" entityIconified="false" entityId="152532955069811" entityLocationX="249" entityLocationY="258" entityWidth="150" queryId="prDeleteNachislene" tableName="" tableSchemaName=""/>
   <entity Name="dsServices" Title="Услуги в группе" entityHeight="200" entityIconified="false" entityId="137496294091245" entityLocationX="223" entityLocationY="28" entityWidth="150" queryId="services_by_group" tableName="" tableSchemaName=""/>
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="137520081638120" entityLocationX="468" entityLocationY="30" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
   <entity Name="all_dates" Title="" entityHeight="200" entityIconified="false" entityId="151739406929759" entityLocationX="468" entityLocationY="295" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="137496294091245" rightEntityParameterName="parGroup"/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="137496294091245" rightEntityParameterName="parAccountID"/>
-  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137520081638120" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
-  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137520081638120" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
-  <referenceRelation leftEntityFieldName="date_end" leftEntityId="151739325435237" rightEntityFieldName="per_date_id" rightEntityId="151739406929759"/>
-  <referenceRelation leftEntityFieldName="con_grp_counter" leftEntityId="142943635462557" rightEntityFieldName="grp_service_counters_id" rightEntityId="142943635462557"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="137496294091245" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
   <referenceRelation leftEntityFieldName="modified_service_id" leftEntityId="137496294091245" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
-  <referenceRelation leftEntityFieldName="grp_service_id" leftEntityId="142943635462557" rightEntityFieldName="grp_services_id" rightEntityId="137496294091245"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="151739325435237" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
   <referenceRelation leftEntityFieldName="date_start" leftEntityId="151739325435237" rightEntityFieldName="per_date_id" rightEntityId="151739406929759"/>
   <referenceRelation leftEntityFieldName="date_end" leftEntityId="137496294091245" rightEntityFieldName="per_date_id" rightEntityId="151739406929759"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="137520081638120" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
+  <referenceRelation leftEntityFieldName="date_end" leftEntityId="151739325435237" rightEntityFieldName="per_date_id" rightEntityId="151739406929759"/>
+  <referenceRelation leftEntityFieldName="grp_service_id" leftEntityId="142943635462557" rightEntityFieldName="grp_services_id" rightEntityId="137496294091245"/>
+  <referenceRelation leftEntityFieldName="connected_service" leftEntityId="137520081638120" rightEntityFieldName="usl_services_id" rightEntityId="137520081638120"/>
+  <referenceRelation leftEntityFieldName="con_grp_counter" leftEntityId="142943635462557" rightEntityFieldName="grp_service_counters_id" rightEntityId="142943635462557"/>
 </datamodel>

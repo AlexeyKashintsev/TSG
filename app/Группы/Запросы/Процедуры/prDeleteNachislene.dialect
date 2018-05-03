@@ -1,0 +1,7 @@
+delete from per_sums
+where date_id = :parDateId and flat_service_id in (
+    Select t.lc_flat_services_id 
+    From grp_lc_group t1
+     Inner Join lc_flat_services t on t1.lc_id = t.lc_id
+     Where :parGroupId = t1.group_id
+     and :parUslId = t.services_id)
