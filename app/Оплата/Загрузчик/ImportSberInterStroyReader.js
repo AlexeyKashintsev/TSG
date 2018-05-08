@@ -15,7 +15,7 @@ function ImportSberInterStroyReader() {
     var lineConfiguration = {
         LC_NUM: {
             cell: 5,
-            type: 'string'
+            type: 'number'
         },
         OPL_SUM: {
             cell: 9,
@@ -38,7 +38,7 @@ function ImportSberInterStroyReader() {
             type: 'text'
         },
         OPL_ADDRESS: {
-            cell: 5,
+            cell: 7,
             type: 'text'
         }
     };
@@ -68,7 +68,7 @@ function ImportSberInterStroyReader() {
     }
     
     function postProcess(anArray) {
-        anArray.LC_NUM = +anArray.LC_NUM.substring(1);
+        anArray.LC_NUM = +anArray.LC_NUM;//.substring(1);
         return anArray;
     }
     
