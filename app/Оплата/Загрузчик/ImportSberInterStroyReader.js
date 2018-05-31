@@ -55,7 +55,7 @@ function ImportSberInterStroyReader() {
         var res = aData;
         switch (aDataType) {
             case 'number': {
-                    res = parseFloat(aData);
+                    res = parseFloat(aData.replace(',', '.'));
                     break;
             }
             case 'date': {
