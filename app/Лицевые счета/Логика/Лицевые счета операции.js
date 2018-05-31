@@ -44,13 +44,13 @@ function LCModule() {
             model.params.parDateID = model.all_dates.per_date_id;
         }
         model.dsFlat.push({
-            lc_flatnumber: aLCFlatNumber,
-            lc_regto: aLCRegTo,
-            registered_count: aLCPeopleRegCount,
-            lc_num: aLCNumber
+            lc_flatnumber: aLCFlatNumber ? aLCFlatNumber : null,
+            lc_regto: aLCRegTo ? aLCRegTo : null,
+            registered_count: aLCPeopleRegCount ? aLCPeopleRegCount : null,
+            lc_num: aLCNumber ? aLCNumber : null
         });
+        model.save();
         if (aGroupID) addFlat2Group(model.dsFlat.lc_flat_id, aGroupID);
-        saveChanges();
         return model.dsFlat.lc_flat_id;
     };
 
