@@ -74,6 +74,19 @@ function LCServicesAnCounters() {
         return self.services_by_flat.lc_flat_services_id;
     };
     
+    self.updateServiceCounters = function(aFlatID, aGroupService, aDateID) {
+            var grpCounters = modGRP.getGroupCounters(aGroupService);
+            model.services_by_flat.params.flat_id = aFlatID;
+            model.services_by_flat.params.groupService = aGroupService;
+            model.services_by_flat.requery();
+            grpCounters.forEach(function(counter) {
+                if (!counter.counterConCounter) {
+                    self.addCounterToFlat(model.services_by_flat.cursor.lc_flat_services_id, counter.counterId, aDateID, aFlatID);
+                } else 
+                    processIfConnectedService(aFlatID, model.services_by_flat.cursor.lc_flat_services_id, counter.counterId, counter.counterConCounter);
+            });
+    };
+    
     var addedCounters = {};
     /*
      * Добавить счетчик в квартиру

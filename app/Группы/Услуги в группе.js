@@ -91,8 +91,8 @@ function btnAddActionPerformed(evt) {//GEN-FIRST:event_btnAddActionPerformed
                         counter_name: 'Общий'
                     });
                 }
-                //model.save();
-                //grpMod.addService2Flats(self.parGroup, aService.service, null, self.parAccountID, model.dsGrpServiceCounter.grp_service_counters_id);
+//                model.save();
+//                grpMod.addService2Flats(self.parGroup, aService.service, null, self.parAccountID, model.dsGrpServiceCounter.grp_service_counters_id);
             }
         });
 }//GEN-LAST:event_btnAddActionPerformed
@@ -179,4 +179,8 @@ function btnDownActionPerformed(evt) {//GEN-FIRST:event_btnDownActionPerformed
         model.dsServices.cursor.date_end = model.params.parDateID;
         model.save();
     }//GEN-LAST:event_btnStopActionPerformed
+
+    function btnApplyCountersActionPerformed(evt) {//GEN-FIRST:event_btnApplyCountersActionPerformed
+        grpMod.getGroupCounters(model.dsServices.cursor.grp_services_id, model.dsServices.cursor.services_id, self.parGroup);
+    }//GEN-LAST:event_btnApplyCountersActionPerformed
 }

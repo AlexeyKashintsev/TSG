@@ -16,6 +16,7 @@ From lc_flat_services t1
  and :parAccount = t2.account_id
  Where :parAccount = t1.account_id
  and (:flat_id = t1.lc_id or :all_flats = true)
+ and (:groupService = t2.grp_services_id or :groupService is null)
  Group by t1.lc_flat_services_id, t1.lc_id, t1.services_id, t1.fs_active
 , t1.date_start, t1.date_end, t1.period_start, t1.period_end, t1.account_id
 , t1.calc_by_norm) q

@@ -28,6 +28,21 @@ function GroupsModule() {
         
     };
     
+    self.updateCountersByService = function(aGroupID, aServiceID, aDateID, anAccountID, aGroupServiceID) {
+        var modLC = new ServerModule('LCServicesAnCounters');
+        if (!aDateID){
+            model.all_dates.last();
+            aDateID = model.all_dates.per_date_id;
+        }
+        model.flats_by_group.params.group_id = aGroupID;
+        model.flats_by_group.requery(function(){//TODO Сделать синхронной
+            model.flats_by_group.forEach(function(aFlat){
+               modLC.updateServiceCounters(aFlat.lc_flat_id, aServiceID, false, aDateID, anAccountID, null, null, null, aGroupServiceID);
+            });
+            modLC.saveChanges();
+        });
+    };
+    
     self.addSaldo2Flats = function(aGroupID, aAccountID){
         var modLC = new ServerModule('LCModule');
         model.flats_by_group.params.group_id = aGroupID;

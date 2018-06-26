@@ -22,8 +22,10 @@ function DateModule() {
      */
     self.prevDate = function(aDateID) {
         self.all_dates.scrollTo(self.all_dates.findById(aDateID));
-        self.all_dates.prev();
-        return self.all_dates.per_date_id;
+        if (self.all_dates.prev())
+            return self.all_dates.per_date_id;
+        else
+            return null;
     };
     
     self.nextDate = function(aDateID) {
