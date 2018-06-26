@@ -60,4 +60,14 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
 }//GEN-LAST:event_formWindowClosing
 
 paramSynchronizer.addListener(this);
+
+    function btnAverangeActionPerformed(evt) {//GEN-FIRST:event_btnAverangeActionPerformed
+        model.qCounterVal6Year.params.date = model.params.parDateID;
+        model.qCounterVal6Year.params.counter = model.counters_values_by_flat.cursor.counter_id;
+        model.qCounterVal6Year.requery(function() {
+            model.counters_values_by_flat.cursor.end_val = model.counters_values_by_flat.cursor.beg_val 
+                    + model.qCounterVal6Year.cursor.val;
+            model.counters_values_by_flat.cursor.cons_val = model.qCounterVal6Year.cursor.val
+        });
+    }//GEN-LAST:event_btnAverangeActionPerformed
 }

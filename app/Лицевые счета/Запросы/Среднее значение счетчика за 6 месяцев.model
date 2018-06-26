@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="date" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="counter" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="153000903719571" entityLocationX="214" entityLocationY="98" entityWidth="150" tableAlias="pd" tableName="per_date" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="153000908841729" entityLocationX="420" entityLocationY="104" entityWidth="150" tableAlias="cv" tableName="per_counter_values" tableSchemaName=""/>
+  <relation leftEntityFieldName="date_id" leftEntityId="153000908841729" rightEntityFieldName="per_date_id" rightEntityId="153000903719571"/>
+  <relation leftEntityFieldName="per_date_id" leftEntityId="153000903719571" rightEntityId="-1" rightEntityParameterName="date"/>
+  <relation leftEntityFieldName="counter_id" leftEntityId="153000908841729" rightEntityId="-1" rightEntityParameterName="counter"/>
+</datamodel>
