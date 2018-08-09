@@ -13,7 +13,7 @@ function ImportSberInterStroyReader() {
 
     
     var lineConfiguration = {
-        LC_NUM: {
+        LC_CODE: {
             cell: 5,
             type: 'number'
         },
