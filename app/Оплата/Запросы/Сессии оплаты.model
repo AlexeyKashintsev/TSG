@@ -5,10 +5,10 @@
     <parameter description="" name="account_id" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
-  <entity Title="" entityHeight="200" entityIconified="false" entityId="143179054915668" entityLocationX="430" entityLocationY="19" entityWidth="150" queryId="dsSessionColAndSum" tableAlias="q" tableName="" tableSchemaName=""/>
-  <entity Title="opl_sessions" entityHeight="200" entityIconified="false" entityId="138686025512801" entityLocationX="231" entityLocationY="8" entityWidth="150" tableAlias="t1" tableName="opl_sessions" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="account_id" rightEntityFieldName="account_id" rightEntityId="138686025512801"/>
-  <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="138686025512801"/>
-  <relation leftEntityId="-1" leftEntityParameterName="sessionid" rightEntityFieldName="opl_sessions_id" rightEntityId="138686025512801"/>
-  <relation leftEntityFieldName="opl_sessions_id" leftEntityId="138686025512801" rightEntityFieldName="session_id" rightEntityId="143179054915668"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="153588669475340" entityLocationX="501" entityLocationY="22" entityWidth="150" tableAlias="t2" tableName="opl_payments" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="153588669475339" entityLocationX="297" entityLocationY="23" entityWidth="150" tableAlias="t1" tableName="opl_sessions" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="date_id" rightEntityFieldName="date_id" rightEntityId="153588669475339"/>
+  <relation leftEntityId="-1" leftEntityParameterName="sessionid" rightEntityFieldName="opl_sessions_id" rightEntityId="153588669475339"/>
+  <relation leftEntityId="-1" leftEntityParameterName="account_id" rightEntityFieldName="account_id" rightEntityId="153588669475339"/>
+  <relation leftEntityFieldName="opl_sessions_id" leftEntityId="153588669475339" rightEntityFieldName="session_id" rightEntityId="153588669475340"/>
 </datamodel>

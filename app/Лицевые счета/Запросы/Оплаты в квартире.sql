@@ -12,3 +12,4 @@ From opl_payments t1
  Inner Join opl_sessions t on t1.session_id = t.opl_sessions_id
  Where :flat_id = t1.flat_id
  and :account_id = t.account_id
+ and (:date_id = t1.date_id or :date_id is null)

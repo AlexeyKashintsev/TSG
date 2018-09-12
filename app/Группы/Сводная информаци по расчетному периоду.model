@@ -6,30 +6,25 @@
     <parameter description="" name="parAccountID" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
   </parameters>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="13" entityLocationY="8" entityWidth="150"/>
-  <entity Name="dsSaldoInGroupForPeriod" Title="" entityHeight="200" entityIconified="false" entityId="142305636548457" entityLocationX="213" entityLocationY="12" entityWidth="150" queryId="dsSaldoInGroupForPeriod" tableName="" tableSchemaName=""/>
-  <entity Name="all_dates" Title="" entityHeight="200" entityIconified="false" entityId="142303936450082" entityLocationX="12" entityLocationY="233" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
-  <entity Name="group_by_id" Title="" entityHeight="200" entityIconified="false" entityId="142349067207802" entityLocationX="620" entityLocationY="245" entityWidth="150" queryId="group_by_id" tableName="" tableSchemaName=""/>
+  <entity Name="dsEndSaldoInGroup" Title="" entityHeight="200" entityIconified="false" entityId="142347926751580" entityLocationX="401" entityLocationY="219" entityWidth="150" queryId="dsSaldoInGroup" tableName="" tableSchemaName=""/>
   <entity Name="qServices" Title="Услуги справочник" entityHeight="200" entityIconified="false" entityId="139307429591837" entityLocationX="622" entityLocationY="8" entityWidth="150" queryId="qServices" tableName="" tableSchemaName=""/>
-  <entity Name="dsEndSaldoInGroup" Title="" entityHeight="200" entityIconified="false" entityId="142347926751580" entityLocationX="409" entityLocationY="232" entityWidth="150" queryId="dsSaldoInGroup" tableName="" tableSchemaName=""/>
   <entity Name="dsBeginSaldoInGroup" Title="" entityHeight="200" entityIconified="false" entityId="142305653296883" entityLocationX="213" entityLocationY="231" entityWidth="150" queryId="dsSaldoInGroup" tableName="" tableSchemaName=""/>
-  <entity Name="dsChargesForGroup" Title="Начисления по группе" entityHeight="200" entityIconified="false" entityId="139307419109152" entityLocationX="407" entityLocationY="16" entityWidth="150" queryId="dsChargesForGroup" tableName="" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142305653296883" rightEntityParameterName="parAccount"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateEnd" rightEntityId="142305636548457" rightEntityParameterName="parDateID"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateBeg" rightEntityId="142305653296883" rightEntityParameterName="parDateID"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateEnd" rightEntityId="142347926751580" rightEntityParameterName="parDateID"/>
+  <entity Name="group_by_id" Title="" entityHeight="200" entityIconified="false" entityId="142349067207802" entityLocationX="620" entityLocationY="245" entityWidth="150" queryId="group_by_id" tableName="" tableSchemaName=""/>
+  <entity Name="dsChargesForGroup" Title="Начисления по группе" entityHeight="200" entityIconified="false" entityId="139307419109152" entityLocationX="408" entityLocationY="11" entityWidth="150" queryId="dsChargesForGroup" tableName="" tableSchemaName=""/>
+  <entity Name="all_dates" Title="" entityHeight="200" entityIconified="false" entityId="142303936450082" entityLocationX="12" entityLocationY="233" entityWidth="150" queryId="all_dates" tableName="" tableSchemaName=""/>
+  <entity Name="dsSaldoInGroupForPeriod" Title="" entityHeight="200" entityIconified="false" entityId="142305636548457" entityLocationX="213" entityLocationY="12" entityWidth="150" queryId="dsSaldoInGroupForPeriod" tableName="" tableSchemaName=""/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="139307419109152" rightEntityParameterName="parAccount"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateEnd" rightEntityId="139307419109152" rightEntityParameterName="dateIDEnd"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="139307419109152" rightEntityParameterName="groupID"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateEnd" rightEntityId="142305636548457" rightEntityParameterName="parDateID"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateBeg" rightEntityId="142305636548457" rightEntityParameterName="parDateBeg"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="142305653296883" rightEntityParameterName="parGroupID"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142305636548457" rightEntityParameterName="parAccount"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="142305636548457" rightEntityParameterName="parGroupID"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parDateBeg" rightEntityId="139307419109152" rightEntityParameterName="dateIDBeg"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="142347926751580" rightEntityParameterName="parGroupID"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateEnd" rightEntityId="142347926751580" rightEntityParameterName="parDateID"/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142347926751580" rightEntityParameterName="parAccount"/>
-  <relation leftEntityId="-1" leftEntityParameterName="parGroup" rightEntityId="142349067207802" rightEntityParameterName="group_id"/>
-  <referenceRelation leftEntityFieldName="services_id" leftEntityId="139307419109152" rightEntityFieldName="usl_services_id" rightEntityId="139307429591837"/>
-  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="139307429591837" rightEntityFieldName="usl_services_id" rightEntityId="139307429591837"/>
-  <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="142349067207802" rightEntityFieldName="grp_groups_id" rightEntityId="142349067207802"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateBeg" rightEntityId="142305653296883" rightEntityParameterName="parDateID"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142305636548457" rightEntityParameterName="parAccount"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateEnd" rightEntityId="139307419109152" rightEntityParameterName="dateIDEnd"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="142305653296883" rightEntityParameterName="parAccount"/>
+  <relation leftEntityId="-1" leftEntityParameterName="parDateBeg" rightEntityId="139307419109152" rightEntityParameterName="dateIDBeg"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="139307429591837" rightEntityFieldName="usl_services_id" rightEntityId="139307429591837"/>
+  <referenceRelation leftEntityFieldName="services_id" leftEntityId="139307419109152" rightEntityFieldName="usl_services_id" rightEntityId="139307429591837"/>
+  <referenceRelation leftEntityFieldName="grp_parent" leftEntityId="142349067207802" rightEntityFieldName="grp_groups_id" rightEntityId="142349067207802"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="139307429591837" rightEntityFieldName="usl_services_id" rightEntityId="139307429591837"/>
 </datamodel>

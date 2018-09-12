@@ -61,5 +61,15 @@ self.syncParams = function(aDate, anIsEditable, anAccount) {
     }//GEN-LAST:event_buttonActionPerformed
 
 paramSynchronizer.addListener(this);
+
+    function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
+        model.dsBeginSaldoInGroup.params.parGroupID = 
+            model.dsEndSaldoInGroup.params.parGroupID = 
+            model.dsSaldoInGroupForPeriod.params.parGroupID = 
+            model.dsChargesForGroup.params.groupID = 
+            model.group_by_id.params.group_id = 
+                model.params.parGroup;
+            model.requery();
+    }//GEN-LAST:event_btnReqActionPerformed
 }
 

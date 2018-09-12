@@ -85,7 +85,8 @@ function BillsBuilder_Nash_Dom() {
                         sal_penalties_pay: model.saldo_by_flat.cursor.sal_penalties_pay
                     };
                     if (self.dsGroupAndBank.percent !== 0){
-                        var raschet = model.saldo_by_flat.cursor.sal_end*100/(100-self.dsGroupAndBank.percent)- model.saldo_by_flat.cursor.sal_end;
+                        var r = model.saldo_by_flat.cursor.sal_end + lc_saldo.penalties_cur;
+                        var raschet = r*100/(100-self.dsGroupAndBank.percent)- r;
                         raschet = raschet.toFixed(2);
                         var percent = '(C учетом '+self.dsGroupAndBank.percent+'%банка = '+ raschet +'руб.)';            
                     }

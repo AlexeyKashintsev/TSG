@@ -17,6 +17,7 @@ var canSetEdit = true;
 var fmSession = null;
 
 self.mainForm = null;
+Logger.warning('opl_session_view start');
 
 
 self.updateSession = function(){
@@ -34,11 +35,14 @@ self.syncParams = function(aDate, anIsEditable, anAccount) {
 
 function openCurrentSession(){
     if (!fmSession) {
+        Logger.warning('oplInSession init start');
         fmSession = new oplInSession();
         fmSession.mainForm = self.mainForm;
         fmSession.parentForm = self;
+        Logger.warning('oplInSession init done');
     }
 
+    Logger.warning('Setting up new session with id = ' + self.dsOplSessions.opl_sessions_id);
     fmSession.init(self.dsOplSessions.opl_sessions_id, self.parDateID,self.parEditDate);
     if (self.mainForm)
         self.mainForm.showFormAsInternal(fmSession);
@@ -84,8 +88,8 @@ function formWindowClosing(evt) {//GEN-FIRST:event_formWindowClosing
                                   self.tfSesComment.text:'',
                                   self.dsOplSessions.schema.opl_date,  new Date(),
                                   self.dsOplSessions.schema.account_id, self.parAccountID);
-        openCurrentSession();
         self.model.save();
+        openCurrentSession();
     }//GEN-LAST:event_btnAddActionPerformed
 
     function btnSaveActionPerformed(evt) {//GEN-FIRST:event_btnSaveActionPerformed

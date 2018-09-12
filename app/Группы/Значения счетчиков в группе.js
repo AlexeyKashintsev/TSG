@@ -19,4 +19,13 @@ function formCounterValuesForGroup() {
         if(model.dsCounterWithAskforvalue.length !== 0)
             model.params.parServiceID = model.dsCounterWithAskforvalue[0].services_id;
     }//GEN-LAST:event_dsCounterWithAskforvalueOnRequeried
+
+    function btnReqActionPerformed(evt) {//GEN-FIRST:event_btnReqActionPerformed
+        model.dsCounterWithAskforvalue.params.group_id =
+            model.dsCounterValuesForGroup.params.group_id =
+            model.qCountersSumsByGroupAndService.params.group_id =
+            model.flats_by_group.params.group_id =
+            model.params.parGroupID;
+        model.requery();
+    }//GEN-LAST:event_btnReqActionPerformed
 }

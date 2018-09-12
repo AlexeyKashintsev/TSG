@@ -85,7 +85,7 @@ function BillsBuilder_Doverie() {
                     };
                     
                     if (self.dsGroupAndBank.percent !== 0){
-                        var raschet = model.saldo_by_flat.cursor.sal_end*100/(100-self.dsGroupAndBank.percent)- model.saldo_by_flat.cursor.sal_end;
+                        var raschet = (model.saldo_by_flat.cursor.sal_end + lc_saldo.penalties_cur)*100/(100-self.dsGroupAndBank.percent)- model.saldo_by_flat.cursor.sal_end;
                         raschet = raschet.toFixed(2);
                         var percent = '(C учетом '+self.dsGroupAndBank.percent+'%банка = '+ raschet +'руб.)';            
                     }

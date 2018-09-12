@@ -9,7 +9,7 @@ function oplInSession() {
 
 
 var self = this, model = self.model;
-
+Logger.warning('oplInSession init progress');
 
 var isSelectForm = true;
 var isEditable = false;
@@ -20,6 +20,9 @@ self.parentForm = null;
 self.mainForm = null;
 var barCodes = {};
 var importForm = new ImportData();
+
+    self.model.dsSessionColAndSum.params.sessionid = 0;
+    self.model.dsPaymentsInSession.params.sessionid = 0;
 
 function setEdit(){
     self.modelGrid.editable = 
@@ -39,9 +42,16 @@ self.updateSession = function(){
 };
 
 self.init = function (aSessionID, aDateID,aEditDate){
+    Logger.warning('Trying to open. Текущая сессия: ' + aSessionID);
+    self.model.params.beginUpdate();
     self.parDateID = aDateID;
     self.parSessionID = aSessionID;
     self.parEditDate = aEditDate;
+    self.model.params.endUpdate();
+    Logger.warning('Текущая сессия: ' + aSessionID);
+    self.model.dsSessionColAndSum.params.sessionid = aSessionID;
+    self.model.dsPaymentsInSession.params.sessionid = aSessionID;
+    model.requery();
 };
 
 

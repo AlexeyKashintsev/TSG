@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="357px" prefWidth="729px">
+  <widget actionPerformed="btnReqActionPerformed" name="btnReq" parent="Form" prefHeight="38px" prefWidth="120px" text="Обновить" type="ButtonDesignInfo">
+    <constraints height="38px" left="420px" top="12px" type="MarginConstraintsDesignInfo" width="120px"/>
+  </widget>
   <widget editable="false" format="#0.00" name="mfPenaltie1" parent="Form" prefHeight="18px" prefWidth="70px" type="DbLabelDesignInfo" valueType="0">
     <datamodelElement entityId="142305636548457" fieldName="sal_penalties_cur"/>
     <constraints height="18px" left="432px" top="84px" type="MarginConstraintsDesignInfo" width="70px"/>
@@ -62,18 +65,14 @@
     <constraints height="16px" left="12px" top="168px" type="MarginConstraintsDesignInfo" width="180px"/>
   </widget>
   <widget name="modelGrid" parent="Form" prefHeight="168px" prefWidth="704px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="139307419109152" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="colServices_id" title="Услуга">
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="139307429591837" fieldName="usl_services_id"/>
@@ -89,9 +88,9 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="139307419109152" fieldName="calc_value"/>
@@ -104,9 +103,9 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="139307419109152" fieldName="calc"/>
@@ -119,9 +118,9 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="139307419109152" fieldName="benefit"/>
@@ -134,9 +133,9 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="139307419109152" fieldName="recalc"/>
@@ -149,9 +148,9 @@
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
       <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="139307419109152" fieldName="full_calc"/>
@@ -159,6 +158,10 @@
         <nativeFont name="Dialog" size="13"/>
       </headerStyle>
     </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="139307419109152" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="-3px" left="12px" right="13px" top="192px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="label5" parent="Form" prefHeight="14px" prefWidth="120px" text="Период:" type="LabelDesignInfo">
@@ -182,8 +185,8 @@
     <datamodelElement entityId="-1" fieldName="parDateEnd"/>
     <constraints height="20px" left="300px" top="12px" type="MarginConstraintsDesignInfo" width="100px"/>
   </widget>
-  <widget actionPerformed="buttonActionPerformed" name="button" parent="Form" prefHeight="23px" prefWidth="132px" text="Сформировать" type="ButtonDesignInfo">
-    <constraints height="23px" left="432px" top="12px" type="MarginConstraintsDesignInfo" width="132px"/>
+  <widget actionPerformed="buttonActionPerformed" name="button" parent="Form" prefHeight="36px" prefWidth="132px" text="Сформировать" type="ButtonDesignInfo">
+    <constraints height="36px" left="552px" top="12px" type="MarginConstraintsDesignInfo" width="132px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>

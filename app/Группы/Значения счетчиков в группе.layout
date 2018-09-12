@@ -13,117 +13,117 @@
   <widget name="label1" parent="Form" prefHeight="14px" prefWidth="60px" text="Конечное" type="LabelDesignInfo">
     <constraints bottom="19px" height="14px" left="192px" type="MarginConstraintsDesignInfo" width="60px"/>
   </widget>
-  <widget deletable="false" editable="false" insertable="false" name="modelGrid" parent="Form" prefHeight="228px" prefWidth="505px" type="DbGridDesignInfo">
+  <widget deletable="false" editable="false" insertable="false" name="modelGrid" parent="Form" prefHeight="192px" prefWidth="505px" type="DbGridDesignInfo">
     <column name="column" title="Квартира ">
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <columnsKeyField/>
+        <cellValueField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="143401316739049" fieldName="lc_flat_id"/>
         <displayField entityId="143401316739049" fieldName="lc_flatnumber"/>
       </controlInfo>
+      <datamodelElement entityId="143401332593719" fieldName="lc_id"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+    </column>
+    <column name="colServices" title="Услуга">
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
-      <datamodelElement entityId="143401332593719" fieldName="lc_id"/>
-    </column>
-    <column name="colServices" title="Услуга">
       <controlInfo classHint="DbComboDesignInfo" list="false" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="143401249284372" fieldName="usl_services_id"/>
         <displayField entityId="143401249284372" fieldName="usl_name"/>
       </controlInfo>
+      <datamodelElement entityId="143401332593719" fieldName="services_id"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <datamodelElement entityId="143401332593719" fieldName="services_id"/>
     </column>
     <column name="column1" title="Счетчик ">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="143401332593719" fieldName="counter_name"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
     </column>
     <column name="column2" title="Начальное">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="143401332593719" fieldName="beg_val"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
     </column>
     <column name="column3" title="Конечное">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="143401332593719" fieldName="end_val"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
     </column>
     <column name="column4" title="Потреблено">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <headerStyle>
-        <nativeFont name="Tahoma" size="11"/>
-      </headerStyle>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="143401332593719" fieldName="cons_val"/>
+      <headerStyle>
+        <nativeFont name="Tahoma" size="11"/>
+      </headerStyle>
     </column>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="143401332593719" field="false"/>
     </rowsColumnsDesignInfo>
     <treeDesignInfo/>
-    <constraints bottom="48px" left="0px" right="0px" top="24px" type="MarginConstraintsDesignInfo"/>
+    <constraints bottom="48px" left="0px" right="0px" top="60px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="btnReportActionPerformed" name="btnReport" parent="Form" prefHeight="23px" prefWidth="89px" text="Отчет" type="ButtonDesignInfo">
-    <constraints height="23px" right="11px" top="0px" type="MarginConstraintsDesignInfo" width="89px"/>
+  <widget actionPerformed="btnReportActionPerformed" name="btnReport" parent="Form" prefHeight="36px" prefWidth="89px" text="Отчет" type="ButtonDesignInfo">
+    <constraints height="36px" right="8px" top="12px" type="MarginConstraintsDesignInfo" width="89px"/>
   </widget>
-  <widget name="modelCombo" parent="Form" prefHeight="23px" prefWidth="168px" type="DbComboDesignInfo">
+  <widget name="modelCombo" parent="Form" prefHeight="36px" prefWidth="168px" type="DbComboDesignInfo">
     <valueField entityId="143435798367181" fieldName="services_id"/>
     <displayField entityId="143435798367181" fieldName="usl_name"/>
     <datamodelElement entityId="-1" fieldName="parServiceID"/>
-    <constraints height="23px" right="120px" top="0px" type="MarginConstraintsDesignInfo" width="168px"/>
+    <constraints height="36px" right="217px" top="12px" type="MarginConstraintsDesignInfo" width="168px"/>
   </widget>
   <widget name="label" parent="Form" prefHeight="14px" prefWidth="84px" text="Начальное" type="LabelDesignInfo">
     <constraints bottom="19px" height="14px" left="12px" type="MarginConstraintsDesignInfo" width="84px"/>
@@ -131,6 +131,9 @@
   <widget editable="false" name="modelFormattedField" parent="Form" prefHeight="20px" prefWidth="72px" type="DbLabelDesignInfo">
     <datamodelElement entityId="144965713394413" fieldName="beg_val"/>
     <constraints bottom="16px" height="20px" left="96px" type="MarginConstraintsDesignInfo" width="72px"/>
+  </widget>
+  <widget actionPerformed="btnReqActionPerformed" name="btnReq" parent="Form" prefHeight="36px" prefWidth="96px" text="Обновить" type="ButtonDesignInfo">
+    <constraints height="36px" right="109px" top="12px" type="MarginConstraintsDesignInfo" width="96px"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>
 </layout>
