@@ -1,204 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?><layout defaultCloseOperation="2" name="Form" prefHeight="300px" prefWidth="1024px">
   <widget name="modelGrid" parent="Form" prefHeight="252px" prefWidth="1024px" type="DbGridDesignInfo">
-    <column name="colLc_Num" title="Квартира">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="lc_flatnumber"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colLc_FIO" title="ФИО">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="lc_regto"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colSal_begin" title="Начальное сальдо">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="sal_begin"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colSal_calc" title="Начислено 100%">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="sal_calc"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colSal_benefit" title="Льгота">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="sal_benefit"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colSal_recalc" title="Перерассчет">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="sal_recalc"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colSal_full_calc" title="Начислено">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="sal_full_calc"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colSal_payments" title="Оплачено">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="sal_payments"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colSal_end" title="Конечное сальдо">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="sal_end"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colSal_penalties_calc" title="Пени начислено">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="sal_penalties_calc"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colSal_penalties_old" title="Пени с предыдущего периода">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="sal_penalties_old"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colSal_penalties_cur" title="Пени текущее">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="sal_penalties_cur"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
-    <column name="colSal_penalties_pay" title="Пени оплачено">
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <columnsKeyField/>
-        <cellValueField/>
-        <rowsKeyField/>
-      </cellDesignInfo>
-      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
-      <datamodelElement entityId="145069853448581" fieldName="sal_penalties_pay"/>
-      <headerStyle>
-        <nativeFont name="Dialog" size="13"/>
-      </headerStyle>
-    </column>
+    <treeDesignInfo/>
     <rowsColumnsDesignInfo>
       <rowsDatasource entityId="145069853448581" field="false"/>
     </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
+    <column name="colLc_Num" title="Квартира">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="lc_flatnumber"/>
+    </column>
+    <column name="colLc_FIO" title="ФИО">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="lc_regto"/>
+    </column>
+    <column name="colSal_begin" title="Начальное сальдо">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="sal_begin"/>
+    </column>
+    <column name="colSal_calc" title="Начислено 100%">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="sal_calc"/>
+    </column>
+    <column name="colSal_benefit" title="Льгота">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="sal_benefit"/>
+    </column>
+    <column name="colSal_recalc" title="Перерассчет">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="sal_recalc"/>
+    </column>
+    <column name="colSal_full_calc" title="Начислено">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="sal_full_calc"/>
+    </column>
+    <column name="colSal_payments" title="Оплачено">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="sal_payments"/>
+    </column>
+    <column name="colSal_end" title="Конечное сальдо">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="sal_end"/>
+    </column>
+    <column name="colSal_penalties_calc" title="Пени начислено">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="sal_penalties_calc"/>
+    </column>
+    <column name="colSal_penalties_old" title="Пени с предыдущего периода">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="sal_penalties_old"/>
+    </column>
+    <column name="colSal_penalties_cur" title="Пени текущее">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="sal_penalties_cur"/>
+    </column>
+    <column name="colSal_penalties_pay" title="Пени оплачено">
+      <controlInfo classHint="DbSpinDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <headerStyle>
+        <nativeFont name="Dialog" size="13"/>
+      </headerStyle>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <rowsKeyField/>
+        <columnsKeyField/>
+        <cellValueField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
+      <columnsDatasource/>
+      <datamodelElement entityId="145069853448581" fieldName="sal_penalties_pay"/>
+    </column>
     <constraints bottom="0px" left="0px" right="0px" top="48px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="btnReportActionPerformed" name="btnReport" parent="Form" prefHeight="29px" prefWidth="86px" text="Отчет" type="ButtonDesignInfo">

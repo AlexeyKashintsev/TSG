@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><datamodel>
   <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="12" entityLocationY="12" entityWidth="150"/>
-  <entity Name="qLcFlatAndSaldo4Report" Title="" entityHeight="541" entityIconified="false" entityId="145070444402437" entityLocationX="216" entityLocationY="24" entityWidth="150" queryId="qLcFlatAndSaldo4Report" tableName="" tableSchemaName=""/>
+  <entity Name="qLcFlatAndSaldo4Report" Title="" entityHeight="541" entityIconified="false" entityId="145070444402437" entityLocationX="213" entityLocationY="19" entityWidth="150" queryId="qLcFlatAndSaldo4Report" tableName="" tableSchemaName=""/>
   <referenceRelation leftEntityFieldName="lc_id" leftEntityId="145070444402437" rightEntityFieldName="lc_flat_id" rightEntityId="145070444402437"/>
 </datamodel>
