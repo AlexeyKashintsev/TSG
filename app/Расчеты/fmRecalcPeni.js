@@ -1,5 +1,6 @@
 /**
  * 
+ * @name fmRecalcPeni
  * @author Алексей
  */
 function fmRecalcPeni() {

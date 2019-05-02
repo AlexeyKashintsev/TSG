@@ -1,5 +1,6 @@
 /**
  * 
+ * @name fmDebtsInLC
  * @author Алексей
  */
 function fmDebtsInLC() {

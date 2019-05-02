@@ -1,5 +1,6 @@
 /**
  * 
+ * @name fmPeniByPeriod
  * @author Алексей
  */
 function fmPeniByPeriod() {

@@ -1,5 +1,6 @@
 /**
  * 
+ * @name calcPeniNew
  * @author Алексей
  * @module
  */

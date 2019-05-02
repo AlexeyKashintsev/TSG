@@ -22,7 +22,7 @@ function ImportDataProcessor() {
         allErrors: 0
     };
     
-    function getLCByCode(aCode) {
+    function getLCByCode(aCode, sNum) {
         var code = (+aCode).toString();
         if (code.length === 5) {
             model.dsLCByCode.params.grp_code = code[0];
@@ -78,7 +78,13 @@ function ImportDataProcessor() {
         var hw_service, cw_service;
         
         aDataArray.forEach(function(aRow) {
-            var lcid = !!aRow.LC_ID ? aRow.LC_ID : 
+            var lcid;
+            if (aRow.LC_CODE_NUM) {
+                lcid = getLCByCode(aRow.LC_CODE_NUM, true);
+                if (!lcid);
+                    lcid = getLCByNum(aRow.LC_CODE_NUM, true);
+            } else
+                lcid = !!aRow.LC_ID ? aRow.LC_ID : 
                     (!!aRow.LC_CODE ? getLCByCode(aRow.LC_CODE) : 
                     (!!aRow.LC_NUM ? getLCByNum(aRow.LC_NUM) : null));
            

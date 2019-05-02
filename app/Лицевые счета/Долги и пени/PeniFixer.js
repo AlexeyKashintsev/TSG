@@ -1,5 +1,6 @@
 /**
  * 
+ * @name PeniFixer
  * @author Алексей
  */
 function PeniFixer() {

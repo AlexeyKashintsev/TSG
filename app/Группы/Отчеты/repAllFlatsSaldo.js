@@ -1,5 +1,6 @@
 /**
  * 
+ * @name repAllFlatsSaldo
  * @author Алексей
  */
 function repAllFlatsSaldo() {
