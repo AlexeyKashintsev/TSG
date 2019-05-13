@@ -66,7 +66,11 @@ function button1ActionPerformed(evt) {//GEN-FIRST:event_button1ActionPerformed
     self.tarifsInGroup.requery();
 }//GEN-LAST:event_button1ActionPerformed
 
+    paramSynchronizer.addListener(this);
 
-
-paramSynchronizer.addListener(this);
+    function btnRecalcActionPerformed(evt) {//GEN-FIRST:event_btnRecalcActionPerformed
+        var rate = prompt('Ставка перерасчета', model.tarifsInGroup.cursor.rate);
+        var oldRate = model.tarifsInGroup.cursor.rate;
+        tarifsModule.recalc(self.parDateID, self.parGroupID, self.parAccountID, model.tarifsInGroup.cursor.services_id, rate, oldRate);
+    }//GEN-LAST:event_btnRecalcActionPerformed
 }

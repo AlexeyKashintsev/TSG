@@ -63,9 +63,24 @@ function Calculations() {
         }
         (function() {
             if (!anOnlySaldo)
-                proceedData(aGroupID, aFlatID, aDateID, applyValues, saveData)
+                proceedData(aGroupID, aFlatID, aDateID, null, applyValues, saveData)
             else
                 saveData();
+        }).invokeBackground();
+    };
+    
+    self.calculateRecalc = function(aGroupID, aFlatID, aDateID, aServiceID, callback) {
+        function applyValues(cursor, values) {
+            cursor.recalc = values.calc;
+        }
+        
+        function saveData() {
+            serverProgress.setDescription("Сохранение значений перерасчета");
+            model.save(callback);
+        }
+        (function() {
+            proceedData(aGroupID, aFlatID, aDateID, aServiceID, applyValues, saveData);
+            saveData();
         }).invokeBackground();
     };
     
@@ -118,11 +133,11 @@ function Calculations() {
         errors = [];
         
         (function() {
-            proceedData(aGroupID, aFlatID, aDateID, doCheckValues, endProcess);
+            proceedData(aGroupID, aFlatID, aDateID, null, doCheckValues, endProcess);
         }).invokeBackground();
     };
     
-    function proceedData(aGroupID, aFlatID, aDateID, aProceedFunction, aFinishCallback) {
+    function proceedData(aGroupID, aFlatID, aDateID, aServiceId, aProceedFunction, aFinishCallback) {
  
         serverProgress.setDescription("Подготовка");
         prepareCalcModule(aGroupID, aFlatID, aDateID);
@@ -131,7 +146,8 @@ function Calculations() {
         try {
             if (prepared) {
                 model.dsSums4calc.forEach(function(cursor) {
-                    aProceedFunction(cursor, getValues(cursor));
+                    if (aServiceId == null || cursor.services_id == aServiceId)
+                        aProceedFunction(cursor, getValues(cursor));
                     serverProgress.increaseValue(1);
                 });
                 aFinishCallback();

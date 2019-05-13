@@ -4,73 +4,73 @@
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="264px" prefWidth="372px" type="DbGridDesignInfo">
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="138410359511283" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <column name="Services" title="Услуга">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="138410360147288" fieldName="usl_services_id"/>
         <displayField entityId="138410360147288" fieldName="usl_name"/>
       </controlInfo>
+      <datamodelElement entityId="138410359511283" fieldName="services_id"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <columnsKeyField/>
+        <cellValueField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <datamodelElement entityId="138410359511283" fieldName="services_id"/>
     </column>
     <column name="Tarifs" title="Тариф">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138410359511283" fieldName="rate"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <columnsKeyField/>
+        <cellValueField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <datamodelElement entityId="138410359511283" fieldName="rate"/>
     </column>
     <column name="Norma" title="Норма">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138410359511283" fieldName="norm"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <columnsKeyField/>
+        <cellValueField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <datamodelElement entityId="138410359511283" fieldName="norm"/>
     </column>
     <column name="colChild" readonly="true" title="Дочерняя">
       <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
+      <datamodelElement entityId="138410359511283" fieldName="child"/>
+      <columnsDatasource/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <columnsKeyField/>
+        <cellValueField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
+      <columnsDisplayField/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
-      <datamodelElement entityId="138410359511283" fieldName="child"/>
     </column>
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="138410359511283" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <constraints bottom="45px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget actionPerformed="button1ActionPerformed" name="button1" parent="pnlWorkSpace" prefHeight="48px" prefWidth="203px" text="Применить тарифы группы" type="ButtonDesignInfo">
@@ -79,6 +79,7 @@
   <widget name="toolBar" parent="Form" prefHeight="33px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
+  <widget actionPerformed="btnRecalcActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/old-edit-find-replace.png" name="btnRecalc" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Перерасчет" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <nonvisual name="button" prefHeight="0px" prefWidth="0px" text="button" type="ButtonDesignInfo"/>
   <layout type="MarginLayoutDesignInfo"/>

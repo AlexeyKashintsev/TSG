@@ -11,7 +11,7 @@
   <relation leftEntityId="-1" leftEntityParameterName="parGroupID" rightEntityId="138410359511283" rightEntityParameterName="parGroup"/>
   <relation leftEntityId="-1" leftEntityParameterName="parAccountID" rightEntityId="138410359511283" rightEntityParameterName="parAccount"/>
   <relation leftEntityId="-1" leftEntityParameterName="parDateID" rightEntityId="138410359511283" rightEntityParameterName="parDate"/>
-  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="138410360147288" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
   <referenceRelation leftEntityFieldName="services_id" leftEntityId="138410359511283" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
+  <referenceRelation leftEntityFieldName="parent_service" leftEntityId="138410360147288" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
   <referenceRelation leftEntityFieldName="connected_service" leftEntityId="138410360147288" rightEntityFieldName="usl_services_id" rightEntityId="138410360147288"/>
 </datamodel>

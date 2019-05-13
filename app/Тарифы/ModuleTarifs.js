@@ -44,18 +44,35 @@ function TarifsModule() {
      * @param {integer} aDateID
      * @returns {none}
      */
-    self.applyTarifs = function(aDateID, aGroupID,aAccountID){
+    self.applyTarifs = function(aDateID, aGroupID, anAccountID) {
        // self.ApplyTarifs.params.groupid = aGroupID;
 //        self.ApplyTarifs.params.dateid = aDateID;
         model.dsUpdatePer_sums.params.groupid = aGroupID;
         model.dsUpdatePer_sums.params.dateid = aDateID;
-        model.dsUpdatePer_sums.params.accountid = aAccountID;
+        model.dsUpdatePer_sums.params.accountid = anAccountID;
         model.dsUpdatePer_sums.executeUpdate();
       /*  self.dsUpdatePer_sums.beforeFirst();
         while (self.dsUpdatePer_sums.next()) {
             self.dsUpdatePer_sums.rate = self.dsUpdatePer_sums.tRate;
         }
         self.model.save();*/
+    };
+    
+    self.recalc = function(aDateID, aGroupID, anAccountID, aServiceId, aRecalcRate, aBaseRate) {
+        var calc = new Calculations();
+        
+        model.applyTarif.params.groupid = aGroupID;
+        model.applyTarif.params.dateid = aDateID;
+        model.applyTarif.params.accountid = anAccountID;
+        model.applyTarif.params.serviceId = aServiceId;
+        model.applyTarif.params.rate = aRecalcRate;
+        model.applyTarif.executeUpdate();
+        calc.calculateRecalc(aGroupID, null, aDateID, aServiceId, function() {
+            if (aBaseRate != aRecalcRate) {
+                model.applyTarif.params.rate = aBaseRate;
+                model.applyTarif.executeUpdate();
+            }
+        });
     };
 
 }

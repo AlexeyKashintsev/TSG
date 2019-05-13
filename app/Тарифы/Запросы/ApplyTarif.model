@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="groupid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="dateid" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="rate" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="serviceId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="155778228302890" entityLocationX="247" entityLocationY="1" entityWidth="150" tableAlias="t2" tableName="grp_groups" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="155778239824111" entityLocationX="248" entityLocationY="216" entityWidth="150" tableAlias="t3" tableName="per_sums" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="155778228302848" entityLocationX="452" entityLocationY="21" entityWidth="150" tableAlias="t1" tableName="grp_lc_group" tableSchemaName=""/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="155778228302805" entityLocationX="661" entityLocationY="29" entityWidth="150" tableAlias="t" tableName="lc_flat_services" tableSchemaName=""/>
+  <relation leftEntityFieldName="grp_groups_id" leftEntityId="155778228302890" rightEntityFieldName="group_id" rightEntityId="155778228302848"/>
+  <relation leftEntityId="-1" leftEntityParameterName="rate" rightEntityFieldName="rate" rightEntityId="155778239824111"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="grp_groups_id" rightEntityId="155778228302890"/>
+  <relation leftEntityId="-1" leftEntityParameterName="groupid" rightEntityFieldName="grp_parent" rightEntityId="155778228302890"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateid" rightEntityFieldName="date_id" rightEntityId="155778239824111"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="155778228302848" rightEntityFieldName="lc_id" rightEntityId="155778228302805"/>
+  <relation leftEntityFieldName="flat_service_id" leftEntityId="155778239824111" rightEntityFieldName="lc_flat_services_id" rightEntityId="155778228302805"/>
+  <relation leftEntityId="-1" leftEntityParameterName="serviceId" rightEntityFieldName="services_id" rightEntityId="155778228302805"/>
+</datamodel>

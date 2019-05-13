@@ -1,0 +1,10 @@
+update per_sums
+set rate = :rate
+where per_sums.date_id = :dateId and per_sums.flat_service_id in (
+    Select distinct t.lc_flat_services_id 
+    From grp_lc_group t1
+     Inner Join lc_flat_services t on t1.lc_id = t.lc_id
+     Inner Join grp_groups t2 on t2.grp_groups_id = t1.group_id
+     Where (:groupid = t2.grp_groups_id or :groupid = t2.grp_parent)
+        and :serviceId = t.services_id
+)
