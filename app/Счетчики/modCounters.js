@@ -68,7 +68,14 @@ function CountersModule() {
 
 
     self.setCounterValueByLCAndServiceCounter = function(aLC_ID, aServiceID, aDateID, aBegValue, aEndValue, anAccount) {
-        var counter = getCounterInFlat(aLC_ID, aServiceID);
+        // Для поддержки электроэнергии Т0 и Т1
+        var counter;
+        if (typeof(aServiceID) == 'object') {
+            counter = getCounterInFlat(aLC_ID, aServiceID[0]);
+            if (!counter)
+                counter = getCounterInFlat(aLC_ID, aServiceID[1]);
+        } else
+            counter = getCounterInFlat(aLC_ID, aServiceID);
         if (counter)
             setCounterValueByCounterValueID(counter, aDateID, aBegValue, aEndValue);
     };

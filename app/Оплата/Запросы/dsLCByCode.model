@@ -8,9 +8,9 @@
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142947299100814" entityLocationX="242" entityLocationY="4" entityWidth="150" tableAlias="t1" tableName="grp_groups" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142947300547239" entityLocationX="644" entityLocationY="23" entityWidth="150" tableAlias="t2" tableName="lc_flat" tableSchemaName=""/>
   <entity Title="" entityHeight="200" entityIconified="false" entityId="142947299827816" entityLocationX="424" entityLocationY="12" entityWidth="150" tableAlias="t" tableName="grp_lc_group" tableSchemaName=""/>
-  <relation leftEntityId="-1" leftEntityParameterName="flat_code" rightEntityFieldName="lc_num" rightEntityId="142947300547239"/>
-  <relation leftEntityId="-1" leftEntityParameterName="lc_num" rightEntityFieldName="lc_num" rightEntityId="142947300547239"/>
-  <relation leftEntityFieldName="lc_id" leftEntityId="142947299827816" rightEntityFieldName="lc_flat_id" rightEntityId="142947300547239"/>
   <relation leftEntityId="-1" leftEntityParameterName="grp_code" rightEntityFieldName="grpid" rightEntityId="142947299100814"/>
+  <relation leftEntityFieldName="lc_id" leftEntityId="142947299827816" rightEntityFieldName="lc_flat_id" rightEntityId="142947300547239"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lc_num" rightEntityFieldName="lc_num" rightEntityId="142947300547239"/>
+  <relation leftEntityId="-1" leftEntityParameterName="flat_code" rightEntityFieldName="lc_num" rightEntityId="142947300547239"/>
   <relation leftEntityFieldName="group_id" leftEntityId="142947299827816" rightEntityFieldName="grp_groups_id" rightEntityId="142947299100814"/>
 </datamodel>

@@ -70,4 +70,10 @@ paramSynchronizer.addListener(this);
             model.counters_values_by_flat.cursor.cons_val = model.qCounterVal6Year.cursor.val
         });
     }//GEN-LAST:event_btnAverangeActionPerformed
+
+    function btnShowCountersActionPerformed(evt) {//GEN-FIRST:event_btnShowCountersActionPerformed
+        var countersFm = new counters_in_flat();
+        countersFm.setFlatId(model.params.parFlatID);
+        countersFm.showModal();
+    }//GEN-LAST:event_btnShowCountersActionPerformed
 }

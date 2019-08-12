@@ -2,96 +2,97 @@
   <widget floatable="false" name="toolBar" parent="Form" prefHeight="33px" prefWidth="372px" rollover="true" type="ToolbarDesignInfo">
     <constraints height="33px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
-  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="31px" prefWidth="35px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="31px" prefWidth="35px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
-  <widget actionPerformed="btnAverangeActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/object-flip-horizontal.png" name="btnAverange" parent="toolBar" prefHeight="31px" prefWidth="35px" toolTipText="Среднее за 6 месяцев" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnReqActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/new-view-refresh.png" name="btnReq" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Обновить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnSaveActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/document-save.png" name="btnSave" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Сохранить" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnAverangeActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/object-flip-horizontal.png" name="btnAverange" parent="toolBar" prefHeight="29px" prefWidth="29px" toolTipText="Среднее за 6 месяцев" type="ButtonDesignInfo" verticalTextPosition="3"/>
+  <widget actionPerformed="btnShowCountersActionPerformed" focusable="false" horizontalTextPosition="0" icon="icons/22x22/actions/help-about.png" name="btnShowCounters" parent="toolBar" prefHeight="29px" prefWidth="29px" type="ButtonDesignInfo" verticalTextPosition="3"/>
   <widget name="pnlWorkSpace" parent="Form" prefHeight="312px" prefWidth="372px" type="PanelDesignInfo">
     <layout type="MarginLayoutDesignInfo"/>
     <constraints bottom="0px" left="0px" right="0px" top="36px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <widget name="modelGrid" parent="pnlWorkSpace" prefHeight="312px" prefWidth="372px" type="DbGridDesignInfo">
+    <rowsColumnsDesignInfo>
+      <rowsDatasource entityId="138538099972866" field="false"/>
+    </rowsColumnsDesignInfo>
+    <treeDesignInfo/>
     <column name="colService" title="Услуга" width="40">
       <controlInfo classHint="DbComboDesignInfo" name="view" prefHeight="0px" prefWidth="0px">
         <valueField entityId="137520137252417" fieldName="usl_services_id"/>
         <displayField entityId="137520137252417" fieldName="usl_name"/>
       </controlInfo>
+      <columnsDatasource/>
+      <columnsDisplayField/>
+      <cellsDatasource/>
+      <cellDesignInfo>
+        <columnsKeyField/>
+        <cellValueField/>
+        <rowsKeyField/>
+      </cellDesignInfo>
       <datamodelElement entityId="138538099972866" fieldName="services_id"/>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
+    </column>
+    <column name="colCount" title="Счетчик" width="40">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
-    </column>
-    <column name="colCount" title="Счетчик" width="40">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138538099972866" fieldName="counter_name"/>
       <headerStyle>
         <nativeFont name="Tahoma" size="11"/>
       </headerStyle>
+    </column>
+    <column name="colBegValue" selectFunction="colBegValueOnSelect" title="Начало" width="20">
+      <controlInfo classHint="DbLabelDesignInfo" format="#0" name="view" prefHeight="0px" prefWidth="0px" valueType="0"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
-    </column>
-    <column name="colBegValue" selectFunction="colBegValueOnSelect" title="Начало" width="20">
-      <controlInfo classHint="DbLabelDesignInfo" format="#0" name="view" prefHeight="0px" prefWidth="0px" valueType="0"/>
       <datamodelElement entityId="138538099972866" fieldName="beg_val"/>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
+    </column>
+    <column name="colEndValue" title="Конец" width="20">
+      <controlInfo classHint="DbLabelDesignInfo" format="#0" name="view" prefHeight="0px" prefWidth="0px" valueType="0"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
-    </column>
-    <column name="colEndValue" title="Конец" width="20">
-      <controlInfo classHint="DbLabelDesignInfo" format="#0" name="view" prefHeight="0px" prefWidth="0px" valueType="0"/>
       <datamodelElement entityId="138538099972866" fieldName="end_val"/>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
+    </column>
+    <column name="colCalcValue" title="Расход" width="20">
+      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <columnsDatasource/>
       <columnsDisplayField/>
       <cellsDatasource/>
       <cellDesignInfo>
-        <rowsKeyField/>
         <columnsKeyField/>
         <cellValueField/>
+        <rowsKeyField/>
       </cellDesignInfo>
-    </column>
-    <column name="colCalcValue" title="Расход" width="20">
-      <controlInfo classHint="DbLabelDesignInfo" name="view" prefHeight="0px" prefWidth="0px"/>
       <datamodelElement entityId="138538099972866" fieldName="cons_val"/>
       <headerStyle>
         <nativeFont name="Dialog" size="11"/>
       </headerStyle>
-      <columnsDatasource/>
-      <columnsDisplayField/>
-      <cellsDatasource/>
-      <cellDesignInfo>
-        <rowsKeyField/>
-        <columnsKeyField/>
-        <cellValueField/>
-      </cellDesignInfo>
     </column>
-    <rowsColumnsDesignInfo>
-      <rowsDatasource entityId="138538099972866" field="false"/>
-    </rowsColumnsDesignInfo>
-    <treeDesignInfo/>
     <constraints bottom="0px" left="0px" right="0px" top="0px" type="MarginConstraintsDesignInfo"/>
   </widget>
   <layout type="MarginLayoutDesignInfo"/>

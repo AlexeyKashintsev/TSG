@@ -3,7 +3,7 @@
  * @public 
  * @author Alexey
  * @name counters_by_flat
- * @writable cnt_con2flats
+ * @writable cnt_con2flats, cnt_counters
  */ 
 Select t.cnt_con2flats_id, t1.lc_id, t.counter_id
 , t.group_counter, t.flat_service, t2.cnt_counters_id
