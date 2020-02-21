@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><datamodel>
+  <parameters>
+    <parameter description="" name="perSaldoFlat" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="lcRegTo" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="100" type="12" typeName="VARCHAR"/>
+    <parameter description="" name="dateId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+    <parameter description="" name="lcId" nullable="true" parameterMode="1" precision="0" scale="0" selectionForm="null" signed="true" size="0" type="2" typeName="NUMERIC"/>
+  </parameters>
+  <parametersEntity entityHeight="200" entityIconified="false" entityLocationX="8" entityLocationY="7" entityWidth="150"/>
+  <entity Title="" entityHeight="200" entityIconified="false" entityId="157739678716723" entityLocationX="203" entityLocationY="6" entityWidth="150" tableAlias="t1" tableName="per_flat_owner" tableSchemaName=""/>
+  <relation leftEntityId="-1" leftEntityParameterName="perSaldoFlat" rightEntityFieldName="per_flat_owner_id" rightEntityId="157739678716723"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lcRegTo" rightEntityFieldName="owner_fio" rightEntityId="157739678716723"/>
+  <relation leftEntityId="-1" leftEntityParameterName="lcId" rightEntityFieldName="lc_id" rightEntityId="157739678716723"/>
+  <relation leftEntityId="-1" leftEntityParameterName="dateId" rightEntityFieldName="date_id" rightEntityId="157739678716723"/>
+</datamodel>

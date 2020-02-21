@@ -63,7 +63,7 @@ function Calculations() {
         }
         (function() {
             if (!anOnlySaldo)
-                proceedData(aGroupID, aFlatID, aDateID, null, applyValues, saveData)
+                proceedData(aGroupID, aFlatID, aDateID, null, applyValues, saveData);
             else
                 saveData();
         }).invokeBackground();

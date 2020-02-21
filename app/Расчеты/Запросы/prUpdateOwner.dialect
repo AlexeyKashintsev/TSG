@@ -1,0 +1,6 @@
+insert into per_flat_owner (per_flat_owner_id, owner_fio, date_id, lc_id)
+values (:perSaldoFlat, :lcRegTo, :dateId, :lcId)
+on conflict ( per_flat_owner.per_flat_owner_id) do 
+update 
+set owner_fio = :lcRegTo
+where per_flat_owner_id = :perSaldoFlat and date_id = :dateId and lc_id = :lcId

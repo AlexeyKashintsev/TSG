@@ -14,6 +14,11 @@ function CalculateFlatSaldo() {
         proceed(aGroupID, aFlatID, aDateID, function(cursor, values) {
             for (var j in values)
                 cursor[j] = values[j];
+            model.prUpdateOwner.params.dateId = aDateID;
+            model.prUpdateOwner.params.lcId = cursor.lc_id;
+            model.prUpdateOwner.params.lcRegTo = cursor.lc_regto;
+            model.prUpdateOwner.params.perSaldoFlat = cursor.per_saldo_flat_id;
+            model.prUpdateOwner.executeUpdate();
         });
     };
     
